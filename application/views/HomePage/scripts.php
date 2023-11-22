@@ -2798,6 +2798,7 @@ var panelLayers11 = new L.Control.PanelLayers(baseMaps, overLayers11, {
 
 const legendImage1 = document.getElementById('legend1');
 const legendImage2 = document.getElementById('legend2');
+const legendModelExpo = document.getElementById('legendModelExpo');
 
 // synop
 function clickHandler_synop(event_synop) {
@@ -3302,6 +3303,14 @@ document.querySelectorAll('#popup').forEach(function(openModel) {
     openModel.onclick = () => {
         console.log("openModel working!!!");
         model.style.display = 'block';
+        legendModel1.src = "";
+        legendModel1.alt = "";
+        legendModel1.style.height = 0;
+        legendModel1.style.width = 0;
+        legendModelExpo.src = "";
+        legendModelExpo.alt = "";
+        legendModelExpo.style.height = 0;
+        legendModelExpo.style.width = 0;
     }
 });
 //
@@ -3452,15 +3461,6 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
             map.removeLayer(bhopalMarker);
         }
-        //
-        if (panelLayerLightninglists.innerHTML == '') {
-            panelLayerLightningTitle.innerHTML = '';
-            legendModel1.src = "";
-            legendModel1.alt = "";
-            legendModel1.style.height = 0;
-            legendModel1.style.width = 0;
-        }
-        //
         //Radar
         if (layer_name == 'Radar Reflectivity') {
             clickedRadarLists = clickedRadarLists.filter(checkList => checkList !=
@@ -3479,12 +3479,23 @@ $("body").on("change", "input[type=checkbox]", function() {
         //
         if (panelLayerRadarlists.innerHTML == '') {
             panelLayerRadarTitle.innerHTML = '';
+            // legendModel1.src = "";
+            // legendModel1.alt = "";
+            // legendModel1.style.height = 0;
+            // legendModel1.style.width = 0;
+        }
+        //
+
+        //
+        if (panelLayerLightninglists.innerHTML == '' && panelLayerRadarlists.innerHTML == '') {
+            panelLayerLightningTitle.innerHTML = '';
             legendModel1.src = "";
             legendModel1.alt = "";
             legendModel1.style.height = 0;
             legendModel1.style.width = 0;
         }
         //
+
         //Exposure
         if (layer_name == 'District Boundaries') {
             clickedExposureLists = clickedExposureLists.filter(checkList => checkList !=
