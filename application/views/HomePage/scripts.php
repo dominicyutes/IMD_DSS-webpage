@@ -2796,9 +2796,9 @@ var panelLayers11 = new L.Control.PanelLayers(baseMaps, overLayers11, {
     collapsibleGroups: true
 });
 
-const legendImage1 = document.getElementById('legend1');
-const legendImage2 = document.getElementById('legend2');
-const legendModelExpo = document.getElementById('legendModelExpo');
+const legendImage1 = document.getElementById('legendModel1');
+const legendImage2 = document.getElementById('legendModel2');
+const legendModelExpo = document.getElementById('legendModelExposure');
 
 // synop
 function clickHandler_synop(event_synop) {
@@ -3284,29 +3284,32 @@ let panelLayerLightninglists = document.querySelector('#panelLayer-Lightning-lis
 //
 let panelLayerRadarTitle = document.querySelector('#panelLayer-radar-Title')
 let panelLayerRadarlists = document.querySelector('#panelLayer-radar-lists')
-//
+
+//EXPOSURE
 let panelLayerExposureTitle = document.querySelector('#exposure-layers-Title')
 let panelLayerExposureLists = document.querySelector('#exposure-layers-lists')
 //
-// document.querySelectorAll('.leaflet-panel-layers-grouplabel').forEach(function(openModel) {
-//     console.log(openModel, "__openModel");
-//     openModel.onclick = () => {
-//         console.log("openModel working!!!");
-//         model.style.display = 'block';
-//     }
-// });
-//
 
+//METAR-METAR01UTC
+// let panelLayerMETAR01UTC_Title = document.querySelector('#METAR01UTC-Title')
+// let panelLayerMETAR01UTC_lists = document.querySelector('#METAR01UTC-lists')
+//METAR01UTC
+// let panelLayerMETAR01UTC_Title = document.querySelector('#METAR01UTC-Title')
+// let panelLayerMETAR01UTC_lists = document.querySelector('#METAR01UTC-lists')
 // 
+
 document.querySelectorAll('#popup').forEach(function(openModel) {
     console.log(openModel, "__openModel");
     openModel.onclick = () => {
         console.log("openModel working!!!");
         model.style.display = 'block';
+        //
         legendModel1.src = "";
         legendModel1.alt = "";
         legendModel1.style.height = 0;
         legendModel1.style.width = 0;
+
+        //
         legendModelExpo.src = "";
         legendModelExpo.alt = "";
         legendModelExpo.style.height = 0;
@@ -3334,15 +3337,9 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (panelLayerLightningTitle.innerHTML == '') {
                 panelLayerLightningTitle.innerHTML = _this.context._layer.group.name + ':';
-                legendModel1.src = "";
                 legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-                legendModel1.alt = "";
                 legendModel1.style.height = '35vh';
                 legendModel1.style.width = '72%';
-                // legendModelExpo.src = ""
-                // legendModelExpo.alt = ""
-                // legendModelExpo.style.height = 0;
-                // legendModelExpo.style.width = 0;
             }
 
             if (layer_name == 'Last 00-05 min') {
@@ -3370,9 +3367,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (_this.context._layer.group.name == "Radar Reflectivity") {
             if (panelLayerRadarTitle.innerHTML == '') {
                 panelLayerRadarTitle.innerHTML = _this.context._layer.group.name + ':'
-                legendModel1.src = "";
                 legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-                legendModel1.alt = "";
                 legendModel1.style.height = '35vh';
                 legendModel1.style.width = '72%';
             }
@@ -3394,7 +3389,6 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerExposureTitle.innerHTML == '') {
                 EXPOSURE.innerHTML = "EXPOSURE"
                 panelLayerExposureTitle.innerHTML = _this.context._layer.group.name + ':'
-                legendModelExpo.src = "";
                 legendModelExpo.src = 'http://103.215.208.18/dwr_img/GIS/legend/exp_legend2.PNG';
                 legendModelExpo.style.height = '35vh';
                 legendModelExpo.style.width = '72%';
@@ -3436,6 +3430,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //     }
         //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
         // }
+
 
     } else {
         console.log("Not Checked");
@@ -3479,10 +3474,6 @@ $("body").on("change", "input[type=checkbox]", function() {
         //
         if (panelLayerRadarlists.innerHTML == '') {
             panelLayerRadarTitle.innerHTML = '';
-            // legendModel1.src = "";
-            // legendModel1.alt = "";
-            // legendModel1.style.height = 0;
-            // legendModel1.style.width = 0;
         }
         //
 

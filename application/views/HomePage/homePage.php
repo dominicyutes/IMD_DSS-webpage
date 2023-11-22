@@ -179,26 +179,12 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                         <p id="exposure-layers-lists"></p>
                     </div>
                     <div class="col-7">
-                        <img id="legendModelExpo" alt="legendExpo" style="width: 72%; height: 35vh;" />
+                        <img id="legendModelExposure" alt="legendExpo" style="width: 72%; height: 35vh;" />
                     </div>
                 </div>
 
                 <!-- METAR -->
-                <!-- <div class="row">
-                    <div class="col-5">
-                        HomePage-Lightning
-                        <h4 id="METAR"></h4>
-                        METAR00UTC
-                        <h5 id="METAR00UTC-Title"></h5>
-                        <p id="METAR00UTC-lists"></p>
-                        METAR01UTC
-                        <h5 id="METAR01UTC-Title"></h5>
-                        <p id="METAR01UTC-lists"></p>
-                    </div>
-                    <div class="col-7">
-                        <img id="legendModelMetar" alt="legendMetar" style="width: 72%; height: 35vh;" />
-                    </div>
-                </div> -->
+
             </div>
         </div>
 
