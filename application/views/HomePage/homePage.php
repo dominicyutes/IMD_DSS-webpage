@@ -130,21 +130,65 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
         <!-- nav ends here -->
 
         <!-- LEAFLETJS -->
-        <div class="row">
-            <div class="col-9">
-                <div id="map"></div>
-            </div>
-            <div class="col-3">
-                <div class=" wrapper bar" onclick="toggleFunction()">
-                    <i class="gg-arrows-expand-right-alt"></i>
-                </div>
-                <div id="toggleImage">
-                    <img id="legend1" src="http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png" alt="legend"
-                        class="legend1" />
-                    <img id="legend2" src="http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png" alt="legend"
-                        class="legend2" />
-                </div>
+        <div class="mapAreaBg">
+            <div class="row optionsMap" style="display: contents;">
+                <span>
+                    <input type="radio" name="radioGroup" value="option1" id="radioOption1"> OBSERVATION
+                </span>
 
+                <span>
+                    <input type="radio" name="radioGroup" value="option2" id="radioOption2">
+                    FORECAST
+                </span>
+                <!-- // -->
+                <div>
+                    <label for="dropdown" class="dropdownLabel">Models:</label>
+                    <select id="dropdown" class="dropdownSelect" &nbsp;>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="Exposure">Exposure</option>
+                        <option value="Metar">Metar</option>
+                        <option value="Synop">Synop</option>
+                        <option value="Radar">Radar</option>
+                        <option value="Satellite">Satellite</option>
+                        <option value="Lightning">Lightning</option>
+                        <option value="Sounding">Sounding</option>
+                        <option value="Ship_And_Buoy">Ship And Buoy</option>
+                        <option value="Mesolscale">Mesolscale Forecast</option>
+                        <option value="Medium_Range">Medium Range</option>
+                    </select>
+                    <span>&nbsp;</span>
+
+                    <!-- Date -->
+                    <label for="dateInput" style="display: contents;">Select a Date:</label>
+                    <input type="date" id="dateInput" onchange="logSelectedDate()" class="date">
+                    <span>&nbsp;</span>
+
+                    <!-- TIME UTC -->
+                    <label for="timeInput" style="display: contents;">Select Time (UTC):</label>
+                    <input type="time" id="timeInput" onchange="logSelectedTime()" step="60" class="timeUTC">
+                    <span>&nbsp;</span>
+
+                    <!-- Submit -->
+                    <button id="submitButton" onclick="submitForm()" class="submitBtn btn btn-success">Submit</button>
+                </div>
+            </div>
+            </br>
+            <div class="row">
+                <div class="col-9">
+                    <div id="map"></div>
+                </div>
+                <div class="col-3">
+                    <div class=" wrapper bar" onclick="toggleFunction()">
+                        <i class="gg-arrows-expand-right-alt"></i>
+                    </div>
+                    <div id="toggleImage">
+                        <img id="legend1" src="http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png" alt="legend"
+                            class="legend1" />
+                        <img id="legend2" src="http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png" alt="legend"
+                            class="legend2" />
+                    </div>
+
+                </div>
             </div>
         </div>
 
@@ -155,7 +199,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
             <div class="model-body">
                 <span>&times;</span>
                 <h4>List Selected</h4>
-                <div class="row">
+                <div class="row" id="Light_RadarRow" style="display: none;">
                     <div class="col-5">
                         <!-- HomePage-Lightning -->
                         <h5 id="panelLayer-Lightning-Title"></h5>
@@ -171,7 +215,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                 </div>
 
                 <!-- Exposure -->
-                <div class="row">
+                <div class="row" id="ExposureRow" style="display: none;">
                     <div class="col-5">
                         <!-- HomePage-Lightning -->
                         <h4 id="EXPOSURE"></h4>
@@ -184,7 +228,21 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                 </div>
 
                 <!-- METAR -->
-
+                <div class="row" id="METAR_Row" style="display: none;">
+                    <div class="col-5">
+                        <!-- HomePage-Lightning -->
+                        <h4 id="METAR"></h4>
+                        <!-- METAR00UTC -->
+                        <h5 id="METAR00UTC-Title"></h5>
+                        <p id="METAR00UTC-lists"></p>
+                        <!-- METAR01UTC -->
+                        <!-- <h5 id="METAR01UTC-Title"></h5>
+                        <p id="METAR01UTC-lists"></p> -->
+                    </div>
+                    <div class="col-7">
+                        <img id="legendModelMetar" alt="legendMetar" style="width: 72%; height: 35vh;" />
+                    </div>
+                </div>
             </div>
         </div>
 

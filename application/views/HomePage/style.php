@@ -108,6 +108,32 @@ h5 {
     font-weight: 600;
 }
 
+//
+.mapAreaBg {
+    background-color: white;
+}
+
+.optionsMap {
+    height: 93vh;
+    width: 100%;
+}
+
+.dropdownSelect {
+    width: 20%;
+}
+
+.date {
+    width: 20%;
+}
+
+.timeUTC {
+    width: 20%;
+}
+
+.submitBtn {
+    width: 10%;
+}
+
 /* map starts here*/
 #map {
     height: 83vh;

@@ -99,6 +99,52 @@
 
 //nav button ends here
 
+
+let radioObservation = document.getElementById('radioOption1');
+let radioForecast = document.getElementById('radioOption2');
+
+radioObservation.addEventListener('change', function() {
+    console.log('Selected value:', this.value);
+});
+
+radioForecast.addEventListener('change', function() {
+    console.log('Selected value:', this.value);
+});
+
+//Dropdown_selection
+function logSelectedOption() {
+    // Get the dropdown element
+    let dropdown = document.getElementById('dropdown');
+
+    // Get the selected option
+    let selectedOption = dropdown.options[dropdown.selectedIndex];
+    console.log('Selected Model:', selectedOption);
+}
+//DATE
+function logSelectedDate() {
+    // Get the date input element
+    var dateInput = document.getElementById('dateInput');
+
+    // Get the selected date value
+    var selectedDate = dateInput.value;
+    console.log('Selected Date:', selectedDate);
+}
+//time UTC
+function logSelectedTime() {
+    // Get the time input element
+    var timeInput = document.getElementById('timeInput');
+
+    // Get the selected time in UTC format
+    var selectedTimeUTC = timeInput.value;
+    console.log('Selected Time (UTC):', selectedTimeUTC);
+}
+//submitForm
+function submitForm() {
+    logSelectedOption();
+    logSelectedDate();
+    logSelectedTime();
+}
+//
 function toggleFunction() {
     var x = document.getElementById("toggleImage");
     var toggleMap = document.getElementById("map");
@@ -371,6 +417,15 @@ SuratMarker.bindPopup("<b>Surat</b>").openPopup();
 var JodhpurMarker = L.marker([26.2389, 73.0243]);
 JodhpurMarker.bindPopup("<b>Jodhpur</b>").openPopup();
 
+// Add a marker for Kanpur
+var KanpurMarker = L.marker([26.4499, 80.3319]);
+KanpurMarker.bindPopup("<b>Kanpur</b>").openPopup();
+
+// Add a marker for Meerut
+var MeerutMarker = L.marker([28.6139, 77.2090]);
+MeerutMarker.bindPopup("<b>Meerut</b>").openPopup();
+
+
 //
 const overLayers = [{
         group: "Lightning",
@@ -425,7 +480,7 @@ var overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -471,7 +526,7 @@ var overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -517,7 +572,7 @@ var overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -563,7 +618,7 @@ var overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -609,7 +664,7 @@ var overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -655,7 +710,7 @@ var overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -701,7 +756,7 @@ var overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -747,7 +802,7 @@ var overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -797,23 +852,23 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: SuratMarker
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: JodhpurMarker
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: KanpurMarker
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: MeerutMarker
             },
 
         ]
@@ -824,12 +879,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -851,12 +906,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -878,12 +933,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -906,12 +961,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -933,12 +988,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -960,12 +1015,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -987,12 +1042,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1014,12 +1069,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1041,12 +1096,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1068,12 +1123,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1095,12 +1150,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1122,12 +1177,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1149,12 +1204,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1176,12 +1231,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1203,12 +1258,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1230,12 +1285,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1257,12 +1312,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1284,12 +1339,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1311,12 +1366,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1338,12 +1393,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1365,12 +1420,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1392,12 +1447,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -1419,12 +1474,12 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPRATURE",
+                name: "TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "DEW POINT TEMPRATURE",
+                name: "DEW POINT TEMPERATURE",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
@@ -2799,6 +2854,8 @@ var panelLayers11 = new L.Control.PanelLayers(baseMaps, overLayers11, {
 const legendImage1 = document.getElementById('legendModel1');
 const legendImage2 = document.getElementById('legendModel2');
 const legendModelExpo = document.getElementById('legendModelExposure');
+const legendModelMet = document.getElementById('legendModelMetar');
+
 
 // synop
 function clickHandler_synop(event_synop) {
@@ -2866,9 +2923,9 @@ function clickHandler_metar(event_metar) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
             targetElement_metar.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
@@ -2883,9 +2940,9 @@ function clickHandler_metar(event_metar) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers3);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/mmetar_time.png';
         }
 
@@ -2913,9 +2970,9 @@ function clickHandler_mesolscale(event_mesolscale) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
             targetElement_mesolscale.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
@@ -2960,9 +3017,9 @@ function clickHandler_medium(event_medium) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
             targetElement_medium.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
@@ -2977,9 +3034,9 @@ function clickHandler_medium(event_medium) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers5);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/model_123.png';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/date11_mslp.png';
         }
 
@@ -3007,9 +3064,9 @@ function clickHandler_satellite(event_satellite) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
             targetElement_satellite.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
@@ -3024,9 +3081,9 @@ function clickHandler_satellite(event_satellite) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers6);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/sat_nowcast.png';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/insat_windtime.png';
         }
 
@@ -3054,9 +3111,9 @@ function clickHandler_radar(event_radar) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
             targetElement_radar.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
@@ -3071,9 +3128,9 @@ function clickHandler_radar(event_radar) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers7);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/radar_nowcast.jpg';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         }
 
@@ -3195,9 +3252,9 @@ function clickHandler_expo(event_expo) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
             targetElement_expo.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
@@ -3212,9 +3269,9 @@ function clickHandler_expo(event_expo) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers10);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/exp_legend2.PNG';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/ddate.png';
         }
 
@@ -3291,8 +3348,8 @@ let panelLayerExposureLists = document.querySelector('#exposure-layers-lists')
 //
 
 //METAR-METAR01UTC
-// let panelLayerMETAR01UTC_Title = document.querySelector('#METAR01UTC-Title')
-// let panelLayerMETAR01UTC_lists = document.querySelector('#METAR01UTC-lists')
+let panelLayerMETAR00UTC_Title = document.querySelector('#METAR00UTC-Title')
+let panelLayerMETAR00UTC_lists = document.querySelector('#METAR00UTC-lists')
 //METAR01UTC
 // let panelLayerMETAR01UTC_Title = document.querySelector('#METAR01UTC-Title')
 // let panelLayerMETAR01UTC_lists = document.querySelector('#METAR01UTC-lists')
@@ -3309,17 +3366,27 @@ document.querySelectorAll('#popup').forEach(function(openModel) {
         legendModel1.style.height = 0;
         legendModel1.style.width = 0;
 
-        //
+        //EXPOSURE
         legendModelExpo.src = "";
         legendModelExpo.alt = "";
         legendModelExpo.style.height = 0;
         legendModelExpo.style.width = 0;
+
+        //METAR
+        legendModelMet.src = "";
+        legendModelMet.alt = "";
+        legendModelMet.style.height = 0;
+        legendModelMet.style.width = 0;
     }
 });
 //
 let clickedLightningLists = [];
 let clickedRadarLists = [];
 let clickedExposureLists = [];
+let clickedMETAR00UTCLists = [];
+// let clickedMETAR00UTC_DPT_lists = [];
+// let clickedMETAR00UTC_Visibility_lists = [];
+// let clickedMETAR00UTC_WSAD_lists = [];
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
@@ -3340,6 +3407,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
                 legendModel1.style.height = '35vh';
                 legendModel1.style.width = '72%';
+                Light_RadarRow.style.display = 'block';
             }
 
             if (layer_name == 'Last 00-05 min') {
@@ -3370,6 +3438,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
                 legendModel1.style.height = '35vh';
                 legendModel1.style.width = '72%';
+                Light_RadarRow.style.display = 'block';
             }
 
             if (layer_name == 'Radar Reflectivity') {
@@ -3392,6 +3461,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 legendModelExpo.src = 'http://103.215.208.18/dwr_img/GIS/legend/exp_legend2.PNG';
                 legendModelExpo.style.height = '35vh';
                 legendModelExpo.style.width = '72%';
+                ExposureRow.style.display = 'block';
             }
 
             if (layer_name == 'District Boundaries') {
@@ -3408,28 +3478,39 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //METAR
-        // if (_this.context._layer.group.name == "METAR 00UTC") {
-        //     if (panelLayerExposureTitle.innerHTML == '') {
-        //         METAR.innerHTML = "METAR"
-        //         panelLayerExposureTitle.innerHTML = _this.context._layer.group.name + ':'
-        //         legendModelExpo.src = "";
-        //         legendModelExpo.src = 'http://103.215.208.18/dwr_img/GIS/legend/exp_legend2.PNG';
-        //         legendModelExpo.style.height = '35vh';
-        //         legendModelExpo.style.width = '72%';
-        //     }
+        if (_this.context._layer.group.name == "METAR 00UTC") {
+            if (panelLayerMETAR00UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR00UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                legendModelMet.src = "";
+                legendModelMet.src = 'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
+                legendModelMet.style.height = '35vh';
+                legendModelMet.style.width = '72%';
+                METAR_Row.style.display = 'block';
+            }
 
-        //     if (layer_name == 'District Boundaries') {
-        //         clickedExposureLists.push(
-        //             `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-        //         );
-        //     }
-        //     if (layer_name == 'Airport') {
-        //         clickedExposureLists.push(
-        //             `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-        //         );
-        //     }
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        // }
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+        }
 
 
     } else {
@@ -3456,6 +3537,20 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
             map.removeLayer(bhopalMarker);
         }
+        //
+        if (panelLayerLightninglists.innerHTML == '') {
+            panelLayerLightningTitle.innerHTML = '';
+        }
+
+        ////GroupPanelLayer-collapsible
+        if (panelLayerLightninglists.innerHTML != '') {
+            var yy = document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+            // console.log(hhh, "yyjjjjjj");
+        }
+
+
+
         //Radar
         if (layer_name == 'Radar Reflectivity') {
             clickedRadarLists = clickedRadarLists.filter(checkList => checkList !=
@@ -3475,7 +3570,13 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (panelLayerRadarlists.innerHTML == '') {
             panelLayerRadarTitle.innerHTML = '';
         }
-        //
+
+        //GroupPanelLayer-collapsible
+        if (panelLayerRadarlists.innerHTML != '') {
+            var yyy = document.querySelectorAll('.collapsible')[1].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[1].innerHTML = '-';
+            console.log(yyy);
+        }
 
         //
         if (panelLayerLightninglists.innerHTML == '' && panelLayerRadarlists.innerHTML == '') {
@@ -3484,8 +3585,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             legendModel1.alt = "";
             legendModel1.style.height = 0;
             legendModel1.style.width = 0;
+            Light_RadarRow.style.display = 'none';
         }
-        //
+
 
         //Exposure
         if (layer_name == 'District Boundaries') {
@@ -3503,6 +3605,8 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(MumbaiMarker);
         }
         //
+
+        //
         if (panelLayerExposureLists.innerHTML == '') {
             panelLayerExposureTitle.innerHTML = '';
             EXPOSURE.innerHTML = '';
@@ -3510,19 +3614,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             legendModelExpo.alt = "";
             legendModelExpo.style.height = 0;
             legendModelExpo.style.width = 0;
+            ExposureRow.style.display = 'none';
+
         }
-        console.log(layer_name, "layer_name")
-        //
-        if (panelLayerLightninglists.innerHTML != '') {
-            var yy = document.querySelectorAll('.collapsible')[0].classList.add('expanded');
-            console.log(yy, "yy");
-        }
-        //
-        if (panelLayerRadarlists.innerHTML != '') {
-            var yyy = document.querySelectorAll('.collapsible')[1].classList.add('expanded');
+        console.log(layer_name, "layer_name");
+
+        //GroupPanelLayer-collapsible-Exposure
+        if (panelLayerExposureLists.innerHTML != '') {
+            var yyy = document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
             console.log(yyy);
         }
+
         //
+        METAR
+        if (layer_name == 'TEMPERATURE') {
+            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            );
+            console.log(layer_name, "layer_name TEMP");
+            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (layer_name == 'DEW POINT TEMPERATURE') {
+            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            );
+            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (layer_name == 'VISIBILITY') {
+            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            );
+            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (layer_name == 'WIND SPEED AND DIRECTION') {
+            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            );
+            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+        //
+
+        //
+        if (panelLayerMETAR00UTC_lists.innerHTML == '') {
+            panelLayerMETAR00UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+            legendModelMet.src = "";
+            legendModelMet.alt = "";
+            legendModelMet.style.height = 0;
+            legendModelMet.style.width = 0;
+            METAR_Row.style.display = 'block';
+        }
+        console.log(layer_name, "layer_name");
+
+        //GroupPanelLayer-collapsible-METAR00UTC
+        if (panelLayerMETAR00UTC_lists.innerHTML != '') {
+            var yyy = document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+            console.log(yyy);
+        }
+
     }
 });
 //
