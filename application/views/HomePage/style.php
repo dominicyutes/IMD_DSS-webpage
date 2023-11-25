@@ -28,37 +28,9 @@ nav {
     width: 100%;
 }
 
-/* .nav-heading {
-    width: 100%;
-    min-height: 1px;
-    padding: 16px 15px 1% 15px;
-} */
-
-/* .nav-sub-heading-1 {
-    font-size: 27px;
-    line-height: normal;
-} */
-
-/* .nav-sub-heading-2 {
-    color: #302f2e;
-    justify-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: 4px;
-} */
-
 .span_bold {
     font-weight: 600 !important;
 }
-
-/* h3,
-h4,
-h5 {
-    margin-top: 3px;
-    margin-bottom: 3px;
-    font-weight: 700;
-    line-height: 1.1;
-} */
 
 /* nav start here */
 
@@ -108,6 +80,12 @@ h5 {
     font-weight: 600;
 }
 
+/*  */
+._btn_obs {
+    background-color: black;
+    color: #ffffff;
+}
+
 //
 .mapAreaBg {
     background-color: white;
@@ -138,7 +116,7 @@ h5 {
 #map {
     height: 83vh;
     width: 95%;
-    border: 2px solid white;
+    border: 2px solid #646464;
     margin: 0 5px 0 7px;
     position: relative;
     float: left;
@@ -179,7 +157,7 @@ h5 {
     height: 25vh;
     margin: 7px 6px 0px 0px;
     float: right;
-    border: 2px solid white;
+    border: 2px solid #646464;
 }
 
 /* legendexpand button STARTS*/

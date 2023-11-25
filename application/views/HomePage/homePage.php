@@ -130,31 +130,29 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
         <!-- nav ends here -->
 
         <!-- LEAFLETJS -->
-        <div class="mapAreaBg">
+        <div class="mapAreaBg" style="background-color: #f6f6f6;">
             <div class="row optionsMap" style="display: contents;">
-                <span>
-                    <input type="radio" name="radioGroup" value="option1" id="radioOption1"> OBSERVATION
-                </span>
 
-                <span>
-                    <input type="radio" name="radioGroup" value="option2" id="radioOption2">
-                    FORECAST
-                </span>
+                <!-- <span>
+                    <button id="obsToggle" onclick="obs_sub()" class="_btn_obs">OBSERVATION</button>
+                    <button id="observationToggle" onclick="obs_sub()" class="_btn_obs">OBSERVATION</button>
+
+                </span> -->
                 <!-- // -->
                 <div>
                     <label for="dropdown" class="dropdownLabel">Models:</label>
                     <select id="dropdown" class="dropdownSelect" &nbsp;>
                         <option disabled selected value> -- select an option -- </option>
-                        <option value="Exposure">Exposure</option>
-                        <option value="Metar">Metar</option>
-                        <option value="Synop">Synop</option>
-                        <option value="Radar">Radar</option>
-                        <option value="Satellite">Satellite</option>
-                        <option value="Lightning">Lightning</option>
-                        <option value="Sounding">Sounding</option>
+                        <option value="GFS">GFS</option>
+                        <option value="NCUM">NCUM</option>
+                        <option value="NEPS">NEPS</option>
+                        <option value="WRF">WRF</option>
+                        <option value="GEFS">GEFS</option>
+                        <option value="ECMWF">ECMWF</option>
+                        <!--<option value="Sounding">Sounding</option>
                         <option value="Ship_And_Buoy">Ship And Buoy</option>
                         <option value="Mesolscale">Mesolscale Forecast</option>
-                        <option value="Medium_Range">Medium Range</option>
+                        <option value="Medium_Range">Medium Range</option> -->
                     </select>
                     <span>&nbsp;</span>
 

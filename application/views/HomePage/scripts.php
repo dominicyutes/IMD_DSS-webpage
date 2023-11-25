@@ -99,17 +99,25 @@
 
 //nav button ends here
 
+// function obs_sub() {
+//     let obsToggleBtn = document.getElementById('observationToggle');
+//     obsToggleBtn.classList.toggle('_btn_obs');
+//     console.log('Selected value:', obsToggleBtn.innerHTML);
+// }
 
-let radioObservation = document.getElementById('radioOption1');
-let radioForecast = document.getElementById('radioOption2');
+// document.getElementById("parent").addEventListener("click", function(e) {
+// const targetElement = e.target;
+// const currentColor = targetElement.style.backgroundColor;
+// console.log(e);
+// console.log(e.target);
+// console.log(e.target.id);
+// });
 
-radioObservation.addEventListener('change', function() {
-    console.log('Selected value:', this.value);
-});
+// let radioObservation = document.getElementById('observation');
 
-radioForecast.addEventListener('change', function() {
-    console.log('Selected value:', this.value);
-});
+// radioObservation.addEventListener('change', function() {
+//     console.log('Selected value:', this.value);
+// });
 
 //Dropdown_selection
 function logSelectedOption() {
@@ -3614,7 +3622,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             legendModelExpo.alt = "";
             legendModelExpo.style.height = 0;
             legendModelExpo.style.width = 0;
-            ExposureRow.style.display = 'none';
+            ExposureRow.style.display = 'flex';
 
         }
         console.log(layer_name, "layer_name");
