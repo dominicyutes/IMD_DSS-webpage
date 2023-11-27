@@ -97,46 +97,152 @@
 
 // });
 
-//nav button ends here
+let modelNamesArr = ["", 'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship And Buoy'];
 
-// function obs_sub() {
-//     let obsToggleBtn = document.getElementById('observationToggle');
-//     obsToggleBtn.classList.toggle('_btn_obs');
-//     console.log('Selected value:', obsToggleBtn.innerHTML);
-// }
+//metarParameters
+let metarParameters = ['Metar 00UTC', 'Metar 01UTC', 'Metar 02UTC', 'Metar 03UTC', 'Metar 04UTC', 'Metar 05UTC',
+    'Metar 06UTC',
+    'Metar 07UTC', 'Metar 08UTC', 'Metar 09UTC', 'Metar 10UTC', 'Metar 11UTC', 'Metar 12UTC', 'Metar 13UTC',
+    'Metar 14UTC', 'Metar 15UTC', 'Metar 16UTC', 'Metar 17UTC', 'Metar 18UTC', 'Metar 19UTC', 'Metar 20UTC',
+    'Metar 21UTC', 'Metar 22UTC', 'Metar 23UTC'
+];
 
-// document.getElementById("parent").addEventListener("click", function(e) {
-// const targetElement = e.target;
-// const currentColor = targetElement.style.backgroundColor;
-// console.log(e);
-// console.log(e.target);
-// console.log(e.target.id);
-// });
+//metarParametersList
+let Metar_00UTC = ['Temperature_00', 'Dew Point temperature_00', 'Visibility_00', 'Wind Speed And Direction_00'];
 
-// let radioObservation = document.getElementById('observation');
+let Metar_01UTC = ['Temperature_01', 'Dew Point temperature_02', 'Visibility_02', 'Wind Speed And Direction_02'];
 
-// radioObservation.addEventListener('change', function() {
-//     console.log('Selected value:', this.value);
-// });
+let Metar_02UTC = ['Temperature_02', 'Dew Point temperature_02', 'Visibility_02', 'Wind Speed And Direction_02'];
+
+let Metar_03UTC = ['Temperature_03', 'Dew Point temperature_03', 'Visibility_03', 'Wind Speed And Direction_03'];
+
+let Metar_04UTC = ['Temperature_04', 'Dew Point temperature_04', 'Visibility_04', 'Wind Speed And Direction_04'];
+
+let Metar_05UTC = ['Temperature_05', 'Dew Point temperature_05', 'Visibility_05', 'Wind Speed And Direction_05'];
+
+let Metar_06UTC = ['Temperature_06', 'Dew Point temperature_06', 'Visibility_06', 'Wind Speed And Direction_06'];
+
+let Metar_07UTC = ['Temperature_07', 'Dew Point temperature_07', 'Visibility_07', 'Wind Speed And Direction_07'];
+
+let Metar_08UTC = ['Temperature_08', 'Dew Point temperature_08', 'Visibility_08', 'Wind Speed And Direction_08'];
+
+let Metar_09UTC = ['Temperature_09', 'Dew Point temperature_09', 'Visibility_09', 'Wind Speed And Direction_09'];
+
+let Metar_10UTC = ['Temperature_10', 'Dew Point temperature_10', 'Visibility_10', 'Wind Speed And Direction_10'];
+
+let Metar_11UTC = ['Temperature_11', 'Dew Point temperature_11', 'Visibility_11', 'Wind Speed And Direction_11'];
+
+let Metar_12UTC = ['Temperature_12', 'Dew Point temperature_12', 'Visibility_12', 'Wind Speed And Direction_12'];
+
+let Metar_13UTC = ['Temperature_13', 'Dew Point temperature_13', 'Visibility_13', 'Wind Speed And Direction_13'];
+
+let Metar_14UTC = ['Temperature_14', 'Dew Point temperature_14', 'Visibility_14', 'Wind Speed And Direction_14'];
+
+let Metar_15UTC = ['Temperature_15', 'Dew Point temperature_15', 'Visibility_15', 'Wind Speed And Direction_15'];
+
+let Metar_16UTC = ['Temperature_16', 'Dew Point temperature_16', 'Visibility_16', 'Wind Speed And Direction_16'];
+
+let Metar_17UTC = ['Temperature_17', 'Dew Point temperature_17', 'Visibility_17', 'Wind Speed And Direction_17'];
+
+let Metar_18UTC = ['Temperature_18', 'Dew Point temperature_18', 'Visibility_18', 'Wind Speed And Direction_18'];
+
+let Metar_19UTC = ['Temperature_19', 'Dew Point temperature_19', 'Visibility_19', 'Wind Speed And Direction_19'];
+
+let Metar_20UTC = ['Temperature_20', 'Dew Point temperature_20', 'Visibility_20', 'Wind Speed And Direction_20'];
+
+let Metar_21UTC = ['Temperature_21', 'Dew Point temperature_21', 'Visibility_21', 'Wind Speed And Direction_21'];
+
+let Metar_22UTC = ['Temperature_22', 'Dew Point temperature_22', 'Visibility_22', 'Wind Speed And Direction_22'];
+
+let Metar_23UTC = ['Temperature_23', 'Dew Point temperature_23', 'Visibility_23', 'Wind Speed And Direction_23'];
+//
+
+//SynopParameters
+let synopParameters = ['Synop 00UTC', 'Synop 03UTC', 'Synop 06UTC', 'Synop 09UTC', 'Synop 12UTC', 'Synop 15UTC',
+    'Synop 18UTC', 'Synop 21UTC'
+];
+
+//SynopParametersList
+let Synop_00UTC = ['Temperature_00', 'Mean Sealevel Pressure_00', 'Cloud Cover_00', 'Geopotential Height_00',
+    'Relative Humidity_00',
+    'Visibility_00', 'Wind Speed And Direction_00', '3h Rainfall_00'
+];
+
+let Synop_03UTC = ['Temperature_03', 'Mean Sealevel Pressure_03', 'Cloud Cover_03', 'Geopotential Height_03',
+    'Relative Humidity_03',
+    'Visibility_03', 'Wind Speed And Direction_03', '3h Rainfall_03'
+];
+
+let Synop_06UTC = ['Temperature_06', 'Mean Sealevel Pressure_06', 'Cloud Cover_06', 'Geopotential Height_06',
+    'Relative Humidity_06',
+    'Visibility_06', 'Wind Speed And Direction_06', '3h Rainfall_06'
+];
+
+let Synop_09UTC = ['Temperature_09', 'Mean Sealevel Pressure_09', 'Cloud Cover_09', 'Geopotential Height_09',
+    'Relative Humidity_09',
+    'Visibility_09', 'Wind Speed And Direction_09', '3h Rainfall_09'
+];
+
+let Synop_12UTC = ['Temperature_12', 'Mean Sealevel Pressure_12', 'Cloud Cover_12', 'Geopotential Height_12',
+    'Relative Humidity_12',
+    'Visibility_12', 'Wind Speed And Direction_12', '3h Rainfall_12'
+];
+
+let Synop_15UTC = ['Temperature_15', 'Mean Sealevel Pressure_15', 'Cloud Cover_15', 'Geopotential Height_15',
+    'Relative Humidity_15',
+    'Visibility_15', 'Wind Speed And Direction_15', '3h Rainfall_15'
+];
+
+let Synop_18UTC = ['Temperature_18', 'Mean Sealevel Pressure_18', 'Cloud Cover_18', 'Geopotential Height_18',
+    'Relative Humidity_18',
+    'Visibility_18', 'Wind Speed And Direction_18', '3h Rainfall_18'
+];
+
+let Synop_21UTC = ['Temperature_21', 'Mean Sealevel Pressure_21', 'Cloud Cover_21', 'Geopotential Height_21',
+    'Relative Humidity_21',
+    'Visibility_21', 'Wind Speed And Direction_21', '3h Rainfall_21'
+];
+
+//ModelNames-Dropdown
+let getModelNames = document.getElementById("modelNames");
+let pushModelNames = '';
+for (let i = 0; i < modelNamesArr.length; i++) {
+    pushModelNames += `<option class="test">${modelNamesArr[i]}</option><br/><br/>`;
+}
+getModelNames.innerHTML = pushModelNames;
 
 //Dropdown_selection
-function logSelectedOption() {
-    // Get the dropdown element
-    let dropdown = document.getElementById('dropdown');
+// function dd_source() {
+//     // Get the dropdown element
+//     let dd_source = document.getElementById('source');
+//     if (dd_source == 'metar') {
 
-    // Get the selected option
-    let selectedOption = dropdown.options[dropdown.selectedIndex];
-    console.log('Selected Model:', selectedOption);
-}
+
+//     } else if (dd_source == 'synop') {
+
+//     } else {
+
+//     }
+// }
 //DATE
-function logSelectedDate() {
+function startDate() {
     // Get the date input element
-    var dateInput = document.getElementById('dateInput');
+    var dateInput = document.getElementById('start_date');
 
     // Get the selected date value
-    var selectedDate = dateInput.value;
-    console.log('Selected Date:', selectedDate);
+    var selectedStart_Date = dateInput.value;
+    console.log('selectedStart_Date:', selectedStart_Date);
 }
+
+function endDate() {
+    // Get the date input element
+    var dateInput = document.getElementById('end_Date');
+
+    // Get the selected date value
+    var selectedEnd_Date = dateInput.value;
+    console.log('selectedEnd_Date:', selectedEnd_Date);
+}
+
 //time UTC
 function logSelectedTime() {
     // Get the time input element
@@ -146,13 +252,32 @@ function logSelectedTime() {
     var selectedTimeUTC = timeInput.value;
     console.log('Selected Time (UTC):', selectedTimeUTC);
 }
+
 //submitForm
 function submitForm() {
-    logSelectedOption();
-    logSelectedDate();
-    logSelectedTime();
+    let source = document.getElementById('source');
+    let parameter = document.getElementById('parameter');
+    let subparameter = document.getElementById('subparameter');
+    let start_date = document.getElementById('start_date');
+    let end_date = document.getElementById('end_date');
+    let timeInput = document.getElementById('timeInput');
+
+    console.log('source:', source,
+        'parameter:', parameter,
+        'subparameter:', subparameter,
+        'start_date:', start_date,
+        'end_date:', end_date,
+        'timeInput:', timeInput);
 }
 //
+
+//toggleObservation
+function toggleObservation() {
+    var observationContainerFn = document.getElementById("ObservationContainer");
+    observationContainerFn.classList.toggle("hidden");
+}
+
+//toggleFunction for legend
 function toggleFunction() {
     var x = document.getElementById("toggleImage");
     var toggleMap = document.getElementById("map");
@@ -2825,7 +2950,7 @@ var overLayers11 = [{
 
 var panelLayers2 = new L.Control.PanelLayers(baseMaps, overLayers2, {
     collapsibleGroups: true,
-    collapsed: true
+    // collapsed: true
 });
 
 var panelLayers3 = new L.Control.PanelLayers(baseMaps, overLayers3, {
@@ -2884,9 +3009,9 @@ function clickHandler_synop(event_synop) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
             targetElement_synop.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
@@ -2901,9 +3026,9 @@ function clickHandler_synop(event_synop) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers2);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/synop_nowcast.jpg';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/synop_time.png';
         }
 
@@ -3166,9 +3291,9 @@ function clickHandler_lightning(event_lightning) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
             targetElement_lightning.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
@@ -3183,9 +3308,9 @@ function clickHandler_lightning(event_lightning) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers8);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/light_nowcast.jpg';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/light_time.png';
         }
 
@@ -3213,9 +3338,9 @@ function clickHandler_sounding(event_sounding) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
             targetElement_sounding.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
@@ -3230,9 +3355,9 @@ function clickHandler_sounding(event_sounding) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers9);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/sounding_nowcast.jpg';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/temp12_time.png';
         }
 
@@ -3308,9 +3433,9 @@ function clickHandler_ship(event_ship) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
             targetElement_ship.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
@@ -3325,9 +3450,9 @@ function clickHandler_ship(event_ship) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers10);
             map.addControl(panelLayers11);
-            legendImage1.src =
+            legend1.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/exp_legend2.PNG';
-            legendImage2.src =
+            legend2.src =
                 'http://103.215.208.18/dwr_img/GIS/legend/ship_time.png';
         }
 

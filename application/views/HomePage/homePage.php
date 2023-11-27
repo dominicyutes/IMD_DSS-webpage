@@ -121,7 +121,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <button class="btn-val" id="lightning">LIGHTNING</button>
                     <button class="btn-val" id="sounding">SOUNDING</button>
                     <button class="btn-val" id="ship_and_buoy">SHIP AND BUOY</button>
-                    <button class="btn-val" id="mesolscale">MESOLSCALE FORECAST</button>
+                    <button class="btn-val" id="mesolscale">MESOSCALE FORECAST</button>
                     <button class="btn-val" id="medium_range">MEDIUM RANGE</button>
                     <button class="btn-val" id="export_polygon">EXPORT POLYGON</button>
                 </div>
@@ -129,45 +129,57 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
         </div>
         <!-- nav ends here -->
 
-        <!-- LEAFLETJS -->
+        <!--Observation BTN , LEAFLETJS -->
         <div class="mapAreaBg" style="background-color: #f6f6f6;">
             <div class="row optionsMap" style="display: contents;">
 
-                <!-- <span>
-                    <button id="obsToggle" onclick="obs_sub()" class="_btn_obs">OBSERVATION</button>
-                    <button id="observationToggle" onclick="obs_sub()" class="_btn_obs">OBSERVATION</button>
-
-                </span> -->
-                <!-- // -->
                 <div>
-                    <label for="dropdown" class="dropdownLabel">Models:</label>
-                    <select id="dropdown" class="dropdownSelect" &nbsp;>
-                        <option disabled selected value> -- select an option -- </option>
-                        <option value="GFS">GFS</option>
-                        <option value="NCUM">NCUM</option>
-                        <option value="NEPS">NEPS</option>
-                        <option value="WRF">WRF</option>
-                        <option value="GEFS">GEFS</option>
-                        <option value="ECMWF">ECMWF</option>
-                        <!--<option value="Sounding">Sounding</option>
-                        <option value="Ship_And_Buoy">Ship And Buoy</option>
-                        <option value="Mesolscale">Mesolscale Forecast</option>
-                        <option value="Medium_Range">Medium Range</option> -->
-                    </select>
-                    <span>&nbsp;</span>
+                    <button id="observationBtn" onclick="toggleObservation()">OBSERVATION</button>
 
-                    <!-- Date -->
-                    <label for="dateInput" style="display: contents;">Select a Date:</label>
-                    <input type="date" id="dateInput" onchange="logSelectedDate()" class="date">
-                    <span>&nbsp;</span>
+                    <!-- // -->
+                    <div id="ObservationContainer" class="hidden">
 
-                    <!-- TIME UTC -->
-                    <label for="timeInput" style="display: contents;">Select Time (UTC):</label>
-                    <input type="time" id="timeInput" onchange="logSelectedTime()" step="60" class="timeUTC">
-                    <span>&nbsp;</span>
+                        <label for="modelNames" class="dropdownLabel">Model:</label>
+                        <select id="modelNames" onchange="dd_source()" class="dropdownSelect" &nbsp;>
+                            <option disabled selected value> -- select an option -- </option>
+                        </select>
+                        <span>&nbsp;</span>
 
-                    <!-- Submit -->
-                    <button id="submitButton" onclick="submitForm()" class="submitBtn btn btn-success">Submit</button>
+                        <label for="parameter" class="dropdownLabel">parameter:</label>
+                        <select id="parameter" class="dropdownSelect" &nbsp;>
+                            <option disabled selected value> -- select an option -- </option>
+                            <option value="GFS">Dummy1</option>
+                            <option value="NCUM">Dummy2</option>
+                        </select>
+                        <span>&nbsp;</span>
+
+                        <label for="subparameter" class="dropdownLabel">SubParameter</label>
+                        <select id="subparameter" class="dropdownSelect" &nbsp;>
+                            <option disabled selected value> -- select an option -- </option>
+                            <option value="GFS">SubParameter1</option>
+                            <option value="NCUM">SubParameter2</option>
+                        </select>
+                        <span>&nbsp;</span>
+
+                        <!-- Date -->
+                        <label for="start_date" style="display: contents;">Start Date:</label>
+                        <input type="date" id="start_date" onchange="logSelectedDate()" class="date">
+                        <span>&nbsp;</span>
+
+                        <label for="end_date" style="display: contents;">End Date:</label>
+                        <input type="date" id="end_date" onchange="logSelectedDate()" class="date">
+                        <span>&nbsp;</span>
+
+                        <!-- TIME UTC -->
+                        <label for="timeInput" style="display: contents;">Select Time (UTC):</label>
+                        <input type="time" id="timeInput" onchange="logSelectedTime()" step="60" class="timeUTC">
+                        <span>&nbsp;</span>
+
+                        <!-- Submit -->
+                        <button id="submitButton" onclick="submitForm()"
+                            class="submitBtn btn btn-success">Submit</button>
+                    </div>
+                    <!-- // -->
                 </div>
             </div>
             </br>

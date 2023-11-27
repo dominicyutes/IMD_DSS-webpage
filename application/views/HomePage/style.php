@@ -82,11 +82,52 @@ nav {
 
 /*  */
 ._btn_obs {
-    background-color: black;
-    color: #ffffff;
+    background-color: rgb(240, 240, 240);
+    color: black;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 2px;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    font-weight: 500;
+    margin-bottom: 5px;
 }
 
-//
+._btn_obs:hover {
+    box-shadow: 5px 5px 10px #aaa;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 2px;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+}
+
+/*  */
+#toggleButton {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+.additionalButtons {
+    display: none;
+}
+
+/* observationToggle */
+.hidden {
+    display: none;
+}
+
+/*  */
 .mapAreaBg {
     background-color: white;
 }
