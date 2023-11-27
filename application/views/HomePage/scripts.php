@@ -202,6 +202,81 @@ let Synop_21UTC = ['Temperature_21', 'Mean Sealevel Pressure_21', 'Cloud Cover_2
     'Relative Humidity_21',
     'Visibility_21', 'Wind Speed And Direction_21', '3h Rainfall_21'
 ];
+//
+
+//RadarParameters
+let radarParameters = ['Radar Products'];
+
+//RadarParametersList
+let Radar_Products = ['Radar Reflectivity', 'Radar Animation'];
+//
+
+//SatelliteParameters
+let SatelliteParameters = ['Satellite Observation'];
+
+//SatelliteParametersLists
+let SatelliteObservation = ['TIR1', 'VIS', 'CTBT', 'Low Level Convergence', 'Upper Level Convergence',
+    'MID Level Shear',
+    'Vorticity at 200hPa', 'Vorticity at 500hPa', 'Vorticity at 700hPa', 'Vorticity at 850hPa'
+];
+//
+
+//LightningParameters
+let LightningParameter = ['Lightning'];
+
+//LightningParametersLists
+let LightningList = ['Last 00-05 min', 'Last 05-10 min', 'Last 10-15 min', 'ILDN Last 05 min', 'Nowcast Alert'];
+//
+
+//SoundingParameters
+let SoundingParameters = ['Sounding_00 UTC Wind', 'Sounding_12 UTC Wind', 'Sounding_00 UTC Temp',
+    'Sounding_12 UTC Temp', 'Sounding_00 UTC Dew Point', 'Sounding_12 UTC Dew Point'
+];
+
+//SoundingParametersLists
+let Sounding_00UTC_Wind = ['1000 hpa Wind_00', '850 hpa Wind_00', '700 hpa Wind_00', '500 hpa Wind_00',
+    '300 hpa Wind_00',
+    '200 hpa Wind_00', '100 hpa Wind_00', '50 hpa Wind_00',
+];
+
+let Sounding_12UTC_Windr = ['1000 hpa Wind_12', '850 hpa Wind_12', '700 hpa Wind_12', '500 hpa Wind_12',
+    '300 hpa Wind_12',
+    '200 hpa Wind_12', '100 hpa Wind_12', '50 hpa Wind_12',
+];
+
+let Sounding_00UTC_Temp = ['1000 hpa Temp_00', '850 hpa Temp_00', '700 hpa Temp_00', '500 hpa Temp_00',
+    '300 hpa Temp_00',
+    '200 hpa Temp_00', '100 hpa Temp_00', '50 hpa Temp_00',
+];
+
+let Sounding_12UTC_Temp = ['1000 hpa Temp_12', '850 hpa Temp_12', '700 hpa Temp_12', '500 hpa Temp_12',
+    '300 hpa Temp_12',
+    '200 hpa Temp_12', '100 hpa Temp_12', '50 hpa Temp_12',
+];
+
+let Sounding_00UTC_DewPoint = ['1000 hpa DewPoint_00', '850 hpa DewPoint_00', '700 hpa DewPoint_00',
+    '500 hpa DewPoint_00',
+    '300 hpa DewPoint_00',
+    '200 hpa DewPoint_00', '100 hpa DewPoint_00', '50 hpa DewPoint_00',
+];
+
+let Sounding_12UTC_DewPoint = ['1000 hpa DewPoint_12', '850 hpa DewPoint_12', '700 hpa DewPoint_12',
+    '500 hpa DewPoint_12',
+    '300 hpa DewPoint_12',
+    '200 hpa DewPoint_12', '100 hpa DewPoint_12', '50 hpa DewPoint_12',
+];
+//
+
+//Ship&BuoyParameters
+let ShipBuoyParameters = ['Ship And Buoy Observation'];
+
+//Ship&BuoyParametersLists
+let ShipAndBuoyObservation = ['00UTC', '01UTC', '02UTC', '03UTC', '04UTC', '05UTC', '06UTC', '07UTC', '08UTC', '09UTC',
+    '10UTC',
+    '11UTC', '12UTC', '13UTC', '14UTC', '15UTC', '16UTC', '17UTC', '18UTC', '19UTC', '20UTC', '21UTC', '22UTC',
+    '23UTC'
+];
+//
 
 //ModelNames-Dropdown
 let getModelNames = document.getElementById("modelNames");
