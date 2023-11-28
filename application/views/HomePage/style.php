@@ -145,7 +145,7 @@ nav {
 
 /* map starts here*/
 #map {
-    height: 83vh;
+    height: 120vh;
     width: 96%;
     border: 2px solid #646464;
     margin: 0 5px 15px 25px;

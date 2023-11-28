@@ -4963,11 +4963,11 @@
                     );
                 }
                 if (layer_name === 'Socio Economic Zone') {
-    clickedExposureLists.push(
-        `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
-        <img src="img/socio_economic_zone.jpeg" width="20" height="20" /><br>`
-    );
-}
+                    clickedExposureLists.push(
+                        `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
+                         <img src="img/socio_economic_zone.jpeg" width="20" height="20" /><br>`
+                    );
+                }
 
                 if (layer_name == 'Road Network') {
                     clickedExposureLists.push(
