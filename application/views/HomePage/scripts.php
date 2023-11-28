@@ -4913,11 +4913,10 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'District Boundaries') {
                 clickedExposureLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 12px; 
-                    height: 12px;
-                    border-radius: 50%; 
-                    border: 2px solid black; 
-                    background-color: black;
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 30px; 
+      height: 1px; 
+      border-bottom: 2px dashed #000;
+
                     display: inline-block;"></span><br>`
                 );
             }
