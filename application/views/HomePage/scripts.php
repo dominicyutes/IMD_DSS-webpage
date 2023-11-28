@@ -4964,12 +4964,8 @@
                 }
                 if (layer_name == 'Socio Economic Zone') {
                     clickedExposureLists.push(
-                        `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 12px; 
-                    height: 12px;
-                    border-radius: 25%; 
-                    border: 2px solid black; 
-                    background-color: red;
-                    display: inline-block;"></span><br>`
+                        `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
+                        <img src="img\socio_economic_zone.jpeg" width="20" height="20" /><br>`
                     );
                 }
                 if (layer_name == 'Road Network') {
