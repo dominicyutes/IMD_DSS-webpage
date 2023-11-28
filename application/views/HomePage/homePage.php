@@ -151,20 +151,20 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     }
 
     .exp_poly {
-        color: #fff;
+        color: #163159;
     }
 
     .expo-polygon-parent {
         border: none;
         padding: 0;
-        background-color: #00aa55;
+        background-color: #e0dfdf;
         cursor: pointer;
         font: inherit;
         outline: inherit;
     }
 
     .expo-polygon-parent:hover {
-        background-color: black;
+        background-color: #ced0cf;
     }
 
     @keyframes loadingAnimation {
@@ -281,7 +281,8 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                         <div class="underline"></div>
                     </button>
                     <button class="d-flex btn" style="flex-direction:column;">
-                        <p class="btn-val" id="medium_range export_polygon" onclick="toggleObservation()">Observation</p>
+                        <p class="btn-val" id="medium_range export_polygon" onclick="toggleObservation()">Observation
+                        </p>
                         <div class="underline"></div>
                     </button>
                 </div>
@@ -306,60 +307,60 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
     <!--Observation BTN , LEAFLETJS -->
     <!-- <div class="mapAreaBg mx-auto" style="width:97%;"> -->
-        <div id="ObservationContainer" class="hidden">
-            <!-- model -->
-            <div>
-                <label for="modelNames" class="dropdownLabel">Model:</label>
-                <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
-                </select>
-                <span>&nbsp;</span>
-                <!-- parameter -->
-                <label for="parameter" class="dropdownLabel">parameter:</label>
-                <select class="secondDD" id="parameterNames" class="dropdownSelect"
-                    onchange="showSubParameterNames(this.value)" &nbsp;>
-                </select>
-                <span>&nbsp;</span>
-                <!-- SubParameter -->
-                <label for="subparameter" class="dropdownLabel">SubParameter</label>
-                <select class="thirdDD" id="subparameter" class="dropdownSelect" &nbsp;>
-                    <!-- <option disabled selected value> -- select an option -- </option>
+    <div id="ObservationContainer" class="hidden">
+        <!-- model -->
+        <div>
+            <label for="modelNames" class="dropdownLabel">Model:</label>
+            <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
+            </select>
+            <span>&nbsp;</span>
+            <!-- parameter -->
+            <label for="parameter" class="dropdownLabel">parameter:</label>
+            <select class="secondDD" id="parameterNames" class="dropdownSelect"
+                onchange="showSubParameterNames(this.value)" &nbsp;>
+            </select>
+            <span>&nbsp;</span>
+            <!-- SubParameter -->
+            <label for="subparameter" class="dropdownLabel">SubParameter</label>
+            <select class="thirdDD" id="subparameter" class="dropdownSelect" &nbsp;>
+                <!-- <option disabled selected value> -- select an option -- </option>
                     <option value="GFS">SubParameter1</option>
                     <option value="NCUM">SubParameter2</option> -->
-                </select>
-                <span>&nbsp;</span>
-            </div>
-
-            <div>
-                <!-- Date -->
-                <label for="start_date" style="display: contents;">Start Date:</label>
-                <input type="date" id="start_date" onchange="logSelectedDate()" class="dateDD">
-                <span>&nbsp;</span>
-
-                <label for="end_date" style="display: contents;">End Date:</label>
-                <input type="date" id="end_date" onchange="logSelectedDate()" class="dateDD">
-                <span>&nbsp;</span>
-
-                <span style="display: contents;">
-                    <label for="hourSelect" class="TimeLabel">Time:</label>
-                    <select id="hourSelect" class="TimeHR">
-                    </select>
-                    <select id="minuteSelect" class="TimeMin">
-                    </select>
-                </span>
-                </select>
-
-                <!-- Submit -->
-                <button id="submitButton" onclick="submitForm()" class="submitBtn">Submit</button>
-            </div>
-
-            </form>
+            </select>
+            <span>&nbsp;</span>
         </div>
 
+        <div>
+            <!-- Date -->
+            <label for="start_date" style="display: contents;">Start Date:</label>
+            <input type="date" id="start_date" onchange="logSelectedDate()" class="dateDD">
+            <span>&nbsp;</span>
 
-        </br>
-        <!-- <div class="row"> -->
-            <!-- <div class="col-9" style="z-index: 999;"> -->
-            <!-- </div>
+            <label for="end_date" style="display: contents;">End Date:</label>
+            <input type="date" id="end_date" onchange="logSelectedDate()" class="dateDD">
+            <span>&nbsp;</span>
+
+            <span style="display: contents;">
+                <label for="hourSelect" class="TimeLabel">Time:</label>
+                <select id="hourSelect" class="TimeHR">
+                </select>
+                <select id="minuteSelect" class="TimeMin">
+                </select>
+            </span>
+            </select>
+
+            <!-- Submit -->
+            <button id="submitButton" onclick="submitForm()" class="submitBtn">Submit</button>
+        </div>
+
+        </form>
+    </div>
+
+
+    </br>
+    <!-- <div class="row"> -->
+    <!-- <div class="col-9" style="z-index: 999;"> -->
+    <!-- </div>
             <div class="col-3">
                 <div class=" wrapper bar" onclick="toggleFunction()">
                     <i class="gg-arrows-expand-right-alt"></i>
@@ -372,13 +373,13 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                 </div>
 
             </div> -->
-        <!-- </div> -->
+    <!-- </div> -->
     <!-- </div> -->
 
     <button id="popup"
         style="width: 7em;color: #00aa55; background-color:#00aa55 ; cursor: pointer;border: none;height: 2em;margin-top: 2px;margin-left: 1.35em; margin-bottom:2px;color: white;">PopUp</button>
 
-        <div id="map"></div>
+    <div id="map"></div>
 
     <!-- <button id="popup">Popup</button> -->
 
@@ -386,7 +387,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     <div class="model">
         <div class="model-body">
             <legend>x</legend>
-            <h4>List Selected</h4>
+            <h4>Selected Parameters</h4>
             <div class="row" id="Light_RadarRow" style="display: none;">
                 <div>
                     <!-- HomePage-Lightning -->
