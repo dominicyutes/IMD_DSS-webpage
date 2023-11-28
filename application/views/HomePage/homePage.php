@@ -233,7 +233,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
             <span class="minsistry-text">Weather Decison Support System</span>
         </div>
         <div style="display:flex;height: 3em;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto">
-            <div style="width: 90%;display: flex;">
+            <div style="width: 100%;display: flex;">
                 <div class="d-flex flex-wrap w-100 gx-3 gy-3 mt-1" id="parent" style="justify-content: space-between">
 
                     <button class="d-flex btn" style="flex-direction:column;">
@@ -277,20 +277,27 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                         <div class="underline"></div>
                     </button>
                     <button class="d-flex btn" style="flex-direction:column;">
-                        <p class="btn-val">Export Polygon</p>
+                        <p class="btn-val" id="medium_range">Export Polygon</p>
+                        <div class="underline"></div>
+                    </button>
+                    <button class="d-flex btn" style="flex-direction:column;">
+                        <p class="btn-val" id="medium_range export_polygon" onclick="toggleObservation()">Observation
+                        </p>
                         <div class="underline"></div>
                     </button>
                 </div>
             </div>
             <!-- <div style="width:12%; flex-direction:column;padding-top: 0.5em;" class="d-flex expo-polygon-parent btn">
                 <p class="exp_poly " id="export_polygon">Export Polygon</p>
-            </div>-->
+            </div>
 
             <div style="width:12%; flex-direction:column; padding-top: 0.5em; margin-left:0.6em;"
                 class="d-flex expo-polygon-parent btn">
-                <p class="exp_poly " id="export_polygon" onclick="toggleObservation()">Observation</p>
-            </div>
-
+                <p class="exp_poly " id="export_polygon" onclick="toggleObservation()">OBSERVATION</p>
+            </div> -->
+            <!-- <div class="row optionsMap" style="display: contents;"> -->
+            <!-- <button id="observationBtn expo-polygon-parent btn" style="margin-left:0.6em; text-align:center;color:#fff;width:12%; flex-direction:column;padding-top: 0.5em;" class="d-flex expo-polygon-parent btn"  onclick="toggleObservation()">OBSERVATION</button> -->
+            <!-- </div> -->
         </div>
     </div>
     <!-- nav ends here -->
@@ -299,62 +306,61 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
 
     <!--Observation BTN , LEAFLETJS -->
-    <div class="mapAreaBg mx-auto" style="width:97%;">
-
-        <div id="ObservationContainer" class="hidden">
-            <!-- model -->
-            <div>
-                <label for="modelNames" class="dropdownLabel">Model:</label>
-                <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
-                </select>
-                <span>&nbsp;</span>
-                <!-- parameter -->
-                <label for="parameter" class="dropdownLabel">parameter:</label>
-                <select class="secondDD" id="parameterNames" class="dropdownSelect"
-                    onchange="showSubParameterNames(this.value)" &nbsp;>
-                </select>
-                <span>&nbsp;</span>
-                <!-- SubParameter -->
-                <label for="subparameter" class="dropdownLabel">SubParameter</label>
-                <select class="thirdDD" id="subparameter" class="dropdownSelect" &nbsp;>
-                    <!-- <option disabled selected value> -- select an option -- </option>
+    <!-- <div class="mapAreaBg mx-auto" style="width:97%;"> -->
+    <div id="ObservationContainer" class="hidden">
+        <!-- model -->
+        <div>
+            <label for="modelNames" class="dropdownLabel">Model:</label>
+            <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
+            </select>
+            <span>&nbsp;</span>
+            <!-- parameter -->
+            <label for="parameter" class="dropdownLabel">parameter:</label>
+            <select class="secondDD" id="parameterNames" class="dropdownSelect"
+                onchange="showSubParameterNames(this.value)" &nbsp;>
+            </select>
+            <span>&nbsp;</span>
+            <!-- SubParameter -->
+            <label for="subparameter" class="dropdownLabel">SubParameter</label>
+            <select class="thirdDD" id="subparameter" class="dropdownSelect" &nbsp;>
+                <!-- <option disabled selected value> -- select an option -- </option>
                     <option value="GFS">SubParameter1</option>
                     <option value="NCUM">SubParameter2</option> -->
-                </select>
-                <span>&nbsp;</span>
-            </div>
-
-            <div>
-                <!-- Date -->
-                <label for="start_date" style="display: contents;">Start Date:</label>
-                <input type="date" id="start_date" onchange="logSelectedDate()" class="dateDD">
-                <span>&nbsp;</span>
-
-                <label for="end_date" style="display: contents;">End Date:</label>
-                <input type="date" id="end_date" onchange="logSelectedDate()" class="dateDD">
-                <span>&nbsp;</span>
-
-                <span style="display: contents;">
-                    <label for="hourSelect" class="TimeLabel">Time:</label>
-                    <select id="hourSelect" class="TimeHR">
-                    </select>
-                    <select id="minuteSelect" class="TimeMin">
-                    </select>
-                </span>
-                </select>
-
-                <!-- Submit -->
-                <button id="submitButton" onclick="submitForm()" class="submitBtn">Submit</button>
-            </div>
-
-            </form>
+            </select>
+            <span>&nbsp;</span>
         </div>
 
-        </br>
-        <div class="row">
-            <div class="col-9" style="z-index: 999;">
-                <div id="map"></div>
-            </div>
+        <div>
+            <!-- Date -->
+            <label for="start_date" style="display: contents;">Start Date:</label>
+            <input type="date" id="start_date" onchange="logSelectedDate()" class="dateDD">
+            <span>&nbsp;</span>
+
+            <label for="end_date" style="display: contents;">End Date:</label>
+            <input type="date" id="end_date" onchange="logSelectedDate()" class="dateDD">
+            <span>&nbsp;</span>
+
+            <span style="display: contents;">
+                <label for="hourSelect" class="TimeLabel">Time:</label>
+                <select id="hourSelect" class="TimeHR">
+                </select>
+                <select id="minuteSelect" class="TimeMin">
+                </select>
+            </span>
+            </select>
+
+            <!-- Submit -->
+            <button id="submitButton" onclick="submitForm()" class="submitBtn">Submit</button>
+        </div>
+
+        </form>
+    </div>
+
+
+    </br>
+    <!-- <div class="row"> -->
+    <!-- <div class="col-9" style="z-index: 999;"> -->
+    <!-- </div>
             <div class="col-3">
                 <div class=" wrapper bar" onclick="toggleFunction()">
                     <i class="gg-arrows-expand-right-alt"></i>
@@ -366,12 +372,14 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                         class="legend2" />
                 </div>
 
-            </div>
-        </div>
-    </div>
+            </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
 
     <button id="popup"
-        style="width: 7em;color: #00aa55; background-color:#e0dfdf ; cursor: pointer;border: none;height: 2em;margin-top: 10px;margin-left: 1.35em; margin-bottom:1em;color: #163159;">PopUp</button>
+        style="width: 7em;color: #00aa55; background-color:#00aa55 ; cursor: pointer;border: none;height: 2em;margin-top: 2px;margin-left: 1.35em; margin-bottom:2px;color: white;">PopUp</button>
+
+    <div id="map"></div>
 
     <!-- <button id="popup">Popup</button> -->
 
