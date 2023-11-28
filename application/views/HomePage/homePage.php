@@ -151,20 +151,20 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     }
 
     .exp_poly {
-        color: #fff;
+        color: #163159;
     }
 
     .expo-polygon-parent {
         border: none;
         padding: 0;
-        background-color: #00aa55;
+        background-color: #e0dfdf;
         cursor: pointer;
         font: inherit;
         outline: inherit;
     }
 
     .expo-polygon-parent:hover {
-        background-color: black;
+        background-color: #ced0cf;
     }
 
     @keyframes loadingAnimation {
@@ -276,25 +276,21 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                         <p class="btn-val" id="medium_range">Medium Range</p>
                         <div class="underline"></div>
                     </button>
+                    <button class="d-flex btn" style="flex-direction:column;">
+                        <p class="btn-val">Export Polygon</p>
+                        <div class="underline"></div>
+                    </button>
                 </div>
             </div>
-            <div style="width:12%; flex-direction:column;padding-top: 0.5em;" class="d-flex expo-polygon-parent btn">
-                <!-- <button class="d-flex btn" style="flex-direction:column;"> -->
+            <!-- <div style="width:12%; flex-direction:column;padding-top: 0.5em;" class="d-flex expo-polygon-parent btn">
                 <p class="exp_poly " id="export_polygon">Export Polygon</p>
-                <!-- <div class="underline"></div>    -->
-                <!-- </button> -->
-            </div>
+            </div>-->
 
             <div style="width:12%; flex-direction:column; padding-top: 0.5em; margin-left:0.6em;"
                 class="d-flex expo-polygon-parent btn">
-                <!-- <button class="d-flex btn" style="flex-direction:column;"> -->
-                <p class="exp_poly " id="export_polygon" onclick="toggleObservation()">OBSERVATION</p>
-                <!-- <div class="underline"></div>    -->
-                <!-- </button> -->
+                <p class="exp_poly " id="export_polygon" onclick="toggleObservation()">Observation</p>
             </div>
-            <!-- <div class="row optionsMap" style="display: contents;"> -->
-            <!-- <button id="observationBtn expo-polygon-parent btn" style="margin-left:0.6em; text-align:center;color:#fff;width:12%; flex-direction:column;padding-top: 0.5em;" class="d-flex expo-polygon-parent btn"  onclick="toggleObservation()">OBSERVATION</button> -->
-            <!-- </div> -->
+
         </div>
     </div>
     <!-- nav ends here -->
@@ -375,7 +371,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     </div>
 
     <button id="popup"
-        style="width: 7em;color: #00aa55; background-color:#00aa55 ; cursor: pointer;border: none;height: 2em;margin-top: 10px;margin-left: 1.35em; margin-bottom:1em;color: white;">PopUp</button>
+        style="width: 7em;color: #00aa55; background-color:#e0dfdf ; cursor: pointer;border: none;height: 2em;margin-top: 10px;margin-left: 1.35em; margin-bottom:1em;color: #163159;">PopUp</button>
 
     <!-- <button id="popup">Popup</button> -->
 
@@ -383,7 +379,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     <div class="model">
         <div class="model-body">
             <legend>x</legend>
-            <h4>List Selected</h4>
+            <h4>Selected Parameters</h4>
             <div class="row" id="Light_RadarRow" style="display: none;">
                 <div>
                     <!-- HomePage-Lightning -->

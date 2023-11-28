@@ -234,13 +234,11 @@ let Parameters = [{
     },
     {
         name: 'Satellite Observation',
-        category: 'Radar'
+        category: 'Satellite'
     },
     {
         name: 'Lightning',
-        category: 'Lightning',
-        name: 'Satellite Observation',
-        category: 'Satellite'
+        category: 'Lightning'
     },
     {
         name: 'Sounding_00 UTC Wind',
@@ -1047,131 +1045,131 @@ let subParametersList = [{
     },
     {
         name: '1000 hpa Wind_00',
-        category: 'Sounding_00UTC Wind'
+        category: 'Sounding_00 UTC Wind'
     },
     {
         name: '850 hpa Wind_00',
-        category: 'Sounding_00UTC Wind'
+        category: 'Sounding_00 UTC Wind'
     },
     {
         name: '700 hpa Wind_00',
-        category: 'Sounding_00UTC Wind'
+        category: 'Sounding_00 UTC Wind'
     },
     {
         name: '500 hpa Wind_00',
-        category: 'Sounding_00UTC Wind'
+        category: 'Sounding_00 UTC Wind'
     },
     {
         name: '300 hpa Wind_00',
-        category: 'Sounding_00UTC Wind'
+        category: 'Sounding_00 UTC Wind'
     },
     {
         name: '200 hpa Wind_00',
-        category: 'Sounding_00UTC Wind'
+        category: 'Sounding_00 UTC Wind'
     },
     {
         name: '100 hpa Wind_00',
-        category: 'Sounding_00UTC Wind'
+        category: 'Sounding_00 UTC Wind'
     },
     {
         name: '50 hpa Wind_00',
-        category: 'Sounding_00UTC Wind'
+        category: 'Sounding_00 UTC Wind'
     },
     {
         name: '1000 hpa Wind_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '850 hpa Wind_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '700 hpa Wind_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '500 hpa Wind_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '300 hpa Wind_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '200 hpa Wind_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '100 hpa Wind_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '50 hpa Wind_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '1000 hpa Temp_00',
-        category: 'Sounding_00UTC Temp'
+        category: 'Sounding_00 UTC Temp'
     },
     {
         name: '850 hpa Temp_00',
-        category: 'Sounding_00UTC Temp'
+        category: 'Sounding_00 UTC Temp'
     },
     {
         name: '700 hpa Temp_00',
-        category: 'Sounding_00UTC Temp'
+        category: 'Sounding_00 UTC Temp'
     },
     {
         name: '500 hpa Temp_00',
-        category: 'Sounding_00UTC Temp'
+        category: 'Sounding_00 UTC Temp'
     },
     {
         name: '300 hpa Temp_00',
-        category: 'Sounding_00UTC Temp'
+        category: 'Sounding_00 UTC Temp'
     },
     {
         name: '200 hpa Temp_00',
-        category: 'Sounding_00UTC Temp'
+        category: 'Sounding_00 UTC Temp'
     },
     {
         name: '100 hpa Temp_00',
-        category: 'Sounding_00UTC Temp'
+        category: 'Sounding_00 UTC Temp'
     },
     {
         name: '50 hpa Temp_00',
-        category: 'Sounding_00UTC Wind'
+        category: 'Sounding_00 UTC Wind'
     },
     {
         name: '1000 hpa Temp_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '850 hpa Temp_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '700 hpa Temp_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '500 hpa Temp_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '300 hpa Temp_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '200 hpa Temp_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '100 hpa Temp_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '50 hpa Temp_12',
-        category: 'Sounding_12UTC Wind'
+        category: 'Sounding_12 UTC Wind'
     },
     {
         name: '1000 hpa DewPoint_00',
@@ -1501,6 +1499,7 @@ function showParameterNames(value) {
         }
     }
     getparameterNames.innerHTML = pushparameterNames;
+    showSubParameterNames(SecondDropdown[0].name);
 }
 
 
