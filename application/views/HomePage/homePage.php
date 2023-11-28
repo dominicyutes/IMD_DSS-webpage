@@ -233,7 +233,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
             <span class="minsistry-text">Weather Decison Support System</span>
         </div>
         <div style="display:flex;height: 3em;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto">
-            <div style="width: 90%;display: flex;">
+            <div style="width: 100%;display: flex;">
                 <div class="d-flex flex-wrap w-100 gx-3 gy-3 mt-1" id="parent" style="justify-content: space-between">
 
                     <button class="d-flex btn" style="flex-direction:column;">
@@ -276,22 +276,24 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                         <p class="btn-val" id="medium_range">Medium Range</p>
                         <div class="underline"></div>
                     </button>
+                    <button class="d-flex btn" style="flex-direction:column;">
+                        <p class="btn-val" id="medium_range">Export Polygon</p>
+                        <div class="underline"></div>
+                    </button>
+                    <button class="d-flex btn" style="flex-direction:column;">
+                        <p class="btn-val" id="medium_range export_polygon" onclick="toggleObservation()">Observation</p>
+                        <div class="underline"></div>
+                    </button>
                 </div>
             </div>
-            <div style="width:12%; flex-direction:column;padding-top: 0.5em;" class="d-flex expo-polygon-parent btn">
-                <!-- <button class="d-flex btn" style="flex-direction:column;"> -->
+            <!-- <div style="width:12%; flex-direction:column;padding-top: 0.5em;" class="d-flex expo-polygon-parent btn">
                 <p class="exp_poly " id="export_polygon">Export Polygon</p>
-                <!-- <div class="underline"></div>    -->
-                <!-- </button> -->
             </div>
 
             <div style="width:12%; flex-direction:column; padding-top: 0.5em; margin-left:0.6em;"
                 class="d-flex expo-polygon-parent btn">
-                <!-- <button class="d-flex btn" style="flex-direction:column;"> -->
                 <p class="exp_poly " id="export_polygon" onclick="toggleObservation()">OBSERVATION</p>
-                <!-- <div class="underline"></div>    -->
-                <!-- </button> -->
-            </div>
+            </div> -->
             <!-- <div class="row optionsMap" style="display: contents;"> -->
             <!-- <button id="observationBtn expo-polygon-parent btn" style="margin-left:0.6em; text-align:center;color:#fff;width:12%; flex-direction:column;padding-top: 0.5em;" class="d-flex expo-polygon-parent btn"  onclick="toggleObservation()">OBSERVATION</button> -->
             <!-- </div> -->
@@ -363,12 +365,12 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                 <div class=" wrapper bar" onclick="toggleFunction()">
                     <i class="gg-arrows-expand-right-alt"></i>
                 </div>
-                <div id="toggleImage">
+                <!-- <div id="toggleImage">
                     <img id="legend1" src="http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png" alt="legend"
                         class="legend1" />
                     <img id="legend2" src="http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png" alt="legend"
                         class="legend2" />
-                </div>
+                </div> -->
 
             </div>
         </div>
