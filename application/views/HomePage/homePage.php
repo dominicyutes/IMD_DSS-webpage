@@ -90,7 +90,6 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     #particles-js {
         position: fixed;
         width: 100%;
-        /* height: 100%; */
         z-index: -1;
     }
 
@@ -148,6 +147,11 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
         background-color: #00aa55;
         visibility: hidden;
         transition: visibility 0.1s ease;
+    }
+
+    .with-border {
+        border-right: 2px solid #e0dfdf;
+        padding-right: 4px;
     }
 
     .exp_poly {
@@ -232,55 +236,56 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
             style="background-image: linear-gradient(to right top, #eae0e0, #efe8ea, #f3f0f2, #f9f7f9, #ffffff); padding: 10px 0px 10px 0px;">
             <span class="minsistry-text">Weather Decison Support System</span>
         </div>
+        <!-- navbar -->
         <div style="display:flex;height: 3em;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto">
             <div style="width: 100%;display: flex;">
                 <div class="d-flex flex-wrap w-100 gx-3 gy-3 mt-1" id="parent" style="justify-content: space-between">
 
-                    <button class="d-flex btn" style="flex-direction:column;">
+                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                         <p class="btn-val" id="exposure">Exposure</p>
                         <div class="underline"></div>
                     </button>
-                    <button class="d-flex btn" style="flex-direction:column;">
+                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                         <p class="btn-val" id="metar">Metar</p>
                         <div class="underline"></div>
                     </button>
-                    <button class="d-flex btn" style="flex-direction:column;">
+                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                         <p class="btn-val" id="synop">Synop</p>
                         <div class="underline"></div>
                     </button>
-                    <button class="d-flex btn" style="flex-direction:column;">
+                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                         <p class="btn-val" id="radar">Radar</p>
                         <div class="underline"></div>
                     </button>
-                    <button class="d-flex btn" style="flex-direction:column;">
+                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                         <p class="btn-val" id="satellite">Satellite</p>
                         <div class="underline"></div>
                     </button>
-                    <button class="d-flex btn" style="flex-direction:column;">
+                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                         <p class="btn-val" id="lightning">Lightining</p>
                         <div class="underline"></div>
                     </button>
-                    <button class="d-flex btn" style="flex-direction:column;">
+                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                         <p class="btn-val" id="sounding">Sounding</p>
                         <div class="underline"></div>
                     </button>
-                    <button class="d-flex btn" style="flex-direction:column;">
+                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                         <p class="btn-val" id="ship_and_buoy">Ship and Buoy</p>
                         <div class="underline"></div>
                     </button>
-                    <button class="d-flex btn" style="flex-direction:column;">
+                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                         <p class="btn-val" id="mesolscale">Mesolscale Forecast</p>
                         <div class="underline"></div>
                     </button>
-                    <button class="d-flex btn" style="flex-direction:column;">
+                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                         <p class="btn-val" id="medium_range">Medium Range</p>
                         <div class="underline"></div>
                     </button>
-                    <button class="d-flex btn" style="flex-direction:column;">
+                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                         <p class="btn-val" id="medium_range">Export Polygon</p>
                         <div class="underline"></div>
                     </button>
-                    <button class="d-flex btn" style="flex-direction:column;">
+                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                         <p class="btn-val" id="medium_range export_polygon" onclick="toggleObservation()">Observation
                         </p>
                         <div class="underline"></div>
@@ -310,7 +315,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     <div id="ObservationContainer" class="hidden">
         <!-- model -->
         <div>
-            <label for="modelNames" class="dropdownLabel">Model:</label>
+            <label for="modelNames" class="firstDDLabel">Model:</label>
             <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
             </select>
             <span>&nbsp;</span>
@@ -323,20 +328,17 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
             <!-- SubParameter -->
             <label for="subparameter" class="dropdownLabel">SubParameter</label>
             <select class="thirdDD" id="subparameter" class="dropdownSelect" &nbsp;>
-                <!-- <option disabled selected value> -- select an option -- </option>
-                    <option value="GFS">SubParameter1</option>
-                    <option value="NCUM">SubParameter2</option> -->
             </select>
             <span>&nbsp;</span>
         </div>
 
         <div>
             <!-- Date -->
-            <label for="start_date" style="display: contents;">Start Date:</label>
+            <label for="start_date" class="dateDDLabel">Start Date:</label>
             <input type="date" id="start_date" onchange="logSelectedDate()" class="dateDD">
             <span>&nbsp;</span>
 
-            <label for="end_date" style="display: contents;">End Date:</label>
+            <label for="end_date">End Date:</label>
             <input type="date" id="end_date" onchange="logSelectedDate()" class="dateDD">
             <span>&nbsp;</span>
 
@@ -376,8 +378,9 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     <!-- </div> -->
     <!-- </div> -->
 
-    <button id="popup"
-        style="width: 7em;color: #00aa55; background-color:#00aa55 ; cursor: pointer;border: none;height: 2em;margin-top: 2px;margin-left: 1.35em; margin-bottom:2px;color: white;">PopUp</button>
+    <!-- style="width: 7em;color: #00aa55; background-color:#00aa55 ; cursor: pointer;border: none;height: 2em;margin-top: 2px;margin-left: 1.35em; margin-bottom:2px;color: white;" -->
+
+    <button id="popup" class="submitBtn">Legend</button>
 
     <div id="map"></div>
 

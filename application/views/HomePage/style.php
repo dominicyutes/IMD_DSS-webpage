@@ -66,6 +66,14 @@ nav {
 
 }
 
+.firstDDLabel {
+    margin-left: 40px;
+}
+
+.dateDDLabel {
+    margin-left: 40px;
+}
+
 .secondDD {
     width: 16%;
     height: 34px;
@@ -138,12 +146,10 @@ nav {
 /* map starts here*/
 #map {
     height: 83vh;
-    width: 95%;
+    width: 96%;
     border: 2px solid #646464;
-    margin: 0 5px 0 7px;
+    margin: 0 5px 15px 25px;
     position: relative;
-    float: left;
-
 }
 
 .col-3 {
