@@ -32,85 +32,6 @@ nav {
     font-weight: 600 !important;
 }
 
-/* nav start here */
-
-.navbarColor {
-    /* height: 50px;
-    margin: -14px 40px 0 40px; */
-    background-color: #90bdc4;
-}
-
-/* .boxSize {
-    margin: 2% 2% 1% 2%;
-} */
-
-.btns {
-    display: flex;
-    width: 100%;
-    gap: 0.3em;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 5px;
-}
-
-.btn-val {
-    letter-spacing: 1px;
-    /* text-transform: uppercase; */
-    font-size: 14px;
-    padding: 12px;
-    border-radius: 2px;
-    width: fit-content;
-    border-radius: 5px;
-    cursor: pointer;
-    border: 3px solid;
-    padding: 0.25em 0.5em;
-    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
-        5px 5px 0px 0px;
-    position: relative;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    font-weight: 700;
-}
-
-.btn-val:active {
-    box-shadow: 0px 0px 0px 0px;
-    top: 5px;
-    left: 5px;
-    font-weight: 600;
-}
-
-/*  */
-._btn_obs {
-    background-color: rgb(240, 240, 240);
-    color: black;
-    letter-spacing: 1px;
-    font-size: 14px;
-    padding: 12px;
-    border-radius: 2px;
-    width: fit-content;
-    border-radius: 5px;
-    cursor: pointer;
-    border: 3px solid;
-    padding: 0.25em 0.5em;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-
-._btn_obs:hover {
-    box-shadow: 5px 5px 10px #aaa;
-    cursor: pointer;
-    letter-spacing: 1px;
-    font-size: 14px;
-    padding: 12px;
-    border-radius: 2px;
-    width: fit-content;
-    border-radius: 5px;
-    cursor: pointer;
-    border: 3px solid;
-    padding: 0.25em 0.5em;
-}
-
 /*  */
 #toggleButton {
     background-color: blue;
@@ -129,7 +50,7 @@ nav {
 
 /*  */
 .mapAreaBg {
-    background-color: white;
+    background-color: #f8f6f8;
 }
 
 .optionsMap {
@@ -137,12 +58,67 @@ nav {
     width: 100%;
 }
 
+.firstDD {
+    width: 16%;
+    height: 34px;
+    border-radius: 10px;
+    margin: 10px 211px 10px 0;
+
+}
+
+.secondDD {
+    width: 16%;
+    height: 34px;
+    border-radius: 10px;
+    margin: 10px 0;
+    margin: 10px 211px 10px 0;
+}
+
+.thirdDD {
+    width: 16%;
+    height: 34px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
 .dropdownSelect {
     width: 20%;
 }
 
-.date {
-    width: 20%;
+.dateDD {
+    width: 12%;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid #646464;
+    margin: 8px 237px 0 0;
+}
+
+.SecDD {
+    width: 3%;
+    height: 34px;
+    border-radius: 10px;
+    margin: 8px 0 0 0;
+    border: 1px solid #646464;
+}
+
+.TimeLabel {
+    margin-left: 46px;
+}
+
+.TimeHR {
+    width: 3%;
+    height: 34px;
+    border-radius: 10px;
+    margin: 8px 10px 0 0;
+    border: 1px solid #646464;
+}
+
+.TimeMin {
+    width: 3%;
+    height: 34px;
+    border-radius: 10px;
+    margin: 8px 1px 0 0;
+    border: 1px solid #646464;
 }
 
 .timeUTC {
@@ -150,7 +126,13 @@ nav {
 }
 
 .submitBtn {
-    width: 10%;
+    width: 7%;
+    height: auto;
+    border-radius: 7px;
+    background-color: #00aa55;
+    color: ghostwhite;
+    border-color: mediumaquamarine;
+    margin-left: 91px;
 }
 
 /* map starts here*/
@@ -181,7 +163,7 @@ nav {
     height: 578px;
     margin-right: 10px;
     border-radius: 4px;
-    background-color: #a0c8c8;
+    background-color: #f8f6f8;
 }
 
 .legend1 {
@@ -249,35 +231,34 @@ nav {
     top: 238px;
     left: 70px;
     display: none;
-    z-index: 999;
+    z-index: 99999;
     /* background-color: red; */
 }
 
 .model-body {
     position: absolute;
-    width: 100%;
-    height: 54vh;
-    top: 51%;
-    left: 50%;
+    width: 225px;
+    height: 300px;
+    margin: 315px 0 0 100px;
     transform: translate(-50%, -50%);
     background-color: #fff;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.404);
     border-radius: 6px;
     user-select: none;
     overflow: auto;
-    resize: both;
+    /* resize: both; */
 }
 
 .model-body h4 {
-    font-size: 20px;
+    font-size: 16px;
     padding-left: 11px;
-    margin-top: 11px;
+    margin: 5px 0 0 10px;
 }
 
 .model-body h5 {
-    font-size: 16px;
+    font-size: 14px;
     padding-left: 11px;
-    margin-top: 11px;
+    margin: 5px 0 0 15px;
 }
 
 .model-body p {
@@ -287,19 +268,19 @@ nav {
     padding-left: 41px;
 }
 
-.model-body span {
+.model-body legend {
     font-size: 28px;
     font-weight: bold;
     position: absolute;
-    top: 2px;
-    right: 3px;
+    top: 1px;
+    right: 1px;
     width: 30px;
     height: 30px;
     text-align: center;
     line-height: 30px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.404);
-    background-color: #d48c8c;
+    /* border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.404); */
+    /* background-color: #d48c8c; */
     cursor: pointer;
 }
 
@@ -329,22 +310,5 @@ nav {
     .legend2 {
         width: 86%;
     }
-
-    /* .home-page {
-        position: relative;
-        background-image: url(https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8192.jpg?size=626&ext=jpg&ga=GA1.1.947931461.1697391845&semt=ais);
-        height: 150vh;
-        width: 100%;
-        background-size: cover;
-    } */
-
-    /* #map {
-        height: 83vh;
-        width: 74%;
-        border: 4px solid white;
-        margin: 13px 5px 0 7px;
-        position: relative;
-        float: left;
-    } */
 }
 </style>

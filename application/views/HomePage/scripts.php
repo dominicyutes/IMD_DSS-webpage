@@ -100,112 +100,1307 @@
 let modelNamesArr = ["", 'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship And Buoy'];
 
 //metarParameters
-let metarParameters = ['Metar 00UTC', 'Metar 01UTC', 'Metar 02UTC', 'Metar 03UTC', 'Metar 04UTC', 'Metar 05UTC',
-    'Metar 06UTC',
-    'Metar 07UTC', 'Metar 08UTC', 'Metar 09UTC', 'Metar 10UTC', 'Metar 11UTC', 'Metar 12UTC', 'Metar 13UTC',
-    'Metar 14UTC', 'Metar 15UTC', 'Metar 16UTC', 'Metar 17UTC', 'Metar 18UTC', 'Metar 19UTC', 'Metar 20UTC',
-    'Metar 21UTC', 'Metar 22UTC', 'Metar 23UTC'
+let Parameters = [{
+        name: 'Metar 00UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 01UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 02UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 03UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 04UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 05UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 06UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 07UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 08UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 09UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 10UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 11UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 12UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 13UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 14UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 15UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 16UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 17UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 18UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 19UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 20UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 21UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 22UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Metar 23UTC',
+        category: 'Metar'
+    },
+    {
+        name: 'Synop 00UTC',
+        category: 'Synop'
+    },
+    {
+        name: 'Synop 03UTC',
+        category: 'Synop'
+    },
+    {
+        name: 'Synop 06UTC',
+        category: 'Synop'
+    },
+    {
+        name: 'Synop 09UTC',
+        category: 'Synop'
+    },
+    {
+        name: 'Synop 12UTC',
+        category: 'Synop'
+    },
+    {
+        name: 'Synop 15UTC',
+        category: 'Synop'
+    },
+    {
+        name: 'Synop 18UTC',
+        category: 'Synop'
+    },
+    {
+        name: 'Synop 21UTC',
+        category: 'Synop'
+    },
+    {
+        name: 'Radar Products',
+        category: 'Radar'
+    },
+    {
+        name: 'Satellite Observation',
+        category: 'Radar'
+    },
+    {
+        name: 'Lightning',
+        category: 'Lightning',
+        name: 'Satellite Observation',
+        category: 'Satellite'
+    },
+    {
+        name: 'Sounding_00 UTC Wind',
+        category: 'Sounding'
+    },
+    {
+        name: 'Sounding_12 UTC Wind',
+        category: 'Sounding'
+    },
+    {
+        name: 'Sounding_00 UTC Temp',
+        category: 'Sounding'
+    },
+    {
+        name: 'Sounding_12 UTC Temp',
+        category: 'Sounding'
+    },
+    {
+        name: 'Sounding_00 UTC Dew Point',
+        category: 'Sounding'
+    },
+    {
+        name: 'Sounding_12 UTC Dew Point',
+        category: 'Sounding'
+    },
+    {
+        name: 'Ship And Buoy Observation',
+        category: 'Ship And Buoy'
+    },
+
 ];
 
 //metarParametersList
-let Metar_00UTC = ['Temperature_00', 'Dew Point temperature_00', 'Visibility_00', 'Wind Speed And Direction_00'];
-
-let Metar_01UTC = ['Temperature_01', 'Dew Point temperature_02', 'Visibility_02', 'Wind Speed And Direction_02'];
-
-let Metar_02UTC = ['Temperature_02', 'Dew Point temperature_02', 'Visibility_02', 'Wind Speed And Direction_02'];
-
-let Metar_03UTC = ['Temperature_03', 'Dew Point temperature_03', 'Visibility_03', 'Wind Speed And Direction_03'];
-
-let Metar_04UTC = ['Temperature_04', 'Dew Point temperature_04', 'Visibility_04', 'Wind Speed And Direction_04'];
-
-let Metar_05UTC = ['Temperature_05', 'Dew Point temperature_05', 'Visibility_05', 'Wind Speed And Direction_05'];
-
-let Metar_06UTC = ['Temperature_06', 'Dew Point temperature_06', 'Visibility_06', 'Wind Speed And Direction_06'];
-
-let Metar_07UTC = ['Temperature_07', 'Dew Point temperature_07', 'Visibility_07', 'Wind Speed And Direction_07'];
-
-let Metar_08UTC = ['Temperature_08', 'Dew Point temperature_08', 'Visibility_08', 'Wind Speed And Direction_08'];
-
-let Metar_09UTC = ['Temperature_09', 'Dew Point temperature_09', 'Visibility_09', 'Wind Speed And Direction_09'];
-
-let Metar_10UTC = ['Temperature_10', 'Dew Point temperature_10', 'Visibility_10', 'Wind Speed And Direction_10'];
-
-let Metar_11UTC = ['Temperature_11', 'Dew Point temperature_11', 'Visibility_11', 'Wind Speed And Direction_11'];
-
-let Metar_12UTC = ['Temperature_12', 'Dew Point temperature_12', 'Visibility_12', 'Wind Speed And Direction_12'];
-
-let Metar_13UTC = ['Temperature_13', 'Dew Point temperature_13', 'Visibility_13', 'Wind Speed And Direction_13'];
-
-let Metar_14UTC = ['Temperature_14', 'Dew Point temperature_14', 'Visibility_14', 'Wind Speed And Direction_14'];
-
-let Metar_15UTC = ['Temperature_15', 'Dew Point temperature_15', 'Visibility_15', 'Wind Speed And Direction_15'];
-
-let Metar_16UTC = ['Temperature_16', 'Dew Point temperature_16', 'Visibility_16', 'Wind Speed And Direction_16'];
-
-let Metar_17UTC = ['Temperature_17', 'Dew Point temperature_17', 'Visibility_17', 'Wind Speed And Direction_17'];
-
-let Metar_18UTC = ['Temperature_18', 'Dew Point temperature_18', 'Visibility_18', 'Wind Speed And Direction_18'];
-
-let Metar_19UTC = ['Temperature_19', 'Dew Point temperature_19', 'Visibility_19', 'Wind Speed And Direction_19'];
-
-let Metar_20UTC = ['Temperature_20', 'Dew Point temperature_20', 'Visibility_20', 'Wind Speed And Direction_20'];
-
-let Metar_21UTC = ['Temperature_21', 'Dew Point temperature_21', 'Visibility_21', 'Wind Speed And Direction_21'];
-
-let Metar_22UTC = ['Temperature_22', 'Dew Point temperature_22', 'Visibility_22', 'Wind Speed And Direction_22'];
-
-let Metar_23UTC = ['Temperature_23', 'Dew Point temperature_23', 'Visibility_23', 'Wind Speed And Direction_23'];
-//
-
-//SynopParameters
-let synopParameters = ['Synop 00UTC', 'Synop 03UTC', 'Synop 06UTC', 'Synop 09UTC', 'Synop 12UTC', 'Synop 15UTC',
-    'Synop 18UTC', 'Synop 21UTC'
+let Metar_00UTC = ['Temperature_00', 'Dew Point temperature_00', 'Visibility_00',
+    'Wind Speed And Direction_00'
 ];
 
+let Metar_01UTC = ['Temperature_01', 'Dew Point temperature_02', 'Visibility_02',
+    'Wind Speed And Direction_02'
+];
+
+let Metar_02UTC = ['Temperature_02', 'Dew Point temperature_02', 'Visibility_02',
+    'Wind Speed And Direction_02'
+];
+
+let Metar_03UTC = ['Temperature_03', 'Dew Point temperature_03', 'Visibility_03',
+    'Wind Speed And Direction_03'
+];
+
+let Metar_04UTC = ['Temperature_04', 'Dew Point temperature_04', 'Visibility_04',
+    'Wind Speed And Direction_04'
+];
+
+let Metar_05UTC = ['Temperature_05', 'Dew Point temperature_05', 'Visibility_05',
+    'Wind Speed And Direction_05'
+];
+
+let Metar_06UTC = ['Temperature_06', 'Dew Point temperature_06', 'Visibility_06',
+    'Wind Speed And Direction_06'
+];
+
+let Metar_07UTC = ['Temperature_07', 'Dew Point temperature_07', 'Visibility_07',
+    'Wind Speed And Direction_07'
+];
+
+let Metar_08UTC = ['Temperature_08', 'Dew Point temperature_08', 'Visibility_08',
+    'Wind Speed And Direction_08'
+];
+
+let Metar_09UTC = ['Temperature_09', 'Dew Point temperature_09', 'Visibility_09',
+    'Wind Speed And Direction_09'
+];
+
+let Metar_10UTC = ['Temperature_10', 'Dew Point temperature_10', 'Visibility_10',
+    'Wind Speed And Direction_10'
+];
+
+let Metar_11UTC = ['Temperature_11', 'Dew Point temperature_11', 'Visibility_11',
+    'Wind Speed And Direction_11'
+];
+
+let Metar_12UTC = ['Temperature_12', 'Dew Point temperature_12', 'Visibility_12',
+    'Wind Speed And Direction_12'
+];
+
+let Metar_13UTC = ['Temperature_13', 'Dew Point temperature_13', 'Visibility_13',
+    'Wind Speed And Direction_13'
+];
+
+let Metar_14UTC = ['Temperature_14', 'Dew Point temperature_14', 'Visibility_14',
+    'Wind Speed And Direction_14'
+];
+
+let Metar_15UTC = ['Temperature_15', 'Dew Point temperature_15', 'Visibility_15',
+    'Wind Speed And Direction_15'
+];
+
+let Metar_16UTC = ['Temperature_16', 'Dew Point temperature_16', 'Visibility_16',
+    'Wind Speed And Direction_16'
+];
+
+let Metar_17UTC = ['Temperature_17', 'Dew Point temperature_17', 'Visibility_17',
+    'Wind Speed And Direction_17'
+];
+
+let Metar_18UTC = ['Temperature_18', 'Dew Point temperature_18', 'Visibility_18',
+    'Wind Speed And Direction_18'
+];
+
+let Metar_19UTC = ['Temperature_19', 'Dew Point temperature_19', 'Visibility_19',
+    'Wind Speed And Direction_19'
+];
+
+let Metar_20UTC = ['Temperature_20', 'Dew Point temperature_20', 'Visibility_20',
+    'Wind Speed And Direction_20'
+];
+
+let Metar_21UTC = ['Temperature_21', 'Dew Point temperature_21', 'Visibility_21',
+    'Wind Speed And Direction_21'
+];
+
+let Metar_22UTC = ['Temperature_22', 'Dew Point temperature_22', 'Visibility_22',
+    'Wind Speed And Direction_22'
+];
+
+let Metar_23UTC = ['Temperature_23', 'Dew Point temperature_23', 'Visibility_23',
+    'Wind Speed And Direction_23'
+];
+
+//metarParametersList
+let subParametersList = [{
+        name: 'Temperature_00',
+        category: 'Metar 00UTC'
+    },
+    {
+        name: 'Dew Point temperature_00',
+        category: 'Metar 00UTC'
+    },
+    {
+        name: 'Visibility_00',
+        category: 'Metar 00UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_00',
+        category: 'Metar 00UTC'
+    },
+    {
+        name: 'Temperature_01',
+        category: 'Metar 01UTC'
+    },
+    {
+        name: 'Dew Point temperature_01',
+        category: 'Metar 01UTC'
+    },
+    {
+        name: 'Visibility_01',
+        category: 'Metar 01UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_01',
+        category: 'Metar 01UTC'
+    },
+    {
+        name: 'Temperature_02',
+        category: 'Metar 02UTC'
+    },
+    {
+        name: 'Dew Point temperature_02',
+        category: 'Metar 02UTC'
+    },
+    {
+        name: 'Visibility_02',
+        category: 'Metar 02UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_02',
+        category: 'Metar 02UTC'
+    },
+    {
+        name: 'Temperature_03',
+        category: 'Metar 03UTC'
+    },
+    {
+        name: 'Dew Point temperature_03',
+        category: 'Metar 03UTC'
+    },
+    {
+        name: 'Visibility_03',
+        category: 'Metar 03UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_03',
+        category: 'Metar 03UTC'
+    },
+    {
+        name: 'Temperature_04',
+        category: 'Metar 04UTC'
+    },
+    {
+        name: 'Dew Point temperature_04',
+        category: 'Metar 04UTC'
+    },
+    {
+        name: 'Visibility_04',
+        category: 'Metar 04UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_04',
+        category: 'Metar 04UTC'
+    },
+    {
+        name: 'Temperature_05',
+        category: 'Metar 05UTC'
+    },
+    {
+        name: 'Dew Point temperature_05',
+        category: 'Metar 05UTC'
+    },
+    {
+        name: 'Visibility_05',
+        category: 'Metar 05UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_05',
+        category: 'Metar 05UTC'
+    },
+    {
+        name: 'Temperature_06',
+        category: 'Metar 06UTC'
+    },
+    {
+        name: 'Dew Point temperature_06',
+        category: 'Metar 06UTC'
+    },
+    {
+        name: 'Visibility_06',
+        category: 'Metar 06UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_06',
+        category: 'Metar 06UTC'
+    },
+    {
+        name: 'Temperature_07',
+        category: 'Metar 07UTC'
+    },
+    {
+        name: 'Dew Point temperature_07',
+        category: 'Metar 07UTC'
+    },
+    {
+        name: 'Visibility_07',
+        category: 'Metar 07UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_07',
+        category: 'Metar 07UTC'
+    },
+    {
+        name: 'Temperature_08',
+        category: 'Metar 08UTC'
+    },
+    {
+        name: 'Dew Point temperature_08',
+        category: 'Metar 08UTC'
+    },
+    {
+        name: 'Visibility_08',
+        category: 'Metar 08UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_08',
+        category: 'Metar 08UTC'
+    },
+    {
+        name: 'Temperature_09',
+        category: 'Metar 09UTC'
+    },
+    {
+        name: 'Dew Point temperature_09',
+        category: 'Metar 09UTC'
+    },
+    {
+        name: 'Visibility_09',
+        category: 'Metar 09UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_09',
+        category: 'Metar 09UTC'
+    },
+    {
+        name: 'Temperature_10',
+        category: 'Metar 10UTC'
+    },
+    {
+        name: 'Dew Point temperature_10',
+        category: 'Metar 10UTC'
+    },
+    {
+        name: 'Visibility_10',
+        category: 'Metar 10UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_10',
+        category: 'Metar 10UTC'
+    },
+    {
+        name: 'Temperature_11',
+        category: 'Metar 11UTC'
+    },
+    {
+        name: 'Dew Point temperature_11',
+        category: 'Metar 11UTC'
+    },
+    {
+        name: 'Visibility_11',
+        category: 'Metar 11UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_11',
+        category: 'Metar 11UTC'
+    },
+    {
+        name: 'Temperature_12',
+        category: 'Metar 12UTC'
+    },
+    {
+        name: 'Dew Point temperature_12',
+        category: 'Metar 12UTC'
+    },
+    {
+        name: 'Visibility_12',
+        category: 'Metar 12UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_12',
+        category: 'Metar 12UTC'
+    },
+    {
+        name: 'Temperature_13',
+        category: 'Metar 13UTC'
+    },
+    {
+        name: 'Dew Point temperature_13',
+        category: 'Metar 13UTC'
+    },
+    {
+        name: 'Visibility_13',
+        category: 'Metar 13UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_13',
+        category: 'Metar 13UTC'
+    },
+    {
+        name: 'Temperature_14',
+        category: 'Metar 14UTC'
+    },
+    {
+        name: 'Dew Point temperature_14',
+        category: 'Metar 14UTC'
+    },
+    {
+        name: 'Visibility_14',
+        category: 'Metar 14UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_14',
+        category: 'Metar 14UTC'
+    },
+    {
+        name: 'Temperature_15',
+        category: 'Metar 15UTC'
+    },
+    {
+        name: 'Dew Point temperature_15',
+        category: 'Metar 15UTC'
+    },
+    {
+        name: 'Visibility_15',
+        category: 'Metar 15UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_15',
+        category: 'Metar 15UTC'
+    },
+    {
+        name: 'Temperature_16',
+        category: 'Metar 16UTC'
+    },
+    {
+        name: 'Dew Point temperature_16',
+        category: 'Metar 16UTC'
+    },
+    {
+        name: 'Visibility_16',
+        category: 'Metar 16UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_16',
+        category: 'Metar 16UTC'
+    },
+    {
+        name: 'Temperature_17',
+        category: 'Metar 17UTC'
+    },
+    {
+        name: 'Dew Point temperature_17',
+        category: 'Metar 17UTC'
+    },
+    {
+        name: 'Visibility_17',
+        category: 'Metar 17UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_17',
+        category: 'Metar 17UTC'
+    },
+    {
+        name: 'Temperature_18',
+        category: 'Metar 18UTC'
+    },
+    {
+        name: 'Dew Point temperature_18',
+        category: 'Metar 18UTC'
+    },
+    {
+        name: 'Visibility_18',
+        category: 'Metar 18UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_18',
+        category: 'Metar 18UTC'
+    },
+    {
+        name: 'Temperature_19',
+        category: 'Metar 19UTC'
+    },
+    {
+        name: 'Dew Point temperature_19',
+        category: 'Metar 19UTC'
+    },
+    {
+        name: 'Visibility_19',
+        category: 'Metar 19UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_19',
+        category: 'Metar 19UTC'
+    },
+    {
+        name: 'Temperature_20',
+        category: 'Metar 20UTC'
+    },
+    {
+        name: 'Dew Point temperature_20',
+        category: 'Metar 20UTC'
+    },
+    {
+        name: 'Visibility_20',
+        category: 'Metar 20UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_20',
+        category: 'Metar 20UTC'
+    },
+    {
+        name: 'Temperature_21',
+        category: 'Metar 21UTC'
+    },
+    {
+        name: 'Dew Point temperature_21',
+        category: 'Metar 21UTC'
+    },
+    {
+        name: 'Visibility_21',
+        category: 'Metar 21UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_21',
+        category: 'Metar 21UTC'
+    },
+    {
+        name: 'Temperature_22',
+        category: 'Metar 22UTC'
+    },
+    {
+        name: 'Dew Point temperature_22',
+        category: 'Metar 22UTC'
+    },
+    {
+        name: 'Visibility_22',
+        category: 'Metar 22UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_22',
+        category: 'Metar 22UTC'
+    },
+    {
+        name: 'Temperature_23',
+        category: 'Metar 23UTC'
+    },
+    {
+        name: 'Dew Point temperature_23',
+        category: 'Metar 23UTC'
+    },
+    {
+        name: 'Visibility_23',
+        category: 'Metar 23UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_23',
+        category: 'Metar 23UTC'
+    },
+    {
+        name: 'Temperature_00',
+        category: 'Synop 00UTC'
+    },
+    {
+        name: 'Mean Sealevel Pressure_00',
+        category: 'Synop 00UTC'
+    },
+    {
+        name: 'Geopotential Height_00',
+        category: 'Synop 00UTC'
+    },
+    {
+        name: 'Relative Humidity_00',
+        category: 'Synop 00UTC'
+    },
+    {
+        name: 'Visibility_00',
+        category: 'Synop 00UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_00',
+        category: 'Synop 00UTC'
+    },
+    {
+        name: '3h Rainfall_00',
+        category: 'Synop 00UTC'
+    },
+    {
+        name: 'Temperature_03',
+        category: 'Synop 03UTC'
+    },
+    {
+        name: 'Mean Sealevel Pressure_03',
+        category: 'Synop 03UTC'
+    },
+    {
+        name: 'Geopotential Height_03',
+        category: 'Synop 03UTC'
+    },
+    {
+        name: 'Relative Humidity_03',
+        category: 'Synop 03UTC'
+    },
+    {
+        name: 'Visibility_03',
+        category: 'Synop 03UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_03',
+        category: 'Synop 03UTC'
+    },
+    {
+        name: '3h Rainfall_03',
+        category: 'Synop 03UTC'
+    },
+    {
+        name: 'Temperature_03',
+        category: 'Synop 03UTC'
+    },
+    {
+        name: 'Mean Sealevel Pressure_06',
+        category: 'Synop 06UTC'
+    },
+    {
+        name: 'Geopotential Height_06',
+        category: 'Synop 06UTC'
+    },
+    {
+        name: 'Relative Humidity_06',
+        category: 'Synop 06UTC'
+    },
+    {
+        name: 'Visibility_06',
+        category: 'Synop 06UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_06',
+        category: 'Synop 06UTC'
+    },
+    {
+        name: '3h Rainfall_06',
+        category: 'Synop 06UTC'
+    },
+    {
+        name: 'Temperature_09',
+        category: 'Synop 09UTC'
+    },
+    {
+        name: 'Mean Sealevel Pressure_09',
+        category: 'Synop 09UTC'
+    },
+    {
+        name: 'Geopotential Height_09',
+        category: 'Synop 09UTC'
+    },
+    {
+        name: 'Relative Humidity_09',
+        category: 'Synop 09UTC'
+    },
+    {
+        name: 'Visibility_09',
+        category: 'Synop 09UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_09',
+        category: 'Synop 09UTC'
+    },
+    {
+        name: '3h Rainfall_09',
+        category: 'Synop 09UTC'
+    },
+    {
+        name: 'Temperature_12',
+        category: 'Synop 12UTC'
+    },
+    {
+        name: 'Mean Sealevel Pressure_12',
+        category: 'Synop 12UTC'
+    },
+    {
+        name: 'Geopotential Height_12',
+        category: 'Synop 12UTC'
+    },
+    {
+        name: 'Relative Humidity_12',
+        category: 'Synop 12UTC'
+    },
+    {
+        name: 'Visibility_12',
+        category: 'Synop 12UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_12',
+        category: 'Synop 12UTC'
+    },
+    {
+        name: '3h Rainfall_12',
+        category: 'Synop 12UTC'
+    },
+    {
+        name: 'Temperature_15',
+        category: 'Synop 15UTC'
+    },
+    {
+        name: 'Mean Sealevel Pressure_15',
+        category: 'Synop 15UTC'
+    },
+    {
+        name: 'Geopotential Height_15',
+        category: 'Synop 15UTC'
+    },
+    {
+        name: 'Relative Humidity_15',
+        category: 'Synop 15UTC'
+    },
+    {
+        name: 'Visibility_15',
+        category: 'Synop 15UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_15',
+        category: 'Synop 15UTC'
+    },
+    {
+        name: '3h Rainfall_15',
+        category: 'Synop 15UTC'
+    },
+    {
+        name: 'Temperature_18',
+        category: 'Synop 18UTC'
+    },
+    {
+        name: 'Mean Sealevel Pressure_18',
+        category: 'Synop 18UTC'
+    },
+    {
+        name: 'Geopotential Height_18',
+        category: 'Synop 18UTC'
+    },
+    {
+        name: 'Relative Humidity_18',
+        category: 'Synop 18UTC'
+    },
+    {
+        name: 'Visibility_18',
+        category: 'Synop 18UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_18',
+        category: 'Synop 18UTC'
+    },
+    {
+        name: '3h Rainfall_18',
+        category: 'Synop 18UTC'
+    },
+    {
+        name: 'Temperature_21',
+        category: 'Synop 21UTC'
+    },
+    {
+        name: 'Mean Sealevel Pressure_21',
+        category: 'Synop 21UTC'
+    },
+    {
+        name: 'Geopotential Height_21',
+        category: 'Synop 21UTC'
+    },
+    {
+        name: 'Relative Humidity_21',
+        category: 'Synop 21UTC'
+    },
+    {
+        name: 'Visibility_21',
+        category: 'Synop 21UTC'
+    },
+    {
+        name: 'Wind Speed And Direction_21',
+        category: 'Synop 21UTC'
+    },
+    {
+        name: '3h Rainfall_21',
+        category: 'Synop 21UTC'
+    },
+    {
+        name: 'Radar Reflectivity',
+        category: 'Radar Products'
+    },
+    {
+        name: 'Radar Animation',
+        category: 'Radar Products'
+    },
+    {
+        name: 'TIR1',
+        category: 'Satellite Observation'
+    },
+    {
+        name: 'VIS',
+        category: 'Satellite Observation'
+    },
+    {
+        name: 'CTBT',
+        category: 'Satellite Observation'
+    },
+    {
+        name: 'Low Level Convergence',
+        category: 'Satellite Observation'
+    },
+
+    {
+        name: 'Upper Level Convergence',
+        category: 'Satellite Observation',
+        name: 'MID Level Shear',
+        category: 'Satellite Observation'
+    }, , {
+        name: 'Vorticity at 200hPa',
+        category: 'Satellite Observation'
+    },
+    {
+        name: 'Vorticity at 500hPa',
+        category: 'Satellite Observation'
+    },
+    {
+        name: 'Vorticity at 700hPa',
+        category: 'Satellite Observation'
+    },
+    {
+        name: 'Vorticity at 850hPa',
+        category: 'Satellite Observation'
+    },
+    {
+        name: 'Last 00-05 min',
+        category: 'Lightning'
+    },
+    {
+        name: 'Last 05-10 min',
+        category: 'Lightning'
+    },
+    {
+        name: 'Last 10-15 min',
+        category: 'Lightning'
+    },
+    {
+        name: 'ILDN Last 05 min',
+        category: 'Lightning'
+    },
+    {
+        name: 'Nowcast Alert',
+        category: 'Lightning'
+    },
+    {
+        name: '1000 hpa Wind_00',
+        category: 'Sounding_00UTC Wind'
+    },
+    {
+        name: '850 hpa Wind_00',
+        category: 'Sounding_00UTC Wind'
+    },
+    {
+        name: '700 hpa Wind_00',
+        category: 'Sounding_00UTC Wind'
+    },
+    {
+        name: '500 hpa Wind_00',
+        category: 'Sounding_00UTC Wind'
+    },
+    {
+        name: '300 hpa Wind_00',
+        category: 'Sounding_00UTC Wind'
+    },
+    {
+        name: '200 hpa Wind_00',
+        category: 'Sounding_00UTC Wind'
+    },
+    {
+        name: '100 hpa Wind_00',
+        category: 'Sounding_00UTC Wind'
+    },
+    {
+        name: '50 hpa Wind_00',
+        category: 'Sounding_00UTC Wind'
+    },
+    {
+        name: '1000 hpa Wind_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '850 hpa Wind_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '700 hpa Wind_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '500 hpa Wind_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '300 hpa Wind_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '200 hpa Wind_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '100 hpa Wind_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '50 hpa Wind_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '1000 hpa Temp_00',
+        category: 'Sounding_00UTC Temp'
+    },
+    {
+        name: '850 hpa Temp_00',
+        category: 'Sounding_00UTC Temp'
+    },
+    {
+        name: '700 hpa Temp_00',
+        category: 'Sounding_00UTC Temp'
+    },
+    {
+        name: '500 hpa Temp_00',
+        category: 'Sounding_00UTC Temp'
+    },
+    {
+        name: '300 hpa Temp_00',
+        category: 'Sounding_00UTC Temp'
+    },
+    {
+        name: '200 hpa Temp_00',
+        category: 'Sounding_00UTC Temp'
+    },
+    {
+        name: '100 hpa Temp_00',
+        category: 'Sounding_00UTC Temp'
+    },
+    {
+        name: '50 hpa Temp_00',
+        category: 'Sounding_00UTC Wind'
+    },
+    {
+        name: '1000 hpa Temp_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '850 hpa Temp_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '700 hpa Temp_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '500 hpa Temp_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '300 hpa Temp_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '200 hpa Temp_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '100 hpa Temp_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '50 hpa Temp_12',
+        category: 'Sounding_12UTC Wind'
+    },
+    {
+        name: '1000 hpa DewPoint_00',
+        category: 'Sounding_00 UTC Dew Point'
+    },
+    {
+        name: '850 hpa DewPoint_00',
+        category: 'Sounding_00 UTC Dew Point'
+    },
+    {
+        name: '700 hpa DewPoint_00',
+        category: 'Sounding_00 UTC Dew Point'
+    },
+    {
+        name: '500 hpa DewPoint_00',
+        category: 'Sounding_00 UTC Dew Point'
+    },
+    {
+        name: '300 hpa DewPoint_00',
+        category: 'Sounding_00 UTC Dew Point'
+    },
+    {
+        name: '200 hpa DewPoint_00',
+        category: 'Sounding_00 UTC Dew Point'
+    },
+    {
+        name: '100 hpa DewPoint_00',
+        category: 'Sounding_00 UTC Dew Point'
+    },
+    {
+        name: '50 hpa DewPoint_00',
+        category: 'Sounding_00 UTC Dew Point'
+    },
+    {
+        name: '1000 hpa DewPoint_12',
+        category: 'Sounding_12 UTC Dew Point'
+    },
+    {
+        name: '850 hpa DewPoint_12',
+        category: 'Sounding_12 UTC Dew Point'
+    },
+    {
+        name: '700 hpa DewPoint_12',
+        category: 'Sounding_12 UTC Dew Point'
+    },
+    {
+        name: '500 hpa DewPoint_12',
+        category: 'Sounding_12 UTC Dew Point'
+    },
+    {
+        name: '300 hpa DewPoint_12',
+        category: 'Sounding_12 UTC Dew Point'
+    },
+    {
+        name: '200 hpa DewPoint_12',
+        category: 'Sounding_12 UTC Dew Point'
+    },
+    {
+        name: '100 hpa DewPoint_12',
+        category: 'Sounding_12 UTC Dew Point'
+    },
+    {
+        name: '50 hpa DewPoint_12',
+        category: 'Sounding_12 UTC Dew Point'
+    },
+    {
+        name: '00UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '01UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '02UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '03UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '04UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '05UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '06UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '07UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '08UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '09UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '10UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '11UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '12UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '13UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '14UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '15UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '16UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '17UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '18UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '19UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '20UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '21UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '22UTC',
+        category: 'Ship And Buoy Observation'
+    },
+    {
+        name: '23UTC',
+        category: 'Ship And Buoy Observation'
+    },
+
+
+
+];
+
+//SynopParameters
+// let synopParameters = ['Synop 00UTC', 'Synop 03UTC', 'Synop 06UTC', 'Synop 09UTC', 'Synop 12UTC',
+//     'Synop 15UTC',
+//     'Synop 18UTC', 'Synop 21UTC'
+// ];
+
 //SynopParametersList
-let Synop_00UTC = ['Temperature_00', 'Mean Sealevel Pressure_00', 'Cloud Cover_00', 'Geopotential Height_00',
+let Synop_00UTC = ['Temperature_00', 'Mean Sealevel Pressure_00', 'Cloud Cover_00',
+    'Geopotential Height_00',
     'Relative Humidity_00',
     'Visibility_00', 'Wind Speed And Direction_00', '3h Rainfall_00'
 ];
 
-let Synop_03UTC = ['Temperature_03', 'Mean Sealevel Pressure_03', 'Cloud Cover_03', 'Geopotential Height_03',
+let Synop_03UTC = ['Temperature_03', 'Mean Sealevel Pressure_03', 'Cloud Cover_03',
+    'Geopotential Height_03',
     'Relative Humidity_03',
     'Visibility_03', 'Wind Speed And Direction_03', '3h Rainfall_03'
 ];
 
-let Synop_06UTC = ['Temperature_06', 'Mean Sealevel Pressure_06', 'Cloud Cover_06', 'Geopotential Height_06',
+let Synop_06UTC = ['Temperature_06', 'Mean Sealevel Pressure_06', 'Cloud Cover_06',
+    'Geopotential Height_06',
     'Relative Humidity_06',
     'Visibility_06', 'Wind Speed And Direction_06', '3h Rainfall_06'
 ];
 
-let Synop_09UTC = ['Temperature_09', 'Mean Sealevel Pressure_09', 'Cloud Cover_09', 'Geopotential Height_09',
+let Synop_09UTC = ['Temperature_09', 'Mean Sealevel Pressure_09', 'Cloud Cover_09',
+    'Geopotential Height_09',
     'Relative Humidity_09',
     'Visibility_09', 'Wind Speed And Direction_09', '3h Rainfall_09'
 ];
 
-let Synop_12UTC = ['Temperature_12', 'Mean Sealevel Pressure_12', 'Cloud Cover_12', 'Geopotential Height_12',
+let Synop_12UTC = ['Temperature_12', 'Mean Sealevel Pressure_12', 'Cloud Cover_12',
+    'Geopotential Height_12',
     'Relative Humidity_12',
     'Visibility_12', 'Wind Speed And Direction_12', '3h Rainfall_12'
 ];
 
-let Synop_15UTC = ['Temperature_15', 'Mean Sealevel Pressure_15', 'Cloud Cover_15', 'Geopotential Height_15',
+let Synop_15UTC = ['Temperature_15', 'Mean Sealevel Pressure_15', 'Cloud Cover_15',
+    'Geopotential Height_15',
     'Relative Humidity_15',
     'Visibility_15', 'Wind Speed And Direction_15', '3h Rainfall_15'
 ];
 
-let Synop_18UTC = ['Temperature_18', 'Mean Sealevel Pressure_18', 'Cloud Cover_18', 'Geopotential Height_18',
+let Synop_18UTC = ['Temperature_18', 'Mean Sealevel Pressure_18', 'Cloud Cover_18',
+    'Geopotential Height_18',
     'Relative Humidity_18',
     'Visibility_18', 'Wind Speed And Direction_18', '3h Rainfall_18'
 ];
 
-let Synop_21UTC = ['Temperature_21', 'Mean Sealevel Pressure_21', 'Cloud Cover_21', 'Geopotential Height_21',
+let Synop_21UTC = ['Temperature_21', 'Mean Sealevel Pressure_21', 'Cloud Cover_21',
+    'Geopotential Height_21',
     'Relative Humidity_21',
     'Visibility_21', 'Wind Speed And Direction_21', '3h Rainfall_21'
+];
+
+let SynopParametersList = [Synop_00UTC, Synop_03UTC, Synop_06UTC, Synop_09UTC, Synop_12UTC, Synop_15UTC,
+    Synop_18UTC,
+    Synop_21UTC
 ];
 //
 
 //RadarParameters
-let radarParameters = ['Radar Products'];
+// let radarParameters = ['Radar Products'];
 
 //RadarParametersList
 let Radar_Products = ['Radar Reflectivity', 'Radar Animation'];
@@ -225,7 +1420,9 @@ let SatelliteObservation = ['TIR1', 'VIS', 'CTBT', 'Low Level Convergence', 'Upp
 let LightningParameter = ['Lightning'];
 
 //LightningParametersLists
-let LightningList = ['Last 00-05 min', 'Last 05-10 min', 'Last 10-15 min', 'ILDN Last 05 min', 'Nowcast Alert'];
+let LightningList = ['Last 00-05 min', 'Last 05-10 min', 'Last 10-15 min', 'ILDN Last 05 min',
+    'Nowcast Alert'
+];
 //
 
 //SoundingParameters
@@ -239,7 +1436,7 @@ let Sounding_00UTC_Wind = ['1000 hpa Wind_00', '850 hpa Wind_00', '700 hpa Wind_
     '200 hpa Wind_00', '100 hpa Wind_00', '50 hpa Wind_00',
 ];
 
-let Sounding_12UTC_Windr = ['1000 hpa Wind_12', '850 hpa Wind_12', '700 hpa Wind_12', '500 hpa Wind_12',
+let Sounding_12UTC_Wind = ['1000 hpa Wind_12', '850 hpa Wind_12', '700 hpa Wind_12', '500 hpa Wind_12',
     '300 hpa Wind_12',
     '200 hpa Wind_12', '100 hpa Wind_12', '50 hpa Wind_12',
 ];
@@ -265,40 +1462,64 @@ let Sounding_12UTC_DewPoint = ['1000 hpa DewPoint_12', '850 hpa DewPoint_12', '7
     '300 hpa DewPoint_12',
     '200 hpa DewPoint_12', '100 hpa DewPoint_12', '50 hpa DewPoint_12',
 ];
+
+let SoundingParametersLists = [Sounding_00UTC_Wind, Sounding_12UTC_Wind, Sounding_00UTC_Temp,
+    Sounding_12UTC_Temp,
+    Sounding_00UTC_DewPoint, Sounding_12UTC_DewPoint
+];
 //
 
 //Ship&BuoyParameters
 let ShipBuoyParameters = ['Ship And Buoy Observation'];
 
 //Ship&BuoyParametersLists
-let ShipAndBuoyObservation = ['00UTC', '01UTC', '02UTC', '03UTC', '04UTC', '05UTC', '06UTC', '07UTC', '08UTC', '09UTC',
+let ShipAndBuoyObservation = ['00UTC', '01UTC', '02UTC', '03UTC', '04UTC', '05UTC', '06UTC', '07UTC',
+    '08UTC', '09UTC',
     '10UTC',
-    '11UTC', '12UTC', '13UTC', '14UTC', '15UTC', '16UTC', '17UTC', '18UTC', '19UTC', '20UTC', '21UTC', '22UTC',
+    '11UTC', '12UTC', '13UTC', '14UTC', '15UTC', '16UTC', '17UTC', '18UTC', '19UTC', '20UTC',
+    '21UTC', '22UTC',
     '23UTC'
 ];
 //
 
-//ModelNames-Dropdown
+//ModelNames-Dropdown    MA-ModelsArray
 let getModelNames = document.getElementById("modelNames");
 let pushModelNames = '';
-for (let i = 0; i < modelNamesArr.length; i++) {
-    pushModelNames += `<option class="test">${modelNamesArr[i]}</option><br/><br/>`;
+for (let MA = 0; MA < modelNamesArr.length; MA++) {
+    pushModelNames += `<option class="test">${modelNamesArr[MA]}</option><br/><br/>`;
 }
 getModelNames.innerHTML = pushModelNames;
 
-//Dropdown_selection
-// function dd_source() {
-//     // Get the dropdown element
-//     let dd_source = document.getElementById('source');
-//     if (dd_source == 'metar') {
+//secondDropdown-SD
+function showParameterNames(value) {
+    let getparameterNames = document.getElementById("parameterNames");
+    let pushparameterNames = '';
+    var SecondDropdown = Parameters.filter(x => x.category == value);
+    for (let SD = 0; SD < SecondDropdown.length; SD++) {
+        if (SecondDropdown[SD].name) {
+            pushparameterNames += `<option>${SecondDropdown[SD].name}</option><br/><br/>`;
+        }
+    }
+    getparameterNames.innerHTML = pushparameterNames;
+}
 
 
-//     } else if (dd_source == 'synop') {
+//secondDropdown-SD
+function showSubParameterNames(value) {
+    alert(value)
+    let getsubparameterNames = document.getElementById("subparameter");
+    let pushsubparameterNames = '';
 
-//     } else {
+    console.log(subParametersList)
+    var SecondDropdown = subParametersList.filter(x => x.category == value);
+    for (let SD = 0; SD < SecondDropdown.length; SD++) {
+        if (SecondDropdown[SD].name) {
+            pushsubparameterNames += `<option>${SecondDropdown[SD].name}</option><br/><br/>`;
+        }
+    }
+    getsubparameterNames.innerHTML = pushsubparameterNames;
+}
 
-//     }
-// }
 //DATE
 function startDate() {
     // Get the date input element
@@ -319,14 +1540,21 @@ function endDate() {
 }
 
 //time UTC
-function logSelectedTime() {
-    // Get the time input element
-    var timeInput = document.getElementById('timeInput');
-
-    // Get the selected time in UTC format
-    var selectedTimeUTC = timeInput.value;
-    console.log('Selected Time (UTC):', selectedTimeUTC);
+//hr HS-hourSelect
+let getHourSelect = document.getElementById("hourSelect");
+let pushHourSelect = '';
+for (let HS = 0; HS < 25; HS++) {
+    pushHourSelect += `<option>${[HS]}</option><br/><br/>`;
 }
+getHourSelect.innerHTML = pushHourSelect;
+
+//min MS-minuteSelect
+let getMinSelect = document.getElementById("minuteSelect");
+let pushMinSelect = '';
+for (let MS = 0; MS < 60; MS++) {
+    pushMinSelect += `<option>${[MS]}</option><br/><br/>`;
+}
+getMinSelect.innerHTML = pushMinSelect;
 
 //submitForm
 function submitForm() {
@@ -585,6 +1813,7 @@ var myIcon = L.icon({
 // });
 
 // delhiMarker jaipurMarker jaipurMarker
+
 // Add a marker for Delhi
 var delhiMarker = L.marker([28.6139, 77.2090]);
 delhiMarker.bindPopup("<b>Delhi</b>").openPopup();
@@ -633,8 +1862,19 @@ KanpurMarker.bindPopup("<b>Kanpur</b>").openPopup();
 var MeerutMarker = L.marker([28.6139, 77.2090]);
 MeerutMarker.bindPopup("<b>Meerut</b>").openPopup();
 
+// Add a marker for Solapur
+var SolapurMarker = L.marker([17.6599, 75.9064]);
+SolapurMarker.bindPopup("<b>Solapur</b>").openPopup();
 
-//
+// Add a marker for Vijayapura
+var VijayapuraMarker = L.marker([16.8302, 75.7100]);
+VijayapuraMarker.bindPopup("<b>Vijayapura</b>").openPopup();
+
+// Add a marker for Bidar
+var BidarMarker = L.marker([17.9136, 77.5305]);
+BidarMarker.bindPopup("<b>Bidar</b>").openPopup();
+
+
 const overLayers = [{
         group: "Lightning",
         collapsed: true,
@@ -2814,7 +4054,7 @@ var overLayers9 = [{
 
 ];
 
-//Exposure
+//Exposure 
 var overLayers10 = [{
     group: "Exposure Layers",
     collapsed: true,
@@ -2836,27 +4076,27 @@ var overLayers10 = [{
         {
             active: false,
             name: "Power Station",
-            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+            layer: SolapurMarker
         },
         {
             active: false,
             name: "Power Plant",
-            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+            layer: VijayapuraMarker
         },
         {
             active: false,
             name: "DEM",
-            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+            layer: BidarMarker
         },
         {
             active: false,
             name: "Hospital",
-            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+            layer: BidarMarker
         },
         {
             active: false,
             name: "Industrail",
-            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+            layer: BidarMarker
         },
 
         {
@@ -3019,10 +4259,6 @@ var overLayers11 = [{
 }, ];
 
 
-// var panelLayers1 = new L.Control.PanelLayers(baseMaps, overLayers1, {
-//     collapsibleGroups: true
-// });
-
 var panelLayers2 = new L.Control.PanelLayers(baseMaps, overLayers2, {
     collapsibleGroups: true,
     // collapsed: true
@@ -3166,7 +4402,8 @@ function clickHandler_mesolscale(event_mesolscale) {
 
     if (event_mesolscale.target && event_mesolscale.target.id == "mesolscale") {
         if (currentColormesolscale === 'rgb(245, 222, 179)') { // highlighted color
-            targetElement_mesolscale.style.backgroundColor = 'rgb(240, 240, 240)'; // Reset to default color
+            targetElement_mesolscale.style.backgroundColor =
+                'rgb(240, 240, 240)'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -3260,7 +4497,8 @@ function clickHandler_satellite(event_satellite) {
 
     if (event_satellite.target && event_satellite.target.id == "satellite") {
         if (currentColorsatellite === 'rgb(245, 222, 179)') { // highlighted color
-            targetElement_satellite.style.backgroundColor = 'rgb(240, 240, 240)'; // Reset to default color
+            targetElement_satellite.style.backgroundColor =
+                'rgb(240, 240, 240)'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -3354,7 +4592,8 @@ function clickHandler_lightning(event_lightning) {
 
     if (event_lightning.target && event_lightning.target.id == "lightning") {
         if (currentColorlightning === 'rgb(245, 222, 179)') { // highlighted color
-            targetElement_lightning.style.backgroundColor = 'rgb(240, 240, 240)'; // Reset to default color
+            targetElement_lightning.style.backgroundColor =
+                'rgb(240, 240, 240)'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -3401,7 +4640,8 @@ function clickHandler_sounding(event_sounding) {
 
     if (event_sounding.target && event_sounding.target.id == "sounding") {
         if (currentColorsounding === 'rgb(245, 222, 179)') { // highlighted color
-            targetElement_sounding.style.backgroundColor = 'rgb(240, 240, 240)'; // Reset to default color
+            targetElement_sounding.style.backgroundColor =
+                'rgb(240, 240, 240)'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -3532,7 +4772,6 @@ function clickHandler_ship(event_ship) {
         }
 
     }
-    // console.log(event_ship.target.id);
 }
 
 document.getElementById("parent").addEventListener("click", clickHandler_ship);
@@ -3542,7 +4781,7 @@ document.getElementById("parent").addEventListener("click", clickHandler_ship);
 // model popup
 let model = document.querySelector('.model');
 let modelBody = document.querySelector('.model-body');
-let closeModel = document.querySelector('.model-body span');
+let closeModel = document.querySelector('.model-body legend');
 //
 let panelLayerLightningTitle = document.querySelector('#panelLayer-Lightning-Title')
 let panelLayerLightninglists = document.querySelector('#panelLayer-Lightning-lists')
@@ -3612,9 +4851,9 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (panelLayerLightningTitle.innerHTML == '') {
                 panelLayerLightningTitle.innerHTML = _this.context._layer.group.name + ':';
-                legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-                legendModel1.style.height = '35vh';
-                legendModel1.style.width = '72%';
+                // legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
+                // legendModel1.style.height = '35vh';
+                // legendModel1.style.width = '72%';
                 Light_RadarRow.style.display = 'block';
             }
 
@@ -3643,9 +4882,9 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (_this.context._layer.group.name == "Radar Reflectivity") {
             if (panelLayerRadarTitle.innerHTML == '') {
                 panelLayerRadarTitle.innerHTML = _this.context._layer.group.name + ':'
-                legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-                legendModel1.style.height = '35vh';
-                legendModel1.style.width = '72%';
+                // legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
+                // legendModel1.style.height = '35vh';
+                // legendModel1.style.width = '72%';
                 Light_RadarRow.style.display = 'block';
             }
 
@@ -3666,22 +4905,124 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerExposureTitle.innerHTML == '') {
                 EXPOSURE.innerHTML = "EXPOSURE"
                 panelLayerExposureTitle.innerHTML = _this.context._layer.group.name + ':'
-                legendModelExpo.src = 'http://103.215.208.18/dwr_img/GIS/legend/exp_legend2.PNG';
-                legendModelExpo.style.height = '35vh';
-                legendModelExpo.style.width = '72%';
+                // legendModelExpo.src = 'http://103.215.208.18/dwr_img/GIS/legend/exp_legend2.PNG';
+                // legendModelExpo.style.height = '35vh';
+                // legendModelExpo.style.width = '72%';
                 ExposureRow.style.display = 'block';
             }
 
             if (layer_name == 'District Boundaries') {
                 clickedExposureLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 12px; 
+                    height: 12px;
+                    border-radius: 50%; 
+                    border: 2px solid black; 
+                    background-color: black;
+                    display: inline-block;"></span><br>`
                 );
             }
             if (layer_name == 'Airport') {
                 clickedExposureLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 12px; 
+                    height: 12px;
+                    border-radius: 50%; 
+                    border: 2px solid black; 
+                    background-color: orange;
+                    display: inline-block;"></span><br>`
                 );
             }
+            if (layer_name == 'Hospital') {
+                clickedExposureLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 12px; 
+                    height: 12px;
+                    border-radius: 50%; 
+                    border: 2px solid black; 
+                    background-color: green;
+                    display: inline-block;"></span><br>`
+                );
+            }
+            if (layer_name == 'sports') {
+                clickedExposureLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 12px; 
+                    height: 12px;
+                    border-radius: 50%; 
+                    border: 2px solid black; 
+                    background-color: brown;
+                    display: inline-block;"></span><br>`
+                );
+            }
+            if (layer_name == 'Power Plant') {
+                clickedExposureLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 12px; 
+                    height: 12px;
+                    border-radius: 50%; 
+                    border: 2px solid black; 
+                    background-color: red;
+                    display: inline-block;"></span><br>`
+                );
+            }
+            if (layer_name == 'Power Station') {
+                clickedExposureLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 12px;
+                    height: 12px;
+                    position: relative;
+                    background-color: red;
+                    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+                    display: inline-block;"></span><br>`
+                );
+            }
+            if (layer_name == 'Oil Refineries') {
+                clickedExposureLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span  style="width: 0;
+                    height: 0;
+                    border-left: 12px solid transparent;
+                    border-right: 12px solid transparent;
+                    border-bottom: 12px solid red;
+                    display: inline-block;"
+                    "></span><br>`
+                );
+            }
+            if (layer_name == 'Industrail') {
+                clickedExposureLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 12px; 
+                    height: 12px;
+                    border-radius: 50%; 
+                    border: 2px solid black; 
+                    background-color: yellow;
+                    display: inline-block;"></span><br>`
+                );
+            }
+            if (layer_name == 'Socio Economic Zone') {
+                clickedExposureLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 12px; 
+                    height: 12px;
+                    border-radius: 25%; 
+                    border: 2px solid black; 
+                    background-color: red;
+                    display: inline-block;"></span><br>`
+                );
+            }
+            if (layer_name == 'Road Network') {
+                clickedExposureLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/road_network.jpeg" style="width: 25px; height: auto;"><br>`
+                );
+            }
+            if (layer_name == 'Railway Network') {
+                clickedExposureLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/railway.jpeg" style="width: 25px; height: auto;"><br>`
+                );
+            }
+            if (layer_name == 'DEM') {
+                clickedExposureLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/DEM.jpeg" style="width: 125px; height: auto;"><br>`
+                );
+            }
+            if (layer_name == 'LULC') {
+                clickedExposureLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/LULC.jpeg" style="width: 175px; height: 250px;"><br>`
+                );
+            }
+
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
         }
 
@@ -3690,31 +5031,77 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR00UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR00UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                legendModelMet.src = "";
-                legendModelMet.src = 'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
-                legendModelMet.style.height = '35vh';
-                legendModelMet.style.width = '72%';
+                // legendModelMet.src = "";
+                // legendModelMet.src = 'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
+                // legendModelMet.style.height = '35vh';
+                // legendModelMet.style.width = '72%';
                 METAR_Row.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;"><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br> <div style="width: 30px; 
+                    height: 15px;
+                    display: flex;
+                    border: 2px solid black;">
+                    <div style="flex: 1; background-color: green;"></div>
+                    <div style="flex: 1; background-color: white;"></div>
+                    </div><br>`
+                );
+            }
+            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+        }
+
+        if (_this.context._layer.group.name == "METAR 01UTC") {
+            if (panelLayerMETAR00UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR00UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                // legendModelMet.src = "";
+                // legendModelMet.src = 'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
+                // legendModelMet.style.height = '35vh';
+                // legendModelMet.style.width = '72%';
+                METAR_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;"><br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br> <div style="width: 30px; 
+                    height: 15px;
+                    display: flex;
+                    border: 2px solid black;">
+                    <div style="flex: 1; background-color: green;"></div>
+                    <div style="flex: 1; background-color: white;"></div>
+                    </div><br>`
                 );
             }
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
@@ -3789,10 +5176,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         //
         if (panelLayerLightninglists.innerHTML == '' && panelLayerRadarlists.innerHTML == '') {
             panelLayerLightningTitle.innerHTML = '';
-            legendModel1.src = "";
-            legendModel1.alt = "";
-            legendModel1.style.height = 0;
-            legendModel1.style.width = 0;
+            // legendModel1.src = "";
+            // legendModel1.alt = "";
+            // legendModel1.style.height = 0;
+            // legendModel1.style.width = 0;
             Light_RadarRow.style.display = 'none';
         }
 
@@ -3818,10 +5205,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (panelLayerExposureLists.innerHTML == '') {
             panelLayerExposureTitle.innerHTML = '';
             EXPOSURE.innerHTML = '';
-            legendModelExpo.src = "";
-            legendModelExpo.alt = "";
-            legendModelExpo.style.height = 0;
-            legendModelExpo.style.width = 0;
+            // legendModelExpo.src = "";
+            // legendModelExpo.alt = "";
+            // legendModelExpo.style.height = 0;
+            // legendModelExpo.style.width = 0;
             ExposureRow.style.display = 'flex';
 
         }
@@ -3871,10 +5258,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (panelLayerMETAR00UTC_lists.innerHTML == '') {
             panelLayerMETAR00UTC_Title.innerHTML = '';
             METAR.innerHTML = '';
-            legendModelMet.src = "";
-            legendModelMet.alt = "";
-            legendModelMet.style.height = 0;
-            legendModelMet.style.width = 0;
+            // legendModelMet.src = "";
+            // legendModelMet.alt = "";
+            // legendModelMet.style.height = 0;
+            // legendModelMet.style.width = 0;
             METAR_Row.style.display = 'block';
         }
         console.log(layer_name, "layer_name");
@@ -3889,6 +5276,7 @@ $("body").on("change", "input[type=checkbox]", function() {
     }
 });
 //
+
 
 //closeModel
 closeModel.onclick = () => {
