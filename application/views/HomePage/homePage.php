@@ -305,8 +305,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
 
     <!--Observation BTN , LEAFLETJS -->
-    <div class="mapAreaBg mx-auto" style="width:97%;">
-
+    <!-- <div class="mapAreaBg mx-auto" style="width:97%;"> -->
         <div id="ObservationContainer" class="hidden">
             <!-- model -->
             <div>
@@ -356,28 +355,30 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
             </form>
         </div>
 
+
         </br>
-        <div class="row">
-            <div class="col-9" style="z-index: 999;">
-                <div id="map"></div>
-            </div>
+        <!-- <div class="row"> -->
+            <!-- <div class="col-9" style="z-index: 999;"> -->
+            <!-- </div>
             <div class="col-3">
                 <div class=" wrapper bar" onclick="toggleFunction()">
                     <i class="gg-arrows-expand-right-alt"></i>
                 </div>
-                <!-- <div id="toggleImage">
+                <div id="toggleImage">
                     <img id="legend1" src="http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png" alt="legend"
                         class="legend1" />
                     <img id="legend2" src="http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png" alt="legend"
                         class="legend2" />
-                </div> -->
+                </div>
 
-            </div>
-        </div>
-    </div>
+            </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
 
     <button id="popup"
-        style="width: 7em;color: #00aa55; background-color:#00aa55 ; cursor: pointer;border: none;height: 2em;margin-top: 10px;margin-left: 1.35em; margin-bottom:1em;color: white;">PopUp</button>
+        style="width: 7em;color: #00aa55; background-color:#00aa55 ; cursor: pointer;border: none;height: 2em;margin-top: 2px;margin-left: 1.35em; margin-bottom:2px;color: white;">PopUp</button>
+
+        <div id="map"></div>
 
     <!-- <button id="popup">Popup</button> -->
 
