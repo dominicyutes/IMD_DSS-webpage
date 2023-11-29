@@ -4913,10 +4913,9 @@
                 if (layer_name == 'District Boundaries') {
                     clickedExposureLists.push(
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 30px; 
-      height: 1px; 
-      border-bottom: 2px dashed #000;
-
-                    display: inline-block;"></span><br>`
+                        height: 1px; 
+                        border-bottom: 2px dashed #000;
+                        display: inline-block;"></span><br>`
                     );
                 }
                 if (layer_name == 'Airport') {
@@ -5153,19 +5152,119 @@
 
             //Exposure
             if (layer_name == 'District Boundaries') {
-                clickedExposureLists = clickedExposureLists.filter(checkList => checkList !=
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                clickedExposureLists = clickedExposureLists.filter(checkList => 
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 30px; 
+                        height: 1px; 
+                        border-bottom: 2px dashed #000;
+                        display: inline-block;"></span><br>`
                 );
                 panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
                 map.removeLayer(PuneMarker);
             }
             if (layer_name == 'Airport') {
                 clickedExposureLists = clickedExposureLists.filter(checkList => checkList !=
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-plane"></i><br>`
                 );
                 panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
                 map.removeLayer(MumbaiMarker);
             }
+            if (layer_name == 'Hospital') {
+                clickedExposureLists = clickedExposureLists.filter(checkList => 
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-hospital"></i>
+                    <br>`
+                );
+                panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+                map.removeLayer(BidarMarker);
+            }
+            if (layer_name == 'sports') {
+                clickedExposureLists = clickedExposureLists.filter(checkList => 
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-football-ball"></i><br>`);
+                panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+                map.removeLayer(PuneMarker);
+            }
+            if (layer_name === 'Power Plant') {
+                clickedExposureLists = clickedExposureLists.filter(checkList => 
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}  
+                        <img src="img/powerplant.jpeg" width="20" height="20" /><br>`
+                );
+                panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+                map.removeLayer(VijayapuraMarker);
+            }
+
+
+            if (layer_name == 'Power Station') {
+                clickedExposureLists = clickedExposureLists.filter(checkList => 
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
+                    <img src="img/powerstation.png" width="20" height="20" /><br>`
+                );
+                panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+                map.removeLayer(SolapurMarker);
+            }
+            if (layer_name == 'Oil Refineries') {
+                clickedExposureLists = clickedExposureLists.filter(checkList => 
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-industry"></i><br>`
+                );
+                panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+                map.removeLayer(RanchiMarker);
+            }
+            if (layer_name == 'Industrail') {
+                clickedExposureLists = clickedExposureLists.filter(checkList => 
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
+                    <img src="img/industry.jpeg" width="20" height="20" /><br>`
+                );
+                panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+                map.removeLayer(BidarMarker);
+            }
+            if (layer_name === 'Socio Economic Zone') {
+                clickedExposureLists = clickedExposureLists.filter(checkList => 
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
+                        <img src="img/socio_economic_zone.jpeg" width="20" height="20" /><br>`
+                );
+                panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+                map.removeLayer(PuneMarker);
+            }
+
+            if (layer_name == 'Road Network') {
+                clickedExposureLists = clickedExposureLists.filter(checkList => 
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/road_network.jpeg" style="width: 25px; height: auto;"><br>`
+                );
+                panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+                map.removeLayer(PuneMarker);
+            }
+            if (layer_name == 'Railway Network') {
+                clickedExposureLists = clickedExposureLists.filter(checkList => 
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/railway.jpeg" style="width: 25px; height: auto;"><br>`
+                );
+                panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+                map.removeLayer(PuneMarker);
+            }
+            if (layer_name == 'DEM') {
+                clickedExposureLists = clickedExposureLists.filter(checkList => 
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/DEM.jpeg" style="width: 125px; height: auto;"><br>`
+                );
+                panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+                map.removeLayer(BidarMarker);
+            }
+            if (layer_name == 'LULC') {
+                clickedExposureLists = clickedExposureLists.filter(checkList => 
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/LULC.jpeg" style="width: 175px; height: 250px;"><br>`
+                );
+                panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+                map.removeLayer(PuneMarker);
+            }
+
             //
 
             //
