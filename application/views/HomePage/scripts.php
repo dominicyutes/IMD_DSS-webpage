@@ -4932,7 +4932,6 @@
                 if (layer_name == 'sports') {
                     clickedExposureLists.push(
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-football-ball"></i>
-
                          <br>`
                     );
                 }
@@ -5173,7 +5172,7 @@
                 clickedExposureLists = clickedExposureLists.filter(checkList => 
                 checkList !=
                 `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-hospital"></i>
-                    <br>`
+                        <br>`
                 );
                 panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
                 map.removeLayer(BidarMarker);
@@ -5181,7 +5180,9 @@
             if (layer_name == 'sports') {
                 clickedExposureLists = clickedExposureLists.filter(checkList => 
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-football-ball"></i><br>`);
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-football-ball"></i>
+                         <br>`
+                );
                 panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
                 map.removeLayer(PuneMarker);
             }
@@ -5189,7 +5190,7 @@
                 clickedExposureLists = clickedExposureLists.filter(checkList => 
                 checkList !=
                 `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}  
-                        <img src="img/powerplant.jpeg" width="20" height="20" /><br>`
+                         <img src="img/powerplant.jpeg" width="20" height="20" /><br>`
                 );
                 panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
                 map.removeLayer(VijayapuraMarker);
@@ -5200,7 +5201,7 @@
                 clickedExposureLists = clickedExposureLists.filter(checkList => 
                 checkList !=
                 `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
-                    <img src="img/powerstation.png" width="20" height="20" /><br>`
+                        <img src="img/powerstation.png" width="20" height="20" /><br>`
                 );
                 panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
                 map.removeLayer(SolapurMarker);
@@ -5217,7 +5218,7 @@
                 clickedExposureLists = clickedExposureLists.filter(checkList => 
                 checkList !=
                 `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
-                    <img src="img/industry.jpeg" width="20" height="20" /><br>`
+                        <img src="img/industry.jpeg" width="20" height="20" /><br>`
                 );
                 panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
                 map.removeLayer(BidarMarker);
@@ -5226,7 +5227,7 @@
                 clickedExposureLists = clickedExposureLists.filter(checkList => 
                 checkList !=
                 `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
-                        <img src="img/socio_economic_zone.jpeg" width="20" height="20" /><br>`
+                         <img src="img/socio_economic_zone.jpeg" width="20" height="20" /><br>`
                 );
                 panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
                 map.removeLayer(PuneMarker);
