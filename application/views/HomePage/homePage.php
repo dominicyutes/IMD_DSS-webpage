@@ -408,7 +408,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                 <h4 id="EXPOSURE" style=" border-radius: 8px; background-color: yellow; text-align: center;">
                     EXPOSURE
                 </h4>
-                <h5 id="exposure-layers-Title"></h5>
+                <h5 id="exposure-layers-Title" style="color: red;"></h5>
                 <p id="exposure-layers-lists"></p>
                 <!-- </div> -->
                 <!-- <div class="col-7">
@@ -422,7 +422,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                 <!-- HomePage-Lightning -->
                 <h4 id="METAR" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
                 <!-- METAR00UTC -->
-                <h5 id="METAR00UTC-Title"></h5>
+                <h5 id="METAR00UTC-Title" style="color: red;"></h5>
                 <p id="METAR00UTC-lists"></p>
                 <!-- METAR01UTC -->
                 <!-- <h5 id="METAR01UTC-Title"></h5>
