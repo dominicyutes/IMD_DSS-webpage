@@ -67,6 +67,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
 
 
+    <!-- background: radial-gradient(919px at 1.7% 6.1%, rgb(41, 58, 76) 0%, rgb(40, 171, 226) 100.2%); -->
 
     <!-- adding css -->
     <?php $this->load->view('HomePage/style');?>
@@ -122,7 +123,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     .minsistry-text {
         margin: 0px 17px 0px 0px;
         font-size: 14px;
-        color: #897777;
+        color: #211d97;
         position: relative;
         z-index: 1;
         margin-bottom: 20px;
@@ -130,6 +131,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
         line-height: 1.5;
         word-break: break-word;
         transition: all 0.45s ease;
+        font-weight: bold;
     }
 
     .btn-val:hover {
@@ -171,6 +173,10 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
         background-color: #ced0cf;
     }
 
+    .heightChange {
+        height: 3em;
+    }
+
     @keyframes loadingAnimation {
         0% {
             width: 0;
@@ -186,7 +192,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     }
     </style>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
 </head>
@@ -214,10 +220,6 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                             India Meterological Department <br>
                             Ministry of Earth and Sciences
                         </span>
-                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="justify-content-center fs-5 ls-1 pb-4 span_bold"
-                            style="letter-spacing: 3px;color: #fff ">MINISTRY OF EARTH
-                            SCIENCES</span> -->
                     </div>
                 </span>
 
@@ -234,12 +236,11 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
     <div style="width: 92%; margin-bottom:1em; background-color:#ffffff;" class="mx-auto">
 
-        <div class="text-center"
-            style="background-image: linear-gradient(to right top, #eae0e0, #efe8ea, #f3f0f2, #f9f7f9, #ffffff); padding: 10px 0px 10px 0px;">
+        <div class="text-center" style="padding: 10px 0px 10px 0px;">
             <span class="minsistry-text">Weather Decison Support System</span>
         </div>
         <!-- navbar -->
-        <div style="display:flex;height: 3em;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto">
+        <div style="display:flex;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto heightChange">
             <div style="width: 100%;display: flex;">
                 <div class="d-flex flex-wrap w-100 gx-3 gy-3 mt-1" id="parent" style="justify-content: space-between">
 
@@ -316,7 +317,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     <!-- <div class="mapAreaBg mx-auto" style="width:97%;"> -->
     <div id="ObservationContainer" class="hidden">
         <!-- model -->
-        <div>
+        <div class="obsFirstLine">
             <label for="modelNames" class="firstDDLabel">Model:</label>
             <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
             </select>
@@ -334,7 +335,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
             <span>&nbsp;</span>
         </div>
 
-        <div>
+        <div class="obsSecondLine">
             <!-- Date -->
             <label for="start_date" class="dateDDLabel">Start Date:</label>
             <input type="date" id="start_date" onchange="logSelectedDate()" class="dateDD">
