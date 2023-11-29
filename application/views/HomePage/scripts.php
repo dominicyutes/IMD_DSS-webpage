@@ -1873,6 +1873,22 @@ VijayapuraMarker.bindPopup("<b>Vijayapura</b>").openPopup();
 var BidarMarker = L.marker([17.9136, 77.5305]);
 BidarMarker.bindPopup("<b>Bidar</b>").openPopup();
 
+// Add a marker for Jeypur
+var JeypurMarker = L.marker([18.8565, 82.5644]);
+JeypurMarker.bindPopup("<b>Jeypur</b>").openPopup();
+
+// Add a marker for Rayagada
+var JeypurMarker = L.marker([19.1662, 83.4166]);
+RayagadaMarker.bindPopup("<b>Rayagada</b>").openPopup();
+
+// Add a marker for Bobbili
+var BobbiliMarker = L.marker([18.5697, 83.3666]);
+BobbiliMarker.bindPopup("<b>Bobbili</b>").openPopup();
+
+// Add a marker for Bobbili
+var BobbiliMarker = L.marker([18.5697, 83.3666]);
+BobbiliMarker.bindPopup("<b>Bobbili</b>").openPopup();
+
 
 const overLayers = [{
         group: "Lightning",
@@ -4930,6 +4946,33 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
 
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;"><br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br> <div style="width: 30px; 
+                    height: 15px;
+                    display: flex;
+                    border: 2px solid black;">
+                    <div style="flex: 1; background-color: green;"></div>
+                    <div style="flex: 1; background-color: white;"></div>
+                    </div><br>`
+                );
+            }
+            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
         }
         //HomePage_Radar
         if (_this.context._layer.group.name == "Radar Reflectivity") {
