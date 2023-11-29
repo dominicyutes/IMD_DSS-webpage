@@ -243,7 +243,7 @@ nav {
 
 .model-body {
     position: absolute;
-    width: 225px;
+    width: 250px;
     height: 300px;
     margin: 315px 0 0 100px;
     transform: translate(-50%, -50%);
