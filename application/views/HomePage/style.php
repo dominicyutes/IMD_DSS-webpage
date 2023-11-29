@@ -153,7 +153,7 @@ nav {
 
 /* map starts here*/
 #map {
-    height: 83vh;
+    height: 120vh;
     width: 96%;
     border: 2px solid #646464;
     margin: 0 5px 15px 25px;
@@ -251,11 +251,11 @@ nav {
 
 .model-body {
     position: absolute;
-    width: 225px;
+    width: 250px;
     height: 300px;
     margin: 315px 0 0 100px;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: lightblue;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.404);
     border-radius: 6px;
     user-select: none;
@@ -266,7 +266,7 @@ nav {
 .model-body h4 {
     font-size: 16px;
     padding-left: 11px;
-    margin: 5px 0 0 10px;
+    margin: 5px 0 0 0px;
 }
 
 .model-body h5 {

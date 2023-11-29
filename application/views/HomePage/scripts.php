@@ -4813,9 +4813,21 @@ let panelLayerExposureLists = document.querySelector('#exposure-layers-lists')
 let panelLayerMETAR00UTC_Title = document.querySelector('#METAR00UTC-Title')
 let panelLayerMETAR00UTC_lists = document.querySelector('#METAR00UTC-lists')
 //METAR01UTC
-// let panelLayerMETAR01UTC_Title = document.querySelector('#METAR01UTC-Title')
-// let panelLayerMETAR01UTC_lists = document.querySelector('#METAR01UTC-lists')
-// 
+let panelLayerMETAR01UTC_Title = document.querySelector('#METAR01UTC-Title')
+let panelLayerMETAR01UTC_lists = document.querySelector('#METAR01UTC-lists')
+//METAR02UTC
+let panelLayerMETAR02UTC_Title = document.querySelector('#METAR02UTC-Title')
+let panelLayerMETAR02UTC_lists = document.querySelector('#METAR02UTC-lists')
+//METAR03UTC
+let panelLayerMETAR03UTC_Title = document.querySelector('#METAR03UTC-Title')
+let panelLayerMETAR03UTC_lists = document.querySelector('#METAR03UTC-lists')
+//METAR04UTC
+let panelLayerMETAR04UTC_Title = document.querySelector('#METAR04UTC-Title')
+let panelLayerMETAR04UTC_lists = document.querySelector('#METAR04UTC-lists')
+//METAR05UTC
+let panelLayerMETAR05UTC_Title = document.querySelector('#METAR05UTC-Title')
+let panelLayerMETAR05UTC_lists = document.querySelector('#METAR05UTC-lists')
+
 
 document.querySelectorAll('#popup').forEach(function(openModel) {
     console.log(openModel, "__openModel");
@@ -4846,9 +4858,11 @@ let clickedLightningLists = [];
 let clickedRadarLists = [];
 let clickedExposureLists = [];
 let clickedMETAR00UTCLists = [];
-// let clickedMETAR00UTC_DPT_lists = [];
-// let clickedMETAR00UTC_Visibility_lists = [];
-// let clickedMETAR00UTC_WSAD_lists = [];
+let clickedMETAR01UTCLists = [];
+let clickedMETAR02UTCLists = [];
+let clickedMETAR03UTCLists = [];
+let clickedMETAR04UTCLists = [];
+let clickedMETAR05UTCLists = [];
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
@@ -4892,6 +4906,33 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
 
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;"><br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br> <div style="width: 30px; 
+                    height: 15px;
+                    display: flex;
+                    border: 2px solid black;">
+                    <div style="flex: 1; background-color: green;"></div>
+                    <div style="flex: 1; background-color: white;"></div>
+                    </div><br>`
+                );
+            }
+            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
         }
         //HomePage_Radar
         if (_this.context._layer.group.name == "Radar Reflectivity") {
@@ -4929,10 +4970,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'District Boundaries') {
                 clickedExposureLists.push(
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 30px; 
-      height: 1px; 
-      border-bottom: 2px dashed #000;
-
-                    display: inline-block;"></span><br>`
+                        height: 1px; 
+                        border-bottom: 2px dashed #000;
+                        display: inline-block;"></span><br>`
                 );
             }
             if (layer_name == 'Airport') {
@@ -4949,7 +4989,6 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'sports') {
                 clickedExposureLists.push(
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-football-ball"></i>
-
                          <br>`
                 );
             }
@@ -4981,7 +5020,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name === 'Socio Economic Zone') {
                 clickedExposureLists.push(
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
-        <img src="img/socio_economic_zone.jpeg" width="20" height="20" /><br>`
+                         <img src="img/socio_economic_zone.jpeg" width="20" height="20" /><br>`
                 );
             }
 
@@ -5051,45 +5090,150 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         if (_this.context._layer.group.name == "METAR 01UTC") {
-            if (panelLayerMETAR00UTC_Title.innerHTML == '') {
+            if (panelLayerMETAR01UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
-                panelLayerMETAR00UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                // legendModelMet.src = "";
-                // legendModelMet.src = 'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
-                // legendModelMet.style.height = '35vh';
-                // legendModelMet.style.width = '72%';
+                panelLayerMETAR01UTC_Title.innerHTML = _this.context._layer.group.name + ':'
                 METAR_Row.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
-                clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
+                clickedMETAR01UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
-                clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
+                clickedMETAR01UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
-                clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;"><br>`
+                clickedMETAR01UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
-                clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br> <div style="width: 30px; 
-                    height: 15px;
-                    display: flex;
-                    border: 2px solid black;">
-                    <div style="flex: 1; background-color: green;"></div>
-                    <div style="flex: 1; background-color: white;"></div>
-                    </div><br>`
+                clickedMETAR01UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
-            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
         }
+        if (_this.context._layer.group.name == "METAR 02UTC") {
+            if (panelLayerMETAR02UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR02UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                METAR_Row.style.display = 'block';
+            }
 
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR02UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR02UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR02UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR02UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "METAR 03UTC") {
+            if (panelLayerMETAR03UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR03UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                METAR_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR03UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR03UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR03UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR03UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "METAR 04UTC") {
+            if (panelLayerMETAR04UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR04UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                METAR_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR04UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR04UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR04UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR04UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "METAR 05UTC") {
+            if (panelLayerMETAR05UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR05UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                METAR_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR05UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR05UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR05UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR05UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+        }
 
     } else {
         console.log("Not Checked");
@@ -5169,19 +5313,121 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //Exposure
         if (layer_name == 'District Boundaries') {
-            clickedExposureLists = clickedExposureLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            clickedExposureLists = clickedExposureLists.filter(checkList =>
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 30px; 
+                        height: 1px; 
+                        border-bottom: 2px dashed #000;
+                        display: inline-block;"></span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
         if (layer_name == 'Airport') {
             clickedExposureLists = clickedExposureLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-plane"></i><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(MumbaiMarker);
         }
+        if (layer_name == 'Hospital') {
+            clickedExposureLists = clickedExposureLists.filter(checkList =>
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-hospital"></i>
+                        <br>`
+            );
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(BidarMarker);
+        }
+        if (layer_name == 'sports') {
+            clickedExposureLists = clickedExposureLists.filter(checkList =>
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-football-ball"></i>
+                         <br>`
+            );
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(PuneMarker);
+        }
+        if (layer_name === 'Power Plant') {
+            clickedExposureLists = clickedExposureLists.filter(checkList =>
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}  
+                         <img src="img/powerplant.jpeg" width="20" height="20" /><br>`
+            );
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(VijayapuraMarker);
+        }
+
+
+        if (layer_name == 'Power Station') {
+            clickedExposureLists = clickedExposureLists.filter(checkList =>
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
+                        <img src="img/powerstation.png" width="20" height="20" /><br>`
+            );
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(SolapurMarker);
+        }
+        if (layer_name == 'Oil Refineries') {
+            clickedExposureLists = clickedExposureLists.filter(checkList =>
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-industry"></i><br>`
+            );
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(RanchiMarker);
+        }
+        if (layer_name == 'Industrail') {
+            clickedExposureLists = clickedExposureLists.filter(checkList =>
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
+                        <img src="img/industry.jpeg" width="20" height="20" /><br>`
+            );
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(BidarMarker);
+        }
+        if (layer_name === 'Socio Economic Zone') {
+            clickedExposureLists = clickedExposureLists.filter(checkList =>
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
+                         <img src="img/socio_economic_zone.jpeg" width="20" height="20" /><br>`
+            );
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(PuneMarker);
+        }
+
+        if (layer_name == 'Road Network') {
+            clickedExposureLists = clickedExposureLists.filter(checkList =>
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/road_network.jpeg" style="width: 25px; height: auto;"><br>`
+            );
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(PuneMarker);
+        }
+        if (layer_name == 'Railway Network') {
+            clickedExposureLists = clickedExposureLists.filter(checkList =>
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/railway.jpeg" style="width: 25px; height: auto;"><br>`
+            );
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(PuneMarker);
+        }
+        if (layer_name == 'DEM') {
+            clickedExposureLists = clickedExposureLists.filter(checkList =>
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/DEM.jpeg" style="width: 125px; height: auto;"><br>`
+            );
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(BidarMarker);
+        }
+        if (layer_name == 'LULC') {
+            clickedExposureLists = clickedExposureLists.filter(checkList =>
+                checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/LULC.jpeg" style="width: 175px; height: 250px;"><br>`
+            );
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(PuneMarker);
+        }
+
         //
 
         //
@@ -5260,6 +5506,10 @@ $("body").on("change", "input[type=checkbox]", function() {
 });
 //
 
+
+function tempImage() {
+
+}
 
 //closeModel
 closeModel.onclick = () => {
