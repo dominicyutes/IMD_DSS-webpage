@@ -444,6 +444,36 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                 <h5 id="METAR05UTC-Title"></h5>
                 <p id="METAR05UTC-lists"></p>
 
+                <h5 id="METAR06UTC-Title"></h5>
+                <p id="METAR06UTC-lists"></p>
+
+                <h5 id="METAR07UTC-Title"></h5>
+                <p id="METAR07UTC-lists"></p>
+
+                <h5 id="METAR08UTC-Title"></h5>
+                <p id="METAR08UTC-lists"></p>
+
+                <h5 id="METAR09UTC-Title"></h5>
+                <p id="METAR09UTC-lists"></p>
+
+                <h5 id="METAR10UTC-Title"></h5>
+                <p id="METAR10UTC-lists"></p>
+
+                <h5 id="METAR11UTC-Title"></h5>
+                <p id="METAR11UTC-lists"></p>
+
+                <h5 id="METAR12UTC-Title"></h5>
+                <p id="METAR12UTC-lists"></p>
+
+                <h5 id="METAR13UTC-Title"></h5>
+                <p id="METAR13UTC-lists"></p>
+
+                <h5 id="METAR14UTC-Title"></h5>
+                <p id="METAR14UTC-lists"></p>
+
+                <h5 id="METAR15UTC-Title"></h5>
+                <p id="METAR15UTC-lists"></p>
+
                 <!-- METAR01UTC -->
                 <!-- <h5 id="METAR01UTC-Title"></h5>
                         <p id="METAR01UTC-lists"></p> -->
