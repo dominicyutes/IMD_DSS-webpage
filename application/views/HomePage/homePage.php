@@ -383,10 +383,10 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
     <!-- model popup -->
     <div class="model">
-    <div class="model-body" style="position: relative;">
-    <legend style="font-size: 12px; cursor: pointer; position: sticky; top: 0; background-color: white;">
-        ❌
-    </legend>
+        <div class="model-body" style="position: relative;">
+            <legend style="font-size: 12px; cursor: pointer; position: sticky;top: 0; background-color: white;">
+                ❌
+            </legend>
             <br>
             <h4
                 style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px; border-radius: 10px; text-align: center;">
