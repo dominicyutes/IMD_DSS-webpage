@@ -1877,9 +1877,9 @@
     var JeypurMarker = L.marker([18.8565, 82.5644]);
     JeypurMarker.bindPopup("<b>Jeypur</b>").openPopup();
 
-    // Add a marker for Rayagada
-    var RayagadaMarker = L.marker([19.1662, 83.4166]);
-    RayagadaMarker.bindPopup("<b>Rayagada</b>").openPopup();
+// Add a marker for Rayagada
+var RayagadaMarker = L.marker([19.1662, 83.4166]);
+RayagadaMarker.bindPopup("<b>Rayagada</b>").openPopup();
 
     // Add a marker for Bobbili
     var BobbiliMarker = L.marker([18.5697, 83.3666]);
@@ -4855,8 +4855,8 @@
     let panelLayerMETAR14UTC_Title = document.querySelector('#METAR14UTC-Title')
     let panelLayerMETAR14UTC_lists = document.querySelector('#METAR14UTC-lists')
 
-    let panelLayerMETAR15UTC_Title = document.querySelector('#METAR15UTC-Title')
-    let panelLayerMETAR15UTC_lists = document.querySelector('#METAR15UTC-lists')
+let panelLayerMETAR15UTC_Title = document.querySelector('#METAR15UTC-Title')
+let panelLayerMETAR15UTC_lists = document.querySelector('#METAR15UTC-lists')
 
 
     document.querySelectorAll('#popup').forEach(function(openModel) {
@@ -4876,33 +4876,33 @@
             // legendModelExpo.style.height = 0;
             // legendModelExpo.style.width = 0;
 
-            //METAR
-            // legendModelMet.src = "";
-            // legendModelMet.alt = "";
-            // legendModelMet.style.height = 0;
-            // legendModelMet.style.width = 0;
-        }
-    });
-    //
-    let clickedLightningLists = [];
-    let clickedRadarLists = [];
-    let clickedExposureLists = [];
-    let clickedMETAR00UTCLists = [];
-    let clickedMETAR01UTCLists = [];
-    let clickedMETAR02UTCLists = [];
-    let clickedMETAR03UTCLists = [];
-    let clickedMETAR04UTCLists = [];
-    let clickedMETAR05UTCLists = [];
-    let clickedMETAR06UTCLists = [];
-    let clickedMETAR07UTCLists = [];
-    let clickedMETAR08UTCLists = [];
-    let clickedMETAR09UTCLists = [];
-    let clickedMETAR10UTCLists = [];
-    let clickedMETAR11UTCLists = [];
-    let clickedMETAR12UTCLists = [];
-    let clickedMETAR13UTCLists = [];
-    let clickedMETAR14UTCLists = [];
-    let clickedMETAR15UTCLists = [];
+        //METAR
+        // legendModelMet.src = "";
+        // legendModelMet.alt = "";
+        // legendModelMet.style.height = 0;
+        // legendModelMet.style.width = 0;
+    }
+});
+//
+let clickedLightningLists = [];
+let clickedRadarLists = [];
+let clickedExposureLists = [];
+let clickedMETAR00UTCLists = [];
+let clickedMETAR01UTCLists = [];
+let clickedMETAR02UTCLists = [];
+let clickedMETAR03UTCLists = [];
+let clickedMETAR04UTCLists = [];
+let clickedMETAR05UTCLists = [];
+let clickedMETAR06UTCLists = [];
+let clickedMETAR07UTCLists = [];
+let clickedMETAR08UTCLists = [];
+let clickedMETAR09UTCLists = [];
+let clickedMETAR10UTCLists = [];
+let clickedMETAR11UTCLists = [];
+let clickedMETAR12UTCLists = [];
+let clickedMETAR13UTCLists = [];
+let clickedMETAR14UTCLists = [];
+let clickedMETAR15UTCLists = [];
 
     $("body").on("change", "input[type=checkbox]", function() {
         var _this = $(this);
@@ -5586,58 +5586,58 @@
                     METAR_Row.style.display = 'block';
                 }
 
-                if (layer_name == 'TEMPERATURE') {
-                    clickedMETAR15UTCLists.push(
-                        `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-                    );
-                }
-                if (layer_name == 'DEW POINT TEMPERATURE') {
-                    clickedMETAR15UTCLists.push(
-                        `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-                    );
-                }
-                if (layer_name == 'VISIBILITY') {
-                    clickedMETAR15UTCLists.push(
-                        `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-                    );
-                }
-                if (layer_name == 'WIND SPEED AND DIRECTION') {
-                    clickedMETAR15UTCLists.push(
-                        `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-                    );
-                }
-                panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR15UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
             }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR15UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR15UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR15UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+        }
 
 
-        } else {
-            console.log("Not Checked");
-            //Lightning
-            if (layer_name == 'Last 00-05 min') {
-                clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-                );
-                panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
-                map.removeLayer(delhiMarker);
-            }
-            if (layer_name == 'Last 05-10 min') {
-                clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-                );
-                panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
-                map.removeLayer(jaipurMarker);
-            }
-            if (layer_name == 'Last 10-15 min') {
-                clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-                );
-                panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
-                map.removeLayer(bhopalMarker);
-            }
-            //
-            if (panelLayerLightninglists.innerHTML == '') {
-                panelLayerLightningTitle.innerHTML = '';
-            }
+    } else {
+        console.log("Not Checked");
+        //Lightning
+        if (layer_name == 'Last 00-05 min') {
+            clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            );
+            panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
+            map.removeLayer(delhiMarker);
+        }
+        if (layer_name == 'Last 05-10 min') {
+            clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            );
+            panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
+            map.removeLayer(jaipurMarker);
+        }
+        if (layer_name == 'Last 10-15 min') {
+            clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            );
+            panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
+            map.removeLayer(bhopalMarker);
+        }
+        //
+        if (panelLayerLightninglists.innerHTML == '') {
+            panelLayerLightningTitle.innerHTML = '';
+        }
 
             ////GroupPanelLayer-collapsible
             if (panelLayerLightninglists.innerHTML != '') {
