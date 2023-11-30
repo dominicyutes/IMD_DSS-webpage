@@ -1885,9 +1885,9 @@ var JeypurMarker = L.marker([19.1662, 83.4166]);
 var BobbiliMarker = L.marker([18.5697, 83.3666]);
 BobbiliMarker.bindPopup("<b>Bobbili</b>").openPopup();
 
-// Add a marker for Bobbili
-var BobbiliMarker = L.marker([18.5697, 83.3666]);
-BobbiliMarker.bindPopup("<b>Bobbili</b>").openPopup();
+// // Add a marker for Bobbili
+// var BobbiliMarker = L.marker([18.5697, 83.3666]);
+// BobbiliMarker.bindPopup("<b>Bobbili</b>").openPopup();
 
 
 const overLayers = [{
@@ -4889,22 +4889,22 @@ document.querySelectorAll('#popup').forEach(function(openModel) {
         console.log("openModel working!!!");
         model.style.display = 'block';
         //
-        legendModel1.src = "";
-        legendModel1.alt = "";
-        legendModel1.style.height = 0;
-        legendModel1.style.width = 0;
+        // legendModel1.src = "";
+        // legendModel1.alt = "";
+        // legendModel1.style.height = 0;
+        // legendModel1.style.width = 0;
 
         //EXPOSURE
-        legendModelExpo.src = "";
-        legendModelExpo.alt = "";
-        legendModelExpo.style.height = 0;
-        legendModelExpo.style.width = 0;
+        // legendModelExpo.src = "";
+        // legendModelExpo.alt = "";
+        // legendModelExpo.style.height = 0;
+        // legendModelExpo.style.width = 0;
 
         //METAR
-        legendModelMet.src = "";
-        legendModelMet.alt = "";
-        legendModelMet.style.height = 0;
-        legendModelMet.style.width = 0;
+        // legendModelMet.src = "";
+        // legendModelMet.alt = "";
+        // legendModelMet.style.height = 0;
+        // legendModelMet.style.width = 0;
     }
 });
 //
