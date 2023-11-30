@@ -377,14 +377,11 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     <!-- model popup -->
     <div class="model">
     <div class="model-body" style="position: relative;">
-    <legend style="font-size: 12px; cursor: pointer; position: sticky; top: 0; background-color: white;">
-        ❌
-    </legend>
-            <br>
-            <h4
-                style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px; border-radius: 10px; text-align: center;">
-                Selected Parameters
-            </h4>
+    <div style="display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px; border-radius: 10px; align-items: center;">
+    <legend style="font-size: 12px; cursor: pointer;">❌</legend>
+    <h4 style="margin: 0 auto;">Selected Parameters</h4>
+</div>
+
             <div class="row" id="Light_RadarRow" style="display: none;">
                 <div>
                     <!-- HomePage-Lightning -->
