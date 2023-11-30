@@ -260,7 +260,8 @@ nav {
     border-radius: 6px;
     user-select: none;
     overflow: auto;
-    /* resize: both; */
+    position: relative;
+    resize: both;
 }
 
 .model-body h4 {

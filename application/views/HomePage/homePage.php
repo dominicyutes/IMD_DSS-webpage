@@ -4,8 +4,7 @@
 <head>
     <title>IMD_DSS</title>
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/arrows-expand-right-alt.css' rel='stylesheet'>
 
     <!-- Include Leaflet CSS -->
@@ -15,16 +14,13 @@
     <!-- leaflet-draw CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
     <!-- Include Leaflet fullscreen CSS -->
-    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
-        rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
     <!-- Include Leaflet LocationSearch CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <!-- Include Leaflet mouseposition CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/leaflet-mouse-position@1.2.0/src/L.Control.MousePosition.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/leaflet-mouse-position@1.2.0/src/L.Control.MousePosition.min.css" rel="stylesheet">
     <!-- Include Leaflet styleEditor CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/leaflet-styleeditor@0.1.21/dist/css/Leaflet.StyleEditor.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/leaflet-styleeditor@0.1.21/dist/css/Leaflet.StyleEditor.min.css" rel="stylesheet">
     <!-- leaflet-panel-layers -->
     <link href="
 https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layers.min.css
@@ -34,8 +30,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     <!-- <link rel="stylesheet" href="esrilgeocoder/esri-leaflet-geocoder.css"> -->
 
     <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
     <!-- Include Leaflet JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
@@ -73,118 +68,118 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     <?php $this->load->view('HomePage/style'); ?>
 
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
-    .bg-info-success-gradient {
-        background-repeat: repeat-x;
-        background-image: linear-gradient(225deg, #1C7DB5, #32852E);
-    }
-
-
-    body {
-        margin: 0;
-        font-family: 'Quicksand', sans-serif;
-        background-color: #4682B4;
-        position: relative;
-    }
-
-    #particles-js {
-        position: fixed;
-        width: 100%;
-        z-index: -1;
-    }
-
-    .btn {
-        border: none;
-        padding: 0;
-        background: none;
-        cursor: pointer;
-        font: inherit;
-        outline: inherit;
-    }
-
-    .btn:focus>.underline {
-        visibility: visible;
-    }
-
-    .btn-val {
-        color: #163159;
-        vertical-align: baseline;
-        font-weight: inherit;
-        font-style: inherit;
-        font-size: 1.1em;
-        outline: 0;
-        padding: 0;
-        margin: 0;
-        border: 0;
-        cursor: pointer;
-    }
-
-    .minsistry-text {
-        margin: 0px 17px 0px 0px;
-        font-size: 14px;
-        color: #897777;
-        position: relative;
-        z-index: 1;
-        margin-bottom: 20px;
-        font-size: 18px;
-        line-height: 1.5;
-        word-break: break-word;
-        transition: all 0.45s ease;
-    }
-
-    .btn-val:hover {
-        color: #00aa55;
-    }
-
-    .btn-val:hover+.underline {
-        visibility: visible;
-        animation: loadingAnimation 1s 1 linear;
-    }
-
-    .underline {
-        width: 100%;
-        height: 0.15em;
-        background-color: #00aa55;
-        visibility: hidden;
-        transition: visibility 0.1s ease;
-    }
-
-    .with-border {
-        border-right: 2px solid #e0dfdf;
-        padding-right: 4px;
-    }
-
-    .exp_poly {
-        color: #163159;
-    }
-
-    .expo-polygon-parent {
-        border: none;
-        padding: 0;
-        background-color: #e0dfdf;
-        cursor: pointer;
-        font: inherit;
-        outline: inherit;
-    }
-
-    .expo-polygon-parent:hover {
-        background-color: #ced0cf;
-    }
-
-    @keyframes loadingAnimation {
-        0% {
-            width: 0;
+        .bg-info-success-gradient {
+            background-repeat: repeat-x;
+            background-image: linear-gradient(225deg, #1C7DB5, #32852E);
         }
 
-        50% {
+
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-color: #4682B4;
+            position: relative;
+        }
+
+        #particles-js {
+            position: fixed;
             width: 100%;
+            z-index: -1;
         }
 
-        /* 100% {
+        .btn {
+            border: none;
+            padding: 0;
+            background: none;
+            cursor: pointer;
+            font: inherit;
+            outline: inherit;
+        }
+
+        .btn:focus>.underline {
+            visibility: visible;
+        }
+
+        .btn-val {
+            color: #163159;
+            vertical-align: baseline;
+            font-weight: inherit;
+            font-style: inherit;
+            font-size: 1.1em;
+            outline: 0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .minsistry-text {
+            margin: 0px 17px 0px 0px;
+            font-size: 14px;
+            color: #897777;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+            word-break: break-word;
+            transition: all 0.45s ease;
+        }
+
+        .btn-val:hover {
+            color: #00aa55;
+        }
+
+        .btn-val:hover+.underline {
+            visibility: visible;
+            animation: loadingAnimation 1s 1 linear;
+        }
+
+        .underline {
+            width: 100%;
+            height: 0.15em;
+            background-color: #00aa55;
+            visibility: hidden;
+            transition: visibility 0.1s ease;
+        }
+
+        .with-border {
+            border-right: 2px solid #e0dfdf;
+            padding-right: 4px;
+        }
+
+        .exp_poly {
+            color: #163159;
+        }
+
+        .expo-polygon-parent {
+            border: none;
+            padding: 0;
+            background-color: #e0dfdf;
+            cursor: pointer;
+            font: inherit;
+            outline: inherit;
+        }
+
+        .expo-polygon-parent:hover {
+            background-color: #ced0cf;
+        }
+
+        @keyframes loadingAnimation {
+            0% {
+                width: 0;
+            }
+
+            50% {
+                width: 100%;
+            }
+
+            /* 100% {
               width: 100%;
           } */
-    }
+        }
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -227,8 +222,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
     <div style="width: 92%; margin-bottom:1em; background-color:#ffffff;" class="mx-auto">
 
-        <div class="text-center"
-            style="background-image: linear-gradient(to right top, #eae0e0, #efe8ea, #f3f0f2, #f9f7f9, #ffffff); padding: 10px 0px 10px 0px;">
+        <div class="text-center" style="background-image: linear-gradient(to right top, #eae0e0, #efe8ea, #f3f0f2, #f9f7f9, #ffffff); padding: 10px 0px 10px 0px;">
             <span class="minsistry-text">Weather Decison Support System</span>
         </div>
         <!-- navbar -->
@@ -316,8 +310,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
             <span>&nbsp;</span>
             <!-- parameter -->
             <label for="parameter" class="dropdownLabel">parameter:</label>
-            <select class="secondDD" id="parameterNames" class="dropdownSelect"
-                onchange="showSubParameterNames(this.value)" &nbsp;>
+            <select class="secondDD" id="parameterNames" class="dropdownSelect" onchange="showSubParameterNames(this.value)" &nbsp;>
             </select>
             <span>&nbsp;</span>
             <!-- SubParameter -->
@@ -383,15 +376,12 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
     <!-- model popup -->
     <div class="model">
-        <div class="model-body" style="position: relative;">
-            <legend style="font-size: 12px; cursor: pointer; position: sticky;top: 0; background-color: white;">
-                ❌
-            </legend>
-            <br>
-            <h4
-                style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px; border-radius: 10px; text-align: center;">
-                Selected Parameters
-            </h4>
+    <div class="model-body" style="position: relative;">
+    <div style="display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px; border-radius: 10px; align-items: center;">
+    <legend style="font-size: 12px; cursor: pointer;">❌</legend>
+    <h4 style="margin: 0 auto;">Selected Parameters</h4>
+</div>
+
             <div class="row" id="Light_RadarRow" style="display: none;">
                 <div>
                     <!-- HomePage-Lightning -->
@@ -400,95 +390,114 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
                     <!-- HomePage-Radar -->
                     <h5 id="panelLayer-radar-Title"></h5>
-                    <p id="panelLayer-radar-lists"></p>
+                    <p id="panelLayer-radar-lists" style="display: flex; flex-wrap: wrap;"></p>
                 </div>
                 <!-- <div class="col-7">
                         <img id="legendModel1" alt="legend" style="width: 72%; height: 35vh;" />
                     </div> -->
             </div>
+            <div style="display: flex; flex-direction: row; margin-right: 20px; margin-bottom: 20px;">
+                <!-- Exposure -->
+                <div id="ExposureRow" style="display: none; ">
+                    <h4 id="EXPOSURE" style=" border-radius: 8px; background-color: yellow;  text-align: center;">
+                        EXPOSURE
+                    </h4>
+                    <h5 id="exposure-layers-Title" style="color: red;"></h5>
+                    <p id="exposure-layers-lists" style="display: flex; flex-wrap: wrap;">
 
-            <!-- Exposure -->
-            <div class="row" id="ExposureRow" style="display: none;">
-                <!-- <div class="col-5"> -->
-                <!-- HomePage-Lightning -->
-                <h4 id="EXPOSURE" style=" border-radius: 8px; background-color: yellow; text-align: center;">
-                    EXPOSURE
-                </h4>
-                <h5 id="exposure-layers-Title" style="color: red;"></h5>
-                <p id="exposure-layers-lists"></p>
-                <!-- </div> -->
-                <!-- <div class="col-7">
-                        <img id="legendModelExposure" alt="legendExpo" style="width: 72%; height: 35vh;" />
-                    </div> -->
-            </div>
+                </div>
 
-            <!-- METAR -->
-            <div class="row" id="METAR_Row" style="display: none;">
-                <!-- <div class="col-5"> -->
-                <!-- HomePage-Lightning -->
-                <h4 id="METAR" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
-                <!-- METAR00UTC -->
-                <h5 id="METAR00UTC-Title" style="color: red;"></h5>
-                <p id="METAR00UTC-lists"></p>
+                <!-- METAR -->
+                <div id="METAR_Row" style="display: none;">
+                    <!-- <div class="col-5"> -->
+                    <!-- HomePage-Lightning -->
+                    <h4 id="METAR" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
+                    <!-- METAR00UTC -->
+                    <h5 id="METAR00UTC-Title" style="color: red;"></h5>
+                    <p id="METAR00UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                <h5 id="METAR01UTC-Title" style="color: red;"></h5>
-                <p id="METAR01UTC-lists"></p>
+                    <h5 id="METAR01UTC-Title" style="color: red;"></h5>
+                    <p id="METAR01UTC-lists"></p>
 
-                <h5 id="METAR02UTC-Title" style="color: red;"></h5>
-                <p id="METAR02UTC-lists"></p>
+                    <h5 id="METAR02UTC-Title" style="color: red;"></h5>
+                    <p id="METAR02UTC-lists"></p>
 
-                <h5 id="METAR03UTC-Title" style="color: red;"></h5>
-                <p id="METAR03UTC-lists"></p>
+                    <h5 id="METAR03UTC-Title" style="color: red;"></h5>
+                    <p id="METAR03UTC-lists"></p>
 
-                <h5 id="METAR04UTC-Title" style="color: red;"></h5>
-                <p id="METAR04UTC-lists"></p>
+                    <h5 id="METAR04UTC-Title" style="color: red;"></h5>
+                    <p id="METAR04UTC-lists"></p>
 
-                <h5 id="METAR05UTC-Title" style="color: red;"></h5>
-                <p id="METAR05UTC-lists"></p>
+                    <h5 id="METAR05UTC-Title" style="color: red;"></h5>
+                    <p id="METAR05UTC-lists"></p>
 
-                <h5 id="METAR06UTC-Title"></h5>
-                <p id="METAR06UTC-lists"></p>
+                    <h5 id="METAR06UTC-Title"></h5>
+                    <p id="METAR06UTC-lists"></p>
 
-                <h5 id="METAR07UTC-Title"></h5>
-                <p id="METAR07UTC-lists"></p>
+                    <h5 id="METAR07UTC-Title"></h5>
+                    <p id="METAR07UTC-lists"></p>
 
-                <h5 id="METAR08UTC-Title"></h5>
-                <p id="METAR08UTC-lists"></p>
+                    <h5 id="METAR08UTC-Title"></h5>
+                    <p id="METAR08UTC-lists"></p>
 
-                <h5 id="METAR09UTC-Title"></h5>
-                <p id="METAR09UTC-lists"></p>
+                    <h5 id="METAR09UTC-Title"></h5>
+                    <p id="METAR09UTC-lists"></p>
 
-                <h5 id="METAR10UTC-Title"></h5>
-                <p id="METAR10UTC-lists"></p>
+                    <h5 id="METAR10UTC-Title"></h5>
+                    <p id="METAR10UTC-lists"></p>
 
-                <h5 id="METAR11UTC-Title"></h5>
-                <p id="METAR11UTC-lists"></p>
+                    <h5 id="METAR11UTC-Title"></h5>
+                    <p id="METAR11UTC-lists"></p>
 
-                <h5 id="METAR12UTC-Title"></h5>
-                <p id="METAR12UTC-lists"></p>
+                    <h5 id="METAR12UTC-Title"></h5>
+                    <p id="METAR12UTC-lists"></p>
 
-                <h5 id="METAR13UTC-Title"></h5>
-                <p id="METAR13UTC-lists"></p>
+                    <h5 id="METAR13UTC-Title"></h5>
+                    <p id="METAR13UTC-lists"></p>
 
-                <h5 id="METAR14UTC-Title"></h5>
-                <p id="METAR14UTC-lists"></p>
+                    <h5 id="METAR14UTC-Title"></h5>
+                    <p id="METAR14UTC-lists"></p>
 
-                <h5 id="METAR15UTC-Title"></h5>
-                <p id="METAR15UTC-lists"></p>
+                    <h5 id="METAR15UTC-Title"></h5>
+                    <p id="METAR15UTC-lists"></p>
 
-                <!-- METAR01UTC -->
-                <!-- <h5 id="METAR01UTC-Title"></h5>
+                    <h5 id="METAR16UTC-Title"></h5>
+                    <p id="METAR16UTC-lists"></p>
+
+                    <h5 id="METAR17UTC-Title"></h5>
+                    <p id="METAR17UTC-lists"></p>
+
+                    <h5 id="METAR18UTC-Title"></h5>
+                    <p id="METAR18UTC-lists"></p>
+
+                    <h5 id="METAR19UTC-Title"></h5>
+                    <p id="METAR19UTC-lists"></p>
+
+                    <h5 id="METAR20UTC-Title"></h5>
+                    <p id="METAR20UTC-lists"></p>
+
+                    <h5 id="METAR21UTC-Title"></h5>
+                    <p id="METAR21UTC-lists"></p>
+
+                    <h5 id="METAR22UTC-Title"></h5>
+                    <p id="METAR22UTC-lists"></p>
+
+                    <h5 id="METAR23UTC-Title"></h5>
+                    <p id="METAR23UTC-lists"></p>
+
+                    <!-- METAR01UTC -->
+                    <!-- <h5 id="METAR01UTC-Title"></h5>
                         <p id="METAR01UTC-lists"></p> -->
-                <!-- </div> -->
-                <!-- <div class="col-7">
+                    <!-- </div> -->
+                    <!-- <div class="col-7">
                         <img id="legendModelMetar" alt="legendMetar" style="width: 72%; height: 35vh;" />
                     </div> -->
             </div>
         </div>
     </div>
 
-    <!-- adding JS -->
-    <?php $this->load->view('HomePage/scripts'); ?>
+        <!-- adding JS -->
+        <?php $this->load->view('HomePage/scripts'); ?>
 
     <script>
     particlesJS('particles-js', {
