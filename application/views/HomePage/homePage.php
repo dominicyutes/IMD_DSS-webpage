@@ -4,7 +4,8 @@
 <head>
     <title>IMD_DSS</title>
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/arrows-expand-right-alt.css' rel='stylesheet'>
 
     <!-- Include Leaflet CSS -->
@@ -14,13 +15,16 @@
     <!-- leaflet-draw CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
     <!-- Include Leaflet fullscreen CSS -->
-    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+        rel='stylesheet' />
     <!-- Include Leaflet LocationSearch CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <!-- Include Leaflet mouseposition CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/leaflet-mouse-position@1.2.0/src/L.Control.MousePosition.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/leaflet-mouse-position@1.2.0/src/L.Control.MousePosition.min.css"
+        rel="stylesheet">
     <!-- Include Leaflet styleEditor CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/leaflet-styleeditor@0.1.21/dist/css/Leaflet.StyleEditor.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/leaflet-styleeditor@0.1.21/dist/css/Leaflet.StyleEditor.min.css"
+        rel="stylesheet">
     <!-- leaflet-panel-layers -->
     <link href="
 https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layers.min.css
@@ -30,7 +34,8 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     <!-- <link rel="stylesheet" href="esrilgeocoder/esri-leaflet-geocoder.css"> -->
 
     <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
     <!-- Include Leaflet JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
@@ -68,118 +73,118 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     <?php $this->load->view('HomePage/style'); ?>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
-        .bg-info-success-gradient {
-            background-repeat: repeat-x;
-            background-image: linear-gradient(225deg, #1C7DB5, #32852E);
+    .bg-info-success-gradient {
+        background-repeat: repeat-x;
+        background-image: linear-gradient(225deg, #1C7DB5, #32852E);
+    }
+
+
+    body {
+        margin: 0;
+        font-family: 'Quicksand', sans-serif;
+        background-color: #4682B4;
+        position: relative;
+    }
+
+    #particles-js {
+        position: fixed;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .btn {
+        border: none;
+        padding: 0;
+        background: none;
+        cursor: pointer;
+        font: inherit;
+        outline: inherit;
+    }
+
+    .btn:focus>.underline {
+        visibility: visible;
+    }
+
+    .btn-val {
+        color: #163159;
+        vertical-align: baseline;
+        font-weight: inherit;
+        font-style: inherit;
+        font-size: 1.1em;
+        outline: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .minsistry-text {
+        margin: 0px 17px 0px 0px;
+        font-size: 14px;
+        color: #897777;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 20px;
+        font-size: 18px;
+        line-height: 1.5;
+        word-break: break-word;
+        transition: all 0.45s ease;
+    }
+
+    .btn-val:hover {
+        color: #00aa55;
+    }
+
+    .btn-val:hover+.underline {
+        visibility: visible;
+        animation: loadingAnimation 1s 1 linear;
+    }
+
+    .underline {
+        width: 100%;
+        height: 0.15em;
+        background-color: #00aa55;
+        visibility: hidden;
+        transition: visibility 0.1s ease;
+    }
+
+    .with-border {
+        border-right: 2px solid #e0dfdf;
+        padding-right: 4px;
+    }
+
+    .exp_poly {
+        color: #163159;
+    }
+
+    .expo-polygon-parent {
+        border: none;
+        padding: 0;
+        background-color: #e0dfdf;
+        cursor: pointer;
+        font: inherit;
+        outline: inherit;
+    }
+
+    .expo-polygon-parent:hover {
+        background-color: #ced0cf;
+    }
+
+    @keyframes loadingAnimation {
+        0% {
+            width: 0;
         }
 
-
-        body {
-            margin: 0;
-            font-family: 'Quicksand', sans-serif;
-            background-color: #4682B4;
-            position: relative;
-        }
-
-        #particles-js {
-            position: fixed;
+        50% {
             width: 100%;
-            z-index: -1;
         }
 
-        .btn {
-            border: none;
-            padding: 0;
-            background: none;
-            cursor: pointer;
-            font: inherit;
-            outline: inherit;
-        }
-
-        .btn:focus>.underline {
-            visibility: visible;
-        }
-
-        .btn-val {
-            color: #163159;
-            vertical-align: baseline;
-            font-weight: inherit;
-            font-style: inherit;
-            font-size: 1.1em;
-            outline: 0;
-            padding: 0;
-            margin: 0;
-            border: 0;
-            cursor: pointer;
-        }
-
-        .minsistry-text {
-            margin: 0px 17px 0px 0px;
-            font-size: 14px;
-            color: #897777;
-            position: relative;
-            z-index: 1;
-            margin-bottom: 20px;
-            font-size: 18px;
-            line-height: 1.5;
-            word-break: break-word;
-            transition: all 0.45s ease;
-        }
-
-        .btn-val:hover {
-            color: #00aa55;
-        }
-
-        .btn-val:hover+.underline {
-            visibility: visible;
-            animation: loadingAnimation 1s 1 linear;
-        }
-
-        .underline {
-            width: 100%;
-            height: 0.15em;
-            background-color: #00aa55;
-            visibility: hidden;
-            transition: visibility 0.1s ease;
-        }
-
-        .with-border {
-            border-right: 2px solid #e0dfdf;
-            padding-right: 4px;
-        }
-
-        .exp_poly {
-            color: #163159;
-        }
-
-        .expo-polygon-parent {
-            border: none;
-            padding: 0;
-            background-color: #e0dfdf;
-            cursor: pointer;
-            font: inherit;
-            outline: inherit;
-        }
-
-        .expo-polygon-parent:hover {
-            background-color: #ced0cf;
-        }
-
-        @keyframes loadingAnimation {
-            0% {
-                width: 0;
-            }
-
-            50% {
-                width: 100%;
-            }
-
-            /* 100% {
+        /* 100% {
               width: 100%;
           } */
-        }
+    }
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -188,12 +193,11 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 </head>
 
 <body>
-    <div class="position-relative w-full py-2" style="background-color:#4682B4">
+    <!-- <div class="position-relative w-full py-2" style="background-color:#4682B4">
         <div>
             <nav>
                 <span>
                     <img src="http://103.215.208.18/dwr_img/DSS_SRC/forecast/images/emblem.png" alt="Empblem of India" class="pt-1 ps-1" height="88" />
-                    <!-- height="88" style="padding: 7px 0 0 7px; -->
                 </span>
 
                 <span class="w-100 min-vh-1 pt-1 ps-2 pb-1 pe-1">
@@ -216,14 +220,15 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                 </span>
             </nav>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- nav start here -->
 
     <div style="width: 92%; margin-bottom:1em; background-color:#ffffff;" class="mx-auto">
 
-        <div class="text-center" style="background-image: linear-gradient(to right top, #eae0e0, #efe8ea, #f3f0f2, #f9f7f9, #ffffff); padding: 10px 0px 10px 0px;">
+        <div class="text-center"
+            style="background-image: linear-gradient(to right top, #eae0e0, #efe8ea, #f3f0f2, #f9f7f9, #ffffff); padding: 10px 0px 10px 0px;">
             <span class="minsistry-text">Weather Decison Support System</span>
         </div>
         <!-- navbar -->
@@ -311,7 +316,8 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
             <span>&nbsp;</span>
             <!-- parameter -->
             <label for="parameter" class="dropdownLabel">parameter:</label>
-            <select class="secondDD" id="parameterNames" class="dropdownSelect" onchange="showSubParameterNames(this.value)" &nbsp;>
+            <select class="secondDD" id="parameterNames" class="dropdownSelect"
+                onchange="showSubParameterNames(this.value)" &nbsp;>
             </select>
             <span>&nbsp;</span>
             <!-- SubParameter -->
@@ -382,7 +388,8 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
         ❌
     </legend>
             <br>
-            <h4 style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px; border-radius: 10px; text-align: center;">
+            <h4
+                style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px; border-radius: 10px; text-align: center;">
                 Selected Parameters
             </h4>
             <div class="row" id="Light_RadarRow" style="display: none;">
@@ -484,111 +491,111 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     <?php $this->load->view('HomePage/scripts'); ?>
 
     <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: {
-                    value: 100, // Adjust the number of particles
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: '#ffffff' // Set the color of the particles
-                },
-                shape: {
-                    type: 'circle', // Choose the shape of the particles
-                    stroke: {
-                        width: 0,
-                        color: '#000000'
-                    },
-                    polygon: {
-                        nb_sides: 5
-                    }
-                },
-                opacity: {
-                    value: 0.5, // Adjust the opacity of the particles
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3, // Set the size of the particles
-                    random: true,
-                    anim: {
-                        enable: false,
-                        speed: 40,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
+    particlesJS('particles-js', {
+        particles: {
+            number: {
+                value: 100, // Adjust the number of particles
+                density: {
                     enable: true,
-                    distance: 150,
-                    color: '#ffffff',
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 6,
-                    direction: 'none',
-                    random: false,
-                    straight: false,
-                    out_mode: 'out',
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
+                    value_area: 800
                 }
             },
-            interactivity: {
-                detect_on: 'canvas',
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: 'grab'
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: 'push'
-                    },
-                    resize: true
+            color: {
+                value: '#ffffff' // Set the color of the particles
+            },
+            shape: {
+                type: 'circle', // Choose the shape of the particles
+                stroke: {
+                    width: 0,
+                    color: '#000000'
                 },
-                modes: {
-                    grab: {
-                        distance: 140,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    bubble: {
-                        distance: 400,
-                        size: 40,
-                        duration: 2,
-                        opacity: 8,
-                        speed: 3
-                    },
-                    repulse: {
-                        distance: 200,
-                        duration: 0.4
-                    },
-                    push: {
-                        particles_nb: 4
-                    },
-                    remove: {
-                        particles_nb: 2
-                    }
+                polygon: {
+                    nb_sides: 5
                 }
             },
-            retina_detect: true
-        });
+            opacity: {
+                value: 0.5, // Adjust the opacity of the particles
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false
+                }
+            },
+            size: {
+                value: 3, // Set the size of the particles
+                random: true,
+                anim: {
+                    enable: false,
+                    speed: 40,
+                    size_min: 0.1,
+                    sync: false
+                }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#ffffff',
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 6,
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false,
+                attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: 'grab'
+                },
+                onclick: {
+                    enable: true,
+                    mode: 'push'
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 140,
+                    line_linked: {
+                        opacity: 1
+                    }
+                },
+                bubble: {
+                    distance: 400,
+                    size: 40,
+                    duration: 2,
+                    opacity: 8,
+                    speed: 3
+                },
+                repulse: {
+                    distance: 200,
+                    duration: 0.4
+                },
+                push: {
+                    particles_nb: 4
+                },
+                remove: {
+                    particles_nb: 2
+                }
+            }
+        },
+        retina_detect: true
+    });
     </script>
 </body>
 
