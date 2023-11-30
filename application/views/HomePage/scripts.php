@@ -5041,7 +5041,7 @@ let clickedMETAR23UTCLists = [];
 
                 if (layer_name == 'District Boundaries') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<span style="width: 30px; 
                         height: 1px; 
                         border-bottom: 2px dashed #000;
@@ -5052,14 +5052,14 @@ let clickedMETAR23UTCLists = [];
 
                 if (layer_name == 'Airport') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-plane"></i>` +
                         `</span><br>`
                     );
                 }
                 if (layer_name == 'Hospital') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-hospital"></i>` +
                         `</span>
                         <br>`
@@ -5067,7 +5067,7 @@ let clickedMETAR23UTCLists = [];
                 }
                 if (layer_name == 'sports') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-football-ball"></i>
                         ` +
                         `</span><br>`
@@ -5075,7 +5075,7 @@ let clickedMETAR23UTCLists = [];
                 }
                 if (layer_name === 'Power Plant') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}  ` + `
                          <img src="img/powerplant.jpeg" width="20" height="20" />` +
                         `</span><br>`
@@ -5085,7 +5085,7 @@ let clickedMETAR23UTCLists = [];
 
                 if (layer_name == 'Power Station') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
                         <img src="img/powerstation.png" width="20" height="20" />` +
                         `</span><br>`
@@ -5093,14 +5093,14 @@ let clickedMETAR23UTCLists = [];
                 }
                 if (layer_name == 'Oil Refineries') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` <i class="fas fa-industry"></i>` +
                         `</span><br>`
                     );
                 }
                 if (layer_name == 'Industrail') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` 
                         <img src="img/industry.jpeg" width="20" height="20" />` +
                         `</span><br>`
@@ -5108,7 +5108,7 @@ let clickedMETAR23UTCLists = [];
                 }
                 if (layer_name === 'Socio Economic Zone') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
                          <img src="img/socio_economic_zone.jpeg" width="20" height="20" />` +
                         `</span><br>`
@@ -5117,28 +5117,28 @@ let clickedMETAR23UTCLists = [];
 
                 if (layer_name == 'Road Network') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` <img src="img/road_network.jpeg" style="width: 25px; height: auto;">` +
                         `</span><br>`
                     );
                 }
                 if (layer_name == 'Railway Network') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` <img src="img/railway.jpeg" style="width: 25px; height: auto;">` +
                         `</span><br>`
                     );
                 }
                 if (layer_name == 'DEM') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<img src="img/DEM.jpeg" style="width: 125px; height: auto;">` +
                         `</span><br>`
                     );
                 }
                 if (layer_name == 'LULC') {
                     clickedExposureLists.push(
-                         `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                         `<span style="display: flex; flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<img src="img/LULC.jpeg" style="width: 175px; height: 250px;">` +
                         `</span><br>`
                     );
@@ -5171,28 +5171,28 @@ let clickedMETAR23UTCLists = [];
 
                 if (layer_name == 'TEMPERATURE') {
                     clickedMETAR00UTCLists.push(
-                        `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                        `<span style="display: flex; flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                         `</span><br>`
                     );
                 }
                 if (layer_name == 'DEW POINT TEMPERATURE') {
                     clickedMETAR00UTCLists.push(
-                        `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                        `<span style="display: flex; flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                         `</span><br>`
                     );
                 }
                 if (layer_name == 'VISIBILITY') {
                     clickedMETAR00UTCLists.push(
-                        `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                        `<span style="display: flex; flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                         `</span><br>`
                     );
                 }
                 if (layer_name == 'WIND SPEED AND DIRECTION') {
                     clickedMETAR00UTCLists.push(
-                        `<span style="display: flex; flex-direction: row; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                        `<span style="display: flex; flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` <br> <div style="width: 30px; 
                     height: 15px;
                     display: flex;
