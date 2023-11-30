@@ -4882,6 +4882,30 @@ let panelLayerMETAR22UTC_lists = document.querySelector('#METAR22UTC-lists')
 let panelLayerMETAR23UTC_Title = document.querySelector('#METAR23UTC-Title')
 let panelLayerMETAR23UTC_lists = document.querySelector('#METAR23UTC-lists')
 
+//SYNOP//
+let panelLayerSYNOP00UTC_Title = document.querySelector('#SYNOP00UTC-Title')
+let panelLayerSYNOP00UTC_lists = document.querySelector('#SYNOP00UTC-lists')
+
+let panelLayerSYNOP03UTC_Title = document.querySelector('#SYNOP03UTC-Title')
+let panelLayerSYNOP03UTC_lists = document.querySelector('#SYNOP03UTC-lists')
+
+let panelLayerSYNOP06UTC_Title = document.querySelector('#SYNOP06UTC-Title')
+let panelLayerSYNOP06UTC_lists = document.querySelector('#SYNOP06UTC-lists')
+
+let panelLayerSYNOP09UTC_Title = document.querySelector('#SYNOP09UTC-Title')
+let panelLayerSYNOP09UTC_lists = document.querySelector('#SYNOP09UTC-lists')
+
+let panelLayerSYNOP12UTC_Title = document.querySelector('#SYNOP12UTC-Title')
+let panelLayerSYNOP12UTC_lists = document.querySelector('#SYNOP12UTC-lists')
+
+let panelLayerSYNOP15UTC_Title = document.querySelector('#SYNOP15UTC-Title')
+let panelLayerSYNOP15UTC_lists = document.querySelector('#SYNOP15UTC-lists')
+
+let panelLayerSYNOP18UTC_Title = document.querySelector('#SYNOP18UTC-Title')
+let panelLayerSYNOP18UTC_lists = document.querySelector('#SYNOP18UTC-lists')
+
+let panelLayerSYNOP21UTC_Title = document.querySelector('#SYNOP21UTC-Title')
+let panelLayerSYNOP21UTC_lists = document.querySelector('#SYNOP21UTC-lists')
 
 document.querySelectorAll('#popup').forEach(function(openModel) {
     console.log(openModel, "__openModel");
@@ -4935,6 +4959,16 @@ let clickedMETAR20UTCLists = [];
 let clickedMETAR21UTCLists = [];
 let clickedMETAR22UTCLists = [];
 let clickedMETAR23UTCLists = [];
+
+
+let clickedSYNOP00UTCLists = [];
+let clickedSYNOP03UTCLists = [];
+let clickedSYNOP06UTCLists = [];
+let clickedSYNOP09UTCLists = [];
+let clickedSYNOP12UTCLists = [];
+let clickedSYNOP15UTCLists = [];
+let clickedSYNOP18UTCLists = [];
+let clickedSYNOP21UTCLists = [];
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
@@ -5827,6 +5861,409 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerMETAR23UTC_lists.innerHTML = clickedMETAR23UTCLists.join("");
         }
+
+        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+            if (panelLayerSYNOP00UTC_Title.innerHTML == '') {
+                SYNOP.innerHTML = "SYNOP"
+                panelLayerSYNOP00UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                SYNOP_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedSYNOP00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                clickedSYNOP00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'CLOUD COVER') {
+                clickedSYNOP00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                clickedSYNOP00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                clickedSYNOP00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedSYNOP00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedSYNOP00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '3h RAINFALL') {
+                clickedSYNOP00UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+        }
+
+        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+            if (panelLayerSYNOP03UTC_Title.innerHTML == '') {
+                SYNOP.innerHTML = "SYNOP"
+                panelLayerSYNOP03UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                SYNOP_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedSYNOP03UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                clickedSYNOP03UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'CLOUD COVER') {
+                clickedSYNOP03UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                clickedSYNOP03UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                clickedSYNOP03UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedSYNOP03UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedSYNOP03UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '3h RAINFALL') {
+                clickedSYNOP03UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+            if (panelLayerSYNOP06UTC_Title.innerHTML == '') {
+                SYNOP.innerHTML = "SYNOP"
+                panelLayerSYNOP06UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                SYNOP_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedSYNOP06UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                clickedSYNOP06UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'CLOUD COVER') {
+                clickedSYNOP06UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                clickedSYNOP06UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                clickedSYNOP06UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedSYNOP06UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedSYNOP06UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '3h RAINFALL') {
+                clickedSYNOP06UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+            if (panelLayerSYNOP09UTC_Title.innerHTML == '') {
+                SYNOP.innerHTML = "SYNOP"
+                panelLayerSYNOP09UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                SYNOP_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedSYNOP09UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                clickedSYNOP09UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'CLOUD COVER') {
+                clickedSYNOP09UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                clickedSYNOP09UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                clickedSYNOP09UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedSYNOP09UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedSYNOP09UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '3h RAINFALL') {
+                clickedSYNOP09UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+            if (panelLayerSYNOP12UTC_Title.innerHTML == '') {
+                SYNOP.innerHTML = "SYNOP"
+                panelLayerSYNOP12UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                SYNOP_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedSYNOP12UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                clickedSYNOP12UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'CLOUD COVER') {
+                clickedSYNOP12UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                clickedSYNOP12UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                clickedSYNOP12UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedSYNOP12UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedSYNOP12UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '3h RAINFALL') {
+                clickedSYNOP12UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+            if (panelLayerSYNOP15UTC_Title.innerHTML == '') {
+                SYNOP.innerHTML = "SYNOP"
+                panelLayerSYNOP15UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                SYNOP_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedSYNOP15UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                clickedSYNOP15UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'CLOUD COVER') {
+                clickedSYNOP15UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                clickedSYNOP15UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                clickedSYNOP15UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedSYNOP15UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedSYNOP15UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '3h RAINFALL') {
+                clickedSYNOP15UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+            if (panelLayerSYNOP18UTC_Title.innerHTML == '') {
+                SYNOP.innerHTML = "SYNOP"
+                panelLayerSYNOP18UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                SYNOP_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedSYNOP18UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                clickedSYNOP18UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'CLOUD COVER') {
+                clickedSYNOP18UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                clickedSYNOP18UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                clickedSYNOP18UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedSYNOP18UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedSYNOP18UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '3h RAINFALL') {
+                clickedSYNOP18UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+            if (panelLayerSYNOP21UTC_Title.innerHTML == '') {
+                SYNOP.innerHTML = "SYNOP"
+                panelLayerSYNOP21UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                SYNOP_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedSYNOP21UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                clickedSYNOP21UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'CLOUD COVER') {
+                clickedSYNOP21UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                clickedSYNOP21UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                clickedSYNOP21UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedSYNOP21UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedSYNOP21UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '3h RAINFALL') {
+                clickedSYNOP21UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+        }
+
     } else {
         console.log("Not Checked");
         //Lightning

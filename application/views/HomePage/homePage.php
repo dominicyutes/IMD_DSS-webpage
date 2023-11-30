@@ -383,10 +383,10 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
     <!-- model popup -->
     <div class="model">
-    <div class="model-body" style="position: relative;">
-    <legend style="font-size: 12px; cursor: pointer; position: sticky; top: 0; background-color: white;">
-        ❌
-    </legend>
+        <div class="model-body" style="position: relative;">
+            <legend style="font-size: 12px; cursor: pointer; position: sticky; top: 0; background-color: white;">
+                ❌
+            </legend>
             <br>
             <h4
                 style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px; border-radius: 10px; text-align: center;">
@@ -508,119 +508,147 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                         <img id="legendModelMetar" alt="legendMetar" style="width: 72%; height: 35vh;" />
                     </div> -->
             </div>
+
+            <!-- SYNOP -->
+            <div class="row" id="SYNOP_Row" style="display: none;">
+                <h4 id="SYNOP" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
+
+                <h5 id="SYNOP00UTC-Title" style="color: red;"></h5>
+                <p id="SYNOP00UTC-lists"></p>
+
+                <h5 id="SYNOP03UTC-Title" style="color: red;"></h5>
+                <p id="SYNOP03UTC-lists"></p>
+
+                <h5 id="SYNOP06UTC-Title" style="color: red;"></h5>
+                <p id="SYNOP06UTC-lists"></p>
+
+                <h5 id="SYNOP09UTC-Title" style="color: red;"></h5>
+                <p id="SYNOP09UTC-lists"></p>
+
+                <h5 id="SYNOP12UTC-Title" style="color: red;"></h5>
+                <p id="SYNOP12UTC-lists"></p>
+
+                <h5 id="SYNOP15UTC-Title" style="color: red;"></h5>
+                <p id="SYNOP15UTC-lists"></p>
+
+                <h5 id="SYNOP18UTC-Title" style="color: red;"></h5>
+                <p id="SYNOP18UTC-lists"></p>
+
+                <h5 id="SYNOP21UTC-Title" style="color: red;"></h5>
+                <p id="SYNOP21UTC-lists"></p>
+            </div>
         </div>
-    </div>
 
-    <!-- adding JS -->
-    <?php $this->load->view('HomePage/scripts'); ?>
+        <!-- adding JS -->
+        <?php $this->load->view('HomePage/scripts'); ?>
 
-    <script>
-    particlesJS('particles-js', {
-        particles: {
-            number: {
-                value: 100, // Adjust the number of particles
-                density: {
-                    enable: true,
-                    value_area: 800
-                }
-            },
-            color: {
-                value: '#ffffff' // Set the color of the particles
-            },
-            shape: {
-                type: 'circle', // Choose the shape of the particles
-                stroke: {
-                    width: 0,
-                    color: '#000000'
-                },
-                polygon: {
-                    nb_sides: 5
-                }
-            },
-            opacity: {
-                value: 0.5, // Adjust the opacity of the particles
-                random: true,
-                anim: {
-                    enable: true,
-                    speed: 1,
-                    opacity_min: 0.1,
-                    sync: false
-                }
-            },
-            size: {
-                value: 3, // Set the size of the particles
-                random: true,
-                anim: {
-                    enable: false,
-                    speed: 40,
-                    size_min: 0.1,
-                    sync: false
-                }
-            },
-            line_linked: {
-                enable: true,
-                distance: 150,
-                color: '#ffffff',
-                opacity: 0.4,
-                width: 1
-            },
-            move: {
-                enable: true,
-                speed: 6,
-                direction: 'none',
-                random: false,
-                straight: false,
-                out_mode: 'out',
-                bounce: false,
-                attract: {
-                    enable: false,
-                    rotateX: 600,
-                    rotateY: 1200
-                }
-            }
-        },
-        interactivity: {
-            detect_on: 'canvas',
-            events: {
-                onhover: {
-                    enable: true,
-                    mode: 'grab'
-                },
-                onclick: {
-                    enable: true,
-                    mode: 'push'
-                },
-                resize: true
-            },
-            modes: {
-                grab: {
-                    distance: 140,
-                    line_linked: {
-                        opacity: 1
+        <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 100, // Adjust the number of particles
+                    density: {
+                        enable: true,
+                        value_area: 800
                     }
                 },
-                bubble: {
-                    distance: 400,
-                    size: 40,
-                    duration: 2,
-                    opacity: 8,
-                    speed: 3
+                color: {
+                    value: '#ffffff' // Set the color of the particles
                 },
-                repulse: {
-                    distance: 200,
-                    duration: 0.4
+                shape: {
+                    type: 'circle', // Choose the shape of the particles
+                    stroke: {
+                        width: 0,
+                        color: '#000000'
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
                 },
-                push: {
-                    particles_nb: 4
+                opacity: {
+                    value: 0.5, // Adjust the opacity of the particles
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
                 },
-                remove: {
-                    particles_nb: 2
+                size: {
+                    value: 3, // Set the size of the particles
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
                 }
-            }
-        },
-        retina_detect: true
-    });
-    </script>
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+        </script>
 </body>
 
 </html>
