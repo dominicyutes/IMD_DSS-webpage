@@ -380,8 +380,10 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
     <!-- model popup -->
     <div class="model">
-        <div class="model-body">
-            <legend style="font-size: 12px; cursor: pointer; color: #333333;">❌</legend>
+    <div class="model-body" style="position: relative;">
+    <legend style="font-size: 12px; cursor: pointer; position: sticky; top: 0; background-color: white;">
+        ❌
+    </legend>
             <br>
             <h4 style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px; border-radius: 10px; text-align: center;">
                 Selected Parameters
@@ -425,19 +427,19 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                 <h5 id="METAR00UTC-Title" style="color: red;"></h5>
                 <p id="METAR00UTC-lists"></p>
 
-                <h5 id="METAR01UTC-Title"></h5>
+                <h5 id="METAR01UTC-Title" style="color: red;"></h5>
                 <p id="METAR01UTC-lists"></p>
 
-                <h5 id="METAR02UTC-Title"></h5>
+                <h5 id="METAR02UTC-Title" style="color: red;"></h5>
                 <p id="METAR02UTC-lists"></p>
 
-                <h5 id="METAR03UTC-Title"></h5>
+                <h5 id="METAR03UTC-Title" style="color: red;"></h5>
                 <p id="METAR03UTC-lists"></p>
 
-                <h5 id="METAR04UTC-Title"></h5>
+                <h5 id="METAR04UTC-Title" style="color: red;"></h5>
                 <p id="METAR04UTC-lists"></p>
 
-                <h5 id="METAR05UTC-Title"></h5>
+                <h5 id="METAR05UTC-Title" style="color: red;"></h5>
                 <p id="METAR05UTC-lists"></p>
 
                 <!-- METAR01UTC -->
