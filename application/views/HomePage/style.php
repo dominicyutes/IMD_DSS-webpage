@@ -48,6 +48,14 @@ nav {
     display: none;
 }
 
+.obsFirstLine {
+    margin-top: -14px;
+}
+
+.obsSecondLine {
+    margin-top: -14px;
+}
+
 /*  */
 .mapAreaBg {
     background-color: #f8f6f8;
@@ -308,13 +316,15 @@ nav {
 }
 
 /* */
-@media (max-width: 1225px) {
-    .legend1 {
-        width: 86%;
+/* @media (max-width: 1478px) {
+    .heightChange {
+        height: 4em;
     }
+} */
 
-    .legend2 {
-        width: 86%;
+/* @media screen and (min-width: 1478px) {
+    .heightChange {
+        height: 4em;
     }
-}
+} */
 </style>

@@ -62,6 +62,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
 
 
+    <!-- background: radial-gradient(919px at 1.7% 6.1%, rgb(41, 58, 76) 0%, rgb(40, 171, 226) 100.2%); -->
 
     <!-- adding css -->
     <?php $this->load->view('HomePage/style'); ?>
@@ -207,10 +208,6 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                             India Meterological Department <br>
                             Ministry of Earth and Sciences
                         </span>
-                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="justify-content-center fs-5 ls-1 pb-4 span_bold"
-                            style="letter-spacing: 3px;color: #fff ">MINISTRY OF EARTH
-                            SCIENCES</span> -->
                     </div>
                 </span>
 
@@ -230,7 +227,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
             <span class="minsistry-text">Weather Decison Support System</span>
         </div>
         <!-- navbar -->
-        <div style="display:flex;height: 3em;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto">
+        <div style="display:flex;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto heightChange">
             <div style="width: 100%;display: flex;">
                 <div class="d-flex flex-wrap w-100 gx-3 gy-3 mt-1" id="parent" style="justify-content: space-between">
 
@@ -307,7 +304,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     <!-- <div class="mapAreaBg mx-auto" style="width:97%;"> -->
     <div id="ObservationContainer" class="hidden">
         <!-- model -->
-        <div>
+        <div class="obsFirstLine">
             <label for="modelNames" class="firstDDLabel">Model:</label>
             <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
             </select>
@@ -324,7 +321,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
             <span>&nbsp;</span>
         </div>
 
-        <div>
+        <div class="obsSecondLine">
             <!-- Date -->
             <label for="start_date" class="dateDDLabel">Start Date:</label>
             <input type="date" id="start_date" onchange="logSelectedDate()" class="dateDD">
@@ -441,6 +438,36 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
                 <h5 id="METAR05UTC-Title" style="color: red;"></h5>
                 <p id="METAR05UTC-lists"></p>
+
+                <h5 id="METAR06UTC-Title"></h5>
+                <p id="METAR06UTC-lists"></p>
+
+                <h5 id="METAR07UTC-Title"></h5>
+                <p id="METAR07UTC-lists"></p>
+
+                <h5 id="METAR08UTC-Title"></h5>
+                <p id="METAR08UTC-lists"></p>
+
+                <h5 id="METAR09UTC-Title"></h5>
+                <p id="METAR09UTC-lists"></p>
+
+                <h5 id="METAR10UTC-Title"></h5>
+                <p id="METAR10UTC-lists"></p>
+
+                <h5 id="METAR11UTC-Title"></h5>
+                <p id="METAR11UTC-lists"></p>
+
+                <h5 id="METAR12UTC-Title"></h5>
+                <p id="METAR12UTC-lists"></p>
+
+                <h5 id="METAR13UTC-Title"></h5>
+                <p id="METAR13UTC-lists"></p>
+
+                <h5 id="METAR14UTC-Title"></h5>
+                <p id="METAR14UTC-lists"></p>
+
+                <h5 id="METAR15UTC-Title"></h5>
+                <p id="METAR15UTC-lists"></p>
 
                 <!-- METAR01UTC -->
                 <!-- <h5 id="METAR01UTC-Title"></h5>
