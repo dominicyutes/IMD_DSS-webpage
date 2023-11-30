@@ -4858,6 +4858,30 @@ RayagadaMarker.bindPopup("<b>Rayagada</b>").openPopup();
 let panelLayerMETAR15UTC_Title = document.querySelector('#METAR15UTC-Title')
 let panelLayerMETAR15UTC_lists = document.querySelector('#METAR15UTC-lists')
 
+//SYNOP//
+let panelLayerSYNOP00UTC_Title = document.querySelector('#SYNOP00UTC-Title')
+let panelLayerSYNOP00UTC_lists = document.querySelector('#SYNOP00UTC-lists')
+
+let panelLayerSYNOP03UTC_Title = document.querySelector('#SYNOP03UTC-Title')
+let panelLayerSYNOP03UTC_lists = document.querySelector('#SYNOP03UTC-lists')
+
+let panelLayerSYNOP06UTC_Title = document.querySelector('#SYNOP06UTC-Title')
+let panelLayerSYNOP06UTC_lists = document.querySelector('#SYNOP06UTC-lists')
+
+let panelLayerSYNOP09UTC_Title = document.querySelector('#SYNOP09UTC-Title')
+let panelLayerSYNOP09UTC_lists = document.querySelector('#SYNOP09UTC-lists')
+
+let panelLayerSYNOP12UTC_Title = document.querySelector('#SYNOP12UTC-Title')
+let panelLayerSYNOP12UTC_lists = document.querySelector('#SYNOP12UTC-lists')
+
+let panelLayerSYNOP15UTC_Title = document.querySelector('#SYNOP15UTC-Title')
+let panelLayerSYNOP15UTC_lists = document.querySelector('#SYNOP15UTC-lists')
+
+let panelLayerSYNOP18UTC_Title = document.querySelector('#SYNOP18UTC-Title')
+let panelLayerSYNOP18UTC_lists = document.querySelector('#SYNOP18UTC-lists')
+
+let panelLayerSYNOP21UTC_Title = document.querySelector('#SYNOP21UTC-Title')
+let panelLayerSYNOP21UTC_lists = document.querySelector('#SYNOP21UTC-lists')
 
     document.querySelectorAll('#popup').forEach(function(openModel) {
         console.log(openModel, "__openModel");
@@ -4903,6 +4927,14 @@ let clickedMETAR12UTCLists = [];
 let clickedMETAR13UTCLists = [];
 let clickedMETAR14UTCLists = [];
 let clickedMETAR15UTCLists = [];
+let clickedMETAR16UTCLists = [];
+let clickedMETAR17UTCLists = [];
+let clickedMETAR18UTCLists = [];
+let clickedMETAR19UTCLists = [];
+let clickedMETAR20UTCLists = [];
+let clickedMETAR21UTCLists = [];
+let clickedMETAR22UTCLists = [];
+let clickedMETAR23UTCLists = [];
 
     $("body").on("change", "input[type=checkbox]", function() {
         var _this = $(this);
@@ -5608,8 +5640,238 @@ let clickedMETAR15UTCLists = [];
             }
             panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
         }
+        if (_this.context._layer.group.name == "METAR 16UTC") {
+            if (panelLayerMETAR16UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR16UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                METAR_Row.style.display = 'block';
+            }
 
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR16UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR16UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR16UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR16UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "METAR 17UTC") {
+            if (panelLayerMETAR17UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR17UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                METAR_Row.style.display = 'block';
+            }
 
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR17UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR17UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR17UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR17UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "METAR 18UTC") {
+            if (panelLayerMETAR18UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR18UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                METAR_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR18UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR18UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR18UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR18UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "METAR 19UTC") {
+            if (panelLayerMETAR19UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR19UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                METAR_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR19UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR19UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR19UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR19UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "METAR 20UTC") {
+            if (panelLayerMETAR20UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR20UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                METAR_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR20UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR20UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR20UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR20UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "METAR 21UTC") {
+            if (panelLayerMETAR21UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR21UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                METAR_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR21UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR21UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR21UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR21UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "METAR 22UTC") {
+            if (panelLayerMETAR22UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR22UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                METAR_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR22UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR22UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR22UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR22UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "METAR 23UTC") {
+            if (panelLayerMETAR23UTC_Title.innerHTML == '') {
+                METAR.innerHTML = "METAR"
+                panelLayerMETAR23UTC_Title.innerHTML = _this.context._layer.group.name + ':'
+                METAR_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TEMPERATURE') {
+                clickedMETAR23UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                clickedMETAR23UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedMETAR23UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedMETAR23UTCLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            panelLayerMETAR23UTC_lists.innerHTML = clickedMETAR23UTCLists.join("");
+        }
     } else {
         console.log("Not Checked");
         //Lightning
