@@ -4907,14 +4907,36 @@ let panelLayerSYNOP18UTC_lists = document.querySelector('#SYNOP18UTC-lists')
 let panelLayerSYNOP21UTC_Title = document.querySelector('#SYNOP21UTC-Title')
 let panelLayerSYNOP21UTC_lists = document.querySelector('#SYNOP21UTC-lists')
 
+// Radar
 let panelLayerRADARPRODUCTS_Title = document.querySelector('#RADARPRODUCTS-Title')
 let panelLayerRADARPRODUCTS_lists = document.querySelector('#RADARPRODUCTS-lists')
 
+// SATELLITE
 let panelLayerSATELLITE_Title = document.querySelector('#SATELLITE-Title')
 let panelLayerSATELLITE_lists = document.querySelector('#SATELLITE-lists')
 
+// LIGHTINING
 let panelLayerLIGHTINING_Title = document.querySelector('#LIGHTINING-Title')
 let panelLayerLIGHTINING_lists = document.querySelector('#LIGHTINING-lists')
+
+// SOUNDING
+let panelLayerSOUNDING00UTCWIND_Title = document.querySelector('#SOUNDING00UTCWIND-Title')
+let panelLayerSOUNDING00UTCWIND_lists = document.querySelector('#SOUNDING00UTCWIND-lists')
+
+let panelLayerSOUNDING12UTCWIND_Title = document.querySelector('#SOUNDING12UTCWIND-Title')
+let panelLayerSOUNDING12UTCWIND_lists = document.querySelector('#SOUNDING12UTCWIND-lists')
+
+let panelLayerSOUNDING00UTCTEMP_Title = document.querySelector('#SOUNDING00UTCTEMP-Title')
+let panelLayerSOUNDING00UTCTEMP_lists = document.querySelector('#SOUNDING00UTCTEMP-lists')
+
+let panelLayerSOUNDING12UTCTEMP_Title = document.querySelector('#SOUNDING12UTCTEMP-Title')
+let panelLayerSOUNDING12UTCTEMP_lists = document.querySelector('#SOUNDING12UTCTEMP-lists')
+
+let panelLayerSOUNDING00UTCDEWPOINT_Title = document.querySelector('#SOUNDING00UTCDEWPOINT-Title')
+let panelLayerSOUNDING00UTCDEWPOINT_lists = document.querySelector('#SOUNDING00UTCDEWPOINT-lists')
+
+let panelLayerSOUNDING12UTCDEWPOINT_Title = document.querySelector('#SOUNDING12UTCDEWPOINT-Title')
+let panelLayerSOUNDING12UTCDEWPOINT_lists = document.querySelector('#SOUNDING12UTCDEWPOINT-lists')
 
 document.querySelectorAll('#popup').forEach(function(openModel) {
     console.log(openModel, "__openModel");
@@ -4982,6 +5004,12 @@ let clickedSYNOP21UTCLists = [];
 let clickedRADARPRODUCTSLists = [];
 let clickedSATELLITELists = [];
 let clickedLIGHTININGLists = [];
+let clickedSOUNDING00UTCWINDLists = [];
+let clickedSOUNDING12UTCWINDLists = [];
+let clickedSOUNDING00UTCTEMPLists = [];
+let clickedSOUNDING12UTCTEMPLists = [];
+let clickedSOUNDING00UTCDEWPOINTLists = [];
+let clickedSOUNDING12UTCDEWPOINTLists = [];
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
@@ -6445,6 +6473,314 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
         }
+
+
+        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+            if (panelLayerSOUNDING00UTCWIND_Title.innerHTML == '') {
+                SOUNDING.innerHTML = "SOUNDING"
+                panelLayerSOUNDING00UTCWIND_Title.innerHTML = _this.context._layer.group.name + ':'
+                SOUNDING_Row.style.display = 'block';
+            }
+
+            if (layer_name == '1000 hpa WIND') {
+                clickedSOUNDING00UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '850 hpa WIND') {
+                clickedSOUNDING00UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '700 hpa WIND') {
+                clickedSOUNDING00UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '500 hpa WIND') {
+                clickedSOUNDING00UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '300 hpa WIND') {
+                clickedSOUNDING00UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '200 hpa WIND') {
+                clickedSOUNDING00UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '100 hpa WIND') {
+                clickedSOUNDING00UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '50 hpa WIND') {
+                clickedSOUNDING00UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+
+        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+            if (panelLayerSOUNDING12UTCWIND_Title.innerHTML == '') {
+                SOUNDING.innerHTML = "SOUNDING"
+                panelLayerSOUNDING12UTCWIND_Title.innerHTML = _this.context._layer.group.name + ':'
+                SOUNDING_Row.style.display = 'block';
+            }
+
+            if (layer_name == '1000 hpa WIND') {
+                clickedSOUNDING12UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '850 hpa WIND') {
+                clickedSOUNDING12UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '700 hpa WIND') {
+                clickedSOUNDING12UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '500 hpa WIND') {
+                clickedSOUNDING12UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '300 hpa WIND') {
+                clickedSOUNDING12UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '200 hpa WIND') {
+                clickedSOUNDING12UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '100 hpa WIND') {
+                clickedSOUNDING12UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '50 hpa WIND') {
+                clickedSOUNDING12UTCWINDLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+
+        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+            if (panelLayerSOUNDING00UTCTEMP_Title.innerHTML == '') {
+                SOUNDING.innerHTML = "SOUNDING"
+                panelLayerSOUNDING00UTCTEMP_Title.innerHTML = _this.context._layer.group.name + ':'
+                SOUNDING_Row.style.display = 'block';
+            }
+
+            if (layer_name == '1000 hpa TEMP') {
+                clickedSOUNDING00UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '850 hpa TEMP') {
+                clickedSOUNDING00UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '700 hpa TEMP') {
+                clickedSOUNDING00UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '500 hpa TEMP') {
+                clickedSOUNDING00UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '300 hpa TEMP') {
+                clickedSOUNDING00UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '200 hpa TEMP') {
+                clickedSOUNDING00UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '100 hpa TEMP') {
+                clickedSOUNDING00UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '50 hpa TEMP') {
+                clickedSOUNDING00UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+
+        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+            if (panelLayerSOUNDING12UTCTEMP_Title.innerHTML == '') {
+                SOUNDING.innerHTML = "SOUNDING"
+                panelLayerSOUNDING12UTCTEMP_Title.innerHTML = _this.context._layer.group.name + ':'
+                SOUNDING_Row.style.display = 'block';
+            }
+
+            if (layer_name == '1000 hpa TEMP') {
+                clickedSOUNDING12UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '850 hpa TEMP') {
+                clickedSOUNDING12UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '700 hpa TEMP') {
+                clickedSOUNDING12UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '500 hpa TEMP') {
+                clickedSOUNDING12UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '300 hpa TEMP') {
+                clickedSOUNDING12UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '200 hpa TEMP') {
+                clickedSOUNDING12UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '100 hpa TEMP') {
+                clickedSOUNDING12UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '50 hpa TEMP') {
+                clickedSOUNDING12UTCTEMPLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+
+        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+            if (panelLayerSOUNDING00UTCDEWPOINT_Title.innerHTML == '') {
+                SOUNDING.innerHTML = "SOUNDING"
+                panelLayerSOUNDING00UTCDEWPOINT_Title.innerHTML = _this.context._layer.group.name + ':'
+                SOUNDING_Row.style.display = 'block';
+            }
+
+            if (layer_name == '1000 hpa DEW POINT') {
+                clickedSOUNDING00UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '850 hpa DEW POINT') {
+                clickedSOUNDING00UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '700 hpa DEW POINT') {
+                clickedSOUNDING00UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '500 hpa DEW POINT') {
+                clickedSOUNDING00UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '300 hpa DEW POINT') {
+                clickedSOUNDING00UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '200 hpa DEW POINT') {
+                clickedSOUNDING00UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '100 hpa DEW POINT') {
+                clickedSOUNDING00UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '50 hpa DEW POINT') {
+                clickedSOUNDING00UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+
+        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+            if (panelLayerSOUNDING12UTCDEWPOINT_Title.innerHTML == '') {
+                SOUNDING.innerHTML = "SOUNDING"
+                panelLayerSOUNDING12UTCDEWPOINT_Title.innerHTML = _this.context._layer.group.name + ':'
+                SOUNDING_Row.style.display = 'block';
+            }
+
+            if (layer_name == '1000 hpa DEW POINT') {
+                clickedSOUNDING12UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '850 hpa DEW POINT') {
+                clickedSOUNDING12UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '700 hpa DEW POINT') {
+                clickedSOUNDING12UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '500 hpa DEW POINT') {
+                clickedSOUNDING12UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '300 hpa DEW POINT') {
+                clickedSOUNDING12UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '200 hpa DEW POINT') {
+                clickedSOUNDING12UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '100 hpa DEW POINT') {
+                clickedSOUNDING12UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '50 hpa DEW POINT') {
+                clickedSOUNDING12UTCDEWPOINTLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+
     } else {
         console.log("Not Checked");
         //Lightning

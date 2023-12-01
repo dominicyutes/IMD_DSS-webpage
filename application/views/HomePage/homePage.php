@@ -546,7 +546,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <p id="SATELLITE-lists"></p>
 
                 </div>
-                <!-- SATELLITE -->
+                <!-- LIGHTINING -->
                 <div class="row" id="LIGHTINING_Row" style="display: none;">
                     <h4 id="LIGHTINING" style=" border-radius: 8px; background-color: yellow; text-align: center;">
                     </h4>
@@ -555,7 +555,29 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <p id="LIGHTINING-lists"></p>
 
                 </div>
+                <!-- SOUNDING -->
+                <div class="row" id="SOUNDING_Row" style="display: none;">
+                    <h4 id="SOUNDING" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
 
+                    <h5 id="SOUNDING00UTCWIND-Title" style="color: red;"></h5>
+                    <p id="SOUNDING00UTCWIND-lists"></p>
+
+                    <h5 id="SOUNDING12UTCWIND-Title" style="color: red;"></h5>
+                    <p id="SOUNDING12UTCWIND-lists"></p>
+
+                    <h5 id="SOUNDING00UTCTEMP-Title" style="color: red;"></h5>
+                    <p id="SOUNDING00UTCTEMP-lists"></p>
+
+                    <h5 id="SOUNDING12UTCTEMP-Title" style="color: red;"></h5>
+                    <p id="SOUNDING12UTCTEMP-lists"></p>
+
+                    <h5 id="SOUNDING00UTCDEWPOINT-Title" style="color: red;"></h5>
+                    <p id="SOUNDING00UTCDEWPOINT-lists"></p>
+
+                    <h5 id="SOUNDING12UTCDEWPOINT-Title" style="color: red;"></h5>
+                    <p id="SOUNDING12UTCDEWPOINT-lists"></p>
+
+                </div>
             </div>
         </div>
 
