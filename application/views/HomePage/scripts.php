@@ -4913,6 +4913,9 @@ let panelLayerRADARPRODUCTS_lists = document.querySelector('#RADARPRODUCTS-lists
 let panelLayerSATELLITE_Title = document.querySelector('#SATELLITE-Title')
 let panelLayerSATELLITE_lists = document.querySelector('#SATELLITE-lists')
 
+let panelLayerLIGHTINING_Title = document.querySelector('#LIGHTINING-Title')
+let panelLayerLIGHTINING_lists = document.querySelector('#LIGHTINING-lists')
+
 document.querySelectorAll('#popup').forEach(function(openModel) {
     console.log(openModel, "__openModel");
     openModel.onclick = () => {
@@ -4978,6 +4981,7 @@ let clickedSYNOP21UTCLists = [];
 
 let clickedRADARPRODUCTSLists = [];
 let clickedSATELLITELists = [];
+let clickedLIGHTININGLists = [];
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
@@ -4993,33 +4997,33 @@ $("body").on("change", "input[type=checkbox]", function() {
         //HomePage_Lightning
         if (_this.context._layer.group.name == "Lightning") {
 
-            if (panelLayerLightningTitle.innerHTML == '') {
-                panelLayerLightningTitle.innerHTML = _this.context._layer.group.name + ':';
-                // legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-                // legendModel1.style.height = '35vh';
-                // legendModel1.style.width = '72%';
-                Light_RadarRow.style.display = 'block';
-            }
+            // if (panelLayerLightningTitle.innerHTML == '') {
+            //     panelLayerLightningTitle.innerHTML = _this.context._layer.group.name + ':';
+            //     // legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
+            //     // legendModel1.style.height = '35vh';
+            //     // legendModel1.style.width = '72%';
+            //     Light_RadarRow.style.display = 'block';
+            // }
 
-            if (layer_name == 'Last 00-05 min') {
-                clickedLightningLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-                );
-                map.addLayer(delhiMarker);
-            }
-            if (layer_name == 'Last 05-10 min') {
-                clickedLightningLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-                );
-                map.addLayer(jaipurMarker);
-            }
-            if (layer_name == 'Last 10-15 min') {
-                clickedLightningLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-                );
-                map.addLayer(bhopalMarker);
-            }
-            panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
+            // if (layer_name == 'Last 00-05 min') {
+            //     clickedLightningLists.push(
+            //         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            //     );
+            //     map.addLayer(delhiMarker);
+            // }
+            // if (layer_name == 'Last 05-10 min') {
+            //     clickedLightningLists.push(
+            //         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            //     );
+            //     map.addLayer(jaipurMarker);
+            // }
+            // if (layer_name == 'Last 10-15 min') {
+            //     clickedLightningLists.push(
+            //         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            //     );
+            //     map.addLayer(bhopalMarker);
+            // }
+            // panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
@@ -6405,6 +6409,41 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
 
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+        }
+        if (_this.context._layer.group.name == "Lightning") {
+            if (panelLayerLIGHTINING_Title.innerHTML == '') {
+                LIGHTINING.innerHTML = "LIGHTINING"
+                panelLayerLIGHTINING_Title.innerHTML = _this.context._layer.group.name + ':'
+                LIGHTINING_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Last 00-05 min') {
+                clickedLIGHTININGLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Last 05-10 min') {
+                clickedLIGHTININGLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Last 10-15 min') {
+                clickedLIGHTININGLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ILDN Last 05 min') {
+                clickedLIGHTININGLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Nowcast Alerts') {
+                clickedLIGHTININGLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
         }
     } else {
         console.log("Not Checked");

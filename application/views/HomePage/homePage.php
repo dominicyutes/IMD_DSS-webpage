@@ -546,6 +546,15 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <p id="SATELLITE-lists"></p>
 
                 </div>
+                <!-- SATELLITE -->
+                <div class="row" id="LIGHTINING_Row" style="display: none;">
+                    <h4 id="LIGHTINING" style=" border-radius: 8px; background-color: yellow; text-align: center;">
+                    </h4>
+
+                    <h5 id="LIGHTINING-Title" style="color: red;"></h5>
+                    <p id="LIGHTINING-lists"></p>
+
+                </div>
 
             </div>
         </div>
