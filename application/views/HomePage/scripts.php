@@ -4910,6 +4910,9 @@ let panelLayerSYNOP21UTC_lists = document.querySelector('#SYNOP21UTC-lists')
 let panelLayerRADARPRODUCTS_Title = document.querySelector('#RADARPRODUCTS-Title')
 let panelLayerRADARPRODUCTS_lists = document.querySelector('#RADARPRODUCTS-lists')
 
+let panelLayerSATELLITE_Title = document.querySelector('#SATELLITE-Title')
+let panelLayerSATELLITE_lists = document.querySelector('#SATELLITE-lists')
+
 document.querySelectorAll('#popup').forEach(function(openModel) {
     console.log(openModel, "__openModel");
     openModel.onclick = () => {
@@ -4974,6 +4977,7 @@ let clickedSYNOP18UTCLists = [];
 let clickedSYNOP21UTCLists = [];
 
 let clickedRADARPRODUCTSLists = [];
+let clickedSATELLITELists = [];
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
@@ -6341,6 +6345,66 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
 
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
+        }
+        if (_this.context._layer.group.name == "Satellite Observation") {
+            if (panelLayerSATELLITE_Title.innerHTML == '') {
+                SATELLITE.innerHTML = "SATELLITE"
+                panelLayerSATELLITE_Title.innerHTML = _this.context._layer.group.name + ':'
+                SATELLITE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'TIR1') {
+                clickedSATELLITELists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VIS') {
+                clickedSATELLITELists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'CTBT') {
+                clickedSATELLITELists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'LOW LEVEL CONVERGENCE') {
+                clickedSATELLITELists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'UPPER LEVEL DIVEGENCE') {
+                clickedSATELLITELists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'MID LEVEL SHEAR') {
+                clickedSATELLITELists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VORTICITY AT 200hPa') {
+                clickedSATELLITELists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VORTICITY AT 500hPa') {
+                clickedSATELLITELists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VORTICITY AT 700hPa') {
+                clickedSATELLITELists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'VORTICITY AT 850hPa') {
+                clickedSATELLITELists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
         }
     } else {
         console.log("Not Checked");
