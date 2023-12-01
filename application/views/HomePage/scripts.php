@@ -1,102 +1,4 @@
 <script>
-// nav button starts here
-// document.getElementById("parent").addEventListener("click", function(e) {
-// const targetElement = e.target;
-// const currentColor = targetElement.style.backgroundColor;
-// console.log(e);
-// console.log(e.target);
-// console.log(e.target.id);
-
-// var isClicked = false;
-// if (e.target && e.target.id == "exposure" || e.target.id == "metar" || e.target.id == "synop" || e.target
-//     .id == "radar" || e.target.id == "satellite" ||
-//     e.target.id == "lightning" || e.target.id == "sounding" || e.target.id == "ship_and_buoy" || e.target
-//     .id == "mesolscale" || e.target.id == "medium_range") {
-//     if (currentColor === 'rgb(245, 222, 179)') {
-//         targetElement.style.backgroundColor = 'rgb(240, 240, 240)'; // Reset to default color
-//         isClicked = false
-//     } else {
-//         targetElement.style.backgroundColor = 'rgb(245, 222, 179)';
-//         isClicked = true
-//     }
-// }
-
-// console.log('switch--/>case', isClicked);
-// const legendImage1 = document.getElementById('legend1');
-// const legendImage2 = document.getElementById('legend2');
-
-// switch (isClicked == true ? e.target.id : 'default') {
-//     case 'exposure':
-//         legendImage1.src =
-//             'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
-//         legendImage2.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/mmetar_time.png';
-//         break;
-//     case 'metar':
-//         legendImage1.src =
-//             'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
-//         legendImage2.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/mmetar_time.png';
-//         break;
-//     case 'synop':
-//         legendImage1.src =
-//             '	http://103.215.208.18/dwr_img/GIS/synop_nowcast.jpg';
-//         legendImage2.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/synop_time.png';
-//         break;
-//     case 'radar':
-//         legendImage1.src =
-//             'http://103.215.208.18/dwr_img/GIS/radar_nowcast.jpg';
-//         legendImage2.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
-//         break;
-//     case 'satellite':
-//         legendImage1.src =
-//             '	http://103.215.208.18/dwr_img/GIS/legend/sat_nowcast.png';
-//         legendImage2.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/insat_windtime.png';
-//         break;
-//     case 'lightning':
-//         legendImage1.src =
-//             'http://103.215.208.18/dwr_img/GIS/light_nowcast.jpg';
-//         legendImage2.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/light_time.png';
-//         break;
-//     case 'sounding':
-//         legendImage1.src =
-//             'http://103.215.208.18/dwr_img/GIS/sounding_nowcast.jpg';
-//         legendImage2.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/temp12_time.png';
-//         break;
-//     case 'ship_and_buoy':
-//         legendImage1.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/exp_legend2.PNG';
-//         legendImage2.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/ship_time.png';
-//         break;
-//     case 'mesolscale':
-//         legendImage1.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-//         legendImage2.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
-//         break;
-//     case 'medium_range':
-//         legendImage1.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/model_123.png';
-//         legendImage2.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/date11_mslp.png';
-//         break;
-//     case 'default':
-//         legendImage1.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-//         legendImage2.src =
-//             'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
-//         break;
-
-// }
-
-// });
-
 let modelNamesArr = ["", 'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship And Buoy'];
 
 //metarParameters
@@ -1397,8 +1299,6 @@ let SynopParametersList = [Synop_00UTC, Synop_03UTC, Synop_06UTC, Synop_09UTC, S
 ];
 //
 
-//RadarParameters
-// let radarParameters = ['Radar Products'];
 
 //RadarParametersList
 let Radar_Products = ['Radar Reflectivity', 'Radar Animation'];
@@ -1727,91 +1627,6 @@ var myIcon = L.icon({
     iconAnchor: [3, 5],
     popupAnchor: [-3, -86],
 });
-
-// coords1 = [];
-// var lightningLayer1 = " ";
-// var lightningLayer1 = L.geoJson(null, {
-//     pointToLayer: function(feature, latlng) {
-//         return L.marker(latlng, {
-//             icon: myIcon
-//         });
-//     },
-//     onEachFeature: function(feature, layer) {
-//         layer.bindPopup(' Lightning detected on ' + ' <br> ' +
-//             feature.properties.Lightning_Time + ' UTC' + ' <br> ' + 'at ' +
-//             feature.properties.La + 'N' + ', ' +
-//             feature.properties.Lo + 'E'
-//         );
-//         coords2.push([feature.properties.La, feature.properties.Lo]);
-//     }
-// });
-
-// coords2 = [];
-// var lightningLayer2 = " ";
-// var lightningLayer2 = L.geoJson(null, {
-//     pointToLayer: function(feature, latlng) {
-//         return L.marker(latlng, {
-//             icon: myIcon
-//         });
-//     },
-//     onEachFeature: function(feature, layer) {
-//         layer.bindPopup(' Lightning detected on ' + ' <br> ' +
-//             feature.properties.Lightning_Time + ' UTC' + ' <br> ' + 'at ' +
-//             feature.properties.La + 'N' + ', ' +
-//             feature.properties.Lo + 'E'
-//         );
-//         coords2.push([feature.properties.La, feature.properties.Lo]);
-//     }
-
-// });
-
-// coords3 = [];
-// var lightningLayer3 = " ";
-// var lightningLayer3 = L.geoJson(null, {
-//     pointToLayer: function(feature, latlng) {
-//         return L.marker(latlng, {
-//             icon: myIcon
-//         });
-//     },
-//     onEachFeature: function(feature, layer) {
-//         layer.bindPopup(' Lightning detected on ' + ' <br> ' +
-//             feature.properties.Lightning_Time + ' UTC' + ' <br> ' + 'at ' +
-//             feature.properties.La + 'N' + ', ' +
-//             feature.properties.Lo + 'E'
-//         );
-//         coords3.push([feature.properties.La, feature.properties.Lo]);
-//     }
-
-// });
-
-// var heat1 = L.heatLayer(coords1, {
-//     minOpacity: 0.9,
-//     radius: 6,
-//     blur: 10,
-//     maxZoom: 14,
-//     max: 1.0,
-//     gradient: null
-// });
-
-// var heat2 = L.heatLayer(coords2, {
-//     minOpacity: 0.9,
-//     radius: 6,
-//     blur: 10,
-//     maxZoom: 14,
-//     max: 1.0,
-//     gradient: null
-// });
-
-// var heat3 = L.heatLayer(coords3, {
-//     minOpacity: 0.9,
-//     radius: 6,
-//     blur: 10,
-//     maxZoom: 14,
-//     max: 1.0,
-//     gradient: null
-// });
-
-// delhiMarker jaipurMarker jaipurMarker
 
 // Add a marker for Delhi
 var delhiMarker = L.marker([28.6139, 77.2090]);
@@ -4947,23 +4762,6 @@ document.querySelectorAll('#popup').forEach(function(openModel) {
     openModel.onclick = () => {
         console.log("openModel working!!!");
         model.style.display = 'block';
-        //
-        // legendModel1.src = "";
-        // legendModel1.alt = "";
-        // legendModel1.style.height = 0;
-        // legendModel1.style.width = 0;
-
-        //EXPOSURE
-        // legendModelExpo.src = "";
-        // legendModelExpo.alt = "";
-        // legendModelExpo.style.height = 0;
-        // legendModelExpo.style.width = 0;
-
-        //METAR
-        // legendModelMet.src = "";
-        // legendModelMet.alt = "";
-        // legendModelMet.style.height = 0;
-        // legendModelMet.style.width = 0;
     }
 });
 //
@@ -5327,7 +5125,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR01UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5372,7 +5170,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR02UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5393,7 +5191,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR03UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5417,7 +5215,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR03UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5454,7 +5252,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR04UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5462,7 +5260,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR04UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5499,7 +5297,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR05UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5507,7 +5305,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR05UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5544,7 +5342,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR06UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5552,7 +5350,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR06UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5589,7 +5387,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR07UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5597,7 +5395,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR07UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5634,7 +5432,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR08UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5642,7 +5440,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR08UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5679,7 +5477,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR09UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5687,7 +5485,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR09UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5724,7 +5522,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR10UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5732,7 +5530,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR10UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5753,7 +5551,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR11UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5761,7 +5559,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR11UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5777,7 +5575,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR11UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5798,7 +5596,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR12UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5806,7 +5604,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR12UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5822,7 +5620,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR12UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5843,7 +5641,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR13UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5851,7 +5649,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR13UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5867,7 +5665,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR13UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5888,7 +5686,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR14UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5896,7 +5694,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR14UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5912,7 +5710,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR14UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5933,7 +5731,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR15UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5941,7 +5739,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR15UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5957,7 +5755,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR15UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -5978,7 +5776,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR16UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -5986,7 +5784,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR16UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6002,7 +5800,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR16UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6023,7 +5821,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR17UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6031,7 +5829,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR17UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6047,7 +5845,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR17UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6068,7 +5866,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR18UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6076,7 +5874,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR18UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6092,7 +5890,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR18UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6113,7 +5911,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR19UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6121,7 +5919,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR19UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6137,7 +5935,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR19UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6158,7 +5956,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR20UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6166,7 +5964,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR20UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6182,7 +5980,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR20UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6203,7 +6001,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR21UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6211,7 +6009,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR21UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6227,7 +6025,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR21UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6248,7 +6046,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR22UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6256,7 +6054,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR22UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6272,7 +6070,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR22UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6293,7 +6091,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR23UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6301,7 +6099,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR23UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
@@ -6317,7 +6115,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR23UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
