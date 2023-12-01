@@ -492,7 +492,6 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
                     <h5 id="METAR23UTC-Title"></h5>
                     <p id="METAR23UTC-lists"></p>
-
                     <!-- METAR01UTC -->
                     <!-- <h5 id="METAR01UTC-Title"></h5>
                         <p id="METAR01UTC-lists"></p> -->
@@ -501,6 +500,35 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                         <img id="legendModelMetar" alt="legendMetar" style="width: 72%; height: 35vh;" />
                     </div> -->
                 </div>
+                <!-- SYNOP -->
+                <div class="row" id="SYNOP_Row" style="display: none;">
+                    <h4 id="SYNOP" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
+
+                    <h5 id="SYNOP00UTC-Title" style="color: red;"></h5>
+                    <p id="SYNOP00UTC-lists"></p>
+
+                    <h5 id="SYNOP03UTC-Title" style="color: red;"></h5>
+                    <p id="SYNOP03UTC-lists"></p>
+
+                    <h5 id="SYNOP06UTC-Title" style="color: red;"></h5>
+                    <p id="SYNOP06UTC-lists"></p>
+
+                    <h5 id="SYNOP09UTC-Title" style="color: red;"></h5>
+                    <p id="SYNOP09UTC-lists"></p>
+
+                    <h5 id="SYNOP12UTC-Title" style="color: red;"></h5>
+                    <p id="SYNOP12UTC-lists"></p>
+
+                    <h5 id="SYNOP15UTC-Title" style="color: red;"></h5>
+                    <p id="SYNOP15UTC-lists"></p>
+
+                    <h5 id="SYNOP18UTC-Title" style="color: red;"></h5>
+                    <p id="SYNOP18UTC-lists"></p>
+
+                    <h5 id="SYNOP21UTC-Title" style="color: red;"></h5>
+                    <p id="SYNOP21UTC-lists"></p>
+                </div>
+
             </div>
         </div>
 
