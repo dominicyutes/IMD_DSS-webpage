@@ -528,7 +528,14 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <h5 id="SYNOP21UTC-Title" style="color: red;"></h5>
                     <p id="SYNOP21UTC-lists"></p>
                 </div>
+                <!-- Radar -->
+                <div class="row" id="RADAR_Row" style="display: none;">
+                    <h4 id="RADARPRODUCTS" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
 
+                    <h5 id="RADARPRODUCTS-Title" style="color: red;"></h5>
+                    <p id="RADARPRODUCTS-lists"></p>
+
+                </div>
             </div>
         </div>
 

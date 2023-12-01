@@ -4907,6 +4907,9 @@ let panelLayerSYNOP18UTC_lists = document.querySelector('#SYNOP18UTC-lists')
 let panelLayerSYNOP21UTC_Title = document.querySelector('#SYNOP21UTC-Title')
 let panelLayerSYNOP21UTC_lists = document.querySelector('#SYNOP21UTC-lists')
 
+let panelLayerRADARPRODUCTS_Title = document.querySelector('#RADARPRODUCTS-Title')
+let panelLayerRADARPRODUCTS_lists = document.querySelector('#RADARPRODUCTS-lists')
+
 document.querySelectorAll('#popup').forEach(function(openModel) {
     console.log(openModel, "__openModel");
     openModel.onclick = () => {
@@ -4970,6 +4973,7 @@ let clickedSYNOP15UTCLists = [];
 let clickedSYNOP18UTCLists = [];
 let clickedSYNOP21UTCLists = [];
 
+let clickedRADARPRODUCTSLists = [];
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
@@ -6317,6 +6321,26 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
 
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+        }
+        if (_this.context._layer.group.name == "Radar Products") {
+            if (panelLayerRADARPRODUCTS_Title.innerHTML == '') {
+                RADARPRODUCTS.innerHTML = "RADAR"
+                panelLayerRADARPRODUCTS_Title.innerHTML = _this.context._layer.group.name + ':'
+                RADAR_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Radar Reflectivity') {
+                clickedRADARPRODUCTSLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Radar Animation') {
+                clickedRADARPRODUCTSLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
         }
     } else {
         console.log("Not Checked");
