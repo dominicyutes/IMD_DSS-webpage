@@ -4938,6 +4938,10 @@ let panelLayerSOUNDING00UTCDEWPOINT_lists = document.querySelector('#SOUNDING00U
 let panelLayerSOUNDING12UTCDEWPOINT_Title = document.querySelector('#SOUNDING12UTCDEWPOINT-Title')
 let panelLayerSOUNDING12UTCDEWPOINT_lists = document.querySelector('#SOUNDING12UTCDEWPOINT-lists')
 
+// SHIPANDBUOY
+let panelLayerSHIPANDBUOY_Title = document.querySelector('#SHIPANDBUOY-Title')
+let panelLayerSHIPANDBUOY_lists = document.querySelector('#SHIPANDBUOY-lists')
+
 document.querySelectorAll('#popup').forEach(function(openModel) {
     console.log(openModel, "__openModel");
     openModel.onclick = () => {
@@ -5010,6 +5014,7 @@ let clickedSOUNDING00UTCTEMPLists = [];
 let clickedSOUNDING12UTCTEMPLists = [];
 let clickedSOUNDING00UTCDEWPOINTLists = [];
 let clickedSOUNDING12UTCDEWPOINTLists = [];
+let clickedSHIPANDBUOYLists = [];
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
@@ -7146,6 +7151,137 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
 
             panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+
+        if (_this.context._layer.group.name == "SHIP AND BUOY OBSERVATION") {
+            if (panelLayerSHIPANDBUOY_Title.innerHTML == '') {
+                SHIPANDBUOY.innerHTML = "SHIP AND BUOY"
+                panelLayerSHIPANDBUOY_Title.innerHTML = _this.context._layer.group.name + ':'
+                SHIPANDBUOY_Row.style.display = 'block';
+            }
+
+            if (layer_name == '00UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '01UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '02UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '03UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '04UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '05UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '06UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '07UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '08UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '09UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '10UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '11UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '12UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '13UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '14UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '15UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '16UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '17UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '18UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '19UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '20UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '21UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '22UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == '23UTC') {
+                clickedSHIPANDBUOYLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
         }
 
     } else {
