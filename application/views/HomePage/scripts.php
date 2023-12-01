@@ -7286,7 +7286,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
     } else {
         console.log("Not Checked");
-        //Lightning
+        //Lightning UNCHECK
         if (layer_name == 'Last 00-05 min') {
             clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
                 `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
@@ -7322,7 +7322,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
 
-        //Radar
+        //Radar UNCHECK
         if (layer_name == 'Radar Reflectivity') {
             clickedRadarLists = clickedRadarLists.filter(checkList => checkList !=
                 `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
@@ -7360,7 +7360,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
 
-        //Exposure
+        //Exposure UNCHECK
         if (layer_name == 'District Boundaries') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
@@ -7499,8 +7499,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             console.log(yyy);
         }
 
-        //
-        METAR
+        //METAR UNCHECK
         if (layer_name == 'TEMPERATURE') {
             clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
                 `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
