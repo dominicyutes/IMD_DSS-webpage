@@ -520,6 +520,33 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <h5 id="SYNOP21UTC-Title" style="color: red;"></h5>
                     <p id="SYNOP21UTC-lists"></p>
                 </div>
+                <!-- Radar -->
+                <div class="row" id="RADAR_Row" style="display: none;">
+                    <h4 id="RADARPRODUCTS" style=" border-radius: 8px; background-color: yellow; text-align: center;">
+                    </h4>
+
+                    <h5 id="RADARPRODUCTS-Title" style="color: red;"></h5>
+                    <p id="RADARPRODUCTS-lists"></p>
+
+                </div>
+                <!-- SATELLITE -->
+                <div class="row" id="SATELLITE_Row" style="display: none;">
+                    <h4 id="SATELLITE" style=" border-radius: 8px; background-color: yellow; text-align: center;">
+                    </h4>
+
+                    <h5 id="SATELLITE-Title" style="color: red;"></h5>
+                    <p id="SATELLITE-lists"></p>
+
+                </div>
+                <!-- SATELLITE -->
+                <div class="row" id="LIGHTINING_Row" style="display: none;">
+                    <h4 id="LIGHTINING" style=" border-radius: 8px; background-color: yellow; text-align: center;">
+                    </h4>
+
+                    <h5 id="LIGHTINING-Title" style="color: red;"></h5>
+                    <p id="LIGHTINING-lists"></p>
+
+                </div>
 
             </div>
         </div>
