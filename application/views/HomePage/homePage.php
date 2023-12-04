@@ -480,6 +480,56 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <p id="EWRFLightning-lists"></p>
 
                 </div>
+                <!-- MEDIUM -->
+                <div class="row" id="MEDIUM_Row" style="display: none;">
+                    <h4 id="MEDIUM" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
+
+                    <h5 id="RainfallIntensityDay1-Title" style="color: red;"></h5>
+                    <p id="RainfallIntensityDay1-lists"></p>
+
+                    <h5 id="RainfallIntensityDay2-Title" style="color: red;"></h5>
+                    <p id="RainfallIntensityDay2-lists"></p>
+
+                    <h5 id="RainfallIntensityDay3-Title" style="color: red;"></h5>
+                    <p id="RainfallIntensityDay3-lists"></p>
+
+                    <h5 id="RainfallIntensityDay4-Title" style="color: red;"></h5>
+                    <p id="RainfallIntensityDay4-lists"></p>
+
+                    <h5 id="RainfallIntensityDay5-Title" style="color: red;"></h5>
+                    <p id="RainfallIntensityDay5-lists"></p>
+
+                    <h5 id="MSLPDay1-Title" style="color: red;"></h5>
+                    <p id="MSLPDay1-lists"></p>
+
+                    <h5 id="MSLPDay2-Title" style="color: red;"></h5>
+                    <p id="MSLPDay2-lists"></p>
+
+                    <h5 id="MSLPDay3-Title" style="color: red;"></h5>
+                    <p id="MSLPDay3-lists"></p>
+
+                    <h5 id="MSLPDay4-Title" style="color: red;"></h5>
+                    <p id="MSLPDay4-lists"></p>
+
+                    <h5 id="MSLPDay5-Title" style="color: red;"></h5>
+                    <p id="MSLPDay5-lists"></p>
+
+                    <h5 id="10mWINDDay1-Title" style="color: red;"></h5>
+                    <p id="10mWINDDay1-lists"></p>
+
+                    <h5 id="10mWINDDay2-Title" style="color: red;"></h5>
+                    <p id="10mWINDDay2-lists"></p>
+
+                    <h5 id="10mWINDDay3-Title" style="color: red;"></h5>
+                    <p id="10mWINDDay3-lists"></p>
+
+                    <h5 id="10mWINDDay4-Title" style="color: red;"></h5>
+                    <p id="10mWINDDay4-lists"></p>
+
+                    <h5 id="10mWINDDay5-Title" style="color: red;"></h5>
+                    <p id="10mWINDDay5-lists"></p>
+
+                </div>
 
             </div>
         </div>
