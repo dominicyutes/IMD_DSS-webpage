@@ -7570,7 +7570,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             // legendModelMet.alt = "";
             // legendModelMet.style.height = 0;
             // legendModelMet.style.width = 0;
-            METAR_Row.style.display = 'block';
+            // METAR_Row.style.display = 'block';
         }
         console.log(layer_name, "layer_name");
 
