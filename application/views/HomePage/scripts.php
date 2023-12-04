@@ -1,7 +1,7 @@
 <script>
 let modelNamesArr = ["", 'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship And Buoy'];
 
-//metarParameters
+//Parameters
 let Parameters = [{
         name: 'Metar 00UTC',
         category: 'Metar'
@@ -1238,12 +1238,6 @@ let subParametersList = [{
 
 ];
 
-//SynopParameters
-// let synopParameters = ['Synop 00UTC', 'Synop 03UTC', 'Synop 06UTC', 'Synop 09UTC', 'Synop 12UTC',
-//     'Synop 15UTC',
-//     'Synop 18UTC', 'Synop 21UTC'
-// ];
-
 //SynopParametersList
 let Synop_00UTC = ['Temperature_00', 'Mean Sealevel Pressure_00', 'Cloud Cover_00',
     'Geopotential Height_00',
@@ -1405,11 +1399,11 @@ function showParameterNames(value) {
 
 //secondDropdown-SD
 function showSubParameterNames(value) {
-    alert(value)
+    // alert(value)
     let getsubparameterNames = document.getElementById("subparameter");
     let pushsubparameterNames = '';
 
-    console.log(subParametersList)
+    // console.log(subParametersList)
     var SecondDropdown = subParametersList.filter(x => x.category == value);
     for (let SD = 0; SD < SecondDropdown.length; SD++) {
         if (SecondDropdown[SD].name) {
@@ -1473,25 +1467,19 @@ function submitForm() {
 }
 //
 
-//toggleObservation
-function toggleObservation() {
-    var observationContainerFn = document.getElementById("ObservationContainer");
-    observationContainerFn.classList.toggle("hidden");
-}
-
 //toggleFunction for legend
-function toggleFunction() {
-    var x = document.getElementById("toggleImage");
-    var toggleMap = document.getElementById("map");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-        toggleMap.style.width = "95%";
-    } else {
-        x.style.display = "none";
-        toggleMap.style.width = "130%";
-    }
+// function toggleFunction() {
+//     var x = document.getElementById("toggleImage");
+//     var toggleMap = document.getElementById("map");
+//     if (x.style.display === "none") {
+//         x.style.display = "block";
+//         toggleMap.style.width = "95%";
+//     } else {
+//         x.style.display = "none";
+//         toggleMap.style.width = "130%";
+//     }
 
-};
+// };
 
 //leaflet starts here
 const map = L.map('map', {
@@ -1514,7 +1502,20 @@ var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
 geojson.on('data:loaded', function() {
     geojson.addTo(map);
 });
+//
 
+//Observation-toggleObservation
+function toggleObservation() {
+    var observationContainerFn = document.getElementById("ObservationContainer");
+    var map = document.getElementById('map');
+    var isHidden = observationContainerFn.classList.contains('hidden');
+    observationContainerFn.classList.toggle('hidden');
+    map.style.width = isHidden ? '80%' : '99%';
+}
+var observationContainerFn = document.getElementById("ObservationContainer");
+observationContainerFn.addEventListener('click', toggleObservation);
+
+//
 const OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -1620,13 +1621,43 @@ L.control.mousePosition({
 //add map scale
 L.control.scale().addTo(map);
 
-//
-var myIcon = L.icon({
-    iconUrl: 'https://icons8.com/icon/59725/airdrop',
-    iconSize: [10, 10],
-    iconAnchor: [3, 5],
-    popupAnchor: [-3, -86],
+// Create a custom control button for model popup
+var LegendButton = L.Control.extend({
+    options: {
+        position: 'topleft'
+    },
+    onAdd: function() {
+        // Create a button element
+        var button = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+        button.innerHTML = 'Legend';
+        button.id = 'popup';
+        //click event listener
+        L.DomEvent.on(button, 'click', function() {
+            // alert('Button clicked!');
+        });
+        return button;
+    }
 });
+map.addControl(new LegendButton());
+
+// Create a custom control button for ObservationButton
+var ObservationButton = L.Control.extend({
+    options: {
+        position: 'topleft'
+    },
+    onAdd: function() {
+        var obsbtn = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+        obsbtn.innerHTML = 'Observation';
+        //click event
+        L.DomEvent.on(obsbtn, 'click', function() {
+            // alert('Button clicked!');
+            toggleObservation();
+        });
+
+        return obsbtn;
+    }
+});
+map.addControl(new ObservationButton());
 
 // Add a marker for Delhi
 var delhiMarker = L.marker([28.6139, 77.2090]);
@@ -4137,8 +4168,8 @@ function clickHandler_synop(event_synop) {
     const currentColorsynop = targetElement_synop.style.backgroundColor;
 
     if (event_synop.target && event_synop.target.id == "synop") {
-        if (currentColorsynop === 'rgb(245, 222, 179)') { // highlighted color
-            targetElement_synop.style.backgroundColor = 'rgb(240, 240, 240)'; // Reset to default color
+        if (currentColorsynop === 'rgb(165, 175, 198)') { // highlighted color
+            targetElement_synop.style.backgroundColor = '#ffffff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4150,12 +4181,8 @@ function clickHandler_synop(event_synop) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
-            targetElement_synop.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
+            targetElement_synop.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers3);
             map.removeControl(panelLayers4);
@@ -4167,10 +4194,6 @@ function clickHandler_synop(event_synop) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers2);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/synop_nowcast.jpg';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/synop_time.png';
         }
 
     }
@@ -4184,8 +4207,8 @@ function clickHandler_metar(event_metar) {
     const currentColormetar = targetElement_metar.style.backgroundColor;
 
     if (event_metar.target && event_metar.target.id == "metar") {
-        if (currentColormetar === 'rgb(245, 222, 179)') { // highlighted color
-            targetElement_metar.style.backgroundColor = 'rgb(240, 240, 240)'; // Reset to default color
+        if (currentColormetar === 'rgb(165, 175, 198)') { // highlighted color
+            targetElement_metar.style.backgroundColor = '#ffffff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4197,12 +4220,8 @@ function clickHandler_metar(event_metar) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
-            targetElement_metar.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
+            targetElement_metar.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers4);
@@ -4214,10 +4233,6 @@ function clickHandler_metar(event_metar) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers3);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/mmetar_time.png';
         }
 
     }
@@ -4231,9 +4246,9 @@ function clickHandler_mesolscale(event_mesolscale) {
     const currentColormesolscale = targetElement_mesolscale.style.backgroundColor;
 
     if (event_mesolscale.target && event_mesolscale.target.id == "mesolscale") {
-        if (currentColormesolscale === 'rgb(245, 222, 179)') { // highlighted color
+        if (currentColormesolscale === 'rgb(165, 175, 198)') { // highlighted color
             targetElement_mesolscale.style.backgroundColor =
-                'rgb(240, 240, 240)'; // Reset to default color
+                '#ffffff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4245,12 +4260,8 @@ function clickHandler_mesolscale(event_mesolscale) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
-            targetElement_mesolscale.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
+            targetElement_mesolscale.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4262,10 +4273,6 @@ function clickHandler_mesolscale(event_mesolscale) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers4);
-            // legendImage1.src =
-            //     'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            // legendImage2.src =
-            //     'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         }
 
     }
@@ -4279,8 +4286,8 @@ function clickHandler_medium(event_medium) {
     const currentColormedium = targetElement_medium.style.backgroundColor;
 
     if (event_medium.target && event_medium.target.id == "medium_range") {
-        if (currentColormedium === 'rgb(245, 222, 179)') { // highlighted color
-            targetElement_medium.style.backgroundColor = 'rgb(240, 240, 240)'; // Reset to default color
+        if (currentColormedium === 'rgb(165, 175, 198)') { // highlighted color
+            targetElement_medium.style.backgroundColor = '#ffffff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4292,12 +4299,8 @@ function clickHandler_medium(event_medium) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
-            targetElement_medium.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
+            targetElement_medium.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4309,10 +4312,6 @@ function clickHandler_medium(event_medium) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers5);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/model_123.png';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/date11_mslp.png';
         }
 
     }
@@ -4326,9 +4325,9 @@ function clickHandler_satellite(event_satellite) {
     const currentColorsatellite = targetElement_satellite.style.backgroundColor;
 
     if (event_satellite.target && event_satellite.target.id == "satellite") {
-        if (currentColorsatellite === 'rgb(245, 222, 179)') { // highlighted color
+        if (currentColorsatellite === 'rgb(165, 175, 198)') { // highlighted color
             targetElement_satellite.style.backgroundColor =
-                'rgb(240, 240, 240)'; // Reset to default color
+                '#ffffff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4340,12 +4339,8 @@ function clickHandler_satellite(event_satellite) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
-            targetElement_satellite.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
+            targetElement_satellite.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4357,10 +4352,6 @@ function clickHandler_satellite(event_satellite) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers6);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/sat_nowcast.png';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/insat_windtime.png';
         }
 
     }
@@ -4374,8 +4365,8 @@ function clickHandler_radar(event_radar) {
     const currentColorradar = targetElement_radar.style.backgroundColor;
 
     if (event_radar.target && event_radar.target.id == "radar") {
-        if (currentColorradar === 'rgb(245, 222, 179)') { // highlighted color
-            targetElement_radar.style.backgroundColor = 'rgb(240, 240, 240)'; // Reset to default color
+        if (currentColorradar === 'rgb(165, 175, 198)') { // highlighted color
+            targetElement_radar.style.backgroundColor = '#ffffff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4387,12 +4378,8 @@ function clickHandler_radar(event_radar) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
-            targetElement_radar.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
+            targetElement_radar.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4404,10 +4391,6 @@ function clickHandler_radar(event_radar) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers7);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/radar_nowcast.jpg';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         }
 
     }
@@ -4421,9 +4404,9 @@ function clickHandler_lightning(event_lightning) {
     const currentColorlightning = targetElement_lightning.style.backgroundColor;
 
     if (event_lightning.target && event_lightning.target.id == "lightning") {
-        if (currentColorlightning === 'rgb(245, 222, 179)') { // highlighted color
+        if (currentColorlightning === 'rgb(165, 175, 198)') { // highlighted color
             targetElement_lightning.style.backgroundColor =
-                'rgb(240, 240, 240)'; // Reset to default color
+                '#ffffff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4435,12 +4418,8 @@ function clickHandler_lightning(event_lightning) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
-            targetElement_lightning.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
+            targetElement_lightning.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4452,10 +4431,6 @@ function clickHandler_lightning(event_lightning) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers8);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/light_nowcast.jpg';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/light_time.png';
         }
 
     }
@@ -4469,9 +4444,9 @@ function clickHandler_sounding(event_sounding) {
     const currentColorsounding = targetElement_sounding.style.backgroundColor;
 
     if (event_sounding.target && event_sounding.target.id == "sounding") {
-        if (currentColorsounding === 'rgb(245, 222, 179)') { // highlighted color
+        if (currentColorsounding === 'rgb(165, 175, 198)') { // highlighted color
             targetElement_sounding.style.backgroundColor =
-                'rgb(240, 240, 240)'; // Reset to default color
+                '#ffffff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4483,12 +4458,8 @@ function clickHandler_sounding(event_sounding) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
-            targetElement_sounding.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
+            targetElement_sounding.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4500,10 +4471,6 @@ function clickHandler_sounding(event_sounding) {
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers9);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/sounding_nowcast.jpg';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/temp12_time.png';
         }
 
     }
@@ -4517,8 +4484,8 @@ function clickHandler_expo(event_expo) {
     const currentColorexpo = targetElement_expo.style.backgroundColor;
 
     if (event_expo.target && event_expo.target.id == "exposure") {
-        if (currentColorexpo === 'rgb(245, 222, 179)') { // highlighted color
-            targetElement_expo.style.backgroundColor = 'rgb(240, 240, 240)'; // Reset to default color
+        if (currentColorexpo === 'rgb(165, 175, 198)') { // highlighted color
+            targetElement_expo.style.backgroundColor = '#ffffff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4530,12 +4497,8 @@ function clickHandler_expo(event_expo) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
-            targetElement_expo.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
+            targetElement_expo.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4547,10 +4510,6 @@ function clickHandler_expo(event_expo) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.addControl(panelLayers10);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/exp_legend2.PNG';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/ddate.png';
         }
 
     }
@@ -4565,8 +4524,8 @@ function clickHandler_ship(event_ship) {
     const currentColorship = targetElement_ship.style.backgroundColor;
 
     if (event_ship.target && event_ship.target.id == "ship_and_buoy") {
-        if (currentColorship === 'rgb(245, 222, 179)') { // highlighted color
-            targetElement_ship.style.backgroundColor = 'rgb(240, 240, 240)'; // Reset to default color
+        if (currentColorship === 'rgb(165, 175, 198)') { // highlighted color
+            targetElement_ship.style.backgroundColor = '#ffffff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4578,12 +4537,8 @@ function clickHandler_ship(event_ship) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png';
         } else {
-            targetElement_ship.style.backgroundColor = 'rgb(245, 222, 179)'; // highlighted color
+            targetElement_ship.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4595,10 +4550,6 @@ function clickHandler_ship(event_ship) {
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers10);
             map.addControl(panelLayers11);
-            legend1.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/exp_legend2.PNG';
-            legend2.src =
-                'http://103.215.208.18/dwr_img/GIS/legend/ship_time.png';
         }
 
     }
