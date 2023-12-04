@@ -4942,6 +4942,43 @@ let panelLayerSOUNDING12UTCDEWPOINT_lists = document.querySelector('#SOUNDING12U
 let panelLayerSHIPANDBUOY_Title = document.querySelector('#SHIPANDBUOY-Title')
 let panelLayerSHIPANDBUOY_lists = document.querySelector('#SHIPANDBUOY-lists')
 
+// MESOLSCALE
+let panelLayerWRFReflectivity_Title = document.querySelector('#WRFReflectivity-Title')
+let panelLayerWRFReflectivity_lists = document.querySelector('#WRFReflectivity-lists')
+
+let panelLayerWRFlightningProduct_Title = document.querySelector('#WRFlightningProduct-Title')
+let panelLayerWRFlightningProduct_lists = document.querySelector('#WRFlightningProduct-lists')
+
+let panelLayerWRFAccumlatedRainfall_Title = document.querySelector('#WRFAccumlatedRainfall-Title')
+let panelLayerWRFAccumlatedRainfall_lists = document.querySelector('#WRFAccumlatedRainfall-lists')
+
+let panelLayerlightningPotentialindex_Title = document.querySelector('#lightningPotentialindex-Title')
+let panelLayerlightningPotentialindex_lists = document.querySelector('#lightningPotentialindex-lists')
+
+let panelLayerWRFNCUMRlightningProduct_Title = document.querySelector('#WRFNCUMRlightningProduct-Title')
+let panelLayerWRFNCUMRlightningProduct_lists = document.querySelector('#WRFNCUMRlightningProduct-lists')
+
+let panelLayerNCUMRWindGust_Title = document.querySelector('#NCUMRWindGust-Title')
+let panelLayerNCUMRWindGust_lists = document.querySelector('#NCUMRWindGust-lists')
+
+let panelLayerNCUMRRainfall_Title = document.querySelector('#NCUMRRainfall-Title')
+let panelLayerNCUMRRainfall_lists = document.querySelector('#NCUMRRainfall-lists')
+
+let panelLayerHRRR_SPHourlyDBZ_Title = document.querySelector('#HRRR_SPHourlyDBZ-Title')
+let panelLayerHRRR_SPHourlyDBZ_lists = document.querySelector('#HRRR_SPHourlyDBZ-lists')
+
+let panelLayerHRRR_NEHourlyDBZ_Title = document.querySelector('#HRRR_NEHourlyDBZ-Title')
+let panelLayerHRRR_NEHourlyDBZ_lists = document.querySelector('#HRRR_NEHourlyDBZ-lists')
+
+let panelLayerHRRR_NWHourlyDBZ_Title = document.querySelector('#HRRR_NWHourlyDBZ-Title')
+let panelLayerHRRR_NWHourlyDBZ_lists = document.querySelector('#HRRR_NWHourlyDBZ-lists')
+
+let panelLayerEWRFMaxZ_Title = document.querySelector('#EWRFMaxZ-Title')
+let panelLayerEWRFMaxZ_lists = document.querySelector('#EWRFMaxZ-lists')
+
+let panelLayerEWRFLightning_Title = document.querySelector('#EWRFLightning-Title')
+let panelLayerEWRFLightning_lists = document.querySelector('#EWRFLightning-lists')
+
 document.querySelectorAll('#popup').forEach(function(openModel) {
     console.log(openModel, "__openModel");
     openModel.onclick = () => {
@@ -5015,6 +5052,19 @@ let clickedSOUNDING12UTCTEMPLists = [];
 let clickedSOUNDING00UTCDEWPOINTLists = [];
 let clickedSOUNDING12UTCDEWPOINTLists = [];
 let clickedSHIPANDBUOYLists = [];
+
+let clickedWRFReflectivityLists = [];
+let clickedWRFlightningProductLists = [];
+let clickedWRFAccumlatedRainfallLists = [];
+let clickedNCUMRlightningProductLists = [];
+let clickedNCUMRWindGustLists = [];
+let clickedNCUMRRainfallLists = [];
+let clickedHRRR_SPHourlyDBZLists = [];
+let clickedHRRR_NEHourlyDBZLists = [];
+let clickedHRRR_NWHourlyDBZLists = [];
+let clickedEWRFMaxZLists = [];
+let clickedEWRFLightningLists = [];
+
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
@@ -7282,6 +7332,276 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
 
             panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (_this.context._layer.group.name == "WRF Reflectivity") {
+            if (panelLayerWRFReflectivity_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerWRFReflectivity_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 03 Hrs') {
+                clickedWRFReflectivityLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                clickedWRFReflectivityLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerWRFReflectivity_lists.innerHTML = clickedWRFReflectivityLists.join("");
+        }
+        if (_this.context._layer.group.name == "WRF lightning Product") {
+            if (panelLayerWRFlightningProduct_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerWRFlightningProduct_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 03 Hrs') {
+                clickedWRFlightningProductLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                clickedWRFlightningProductLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerWRFlightningProduct_lists.innerHTML = clickedWRFlightningProductLists.join("");
+        }
+        if (_this.context._layer.group.name == "WRF Accumlated Rainfall") {
+            if (panelLayerWRFAccumlatedRainfall_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerWRFAccumlatedRainfall_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 03 Hrs') {
+                clickedWRFAccumlatedRainfallLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                clickedWRFAccumlatedRainfallLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerWRFAccumlatedRainfall_lists.innerHTML = clickedWRFAccumlatedRainfallLists.join("");
+        }
+        if (_this.context._layer.group.name == "lightning Potential index") {
+            if (panelLayerlightningPotentialindex_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerlightningPotentialindex_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 01 Hrs') {
+                clickedlightningPotentialindexLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                clickedlightningPotentialindexLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                clickedlightningPotentialindexLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join("");
+        }
+        if (_this.context._layer.group.name == "NCUMR lightning Product") {
+            if (panelLayerNCUMRlightningProduct_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerNCUMRlightningProduct_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 03 Hrs') {
+                clickedNCUMRlightningProductLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                clickedNCUMRlightningProductLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerNCUMRlightningProduct_lists.innerHTML = clickedNCUMRlightningProductLists.join("");
+        }
+        if (_this.context._layer.group.name == "NCUMR Wind Gust") {
+            if (panelLayerNCUMRWindGust_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerNCUMRWindGust_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 03 Hrs') {
+                clickedNCUMRWindGustLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                clickedNCUMRWindGustLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerNCUMRWindGust_lists.innerHTML = clickedNCUMRWindGustLists.join("");
+        }
+        if (_this.context._layer.group.name == "NCUMR Rainfall") {
+            if (panelLayerNCUMRRainfall_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerNCUMRRainfall_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 03 Hrs') {
+                clickedNCUMRRainfallLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                clickedNCUMRRainfallLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerNCUMRRainfall_lists.innerHTML = clickedNCUMRRainfallLists.join("");
+        }
+        if (_this.context._layer.group.name == "HRRR_SP Hourly DBZ") {
+            if (panelLayerHRRR_SPHourlyDBZ_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerHRRR_SPHourlyDBZ_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 01 Hrs') {
+                clickedHRRR_SPHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                clickedHRRR_SPHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                clickedHRRR_SPHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerHRRR_SPHourlyDBZ_lists.innerHTML = clickedHRRR_SPHourlyDBZLists.join("");
+        }
+        if (_this.context._layer.group.name == "HRRR_NE Hourly DBZ") {
+            if (panelLayerHRRR_NEHourlyDBZ_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerHRRR_NEHourlyDBZ_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 01 Hrs') {
+                clickedHRRR_NEHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                clickedHRRR_NEHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                clickedHRRR_NEHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerHRRR_NEHourlyDBZ_lists.innerHTML = clickedHRRR_NEHourlyDBZLists.join("");
+        }
+        if (_this.context._layer.group.name == "HRRR_NW Hourly DBZ") {
+            if (panelLayerHRRR_NWHourlyDBZ_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerHRRR_NWHourlyDBZ_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 01 Hrs') {
+                clickedHRRR_NWHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                clickedHRRR_NWHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                clickedHRRR_NWHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerHRRR_NWHourlyDBZ_lists.innerHTML = clickedHRRR_NWHourlyDBZLists.join("");
+        }
+        if (_this.context._layer.group.name == "EWRF MaxZ") {
+            if (panelLayerEWRFMaxZ_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerEWRFMaxZ_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 01 Hrs') {
+                clickedEWRFMaxZLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                clickedEWRFMaxZLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                clickedEWRFMaxZLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerEWRFMaxZ_lists.innerHTML = clickedEWRFMaxZLists.join("");
+        }
+        if (_this.context._layer.group.name == "EWRF Lightning") {
+            if (panelLayerEWRFLightning_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerEWRFLightning_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 01 Hrs') {
+                clickedEWRFLightningLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                clickedEWRFLightningLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                clickedEWRFLightningLists.push(
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
         }
 
     } else {
