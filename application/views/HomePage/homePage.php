@@ -505,28 +505,28 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <h4 id="SYNOP" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
 
                     <h5 id="SYNOP00UTC-Title" style="color: red;"></h5>
-                    <p id="SYNOP00UTC-lists"></p>
+                    <p id="SYNOP00UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SYNOP03UTC-Title" style="color: red;"></h5>
-                    <p id="SYNOP03UTC-lists"></p>
+                    <p id="SYNOP03UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SYNOP06UTC-Title" style="color: red;"></h5>
-                    <p id="SYNOP06UTC-lists"></p>
+                    <p id="SYNOP06UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SYNOP09UTC-Title" style="color: red;"></h5>
-                    <p id="SYNOP09UTC-lists"></p>
+                    <p id="SYNOP09UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SYNOP12UTC-Title" style="color: red;"></h5>
-                    <p id="SYNOP12UTC-lists"></p>
+                    <p id="SYNOP12UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SYNOP15UTC-Title" style="color: red;"></h5>
-                    <p id="SYNOP15UTC-lists"></p>
+                    <p id="SYNOP15UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SYNOP18UTC-Title" style="color: red;"></h5>
-                    <p id="SYNOP18UTC-lists"></p>
+                    <p id="SYNOP18UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SYNOP21UTC-Title" style="color: red;"></h5>
-                    <p id="SYNOP21UTC-lists"></p>
+                    <p id="SYNOP21UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
                 </div>
                 <!-- Radar -->
                 <div class="row" id="RADAR_Row" style="display: none;">
@@ -534,7 +534,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     </h4>
 
                     <h5 id="RADARPRODUCTS-Title" style="color: red;"></h5>
-                    <p id="RADARPRODUCTS-lists"></p>
+                    <p id="RADARPRODUCTS-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                 </div>
                 <!-- SATELLITE -->
@@ -543,7 +543,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     </h4>
 
                     <h5 id="SATELLITE-Title" style="color: red;"></h5>
-                    <p id="SATELLITE-lists"></p>
+                    <p id="SATELLITE-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                 </div>
                 <!-- LIGHTINING -->
@@ -552,7 +552,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     </h4>
 
                     <h5 id="LIGHTINING-Title" style="color: red;"></h5>
-                    <p id="LIGHTINING-lists"></p>
+                    <p id="LIGHTINING-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                 </div>
                 <!-- SOUNDING -->
@@ -560,22 +560,22 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <h4 id="SOUNDING" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
 
                     <h5 id="SOUNDING00UTCWIND-Title" style="color: red;"></h5>
-                    <p id="SOUNDING00UTCWIND-lists"></p>
+                    <p id="SOUNDING00UTCWIND-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SOUNDING12UTCWIND-Title" style="color: red;"></h5>
-                    <p id="SOUNDING12UTCWIND-lists"></p>
+                    <p id="SOUNDING12UTCWIND-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SOUNDING00UTCTEMP-Title" style="color: red;"></h5>
-                    <p id="SOUNDING00UTCTEMP-lists"></p>
+                    <p id="SOUNDING00UTCTEMP-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SOUNDING12UTCTEMP-Title" style="color: red;"></h5>
-                    <p id="SOUNDING12UTCTEMP-lists"></p>
+                    <p id="SOUNDING12UTCTEMP-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SOUNDING00UTCDEWPOINT-Title" style="color: red;"></h5>
-                    <p id="SOUNDING00UTCDEWPOINT-lists"></p>
+                    <p id="SOUNDING00UTCDEWPOINT-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SOUNDING12UTCDEWPOINT-Title" style="color: red;"></h5>
-                    <p id="SOUNDING12UTCDEWPOINT-lists"></p>
+                    <p id="SOUNDING12UTCDEWPOINT-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                 </div>
                 <!-- SHIPANDBUOY -->
@@ -584,7 +584,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     </h4>
 
                     <h5 id="SHIPANDBUOY-Title" style="color: red;"></h5>
-                    <p id="SHIPANDBUOY-lists"></p>
+                    <p id="SHIPANDBUOY-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                 </div>
 
