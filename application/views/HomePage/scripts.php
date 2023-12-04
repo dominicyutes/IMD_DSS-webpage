@@ -5253,7 +5253,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 // legendModelMet.src = 'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
                 // legendModelMet.style.height = '35vh';
                 // legendModelMet.style.width = '72%';
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR00UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5298,7 +5298,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR01UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR01UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR01UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5343,7 +5343,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR02UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR02UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR02UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5388,7 +5388,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR03UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR03UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR03UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5433,7 +5433,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR04UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR04UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR04UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5478,7 +5478,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR05UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR05UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR05UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5523,7 +5523,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR06UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR06UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR06UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5568,7 +5568,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR07UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR07UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR07UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5613,7 +5613,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR08UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR08UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR08UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5658,7 +5658,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR09UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR09UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR09UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5703,7 +5703,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR10UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR10UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR10UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5748,7 +5748,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR11UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR11UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR11UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5793,7 +5793,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR12UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR12UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR12UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5838,7 +5838,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR13UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR13UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR13UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5883,7 +5883,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR14UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR14UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR14UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5928,7 +5928,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR15UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR15UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR15UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5973,7 +5973,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR16UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR16UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR16UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -6018,7 +6018,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR17UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR17UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR17UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -6063,7 +6063,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR18UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR18UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR18UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -6108,7 +6108,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR19UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR19UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR19UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -6153,7 +6153,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR20UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR20UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR20UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -6198,7 +6198,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR21UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR21UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR21UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -6243,7 +6243,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR22UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR22UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR22UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -6288,7 +6288,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR23UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR23UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR23UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
