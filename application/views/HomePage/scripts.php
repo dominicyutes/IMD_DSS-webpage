@@ -1506,14 +1506,14 @@ geojson.on('data:loaded', function() {
 
 //Observation-toggleObservation
 function toggleObservation() {
-    var observationContainerFn = document.getElementById("ObservationContainer");
+        var observationContainerFn = document.getElementById("ObservationContainer");
     var map = document.getElementById('map');
     var isHidden = observationContainerFn.classList.contains('hidden');
     observationContainerFn.classList.toggle('hidden');
     map.style.width = isHidden ? '80%' : '99%';
 }
-var observationContainerFn = document.getElementById("ObservationContainer");
-observationContainerFn.addEventListener('click', toggleObservation);
+// var observationContainerFn = document.getElementById("ObservationContainer");
+// observationContainerFn.addEventListener('click', toggleObservation);
 
 //
 const OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
