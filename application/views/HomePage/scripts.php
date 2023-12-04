@@ -5002,7 +5002,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 // legendModelMet.src = 'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
                 // legendModelMet.style.height = '35vh';
                 // legendModelMet.style.width = '72%';
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR00UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5047,7 +5047,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR01UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR01UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR01UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5092,7 +5092,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR02UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR02UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR02UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5137,7 +5137,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR03UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR03UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR03UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5182,7 +5182,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR04UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR04UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR04UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5227,7 +5227,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR05UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR05UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR05UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5272,7 +5272,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR06UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR06UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR06UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5317,7 +5317,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR07UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR07UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR07UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5362,7 +5362,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR08UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR08UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR08UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5407,7 +5407,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR09UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR09UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR09UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5452,7 +5452,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR10UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR10UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR10UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5497,7 +5497,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR11UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR11UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR11UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5542,7 +5542,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR12UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR12UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR12UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5587,7 +5587,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR13UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR13UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR13UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5632,7 +5632,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR14UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR14UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR14UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5677,7 +5677,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR15UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR15UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR15UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5722,7 +5722,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR16UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR16UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR16UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5767,7 +5767,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR17UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR17UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR17UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5812,7 +5812,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR18UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR18UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR18UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5857,7 +5857,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR19UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR19UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR19UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5902,7 +5902,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR20UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR20UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR20UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5947,7 +5947,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR21UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR21UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR21UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -5992,7 +5992,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR22UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR22UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR22UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -6037,7 +6037,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR23UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR23UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                METAR_Row.style.display = 'block';
+                panelLayerMETAR23UTC_lists.style.display = 'block';
             }
 
             if (layer_name == 'TEMPERATURE') {
@@ -7069,8 +7069,6 @@ $("body").on("change", "input[type=checkbox]", function() {
             // console.log(hhh, "yyjjjjjj");
         }
 
-
-
         //Radar UNCHECK
         if (layer_name == 'Radar Reflectivity') {
             clickedRadarLists = clickedRadarLists.filter(checkList => checkList !=
@@ -7113,17 +7111,22 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (layer_name == 'District Boundaries') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <span style="width: 30px; 
+                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<span style="width: 30px; 
                         height: 1px; 
                         border-bottom: 2px dashed #000;
-                        display: inline-block;"></span><br>`
+                        display: inline-block;"></span>` +
+                    `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
         if (layer_name == 'Airport') {
             clickedExposureLists = clickedExposureLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-plane"></i><br>`
+            `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<i class="fas fa-plane"></i>` +
+                    `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(MumbaiMarker);
@@ -7131,7 +7134,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (layer_name == 'Hospital') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-hospital"></i>
+                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<i class="fas fa-hospital"></i>` +
+                    `</span>
                         <br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
@@ -7140,8 +7146,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (layer_name == 'sports') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-football-ball"></i>
-                         <br>`
+                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-football-ball"></i>
+                        ` +
+                    `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
@@ -7149,8 +7157,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (layer_name === 'Power Plant') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}  
-                         <img src="img/powerplant.jpeg" width="20" height="20" /><br>`
+                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}  ` + `
+                         <img src="img/powerplant.jpeg" width="20" height="20" />` +
+                    `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(VijayapuraMarker);
@@ -7160,8 +7170,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (layer_name == 'Power Station') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
-                        <img src="img/powerstation.png" width="20" height="20" /><br>`
+                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
+                        <img src="img/powerstation.png" width="20" height="20" />` +
+                    `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(SolapurMarker);
@@ -7169,7 +7181,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (layer_name == 'Oil Refineries') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <i class="fas fa-industry"></i><br>`
+                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    ` <i class="fas fa-industry"></i>` +
+                    `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(RanchiMarker);
@@ -7177,8 +7192,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (layer_name == 'Industrail') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
-                        <img src="img/industry.jpeg" width="20" height="20" /><br>`
+                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` 
+                        <img src="img/industry.jpeg" width="20" height="20" />` +
+                    `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
@@ -7186,8 +7203,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (layer_name === 'Socio Economic Zone') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} 
-                         <img src="img/socio_economic_zone.jpeg" width="20" height="20" /><br>`
+                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
+                         <img src="img/socio_economic_zone.jpeg" width="20" height="20" />` +
+                    `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
@@ -7196,7 +7215,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (layer_name == 'Road Network') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/road_network.jpeg" style="width: 25px; height: auto;"><br>`
+                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/road_network.jpeg" style="width: 25px; height: auto;">` +
+                    `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
@@ -7204,7 +7226,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (layer_name == 'Railway Network') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/railway.jpeg" style="width: 25px; height: auto;"><br>`
+                `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/railway.jpeg" style="width: 25px; height: auto;">` +
+                    `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
@@ -7212,7 +7237,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (layer_name == 'DEM') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/DEM.jpeg" style="width: 125px; height: auto;"><br>`
+                `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<img src="img/DEM.jpeg" style="width: 125px; height: auto;">` +
+                    `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
@@ -7220,7 +7248,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (layer_name == 'LULC') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/LULC.jpeg" style="width: 175px; height: 250px;"><br>`
+                `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<img src="img/LULC.jpeg" style="width: 175px; height: 250px;">` +
+                    `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
@@ -7288,7 +7319,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             // legendModelMet.alt = "";
             // legendModelMet.style.height = 0;
             // legendModelMet.style.width = 0;
-            METAR_Row.style.display = 'block';
+            // METAR_Row.style.display = 'block';
         }
         console.log(layer_name, "layer_name");
 

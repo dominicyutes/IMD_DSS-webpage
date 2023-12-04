@@ -267,82 +267,89 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                 </div>
 
                 <!-- METAR -->
-                <div id="METAR_Row" style="display: none;">
+                <div id="METAR_Row">
                     <!-- <div class="col-5"> -->
                     <!-- HomePage-Lightning -->
                     <h4 id="METAR" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
                     <!-- METAR00UTC -->
                     <h5 id="METAR00UTC-Title" style="color: red;"></h5>
-                    <p id="METAR00UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR00UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR01UTC-Title" style="color: red;"></h5>
-                    <p id="METAR01UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR01UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR02UTC-Title" style="color: red;"></h5>
-                    <p id="METAR02UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR02UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR03UTC-Title" style="color: red;"></h5>
-                    <p id="METAR03UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR03UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR04UTC-Title" style="color: red;"></h5>
-                    <p id="METAR04UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR04UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR05UTC-Title" style="color: red;"></h5>
-                    <p id="METAR05UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR05UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR06UTC-Title" style="color: red;"></h5>
-                    <p id="METAR06UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR06UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR07UTC-Title" style="color: red;"></h5>
-                    <p id="METAR07UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR07UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR08UTC-Title" style="color: red;"></h5>
-                    <p id="METAR08UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR08UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR09UTC-Title" style="color: red;"></h5>
-                    <p id="METAR09UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR09UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR10UTC-Title" style="color: red;"></h5>
-                    <p id="METAR10UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR10UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR11UTC-Title" style="color: red;"></h5>
-                    <p id="METAR11UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR11UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR12UTC-Title" style="color: red;"></h5>
-                    <p id="METAR12UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR12UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR13UTC-Title" style="color: red;"></h5>
-                    <p id="METAR13UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR13UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR14UTC-Title" style="color: red;"></h5>
-                    <p id="METAR14UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR14UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR15UTC-Title" style="color: red;"></h5>
-                    <p id="METAR15UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR15UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR16UTC-Title" style="color: red;"></h5>
-                    <p id="METAR16UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR16UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR17UTC-Title" style="color: red;"></h5>
-                    <p id="METAR17UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR17UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR18UTC-Title" style="color: red;"></h5>
-                    <p id="METAR18UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR18UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR19UTC-Title" style="color: red;"></h5>
-                    <p id="METAR19UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR19UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR20UTC-Title" style="color: red;"></h5>
-                    <p id="METAR20UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR20UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR21UTC-Title" style="color: red;"></h5>
-                    <p id="METAR21UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR21UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR22UTC-Title" style="color: red;"></h5>
-                    <p id="METAR22UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR22UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR23UTC-Title" style="color: red;"></h5>
-                    <p id="METAR23UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="METAR23UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+                    <!-- METAR01UTC -->
+                    <!-- <h5 id="METAR01UTC-Title"></h5>
+                        <p id="METAR01UTC-lists"></p> -->
+                    <!-- </div> -->
+                    <!-- <div class="col-7">
+                        <img id="legendModelMetar" alt="legendMetar" style="width: 72%; height: 35vh;" />
+                    </div> -->
                 </div>
 
                 <!-- SYNOP -->
