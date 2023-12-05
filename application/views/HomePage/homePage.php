@@ -387,12 +387,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     </h4>
 
                     <h5 id="RADARPRODUCTS-Title" style="color: red;"></h5>
-<<<<<<< HEAD
                     <p id="RADARPRODUCTS-lists" style="display: flex; flex-wrap: wrap;"></p>
-
-=======
-                    <p id="RADARPRODUCTS-lists"></p>
->>>>>>> ec67efea83552d66a95a25211bf3cf7d6a874f58
                 </div>
 
                 <!-- SATELLITE -->
@@ -442,9 +437,6 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <h4 id="SHIPANDBUOY" style=" border-radius: 8px; background-color: yellow; text-align: center;">
                     </h4>
                     <h5 id="SHIPANDBUOY-Title" style="color: red;"></h5>
-<<<<<<< HEAD
-                    <p id="SHIPANDBUOY-lists" style="display: flex; flex-wrap: wrap;"></p>
-=======
                     <p id="SHIPANDBUOY-lists"></p>
                 </div>
                 <!-- MESOLSCALE -->
@@ -486,7 +478,6 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
                     <h5 id="EWRFLightning-Title" style="color: red;"></h5>
                     <p id="EWRFLightning-lists"></p>
->>>>>>> ec67efea83552d66a95a25211bf3cf7d6a874f58
 
                 </div>
                 <!-- MEDIUM -->
