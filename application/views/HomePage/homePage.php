@@ -514,20 +514,20 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <h5 id="MSLPDay5-Title" style="color: red;"></h5>
                     <p id="MSLPDay5-lists"></p>
 
-                    <h5 id="10mWINDDay1-Title" style="color: red;"></h5>
-                    <p id="10mWINDDay1-lists"></p>
+                    <h5 id="mWINDDay1-Title" style="color: red;"></h5>
+                    <p id="mWINDDay1-lists"></p>
 
-                    <h5 id="10mWINDDay2-Title" style="color: red;"></h5>
-                    <p id="10mWINDDay2-lists"></p>
+                    <h5 id="mWINDDay2-Title" style="color: red;"></h5>
+                    <p id="mWINDDay2-lists"></p>
 
-                    <h5 id="10mWINDDay3-Title" style="color: red;"></h5>
-                    <p id="10mWINDDay3-lists"></p>
+                    <h5 id="mWINDDay3-Title" style="color: red;"></h5>
+                    <p id="mWINDDay3-lists"></p>
 
-                    <h5 id="10mWINDDay4-Title" style="color: red;"></h5>
-                    <p id="10mWINDDay4-lists"></p>
+                    <h5 id="mWINDDay4-Title" style="color: red;"></h5>
+                    <p id="mWINDDay4-lists"></p>
 
-                    <h5 id="10mWINDDay5-Title" style="color: red;"></h5>
-                    <p id="10mWINDDay5-lists"></p>
+                    <h5 id="mWINDDay5-Title" style="color: red;"></h5>
+                    <p id="mWINDDay5-lists"></p>
 
                 </div>
 

@@ -4776,20 +4776,20 @@ let panelLayerMSLPDay4_lists = document.querySelector('#MSLPDay4-lists')
 let panelLayerMSLPDay5_Title = document.querySelector('#MSLPDay5-Title')
 let panelLayerMSLPDay5_lists = document.querySelector('#MSLPDay5-lists')
 
-let panelLayer10mWINDDay1_Title = document.querySelector('#10mWINDDay1-Title')
-let panelLayer10mWINDDay1_lists = document.querySelector('#10mWINDDay1-lists')
+let panelLayer10mWINDDay1_Title = document.querySelector('#mWINDDay1-Title')
+let panelLayer10mWINDDay1_lists = document.querySelector('#mWINDDay1-lists')
 
-let panelLayer10mWINDDay2_Title = document.querySelector('#10mWINDDay2-Title')
-let panelLayer10mWINDDay2_lists = document.querySelector('#10mWINDDay2-lists')
+let panelLayer10mWINDDay2_Title = document.querySelector('#mWINDDay2-Title')
+let panelLayer10mWINDDay2_lists = document.querySelector('#mWINDDay2-lists')
 
-let panelLayer10mWINDDay3_Title = document.querySelector('#10mWINDDay3-Title')
-let panelLayer10mWINDDay3_lists = document.querySelector('#10mWINDDay3-lists')
+let panelLayer10mWINDDay3_Title = document.querySelector('#mWINDDay3-Title')
+let panelLayer10mWINDDay3_lists = document.querySelector('#mWINDDay3-lists')
 
-let panelLayer10mWINDDay4_Title = document.querySelector('#10mWINDDay4-Title')
-let panelLayer10mWINDDay4_lists = document.querySelector('#10mWINDDay4-lists')
+let panelLayer10mWINDDay4_Title = document.querySelector('#mWINDDay4-Title')
+let panelLayer10mWINDDay4_lists = document.querySelector('#mWINDDay4-lists')
 
-let panelLayer10mWINDDay5_Title = document.querySelector('#10mWINDDay5-Title')
-let panelLayer10mWINDDay5_lists = document.querySelector('#10mWINDDay5-lists')
+let panelLayer10mWINDDay5_Title = document.querySelector('#mWINDDay5-Title')
+let panelLayer10mWINDDay5_lists = document.querySelector('#mWINDDay5-lists')
 
 
 document.querySelectorAll('#popup').forEach(function(openModel) {
