@@ -6908,27 +6908,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Last 00-05 min') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'Last 05-10 min') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'Last 10-15 min') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'ILDN Last 05 min') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'Nowcast Alerts') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
 
