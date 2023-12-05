@@ -437,47 +437,47 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <h4 id="SHIPANDBUOY" style=" border-radius: 8px; background-color: yellow; text-align: center;">
                     </h4>
                     <h5 id="SHIPANDBUOY-Title" style="color: red;"></h5>
-                    <p id="SHIPANDBUOY-lists"></p>
+                    <p id="SHIPANDBUOY-lists" style="display: flex; flex-wrap: wrap;"></p>
                 </div>
                 <!-- MESOLSCALE -->
                 <div class="row" id="MESOLSCALE_Row" style="display: none;">
                     <h4 id="MESOLSCALE" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
 
                     <h5 id="WRFReflectivity-Title" style="color: red;"></h5>
-                    <p id="WRFReflectivity-lists"></p>
+                    <p id="WRFReflectivity-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="WRFlightningProduct-Title" style="color: red;"></h5>
-                    <p id="WRFlightningProduct-lists"></p>
+                    <p id="WRFlightningProduct-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="WRFAccumlatedRainfall-Title" style="color: red;"></h5>
-                    <p id="WRFAccumlatedRainfall-lists"></p>
+                    <p id="WRFAccumlatedRainfall-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="lightningPotentialindex-Title" style="color: red;"></h5>
-                    <p id="lightningPotentialindex-lists"></p>
+                    <p id="lightningPotentialindex-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="NCUMRlightningProduct-Title" style="color: red;"></h5>
-                    <p id="NCUMRlightningProduct-lists"></p>
+                    <p id="NCUMRlightningProduct-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="NCUMRWindGust-Title" style="color: red;"></h5>
-                    <p id="NCUMRWindGust-lists"></p>
+                    <p id="NCUMRWindGust-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="NCUMRRainfall-Title" style="color: red;"></h5>
-                    <p id="NCUMRRainfall-lists"></p>
+                    <p id="NCUMRRainfall-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="HRRR_SPHourlyDBZ-Title" style="color: red;"></h5>
-                    <p id="HRRR_SPHourlyDBZ-lists"></p>
+                    <p id="HRRR_SPHourlyDBZ-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="HRRR_NEHourlyDBZ-Title" style="color: red;"></h5>
-                    <p id="HRRR_NEHourlyDBZ-lists"></p>
+                    <p id="HRRR_NEHourlyDBZ-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="HRRR_NWHourlyDBZ-Title" style="color: red;"></h5>
-                    <p id="HRRR_NWHourlyDBZ-lists"></p>
+                    <p id="HRRR_NWHourlyDBZ-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="EWRFMaxZ-Title" style="color: red;"></h5>
-                    <p id="EWRFMaxZ-lists"></p>
+                    <p id="EWRFMaxZ-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="EWRFLightning-Title" style="color: red;"></h5>
-                    <p id="EWRFLightning-lists"></p>
+                    <p id="EWRFLightning-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                 </div>
                 <!-- MEDIUM -->
@@ -485,49 +485,49 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                     <h4 id="MEDIUM" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
 
                     <h5 id="RainfallIntensityDay1-Title" style="color: red;"></h5>
-                    <p id="RainfallIntensityDay1-lists"></p>
+                    <p id="RainfallIntensityDay1-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="RainfallIntensityDay2-Title" style="color: red;"></h5>
-                    <p id="RainfallIntensityDay2-lists"></p>
+                    <p id="RainfallIntensityDay2-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="RainfallIntensityDay3-Title" style="color: red;"></h5>
-                    <p id="RainfallIntensityDay3-lists"></p>
+                    <p id="RainfallIntensityDay3-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="RainfallIntensityDay4-Title" style="color: red;"></h5>
-                    <p id="RainfallIntensityDay4-lists"></p>
+                    <p id="RainfallIntensityDay4-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="RainfallIntensityDay5-Title" style="color: red;"></h5>
-                    <p id="RainfallIntensityDay5-lists"></p>
+                    <p id="RainfallIntensityDay5-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="MSLPDay1-Title" style="color: red;"></h5>
-                    <p id="MSLPDay1-lists"></p>
+                    <p id="MSLPDay1-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="MSLPDay2-Title" style="color: red;"></h5>
-                    <p id="MSLPDay2-lists"></p>
+                    <p id="MSLPDay2-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="MSLPDay3-Title" style="color: red;"></h5>
-                    <p id="MSLPDay3-lists"></p>
+                    <p id="MSLPDay3-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="MSLPDay4-Title" style="color: red;"></h5>
-                    <p id="MSLPDay4-lists"></p>
+                    <p id="MSLPDay4-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="MSLPDay5-Title" style="color: red;"></h5>
-                    <p id="MSLPDay5-lists"></p>
+                    <p id="MSLPDay5-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="mWINDDay1-Title" style="color: red;"></h5>
-                    <p id="mWINDDay1-lists"></p>
+                    <p id="mWINDDay1-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="mWINDDay2-Title" style="color: red;"></h5>
-                    <p id="mWINDDay2-lists"></p>
+                    <p id="mWINDDay2-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="mWINDDay3-Title" style="color: red;"></h5>
-                    <p id="mWINDDay3-lists"></p>
+                    <p id="mWINDDay3-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="mWINDDay4-Title" style="color: red;"></h5>
-                    <p id="mWINDDay4-lists"></p>
+                    <p id="mWINDDay4-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="mWINDDay5-Title" style="color: red;"></h5>
-                    <p id="mWINDDay5-lists"></p>
+                    <p id="mWINDDay5-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                 </div>
 
