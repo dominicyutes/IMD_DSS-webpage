@@ -6331,7 +6331,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP03UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6409,7 +6409,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP06UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6487,7 +6487,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP09UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6565,7 +6565,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP12UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6643,7 +6643,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP15UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6721,7 +6721,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP18UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6799,7 +6799,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP21UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
@@ -6820,6 +6820,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
         }
+        // RADAR--
         if (_this.context._layer.group.name == "Radar Products") {
             if (panelLayerRADARPRODUCTS_Title.innerHTML == '') {
                 RADARPRODUCTS.innerHTML = "RADAR"
@@ -8285,24 +8286,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             .context
             .className;
         //Lightning UNCHECK
-        if (layer_name == 'Lightning Last 00-05 min') {
-            clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'Lightning Last 00-05 min') {
+            clickedLightningLists = clickedLightningLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
             map.removeLayer(ggg);
         }
-        if (layer_name == 'Lightning Last 05-10 min') {
-            clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'Lightning Last 05-10 min') {
+            clickedLightningLists = clickedLightningLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
             map.removeLayer(jaipurMarker);
         }
-        if (layer_name == 'Lightning Last 10-15 min') {
-            clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'Lightning Last 10-15 min') {
+            clickedLightningLists = clickedLightningLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
             map.removeLayer(bhopalMarker);
         }
@@ -8319,17 +8323,19 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //Radar UNCHECK
-        if (layer_name == 'Radar Reflectivity Radar Reflectivity') {
-            clickedRadarLists = clickedRadarLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'Radar Reflectivity Radar Reflectivity') {
+            clickedRadarLists = clickedRadarLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerRadarlists.innerHTML = clickedRadarLists.join("");
             map.removeLayer(lucknowMarker);
         }
-        if (layer_name == 'Radar Reflectivity Radar Animation') {
-            clickedRadarLists = clickedRadarLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'Radar Reflectivity Radar Animation') {
+            clickedRadarLists = clickedRadarLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerRadarlists.innerHTML = clickedRadarLists.join("");
             map.removeLayer(patnaMarker);
         }
@@ -8360,136 +8366,100 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-        if (layer_name == 'Exposure Layers Airport') {
-            clickedExposureLists = clickedExposureLists.filter(checkList => checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                `<i class="fas fa-plane"></i>` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Airport') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(MumbaiMarker);
         }
-        if (layer_name == 'Exposure Layers Hospital') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                `<i class="fas fa-hospital"></i>` +
-                `</span>
-                        <br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Hospital') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
         }
-        if (layer_name == 'Exposure Layers sports') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-football-ball"></i>
-                        ` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers sports') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-        if (layer_name === 'Power Plant') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}  ` + `
-                         <img src="img/powerplant.jpeg" width="20" height="20" />` +
-                `</span><br>`
-            );
+        if (uncheckLayer === 'Power Plant') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(VijayapuraMarker);
         }
-        if (layer_name == 'Exposure Layers Power Station') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `
-                        <img src="img/powerstation.png" width="20" height="20" />` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Power Station') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(SolapurMarker);
         }
-        if (layer_name == 'Exposure Layers Oil Refineries') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                ` <i class="fas fa-industry"></i>` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Oil Refineries') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(RanchiMarker);
         }
-        if (layer_name == 'Exposure Layers Industrail') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + ` 
-                        <img src="img/industry.jpeg" width="20" height="20" />` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Industrail') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
         }
-        if (layer_name === 'Socio Economic Zone') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `
-                         <img src="img/socio_economic_zone.jpeg" width="20" height="20" />` +
-                `</span><br>`
-            );
+        if (uncheckLayer === 'Socio Economic Zone') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
 
-        if (layer_name == 'Exposure Layers Road Network') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                ` <img src="img/road_network.jpeg" style="width: 25px; height: auto;">` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Road Network') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-        if (layer_name == 'Exposure Layers Railway Network') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                ` <img src="img/railway.jpeg" style="width: 25px; height: auto;">` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Railway Network') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-        if (layer_name == 'Exposure Layers DEM') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                `<img src="img/DEM.jpeg" style="width: 125px; height: auto;">` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers DEM') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
         }
-        if (layer_name == 'Exposure Layers LULC') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                `<img src="img/LULC.jpeg" style="width: 175px; height: 250px;">` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers LULC') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
@@ -8510,32 +8480,35 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //METAR UNCHECK
-        if (layer_name == 'METAR 00UTC TEMPERATURE') {
-            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
-            console.log(layer_name, "layer_name TEMP");
+        if (uncheckLayer == 'METAR 00UTC TEMPERATURE') {
+            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
             map.removeLayer(SuratMarker);
         }
-        if (layer_name == 'METAR 00UTC DEW POINT TEMPERATURE') {
-            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'METAR 00UTC DEW POINT TEMPERATURE') {
+            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
             map.removeLayer(JodhpurMarker);
         }
-        if (layer_name == 'METAR 00UTC VISIBILITY') {
-            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'METAR 00UTC VISIBILITY') {
+            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
             map.removeLayer(KanpurMarker);
         }
-        if (layer_name == 'METAR 00UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'METAR 00UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
             map.removeLayer(MeerutMarker);
         }
@@ -8551,49 +8524,680 @@ $("body").on("change", "input[type=checkbox]", function() {
             document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
-        if (layer_name == 'SYNOP 00UTC TEMPERATURE') {
-            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+
+
+        // SYNOP UNCHECK
+        if (uncheckLayer == 'SYNOP 00UTC TEMPERATURE') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
             map.removeLayer(JodhpurMarker);
         }
-        if (layer_name == 'SYNOP 00UTC MEAN SEA LEVEL PRESSURE') {
-            clickedSYNOP00UTCLists.push(
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'SYNOP 00UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
         }
-        if (layer_name == 'SYNOP 00UTC CLOUD COVER') {
-            clickedSYNOP00UTCLists.push(
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'SYNOP 00UTC CLOUD COVER') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
         }
-        if (layer_name == 'SYNOP 00UTC GEOPOTENTIAL HEIGHT') {
-            clickedSYNOP00UTCLists.push(
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'SYNOP 00UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
         }
-        if (layer_name == 'SYNOP 00UTC RELATIVE HUMIDITY') {
-            clickedSYNOP00UTCLists.push(
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'SYNOP 00UTC RELATIVE HUMIDITY') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
         }
-        if (layer_name == 'SYNOP 00UTC VISIBILITY') {
-            clickedSYNOP00UTCLists.push(
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'SYNOP 00UTC VISIBILITY') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
         }
-        if (layer_name == 'SYNOP 00UTC WIND SPEED AND DIRECTION') {
-            clickedSYNOP00UTCLists.push(
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'SYNOP 00UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
         }
-        if (layer_name == 'SYNOP 00UTC 3h RAINFALL') {
-            clickedSYNOP00UTCLists.push(
-                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'SYNOP 00UTC 3h RAINFALL') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
         }
 
-        panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
+        if (uncheckLayer == 'SYNOP 03UTC TEMPERATURE') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 03UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 03UTC CLOUD COVER') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 03UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 03UTC RELATIVE HUMIDITY') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 03UTC VISIBILITY') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 03UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 03UTC 3h RAINFALL') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 06UTC TEMPERATURE') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 06UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 06UTC CLOUD COVER') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 06UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 06UTC RELATIVE HUMIDITY') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 06UTC VISIBILITY') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 06UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 06UTC 3h RAINFALL') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 09UTC TEMPERATURE') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 09UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 09UTC CLOUD COVER') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 09UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 09UTC RELATIVE HUMIDITY') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 09UTC VISIBILITY') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 09UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 09UTC 3h RAINFALL') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 12UTC TEMPERATURE') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 12UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 12UTC CLOUD COVER') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 12UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 12UTC RELATIVE HUMIDITY') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 12UTC VISIBILITY') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 12UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 12UTC 3h RAINFALL') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 15UTC TEMPERATURE') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 15UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 15UTC CLOUD COVER') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 15UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 15UTC RELATIVE HUMIDITY') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 15UTC VISIBILITY') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 15UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 15UTC 3h RAINFALL') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 18UTC TEMPERATURE') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 18UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 18UTC CLOUD COVER') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 18UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 18UTC RELATIVE HUMIDITY') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 18UTC VISIBILITY') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 18UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 18UTC 3h RAINFALL') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 21UTC TEMPERATURE') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 21UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 21UTC CLOUD COVER') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 21UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 21UTC RELATIVE HUMIDITY') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 21UTC VISIBILITY') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 21UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 21UTC 3h RAINFALL') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+
+        // RADAR UNCHECk
+        if (uncheckLayer == 'Radar Products Radar Reflectivity') {
+            clickedRADARPRODUCTSLists = clickedRADARPRODUCTSLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
+        }
+        if (uncheckLayer == 'Radar Products Radar Animation') {
+            clickedRADARPRODUCTSLists = clickedRADARPRODUCTSLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
+        }
+
+
+        // Satellite Observation UNCHECk
+        if (uncheckLayer == 'Satellite Observation TIR1') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation VIS') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation CTBT') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation LOW LEVEL CONVERGENCE') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation UPPER LEVEL DIVEGENCE') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation MID LEVEL SHEAR') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation VORTICITY AT 200hPa') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation VORTICITY AT 500hPa') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation VORTICITY AT 700hPa') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite ObservationVORTICITY AT 850hPa') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+
+        // Lightining Uncheck
+        if (uncheckLayer == 'Lightning Last 00-05 min') {
+            clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
+
+        }
+        if (uncheckLayer == 'Lightning Last 05-10 min') {
+            clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
+        }
+        if (uncheckLayer == 'Lightning Last 10-15 min') {
+            clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
+        }
+        if (uncheckLayer == 'Lightning ILDN Last 05 min') {
+            clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
+        }
+        if (uncheckLayer == 'Lightning Nowcast Alerts') {
+            clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
+        }
 
     }
 });
