@@ -1506,7 +1506,7 @@ geojson.on('data:loaded', function() {
 
 //Observation-toggleObservation
 function toggleObservation() {
-        var observationContainerFn = document.getElementById("ObservationContainer");
+    var observationContainerFn = document.getElementById("ObservationContainer");
     var map = document.getElementById('map');
     var isHidden = observationContainerFn.classList.contains('hidden');
     observationContainerFn.classList.toggle('hidden');
@@ -4881,14 +4881,16 @@ let clicked10mWINDDay5Lists = [];
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
     console.log(_this, '_this');
-
-    var layer_name = _this.context._layer ? _this.context._layer.name : _this.context
-        .className;
-    console.log(layer_name, "layer_name");
     var isChecked = $(this).attr('checked');
+    var layer_group_name = _this.context._layer ? _this.context._layer.group.name : '';
+    console.log(layer_group_name, "layer_group_name");
 
     if (isChecked) { // True
         console.log("Checked");
+        var layer_name = _this.context._layer ? _this.context._layer.name : _this.context
+            .className;
+        console.log(layer_name, "layer_name");
+
         //HomePage_Lightning
         if (_this.context._layer.group.name == "Lightning") {
 
@@ -4902,51 +4904,52 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             // if (layer_name == 'Last 00-05 min') {
             //     clickedLightningLists.push(
-            //         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
             //     );
             //     map.addLayer(delhiMarker);
             // }
             // if (layer_name == 'Last 05-10 min') {
             //     clickedLightningLists.push(
-            //         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
             //     );
             //     map.addLayer(jaipurMarker);
             // }
             // if (layer_name == 'Last 10-15 min') {
             //     clickedLightningLists.push(
-            //         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
             //     );
             //     map.addLayer(bhopalMarker);
             // }
             // panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
 
-            if (layer_name == 'TEMPERATURE') {
-                clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
-                );
-            }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
-                clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
-                );
-            }
-            if (layer_name == 'VISIBILITY') {
-                clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;"><br>`
-                );
-            }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
-                clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br> <div style="width: 30px; 
-                    height: 15px;
-                    display: flex;
-                    border: 2px solid black;">
-                    <div style="flex: 1; background-color: green;"></div>
-                    <div style="flex: 1; background-color: white;"></div>
-                    </div><br>`
-                );
-            }
-            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+            // if (layer_name == 'TEMPERATURE') {
+            //     clickedMETAR00UTCLists.push(
+            //         _this
+            //         // `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
+            //     );
+            // }
+            // if (layer_name == 'DEW POINT TEMPERATURE') {
+            //     clickedMETAR00UTCLists.push(
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
+            //     );
+            // }
+            // if (layer_name == 'VISIBILITY') {
+            //     clickedMETAR00UTCLists.push(
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;"><br>`
+            //     );
+            // }
+            // if (layer_name == 'WIND SPEED AND DIRECTION') {
+            //     clickedMETAR00UTCLists.push(
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br> <div style="width: 30px; 
+            //         height: 15px;
+            //         display: flex;
+            //         border: 2px solid black;">
+            //         <div style="flex: 1; background-color: green;"></div>
+            //         <div style="flex: 1; background-color: white;"></div>
+            //         </div><br>`
+            //     );
+            // }
+            // panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
         }
         //HomePage_Radar
         if (_this.context._layer.group.name == "Radar Reflectivity") {
@@ -4960,12 +4963,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Radar Reflectivity') {
                 clickedRadarLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Radar Animation') {
                 clickedRadarLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             panelLayerRadarlists.innerHTML = clickedRadarLists.join("");
@@ -4984,7 +4987,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'District Boundaries') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<span style="width: 30px; 
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `<span style="width: 30px; 
                         height: 1px; 
                         border-bottom: 2px dashed #000;
                         display: inline-block;"></span>` +
@@ -4995,7 +4998,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Airport') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     `<i class="fas fa-plane"></i>` +
                     `</span><br>`
                 );
@@ -5003,7 +5006,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Hospital') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     `<i class="fas fa-hospital"></i>` +
                     `</span>
                         <br>`
@@ -5012,7 +5015,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'sports') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-football-ball"></i>
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-football-ball"></i>
                         ` +
                     `</span><br>`
                 );
@@ -5020,7 +5023,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name === 'Power Plant') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}  ` + `
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}  ` + `
                          <img src="img/powerplant.jpeg" width="20" height="20" />` +
                     `</span><br>`
                 );
@@ -5030,7 +5033,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Power Station') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `
                         <img src="img/powerstation.png" width="20" height="20" />` +
                     `</span><br>`
                 );
@@ -5038,7 +5041,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Oil Refineries') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <i class="fas fa-industry"></i>` +
                     `</span><br>`
                 );
@@ -5046,7 +5049,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Industrail') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` 
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + ` 
                         <img src="img/industry.jpeg" width="20" height="20" />` +
                     `</span><br>`
                 );
@@ -5054,7 +5057,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name === 'Socio Economic Zone') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `
                          <img src="img/socio_economic_zone.jpeg" width="20" height="20" />` +
                     `</span><br>`
                 );
@@ -5063,7 +5066,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Road Network') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/road_network.jpeg" style="width: 25px; height: auto;">` +
                     `</span><br>`
                 );
@@ -5071,7 +5074,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Railway Network') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/railway.jpeg" style="width: 25px; height: auto;">` +
                     `</span><br>`
                 );
@@ -5079,7 +5082,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEM') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     `<img src="img/DEM.jpeg" style="width: 125px; height: auto;">` +
                     `</span><br>`
                 );
@@ -5087,7 +5090,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'LULC') {
                 clickedExposureLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     `<img src="img/LULC.jpeg" style="width: 175px; height: 250px;">` +
                     `</span><br>`
                 );
@@ -5096,7 +5099,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             // if (layer_name == 'LULC') {
             //     clickedExposureLists.push(
             //         `<span style="display: flex; flex-direction: column; align-items: center;">` +
-            //         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
             //         `<img src="img/LULC.jpeg" style="width: 175px; height: 250px; margin-top: 5px;">` +
             //         `</span><br>`
             //     );
@@ -5121,7 +5124,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5129,7 +5132,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5137,7 +5140,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR00UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5145,7 +5148,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR00UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5166,7 +5169,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR01UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5174,7 +5177,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR01UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5182,7 +5185,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR01UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5190,7 +5193,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR01UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5211,7 +5214,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR02UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5219,7 +5222,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR02UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5227,7 +5230,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR02UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5235,7 +5238,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR02UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5256,7 +5259,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR03UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5264,7 +5267,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR03UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5272,7 +5275,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR03UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5280,7 +5283,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR03UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5301,7 +5304,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR04UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5309,7 +5312,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR04UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5317,7 +5320,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR04UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5325,7 +5328,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR04UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5346,7 +5349,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR05UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5354,7 +5357,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR05UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5362,7 +5365,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR05UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5370,7 +5373,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR05UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5391,7 +5394,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR06UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5399,7 +5402,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR06UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5407,7 +5410,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR06UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5415,7 +5418,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR06UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5436,7 +5439,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR07UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5444,7 +5447,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR07UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5452,7 +5455,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR07UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5460,7 +5463,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR07UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5481,7 +5484,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR08UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5489,7 +5492,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR08UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5497,7 +5500,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR08UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5505,7 +5508,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR08UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5526,7 +5529,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR09UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5534,7 +5537,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR09UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5542,7 +5545,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR09UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5550,7 +5553,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR09UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5571,7 +5574,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR10UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5579,7 +5582,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR10UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5587,7 +5590,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR10UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5595,7 +5598,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR10UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5616,7 +5619,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR11UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5624,7 +5627,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR11UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5632,7 +5635,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR11UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5640,7 +5643,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR11UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5661,7 +5664,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR12UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5669,7 +5672,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR12UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5677,7 +5680,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR12UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5685,7 +5688,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR12UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5706,7 +5709,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR13UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5714,7 +5717,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR13UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5722,7 +5725,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR13UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5730,7 +5733,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR13UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5751,7 +5754,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR14UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5759,7 +5762,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR14UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5767,7 +5770,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR14UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5775,7 +5778,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR14UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5796,7 +5799,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR15UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5804,7 +5807,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR15UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5812,7 +5815,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR15UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5820,7 +5823,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR15UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5841,7 +5844,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR16UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5849,7 +5852,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR16UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5857,7 +5860,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR16UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5865,7 +5868,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR16UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5886,7 +5889,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR17UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5894,7 +5897,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR17UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5902,7 +5905,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR17UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5910,7 +5913,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR17UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5931,7 +5934,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR18UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5939,7 +5942,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR18UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5947,7 +5950,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR18UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5955,7 +5958,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR18UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5976,7 +5979,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR19UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5984,7 +5987,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR19UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -5992,7 +5995,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR19UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6000,7 +6003,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR19UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -6021,7 +6024,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR20UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6029,7 +6032,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR20UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6037,7 +6040,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR20UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6045,7 +6048,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR20UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -6066,7 +6069,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR21UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6074,7 +6077,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR21UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6082,7 +6085,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR21UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6090,7 +6093,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR21UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -6111,7 +6114,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR22UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6119,7 +6122,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR22UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6127,7 +6130,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR22UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6135,7 +6138,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR22UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -6156,7 +6159,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR23UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6164,7 +6167,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR23UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6172,7 +6175,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR23UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
                     `</span><br>`
                 );
@@ -6180,7 +6183,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR23UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -6191,6 +6194,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerMETAR23UTC_lists.innerHTML = clickedMETAR23UTCLists.join("");
         }
+        // SYNOP--
         if (_this.context._layer.group.name == "SYNOP 00UTC") {
             if (panelLayerSYNOP00UTC_Title.innerHTML == '') {
                 SYNOP.innerHTML = "SYNOP"
@@ -6200,42 +6204,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6251,42 +6255,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6301,42 +6305,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6351,42 +6355,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6401,42 +6405,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6451,42 +6455,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6501,42 +6505,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6551,42 +6555,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6601,12 +6605,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Radar Reflectivity') {
                 clickedRADARPRODUCTSLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Radar Animation') {
                 clickedRADARPRODUCTSLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6621,52 +6625,52 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TIR1') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VIS') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'CTBT') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'LOW LEVEL CONVERGENCE') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'UPPER LEVEL DIVEGENCE') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'MID LEVEL SHEAR') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VORTICITY AT 200hPa') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VORTICITY AT 500hPa') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VORTICITY AT 700hPa') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VORTICITY AT 850hPa') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6681,27 +6685,27 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Last 00-05 min') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Last 05-10 min') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Last 10-15 min') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ILDN Last 05 min') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Nowcast Alerts') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6718,42 +6722,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '850 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '700 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '500 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '300 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '200 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '100 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '50 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6769,42 +6773,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '850 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '700 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '500 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '300 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '200 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '100 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '50 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6820,42 +6824,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '850 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '700 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '500 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '300 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '200 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '100 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '50 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6871,42 +6875,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '850 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '700 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '500 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '300 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '200 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '100 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '50 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6922,42 +6926,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '850 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '700 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '500 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '300 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '200 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '100 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '50 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6973,42 +6977,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '850 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '700 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '500 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '300 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '200 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '100 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '50 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7024,122 +7028,122 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '00UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '01UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '02UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '03UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '04UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '05UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '06UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '07UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '08UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '09UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '10UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '11UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '12UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '13UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '14UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '15UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '16UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '17UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '18UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '19UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '20UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '21UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '22UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '23UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7154,12 +7158,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 03 Hrs') {
                 clickedWRFReflectivityLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 03-06 Hrs') {
                 clickedWRFReflectivityLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7174,12 +7178,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 03 Hrs') {
                 clickedWRFlightningProductLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 03-06 Hrs') {
                 clickedWRFlightningProductLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7194,12 +7198,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 03 Hrs') {
                 clickedWRFAccumlatedRainfallLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 03-06 Hrs') {
                 clickedWRFAccumlatedRainfallLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7214,17 +7218,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 01 Hrs') {
                 clickedlightningPotentialindexLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 clickedlightningPotentialindexLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 clickedlightningPotentialindexLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7239,12 +7243,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 03 Hrs') {
                 clickedNCUMRlightningProductLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 03-06 Hrs') {
                 clickedNCUMRlightningProductLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7259,12 +7263,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 03 Hrs') {
                 clickedNCUMRWindGustLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 03-06 Hrs') {
                 clickedNCUMRWindGustLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7279,12 +7283,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 03 Hrs') {
                 clickedNCUMRRainfallLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 03-06 Hrs') {
                 clickedNCUMRRainfallLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7299,17 +7303,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 01 Hrs') {
                 clickedHRRR_SPHourlyDBZLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 clickedHRRR_SPHourlyDBZLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 clickedHRRR_SPHourlyDBZLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7324,17 +7328,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 01 Hrs') {
                 clickedHRRR_NEHourlyDBZLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 clickedHRRR_NEHourlyDBZLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 clickedHRRR_NEHourlyDBZLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7349,17 +7353,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 01 Hrs') {
                 clickedHRRR_NWHourlyDBZLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 clickedHRRR_NWHourlyDBZLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 clickedHRRR_NWHourlyDBZLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7374,17 +7378,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 01 Hrs') {
                 clickedEWRFMaxZLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 clickedEWRFMaxZLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 clickedEWRFMaxZLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7399,17 +7403,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 01 Hrs') {
                 clickedEWRFLightningLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 clickedEWRFLightningLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 clickedEWRFLightningLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7425,32 +7429,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7465,32 +7469,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7505,32 +7509,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7545,32 +7549,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7585,32 +7589,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7635,32 +7639,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY1') {
                 clickedMSLPDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY1') {
                 clickedMSLPDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY1') {
                 clickedMSLPDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY1') {
                 clickedMSLPDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY1') {
                 clickedMSLPDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY1') {
                 clickedMSLPDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7675,32 +7679,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY2') {
                 clickedMSLPDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY2') {
                 clickedMSLPDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY2') {
                 clickedMSLPDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY2') {
                 clickedMSLPDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY2') {
                 clickedMSLPDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY2') {
                 clickedMSLPDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7715,32 +7719,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY3') {
                 clickedMSLPDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY3') {
                 clickedMSLPDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY3') {
                 clickedMSLPDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY3') {
                 clickedMSLPDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY3') {
                 clickedMSLPDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY3') {
                 clickedMSLPDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7755,32 +7759,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY4') {
                 clickedMSLPDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY4') {
                 clickedMSLPDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY4') {
                 clickedMSLPDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY4') {
                 clickedMSLPDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY4') {
                 clickedMSLPDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY4') {
                 clickedMSLPDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7795,32 +7799,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY5') {
                 clickedMSLPDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY5') {
                 clickedMSLPDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY5') {
                 clickedMSLPDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY5') {
                 clickedMSLPDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY5') {
                 clickedMSLPDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY5') {
                 clickedMSLPDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7840,32 +7844,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY1') {
                 clicked10mWINDDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY1') {
                 clicked10mWINDDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY1') {
                 clicked10mWINDDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY1') {
                 clicked10mWINDDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY1') {
                 clicked10mWINDDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY1') {
                 clicked10mWINDDay1Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7880,32 +7884,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY2') {
                 clicked10mWINDDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY2') {
                 clicked10mWINDDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY2') {
                 clicked10mWINDDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY2') {
                 clicked10mWINDDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY2') {
                 clicked10mWINDDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY2') {
                 clicked10mWINDDay2Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7920,32 +7924,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY3') {
                 clicked10mWINDDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY3') {
                 clicked10mWINDDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY3') {
                 clicked10mWINDDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY3') {
                 clicked10mWINDDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY3') {
                 clicked10mWINDDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY3') {
                 clicked10mWINDDay3Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -7960,32 +7964,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY4') {
                 clicked10mWINDDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY4') {
                 clicked10mWINDDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY4') {
                 clicked10mWINDDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY4') {
                 clicked10mWINDDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY4') {
                 clicked10mWINDDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY4') {
                 clicked10mWINDDay4Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -8000,32 +8004,32 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY5') {
                 clicked10mWINDDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NCUM DAY5') {
                 clicked10mWINDDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'NEPS DAY5') {
                 clicked10mWINDDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'WRF DAY5') {
                 clicked10mWINDDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'GEFS DAY5') {
                 clicked10mWINDDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'ECMWF DAY5') {
                 clicked10mWINDDay5Lists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -8035,24 +8039,27 @@ $("body").on("change", "input[type=checkbox]", function() {
 
     } else {
         console.log("Not Checked");
+        var uncheckLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer.name : _this
+            .context
+            .className;
         //Lightning UNCHECK
-        if (layer_name == 'Last 00-05 min') {
+        if (layer_name == 'Lightning Last 00-05 min') {
             clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
             );
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
             map.removeLayer(ggg);
         }
-        if (layer_name == 'Last 05-10 min') {
+        if (layer_name == 'Lightning Last 05-10 min') {
             clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
             );
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
             map.removeLayer(jaipurMarker);
         }
-        if (layer_name == 'Last 10-15 min') {
+        if (layer_name == 'Lightning Last 10-15 min') {
             clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
             );
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
             map.removeLayer(bhopalMarker);
@@ -8070,16 +8077,16 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //Radar UNCHECK
-        if (layer_name == 'Radar Reflectivity') {
+        if (layer_name == 'Radar Reflectivity Radar Reflectivity') {
             clickedRadarLists = clickedRadarLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
             );
             panelLayerRadarlists.innerHTML = clickedRadarLists.join("");
             map.removeLayer(lucknowMarker);
         }
-        if (layer_name == 'Radar Animation') {
+        if (layer_name == 'Radar Reflectivity Radar Animation') {
             clickedRadarLists = clickedRadarLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
             );
             panelLayerRadarlists.innerHTML = clickedRadarLists.join("");
             map.removeLayer(patnaMarker);
@@ -8099,57 +8106,47 @@ $("body").on("change", "input[type=checkbox]", function() {
         //
         if (panelLayerLightninglists.innerHTML == '' && panelLayerRadarlists.innerHTML == '') {
             panelLayerLightningTitle.innerHTML = '';
-            // legendModel1.src = "";
-            // legendModel1.alt = "";
-            // legendModel1.style.height = 0;
-            // legendModel1.style.width = 0;
             Light_RadarRow.style.display = 'none';
         }
 
-
         //Exposure UNCHECK
-        if (layer_name == 'District Boundaries') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<span style="width: 30px; 
-                        height: 1px; 
-                        border-bottom: 2px dashed #000;
-                        display: inline-block;"></span>` +
-                    `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers District Boundaries') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-        if (layer_name == 'Airport') {
+        if (layer_name == 'Exposure Layers Airport') {
             clickedExposureLists = clickedExposureLists.filter(checkList => checkList !=
-            `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    `<i class="fas fa-plane"></i>` +
-                    `</span><br>`
+                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
+                `<i class="fas fa-plane"></i>` +
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(MumbaiMarker);
         }
-        if (layer_name == 'Hospital') {
+        if (layer_name == 'Exposure Layers Hospital') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    `<i class="fas fa-hospital"></i>` +
-                    `</span>
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
+                `<i class="fas fa-hospital"></i>` +
+                `</span>
                         <br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
         }
-        if (layer_name == 'sports') {
+        if (layer_name == 'Exposure Layers sports') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-football-ball"></i>
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-football-ball"></i>
                         ` +
-                    `</span><br>`
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
@@ -8158,44 +8155,42 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}  ` + `
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}  ` + `
                          <img src="img/powerplant.jpeg" width="20" height="20" />` +
-                    `</span><br>`
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(VijayapuraMarker);
         }
-
-
-        if (layer_name == 'Power Station') {
+        if (layer_name == 'Exposure Layers Power Station') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `
                         <img src="img/powerstation.png" width="20" height="20" />` +
-                    `</span><br>`
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(SolapurMarker);
         }
-        if (layer_name == 'Oil Refineries') {
+        if (layer_name == 'Exposure Layers Oil Refineries') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <i class="fas fa-industry"></i>` +
-                    `</span><br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                ` <i class="fas fa-industry"></i>` +
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(RanchiMarker);
         }
-        if (layer_name == 'Industrail') {
+        if (layer_name == 'Exposure Layers Industrail') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` 
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + ` 
                         <img src="img/industry.jpeg" width="20" height="20" />` +
-                    `</span><br>`
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
@@ -8204,71 +8199,64 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `
                          <img src="img/socio_economic_zone.jpeg" width="20" height="20" />` +
-                    `</span><br>`
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
 
-        if (layer_name == 'Road Network') {
+        if (layer_name == 'Exposure Layers Road Network') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/road_network.jpeg" style="width: 25px; height: auto;">` +
-                    `</span><br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                ` <img src="img/road_network.jpeg" style="width: 25px; height: auto;">` +
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-        if (layer_name == 'Railway Network') {
+        if (layer_name == 'Exposure Layers Railway Network') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/railway.jpeg" style="width: 25px; height: auto;">` +
-                    `</span><br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                ` <img src="img/railway.jpeg" style="width: 25px; height: auto;">` +
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-        if (layer_name == 'DEM') {
+        if (layer_name == 'Exposure Layers DEM') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    `<img src="img/DEM.jpeg" style="width: 125px; height: auto;">` +
-                    `</span><br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                `<img src="img/DEM.jpeg" style="width: 125px; height: auto;">` +
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
         }
-        if (layer_name == 'LULC') {
+        if (layer_name == 'Exposure Layers LULC') {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    `<img src="img/LULC.jpeg" style="width: 175px; height: 250px;">` +
-                    `</span><br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                `<img src="img/LULC.jpeg" style="width: 175px; height: 250px;">` +
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-
-        //
 
         //
         if (panelLayerExposureLists.innerHTML == '') {
             panelLayerExposureTitle.innerHTML = '';
             EXPOSURE.innerHTML = '';
-            // legendModelExpo.src = "";
-            // legendModelExpo.alt = "";
-            // legendModelExpo.style.height = 0;
-            // legendModelExpo.style.width = 0;
             ExposureRow.style.display = 'flex';
-
         }
         console.log(layer_name, "layer_name");
 
@@ -8280,55 +8268,90 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //METAR UNCHECK
-        if (layer_name == 'TEMPERATURE') {
+        if (layer_name == 'METAR 00UTC TEMPERATURE') {
             clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
             );
             console.log(layer_name, "layer_name TEMP");
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
             map.removeLayer(SuratMarker);
         }
-        if (layer_name == 'DEW POINT TEMPERATURE') {
+        if (layer_name == 'METAR 00UTC DEW POINT TEMPERATURE') {
             clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
             );
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
             map.removeLayer(JodhpurMarker);
         }
-        if (layer_name == 'VISIBILITY') {
+        if (layer_name == 'METAR 00UTC VISIBILITY') {
             clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
             );
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
             map.removeLayer(KanpurMarker);
         }
-        if (layer_name == 'WIND SPEED AND DIRECTION') {
+        if (layer_name == 'METAR 00UTC WIND SPEED AND DIRECTION') {
             clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
             );
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
             map.removeLayer(MeerutMarker);
         }
-        //
 
-        //
         if (panelLayerMETAR00UTC_lists.innerHTML == '') {
             panelLayerMETAR00UTC_Title.innerHTML = '';
             METAR.innerHTML = '';
-            // legendModelMet.src = "";
-            // legendModelMet.alt = "";
-            // legendModelMet.style.height = 0;
-            // legendModelMet.style.width = 0;
-            // METAR_Row.style.display = 'block';
         }
-        console.log(layer_name, "layer_name");
 
         //GroupPanelLayer-collapsible-METAR00UTC
         if (panelLayerMETAR00UTC_lists.innerHTML != '') {
-            var yyy = document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
             document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
-            console.log(yyy);
         }
+
+        if (layer_name == 'SYNOP 00UTC TEMPERATURE') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => checkList !=
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+            );
+            map.removeLayer(JodhpurMarker);
+        }
+        if (layer_name == 'SYNOP 00UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP00UTCLists.push(
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+            );
+        }
+        if (layer_name == 'SYNOP 00UTC CLOUD COVER') {
+            clickedSYNOP00UTCLists.push(
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+            );
+        }
+        if (layer_name == 'SYNOP 00UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP00UTCLists.push(
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+            );
+        }
+        if (layer_name == 'SYNOP 00UTC RELATIVE HUMIDITY') {
+            clickedSYNOP00UTCLists.push(
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+            );
+        }
+        if (layer_name == 'SYNOP 00UTC VISIBILITY') {
+            clickedSYNOP00UTCLists.push(
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+            );
+        }
+        if (layer_name == 'SYNOP 00UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP00UTCLists.push(
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+            );
+        }
+        if (layer_name == 'SYNOP 00UTC 3h RAINFALL') {
+            clickedSYNOP00UTCLists.push(
+                `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+            );
+        }
+
+        panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
 
     }
 });
