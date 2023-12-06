@@ -9084,6 +9084,988 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
 
+        if (uncheckLayer == 'METAR 01UTC TEMPERATURE') {
+            clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 01UTC DEW POINT TEMPERATURE') {
+            clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 01UTC VISIBILITY') {
+            clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 01UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR01UTC_lists.innerHTML == '') {
+            panelLayerMETAR01UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR01UTC
+        if (panelLayerMETAR01UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 02UTC TEMPERATURE') {
+            clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 02UTC DEW POINT TEMPERATURE') {
+            clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 02UTC VISIBILITY') {
+            clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 02UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR02UTC_lists.innerHTML == '') {
+            panelLayerMETAR02UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR02UTC
+        if (panelLayerMETAR02UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 03UTC TEMPERATURE') {
+            clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 03UTC DEW POINT TEMPERATURE') {
+            clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 03UTC VISIBILITY') {
+            clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 03UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR03UTC_lists.innerHTML == '') {
+            panelLayerMETAR03UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR03UTC
+        if (panelLayerMETAR03UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 04UTC TEMPERATURE') {
+            clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 04UTC DEW POINT TEMPERATURE') {
+            clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 04UTC VISIBILITY') {
+            clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 04UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR04UTC_lists.innerHTML == '') {
+            panelLayerMETAR04UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR04UTC
+        if (panelLayerMETAR04UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 05UTC TEMPERATURE') {
+            clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 05UTC DEW POINT TEMPERATURE') {
+            clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 05UTC VISIBILITY') {
+            clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 05UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR05UTC_lists.innerHTML == '') {
+            panelLayerMETAR05UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR05UTC
+        if (panelLayerMETAR05UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 06UTC TEMPERATURE') {
+            clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 06UTC DEW POINT TEMPERATURE') {
+            clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 06UTC VISIBILITY') {
+            clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 06UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR06UTC_lists.innerHTML == '') {
+            panelLayerMETAR06UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR06UTC
+        if (panelLayerMETAR06UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 07UTC TEMPERATURE') {
+            clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 07UTC DEW POINT TEMPERATURE') {
+            clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 07UTC VISIBILITY') {
+            clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 07UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR07UTC_lists.innerHTML == '') {
+            panelLayerMETAR07UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR07UTC
+        if (panelLayerMETAR07UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 08UTC TEMPERATURE') {
+            clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 08UTC DEW POINT TEMPERATURE') {
+            clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 08UTC VISIBILITY') {
+            clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 08UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR08UTC_lists.innerHTML == '') {
+            panelLayerMETAR08UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR08UTC
+        if (panelLayerMETAR08UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 09UTC TEMPERATURE') {
+            clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 09UTC DEW POINT TEMPERATURE') {
+            clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 09UTC VISIBILITY') {
+            clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 09UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR09UTC_lists.innerHTML == '') {
+            panelLayerMETAR09UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR09UTC
+        if (panelLayerMETAR09UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 10UTC TEMPERATURE') {
+            clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 10UTC DEW POINT TEMPERATURE') {
+            clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 10UTC VISIBILITY') {
+            clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 10UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR10UTC_lists.innerHTML == '') {
+            panelLayerMETAR10UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR10UTC
+        if (panelLayerMETAR10UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 11UTC TEMPERATURE') {
+            clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 11UTC DEW POINT TEMPERATURE') {
+            clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 11UTC VISIBILITY') {
+            clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 11UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR11UTC_lists.innerHTML == '') {
+            panelLayerMETAR11UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR11UTC
+        if (panelLayerMETAR11UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 12UTC TEMPERATURE') {
+            clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 12UTC DEW POINT TEMPERATURE') {
+            clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 12UTC VISIBILITY') {
+            clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 12UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR12UTC_lists.innerHTML == '') {
+            panelLayerMETAR12UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR12UTC
+        if (panelLayerMETAR12UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 13UTC TEMPERATURE') {
+            clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 13UTC DEW POINT TEMPERATURE') {
+            clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 13UTC VISIBILITY') {
+            clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 13UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR13UTC_lists.innerHTML == '') {
+            panelLayerMETAR13UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR13UTC
+        if (panelLayerMETAR13UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 14UTC TEMPERATURE') {
+            clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 14UTC DEW POINT TEMPERATURE') {
+            clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 14UTC VISIBILITY') {
+            clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 14UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR14UTC_lists.innerHTML == '') {
+            panelLayerMETAR14UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR14UTC
+        if (panelLayerMETAR14UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 15UTC TEMPERATURE') {
+            clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 15UTC DEW POINT TEMPERATURE') {
+            clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 15UTC VISIBILITY') {
+            clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 15UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR15UTC_lists.innerHTML == '') {
+            panelLayerMETAR15UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR15UTC
+        if (panelLayerMETAR15UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 16UTC TEMPERATURE') {
+            clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 16UTC DEW POINT TEMPERATURE') {
+            clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 16UTC VISIBILITY') {
+            clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 16UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR16UTC_lists.innerHTML == '') {
+            panelLayerMETAR16UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR16UTC
+        if (panelLayerMETAR16UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 17UTC TEMPERATURE') {
+            clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 17UTC DEW POINT TEMPERATURE') {
+            clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 17UTC VISIBILITY') {
+            clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 17UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR17UTC_lists.innerHTML == '') {
+            panelLayerMETAR17UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR17UTC
+        if (panelLayerMETAR17UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 18UTC TEMPERATURE') {
+            clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 18UTC DEW POINT TEMPERATURE') {
+            clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 18UTC VISIBILITY') {
+            clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 18UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR18UTC_lists.innerHTML == '') {
+            panelLayerMETAR18UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR18UTC
+        if (panelLayerMETAR18UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 19UTC TEMPERATURE') {
+            clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 19UTC DEW POINT TEMPERATURE') {
+            clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 19UTC VISIBILITY') {
+            clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 19UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR19UTC_lists.innerHTML == '') {
+            panelLayerMETAR19UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR19UTC
+        if (panelLayerMETAR19UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 20UTC TEMPERATURE') {
+            clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 20UTC DEW POINT TEMPERATURE') {
+            clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 20UTC VISIBILITY') {
+            clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 20UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR20UTC_lists.innerHTML == '') {
+            panelLayerMETAR20UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR20UTC
+        if (panelLayerMETAR20UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 21UTC TEMPERATURE') {
+            clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 21UTC DEW POINT TEMPERATURE') {
+            clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 21UTC VISIBILITY') {
+            clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 21UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR21UTC_lists.innerHTML == '') {
+            panelLayerMETAR21UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR21UTC
+        if (panelLayerMETAR21UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 22UTC TEMPERATURE') {
+            clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 22UTC DEW POINT TEMPERATURE') {
+            clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 22UTC VISIBILITY') {
+            clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 22UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR22UTC_lists.innerHTML == '') {
+            panelLayerMETAR22UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR22UTC
+        if (panelLayerMETAR22UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
 
         // SYNOP UNCHECK
         if (uncheckLayer == 'SYNOP 00UTC TEMPERATURE') {
