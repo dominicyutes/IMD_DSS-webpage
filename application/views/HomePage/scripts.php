@@ -8078,7 +8078,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
 
-        if (_this.context._layer.group.name == "10m WIND Day1") {
+        if (_this.context._layer.group.name == "10m WIND Day 1") {
             if (panelLayer10mWINDDay1_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay1_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -8118,7 +8118,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day2") {
+        if (_this.context._layer.group.name == "10m WIND Day 2") {
             if (panelLayer10mWINDDay2_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay2_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -8158,7 +8158,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day3") {
+        if (_this.context._layer.group.name == "10m WIND Day 3") {
             if (panelLayer10mWINDDay3_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay3_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -8198,7 +8198,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day4") {
+        if (_this.context._layer.group.name == "10m WIND Day 4") {
             if (panelLayer10mWINDDay4_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay4_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -8238,7 +8238,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day5") {
+        if (_this.context._layer.group.name == "10m WIND Day 5") {
             if (panelLayer10mWINDDay5_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay5_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -9197,6 +9197,1396 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
+        }
+
+        // SOUNDING UNCHECK
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 1000 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 850 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 700 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 500 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 300 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 200 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 100 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 50 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 1000 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 850 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 700 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 500 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 300 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 200 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 100 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 50 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 1000 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 850 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 700 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 500 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 300 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 200 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 100 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 50 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 1000 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 850 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 700 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 500 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 300 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 200 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 100 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 50 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 1000 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 850 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 700 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 500 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 300 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 200 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 100 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 50 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 1000 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 850 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 700 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 500 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 300 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 200 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 100 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 50 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+
+
+        // SHIPANDBUOY UNCHECK
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 00UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 01UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 02UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 03UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 04UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 05UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 06UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 07UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 08UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 09UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 10UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 11UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 12UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 13UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 14UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 15UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 16UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 17UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 18UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 19UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 20UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 21UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 22UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 23UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+
+        if (uncheckLayer == 'WRF Reflectivity Next 03 Hrs') {
+            clickedWRFReflectivityLists = clickedWRFReflectivityLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerWRFReflectivity_lists.innerHTML = clickedWRFReflectivityLists.join("");
+        }
+        if (uncheckLayer == 'WRF Reflectivity Next 03-06 Hrs') {
+            clickedWRFReflectivityLists = clickedWRFReflectivityLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerWRFReflectivity_lists.innerHTML = clickedWRFReflectivityLists.join("");
+        }
+
+        if (uncheckLayer == 'WRF lightning Product Next 03 Hrs') {
+            clickedWRFlightningProductLists = clickedWRFlightningProductLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerWRFlightningProduct_lists.innerHTML = clickedWRFlightningProductLists.join("");
+
+        }
+        if (uncheckLayer == 'WRF lightning Product Next 03-06 Hrs') {
+            clickedWRFlightningProductLists = clickedWRFlightningProductLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerWRFlightningProduct_lists.innerHTML = clickedWRFlightningProductLists.join("");
+        }
+
+        if (uncheckLayer == 'WRF Accumlated Rainfall Next 03 Hrs') {
+            clickedWRFAccumlatedRainfallLists = clickedWRFAccumlatedRainfallLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerWRFAccumlatedRainfall_lists.innerHTML = clickedWRFAccumlatedRainfallLists.join("");
+        }
+        if (uncheckLayer == 'WRF Accumlated Rainfall Next 03-06 Hrs') {
+            clickedWRFAccumlatedRainfallLists = clickedWRFAccumlatedRainfallLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerWRFAccumlatedRainfall_lists.innerHTML = clickedWRFAccumlatedRainfallLists.join("");
+        }
+
+        if (uncheckLayer == 'lightning Potential index Next 01 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join("");
+        }
+        if (uncheckLayer == 'lightning Potential index Next 01-02 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join("");
+        }
+        if (uncheckLayer == 'lightning Potential index Next 02-03 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join("");
+        }
+
+        if (uncheckLayer == 'NCUMR lightning Product Next 03 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerNCUMRlightningProduct_lists.innerHTML = clickedNCUMRlightningProductLists.join("");
+        }
+        if (uncheckLayer == 'NCUMR lightning Product Next 03-06 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerNCUMRlightningProduct_lists.innerHTML = clickedNCUMRlightningProductLists.join("");
+        }
+
+        if (uncheckLayer == 'NCUMR Wind Gust Next 03 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerNCUMRWindGust_lists.innerHTML = clickedNCUMRWindGustLists.join("");
+        }
+        if (uncheckLayer == 'NCUMR Wind Gust Next 03-06 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerNCUMRWindGust_lists.innerHTML = clickedNCUMRWindGustLists.join("");
+        }
+
+        if (uncheckLayer == 'NCUMR Rainfall Next 03 Hrs') {
+            clickedNCUMRRainfallLists = clickedNCUMRRainfallLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerNCUMRRainfall_lists.innerHTML = clickedNCUMRRainfallLists.join("");
+        }
+        if (uncheckLayer == 'NCUMR Rainfall Next 03-06 Hrs') {
+            clickedNCUMRRainfallLists = clickedNCUMRRainfallLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerNCUMRRainfall_lists.innerHTML = clickedNCUMRRainfallLists.join("");
+        }
+
+        if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 01 Hrs') {
+            clickedHRRR_SPHourlyDBZLists = clickedHRRR_SPHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_SPHourlyDBZ_lists.innerHTML = clickedHRRR_SPHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 01-02 Hrs') {
+            clickedHRRR_SPHourlyDBZLists = clickedHRRR_SPHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_SPHourlyDBZ_lists.innerHTML = clickedHRRR_SPHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 02-03 Hrs') {
+            clickedHRRR_SPHourlyDBZLists = clickedHRRR_SPHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_SPHourlyDBZ_lists.innerHTML = clickedHRRR_SPHourlyDBZLists.join("");
+        }
+
+        if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 01 Hrs') {
+            clickedHRRR_NEHourlyDBZLists = clickedHRRR_NEHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_NEHourlyDBZ_lists.innerHTML = clickedHRRR_NEHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 01-02 Hrs') {
+            clickedHRRR_NEHourlyDBZLists = clickedHRRR_NEHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_NEHourlyDBZ_lists.innerHTML = clickedHRRR_NEHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 02-03 Hrs') {
+            clickedHRRR_NEHourlyDBZLists = clickedHRRR_NEHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_NEHourlyDBZ_lists.innerHTML = clickedHRRR_NEHourlyDBZLists.join("");
+        }
+
+        if (uncheckLayer == 'HRRR_NW Hourly DBZ Next 01 Hrs') {
+            clickedHRRR_NWHourlyDBZLists = clickedHRRR_NWHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_NWHourlyDBZ_lists.innerHTML = clickedHRRR_NWHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'HRRR_NW Hourly DBZ Next 01-02 Hrs') {
+            clickedHRRR_NWHourlyDBZLists = clickedHRRR_NWHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_NWHourlyDBZ_lists.innerHTML = clickedHRRR_NWHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'HRRR_NW Hourly DBZ Next 02-03 Hrs') {
+            clickedHRRR_NWHourlyDBZLists = clickedHRRR_NWHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_NWHourlyDBZ_lists.innerHTML = clickedHRRR_NWHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'EWRF MaxZ Next 01 Hrs') {
+            clickedEWRFMaxZLists = clickedEWRFMaxZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerEWRFMaxZ_lists.innerHTML = clickedEWRFMaxZLists.join("");
+        }
+        if (uncheckLayer == 'EWRF MaxZ Next 01-02 Hrs') {
+            clickedEWRFMaxZLists = clickedEWRFMaxZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerEWRFMaxZ_lists.innerHTML = clickedEWRFMaxZLists.join("");
+        }
+        if (uncheckLayer == 'EWRF MaxZ Next 02-03 Hrs') {
+            clickedEWRFMaxZLists = clickedEWRFMaxZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerEWRFMaxZ_lists.innerHTML = clickedEWRFMaxZLists.join("");
+        }
+        if (uncheckLayer == 'EWRF Lightning Next 01 Hrs') {
+            clickedEWRFLightningLists = clickedEWRFLightningLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
+        }
+        if (uncheckLayer == 'EWRF Lightning Next 01-02 Hrs') {
+            clickedEWRFLightningLists = clickedEWRFLightningLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
+        }
+        if (uncheckLayer == 'EWRF Lightning Next 02-03 Hrs') {
+            clickedEWRFLightningLists = clickedEWRFLightningLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
+        }
+
+        // MEDIUM UNCHECK
+        if (uncheckLayer == 'Rainfall Intensity Day1 GFS DAY1') {
+            clickedRainfallIntensityDay1Lists = clickedRainfallIntensityDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day1 NCUM DAY1') {
+            clickedRainfallIntensityDay1Lists = clickedRainfallIntensityDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day1 NEPS DAY1') {
+            clickedRainfallIntensityDay1Lists = clickedRainfallIntensityDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day1 WRF DAY1') {
+            clickedRainfallIntensityDay1Lists = clickedRainfallIntensityDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day1 GEFS DAY1') {
+            clickedRainfallIntensityDay1Lists = clickedRainfallIntensityDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day1 ECMWF DAY1') {
+            clickedRainfallIntensityDay1Lists = clickedRainfallIntensityDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+
+        if (uncheckLayer == 'Rainfall Intensity Day2 GFS DAY2') {
+            clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day2 NCUM DAY2') {
+            clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day2 NEPS DAY2') {
+            clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day2 WRF DAY2') {
+            clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day2 GEFS DAY2') {
+            clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day2 ECMWF DAY2') {
+            clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+
+        if (uncheckLayer == 'Rainfall Intensity Day3 GFS DAY3') {
+            clickedRainfallIntensityDay3Lists = clickedRainfallIntensityDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day3 NCUM DAY3') {
+            clickedRainfallIntensityDay3Lists = clickedRainfallIntensityDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day3 NEPS DAY3') {
+            clickedRainfallIntensityDay3Lists = clickedRainfallIntensityDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day3 WRF DAY3') {
+            clickedRainfallIntensityDay3Lists = clickedRainfallIntensityDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day3 GEFS DAY3') {
+            clickedRainfallIntensityDay3Lists = clickedRainfallIntensityDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day3 ECMWF DAY3') {
+            clickedRainfallIntensityDay3Lists = clickedRainfallIntensityDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+
+        if (uncheckLayer == 'Rainfall Intensity Day4 GFS DAY4') {
+            clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day4 NCUM DAY4') {
+            clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day4 NEPS DAY4') {
+            clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day4 WRF DAY4') {
+            clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day4 GEFS DAY4') {
+            clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day4 ECMWF DAY4') {
+            clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day5 GFS DAY5') {
+            clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day5 NCUM DAY5') {
+            clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day5 NEPS DAY5') {
+            clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day5 WRF DAY5') {
+            clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day5 GEFS DAY5') {
+            clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day5 ECMWF DAY5') {
+            clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+
+
+        if (uncheckLayer == 'MSLP Day1 GFS DAY1') {
+            clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day1 NCUM DAY1') {
+            clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day1 NEPS DAY1') {
+            clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day1 WRF DAY1') {
+            clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day1 GEFS DAY1') {
+            clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day1 ECMWF DAY1') {
+            clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+
+
+        if (uncheckLayer == 'MSLP Day2 GFS DAY2') {
+            clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day2 NCUM DAY2') {
+            clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day2 NEPS DAY2') {
+            clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day2 WRF DAY2') {
+            clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day2 GEFS DAY2') {
+            clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day2 ECMWF DAY2') {
+            clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+
+
+        if (uncheckLayer == 'MSLP Day3 GFS DAY3') {
+            clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day3 NCUM DAY3') {
+            clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day3 NEPS DAY3') {
+            clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day3 WRF DAY3') {
+            clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day3 GEFS DAY3') {
+            clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day3 ECMWF DAY3') {
+            clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+
+
+        if (uncheckLayer == 'MSLP Day4 GFS DAY4') {
+            clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day4 NCUM DAY4') {
+            clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day4 NEPS DAY4') {
+            clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day4 WRF DAY4') {
+            clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day4 GEFS DAY4') {
+            clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day4 ECMWF DAY4') {
+            clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+
+
+        if (uncheckLayer == 'MSLP Day5 GFS DAY5') {
+            clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day5 NCUM DAY5') {
+            clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day5 NEPS DAY5') {
+            clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day5 WRF DAY5') {
+            clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day5 GEFS DAY5') {
+            clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day5 ECMWF DAY5') {
+            clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+
+
+        if (uncheckLayer == '10m WIND Day 1 GFS DAY1') {
+            clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 1 NCUM DAY1') {
+            clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 1 NEPS DAY1') {
+            clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 1 WRF DAY1') {
+            clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 1 GEFS DAY1') {
+            clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 1 ECMWF DAY1') {
+            clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+
+
+        if (uncheckLayer == '10m WIND Day 2 GFS DAY2') {
+            clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 2 NCUM DAY2') {
+            clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 2 NEPS DAY2') {
+            clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 2 WRF DAY2') {
+            clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 2 GEFS DAY2') {
+            clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 2 ECMWF DAY2') {
+            clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+
+
+        if (uncheckLayer == '10m WIND Day 3 GFS DAY3') {
+            clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 3 NCUM DAY3') {
+            clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 3 NEPS DAY3') {
+            clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 3 WRF DAY3') {
+            clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 3 GEFS DAY3') {
+            clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 3 ECMWF DAY3') {
+            clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+
+
+        if (uncheckLayer == '10m WIND Day 4 GFS DAY4') {
+            clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 4 NCUM DAY4') {
+            clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 4 NEPS DAY4') {
+            clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 4 WRF DAY4') {
+            clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 4 GEFS DAY4') {
+            clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 4 ECMWF DAY4') {
+            clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+
+
+        if (uncheckLayer == '10m WIND Day 5 GFS DAY5') {
+            clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 5 NCUM DAY5') {
+            clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 5 NEPS DAY5') {
+            clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 5 WRF DAY5') {
+            clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 5 GEFS DAY5') {
+            clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 5 ECMWF DAY5') {
+            clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
         }
 
     }
