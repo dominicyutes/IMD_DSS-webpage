@@ -4945,7 +4945,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             //         display: flex;
             //         border: 2px solid black;">
             //         <div style="flex: 1; background-color: green;"></div>
-            //         <div style="flex: 1; background-color: white;"></div>
+            //         <div style="flex: 1; background-color: black;"></div>
             //         </div><br>`
             //     );
             // }
@@ -5118,31 +5118,54 @@ $("body").on("change", "input[type=checkbox]", function() {
                 // legendModelMet.src = 'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
                 // legendModelMet.style.height = '35vh';
                 // legendModelMet.style.width = '72%';
-                panelLayerMETAR00UTC_lists.style.display = 'block';
+                panelLayerMETAR00UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR00UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5163,31 +5186,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR01UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR01UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR01UTC_lists.style.display = 'block';
+                panelLayerMETAR01UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR01UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR01UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR01UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5208,31 +5254,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR02UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR02UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR02UTC_lists.style.display = 'block';
+                panelLayerMETAR02UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR02UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR02UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR02UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5253,31 +5322,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR03UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR03UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR03UTC_lists.style.display = 'block';
+                panelLayerMETAR03UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5298,31 +5390,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR04UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR04UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR04UTC_lists.style.display = 'block';
+                panelLayerMETAR04UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR04UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR04UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR04UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5343,31 +5458,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR05UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR05UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR05UTC_lists.style.display = 'block';
+                panelLayerMETAR05UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR05UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR05UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR05UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5388,31 +5526,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR06UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR06UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR06UTC_lists.style.display = 'block';
+                panelLayerMETAR06UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5433,31 +5594,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR07UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR07UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR07UTC_lists.style.display = 'block';
+                panelLayerMETAR07UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR07UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR07UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR07UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5478,31 +5662,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR08UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR08UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR08UTC_lists.style.display = 'block';
+                panelLayerMETAR08UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR08UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR08UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR08UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5523,31 +5730,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR09UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR09UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR09UTC_lists.style.display = 'block';
+                panelLayerMETAR09UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5568,31 +5798,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR10UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR10UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR10UTC_lists.style.display = 'block';
+                panelLayerMETAR10UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR10UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR10UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR10UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5613,31 +5866,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR11UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR11UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR11UTC_lists.style.display = 'block';
+                panelLayerMETAR11UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR11UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR11UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR11UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5658,31 +5934,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR12UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR12UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR12UTC_lists.style.display = 'block';
+                panelLayerMETAR12UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5703,31 +6002,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR13UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR13UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR13UTC_lists.style.display = 'block';
+                panelLayerMETAR13UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR13UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR13UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR13UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5748,31 +6070,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR14UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR14UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR14UTC_lists.style.display = 'block';
+                panelLayerMETAR14UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR14UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR14UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR14UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5793,31 +6138,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR15UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR15UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR15UTC_lists.style.display = 'block';
+                panelLayerMETAR15UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5838,31 +6206,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR16UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR16UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR16UTC_lists.style.display = 'block';
+                panelLayerMETAR16UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR16UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR16UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR16UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5883,31 +6274,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR17UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR17UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR17UTC_lists.style.display = 'block';
+                panelLayerMETAR17UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR17UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR17UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR17UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5928,31 +6342,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR18UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR18UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR18UTC_lists.style.display = 'block';
+                panelLayerMETAR18UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -5973,31 +6410,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR19UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR19UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR19UTC_lists.style.display = 'block';
+                panelLayerMETAR19UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR19UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR19UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR19UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -6018,31 +6478,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR20UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR20UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR20UTC_lists.style.display = 'block';
+                panelLayerMETAR20UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR20UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR20UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR20UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -6063,31 +6546,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR21UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR21UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR21UTC_lists.style.display = 'block';
+                panelLayerMETAR21UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -6108,31 +6614,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR22UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR22UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR22UTC_lists.style.display = 'block';
+                panelLayerMETAR22UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR22UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR22UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR22UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -6153,31 +6682,54 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR23UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR23UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR23UTC_lists.style.display = 'block';
+                panelLayerMETAR23UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR23UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR23UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR23UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -8078,7 +8630,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
 
-        if (_this.context._layer.group.name == "10m WIND Day 1") {
+        if (_this.context._layer.group.name == "10m WIND Day1") {
             if (panelLayer10mWINDDay1_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay1_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -8118,7 +8670,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day 2") {
+        if (_this.context._layer.group.name == "10m WIND Day2") {
             if (panelLayer10mWINDDay2_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay2_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -8158,7 +8710,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day 3") {
+        if (_this.context._layer.group.name == "10m WIND Day3") {
             if (panelLayer10mWINDDay3_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay3_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -8198,7 +8750,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day 4") {
+        if (_this.context._layer.group.name == "10m WIND Day4") {
             if (panelLayer10mWINDDay4_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay4_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -8238,7 +8790,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day 5") {
+        if (_this.context._layer.group.name == "10m WIND Day5") {
             if (panelLayer10mWINDDay5_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay5_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -9199,6 +9751,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
         }
 
+
         // SOUNDING UNCHECK
         if (uncheckLayer == 'SOUNDING_00_UTC WIND 1000 hpa WIND') {
             clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
@@ -9764,21 +10317,24 @@ $("body").on("change", "input[type=checkbox]", function() {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join("");
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join(
+                "");
         }
         if (uncheckLayer == 'lightning Potential index Next 01-02 Hrs') {
             clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join("");
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join(
+                "");
         }
         if (uncheckLayer == 'lightning Potential index Next 02-03 Hrs') {
             clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join("");
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join(
+                "");
         }
 
         if (uncheckLayer == 'NCUMR lightning Product Next 03 Hrs') {
@@ -10594,9 +11150,6 @@ $("body").on("change", "input[type=checkbox]", function() {
 //
 
 
-function tempImage() {
-
-}
 
 //closeModel
 closeModel.onclick = () => {

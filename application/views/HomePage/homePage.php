@@ -176,6 +176,8 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
     <!-- <button id="popup" class="submitBtn">Legend</button> -->
 
+
+<br>
     <div class="row">
         <div id="map" class="col-10"></div>
         <div id="ObservationContainer" class="hidden col-2">
@@ -267,7 +269,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                 </div>
 
                 <!-- METAR -->
-                <div id="METAR_Row">
+                <div  id="METAR_Row">
                     <!-- <div class="col-5"> -->
                     <!-- HomePage-Lightning -->
                     <h4 id="METAR" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
