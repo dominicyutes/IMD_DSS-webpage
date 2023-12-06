@@ -5118,7 +5118,7 @@
                     // legendModelMet.src = 'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
                     // legendModelMet.style.height = '35vh';
                     // legendModelMet.style.width = '72%';
-                    panelLayerMETAR00UTC_lists.style.display = 'block';
+                    panelLayerMETAR00UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -5186,7 +5186,7 @@
                 if (panelLayerMETAR01UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR01UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR01UTC_lists.style.display = 'block';
+                    panelLayerMETAR01UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -5254,7 +5254,7 @@
                 if (panelLayerMETAR02UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR02UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR02UTC_lists.style.display = 'block';
+                    panelLayerMETAR02UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -5322,7 +5322,7 @@
                 if (panelLayerMETAR03UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR03UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR03UTC_lists.style.display = 'block';
+                    panelLayerMETAR03UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -5390,7 +5390,7 @@
                 if (panelLayerMETAR04UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR04UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR04UTC_lists.style.display = 'block';
+                    panelLayerMETAR04UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -5458,7 +5458,7 @@
                 if (panelLayerMETAR05UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR05UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR05UTC_lists.style.display = 'block';
+                    panelLayerMETAR05UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -5526,7 +5526,7 @@
                 if (panelLayerMETAR06UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR06UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR06UTC_lists.style.display = 'block';
+                    panelLayerMETAR06UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -5594,7 +5594,7 @@
                 if (panelLayerMETAR07UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR07UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR07UTC_lists.style.display = 'block';
+                    panelLayerMETAR07UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -5662,7 +5662,7 @@
                 if (panelLayerMETAR08UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR08UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR08UTC_lists.style.display = 'block';
+                    panelLayerMETAR08UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -5730,7 +5730,7 @@
                 if (panelLayerMETAR09UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR09UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR09UTC_lists.style.display = 'block';
+                    panelLayerMETAR09UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -5798,7 +5798,7 @@
                 if (panelLayerMETAR10UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR10UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR10UTC_lists.style.display = 'block';
+                    panelLayerMETAR10UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -5866,7 +5866,7 @@
                 if (panelLayerMETAR11UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR11UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR11UTC_lists.style.display = 'block';
+                    panelLayerMETAR11UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -5934,7 +5934,7 @@
                 if (panelLayerMETAR12UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR12UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR12UTC_lists.style.display = 'block';
+                    panelLayerMETAR12UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -6002,7 +6002,7 @@
                 if (panelLayerMETAR13UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR13UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR13UTC_lists.style.display = 'block';
+                    panelLayerMETAR13UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -6070,7 +6070,7 @@
                 if (panelLayerMETAR14UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR14UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR14UTC_lists.style.display = 'block';
+                    panelLayerMETAR14UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -6138,7 +6138,7 @@
                 if (panelLayerMETAR15UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR15UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR15UTC_lists.style.display = 'block';
+                    panelLayerMETAR15UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -6206,7 +6206,7 @@
                 if (panelLayerMETAR16UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR16UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR16UTC_lists.style.display = 'block';
+                    panelLayerMETAR16UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -6274,7 +6274,7 @@
                 if (panelLayerMETAR17UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR17UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR17UTC_lists.style.display = 'block';
+                    panelLayerMETAR17UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -6342,7 +6342,7 @@
                 if (panelLayerMETAR18UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR18UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR18UTC_lists.style.display = 'block';
+                    panelLayerMETAR18UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -6410,7 +6410,7 @@
                 if (panelLayerMETAR19UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR19UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR19UTC_lists.style.display = 'block';
+                    panelLayerMETAR19UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -6478,7 +6478,7 @@
                 if (panelLayerMETAR20UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR20UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR20UTC_lists.style.display = 'block';
+                    panelLayerMETAR20UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -6546,7 +6546,7 @@
                 if (panelLayerMETAR21UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR21UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR21UTC_lists.style.display = 'block';
+                    panelLayerMETAR21UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -6614,7 +6614,7 @@
                 if (panelLayerMETAR22UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR22UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR22UTC_lists.style.display = 'block';
+                    panelLayerMETAR22UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
@@ -6682,7 +6682,7 @@
                 if (panelLayerMETAR23UTC_Title.innerHTML == '') {
                     METAR.innerHTML = "METAR"
                     panelLayerMETAR23UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                    panelLayerMETAR23UTC_lists.style.display = 'block';
+                    panelLayerMETAR23UTC_lists.style.display = 'flex';
                 }
 
                 if (layer_name == 'TEMPERATURE') {
