@@ -176,6 +176,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
     <!-- <button id="popup" class="submitBtn">Legend</button> -->
 
+<br>
     <div class="row">
         <div id="map" class="col-10"></div>
         <div id="ObservationContainer" class="hidden col-2">
