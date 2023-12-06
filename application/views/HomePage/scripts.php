@@ -8637,7 +8637,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
 
-        if (_this.context._layer.group.name == "10m WIND Day1") {
+        if (_this.context._layer.group.name == "10m WIND Day 1") {
             if (panelLayer10mWINDDay1_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay1_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -8677,7 +8677,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day2") {
+        if (_this.context._layer.group.name == "10m WIND Day 2") {
             if (panelLayer10mWINDDay2_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay2_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -8717,7 +8717,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day3") {
+        if (_this.context._layer.group.name == "10m WIND Day 3") {
             if (panelLayer10mWINDDay3_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay3_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -8757,7 +8757,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day4") {
+        if (_this.context._layer.group.name == "10m WIND Day 4") {
             if (panelLayer10mWINDDay4_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay4_Title.innerHTML = _this.context._layer.group.name + ':'
@@ -8797,7 +8797,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day5") {
+        if (_this.context._layer.group.name == "10m WIND Day 5") {
             if (panelLayer10mWINDDay5_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay5_Title.innerHTML = _this.context._layer.group.name + ':'
