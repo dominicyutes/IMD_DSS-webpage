@@ -4945,7 +4945,7 @@
                 //         display: flex;
                 //         border: 2px solid black;">
                 //         <div style="flex: 1; background-color: green;"></div>
-                //         <div style="flex: 1; background-color: white;"></div>
+                //         <div style="flex: 1; background-color: black;"></div>
                 //         </div><br>`
                 //     );
                 // }
@@ -5126,11 +5126,11 @@
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5140,11 +5140,11 @@
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5154,16 +5154,16 @@
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -5194,11 +5194,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5208,11 +5208,11 @@
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5222,16 +5222,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -5262,11 +5262,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5276,11 +5276,11 @@
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5290,16 +5290,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -5330,11 +5330,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5344,11 +5344,11 @@
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5358,16 +5358,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -5398,11 +5398,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5412,11 +5412,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5426,16 +5426,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -5466,11 +5466,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5480,11 +5480,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5494,16 +5494,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -5534,11 +5534,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5548,11 +5548,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5562,16 +5562,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -5602,11 +5602,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5616,11 +5616,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5630,16 +5630,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -5670,11 +5670,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5684,11 +5684,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5698,16 +5698,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -5738,11 +5738,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5752,11 +5752,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5766,16 +5766,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -5806,11 +5806,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5820,11 +5820,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5834,16 +5834,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -5874,11 +5874,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5888,11 +5888,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5902,16 +5902,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -5942,11 +5942,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5956,11 +5956,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -5970,16 +5970,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -6010,11 +6010,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6024,11 +6024,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6038,16 +6038,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -6078,11 +6078,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6092,11 +6092,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6106,16 +6106,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -6146,11 +6146,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6160,11 +6160,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6174,16 +6174,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -6214,11 +6214,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6228,11 +6228,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6242,16 +6242,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -6282,11 +6282,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6296,11 +6296,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6310,16 +6310,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -6350,11 +6350,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6364,11 +6364,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6378,16 +6378,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -6418,11 +6418,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6432,11 +6432,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6446,16 +6446,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -6486,11 +6486,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6500,11 +6500,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6514,16 +6514,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -6554,11 +6554,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6568,11 +6568,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6582,16 +6582,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -6622,11 +6622,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6636,11 +6636,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6650,16 +6650,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
@@ -6690,11 +6690,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6704,11 +6704,11 @@
                           `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45</span>
   </span>
 </span><br>`
                     );
@@ -6718,16 +6718,16 @@
                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #32ff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcff36; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ffad2d; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
-    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #ff3737; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">1000-2000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">2000-4000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">4000-8000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">12000-20000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">30000-40000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">>45000-50000</span>
   </span>
 </span><br>`
                     );
