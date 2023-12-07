@@ -4839,6 +4839,9 @@ let panelLayerWRFAccumlatedRainfall_lists = document.querySelector('#WRFAccumlat
 let panelLayerlightningPotentialindex_Title = document.querySelector('#lightningPotentialindex-Title')
 let panelLayerlightningPotentialindex_lists = document.querySelector('#lightningPotentialindex-lists')
 
+let panelLayerNCUMRlightningProduct_Title = document.querySelector('#NCUMRlightningProduct-Title')
+let panelLayerNCUMRlightningProduct_lists = document.querySelector('#NCUMRlightningProduct-lists')
+
 let panelLayerWRFNCUMRlightningProduct_Title = document.querySelector('#WRFNCUMRlightningProduct-Title')
 let panelLayerWRFNCUMRlightningProduct_lists = document.querySelector('#WRFNCUMRlightningProduct-lists')
 
@@ -4970,6 +4973,7 @@ let clickedSHIPANDBUOYLists = [];
 let clickedWRFReflectivityLists = [];
 let clickedWRFlightningProductLists = [];
 let clickedWRFAccumlatedRainfallLists = [];
+let clickedlightningPotentialindexLists = [];
 let clickedNCUMRlightningProductLists = [];
 let clickedNCUMRWindGustLists = [];
 let clickedNCUMRRainfallLists = [];
@@ -12510,6 +12514,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerWRFReflectivity_lists.innerHTML = clickedWRFReflectivityLists.join("");
         }
 
+        if (panelLayerWRFReflectivity_lists.innerHTML == '') {
+            panelLayerWRFReflectivity_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerWRFReflectivity_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'WRF lightning Product Next 03 Hrs') {
             clickedWRFlightningProductLists = clickedWRFlightningProductLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12526,6 +12540,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerWRFlightningProduct_lists.innerHTML = clickedWRFlightningProductLists.join("");
         }
 
+        if (panelLayerWRFlightningProduct_lists.innerHTML == '') {
+            panelLayerWRFlightningProduct_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerWRFlightningProduct_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'WRF Accumlated Rainfall Next 03 Hrs') {
             clickedWRFAccumlatedRainfallLists = clickedWRFAccumlatedRainfallLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12539,6 +12563,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerWRFAccumlatedRainfall_lists.innerHTML = clickedWRFAccumlatedRainfallLists.join("");
+        }
+
+        if (panelLayerWRFAccumlatedRainfall_lists.innerHTML == '') {
+            panelLayerWRFAccumlatedRainfall_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerWRFAccumlatedRainfall_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'lightning Potential index Next 01 Hrs') {
@@ -12566,6 +12600,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 "");
         }
 
+        if (panelLayerlightningPotentialindex_lists.innerHTML == '') {
+            panelLayerlightningPotentialindex_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerlightningPotentialindex_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'NCUMR lightning Product Next 03 Hrs') {
             clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12579,6 +12623,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerNCUMRlightningProduct_lists.innerHTML = clickedNCUMRlightningProductLists.join("");
+        }
+
+        if (panelLayerNCUMRlightningProduct_lists.innerHTML == '') {
+            panelLayerNCUMRlightningProduct_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerNCUMRlightningProduct_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'NCUMR Wind Gust Next 03 Hrs') {
@@ -12596,6 +12650,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerNCUMRWindGust_lists.innerHTML = clickedNCUMRWindGustLists.join("");
         }
 
+        if (panelLayerNCUMRWindGust_lists.innerHTML == '') {
+            panelLayerNCUMRWindGust_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerNCUMRWindGust_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'NCUMR Rainfall Next 03 Hrs') {
             clickedNCUMRRainfallLists = clickedNCUMRRainfallLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12609,6 +12673,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerNCUMRRainfall_lists.innerHTML = clickedNCUMRRainfallLists.join("");
+        }
+
+        if (panelLayerNCUMRRainfall_lists.innerHTML == '') {
+            panelLayerNCUMRRainfall_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerNCUMRRainfall_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 01 Hrs') {
@@ -12633,6 +12707,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerHRRR_SPHourlyDBZ_lists.innerHTML = clickedHRRR_SPHourlyDBZLists.join("");
         }
 
+        if (panelLayerHRRR_SPHourlyDBZ_lists.innerHTML == '') {
+            panelLayerHRRR_SPHourlyDBZ_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerHRRR_SPHourlyDBZ_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 01 Hrs') {
             clickedHRRR_NEHourlyDBZLists = clickedHRRR_NEHourlyDBZLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12653,6 +12737,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerHRRR_NEHourlyDBZ_lists.innerHTML = clickedHRRR_NEHourlyDBZLists.join("");
+        }
+
+        if (panelLayerHRRR_NEHourlyDBZ_lists.innerHTML == '') {
+            panelLayerHRRR_NEHourlyDBZ_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerHRRR_NEHourlyDBZ_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'HRRR_NW Hourly DBZ Next 01 Hrs') {
@@ -12676,6 +12770,17 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerHRRR_NWHourlyDBZ_lists.innerHTML = clickedHRRR_NWHourlyDBZLists.join("");
         }
+
+        if (panelLayerHRRR_NWHourlyDBZ_lists.innerHTML == '') {
+            panelLayerHRRR_NWHourlyDBZ_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerHRRR_NWHourlyDBZ_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'EWRF MaxZ Next 01 Hrs') {
             clickedEWRFMaxZLists = clickedEWRFMaxZLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12697,6 +12802,17 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerEWRFMaxZ_lists.innerHTML = clickedEWRFMaxZLists.join("");
         }
+
+        if (panelLayerEWRFMaxZ_lists.innerHTML == '') {
+            panelLayerEWRFMaxZ_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerEWRFMaxZ_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'EWRF Lightning Next 01 Hrs') {
             clickedEWRFLightningLists = clickedEWRFLightningLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12717,6 +12833,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
+        }
+
+        if (panelLayerEWRFLightning_lists.innerHTML == '') {
+            panelLayerEWRFLightning_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerEWRFLightning_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         // MEDIUM UNCHECK
@@ -12763,6 +12889,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
         }
 
+        if (panelLayerRainfallIntensityDay1_lists.innerHTML == '') {
+            panelLayerRainfallIntensityDay1_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerRainfallIntensityDay1_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'Rainfall Intensity Day2 GFS DAY2') {
             clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12804,6 +12940,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+
+        if (panelLayerRainfallIntensityDay2_lists.innerHTML == '') {
+            panelLayerRainfallIntensityDay2_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerRainfallIntensityDay2_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'Rainfall Intensity Day3 GFS DAY3') {
@@ -12849,6 +12995,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
         }
 
+        if (panelLayerRainfallIntensityDay3_lists.innerHTML == '') {
+            panelLayerRainfallIntensityDay3_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerRainfallIntensityDay3_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'Rainfall Intensity Day4 GFS DAY4') {
             clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12891,6 +13047,17 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
         }
+
+        if (panelLayerRainfallIntensityDay4_lists.innerHTML == '') {
+            panelLayerRainfallIntensityDay4_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerRainfallIntensityDay4_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'Rainfall Intensity Day5 GFS DAY5') {
             clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12934,6 +13101,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
         }
 
+        if (panelLayerRainfallIntensityDay5_lists.innerHTML == '') {
+            panelLayerRainfallIntensityDay5_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerRainfallIntensityDay5_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'MSLP Day1 GFS DAY1') {
             clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
@@ -12978,6 +13154,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
         }
 
+        if (panelLayerMSLPDay1_lists.innerHTML == '') {
+            panelLayerMSLPDay1_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerMSLPDay1_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'MSLP Day2 GFS DAY2') {
             clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
@@ -13022,6 +13207,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
         }
 
+        if (panelLayerMSLPDay2_lists.innerHTML == '') {
+            panelLayerMSLPDay2_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerMSLPDay2_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'MSLP Day3 GFS DAY3') {
             clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
@@ -13066,6 +13260,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
         }
 
+        if (panelLayerMSLPDay3_lists.innerHTML == '') {
+            panelLayerMSLPDay3_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerMSLPDay3_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'MSLP Day4 GFS DAY4') {
             clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
@@ -13110,6 +13313,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
         }
 
+        if (panelLayerMSLPDay4_lists.innerHTML == '') {
+            panelLayerMSLPDay4_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerMSLPDay4_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'MSLP Day5 GFS DAY5') {
             clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
@@ -13154,6 +13366,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
         }
 
+        if (panelLayerMSLPDay5_lists.innerHTML == '') {
+            panelLayerMSLPDay5_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerMSLPDay5_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == '10m WIND Day 1 GFS DAY1') {
             clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
@@ -13198,6 +13419,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
         }
 
+        if (panelLayer10mWINDDay1_lists.innerHTML == '') {
+            panelLayer10mWINDDay1_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayer10mWINDDay1_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == '10m WIND Day 2 GFS DAY2') {
             clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
@@ -13242,6 +13472,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
         }
 
+        if (panelLayer10mWINDDay2_lists.innerHTML == '') {
+            panelLayer10mWINDDay2_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayer10mWINDDay2_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == '10m WIND Day 3 GFS DAY3') {
             clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
@@ -13286,6 +13525,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
         }
 
+        if (panelLayer10mWINDDay3_lists.innerHTML == '') {
+            panelLayer10mWINDDay3_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayer10mWINDDay3_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == '10m WIND Day 4 GFS DAY4') {
             clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
@@ -13330,6 +13578,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
         }
 
+        if (panelLayer10mWINDDay4_lists.innerHTML == '') {
+            panelLayer10mWINDDay4_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayer10mWINDDay4_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == '10m WIND Day 5 GFS DAY5') {
             clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
@@ -13374,6 +13631,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
         }
 
+        if (panelLayer10mWINDDay5_lists.innerHTML == '') {
+            panelLayer10mWINDDay5_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayer10mWINDDay5_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
     }
 });
 //
