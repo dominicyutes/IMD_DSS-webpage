@@ -89,6 +89,10 @@ body {
     transition: visibility 0.1s ease;
 }
 
+.border-end {
+    border-right: var(--bs-border-width) var(--bs-border-style) #abaeb1 !important;
+}
+
 @keyframes loadingAnimation {
     0% {
         width: 0;
@@ -102,6 +106,10 @@ body {
 /* observationToggle */
 .hidden {
     display: none;
+}
+
+.obsClass {
+    margin-top: -2%;
 }
 
 .firstDD {
@@ -198,8 +206,7 @@ body {
     height: 81vh;
     width: 99%;
     border: 1px solid black;
-    margin-top: -14px;
-    /* margin-left: 1px; */
+    margin-top: -39px;
     position: relative;
 }
 
@@ -218,22 +225,12 @@ body {
 }
 
 /* split css */
-.leaflet-sbs-divider {
+.leaflet-sbs-range {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: 9px;
-    width: 4px;
-    background-color: #fff;
-    pointer-events: none;
+    top: 50%;
+    width: 99%;
     z-index: 999;
 }
-
-
-
-
-
 
 /* Draggable Model PopUp */
 .model {
@@ -253,8 +250,8 @@ body {
     height: 300px;
     margin: 315px 0 0 100px;
     transform: translate(-50%, -50%);
-    background-color: lightblue;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.404);
+    background-color: #f3fbfe;
+    box-shadow: inset -1px 2px 10px 0 rgba(0, 0, 0, 0.404);
     border-radius: 6px;
     user-select: none;
     overflow: auto;
@@ -263,15 +260,16 @@ body {
 }
 
 .model-body h4 {
+    color: #ffffffcc;
     font-size: 16px;
     padding-left: 11px;
     margin: 5px 0 0 0px;
 }
 
 .model-body h5 {
-    font-size: 14px;
-    padding-left: 11px;
-    margin: 5px 0 0 15px;
+    font-size: 15px;
+    padding-left: 6px;
+    margin: 8px 0 0 10px;
 }
 
 .model-body p {
@@ -282,19 +280,15 @@ body {
 }
 
 .model-body legend {
-    font-size: 28px;
+    font-size: 21px;
     font-weight: bold;
     position: absolute;
-    top: 1px;
-    right: 1px;
+    top: 5px;
+    right: 0px;
     width: 30px;
     height: 30px;
     text-align: center;
     line-height: 30px;
-    /* border-radius: 50%;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.404); */
-    /* background-color: #d48c8c; */
-    cursor: pointer;
 }
 
 #model-details {

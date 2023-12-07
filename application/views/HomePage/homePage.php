@@ -158,10 +158,14 @@
     <!-- nav ends here -->
 
 
-<br>
+    <br>
     <div class="row">
+        <!-- MAP -->
         <div id="map" class="col-10"></div>
-        <div id="ObservationContainer" class="hidden col-2">
+
+        <!-- OBSERVATION -->
+        <div id="ObservationContainer" class="obsClass hidden col-2">
+            <h4>OBSERVATION</h4>
             <!-- model -->
             <form id="myForm">
                 <div>
@@ -187,14 +191,13 @@
 
 
                 <div>
-                    <!-- Date -->
-                    <label for="start_date" class="dateDDLabel">Start Date:</label>
-                    <input type="date" id="start_date" onchange="logSelectedDate()" class="dateDD">
+                    <label for="start_date" class="dateDDLabel">From Date:</label>
+                    <input type="date" id="start_date" class="dateDD">
                 </div>
                 <span>&nbsp;</span>
                 <div>
-                    <label for="end_date" class="dateDDLabel">End Date:</label>
-                    <input type="date" id="end_date" onchange="logSelectedDate()" class="dateDD">
+                    <label for="end_date" class="dateDDLabel">To Date:</label>
+                    <input type="date" id="end_date" class="dateDD">
                 </div>
                 <span>&nbsp;</span>
                 <div>
@@ -209,14 +212,11 @@
                 <span>&nbsp;</span>
                 </select>
             </form>
-
             <!-- Submit -->
             <div>
                 <button id="submitButton" onclick="submitForm()" class="submitBtn">Submit</button>
             </div>
         </div>
-
-        </form>
     </div>
     </div>
 
@@ -226,8 +226,9 @@
     <div class="model" style="display: none; left: 253px; top: 94px; height:0;">
         <div class="model-body" style="position: relative;">
             <div
-                style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 10px; border-radius: 10px; align-items: center;">
-                <legend style="font-size: 12px; cursor: pointer;">❌</legend>
+                style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px; align-items: center;">
+                <legend style="cursor: pointer;color: #83ffee;">X</legend>
+                <!-- <legend style="font-size: 12px; cursor: pointer;">❌</legend> -->
                 <h4 style="margin: 0 auto;">Selected Parameters</h4>
             </div>
 
@@ -246,15 +247,15 @@
             <div style="display: flex; flex-wrap: wrap;">
                 <!-- Exposure -->
                 <div id="ExposureRow" style="display: none; ">
-                    <h4 id="EXPOSURE" style=" border-radius: 8px; background-color: yellow;  text-align: center;">
+                    <h4 id="EXPOSURE" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
                         EXPOSURE
                     </h4>
-                    <h5 id="exposure-layers-Title" style="color: red;"></h5>
+                    <h5 id="exposure-layers-Title" style="color: #000000;"></h5>
                     <p id="exposure-layers-lists" style="display: flex; flex-wrap: wrap;">
                 </div>
 
                 <!-- METAR -->
-                <div  id="METAR_Row">
+                <div id="METAR_Row">
                     <!-- <div class="col-5"> -->
                     <!-- HomePage-Lightning -->
                     <h4 id="METAR" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>

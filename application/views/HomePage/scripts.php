@@ -1413,25 +1413,6 @@ function showSubParameterNames(value) {
     getsubparameterNames.innerHTML = pushsubparameterNames;
 }
 
-//DATE
-function startDate() {
-    // Get the date input element
-    var dateInput = document.getElementById('start_date');
-
-    // Get the selected date value
-    var selectedStart_Date = dateInput.value;
-    console.log('selectedStart_Date:', selectedStart_Date);
-}
-
-function endDate() {
-    // Get the date input element
-    var dateInput = document.getElementById('end_Date');
-
-    // Get the selected date value
-    var selectedEnd_Date = dateInput.value;
-    console.log('selectedEnd_Date:', selectedEnd_Date);
-}
-
 //time UTC
 //hr HS-hourSelect
 let getHourSelect = document.getElementById("hourSelect");
@@ -1454,18 +1435,18 @@ function submitForm() {
     let model_Names = document.getElementById('modelNames').value;
     let parameter_Names = document.getElementById('parameterNames').value;
     let sub_parameter = document.getElementById('subparameter').value;
-    let startdate = document.getElementById('start_date').value;
-    let enddate = document.getElementById('end_date').value;
+    let fromDate = document.getElementById('start_date').value;
+    let toDate = document.getElementById('end_date').value;
     let hour_Select = document.getElementById('hourSelect').value;
     let minute_Select = document.getElementById('minuteSelect').value;
 
-    console.log('model_Names:', model_Names,
-        'parameter_Names:', parameter_Names,
-        'sub_parameter:', sub_parameter,
-        'startdate:', startdate,
-        'end_date:', enddate,
-        'hour_Select:', hour_Select,
-        'minuteSelect:', minute_Select);
+    let message = "Model: " + model_Names + "\n" +
+        "Parameter: " + parameter_Names + "\n" +
+        "SubParameter: " + sub_parameter + "\n" +
+        "Start Date: " + fromDate + "\n" +
+        "End Date: " + toDate + "\n" +
+        "Time: " + hour_Select + ":" + minute_Select;
+    alert(message);
 }
 
 //leaflet starts here
@@ -1734,7 +1715,7 @@ var LegendButton = L.Control.extend({
 });
 map.addControl(new LegendButton());
 
-// // Create a custom control button for ObservationButton
+// Create a custom control button for ObservationButton
 var ObservationButton = L.Control.extend({
     options: {
         position: 'topleft'
@@ -1752,6 +1733,25 @@ var ObservationButton = L.Control.extend({
     }
 });
 map.addControl(new ObservationButton());
+
+// Create a custom control button for ObservationButton
+var MacroButton = L.Control.extend({
+    options: {
+        position: 'topleft'
+    },
+    onAdd: function() {
+        var macbtn = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
+        macbtn.innerHTML = 'Macro';
+        //click event
+        L.DomEvent.on(macbtn, 'click', function() {
+            alert('MACRO Button clicked!');
+            // toggleObservation();
+        });
+
+        return macbtn;
+    }
+});
+map.addControl(new MacroButton());
 // ************
 
 // Custom Control
