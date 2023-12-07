@@ -7277,7 +7277,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP03UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -7292,7 +7292,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP03UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -7323,7 +7323,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP03UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -7367,7 +7367,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP03UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -7422,7 +7422,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP03UTCLists.push(
-                      `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
@@ -7445,7 +7445,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP06UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -7460,7 +7460,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP06UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -7491,7 +7491,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP06UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -7535,7 +7535,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP06UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -7590,7 +7590,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP06UTCLists.push(
-                      `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
@@ -7613,7 +7613,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP09UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -7628,7 +7628,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP09UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -7659,7 +7659,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP09UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -7703,7 +7703,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP09UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -7758,7 +7758,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP09UTCLists.push(
-                      `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
@@ -7781,7 +7781,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP12UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -7796,7 +7796,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP12UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -7827,7 +7827,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP12UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -7871,7 +7871,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP12UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -7926,7 +7926,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP12UTCLists.push(
-                      `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
@@ -7949,7 +7949,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP15UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -7964,7 +7964,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP15UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -7995,7 +7995,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP15UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -8039,7 +8039,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP15UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -8094,7 +8094,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP15UTCLists.push(
-                      `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
@@ -8117,7 +8117,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP18UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -8132,7 +8132,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP18UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -8163,7 +8163,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP18UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -8207,7 +8207,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP18UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -8262,7 +8262,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP18UTCLists.push(
-                      `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
@@ -8285,7 +8285,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP21UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -8300,7 +8300,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP21UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -8331,7 +8331,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP21UTCLists.push(
-                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -8375,7 +8375,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP21UTCLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -8430,7 +8430,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP21UTCLists.push(
-                      `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
@@ -11231,6 +11231,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP00UTC_lists.innerHTML == '') {
+            panelLayerSYNOP00UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP00UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
 
         if (uncheckLayer == 'SYNOP 03UTC TEMPERATURE') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -11298,6 +11308,15 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP03UTC_lists.innerHTML == '') {
+            panelLayerSYNOP03UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP03UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'SYNOP 06UTC TEMPERATURE') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -11365,6 +11384,15 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP06UTC_lists.innerHTML == '') {
+            panelLayerSYNOP06UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP06UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'SYNOP 09UTC TEMPERATURE') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -11430,6 +11458,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
 
+        }
+
+        if (panelLayerSYNOP09UTC_lists.innerHTML == '') {
+            panelLayerSYNOP09UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP09UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
 
@@ -11499,6 +11537,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP12UTC_lists.innerHTML == '') {
+            panelLayerSYNOP12UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP12UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
 
         if (uncheckLayer == 'SYNOP 15UTC TEMPERATURE') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -11564,6 +11612,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
 
+        }
+
+        if (panelLayerSYNOP15UTC_lists.innerHTML == '') {
+            panelLayerSYNOP15UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP15UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
 
@@ -11633,6 +11691,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP18UTC_lists.innerHTML == '') {
+            panelLayerSYNOP18UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP18UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
 
         if (uncheckLayer == 'SYNOP 21UTC TEMPERATURE') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -11700,6 +11768,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP21UTC_lists.innerHTML == '') {
+            panelLayerSYNOP21UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP21UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         // RADAR UNCHECk
         if (uncheckLayer == 'Radar Products Radar Reflectivity') {
             clickedRADARPRODUCTSLists = clickedRADARPRODUCTSLists.filter(checkList => {
@@ -11716,6 +11794,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
         }
 
+        if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
+            panelLayerRADARPRODUCTS_Title.innerHTML = '';
+            RADARPRODUCTS.innerHTML = '';
+        }
+
+        if (panelLayerRADARPRODUCTS_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         // Satellite Observation UNCHECk
         if (uncheckLayer == 'Satellite Observation TIR1') {
@@ -11799,6 +11886,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
+            panelLayerRADARPRODUCTS_Title.innerHTML = '';
+            SATELLITE.innerHTML = '';
+        }
+
+        if (panelLayerRADARPRODUCTS_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         // Lightining Uncheck
         if (uncheckLayer == 'Lightning Last 00-05 min') {
             clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
@@ -11837,6 +11934,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
         }
 
+        if (panelLayerLIGHTINING_lists.innerHTML == '') {
+            panelLayerLIGHTINING_Title.innerHTML = '';
+            LIGHTINING.innerHTML = '';
+        }
+
+        if (panelLayerLIGHTINING_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         // SOUNDING UNCHECK
         if (uncheckLayer == 'SOUNDING_00_UTC WIND 1000 hpa WIND') {
@@ -11896,6 +12002,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
         }
 
+        if (panelLayerSOUNDING00UTCWIND_lists.innerHTML == '') {
+            panelLayerSOUNDING00UTCWIND_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING00UTCWIND_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'SOUNDING_12_UTC WIND 1000 hpa WIND') {
             clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11951,6 +12067,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+
+        if (panelLayerSOUNDING12UTCWIND_lists.innerHTML == '') {
+            panelLayerSOUNDING12UTCWIND_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING12UTCWIND_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'SOUNDING_00UTC TEMP 1000 hpa TEMP') {
@@ -12010,6 +12136,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
         }
 
+        if (panelLayerSOUNDING00UTCTEMP_lists.innerHTML == '') {
+            panelLayerSOUNDING00UTCTEMP_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING00UTCTEMP_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'SOUNDING_12UTC TEMP 1000 hpa TEMP') {
             clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12065,6 +12201,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+
+        if (panelLayerSOUNDING12UTCTEMP_lists.innerHTML == '') {
+            panelLayerSOUNDING12UTCTEMP_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING12UTCTEMP_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 1000 hpa DEW POINT') {
@@ -12124,6 +12270,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
         }
 
+        if (panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML == '') {
+            panelLayerSOUNDING00UTCDEWPOINT_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 1000 hpa DEW POINT') {
             clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12181,6 +12337,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
         }
 
+        if (panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML == '') {
+            panelLayerSOUNDING12UTCDEWPOINT_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         // SHIPANDBUOY UNCHECK
         if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 00UTC') {
@@ -12350,6 +12515,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+
+        if (panelLayerSHIPANDBUOY_lists.innerHTML == '') {
+            panelLayerSHIPANDBUOY_Title.innerHTML = '';
+            SHIPANDBUOY.innerHTML = '';
+        }
+
+        if (panelLayerSHIPANDBUOY_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'WRF Reflectivity Next 03 Hrs') {
