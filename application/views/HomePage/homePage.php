@@ -3,14 +3,14 @@
 
 <head>
     <title>IMD_DSS</title>
+    <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/arrows-expand-right-alt.css' rel='stylesheet'>
-
     <!-- Include Leaflet CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <!-- leaflet-draw CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
     <!-- Include Leaflet fullscreen CSS -->
@@ -26,15 +26,20 @@
         rel="stylesheet">
     <!-- leaflet-panel-layers -->
     <link href="
-https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layers.min.css
-" rel="stylesheet">
+    https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layers.min.css
+    " rel="stylesheet">
+    <!-- leaflet time dimensions -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.min.css" />
+    <!-- Leaflet Side-by-Side CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
     <!-- Include Leaflet JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- Include Leaflet fullscreen JS-->
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
     <!-- leaflet-draw JS -->
@@ -48,17 +53,34 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
     </script>
     <!-- leaflet-panel-layers -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layers.min.js"></script>
-    <!-- leaflet-heat-layers -->
-    <!-- <script src="https://unpkg.com/esri-leaflet-geocoder/dist/esri-leaflet-geocoder.js"></script> -->
-    <!-- <script src="leaflet-heat.js"></script>
-    <script src="esri-leaflet-geocoder.js"></script> -->
     <!-- Leaflet AJAX plugin -->
     <script src="https://unpkg.com/leaflet-ajax@2.1.0/dist/leaflet.ajax.js"></script>
     <!-- jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
+    <!-- leaflet time dimensions -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.js">
+    </script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.util.js">
+    </script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.js">
+    </script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.wms.js"></script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.geojson.js"></script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.player.js"></script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/examples/js/extras/leaflet.timedimension.circlelabelmarker.js">
+    </script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/examples/js/extras/leaflet.timedimension.layer.wms.timeseries.js">
+    </script>
+    <!-- leaflet-side-by-side -->
+    <script src="https://lab.digital-democracy.org/leaflet-side-by-side/leaflet-side-by-side.js"></script>
     <!-- adding css -->
     <?php $this->load->view('HomePage/style'); ?>
 
@@ -67,8 +89,9 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 <body>
     <!-- nav start here -->
     <div style="width: 100%;" class="mx-auto">
-        <div class="text-end pr-2">
-            <span class="minsistry-text">WEATHER DECISION SUPPORT SYSTEM</span>
+        <div class="text-end" style="
+    padding-bottom: 0.5em;">
+            <span class="mr-3 text">WEATHER DECISION SUPPORT SYSTEM</span>
         </div>
     </div>
 
@@ -79,7 +102,7 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
         </div> -->
 
     <!-- navbar -->
-    <div style="width: 100%; margin-bottom:1em; background-color:#fff;" class="mx-auto">
+    <div style="width: 100%; margin-bottom:1em; background-color:#f4fcff;" class="mx-auto">
         <div style="display:flex;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto heightChange">
             <div style="width: 100%;display: flex;">
                 <div class="d-flex flex-wrap w-100 gx-3 gy-3 mt-1" id="parent" style="justify-content: space-between">
@@ -128,112 +151,74 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
                         <p class="btn-val">Export Polygon</p>
                         <div class="underline"></div>
                     </button>
-                    <!-- <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                        <p class="btn-val" onclick="toggleObservation()">Observation
-                        </p>
-                        <div class="underline"></div>
-                    </button> -->
                 </div>
             </div>
-            <!-- <div style="width:12%; flex-direction:column;padding-top: 0.5em;" class="d-flex expo-polygon-parent btn">
-                <p class="exp_poly " id="export_polygon">Export Polygon</p>
-            </div>
-
-            <div style="width:12%; flex-direction:column; padding-top: 0.5em; margin-left:0.6em;"
-                class="d-flex expo-polygon-parent btn">
-                <p class="exp_poly " id="export_polygon" onclick="toggleObservation()">OBSERVATION</p>
-            </div> -->
-            <!-- <div class="row optionsMap" style="display: contents;"> -->
-            <!-- <button id="observationBtn expo-polygon-parent btn" style="margin-left:0.6em; text-align:center;color:#fff;width:12%; flex-direction:column;padding-top: 0.5em;" class="d-flex expo-polygon-parent btn"  onclick="toggleObservation()">OBSERVATION</button> -->
-            <!-- </div> -->
         </div>
     </div>
     <!-- nav ends here -->
-    <!-- <div id="particles-js"></div> -->
-
-    <!--Observation BTN , LEAFLETJS -->
-
-    <!-- </br> -->
-    <!-- <div class="row"> -->
-    <!-- <div class="col-9" style="z-index: 999;"> -->
-    <!-- </div>
-            <div class="col-3">
-                <div class=" wrapper bar" onclick="toggleFunction()">
-                    <i class="gg-arrows-expand-right-alt"></i>
-                </div>
-                <div id="toggleImage">
-                    <img id="legend1" src="http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png" alt="legend"
-                        class="legend1" />
-                    <img id="legend2" src="http://103.215.208.18/dwr_img/GIS/legend/hrrr_final.png" alt="legend"
-                        class="legend2" />
-                </div>
-
-            </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
-
-    <!-- style="width: 7em;color: #00aa55; background-color:#00aa55 ; cursor: pointer;border: none;height: 2em;margin-top: 2px;margin-left: 1.35em; margin-bottom:2px;color: white;" -->
-
-    <!-- <button id="popup" class="submitBtn">Legend</button> -->
 
     <div class="row">
         <div id="map" class="col-10"></div>
         <div id="ObservationContainer" class="hidden col-2">
             <!-- model -->
-            <div>
-                <label for="modelNames" class="firstDDLabel">Model:</label>
-                <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
-                </select>
-            </div>
-            <span>&nbsp;</span>
-            <!-- parameter -->
-            <div>
-                <label for="parameter" class="secondDDLabel">parameter:</label>
-                <select class="secondDD" id="parameterNames" class="dropdownSelect"
-                    onchange="showSubParameterNames(this.value)" &nbsp;>
-                </select>
-            </div>
-            <span>&nbsp;</span>
-            <!-- SubParameter -->
-            <div>
-                <label for="subparameter" class="thirdDDLabel">SubParameter</label>
-                <select class="thirdDD" id="subparameter" class="dropdownSelect" &nbsp;>
-                </select>
-            </div>
-            <span>&nbsp;</span>
+            <form id="myForm">
+                <div>
+                    <label for="modelNames" class="firstDDLabel">Model:</label>
+                    <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
+                    </select>
+                </div>
+                <span>&nbsp;</span>
+                <!-- parameter -->
+                <div>
+                    <label for="parameter" class="secondDDLabel">parameter:</label>
+                    <select class="secondDD" id="parameterNames" onchange="showSubParameterNames(this.value)" &nbsp;>
+                    </select>
+                </div>
+                <span>&nbsp;</span>
+                <!-- SubParameter -->
+                <div>
+                    <label for="subparameter" class="thirdDDLabel">SubParameter</label>
+                    <select class="thirdDD" id="subparameter" &nbsp;>
+                    </select>
+                </div>
+                <span>&nbsp;</span>
 
 
-            <div>
-                <!-- Date -->
-                <label for="start_date" class="dateDDLabel">Start Date:</label>
-                <input type="date" id="start_date" onchange="logSelectedDate()" class="dateDD">
-            </div>
-            <span>&nbsp;</span>
-            <div>
-                <label for="end_date" class="dateDDLabel">End Date:</label>
-                <input type="date" id="end_date" onchange="logSelectedDate()" class="dateDD">
-            </div>
-            <span>&nbsp;</span>
-            <div>
-                <span style="display: contents;">
-                    <label for="hourSelect" class="TimeLabel">Time:</label>
-                    <select id="hourSelect" class="TimeHR">
-                    </select>
-                    <select id="minuteSelect" class="TimeMin">
-                    </select>
-                </span>
-            </div>
-            </select>
+                <div>
+                    <!-- Date -->
+                    <label for="start_date" class="dateDDLabel">Start Date:</label>
+                    <input type="date" id="start_date" onchange="logSelectedDate()" class="dateDD">
+                </div>
+                <span>&nbsp;</span>
+                <div>
+                    <label for="end_date" class="dateDDLabel">End Date:</label>
+                    <input type="date" id="end_date" onchange="logSelectedDate()" class="dateDD">
+                </div>
+                <span>&nbsp;</span>
+                <div>
+                    <span style="display: contents;">
+                        <label for="hourSelect" class="TimeLabel">Time:</label>
+                        <select id="hourSelect" class="TimeHR">
+                        </select>
+                        <select id="minuteSelect" class="TimeMin">
+                        </select>
+                    </span>
+                </div>
+                <span>&nbsp;</span>
+                </select>
+            </form>
 
             <!-- Submit -->
-            <button id="submitButton" onclick="submitForm()" class="submitBtn">Submit</button>
+            <div>
+                <button id="submitButton" onclick="submitForm()" class="submitBtn">Submit</button>
+            </div>
         </div>
 
         </form>
     </div>
     </div>
 
-    <div style="background-color: white;">Legend2</div>
+    <div style="background-color: white;">Model's Time Update</div>
 
     <!-- model popup -->
     <div class="model" style="display: none; left: 253px; top: 94px; height:0;">
@@ -343,13 +328,6 @@ https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layer
 
                     <h5 id="METAR23UTC-Title" style="color: red;"></h5>
                     <p id="METAR23UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-                    <!-- METAR01UTC -->
-                    <!-- <h5 id="METAR01UTC-Title"></h5>
-                        <p id="METAR01UTC-lists"></p> -->
-                    <!-- </div> -->
-                    <!-- <div class="col-7">
-                        <img id="legendModelMetar" alt="legendMetar" style="width: 72%; height: 35vh;" />
-                    </div> -->
                 </div>
 
                 <!-- SYNOP -->

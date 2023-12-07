@@ -1451,40 +1451,103 @@ getMinSelect.innerHTML = pushMinSelect;
 
 //submitForm
 function submitForm() {
-    let source = document.getElementById('source');
-    let parameter = document.getElementById('parameter');
-    let subparameter = document.getElementById('subparameter');
-    let start_date = document.getElementById('start_date');
-    let end_date = document.getElementById('end_date');
-    let timeInput = document.getElementById('timeInput');
+    let model_Names = document.getElementById('modelNames').value;
+    let parameter_Names = document.getElementById('parameterNames').value;
+    let sub_parameter = document.getElementById('subparameter').value;
+    let startdate = document.getElementById('start_date').value;
+    let enddate = document.getElementById('end_date').value;
+    let hour_Select = document.getElementById('hourSelect').value;
+    let minute_Select = document.getElementById('minuteSelect').value;
 
-    console.log('source:', source,
-        'parameter:', parameter,
-        'subparameter:', subparameter,
-        'start_date:', start_date,
-        'end_date:', end_date,
-        'timeInput:', timeInput);
+    console.log('model_Names:', model_Names,
+        'parameter_Names:', parameter_Names,
+        'sub_parameter:', sub_parameter,
+        'startdate:', startdate,
+        'end_date:', enddate,
+        'hour_Select:', hour_Select,
+        'minuteSelect:', minute_Select);
 }
-//
-
-//toggleFunction for legend
-// function toggleFunction() {
-//     var x = document.getElementById("toggleImage");
-//     var toggleMap = document.getElementById("map");
-//     if (x.style.display === "none") {
-//         x.style.display = "block";
-//         toggleMap.style.width = "95%";
-//     } else {
-//         x.style.display = "none";
-//         toggleMap.style.width = "130%";
-//     }
-
-// };
 
 //leaflet starts here
-const map = L.map('map', {
-    cursor: true,
-}).setView([22.79459, 80.06406], 5);
+// const map = L.map('map', {
+//     cursor: true,
+//     timeDimension: true,
+//     timeDimensionOptions: {
+//         timeInterval: "2023-12-04/2023-12-04",
+//         validTimeRange: "00:00/23:00",
+//         period: "PT1H"
+//     },
+//     timeDimensionControl: true
+// }).setView([22.79459, 80.06406], 5);
+
+//leaflet starts here
+var today = new Date();
+var today_month = today.getMonth() + 1;
+var date = today.getFullYear() + '-' + today_month + '-' + today.getDate();
+var time = today.getHours() + ":00:00";
+var time = '00:00:00';
+var dateTime = date + ' ' + time;
+
+var startDate = new Date(dateTime);
+// console.log("startDate::" + startDate);
+
+var endDate_TM = new Date();
+endDate_TM.setDate(endDate_TM.getDate() + 1);
+endDate_TM.setUTCMinutes(0, 0, 0);
+// console.log("endDate_TM:::" + endDate_TM);
+
+//MAP
+var map = L.map('map', {
+    zoom: 5,
+    timeDimension: true,
+    timeDimensionControl: true,
+    timeDimensionOptions: {
+        timeInterval: "2023-12-05/2023-12-06",
+        period: "PT1H",
+        validTimeRange: "00:00/23:00",
+        currentTime: startDate
+    },
+
+    timeDimensionControlOptions: {
+        autoPlay: false,
+        playerOptions: {
+            buffer: 10,
+            transitionTime: 500,
+            loop: true,
+        }
+    },
+    center: [22.79459, 80.06406],
+});
+Date.prototype.format = function(mask, utc) {
+    return dateFormat(this, mask, utc);
+};
+
+L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
+    _getDisplayDateFormat: function(date) {
+        return moment(date).format("LL h A");
+    }
+});
+var timeDimensionControl = new L.Control.TimeDimensionCustom({
+    autoPlay: false,
+    playerOptions: {
+        buffer: 10,
+        transitionTime: 500,
+        loop: true,
+    }
+});
+
+//imd geoserver
+const mywmsNcum1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:LLWS_12hr_fcst_FL',
+    format: 'image/png',
+    transparent: true,
+    attribution: "LLWS_12hr_fcst_FL",
+    opacity: 0.8,
+    layerName: "mywmsNcum"
+});
+
+var tdWmsLayer = L.timeDimension.layer.wms(mywmsNcum1);
+mywmsNcum1.addTo(map);
 
 // Add the GeoJSON data to the map
 _dist_geojson = "<?php echo base_url(); ?>DATA/INDIA_COUNTRY.json";
@@ -1510,10 +1573,8 @@ function toggleObservation() {
     var map = document.getElementById('map');
     var isHidden = observationContainerFn.classList.contains('hidden');
     observationContainerFn.classList.toggle('hidden');
-    map.style.width = isHidden ? '80%' : '99%';
+    map.style.width = isHidden ? '83%' : '99%';
 }
-var observationContainerFn = document.getElementById("ObservationContainer");
-observationContainerFn.addEventListener('click', toggleObservation);
 
 //
 const OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1555,6 +1616,36 @@ const darkGreyCanvas = L.tileLayer(
 );
 // darkGreyCanvas.addTo(map);
 
+// 
+const mywmsIITM = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:awssample',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "awssample",
+    layerName: "mywmsIITM"
+});
+
+const mywmsNcum = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:LLWS_12hr_fcst_FL',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "LLWS_12hr_fcst_FL",
+    layerName: "mywmsNcum"
+});
+
+const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+    layers: 'aasdagrometgis:Nowcast',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Nowcast",
+    layerName: "mywmsNowcast"
+});
+
+//Leaflet-sideBySide
+L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast).addTo(map);
 
 //leaflet Fullscreen
 map.addControl(new L.Control.Fullscreen({
@@ -1619,8 +1710,9 @@ L.control.mousePosition({
 }).addTo(map);
 
 //add map scale
-L.control.scale().addTo(map);
+// L.control.scale().addTo(map);
 
+// ************
 // Create a custom control button for model popup
 var LegendButton = L.Control.extend({
     options: {
@@ -1628,7 +1720,7 @@ var LegendButton = L.Control.extend({
     },
     onAdd: function() {
         // Create a button element
-        var button = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+        var button = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
         button.innerHTML = 'Legend';
         button.id = 'popup';
         //click event listener
@@ -1640,13 +1732,13 @@ var LegendButton = L.Control.extend({
 });
 map.addControl(new LegendButton());
 
-// Create a custom control button for ObservationButton
+// // Create a custom control button for ObservationButton
 var ObservationButton = L.Control.extend({
     options: {
         position: 'topleft'
     },
     onAdd: function() {
-        var obsbtn = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+        var obsbtn = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
         obsbtn.innerHTML = 'Observation';
         //click event
         L.DomEvent.on(obsbtn, 'click', function() {
@@ -1658,6 +1750,28 @@ var ObservationButton = L.Control.extend({
     }
 });
 map.addControl(new ObservationButton());
+// ************
+
+// Custom Control
+// var customControl = L.control({
+//     position: 'topleft'
+// });
+
+// customControl.onAdd = function(map) {
+//     var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+
+//     container.innerHTML = '<div class="custom-buttons-container">' +
+//         '<div class="custom-button" onclick="alert(\'Legend!\')">Legend</div>' +
+//         '<div class="custom-button" onclick="observationBtn()">Observation</div>' +
+//         '<div class="custom-button" onclick="alert(\'Button 3 clicked!\')">Button</div>' +
+//         '</div>';
+
+//     return container;
+// };
+
+// customControl.addTo(map);
+
+
 
 // Add a marker for Delhi
 var delhiMarker = L.marker([28.6139, 77.2090]);
@@ -1735,7 +1849,7 @@ BobbiliMarker.bindPopup("<b>Bobbili</b>").openPopup();
 // var BobbiliMarker = L.marker([18.5697, 83.3666]);
 // BobbiliMarker.bindPopup("<b>Bobbili</b>").openPopup();
 
-
+// mywmsIITM mywmsNcum mywmsNowcast
 const overLayers = [{
         group: "Lightning",
         collapsed: true,
@@ -1743,17 +1857,20 @@ const overLayers = [{
                 active: false,
                 name: "Last 00-05 min",
                 class: "Last 00-05 min",
-                layer: delhiMarker,
+                layer: mywmsIITM,
+                // layer: delhiMarker,
             },
             {
                 active: false,
                 name: "Last 05-10 min",
-                layer: jaipurMarker,
+                layer: mywmsNcum,
+                // layer: jaipurMarker,
             },
             {
                 active: false,
                 name: "Last 10-15 min",
-                layer: bhopalMarker,
+                layer: mywmsNowcast,
+                // layer: bhopalMarker,
             },
         ]
     },
@@ -4168,8 +4285,8 @@ function clickHandler_synop(event_synop) {
     const currentColorsynop = targetElement_synop.style.backgroundColor;
 
     if (event_synop.target && event_synop.target.id == "synop") {
-        if (currentColorsynop === 'rgb(165, 175, 198)') { // highlighted color
-            targetElement_synop.style.backgroundColor = '#ffffff'; // Reset to default color
+        if (currentColorsynop === 'rgb(180, 194, 224)') { // highlighted color
+            targetElement_synop.style.backgroundColor = '#eff4ff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4182,7 +4299,7 @@ function clickHandler_synop(event_synop) {
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
         } else {
-            targetElement_synop.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
+            targetElement_synop.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers3);
             map.removeControl(panelLayers4);
@@ -4207,8 +4324,8 @@ function clickHandler_metar(event_metar) {
     const currentColormetar = targetElement_metar.style.backgroundColor;
 
     if (event_metar.target && event_metar.target.id == "metar") {
-        if (currentColormetar === 'rgb(165, 175, 198)') { // highlighted color
-            targetElement_metar.style.backgroundColor = '#ffffff'; // Reset to default color
+        if (currentColormetar === 'rgb(180, 194, 224)') { // highlighted color
+            targetElement_metar.style.backgroundColor = '#eff4ff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4221,7 +4338,7 @@ function clickHandler_metar(event_metar) {
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
         } else {
-            targetElement_metar.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
+            targetElement_metar.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers4);
@@ -4246,9 +4363,9 @@ function clickHandler_mesolscale(event_mesolscale) {
     const currentColormesolscale = targetElement_mesolscale.style.backgroundColor;
 
     if (event_mesolscale.target && event_mesolscale.target.id == "mesolscale") {
-        if (currentColormesolscale === 'rgb(165, 175, 198)') { // highlighted color
+        if (currentColormesolscale === 'rgb(180, 194, 224)') { // highlighted color
             targetElement_mesolscale.style.backgroundColor =
-                '#ffffff'; // Reset to default color
+                '#eff4ff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4261,7 +4378,7 @@ function clickHandler_mesolscale(event_mesolscale) {
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
         } else {
-            targetElement_mesolscale.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
+            targetElement_mesolscale.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4286,8 +4403,8 @@ function clickHandler_medium(event_medium) {
     const currentColormedium = targetElement_medium.style.backgroundColor;
 
     if (event_medium.target && event_medium.target.id == "medium_range") {
-        if (currentColormedium === 'rgb(165, 175, 198)') { // highlighted color
-            targetElement_medium.style.backgroundColor = '#ffffff'; // Reset to default color
+        if (currentColormedium === 'rgb(180, 194, 224)') { // highlighted color
+            targetElement_medium.style.backgroundColor = '#eff4ff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4300,7 +4417,7 @@ function clickHandler_medium(event_medium) {
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
         } else {
-            targetElement_medium.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
+            targetElement_medium.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4325,9 +4442,9 @@ function clickHandler_satellite(event_satellite) {
     const currentColorsatellite = targetElement_satellite.style.backgroundColor;
 
     if (event_satellite.target && event_satellite.target.id == "satellite") {
-        if (currentColorsatellite === 'rgb(165, 175, 198)') { // highlighted color
+        if (currentColorsatellite === 'rgb(180, 194, 224)') { // highlighted color
             targetElement_satellite.style.backgroundColor =
-                '#ffffff'; // Reset to default color
+                '#eff4ff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4340,7 +4457,7 @@ function clickHandler_satellite(event_satellite) {
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
         } else {
-            targetElement_satellite.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
+            targetElement_satellite.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4365,8 +4482,8 @@ function clickHandler_radar(event_radar) {
     const currentColorradar = targetElement_radar.style.backgroundColor;
 
     if (event_radar.target && event_radar.target.id == "radar") {
-        if (currentColorradar === 'rgb(165, 175, 198)') { // highlighted color
-            targetElement_radar.style.backgroundColor = '#ffffff'; // Reset to default color
+        if (currentColorradar === 'rgb(180, 194, 224)') { // highlighted color
+            targetElement_radar.style.backgroundColor = '#eff4ff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4379,7 +4496,7 @@ function clickHandler_radar(event_radar) {
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
         } else {
-            targetElement_radar.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
+            targetElement_radar.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4404,9 +4521,9 @@ function clickHandler_lightning(event_lightning) {
     const currentColorlightning = targetElement_lightning.style.backgroundColor;
 
     if (event_lightning.target && event_lightning.target.id == "lightning") {
-        if (currentColorlightning === 'rgb(165, 175, 198)') { // highlighted color
+        if (currentColorlightning === 'rgb(180, 194, 224)') { // highlighted color
             targetElement_lightning.style.backgroundColor =
-                '#ffffff'; // Reset to default color
+                '#eff4ff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4419,7 +4536,7 @@ function clickHandler_lightning(event_lightning) {
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
         } else {
-            targetElement_lightning.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
+            targetElement_lightning.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4444,9 +4561,9 @@ function clickHandler_sounding(event_sounding) {
     const currentColorsounding = targetElement_sounding.style.backgroundColor;
 
     if (event_sounding.target && event_sounding.target.id == "sounding") {
-        if (currentColorsounding === 'rgb(165, 175, 198)') { // highlighted color
+        if (currentColorsounding === 'rgb(180, 194, 224)') { // highlighted color
             targetElement_sounding.style.backgroundColor =
-                '#ffffff'; // Reset to default color
+                '#eff4ff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4459,7 +4576,7 @@ function clickHandler_sounding(event_sounding) {
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
         } else {
-            targetElement_sounding.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
+            targetElement_sounding.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4484,8 +4601,8 @@ function clickHandler_expo(event_expo) {
     const currentColorexpo = targetElement_expo.style.backgroundColor;
 
     if (event_expo.target && event_expo.target.id == "exposure") {
-        if (currentColorexpo === 'rgb(165, 175, 198)') { // highlighted color
-            targetElement_expo.style.backgroundColor = '#ffffff'; // Reset to default color
+        if (currentColorexpo === 'rgb(180, 194, 224)') { // highlighted color
+            targetElement_expo.style.backgroundColor = '#eff4ff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4498,7 +4615,7 @@ function clickHandler_expo(event_expo) {
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
         } else {
-            targetElement_expo.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
+            targetElement_expo.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4524,8 +4641,8 @@ function clickHandler_ship(event_ship) {
     const currentColorship = targetElement_ship.style.backgroundColor;
 
     if (event_ship.target && event_ship.target.id == "ship_and_buoy") {
-        if (currentColorship === 'rgb(165, 175, 198)') { // highlighted color
-            targetElement_ship.style.backgroundColor = '#ffffff'; // Reset to default color
+        if (currentColorship === 'rgb(180, 194, 224)') { // highlighted color
+            targetElement_ship.style.backgroundColor = '#eff4ff'; // Reset to default color
             map.addControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4538,7 +4655,7 @@ function clickHandler_ship(event_ship) {
             map.removeControl(panelLayers11);
             map.removeControl(panelLayers10);
         } else {
-            targetElement_ship.style.backgroundColor = 'rgb(165, 175, 198)'; // highlighted color
+            targetElement_ship.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
             map.removeControl(panelLayers);
             map.removeControl(panelLayers2);
             map.removeControl(panelLayers3);
@@ -4709,7 +4826,7 @@ let panelLayerSHIPANDBUOY_Title = document.querySelector('#SHIPANDBUOY-Title')
 let panelLayerSHIPANDBUOY_lists = document.querySelector('#SHIPANDBUOY-lists')
 
 document.querySelectorAll('#popup').forEach(function(openModel) {
-    console.log(openModel, "__openModel");
+    // console.log(openModel, "__openModel");
     openModel.onclick = () => {
         console.log("openModel working!!!");
         model.style.display = 'block';
@@ -4778,35 +4895,6 @@ $("body").on("change", "input[type=checkbox]", function() {
         console.log("Checked");
         //HomePage_Lightning
         if (_this.context._layer.group.name == "Lightning") {
-
-            // if (panelLayerLightningTitle.innerHTML == '') {
-            //     panelLayerLightningTitle.innerHTML = _this.context._layer.group.name + ':';
-            //     // legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-            //     // legendModel1.style.height = '35vh';
-            //     // legendModel1.style.width = '72%';
-            //     Light_RadarRow.style.display = 'block';
-            // }
-
-            // if (layer_name == 'Last 00-05 min') {
-            //     clickedLightningLists.push(
-            //         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-            //     );
-            //     map.addLayer(delhiMarker);
-            // }
-            // if (layer_name == 'Last 05-10 min') {
-            //     clickedLightningLists.push(
-            //         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-            //     );
-            //     map.addLayer(jaipurMarker);
-            // }
-            // if (layer_name == 'Last 10-15 min') {
-            //     clickedLightningLists.push(
-            //         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-            //     );
-            //     map.addLayer(bhopalMarker);
-            // }
-            // panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
-
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
                     `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
@@ -4839,9 +4927,6 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (_this.context._layer.group.name == "Radar Reflectivity") {
             if (panelLayerRadarTitle.innerHTML == '') {
                 panelLayerRadarTitle.innerHTML = _this.context._layer.group.name + ':'
-                // legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
-                // legendModel1.style.height = '35vh';
-                // legendModel1.style.width = '72%';
                 Light_RadarRow.style.display = 'block';
             }
 
@@ -4862,9 +4947,6 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerExposureTitle.innerHTML == '') {
                 EXPOSURE.innerHTML = "EXPOSURE"
                 panelLayerExposureTitle.innerHTML = _this.context._layer.group.name + ':'
-                // legendModelExpo.src = 'http://103.215.208.18/dwr_img/GIS/legend/exp_legend2.PNG';
-                // legendModelExpo.style.height = '35vh';
-                // legendModelExpo.style.width = '72%';
                 ExposureRow.style.display = 'block';
             }
 
@@ -4980,16 +5062,6 @@ $("body").on("change", "input[type=checkbox]", function() {
                 );
             }
 
-            // if (layer_name == 'LULC') {
-            //     clickedExposureLists.push(
-            //         `<span style="display: flex; flex-direction: column; align-items: center;">` +
-            //         `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-            //         `<img src="img/LULC.jpeg" style="width: 175px; height: 250px; margin-top: 5px;">` +
-            //         `</span><br>`
-            //     );
-            // }
-
-
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
         }
 
@@ -4998,10 +5070,6 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR00UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR00UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                // legendModelMet.src = "";
-                // legendModelMet.src = 'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
-                // legendModelMet.style.height = '35vh';
-                // legendModelMet.style.width = '72%';
                 panelLayerMETAR00UTC_lists.style.display = 'block';
             }
 
@@ -7112,21 +7180,21 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<span style="width: 30px; 
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<span style="width: 30px; 
                         height: 1px; 
                         border-bottom: 2px dashed #000;
                         display: inline-block;"></span>` +
-                    `</span><br>`
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
         if (layer_name == 'Airport') {
             clickedExposureLists = clickedExposureLists.filter(checkList => checkList !=
-            `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    `<i class="fas fa-plane"></i>` +
-                    `</span><br>`
+                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                `<i class="fas fa-plane"></i>` +
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(MumbaiMarker);
@@ -7135,9 +7203,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    `<i class="fas fa-hospital"></i>` +
-                    `</span>
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                `<i class="fas fa-hospital"></i>` +
+                `</span>
                         <br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
@@ -7147,9 +7215,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-football-ball"></i>
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-football-ball"></i>
                         ` +
-                    `</span><br>`
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
@@ -7158,9 +7226,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}  ` + `
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}  ` + `
                          <img src="img/powerplant.jpeg" width="20" height="20" />` +
-                    `</span><br>`
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(VijayapuraMarker);
@@ -7171,9 +7239,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
                         <img src="img/powerstation.png" width="20" height="20" />` +
-                    `</span><br>`
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(SolapurMarker);
@@ -7182,9 +7250,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <i class="fas fa-industry"></i>` +
-                    `</span><br>`
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                ` <i class="fas fa-industry"></i>` +
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(RanchiMarker);
@@ -7193,9 +7261,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` 
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` 
                         <img src="img/industry.jpeg" width="20" height="20" />` +
-                    `</span><br>`
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
@@ -7204,9 +7272,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
                          <img src="img/socio_economic_zone.jpeg" width="20" height="20" />` +
-                    `</span><br>`
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
@@ -7216,9 +7284,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/road_network.jpeg" style="width: 25px; height: auto;">` +
-                    `</span><br>`
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                ` <img src="img/road_network.jpeg" style="width: 25px; height: auto;">` +
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
@@ -7227,9 +7295,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/railway.jpeg" style="width: 25px; height: auto;">` +
-                    `</span><br>`
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                ` <img src="img/railway.jpeg" style="width: 25px; height: auto;">` +
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
@@ -7238,9 +7306,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    `<img src="img/DEM.jpeg" style="width: 125px; height: auto;">` +
-                    `</span><br>`
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                `<img src="img/DEM.jpeg" style="width: 125px; height: auto;">` +
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
@@ -7249,9 +7317,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedExposureLists = clickedExposureLists.filter(checkList =>
                 checkList !=
                 `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    `<img src="img/LULC.jpeg" style="width: 175px; height: 250px;">` +
-                    `</span><br>`
+                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                `<img src="img/LULC.jpeg" style="width: 175px; height: 250px;">` +
+                `</span><br>`
             );
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);

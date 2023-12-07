@@ -8,6 +8,31 @@ body {
     position: relative;
     height: 100vh;
     width: 100%;
+    overflow: hidden;
+}
+
+.text {
+    margin-right: 2%;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 2em;
+    font-weight: 600;
+    color: #e6e6e6;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+        1px 18px 6px rgba(16, 16, 16, 0.4),
+        1px 22px 10px rgba(16, 16, 16, 0.2),
+        1px 25px 35px rgba(16, 16, 16, 0.2),
+        1px 30px 60px rgba(16, 16, 16, 0.4);
 }
 
 .btn {
@@ -25,6 +50,7 @@ body {
 
 .btn-val {
     color: #02275f;
+    background-color: #eff4ff;
     vertical-align: baseline;
     font-weight: inherit;
     font-style: inherit;
@@ -63,26 +89,14 @@ body {
     transition: visibility 0.1s ease;
 }
 
-.with-border {
-    border-right: 2px solid #e0dfdf;
-    padding-right: 4px;
-}
+@keyframes loadingAnimation {
+    0% {
+        width: 0;
+    }
 
-.exp_poly {
-    color: #163159;
-}
-
-.expo-polygon-parent {
-    border: none;
-    padding: 0;
-    background-color: #e0dfdf;
-    cursor: pointer;
-    font: inherit;
-    outline: inherit;
-}
-
-.expo-polygon-parent:hover {
-    background-color: #ced0cf;
+    50% {
+        width: 100%;
+    }
 }
 
 /* observationToggle */
@@ -94,9 +108,23 @@ body {
     width: 100%;
     height: 32px;
     border-radius: 10px;
+    color: #02275f;
+    overflow-y: auto;
 }
 
-.firstDDLabel .secondDDLabel .thirdDDLabel {
+.firstDDLabel {
+    margin-left: 0;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.secondDDLabel {
+    margin-left: 0;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.thirdDDLabel {
     margin-left: 0;
     color: #fff;
     font-size: 1.1em;
@@ -112,12 +140,16 @@ body {
     width: 100%;
     height: 32px;
     border-radius: 10px;
+    color: #02275f;
+    overflow-y: auto;
 }
 
 .thirdDD {
     width: 100%;
     height: 32px;
     border-radius: 10px;
+    color: #02275f;
+    overflow-y: auto;
 }
 
 .dropdownSelect {
@@ -131,14 +163,6 @@ body {
     border: 1px solid #646464;
 }
 
-.SecDD {
-    width: 3%;
-    height: 34px;
-    border-radius: 10px;
-    margin: 8px 0 0 0;
-    border: 1px solid #646464;
-}
-
 .TimeLabel {
     color: #fff;
     font-size: 1.1em;
@@ -148,32 +172,30 @@ body {
     width: 24%;
     height: 34px;
     border-radius: 10px;
+    color: #02275f;
 }
 
 .TimeMin {
     width: 24%;
     height: 34px;
     border-radius: 10px;
-}
+    color: #02275f;
 
-.timeUTC {
-    width: 20%;
 }
 
 .submitBtn {
     width: 50%;
     height: auto;
     border-radius: 7px;
-    background-color: #00aa55;
+    background-color: #244c7e;
     color: ghostwhite;
     border-color: mediumaquamarine;
     font-size: 1.1em;
-    /* margin-left: 91px; */
 }
 
 /* map starts here*/
 #map {
-    height: 83vh;
+    height: 81vh;
     width: 99%;
     border: 1px solid black;
     margin-top: -14px;
@@ -182,9 +204,11 @@ body {
 }
 
 .leaflet-top .leaflet-control {
-    margin-top: 3px;
+    margin-top: 0px;
+    margin-left: 20px;
 }
 
+/* custom control button */
 .leaflet-control-custom {
     font-weight: bold;
     background-color: #fff;
@@ -192,6 +216,24 @@ body {
     border: 1px solid #ccc;
     cursor: pointer;
 }
+
+/* split css */
+.leaflet-sbs-divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: 9px;
+    width: 4px;
+    background-color: #fff;
+    pointer-events: none;
+    z-index: 999;
+}
+
+
+
+
+
 
 /* Draggable Model PopUp */
 .model {
@@ -265,5 +307,10 @@ body {
 
 .leaflet-top.leaflet-right .leaflet-panel-layers:not(.compact) {
     margin: 7px;
+}
+
+.leaflet-control-layers-expanded {
+    color: #000;
+    background: #f9f9f9;
 }
 </style>
