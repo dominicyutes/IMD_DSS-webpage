@@ -4839,6 +4839,9 @@ let panelLayerWRFAccumlatedRainfall_lists = document.querySelector('#WRFAccumlat
 let panelLayerlightningPotentialindex_Title = document.querySelector('#lightningPotentialindex-Title')
 let panelLayerlightningPotentialindex_lists = document.querySelector('#lightningPotentialindex-lists')
 
+let panelLayerNCUMRlightningProduct_Title = document.querySelector('#NCUMRlightningProduct-Title')
+let panelLayerNCUMRlightningProduct_lists = document.querySelector('#NCUMRlightningProduct-lists')
+
 let panelLayerWRFNCUMRlightningProduct_Title = document.querySelector('#WRFNCUMRlightningProduct-Title')
 let panelLayerWRFNCUMRlightningProduct_lists = document.querySelector('#WRFNCUMRlightningProduct-lists')
 
@@ -4970,6 +4973,7 @@ let clickedSHIPANDBUOYLists = [];
 let clickedWRFReflectivityLists = [];
 let clickedWRFlightningProductLists = [];
 let clickedWRFAccumlatedRainfallLists = [];
+let clickedlightningPotentialindexLists = [];
 let clickedNCUMRlightningProductLists = [];
 let clickedNCUMRWindGustLists = [];
 let clickedNCUMRRainfallLists = [];
@@ -7277,50 +7281,135 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff30ac; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15-30</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fdff2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">30-35</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ffab2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">35-40</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f86929; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">40-45</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c8021d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #d213c6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #ad67e1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f5ed8c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e3f5b6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f8e8e3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e1eef5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c2dbeb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #9ccbe1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #70acd4; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #3590c5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #0573bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #fbf9fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0.000-20.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #bbbbbb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20.000-40.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #7f7f7f; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40.000-60.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #424242; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">60.000-80.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #050505; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">80.000-100.000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #bbdd07; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-50</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #0edf06; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-100</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffab61; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">100-200</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffea9f; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">200-300</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #fffdbe; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">300-400</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #d4efb1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">400-500</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #addba3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">500-600</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #68b2b0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">600-700</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #2b83bb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>700</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fcff32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">25-50</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fbaf33; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">50-70</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fa6529; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">70-85</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f93c35; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">>85</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -7337,10 +7426,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0101fc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15.5-64.4</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #ffeb01; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">64.4-115.5</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe582e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">115.6-204.4</span>
+  </span>
+</span><br>`
                 );
             }
 
@@ -7355,50 +7449,135 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff30ac; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15-30</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fdff2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">30-35</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ffab2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">35-40</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f86929; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">40-45</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c8021d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #d213c6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #ad67e1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f5ed8c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e3f5b6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f8e8e3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e1eef5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c2dbeb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #9ccbe1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #70acd4; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #3590c5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #0573bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #fbf9fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0.000-20.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #bbbbbb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20.000-40.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #7f7f7f; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40.000-60.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #424242; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">60.000-80.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #050505; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">80.000-100.000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #bbdd07; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-50</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #0edf06; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-100</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffab61; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">100-200</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffea9f; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">200-300</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #fffdbe; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">300-400</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #d4efb1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">400-500</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #addba3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">500-600</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #68b2b0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">600-700</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #2b83bb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>700</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fcff32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">25-50</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fbaf33; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">50-70</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fa6529; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">70-85</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f93c35; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">>85</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -7415,10 +7594,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0101fc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15.5-64.4</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #ffeb01; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">64.4-115.5</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe582e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">115.6-204.4</span>
+  </span>
+</span><br>`
                 );
             }
 
@@ -7433,50 +7617,135 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff30ac; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15-30</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fdff2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">30-35</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ffab2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">35-40</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f86929; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">40-45</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c8021d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #d213c6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #ad67e1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f5ed8c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e3f5b6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f8e8e3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e1eef5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c2dbeb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #9ccbe1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #70acd4; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #3590c5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #0573bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #fbf9fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0.000-20.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #bbbbbb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20.000-40.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #7f7f7f; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40.000-60.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #424242; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">60.000-80.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #050505; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">80.000-100.000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #bbdd07; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-50</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #0edf06; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-100</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffab61; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">100-200</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffea9f; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">200-300</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #fffdbe; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">300-400</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #d4efb1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">400-500</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #addba3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">500-600</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #68b2b0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">600-700</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #2b83bb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>700</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fcff32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">25-50</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fbaf33; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">50-70</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fa6529; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">70-85</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f93c35; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">>85</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -7493,10 +7762,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0101fc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15.5-64.4</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #ffeb01; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">64.4-115.5</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe582e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">115.6-204.4</span>
+  </span>
+</span><br>`
                 );
             }
 
@@ -7511,50 +7785,135 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff30ac; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15-30</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fdff2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">30-35</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ffab2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">35-40</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f86929; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">40-45</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c8021d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #d213c6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #ad67e1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f5ed8c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e3f5b6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f8e8e3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e1eef5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c2dbeb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #9ccbe1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #70acd4; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #3590c5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #0573bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #fbf9fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0.000-20.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #bbbbbb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20.000-40.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #7f7f7f; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40.000-60.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #424242; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">60.000-80.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #050505; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">80.000-100.000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #bbdd07; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-50</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #0edf06; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-100</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffab61; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">100-200</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffea9f; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">200-300</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #fffdbe; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">300-400</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #d4efb1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">400-500</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #addba3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">500-600</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #68b2b0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">600-700</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #2b83bb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>700</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fcff32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">25-50</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fbaf33; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">50-70</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fa6529; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">70-85</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f93c35; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">>85</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -7571,10 +7930,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0101fc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15.5-64.4</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #ffeb01; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">64.4-115.5</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe582e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">115.6-204.4</span>
+  </span>
+</span><br>`
                 );
             }
 
@@ -7589,50 +7953,135 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff30ac; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15-30</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fdff2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">30-35</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ffab2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">35-40</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f86929; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">40-45</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c8021d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #d213c6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #ad67e1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f5ed8c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e3f5b6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f8e8e3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e1eef5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c2dbeb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #9ccbe1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #70acd4; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #3590c5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #0573bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #fbf9fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0.000-20.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #bbbbbb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20.000-40.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #7f7f7f; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40.000-60.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #424242; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">60.000-80.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #050505; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">80.000-100.000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #bbdd07; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-50</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #0edf06; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-100</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffab61; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">100-200</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffea9f; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">200-300</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #fffdbe; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">300-400</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #d4efb1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">400-500</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #addba3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">500-600</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #68b2b0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">600-700</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #2b83bb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>700</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fcff32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">25-50</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fbaf33; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">50-70</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fa6529; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">70-85</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f93c35; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">>85</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -7649,10 +8098,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0101fc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15.5-64.4</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #ffeb01; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">64.4-115.5</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe582e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">115.6-204.4</span>
+  </span>
+</span><br>`
                 );
             }
 
@@ -7667,50 +8121,135 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff30ac; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15-30</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fdff2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">30-35</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ffab2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">35-40</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f86929; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">40-45</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c8021d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #d213c6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #ad67e1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f5ed8c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e3f5b6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f8e8e3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e1eef5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c2dbeb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #9ccbe1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #70acd4; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #3590c5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #0573bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #fbf9fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0.000-20.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #bbbbbb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20.000-40.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #7f7f7f; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40.000-60.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #424242; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">60.000-80.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #050505; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">80.000-100.000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #bbdd07; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-50</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #0edf06; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-100</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffab61; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">100-200</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffea9f; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">200-300</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #fffdbe; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">300-400</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #d4efb1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">400-500</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #addba3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">500-600</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #68b2b0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">600-700</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #2b83bb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>700</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fcff32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">25-50</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fbaf33; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">50-70</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fa6529; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">70-85</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f93c35; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">>85</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -7727,10 +8266,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0101fc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15.5-64.4</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #ffeb01; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">64.4-115.5</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe582e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">115.6-204.4</span>
+  </span>
+</span><br>`
                 );
             }
 
@@ -7745,50 +8289,135 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff30ac; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15-30</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fdff2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">30-35</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ffab2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">35-40</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f86929; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">40-45</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c8021d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #d213c6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #ad67e1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f5ed8c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e3f5b6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f8e8e3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e1eef5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c2dbeb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #9ccbe1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #70acd4; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #3590c5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #0573bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #fbf9fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0.000-20.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #bbbbbb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20.000-40.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #7f7f7f; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40.000-60.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #424242; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">60.000-80.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #050505; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">80.000-100.000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #bbdd07; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-50</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #0edf06; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-100</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffab61; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">100-200</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffea9f; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">200-300</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #fffdbe; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">300-400</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #d4efb1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">400-500</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #addba3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">500-600</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #68b2b0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">600-700</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #2b83bb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>700</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fcff32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">25-50</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fbaf33; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">50-70</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fa6529; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">70-85</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f93c35; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">>85</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
@@ -7805,10 +8434,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0101fc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15.5-64.4</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #ffeb01; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">64.4-115.5</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe582e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">115.6-204.4</span>
+  </span>
+</span><br>`
                 );
             }
 
@@ -7824,10 +8458,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Radar Reflectivity') {
                 clickedRADARPRODUCTSLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/radar/radar_reflectivity.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
+    </span>
+
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
+    </span>
+
+    
+    
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'Radar Animation') {
@@ -7909,7 +8575,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedLIGHTININGLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
                     `</span><br>`
                 );
             }
@@ -7917,7 +8583,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedLIGHTININGLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
                     `</span><br>`
                 );
             }
@@ -7925,7 +8591,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedLIGHTININGLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
                     `</span><br>`
                 );
             }
@@ -7933,7 +8599,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedLIGHTININGLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
                     `</span><br>`
                 );
             }
@@ -7941,7 +8607,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedLIGHTININGLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
                     `</span><br>`
                 );
             }
@@ -10569,6 +11235,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP00UTC_lists.innerHTML == '') {
+            panelLayerSYNOP00UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP00UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
 
         if (uncheckLayer == 'SYNOP 03UTC TEMPERATURE') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -10636,6 +11312,15 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP03UTC_lists.innerHTML == '') {
+            panelLayerSYNOP03UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP03UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'SYNOP 06UTC TEMPERATURE') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -10703,6 +11388,15 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP06UTC_lists.innerHTML == '') {
+            panelLayerSYNOP06UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP06UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'SYNOP 09UTC TEMPERATURE') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -10768,6 +11462,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
 
+        }
+
+        if (panelLayerSYNOP09UTC_lists.innerHTML == '') {
+            panelLayerSYNOP09UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP09UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
 
@@ -10837,6 +11541,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP12UTC_lists.innerHTML == '') {
+            panelLayerSYNOP12UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP12UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
 
         if (uncheckLayer == 'SYNOP 15UTC TEMPERATURE') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -10902,6 +11616,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
 
+        }
+
+        if (panelLayerSYNOP15UTC_lists.innerHTML == '') {
+            panelLayerSYNOP15UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP15UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
 
@@ -10971,6 +11695,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP18UTC_lists.innerHTML == '') {
+            panelLayerSYNOP18UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP18UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
 
         if (uncheckLayer == 'SYNOP 21UTC TEMPERATURE') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -11038,6 +11772,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP21UTC_lists.innerHTML == '') {
+            panelLayerSYNOP21UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP21UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         // RADAR UNCHECk
         if (uncheckLayer == 'Radar Products Radar Reflectivity') {
             clickedRADARPRODUCTSLists = clickedRADARPRODUCTSLists.filter(checkList => {
@@ -11054,6 +11798,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
         }
 
+        if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
+            panelLayerRADARPRODUCTS_Title.innerHTML = '';
+            RADARPRODUCTS.innerHTML = '';
+        }
+
+        if (panelLayerRADARPRODUCTS_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         // Satellite Observation UNCHECk
         if (uncheckLayer == 'Satellite Observation TIR1') {
@@ -11137,6 +11890,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
+            panelLayerRADARPRODUCTS_Title.innerHTML = '';
+            SATELLITE.innerHTML = '';
+        }
+
+        if (panelLayerRADARPRODUCTS_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         // Lightining Uncheck
         if (uncheckLayer == 'Lightning Last 00-05 min') {
             clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
@@ -11175,6 +11938,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
         }
 
+        if (panelLayerLIGHTINING_lists.innerHTML == '') {
+            panelLayerLIGHTINING_Title.innerHTML = '';
+            LIGHTINING.innerHTML = '';
+        }
+
+        if (panelLayerLIGHTINING_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         // SOUNDING UNCHECK
         if (uncheckLayer == 'SOUNDING_00_UTC WIND 1000 hpa WIND') {
@@ -11234,6 +12006,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
         }
 
+        if (panelLayerSOUNDING00UTCWIND_lists.innerHTML == '') {
+            panelLayerSOUNDING00UTCWIND_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING00UTCWIND_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'SOUNDING_12_UTC WIND 1000 hpa WIND') {
             clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11289,6 +12071,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+
+        if (panelLayerSOUNDING12UTCWIND_lists.innerHTML == '') {
+            panelLayerSOUNDING12UTCWIND_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING12UTCWIND_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'SOUNDING_00UTC TEMP 1000 hpa TEMP') {
@@ -11348,6 +12140,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
         }
 
+        if (panelLayerSOUNDING00UTCTEMP_lists.innerHTML == '') {
+            panelLayerSOUNDING00UTCTEMP_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING00UTCTEMP_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'SOUNDING_12UTC TEMP 1000 hpa TEMP') {
             clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11403,6 +12205,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+
+        if (panelLayerSOUNDING12UTCTEMP_lists.innerHTML == '') {
+            panelLayerSOUNDING12UTCTEMP_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING12UTCTEMP_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 1000 hpa DEW POINT') {
@@ -11462,6 +12274,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
         }
 
+        if (panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML == '') {
+            panelLayerSOUNDING00UTCDEWPOINT_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 1000 hpa DEW POINT') {
             clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11519,6 +12341,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
         }
 
+        if (panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML == '') {
+            panelLayerSOUNDING12UTCDEWPOINT_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         // SHIPANDBUOY UNCHECK
         if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 00UTC') {
@@ -11690,6 +12521,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
         }
 
+        if (panelLayerSHIPANDBUOY_lists.innerHTML == '') {
+            panelLayerSHIPANDBUOY_Title.innerHTML = '';
+            SHIPANDBUOY.innerHTML = '';
+        }
+
+        if (panelLayerSHIPANDBUOY_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'WRF Reflectivity Next 03 Hrs') {
             clickedWRFReflectivityLists = clickedWRFReflectivityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11703,6 +12544,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerWRFReflectivity_lists.innerHTML = clickedWRFReflectivityLists.join("");
+        }
+
+        if (panelLayerWRFReflectivity_lists.innerHTML == '') {
+            panelLayerWRFReflectivity_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerWRFReflectivity_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'WRF lightning Product Next 03 Hrs') {
@@ -11721,6 +12572,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerWRFlightningProduct_lists.innerHTML = clickedWRFlightningProductLists.join("");
         }
 
+        if (panelLayerWRFlightningProduct_lists.innerHTML == '') {
+            panelLayerWRFlightningProduct_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerWRFlightningProduct_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'WRF Accumlated Rainfall Next 03 Hrs') {
             clickedWRFAccumlatedRainfallLists = clickedWRFAccumlatedRainfallLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11734,6 +12595,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerWRFAccumlatedRainfall_lists.innerHTML = clickedWRFAccumlatedRainfallLists.join("");
+        }
+
+        if (panelLayerWRFAccumlatedRainfall_lists.innerHTML == '') {
+            panelLayerWRFAccumlatedRainfall_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerWRFAccumlatedRainfall_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'lightning Potential index Next 01 Hrs') {
@@ -11761,6 +12632,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 "");
         }
 
+        if (panelLayerlightningPotentialindex_lists.innerHTML == '') {
+            panelLayerlightningPotentialindex_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerlightningPotentialindex_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'NCUMR lightning Product Next 03 Hrs') {
             clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11774,6 +12655,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerNCUMRlightningProduct_lists.innerHTML = clickedNCUMRlightningProductLists.join("");
+        }
+
+        if (panelLayerNCUMRlightningProduct_lists.innerHTML == '') {
+            panelLayerNCUMRlightningProduct_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerNCUMRlightningProduct_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'NCUMR Wind Gust Next 03 Hrs') {
@@ -11791,6 +12682,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerNCUMRWindGust_lists.innerHTML = clickedNCUMRWindGustLists.join("");
         }
 
+        if (panelLayerNCUMRWindGust_lists.innerHTML == '') {
+            panelLayerNCUMRWindGust_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerNCUMRWindGust_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'NCUMR Rainfall Next 03 Hrs') {
             clickedNCUMRRainfallLists = clickedNCUMRRainfallLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11804,6 +12705,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerNCUMRRainfall_lists.innerHTML = clickedNCUMRRainfallLists.join("");
+        }
+
+        if (panelLayerNCUMRRainfall_lists.innerHTML == '') {
+            panelLayerNCUMRRainfall_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerNCUMRRainfall_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 01 Hrs') {
@@ -11828,6 +12739,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerHRRR_SPHourlyDBZ_lists.innerHTML = clickedHRRR_SPHourlyDBZLists.join("");
         }
 
+        if (panelLayerHRRR_SPHourlyDBZ_lists.innerHTML == '') {
+            panelLayerHRRR_SPHourlyDBZ_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerHRRR_SPHourlyDBZ_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 01 Hrs') {
             clickedHRRR_NEHourlyDBZLists = clickedHRRR_NEHourlyDBZLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11848,6 +12769,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerHRRR_NEHourlyDBZ_lists.innerHTML = clickedHRRR_NEHourlyDBZLists.join("");
+        }
+
+        if (panelLayerHRRR_NEHourlyDBZ_lists.innerHTML == '') {
+            panelLayerHRRR_NEHourlyDBZ_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerHRRR_NEHourlyDBZ_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'HRRR_NW Hourly DBZ Next 01 Hrs') {
@@ -11871,6 +12802,17 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerHRRR_NWHourlyDBZ_lists.innerHTML = clickedHRRR_NWHourlyDBZLists.join("");
         }
+
+        if (panelLayerHRRR_NWHourlyDBZ_lists.innerHTML == '') {
+            panelLayerHRRR_NWHourlyDBZ_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerHRRR_NWHourlyDBZ_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'EWRF MaxZ Next 01 Hrs') {
             clickedEWRFMaxZLists = clickedEWRFMaxZLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11892,6 +12834,17 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerEWRFMaxZ_lists.innerHTML = clickedEWRFMaxZLists.join("");
         }
+
+        if (panelLayerEWRFMaxZ_lists.innerHTML == '') {
+            panelLayerEWRFMaxZ_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerEWRFMaxZ_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'EWRF Lightning Next 01 Hrs') {
             clickedEWRFLightningLists = clickedEWRFLightningLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11912,6 +12865,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
+        }
+
+        if (panelLayerEWRFLightning_lists.innerHTML == '') {
+            panelLayerEWRFLightning_Title.innerHTML = '';
+            MESOLSCALE.innerHTML = '';
+        }
+
+        if (panelLayerEWRFLightning_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         // MEDIUM UNCHECK
@@ -11958,6 +12921,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
         }
 
+        if (panelLayerRainfallIntensityDay1_lists.innerHTML == '') {
+            panelLayerRainfallIntensityDay1_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerRainfallIntensityDay1_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'Rainfall Intensity Day2 GFS DAY2') {
             clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11999,6 +12972,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+
+        if (panelLayerRainfallIntensityDay2_lists.innerHTML == '') {
+            panelLayerRainfallIntensityDay2_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerRainfallIntensityDay2_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'Rainfall Intensity Day3 GFS DAY3') {
@@ -12044,6 +13027,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
         }
 
+        if (panelLayerRainfallIntensityDay3_lists.innerHTML == '') {
+            panelLayerRainfallIntensityDay3_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerRainfallIntensityDay3_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'Rainfall Intensity Day4 GFS DAY4') {
             clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12086,6 +13079,17 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
         }
+
+        if (panelLayerRainfallIntensityDay4_lists.innerHTML == '') {
+            panelLayerRainfallIntensityDay4_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerRainfallIntensityDay4_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'Rainfall Intensity Day5 GFS DAY5') {
             clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -12129,6 +13133,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
         }
 
+        if (panelLayerRainfallIntensityDay5_lists.innerHTML == '') {
+            panelLayerRainfallIntensityDay5_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerRainfallIntensityDay5_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'MSLP Day1 GFS DAY1') {
             clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
@@ -12173,6 +13186,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
         }
 
+        if (panelLayerMSLPDay1_lists.innerHTML == '') {
+            panelLayerMSLPDay1_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerMSLPDay1_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'MSLP Day2 GFS DAY2') {
             clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
@@ -12217,6 +13239,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
         }
 
+        if (panelLayerMSLPDay2_lists.innerHTML == '') {
+            panelLayerMSLPDay2_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerMSLPDay2_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'MSLP Day3 GFS DAY3') {
             clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
@@ -12261,6 +13292,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
         }
 
+        if (panelLayerMSLPDay3_lists.innerHTML == '') {
+            panelLayerMSLPDay3_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerMSLPDay3_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'MSLP Day4 GFS DAY4') {
             clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
@@ -12305,6 +13345,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
         }
 
+        if (panelLayerMSLPDay4_lists.innerHTML == '') {
+            panelLayerMSLPDay4_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerMSLPDay4_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'MSLP Day5 GFS DAY5') {
             clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
@@ -12349,6 +13398,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
         }
 
+        if (panelLayerMSLPDay5_lists.innerHTML == '') {
+            panelLayerMSLPDay5_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayerMSLPDay5_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == '10m WIND Day 1 GFS DAY1') {
             clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
@@ -12393,6 +13451,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
         }
 
+        if (panelLayer10mWINDDay1_lists.innerHTML == '') {
+            panelLayer10mWINDDay1_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayer10mWINDDay1_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == '10m WIND Day 2 GFS DAY2') {
             clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
@@ -12437,6 +13504,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
         }
 
+        if (panelLayer10mWINDDay2_lists.innerHTML == '') {
+            panelLayer10mWINDDay2_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayer10mWINDDay2_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == '10m WIND Day 3 GFS DAY3') {
             clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
@@ -12481,6 +13557,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
         }
 
+        if (panelLayer10mWINDDay3_lists.innerHTML == '') {
+            panelLayer10mWINDDay3_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayer10mWINDDay3_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == '10m WIND Day 4 GFS DAY4') {
             clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
@@ -12525,6 +13610,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
         }
 
+        if (panelLayer10mWINDDay4_lists.innerHTML == '') {
+            panelLayer10mWINDDay4_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayer10mWINDDay4_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == '10m WIND Day 5 GFS DAY5') {
             clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
@@ -12569,6 +13663,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
         }
 
+        if (panelLayer10mWINDDay5_lists.innerHTML == '') {
+            panelLayer10mWINDDay5_Title.innerHTML = '';
+            MEDIUM.innerHTML = '';
+        }
+
+        if (panelLayer10mWINDDay5_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
     }
 });
 //
