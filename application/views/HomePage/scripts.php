@@ -6754,9 +6754,9 @@ $("body").on("change", "input[type=checkbox]", function() {
                 SYNOP_Row.style.display = 'block';
             }
 
-                if (layer_name == 'TEMPERATURE') {
-                    clickedSYNOP00UTCLists.push(
-                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+            if (layer_name == 'TEMPERATURE') {
+                clickedSYNOP00UTCLists.push(
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
   <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
@@ -6767,52 +6767,52 @@ $("body").on("change", "input[type=checkbox]", function() {
     <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
   </span>
 </span><br>`
-                    );
-                }
-                if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
-                    clickedSYNOP00UTCLists.push(
-                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                        `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                        ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
-                        `</span><br>`
-                    )
-                }
-                if (layer_name == 'CLOUD COVER') {
-                    clickedSYNOP00UTCLists.push(
-                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                        `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                        ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
-                        `</span><br>`
-                    );
-                }
-                if (layer_name == 'GEOPOTENTIAL HEIGHT') {
-                    clickedSYNOP00UTCLists.push(
-                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                        `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                        ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
-                        `</span><br>`
-                    );
-                }
-                if (layer_name == 'RELATIVE HUMIDITY') {
-                    clickedSYNOP00UTCLists.push(
-                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                        `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                        ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
-                        `</span><br>`
-                    );
-                }
-                if (layer_name == 'VISIBILITY') {
-                    clickedSYNOP00UTCLists.push(
-                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                        `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                        ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
-                        `</span><br>`
-                    );
-                }
-                if (layer_name == 'WIND SPEED AND DIRECTION') {
-                    clickedSYNOP00UTCLists.push(
-                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                        `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                );
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                clickedSYNOP00UTCLists.push(
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
+                )
+            }
+            if (layer_name == 'CLOUD COVER') {
+                clickedSYNOP00UTCLists.push(
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
+                );
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                clickedSYNOP00UTCLists.push(
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
+                );
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                clickedSYNOP00UTCLists.push(
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
+                );
+            }
+            if (layer_name == 'VISIBILITY') {
+                clickedSYNOP00UTCLists.push(
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
+                );
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                clickedSYNOP00UTCLists.push(
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -10134,6 +10134,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP00UTC_lists.innerHTML == '') {
+            panelLayerSYNOP00UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP00UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
 
         if (uncheckLayer == 'SYNOP 03UTC TEMPERATURE') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -10201,6 +10211,15 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP03UTC_lists.innerHTML == '') {
+            panelLayerSYNOP03UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP03UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'SYNOP 06UTC TEMPERATURE') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -10268,6 +10287,15 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP06UTC_lists.innerHTML == '') {
+            panelLayerSYNOP06UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP06UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         if (uncheckLayer == 'SYNOP 09UTC TEMPERATURE') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -10333,6 +10361,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
 
+        }
+
+        if (panelLayerSYNOP09UTC_lists.innerHTML == '') {
+            panelLayerSYNOP09UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP09UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
 
@@ -10402,6 +10440,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP12UTC_lists.innerHTML == '') {
+            panelLayerSYNOP12UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP12UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
 
         if (uncheckLayer == 'SYNOP 15UTC TEMPERATURE') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -10467,6 +10515,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
 
+        }
+
+        if (panelLayerSYNOP15UTC_lists.innerHTML == '') {
+            panelLayerSYNOP15UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP15UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
 
@@ -10536,6 +10594,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP18UTC_lists.innerHTML == '') {
+            panelLayerSYNOP18UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP18UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
 
         if (uncheckLayer == 'SYNOP 21UTC TEMPERATURE') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -10603,6 +10671,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerSYNOP21UTC_lists.innerHTML == '') {
+            panelLayerSYNOP21UTC_Title.innerHTML = '';
+            SYNOP.innerHTML = '';
+        }
+
+        if (panelLayerSYNOP21UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         // RADAR UNCHECk
         if (uncheckLayer == 'Radar Products Radar Reflectivity') {
             clickedRADARPRODUCTSLists = clickedRADARPRODUCTSLists.filter(checkList => {
@@ -10619,6 +10697,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
         }
 
+        if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
+            panelLayerRADARPRODUCTS_Title.innerHTML = '';
+            RADARPRODUCTS.innerHTML = '';
+        }
+
+        if (panelLayerRADARPRODUCTS_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         // Satellite Observation UNCHECk
         if (uncheckLayer == 'Satellite Observation TIR1') {
@@ -10702,6 +10789,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         }
 
+        if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
+            panelLayerRADARPRODUCTS_Title.innerHTML = '';
+            SATELLITE.innerHTML = '';
+        }
+
+        if (panelLayerRADARPRODUCTS_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         // Lightining Uncheck
         if (uncheckLayer == 'Lightning Last 00-05 min') {
             clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
@@ -10740,6 +10837,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
         }
 
+        if (panelLayerLIGHTINING_lists.innerHTML == '') {
+            panelLayerLIGHTINING_Title.innerHTML = '';
+            LIGHTINING.innerHTML = '';
+        }
+
+        if (panelLayerLIGHTINING_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         // SOUNDING UNCHECK
         if (uncheckLayer == 'SOUNDING_00_UTC WIND 1000 hpa WIND') {
@@ -10799,6 +10905,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
         }
 
+        if (panelLayerSOUNDING00UTCWIND_lists.innerHTML == '') {
+            panelLayerSOUNDING00UTCWIND_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING00UTCWIND_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'SOUNDING_12_UTC WIND 1000 hpa WIND') {
             clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -10854,6 +10970,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+
+        if (panelLayerSOUNDING12UTCWIND_lists.innerHTML == '') {
+            panelLayerSOUNDING12UTCWIND_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING12UTCWIND_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'SOUNDING_00UTC TEMP 1000 hpa TEMP') {
@@ -10913,6 +11039,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
         }
 
+        if (panelLayerSOUNDING00UTCTEMP_lists.innerHTML == '') {
+            panelLayerSOUNDING00UTCTEMP_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING00UTCTEMP_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'SOUNDING_12UTC TEMP 1000 hpa TEMP') {
             clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -10968,6 +11104,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+
+        if (panelLayerSOUNDING12UTCTEMP_lists.innerHTML == '') {
+            panelLayerSOUNDING12UTCTEMP_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING12UTCTEMP_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 1000 hpa DEW POINT') {
@@ -11027,6 +11173,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
         }
 
+        if (panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML == '') {
+            panelLayerSOUNDING00UTCDEWPOINT_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 1000 hpa DEW POINT') {
             clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -11084,6 +11240,15 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
         }
 
+        if (panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML == '') {
+            panelLayerSOUNDING12UTCDEWPOINT_Title.innerHTML = '';
+            SOUNDING.innerHTML = '';
+        }
+
+        if (panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
 
         // SHIPANDBUOY UNCHECK
         if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 00UTC') {
@@ -11253,6 +11418,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+
+        if (panelLayerSHIPANDBUOY_lists.innerHTML == '') {
+            panelLayerSHIPANDBUOY_Title.innerHTML = '';
+            SHIPANDBUOY.innerHTML = '';
+        }
+
+        if (panelLayerSHIPANDBUOY_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
 
         if (uncheckLayer == 'WRF Reflectivity Next 03 Hrs') {
