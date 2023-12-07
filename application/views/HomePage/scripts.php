@@ -8575,7 +8575,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedLIGHTININGLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
                     `</span><br>`
                 );
             }
@@ -8583,7 +8583,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedLIGHTININGLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
                     `</span><br>`
                 );
             }
@@ -8591,7 +8591,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedLIGHTININGLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
                     `</span><br>`
                 );
             }
@@ -8599,7 +8599,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedLIGHTININGLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
                     `</span><br>`
                 );
             }
@@ -8607,7 +8607,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedLIGHTININGLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
                     `</span><br>`
                 );
             }
