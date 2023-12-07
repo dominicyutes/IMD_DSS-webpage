@@ -1575,6 +1575,8 @@ function toggleObservation() {
     observationContainerFn.classList.toggle('hidden');
     map.style.width = isHidden ? '83%' : '99%';
 }
+// var observationContainerFn = document.getElementById("ObservationContainer");
+// observationContainerFn.addEventListener('click', toggleObservation);
 
 //
 const OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1846,8 +1848,8 @@ var BobbiliMarker = L.marker([18.5697, 83.3666]);
 BobbiliMarker.bindPopup("<b>Bobbili</b>").openPopup();
 
 // // Add a marker for Bobbili
-// var BobbiliMarker = L.marker([18.5697, 83.3666]);
-// BobbiliMarker.bindPopup("<b>Bobbili</b>").openPopup();
+var ggg = L.marker([18.5696, 83.3668]);
+ggg.bindPopup("<b>ggg</b>").openPopup();
 
 // mywmsIITM mywmsNcum mywmsNowcast
 const overLayers = [{
@@ -1858,7 +1860,6 @@ const overLayers = [{
                 name: "Last 00-05 min",
                 class: "Last 00-05 min",
                 layer: mywmsIITM,
-                // layer: delhiMarker,
             },
             {
                 active: false,
@@ -1907,7 +1908,7 @@ var overLayers2 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: ggg
             },
             {
                 active: false,
@@ -4825,6 +4826,90 @@ let panelLayerSOUNDING12UTCDEWPOINT_lists = document.querySelector('#SOUNDING12U
 let panelLayerSHIPANDBUOY_Title = document.querySelector('#SHIPANDBUOY-Title')
 let panelLayerSHIPANDBUOY_lists = document.querySelector('#SHIPANDBUOY-lists')
 
+// MESOLSCALE
+let panelLayerWRFReflectivity_Title = document.querySelector('#WRFReflectivity-Title')
+let panelLayerWRFReflectivity_lists = document.querySelector('#WRFReflectivity-lists')
+
+let panelLayerWRFlightningProduct_Title = document.querySelector('#WRFlightningProduct-Title')
+let panelLayerWRFlightningProduct_lists = document.querySelector('#WRFlightningProduct-lists')
+
+let panelLayerWRFAccumlatedRainfall_Title = document.querySelector('#WRFAccumlatedRainfall-Title')
+let panelLayerWRFAccumlatedRainfall_lists = document.querySelector('#WRFAccumlatedRainfall-lists')
+
+let panelLayerlightningPotentialindex_Title = document.querySelector('#lightningPotentialindex-Title')
+let panelLayerlightningPotentialindex_lists = document.querySelector('#lightningPotentialindex-lists')
+
+let panelLayerWRFNCUMRlightningProduct_Title = document.querySelector('#WRFNCUMRlightningProduct-Title')
+let panelLayerWRFNCUMRlightningProduct_lists = document.querySelector('#WRFNCUMRlightningProduct-lists')
+
+let panelLayerNCUMRWindGust_Title = document.querySelector('#NCUMRWindGust-Title')
+let panelLayerNCUMRWindGust_lists = document.querySelector('#NCUMRWindGust-lists')
+
+let panelLayerNCUMRRainfall_Title = document.querySelector('#NCUMRRainfall-Title')
+let panelLayerNCUMRRainfall_lists = document.querySelector('#NCUMRRainfall-lists')
+
+let panelLayerHRRR_SPHourlyDBZ_Title = document.querySelector('#HRRR_SPHourlyDBZ-Title')
+let panelLayerHRRR_SPHourlyDBZ_lists = document.querySelector('#HRRR_SPHourlyDBZ-lists')
+
+let panelLayerHRRR_NEHourlyDBZ_Title = document.querySelector('#HRRR_NEHourlyDBZ-Title')
+let panelLayerHRRR_NEHourlyDBZ_lists = document.querySelector('#HRRR_NEHourlyDBZ-lists')
+
+let panelLayerHRRR_NWHourlyDBZ_Title = document.querySelector('#HRRR_NWHourlyDBZ-Title')
+let panelLayerHRRR_NWHourlyDBZ_lists = document.querySelector('#HRRR_NWHourlyDBZ-lists')
+
+let panelLayerEWRFMaxZ_Title = document.querySelector('#EWRFMaxZ-Title')
+let panelLayerEWRFMaxZ_lists = document.querySelector('#EWRFMaxZ-lists')
+
+let panelLayerEWRFLightning_Title = document.querySelector('#EWRFLightning-Title')
+let panelLayerEWRFLightning_lists = document.querySelector('#EWRFLightning-lists')
+
+// MEDIUM
+let panelLayerRainfallIntensityDay1_Title = document.querySelector('#RainfallIntensityDay1-Title')
+let panelLayerRainfallIntensityDay1_lists = document.querySelector('#RainfallIntensityDay1-lists')
+
+let panelLayerRainfallIntensityDay2_Title = document.querySelector('#RainfallIntensityDay2-Title')
+let panelLayerRainfallIntensityDay2_lists = document.querySelector('#RainfallIntensityDay2-lists')
+
+let panelLayerRainfallIntensityDay3_Title = document.querySelector('#RainfallIntensityDay3-Title')
+let panelLayerRainfallIntensityDay3_lists = document.querySelector('#RainfallIntensityDay3-lists')
+
+let panelLayerRainfallIntensityDay4_Title = document.querySelector('#RainfallIntensityDay4-Title')
+let panelLayerRainfallIntensityDay4_lists = document.querySelector('#RainfallIntensityDay4-lists')
+
+let panelLayerRainfallIntensityDay5_Title = document.querySelector('#RainfallIntensityDay5-Title')
+let panelLayerRainfallIntensityDay5_lists = document.querySelector('#RainfallIntensityDay5-lists')
+
+let panelLayerMSLPDay1_Title = document.querySelector('#MSLPDay1-Title')
+let panelLayerMSLPDay1_lists = document.querySelector('#MSLPDay1-lists')
+
+let panelLayerMSLPDay2_Title = document.querySelector('#MSLPDay2-Title')
+let panelLayerMSLPDay2_lists = document.querySelector('#MSLPDay2-lists')
+
+let panelLayerMSLPDay3_Title = document.querySelector('#MSLPDay3-Title')
+let panelLayerMSLPDay3_lists = document.querySelector('#MSLPDay3-lists')
+
+let panelLayerMSLPDay4_Title = document.querySelector('#MSLPDay4-Title')
+let panelLayerMSLPDay4_lists = document.querySelector('#MSLPDay4-lists')
+
+let panelLayerMSLPDay5_Title = document.querySelector('#MSLPDay5-Title')
+let panelLayerMSLPDay5_lists = document.querySelector('#MSLPDay5-lists')
+
+let panelLayer10mWINDDay1_Title = document.querySelector('#mWINDDay1-Title')
+let panelLayer10mWINDDay1_lists = document.querySelector('#mWINDDay1-lists')
+
+let panelLayer10mWINDDay2_Title = document.querySelector('#mWINDDay2-Title')
+let panelLayer10mWINDDay2_lists = document.querySelector('#mWINDDay2-lists')
+
+let panelLayer10mWINDDay3_Title = document.querySelector('#mWINDDay3-Title')
+let panelLayer10mWINDDay3_lists = document.querySelector('#mWINDDay3-lists')
+
+let panelLayer10mWINDDay4_Title = document.querySelector('#mWINDDay4-Title')
+let panelLayer10mWINDDay4_lists = document.querySelector('#mWINDDay4-lists')
+
+let panelLayer10mWINDDay5_Title = document.querySelector('#mWINDDay5-Title')
+let panelLayer10mWINDDay5_lists = document.querySelector('#mWINDDay5-lists')
+
+
 document.querySelectorAll('#popup').forEach(function(openModel) {
     // console.log(openModel, "__openModel");
     openModel.onclick = () => {
@@ -4882,46 +4967,107 @@ let clickedSOUNDING00UTCDEWPOINTLists = [];
 let clickedSOUNDING12UTCDEWPOINTLists = [];
 let clickedSHIPANDBUOYLists = [];
 
+let clickedWRFReflectivityLists = [];
+let clickedWRFlightningProductLists = [];
+let clickedWRFAccumlatedRainfallLists = [];
+let clickedNCUMRlightningProductLists = [];
+let clickedNCUMRWindGustLists = [];
+let clickedNCUMRRainfallLists = [];
+let clickedHRRR_SPHourlyDBZLists = [];
+let clickedHRRR_NEHourlyDBZLists = [];
+let clickedHRRR_NWHourlyDBZLists = [];
+let clickedEWRFMaxZLists = [];
+let clickedEWRFLightningLists = [];
+
+let clickedRainfallIntensityDay1Lists = [];
+let clickedRainfallIntensityDay2Lists = [];
+let clickedRainfallIntensityDay3Lists = [];
+let clickedRainfallIntensityDay4Lists = [];
+let clickedRainfallIntensityDay5Lists = [];
+let clickedMSLPDay1Lists = [];
+let clickedMSLPDay2Lists = [];
+let clickedMSLPDay3Lists = [];
+let clickedMSLPDay4Lists = [];
+let clickedMSLPDay5Lists = [];
+let clicked10mWINDDay1Lists = [];
+let clicked10mWINDDay2Lists = [];
+let clicked10mWINDDay3Lists = [];
+let clicked10mWINDDay4Lists = [];
+let clicked10mWINDDay5Lists = [];
+
+
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
     console.log(_this, '_this');
-
-    var layer_name = _this.context._layer ? _this.context._layer.name : _this.context
-        .className;
-    console.log(layer_name, "layer_name");
     var isChecked = $(this).attr('checked');
+    var layer_group_name = _this.context._layer ? _this.context._layer.group.name : '';
+    console.log(layer_group_name, "layer_group_name");
 
     if (isChecked) { // True
         console.log("Checked");
+        var layer_name = _this.context._layer ? _this.context._layer.name : _this.context
+            .className;
+        console.log(layer_name, "layer_name");
+
         //HomePage_Lightning
         if (_this.context._layer.group.name == "Lightning") {
-            if (layer_name == 'TEMPERATURE') {
-                clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
-                );
-            }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
-                clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
-                );
-            }
-            if (layer_name == 'VISIBILITY') {
-                clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;"><br>`
-                );
-            }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
-                clickedMETAR00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br> <div style="width: 30px; 
-                    height: 15px;
-                    display: flex;
-                    border: 2px solid black;">
-                    <div style="flex: 1; background-color: green;"></div>
-                    <div style="flex: 1; background-color: white;"></div>
-                    </div><br>`
-                );
-            }
-            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+
+            // if (panelLayerLightningTitle.innerHTML == '') {
+            //     panelLayerLightningTitle.innerHTML = _this.context._layer.group.name + ':';
+            //     // legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
+            //     // legendModel1.style.height = '35vh';
+            //     // legendModel1.style.width = '72%';
+            //     Light_RadarRow.style.display = 'block';
+            // }
+
+            // if (layer_name == 'Last 00-05 min') {
+            //     clickedLightningLists.push(
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+            //     );
+            //     map.addLayer(delhiMarker);
+            // }
+            // if (layer_name == 'Last 05-10 min') {
+            //     clickedLightningLists.push(
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+            //     );
+            //     map.addLayer(jaipurMarker);
+            // }
+            // if (layer_name == 'Last 10-15 min') {
+            //     clickedLightningLists.push(
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+            //     );
+            //     map.addLayer(bhopalMarker);
+            // }
+            // panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
+
+            // if (layer_name == 'TEMPERATURE') {
+            //     clickedMETAR00UTCLists.push(
+            //         _this
+            //         // `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
+            //     );
+            // }
+            // if (layer_name == 'DEW POINT TEMPERATURE') {
+            //     clickedMETAR00UTCLists.push(
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} <img src="img/temp.jpeg" style="width: 125px; height: 150px;"><br>`
+            //     );
+            // }
+            // if (layer_name == 'VISIBILITY') {
+            //     clickedMETAR00UTCLists.push(
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;"><br>`
+            //     );
+            // }
+            // if (layer_name == 'WIND SPEED AND DIRECTION') {
+            //     clickedMETAR00UTCLists.push(
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br> <div style="width: 30px; 
+            //         height: 15px;
+            //         display: flex;
+            //         border: 2px solid black;">
+            //         <div style="flex: 1; background-color: green;"></div>
+            //         <div style="flex: 1; background-color: black;"></div>
+            //         </div><br>`
+            //     );
+            // }
+            // panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
         }
         //HomePage_Radar
         if (_this.context._layer.group.name == "Radar Reflectivity") {
@@ -4932,12 +5078,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Radar Reflectivity') {
                 clickedRadarLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'Radar Animation') {
                 clickedRadarLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             panelLayerRadarlists.innerHTML = clickedRadarLists.join("");
@@ -4953,7 +5099,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'District Boundaries') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<span style="width: 30px; 
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `<span style="width: 30px; 
                         height: 1px; 
                         border-bottom: 2px dashed #000;
                         display: inline-block;"></span>` +
@@ -4964,7 +5110,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Airport') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     `<i class="fas fa-plane"></i>` +
                     `</span><br>`
                 );
@@ -4972,7 +5118,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Hospital') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` +
                     `<i class="fas fa-hospital"></i>` +
                     `</span>
                         <br>`
@@ -4981,7 +5127,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'sports') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-football-ball"></i>
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-football-ball"></i>
                         ` +
                     `</span><br>`
                 );
@@ -4989,7 +5135,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name === 'Power Plant') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}  ` + `
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}  ` + `
                          <img src="img/powerplant.jpeg" width="20" height="20" />` +
                     `</span><br>`
                 );
@@ -4999,7 +5145,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Power Station') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `
                         <img src="img/powerstation.png" width="20" height="20" />` +
                     `</span><br>`
                 );
@@ -5007,7 +5153,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Oil Refineries') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <i class="fas fa-industry"></i>` +
                     `</span><br>`
                 );
@@ -5015,7 +5161,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Industrail') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` 
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + ` 
                         <img src="img/industry.jpeg" width="20" height="20" />` +
                     `</span><br>`
                 );
@@ -5023,7 +5169,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name === 'Socio Economic Zone') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} ` + `
                          <img src="img/socio_economic_zone.jpeg" width="20" height="20" />` +
                     `</span><br>`
                 );
@@ -5032,7 +5178,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Road Network') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/road_network.jpeg" style="width: 25px; height: auto;">` +
                     `</span><br>`
                 );
@@ -5040,7 +5186,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Railway Network') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/railway.jpeg" style="width: 25px; height: auto;">` +
                     `</span><br>`
                 );
@@ -5048,7 +5194,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'DEM') {
                 clickedExposureLists.push(
                     `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     `<img src="img/DEM.jpeg" style="width: 125px; height: auto;">` +
                     `</span><br>`
                 );
@@ -5056,11 +5202,21 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'LULC') {
                 clickedExposureLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     `<img src="img/LULC.jpeg" style="width: 175px; height: 250px;">` +
                     `</span><br>`
                 );
             }
+
+            // if (layer_name == 'LULC') {
+            //     clickedExposureLists.push(
+            //         `<span style="display: flex; flex-direction: column; align-items: center;">` +
+            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+            //         `<img src="img/LULC.jpeg" style="width: 175px; height: 250px; margin-top: 5px;">` +
+            //         `</span><br>`
+            //     );
+            // }
+
 
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
         }
@@ -5070,37 +5226,74 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR00UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR00UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR00UTC_lists.style.display = 'block';
+                // legendModelMet.src = "";
+                // legendModelMet.src = 'http://103.215.208.18/dwr_img/GIS/metar_nowcast.jpg';
+                // legendModelMet.style.height = '35vh';
+                // legendModelMet.style.width = '72%';
+                panelLayerMETAR00UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR00UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR00UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5115,37 +5308,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR01UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR01UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR01UTC_lists.style.display = 'block';
+                panelLayerMETAR01UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR01UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR01UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR01UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR01UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5160,37 +5386,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR02UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR02UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR02UTC_lists.style.display = 'block';
+                panelLayerMETAR02UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR02UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR02UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR02UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR02UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5205,37 +5464,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR03UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR03UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR03UTC_lists.style.display = 'block';
+                panelLayerMETAR03UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR03UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR03UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5250,37 +5542,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR04UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR04UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR04UTC_lists.style.display = 'block';
+                panelLayerMETAR04UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR04UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR04UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR04UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR04UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5295,37 +5620,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR05UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR05UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR05UTC_lists.style.display = 'block';
+                panelLayerMETAR05UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR05UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR05UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR05UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR05UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5340,37 +5698,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR06UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR06UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR06UTC_lists.style.display = 'block';
+                panelLayerMETAR06UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR06UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR06UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5385,37 +5776,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR07UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR07UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR07UTC_lists.style.display = 'block';
+                panelLayerMETAR07UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR07UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR07UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR07UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR07UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5430,37 +5854,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR08UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR08UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR08UTC_lists.style.display = 'block';
+                panelLayerMETAR08UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR08UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR08UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR08UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR08UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5475,37 +5932,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR09UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR09UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR09UTC_lists.style.display = 'block';
+                panelLayerMETAR09UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR09UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR09UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5520,37 +6010,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR10UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR10UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR10UTC_lists.style.display = 'block';
+                panelLayerMETAR10UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR10UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR10UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR10UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR10UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5565,37 +6088,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR11UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR11UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR11UTC_lists.style.display = 'block';
+                panelLayerMETAR11UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR11UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR11UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR11UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR11UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5610,37 +6166,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR12UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR12UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR12UTC_lists.style.display = 'block';
+                panelLayerMETAR12UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR12UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR12UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5655,37 +6244,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR13UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR13UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR13UTC_lists.style.display = 'block';
+                panelLayerMETAR13UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR13UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR13UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR13UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR13UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5700,37 +6322,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR14UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR14UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR14UTC_lists.style.display = 'block';
+                panelLayerMETAR14UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR14UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR14UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR14UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR14UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5745,37 +6400,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR15UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR15UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR15UTC_lists.style.display = 'block';
+                panelLayerMETAR15UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR15UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR15UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5790,37 +6478,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR16UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR16UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR16UTC_lists.style.display = 'block';
+                panelLayerMETAR16UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR16UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR16UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR16UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR16UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5835,37 +6556,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR17UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR17UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR17UTC_lists.style.display = 'block';
+                panelLayerMETAR17UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR17UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR17UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR17UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR17UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5880,37 +6634,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR18UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR18UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR18UTC_lists.style.display = 'block';
+                panelLayerMETAR18UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR18UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR18UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5925,37 +6712,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR19UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR19UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR19UTC_lists.style.display = 'block';
+                panelLayerMETAR19UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR19UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR19UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR19UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR19UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -5970,37 +6790,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR20UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR20UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR20UTC_lists.style.display = 'block';
+                panelLayerMETAR20UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR20UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR20UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR20UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR20UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -6015,37 +6868,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR21UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR21UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR21UTC_lists.style.display = 'block';
+                panelLayerMETAR21UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR21UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR21UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -6060,37 +6946,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR22UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR22UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR22UTC_lists.style.display = 'block';
+                panelLayerMETAR22UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR22UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR22UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR22UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR22UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -6105,37 +7024,70 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (panelLayerMETAR23UTC_Title.innerHTML == '') {
                 METAR.innerHTML = "METAR"
                 panelLayerMETAR23UTC_Title.innerHTML = _this.context._layer.group.name + ':'
-                panelLayerMETAR23UTC_lists.style.display = 'block';
+                panelLayerMETAR23UTC_lists.style.display = 'flex';
             }
 
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR23UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR23UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/temp.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedMETAR23UTCLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                    ` <img src="img/visiblity.jpeg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedMETAR23UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
                 <g>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
                     <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
@@ -6146,6 +7098,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerMETAR23UTC_lists.innerHTML = clickedMETAR23UTCLists.join("");
         }
+        // SYNOP--
         if (_this.context._layer.group.name == "SYNOP 00UTC") {
             if (panelLayerSYNOP00UTC_Title.innerHTML == '') {
                 SYNOP.innerHTML = "SYNOP"
@@ -6155,42 +7108,160 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff30ac; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15-30</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fdff2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">30-35</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ffab2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">35-40</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f86929; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">40-45</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-                );
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c8021d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #d213c6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #ad67e1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f5ed8c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e3f5b6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #f8e8e3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #e1eef5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #c2dbeb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #9ccbe1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #70acd4; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #3590c5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:55px; height:18px; border-radius: 15%; background-color: #0573bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+    </span>
+</span><br>`
+                )
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #fbf9fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">0.000-20.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #bbbbbb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">20.000-40.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #7f7f7f; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">40.000-60.000</span>
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #424242; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">60.000-80.000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:75px; height:18px; border-radius: 15%; background-color: #050505; color:white; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;">80.000-100.000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #bbdd07; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-50</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #0edf06; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-100</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffab61; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">100-200</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #ffea9f; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">200-300</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #fffdbe; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">300-400</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #d4efb1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">400-500</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #addba3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">500-600</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #68b2b0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">600-700</span>
+    <span style="align-items: center; width:42px; height:18px; border-radius: 15%; background-color: #2b83bb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>700</span>
+    </span>
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #29ff2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fcff32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">25-50</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fbaf33; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">50-70</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fa6529; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">70-85</span>
+    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f93c35; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">>85</span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+    <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+  </span>
+  </span>
+</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span><br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP00UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+  <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #7cfd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">0-15</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0101fc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15.5-64.4</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #ffeb01; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">64.4-115.5</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe582e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">115.6-204.4</span>
+  </span>
+</span><br>`
                 );
             }
 
@@ -6206,42 +7277,70 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span><br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP03UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
 
@@ -6256,42 +7355,70 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span><br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP06UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
 
@@ -6306,42 +7433,70 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span><br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP09UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
 
@@ -6356,42 +7511,70 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span><br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP12UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
 
@@ -6406,42 +7589,70 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span><br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP15UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
 
@@ -6456,42 +7667,70 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span><br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP18UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
 
@@ -6506,47 +7745,76 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TEMPERATURE') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_temperature.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_mslp.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'CLOUD COVER') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_cloud.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_Geo.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'RELATIVE HUMIDITY') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_humidity.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'VISIBILITY') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_visibility.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span><br>`
                 );
             }
             if (layer_name == '3h RAINFALL') {
                 clickedSYNOP21UTCLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/synop/synop_rainfall.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
 
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
         }
+        // RADAR--
         if (_this.context._layer.group.name == "Radar Products") {
             if (panelLayerRADARPRODUCTS_Title.innerHTML == '') {
                 RADARPRODUCTS.innerHTML = "RADAR"
@@ -6556,12 +7824,15 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Radar Reflectivity') {
                 clickedRADARPRODUCTSLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/radar/radar_reflectivity.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'Radar Animation') {
                 clickedRADARPRODUCTSLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6576,52 +7847,52 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'TIR1') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VIS') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'CTBT') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'LOW LEVEL CONVERGENCE') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'UPPER LEVEL DIVEGENCE') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'MID LEVEL SHEAR') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VORTICITY AT 200hPa') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VORTICITY AT 500hPa') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VORTICITY AT 700hPa') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == 'VORTICITY AT 850hPa') {
                 clickedSATELLITELists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6636,27 +7907,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Last 00-05 min') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'Last 05-10 min') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'Last 10-15 min') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'ILDN Last 05 min') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
             if (layer_name == 'Nowcast Alerts') {
                 clickedLIGHTININGLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
+                    ` <img src="img/light_nowcast.jpg" style="width: 125px; height: 150px;">` +
+                    `</span><br>`
                 );
             }
 
@@ -6673,42 +7959,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '850 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '700 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '500 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '300 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '200 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '100 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '50 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6724,42 +8010,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '850 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '700 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '500 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '300 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '200 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '100 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '50 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6775,42 +8061,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '850 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '700 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '500 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '300 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '200 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '100 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '50 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6826,42 +8112,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '850 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '700 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '500 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '300 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '200 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '100 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '50 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6877,42 +8163,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '850 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '700 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '500 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '300 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '200 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '100 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '50 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6928,42 +8214,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '850 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '700 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '500 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '300 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '200 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '100 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '50 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
@@ -6979,149 +8265,1042 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '00UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '01UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '02UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '03UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '04UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '05UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '06UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '07UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '08UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '09UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '10UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '11UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '12UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '13UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '14UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '15UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '16UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '17UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '18UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '19UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '20UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '21UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '22UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
             if (layer_name == '23UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
             }
 
             panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
         }
+        if (_this.context._layer.group.name == "WRF Reflectivity") {
+            if (panelLayerWRFReflectivity_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerWRFReflectivity_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 03 Hrs') {
+                clickedWRFReflectivityLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                clickedWRFReflectivityLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerWRFReflectivity_lists.innerHTML = clickedWRFReflectivityLists.join("");
+        }
+        if (_this.context._layer.group.name == "WRF lightning Product") {
+            if (panelLayerWRFlightningProduct_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerWRFlightningProduct_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 03 Hrs') {
+                clickedWRFlightningProductLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                clickedWRFlightningProductLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerWRFlightningProduct_lists.innerHTML = clickedWRFlightningProductLists.join("");
+        }
+        if (_this.context._layer.group.name == "WRF Accumlated Rainfall") {
+            if (panelLayerWRFAccumlatedRainfall_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerWRFAccumlatedRainfall_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 03 Hrs') {
+                clickedWRFAccumlatedRainfallLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                clickedWRFAccumlatedRainfallLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerWRFAccumlatedRainfall_lists.innerHTML = clickedWRFAccumlatedRainfallLists.join("");
+        }
+        if (_this.context._layer.group.name == "lightning Potential index") {
+            if (panelLayerlightningPotentialindex_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerlightningPotentialindex_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 01 Hrs') {
+                clickedlightningPotentialindexLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                clickedlightningPotentialindexLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                clickedlightningPotentialindexLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join("");
+        }
+        if (_this.context._layer.group.name == "NCUMR lightning Product") {
+            if (panelLayerNCUMRlightningProduct_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerNCUMRlightningProduct_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 03 Hrs') {
+                clickedNCUMRlightningProductLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                clickedNCUMRlightningProductLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerNCUMRlightningProduct_lists.innerHTML = clickedNCUMRlightningProductLists.join("");
+        }
+        if (_this.context._layer.group.name == "NCUMR Wind Gust") {
+            if (panelLayerNCUMRWindGust_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerNCUMRWindGust_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 03 Hrs') {
+                clickedNCUMRWindGustLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                clickedNCUMRWindGustLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerNCUMRWindGust_lists.innerHTML = clickedNCUMRWindGustLists.join("");
+        }
+        if (_this.context._layer.group.name == "NCUMR Rainfall") {
+            if (panelLayerNCUMRRainfall_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerNCUMRRainfall_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 03 Hrs') {
+                clickedNCUMRRainfallLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                clickedNCUMRRainfallLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerNCUMRRainfall_lists.innerHTML = clickedNCUMRRainfallLists.join("");
+        }
+        if (_this.context._layer.group.name == "HRRR_SP Hourly DBZ") {
+            if (panelLayerHRRR_SPHourlyDBZ_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerHRRR_SPHourlyDBZ_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 01 Hrs') {
+                clickedHRRR_SPHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                clickedHRRR_SPHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                clickedHRRR_SPHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerHRRR_SPHourlyDBZ_lists.innerHTML = clickedHRRR_SPHourlyDBZLists.join("");
+        }
+        if (_this.context._layer.group.name == "HRRR_NE Hourly DBZ") {
+            if (panelLayerHRRR_NEHourlyDBZ_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerHRRR_NEHourlyDBZ_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 01 Hrs') {
+                clickedHRRR_NEHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                clickedHRRR_NEHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                clickedHRRR_NEHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerHRRR_NEHourlyDBZ_lists.innerHTML = clickedHRRR_NEHourlyDBZLists.join("");
+        }
+        if (_this.context._layer.group.name == "HRRR_NW Hourly DBZ") {
+            if (panelLayerHRRR_NWHourlyDBZ_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerHRRR_NWHourlyDBZ_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 01 Hrs') {
+                clickedHRRR_NWHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                clickedHRRR_NWHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                clickedHRRR_NWHourlyDBZLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerHRRR_NWHourlyDBZ_lists.innerHTML = clickedHRRR_NWHourlyDBZLists.join("");
+        }
+        if (_this.context._layer.group.name == "EWRF MaxZ") {
+            if (panelLayerEWRFMaxZ_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerEWRFMaxZ_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 01 Hrs') {
+                clickedEWRFMaxZLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                clickedEWRFMaxZLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                clickedEWRFMaxZLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerEWRFMaxZ_lists.innerHTML = clickedEWRFMaxZLists.join("");
+        }
+        if (_this.context._layer.group.name == "EWRF Lightning") {
+            if (panelLayerEWRFLightning_Title.innerHTML == '') {
+                MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
+                panelLayerEWRFLightning_Title.innerHTML = _this.context._layer.group.name + ':'
+                MESOLSCALE_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'Next 01 Hrs') {
+                clickedEWRFLightningLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                clickedEWRFLightningLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                clickedEWRFLightningLists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
+        }
+        // MEDIUM
+        if (_this.context._layer.group.name == "Rainfall Intensity Day1") {
+            if (panelLayerRainfallIntensityDay1_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayerRainfallIntensityDay1_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY1') {
+                clickedRainfallIntensityDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY1') {
+                clickedRainfallIntensityDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY1') {
+                clickedRainfallIntensityDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY1') {
+                clickedRainfallIntensityDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY1') {
+                clickedRainfallIntensityDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY1') {
+                clickedRainfallIntensityDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+        if (_this.context._layer.group.name == "Rainfall Intensity Day2") {
+            if (panelLayerRainfallIntensityDay2_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayerRainfallIntensityDay2_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY2') {
+                clickedRainfallIntensityDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY2') {
+                clickedRainfallIntensityDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY2') {
+                clickedRainfallIntensityDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY2') {
+                clickedRainfallIntensityDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY2') {
+                clickedRainfallIntensityDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY2') {
+                clickedRainfallIntensityDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+        if (_this.context._layer.group.name == "Rainfall Intensity Day3") {
+            if (panelLayerRainfallIntensityDay3_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayerRainfallIntensityDay3_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY3') {
+                clickedRainfallIntensityDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY3') {
+                clickedRainfallIntensityDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY3') {
+                clickedRainfallIntensityDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY3') {
+                clickedRainfallIntensityDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY3') {
+                clickedRainfallIntensityDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY3') {
+                clickedRainfallIntensityDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+        if (_this.context._layer.group.name == "Rainfall Intensity Day4") {
+            if (panelLayerRainfallIntensityDay4_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayerRainfallIntensityDay4_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY4') {
+                clickedRainfallIntensityDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY4') {
+                clickedRainfallIntensityDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY4') {
+                clickedRainfallIntensityDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY4') {
+                clickedRainfallIntensityDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY4') {
+                clickedRainfallIntensityDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY4') {
+                clickedRainfallIntensityDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (_this.context._layer.group.name == "Rainfall Intensity Day5") {
+            if (panelLayerRainfallIntensityDay5_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayerRainfallIntensityDay5_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY5') {
+                clickedRainfallIntensityDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY5') {
+                clickedRainfallIntensityDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY5') {
+                clickedRainfallIntensityDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY5') {
+                clickedRainfallIntensityDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY5') {
+                clickedRainfallIntensityDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY5') {
+                clickedRainfallIntensityDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+
+
+
+
+
+
+
+
+
+
+        if (_this.context._layer.group.name == "MSLP Day1") {
+            if (panelLayerMSLPDay1_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayerMSLPDay1_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY1') {
+                clickedMSLPDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY1') {
+                clickedMSLPDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY1') {
+                clickedMSLPDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY1') {
+                clickedMSLPDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY1') {
+                clickedMSLPDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY1') {
+                clickedMSLPDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+        if (_this.context._layer.group.name == "MSLP Day2") {
+            if (panelLayerMSLPDay2_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayerMSLPDay2_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY2') {
+                clickedMSLPDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY2') {
+                clickedMSLPDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY2') {
+                clickedMSLPDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY2') {
+                clickedMSLPDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY2') {
+                clickedMSLPDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY2') {
+                clickedMSLPDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+        if (_this.context._layer.group.name == "MSLP Day3") {
+            if (panelLayerMSLPDay3_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayerMSLPDay3_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY3') {
+                clickedMSLPDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY3') {
+                clickedMSLPDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY3') {
+                clickedMSLPDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY3') {
+                clickedMSLPDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY3') {
+                clickedMSLPDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY3') {
+                clickedMSLPDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+        if (_this.context._layer.group.name == "MSLP Day4") {
+            if (panelLayerMSLPDay4_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayerMSLPDay4_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY4') {
+                clickedMSLPDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY4') {
+                clickedMSLPDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY4') {
+                clickedMSLPDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY4') {
+                clickedMSLPDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY4') {
+                clickedMSLPDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY4') {
+                clickedMSLPDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+        if (_this.context._layer.group.name == "MSLP Day5") {
+            if (panelLayerMSLPDay5_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayerMSLPDay5_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY5') {
+                clickedMSLPDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY5') {
+                clickedMSLPDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY5') {
+                clickedMSLPDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY5') {
+                clickedMSLPDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY5') {
+                clickedMSLPDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY5') {
+                clickedMSLPDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+
+
+
+
+
+        if (_this.context._layer.group.name == "10m WIND Day 1") {
+            if (panelLayer10mWINDDay1_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayer10mWINDDay1_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY1') {
+                clicked10mWINDDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY1') {
+                clicked10mWINDDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY1') {
+                clicked10mWINDDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY1') {
+                clicked10mWINDDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY1') {
+                clicked10mWINDDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY1') {
+                clicked10mWINDDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+        if (_this.context._layer.group.name == "10m WIND Day 2") {
+            if (panelLayer10mWINDDay2_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayer10mWINDDay2_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY2') {
+                clicked10mWINDDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY2') {
+                clicked10mWINDDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY2') {
+                clicked10mWINDDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY2') {
+                clicked10mWINDDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY2') {
+                clicked10mWINDDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY2') {
+                clicked10mWINDDay2Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+        if (_this.context._layer.group.name == "10m WIND Day 3") {
+            if (panelLayer10mWINDDay3_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayer10mWINDDay3_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY3') {
+                clicked10mWINDDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY3') {
+                clicked10mWINDDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY3') {
+                clicked10mWINDDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY3') {
+                clicked10mWINDDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY3') {
+                clicked10mWINDDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY3') {
+                clicked10mWINDDay3Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+        if (_this.context._layer.group.name == "10m WIND Day 4") {
+            if (panelLayer10mWINDDay4_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayer10mWINDDay4_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY4') {
+                clicked10mWINDDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY4') {
+                clicked10mWINDDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY4') {
+                clicked10mWINDDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY4') {
+                clicked10mWINDDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY4') {
+                clicked10mWINDDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY4') {
+                clicked10mWINDDay4Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+        if (_this.context._layer.group.name == "10m WIND Day 5") {
+            if (panelLayer10mWINDDay5_Title.innerHTML == '') {
+                MEDIUM.innerHTML = "MEDIUM RANGE"
+                panelLayer10mWINDDay5_Title.innerHTML = _this.context._layer.group.name + ':'
+                MEDIUM_Row.style.display = 'block';
+            }
+
+            if (layer_name == 'GFS DAY5') {
+                clicked10mWINDDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NCUM DAY5') {
+                clicked10mWINDDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'NEPS DAY5') {
+                clicked10mWINDDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'WRF DAY5') {
+                clicked10mWINDDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'GEFS DAY5') {
+                clicked10mWINDDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+            if (layer_name == 'ECMWF DAY5') {
+                clicked10mWINDDay5Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
+                );
+            }
+
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
+        }
+
 
     } else {
         console.log("Not Checked");
+        var uncheckLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer.name : _this
+            .context
+            .className;
         //Lightning UNCHECK
-        if (layer_name == 'Last 00-05 min') {
-            clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'Lightning Last 00-05 min') {
+            clickedLightningLists = clickedLightningLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
-            map.removeLayer(delhiMarker);
+            map.removeLayer(ggg);
         }
-        if (layer_name == 'Last 05-10 min') {
-            clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'Lightning Last 05-10 min') {
+            clickedLightningLists = clickedLightningLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
             map.removeLayer(jaipurMarker);
         }
-        if (layer_name == 'Last 10-15 min') {
-            clickedLightningLists = clickedLightningLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'Lightning Last 10-15 min') {
+            clickedLightningLists = clickedLightningLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
             map.removeLayer(bhopalMarker);
         }
@@ -7138,17 +9317,19 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //Radar UNCHECK
-        if (layer_name == 'Radar Reflectivity') {
-            clickedRadarLists = clickedRadarLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'Radar Reflectivity Radar Reflectivity') {
+            clickedRadarLists = clickedRadarLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerRadarlists.innerHTML = clickedRadarLists.join("");
             map.removeLayer(lucknowMarker);
         }
-        if (layer_name == 'Radar Animation') {
-            clickedRadarLists = clickedRadarLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'Radar Reflectivity Radar Animation') {
+            clickedRadarLists = clickedRadarLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerRadarlists.innerHTML = clickedRadarLists.join("");
             map.removeLayer(patnaMarker);
         }
@@ -7167,176 +9348,121 @@ $("body").on("change", "input[type=checkbox]", function() {
         //
         if (panelLayerLightninglists.innerHTML == '' && panelLayerRadarlists.innerHTML == '') {
             panelLayerLightningTitle.innerHTML = '';
-            // legendModel1.src = "";
-            // legendModel1.alt = "";
-            // legendModel1.style.height = 0;
-            // legendModel1.style.width = 0;
             Light_RadarRow.style.display = 'none';
         }
 
-
         //Exposure UNCHECK
-        if (layer_name == 'District Boundaries') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<span style="width: 30px; 
-                        height: 1px; 
-                        border-bottom: 2px dashed #000;
-                        display: inline-block;"></span>` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers District Boundaries') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-        if (layer_name == 'Airport') {
-            clickedExposureLists = clickedExposureLists.filter(checkList => checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                `<i class="fas fa-plane"></i>` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Airport') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(MumbaiMarker);
         }
-        if (layer_name == 'Hospital') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` +
-                `<i class="fas fa-hospital"></i>` +
-                `</span>
-                        <br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Hospital') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
         }
-        if (layer_name == 'sports') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `<i class="fas fa-football-ball"></i>
-                        ` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers sports') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-        if (layer_name === 'Power Plant') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}  ` + `
-                         <img src="img/powerplant.jpeg" width="20" height="20" />` +
-                `</span><br>`
-            );
+        if (uncheckLayer === 'Power Plant') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(VijayapuraMarker);
         }
-
-
-        if (layer_name == 'Power Station') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
-                        <img src="img/powerstation.png" width="20" height="20" />` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Power Station') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(SolapurMarker);
         }
-        if (layer_name == 'Oil Refineries') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                ` <i class="fas fa-industry"></i>` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Oil Refineries') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(RanchiMarker);
         }
-        if (layer_name == 'Industrail') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` + ` 
-                        <img src="img/industry.jpeg" width="20" height="20" />` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Industrail') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
         }
-        if (layer_name === 'Socio Economic Zone') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name} ` + `
-                         <img src="img/socio_economic_zone.jpeg" width="20" height="20" />` +
-                `</span><br>`
-            );
+        if (uncheckLayer === 'Socio Economic Zone') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
 
-        if (layer_name == 'Road Network') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                ` <img src="img/road_network.jpeg" style="width: 25px; height: auto;">` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Road Network') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-        if (layer_name == 'Railway Network') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                ` <img src="img/railway.jpeg" style="width: 25px; height: auto;">` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers Railway Network') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-        if (layer_name == 'DEM') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style=" flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                `<img src="img/DEM.jpeg" style="width: 125px; height: auto;">` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers DEM') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(BidarMarker);
         }
-        if (layer_name == 'LULC') {
-            clickedExposureLists = clickedExposureLists.filter(checkList =>
-                checkList !=
-                `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}` +
-                `<img src="img/LULC.jpeg" style="width: 175px; height: 250px;">` +
-                `</span><br>`
-            );
+        if (uncheckLayer == 'Exposure Layers LULC') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
             map.removeLayer(PuneMarker);
         }
-
-        //
 
         //
         if (panelLayerExposureLists.innerHTML == '') {
             panelLayerExposureTitle.innerHTML = '';
             EXPOSURE.innerHTML = '';
-            // legendModelExpo.src = "";
-            // legendModelExpo.alt = "";
-            // legendModelExpo.style.height = 0;
-            // legendModelExpo.style.width = 0;
             ExposureRow.style.display = 'flex';
-
         }
         console.log(layer_name, "layer_name");
 
@@ -7348,54 +9474,3099 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //METAR UNCHECK
-        if (layer_name == 'TEMPERATURE') {
-            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-            );
-            console.log(layer_name, "layer_name TEMP");
+        if (uncheckLayer == 'METAR 00UTC TEMPERATURE') {
+            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
             map.removeLayer(SuratMarker);
         }
-        if (layer_name == 'DEW POINT TEMPERATURE') {
-            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'METAR 00UTC DEW POINT TEMPERATURE') {
+            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
             map.removeLayer(JodhpurMarker);
         }
-        if (layer_name == 'VISIBILITY') {
-            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'METAR 00UTC VISIBILITY') {
+            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
             map.removeLayer(KanpurMarker);
         }
-        if (layer_name == 'WIND SPEED AND DIRECTION') {
-            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => checkList !=
-                `<input type="checkbox" class="${layer_name}" checked/> ${layer_name}<br>`
-            );
+        if (uncheckLayer == 'METAR 00UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
             panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
             map.removeLayer(MeerutMarker);
         }
-        //
 
-        //
         if (panelLayerMETAR00UTC_lists.innerHTML == '') {
             panelLayerMETAR00UTC_Title.innerHTML = '';
             METAR.innerHTML = '';
-            // legendModelMet.src = "";
-            // legendModelMet.alt = "";
-            // legendModelMet.style.height = 0;
-            // legendModelMet.style.width = 0;
-            // METAR_Row.style.display = 'block';
         }
-        console.log(layer_name, "layer_name");
 
         //GroupPanelLayer-collapsible-METAR00UTC
         if (panelLayerMETAR00UTC_lists.innerHTML != '') {
-            var yyy = document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
             document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
-            console.log(yyy);
+        }
+
+
+        if (uncheckLayer == 'METAR 01UTC TEMPERATURE') {
+            clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 01UTC DEW POINT TEMPERATURE') {
+            clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 01UTC VISIBILITY') {
+            clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 01UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR01UTC_lists.innerHTML == '') {
+            panelLayerMETAR01UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR01UTC
+        if (panelLayerMETAR01UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 02UTC TEMPERATURE') {
+            clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 02UTC DEW POINT TEMPERATURE') {
+            clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 02UTC VISIBILITY') {
+            clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 02UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR02UTC_lists.innerHTML == '') {
+            panelLayerMETAR02UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR02UTC
+        if (panelLayerMETAR02UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 03UTC TEMPERATURE') {
+            clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 03UTC DEW POINT TEMPERATURE') {
+            clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 03UTC VISIBILITY') {
+            clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 03UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR03UTC_lists.innerHTML == '') {
+            panelLayerMETAR03UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR03UTC
+        if (panelLayerMETAR03UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 04UTC TEMPERATURE') {
+            clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 04UTC DEW POINT TEMPERATURE') {
+            clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 04UTC VISIBILITY') {
+            clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 04UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR04UTC_lists.innerHTML == '') {
+            panelLayerMETAR04UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR04UTC
+        if (panelLayerMETAR04UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 05UTC TEMPERATURE') {
+            clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 05UTC DEW POINT TEMPERATURE') {
+            clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 05UTC VISIBILITY') {
+            clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 05UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR05UTC_lists.innerHTML == '') {
+            panelLayerMETAR05UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR05UTC
+        if (panelLayerMETAR05UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 06UTC TEMPERATURE') {
+            clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 06UTC DEW POINT TEMPERATURE') {
+            clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 06UTC VISIBILITY') {
+            clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 06UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR06UTC_lists.innerHTML == '') {
+            panelLayerMETAR06UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR06UTC
+        if (panelLayerMETAR06UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 07UTC TEMPERATURE') {
+            clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 07UTC DEW POINT TEMPERATURE') {
+            clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 07UTC VISIBILITY') {
+            clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 07UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR07UTC_lists.innerHTML == '') {
+            panelLayerMETAR07UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR07UTC
+        if (panelLayerMETAR07UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 08UTC TEMPERATURE') {
+            clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 08UTC DEW POINT TEMPERATURE') {
+            clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 08UTC VISIBILITY') {
+            clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 08UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR08UTC_lists.innerHTML == '') {
+            panelLayerMETAR08UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR08UTC
+        if (panelLayerMETAR08UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 09UTC TEMPERATURE') {
+            clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 09UTC DEW POINT TEMPERATURE') {
+            clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 09UTC VISIBILITY') {
+            clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 09UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR09UTC_lists.innerHTML == '') {
+            panelLayerMETAR09UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR09UTC
+        if (panelLayerMETAR09UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 10UTC TEMPERATURE') {
+            clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 10UTC DEW POINT TEMPERATURE') {
+            clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 10UTC VISIBILITY') {
+            clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 10UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR10UTC_lists.innerHTML == '') {
+            panelLayerMETAR10UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR10UTC
+        if (panelLayerMETAR10UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 11UTC TEMPERATURE') {
+            clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 11UTC DEW POINT TEMPERATURE') {
+            clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 11UTC VISIBILITY') {
+            clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 11UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR11UTC_lists.innerHTML == '') {
+            panelLayerMETAR11UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR11UTC
+        if (panelLayerMETAR11UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 12UTC TEMPERATURE') {
+            clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 12UTC DEW POINT TEMPERATURE') {
+            clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 12UTC VISIBILITY') {
+            clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 12UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR12UTC_lists.innerHTML == '') {
+            panelLayerMETAR12UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR12UTC
+        if (panelLayerMETAR12UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 13UTC TEMPERATURE') {
+            clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 13UTC DEW POINT TEMPERATURE') {
+            clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 13UTC VISIBILITY') {
+            clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 13UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR13UTC_lists.innerHTML == '') {
+            panelLayerMETAR13UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR13UTC
+        if (panelLayerMETAR13UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 14UTC TEMPERATURE') {
+            clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 14UTC DEW POINT TEMPERATURE') {
+            clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 14UTC VISIBILITY') {
+            clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 14UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR14UTC_lists.innerHTML == '') {
+            panelLayerMETAR14UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR14UTC
+        if (panelLayerMETAR14UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 15UTC TEMPERATURE') {
+            clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 15UTC DEW POINT TEMPERATURE') {
+            clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 15UTC VISIBILITY') {
+            clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 15UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR15UTC_lists.innerHTML == '') {
+            panelLayerMETAR15UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR15UTC
+        if (panelLayerMETAR15UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 16UTC TEMPERATURE') {
+            clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 16UTC DEW POINT TEMPERATURE') {
+            clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 16UTC VISIBILITY') {
+            clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 16UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR16UTC_lists.innerHTML == '') {
+            panelLayerMETAR16UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR16UTC
+        if (panelLayerMETAR16UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 17UTC TEMPERATURE') {
+            clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 17UTC DEW POINT TEMPERATURE') {
+            clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 17UTC VISIBILITY') {
+            clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 17UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR17UTC_lists.innerHTML == '') {
+            panelLayerMETAR17UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR17UTC
+        if (panelLayerMETAR17UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 18UTC TEMPERATURE') {
+            clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 18UTC DEW POINT TEMPERATURE') {
+            clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 18UTC VISIBILITY') {
+            clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 18UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR18UTC_lists.innerHTML == '') {
+            panelLayerMETAR18UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR18UTC
+        if (panelLayerMETAR18UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 19UTC TEMPERATURE') {
+            clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 19UTC DEW POINT TEMPERATURE') {
+            clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 19UTC VISIBILITY') {
+            clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 19UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR19UTC_lists.innerHTML == '') {
+            panelLayerMETAR19UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR19UTC
+        if (panelLayerMETAR19UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+        if (uncheckLayer == 'METAR 20UTC TEMPERATURE') {
+            clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 20UTC DEW POINT TEMPERATURE') {
+            clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 20UTC VISIBILITY') {
+            clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 20UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR20UTC_lists.innerHTML == '') {
+            panelLayerMETAR20UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR20UTC
+        if (panelLayerMETAR20UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 21UTC TEMPERATURE') {
+            clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 21UTC DEW POINT TEMPERATURE') {
+            clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 21UTC VISIBILITY') {
+            clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 21UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR21UTC_lists.innerHTML == '') {
+            panelLayerMETAR21UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR21UTC
+        if (panelLayerMETAR21UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        if (uncheckLayer == 'METAR 22UTC TEMPERATURE') {
+            clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+            map.removeLayer(SuratMarker);
+        }
+        if (uncheckLayer == 'METAR 22UTC DEW POINT TEMPERATURE') {
+            clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'METAR 22UTC VISIBILITY') {
+            clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+            map.removeLayer(KanpurMarker);
+        }
+        if (uncheckLayer == 'METAR 22UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+            map.removeLayer(MeerutMarker);
+        }
+
+        if (panelLayerMETAR22UTC_lists.innerHTML == '') {
+            panelLayerMETAR22UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR22UTC
+        if (panelLayerMETAR22UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
+
+        // SYNOP UNCHECK
+        if (uncheckLayer == 'SYNOP 00UTC TEMPERATURE') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 00UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 00UTC CLOUD COVER') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 00UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 00UTC RELATIVE HUMIDITY') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 00UTC VISIBILITY') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 00UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 00UTC 3h RAINFALL') {
+            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 03UTC TEMPERATURE') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 03UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 03UTC CLOUD COVER') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 03UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 03UTC RELATIVE HUMIDITY') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 03UTC VISIBILITY') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 03UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 03UTC 3h RAINFALL') {
+            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 06UTC TEMPERATURE') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 06UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 06UTC CLOUD COVER') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 06UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 06UTC RELATIVE HUMIDITY') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 06UTC VISIBILITY') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 06UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 06UTC 3h RAINFALL') {
+            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 09UTC TEMPERATURE') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 09UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 09UTC CLOUD COVER') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 09UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 09UTC RELATIVE HUMIDITY') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 09UTC VISIBILITY') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 09UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 09UTC 3h RAINFALL') {
+            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 12UTC TEMPERATURE') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 12UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 12UTC CLOUD COVER') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 12UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 12UTC RELATIVE HUMIDITY') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 12UTC VISIBILITY') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 12UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 12UTC 3h RAINFALL') {
+            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 15UTC TEMPERATURE') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 15UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 15UTC CLOUD COVER') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 15UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 15UTC RELATIVE HUMIDITY') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 15UTC VISIBILITY') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 15UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 15UTC 3h RAINFALL') {
+            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 18UTC TEMPERATURE') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 18UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 18UTC CLOUD COVER') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 18UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 18UTC RELATIVE HUMIDITY') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 18UTC VISIBILITY') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 18UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 18UTC 3h RAINFALL') {
+            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+
+        }
+
+
+        if (uncheckLayer == 'SYNOP 21UTC TEMPERATURE') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+            map.removeLayer(JodhpurMarker);
+        }
+        if (uncheckLayer == 'SYNOP 21UTC MEAN SEA LEVEL PRESSURE') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 21UTC CLOUD COVER') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 21UTC GEOPOTENTIAL HEIGHT') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 21UTC RELATIVE HUMIDITY') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 21UTC VISIBILITY') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 21UTC WIND SPEED AND DIRECTION') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+        if (uncheckLayer == 'SYNOP 21UTC 3h RAINFALL') {
+            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+
+        }
+
+        // RADAR UNCHECk
+        if (uncheckLayer == 'Radar Products Radar Reflectivity') {
+            clickedRADARPRODUCTSLists = clickedRADARPRODUCTSLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
+        }
+        if (uncheckLayer == 'Radar Products Radar Animation') {
+            clickedRADARPRODUCTSLists = clickedRADARPRODUCTSLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
+        }
+
+
+        // Satellite Observation UNCHECk
+        if (uncheckLayer == 'Satellite Observation TIR1') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation VIS') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation CTBT') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation LOW LEVEL CONVERGENCE') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation UPPER LEVEL DIVEGENCE') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation MID LEVEL SHEAR') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation VORTICITY AT 200hPa') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation VORTICITY AT 500hPa') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite Observation VORTICITY AT 700hPa') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+        if (uncheckLayer == 'Satellite ObservationVORTICITY AT 850hPa') {
+            clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
+
+        }
+
+        // Lightining Uncheck
+        if (uncheckLayer == 'Lightning Last 00-05 min') {
+            clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
+
+        }
+        if (uncheckLayer == 'Lightning Last 05-10 min') {
+            clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
+        }
+        if (uncheckLayer == 'Lightning Last 10-15 min') {
+            clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
+        }
+        if (uncheckLayer == 'Lightning ILDN Last 05 min') {
+            clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
+        }
+        if (uncheckLayer == 'Lightning Nowcast Alerts') {
+            clickedLIGHTININGLists = clickedLIGHTININGLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerLIGHTINING_lists.innerHTML = clickedLIGHTININGLists.join("");
+        }
+
+
+        // SOUNDING UNCHECK
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 1000 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 850 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 700 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 500 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 300 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 200 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 100 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00_UTC WIND 50 hpa WIND') {
+            clickedSOUNDING00UTCWINDLists = clickedSOUNDING00UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
+        }
+
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 1000 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 850 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 700 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 500 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 300 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 200 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 100 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12_UTC WIND 50 hpa WIND') {
+            clickedSOUNDING12UTCWINDLists = clickedSOUNDING12UTCWINDLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
+        }
+
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 1000 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 850 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 700 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 500 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 300 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 200 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 100 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC TEMP 50 hpa TEMP') {
+            clickedSOUNDING00UTCTEMPLists = clickedSOUNDING00UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
+        }
+
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 1000 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 850 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 700 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 500 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 300 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 200 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 100 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC TEMP 50 hpa TEMP') {
+            clickedSOUNDING12UTCTEMPLists = clickedSOUNDING12UTCTEMPLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
+        }
+
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 1000 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 850 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 700 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 500 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 300 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 200 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 100 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_00UTC DEW POINT 50 hpa DEW POINT') {
+            clickedSOUNDING00UTCDEWPOINTLists = clickedSOUNDING00UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
+        }
+
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 1000 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 850 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 700 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 500 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 300 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 200 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 100 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+        if (uncheckLayer == 'SOUNDING_12UTC DEW POINT 50 hpa DEW POINT') {
+            clickedSOUNDING12UTCDEWPOINTLists = clickedSOUNDING12UTCDEWPOINTLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
+        }
+
+
+        // SHIPANDBUOY UNCHECK
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 00UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 01UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 02UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 03UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 04UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 05UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 06UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 07UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 08UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 09UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 10UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 11UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 12UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 13UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 14UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 15UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 16UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 17UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 18UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 19UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 20UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 21UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 22UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+        if (uncheckLayer == 'SHIP AND BUOY OBSERVATION 23UTC') {
+            clickedSHIPANDBUOYLists = clickedSHIPANDBUOYLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
+        }
+
+        if (uncheckLayer == 'WRF Reflectivity Next 03 Hrs') {
+            clickedWRFReflectivityLists = clickedWRFReflectivityLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerWRFReflectivity_lists.innerHTML = clickedWRFReflectivityLists.join("");
+        }
+        if (uncheckLayer == 'WRF Reflectivity Next 03-06 Hrs') {
+            clickedWRFReflectivityLists = clickedWRFReflectivityLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerWRFReflectivity_lists.innerHTML = clickedWRFReflectivityLists.join("");
+        }
+
+        if (uncheckLayer == 'WRF lightning Product Next 03 Hrs') {
+            clickedWRFlightningProductLists = clickedWRFlightningProductLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerWRFlightningProduct_lists.innerHTML = clickedWRFlightningProductLists.join("");
+
+        }
+        if (uncheckLayer == 'WRF lightning Product Next 03-06 Hrs') {
+            clickedWRFlightningProductLists = clickedWRFlightningProductLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerWRFlightningProduct_lists.innerHTML = clickedWRFlightningProductLists.join("");
+        }
+
+        if (uncheckLayer == 'WRF Accumlated Rainfall Next 03 Hrs') {
+            clickedWRFAccumlatedRainfallLists = clickedWRFAccumlatedRainfallLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerWRFAccumlatedRainfall_lists.innerHTML = clickedWRFAccumlatedRainfallLists.join("");
+        }
+        if (uncheckLayer == 'WRF Accumlated Rainfall Next 03-06 Hrs') {
+            clickedWRFAccumlatedRainfallLists = clickedWRFAccumlatedRainfallLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerWRFAccumlatedRainfall_lists.innerHTML = clickedWRFAccumlatedRainfallLists.join("");
+        }
+
+        if (uncheckLayer == 'lightning Potential index Next 01 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join(
+                "");
+        }
+        if (uncheckLayer == 'lightning Potential index Next 01-02 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join(
+                "");
+        }
+        if (uncheckLayer == 'lightning Potential index Next 02-03 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join(
+                "");
+        }
+
+        if (uncheckLayer == 'NCUMR lightning Product Next 03 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerNCUMRlightningProduct_lists.innerHTML = clickedNCUMRlightningProductLists.join("");
+        }
+        if (uncheckLayer == 'NCUMR lightning Product Next 03-06 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerNCUMRlightningProduct_lists.innerHTML = clickedNCUMRlightningProductLists.join("");
+        }
+
+        if (uncheckLayer == 'NCUMR Wind Gust Next 03 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerNCUMRWindGust_lists.innerHTML = clickedNCUMRWindGustLists.join("");
+        }
+        if (uncheckLayer == 'NCUMR Wind Gust Next 03-06 Hrs') {
+            clickedlightningPotentialindexLists = clickedlightningPotentialindexLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerNCUMRWindGust_lists.innerHTML = clickedNCUMRWindGustLists.join("");
+        }
+
+        if (uncheckLayer == 'NCUMR Rainfall Next 03 Hrs') {
+            clickedNCUMRRainfallLists = clickedNCUMRRainfallLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerNCUMRRainfall_lists.innerHTML = clickedNCUMRRainfallLists.join("");
+        }
+        if (uncheckLayer == 'NCUMR Rainfall Next 03-06 Hrs') {
+            clickedNCUMRRainfallLists = clickedNCUMRRainfallLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerNCUMRRainfall_lists.innerHTML = clickedNCUMRRainfallLists.join("");
+        }
+
+        if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 01 Hrs') {
+            clickedHRRR_SPHourlyDBZLists = clickedHRRR_SPHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_SPHourlyDBZ_lists.innerHTML = clickedHRRR_SPHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 01-02 Hrs') {
+            clickedHRRR_SPHourlyDBZLists = clickedHRRR_SPHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_SPHourlyDBZ_lists.innerHTML = clickedHRRR_SPHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 02-03 Hrs') {
+            clickedHRRR_SPHourlyDBZLists = clickedHRRR_SPHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_SPHourlyDBZ_lists.innerHTML = clickedHRRR_SPHourlyDBZLists.join("");
+        }
+
+        if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 01 Hrs') {
+            clickedHRRR_NEHourlyDBZLists = clickedHRRR_NEHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_NEHourlyDBZ_lists.innerHTML = clickedHRRR_NEHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 01-02 Hrs') {
+            clickedHRRR_NEHourlyDBZLists = clickedHRRR_NEHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_NEHourlyDBZ_lists.innerHTML = clickedHRRR_NEHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 02-03 Hrs') {
+            clickedHRRR_NEHourlyDBZLists = clickedHRRR_NEHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_NEHourlyDBZ_lists.innerHTML = clickedHRRR_NEHourlyDBZLists.join("");
+        }
+
+        if (uncheckLayer == 'HRRR_NW Hourly DBZ Next 01 Hrs') {
+            clickedHRRR_NWHourlyDBZLists = clickedHRRR_NWHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_NWHourlyDBZ_lists.innerHTML = clickedHRRR_NWHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'HRRR_NW Hourly DBZ Next 01-02 Hrs') {
+            clickedHRRR_NWHourlyDBZLists = clickedHRRR_NWHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_NWHourlyDBZ_lists.innerHTML = clickedHRRR_NWHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'HRRR_NW Hourly DBZ Next 02-03 Hrs') {
+            clickedHRRR_NWHourlyDBZLists = clickedHRRR_NWHourlyDBZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerHRRR_NWHourlyDBZ_lists.innerHTML = clickedHRRR_NWHourlyDBZLists.join("");
+        }
+        if (uncheckLayer == 'EWRF MaxZ Next 01 Hrs') {
+            clickedEWRFMaxZLists = clickedEWRFMaxZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerEWRFMaxZ_lists.innerHTML = clickedEWRFMaxZLists.join("");
+        }
+        if (uncheckLayer == 'EWRF MaxZ Next 01-02 Hrs') {
+            clickedEWRFMaxZLists = clickedEWRFMaxZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerEWRFMaxZ_lists.innerHTML = clickedEWRFMaxZLists.join("");
+        }
+        if (uncheckLayer == 'EWRF MaxZ Next 02-03 Hrs') {
+            clickedEWRFMaxZLists = clickedEWRFMaxZLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerEWRFMaxZ_lists.innerHTML = clickedEWRFMaxZLists.join("");
+        }
+        if (uncheckLayer == 'EWRF Lightning Next 01 Hrs') {
+            clickedEWRFLightningLists = clickedEWRFLightningLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
+        }
+        if (uncheckLayer == 'EWRF Lightning Next 01-02 Hrs') {
+            clickedEWRFLightningLists = clickedEWRFLightningLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
+        }
+        if (uncheckLayer == 'EWRF Lightning Next 02-03 Hrs') {
+            clickedEWRFLightningLists = clickedEWRFLightningLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
+        }
+
+        // MEDIUM UNCHECK
+        if (uncheckLayer == 'Rainfall Intensity Day1 GFS DAY1') {
+            clickedRainfallIntensityDay1Lists = clickedRainfallIntensityDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day1 NCUM DAY1') {
+            clickedRainfallIntensityDay1Lists = clickedRainfallIntensityDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day1 NEPS DAY1') {
+            clickedRainfallIntensityDay1Lists = clickedRainfallIntensityDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day1 WRF DAY1') {
+            clickedRainfallIntensityDay1Lists = clickedRainfallIntensityDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day1 GEFS DAY1') {
+            clickedRainfallIntensityDay1Lists = clickedRainfallIntensityDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day1 ECMWF DAY1') {
+            clickedRainfallIntensityDay1Lists = clickedRainfallIntensityDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
+        }
+
+        if (uncheckLayer == 'Rainfall Intensity Day2 GFS DAY2') {
+            clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day2 NCUM DAY2') {
+            clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day2 NEPS DAY2') {
+            clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day2 WRF DAY2') {
+            clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day2 GEFS DAY2') {
+            clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day2 ECMWF DAY2') {
+            clickedRainfallIntensityDay2Lists = clickedRainfallIntensityDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
+        }
+
+        if (uncheckLayer == 'Rainfall Intensity Day3 GFS DAY3') {
+            clickedRainfallIntensityDay3Lists = clickedRainfallIntensityDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day3 NCUM DAY3') {
+            clickedRainfallIntensityDay3Lists = clickedRainfallIntensityDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day3 NEPS DAY3') {
+            clickedRainfallIntensityDay3Lists = clickedRainfallIntensityDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day3 WRF DAY3') {
+            clickedRainfallIntensityDay3Lists = clickedRainfallIntensityDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day3 GEFS DAY3') {
+            clickedRainfallIntensityDay3Lists = clickedRainfallIntensityDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day3 ECMWF DAY3') {
+            clickedRainfallIntensityDay3Lists = clickedRainfallIntensityDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
+        }
+
+        if (uncheckLayer == 'Rainfall Intensity Day4 GFS DAY4') {
+            clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day4 NCUM DAY4') {
+            clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day4 NEPS DAY4') {
+            clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day4 WRF DAY4') {
+            clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day4 GEFS DAY4') {
+            clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day4 ECMWF DAY4') {
+            clickedRainfallIntensityDay4Lists = clickedRainfallIntensityDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day5 GFS DAY5') {
+            clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day5 NCUM DAY5') {
+            clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day5 NEPS DAY5') {
+            clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day5 WRF DAY5') {
+            clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day5 GEFS DAY5') {
+            clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+        if (uncheckLayer == 'Rainfall Intensity Day5 ECMWF DAY5') {
+            clickedRainfallIntensityDay5Lists = clickedRainfallIntensityDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
+        }
+
+
+        if (uncheckLayer == 'MSLP Day1 GFS DAY1') {
+            clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day1 NCUM DAY1') {
+            clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day1 NEPS DAY1') {
+            clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day1 WRF DAY1') {
+            clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day1 GEFS DAY1') {
+            clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day1 ECMWF DAY1') {
+            clickedMSLPDay1Lists = clickedMSLPDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
+        }
+
+
+        if (uncheckLayer == 'MSLP Day2 GFS DAY2') {
+            clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day2 NCUM DAY2') {
+            clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day2 NEPS DAY2') {
+            clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day2 WRF DAY2') {
+            clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day2 GEFS DAY2') {
+            clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day2 ECMWF DAY2') {
+            clickedMSLPDay2Lists = clickedMSLPDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
+        }
+
+
+        if (uncheckLayer == 'MSLP Day3 GFS DAY3') {
+            clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day3 NCUM DAY3') {
+            clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day3 NEPS DAY3') {
+            clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day3 WRF DAY3') {
+            clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day3 GEFS DAY3') {
+            clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day3 ECMWF DAY3') {
+            clickedMSLPDay3Lists = clickedMSLPDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
+        }
+
+
+        if (uncheckLayer == 'MSLP Day4 GFS DAY4') {
+            clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day4 NCUM DAY4') {
+            clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day4 NEPS DAY4') {
+            clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day4 WRF DAY4') {
+            clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day4 GEFS DAY4') {
+            clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day4 ECMWF DAY4') {
+            clickedMSLPDay4Lists = clickedMSLPDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
+        }
+
+
+        if (uncheckLayer == 'MSLP Day5 GFS DAY5') {
+            clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day5 NCUM DAY5') {
+            clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day5 NEPS DAY5') {
+            clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day5 WRF DAY5') {
+            clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day5 GEFS DAY5') {
+            clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+        if (uncheckLayer == 'MSLP Day5 ECMWF DAY5') {
+            clickedMSLPDay5Lists = clickedMSLPDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
+        }
+
+
+        if (uncheckLayer == '10m WIND Day 1 GFS DAY1') {
+            clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 1 NCUM DAY1') {
+            clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 1 NEPS DAY1') {
+            clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 1 WRF DAY1') {
+            clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 1 GEFS DAY1') {
+            clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 1 ECMWF DAY1') {
+            clicked10mWINDDay1Lists = clicked10mWINDDay1Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
+        }
+
+
+        if (uncheckLayer == '10m WIND Day 2 GFS DAY2') {
+            clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 2 NCUM DAY2') {
+            clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 2 NEPS DAY2') {
+            clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 2 WRF DAY2') {
+            clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 2 GEFS DAY2') {
+            clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 2 ECMWF DAY2') {
+            clicked10mWINDDay2Lists = clicked10mWINDDay2Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
+        }
+
+
+        if (uncheckLayer == '10m WIND Day 3 GFS DAY3') {
+            clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 3 NCUM DAY3') {
+            clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 3 NEPS DAY3') {
+            clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 3 WRF DAY3') {
+            clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 3 GEFS DAY3') {
+            clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 3 ECMWF DAY3') {
+            clicked10mWINDDay3Lists = clicked10mWINDDay3Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
+        }
+
+
+        if (uncheckLayer == '10m WIND Day 4 GFS DAY4') {
+            clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 4 NCUM DAY4') {
+            clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 4 NEPS DAY4') {
+            clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 4 WRF DAY4') {
+            clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 4 GEFS DAY4') {
+            clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 4 ECMWF DAY4') {
+            clicked10mWINDDay4Lists = clicked10mWINDDay4Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
+        }
+
+
+        if (uncheckLayer == '10m WIND Day 5 GFS DAY5') {
+            clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 5 NCUM DAY5') {
+            clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 5 NEPS DAY5') {
+            clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 5 WRF DAY5') {
+            clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 5 GEFS DAY5') {
+            clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
+        }
+        if (uncheckLayer == '10m WIND Day 5 ECMWF DAY5') {
+            clicked10mWINDDay5Lists = clicked10mWINDDay5Lists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
         }
 
     }
@@ -7403,9 +12574,6 @@ $("body").on("change", "input[type=checkbox]", function() {
 //
 
 
-function tempImage() {
-
-}
 
 //closeModel
 closeModel.onclick = () => {
