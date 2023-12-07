@@ -8454,10 +8454,42 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Radar Reflectivity') {
                 clickedRADARPRODUCTSLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/radar/radar_reflectivity.jpg" style="width: 125px; height: 150px;">` +
-                    `</span><br>`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
+    </span>
+
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
+    </span>
+
+    
+    
+    </span>
+</span><br>`
                 );
             }
             if (layer_name == 'Radar Animation') {
