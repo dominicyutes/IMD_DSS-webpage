@@ -1795,6 +1795,7 @@ var ObservationButton = L.Control.extend({
     onAdd: function() {
         var obsbtn = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
         obsbtn.innerHTML = 'Observation';
+        obsbtn.style = "margin-left:30px;"
         //click event
         L.DomEvent.on(obsbtn, 'click', function() {
             // alert('Button clicked!');
@@ -1816,6 +1817,7 @@ var MacroButton = L.Control.extend({
     onAdd: function() {
         var macbtn = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
         macbtn.innerHTML = 'Macro';
+        macbtn.style = "margin-left:30px;"
         //click event
         L.DomEvent.on(macbtn, 'click', function() {
             // alert('MACRO Button clicked!');
@@ -1839,6 +1841,7 @@ var LegendButton = L.Control.extend({
         var button = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
         button.innerHTML = 'Legend';
         button.id = 'popup';
+        button.style = "margin-left:30px;"
         //click event listener
         L.DomEvent.on(button, 'click', function() {
             // alert('Button clicked!');
