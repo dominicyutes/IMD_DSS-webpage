@@ -13791,6 +13791,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
+			map.removeLayer(X155);
         }
         if (uncheckLayer == 'Radar Products Radar Animation') {
             clickedRADARPRODUCTSLists = clickedRADARPRODUCTSLists.filter(checkList => {
@@ -13798,6 +13799,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
+			map.removeLayer(X156);
         }
 
         if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
@@ -13817,7 +13819,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+			map.removeLayer(X157);
         }
         if (uncheckLayer == 'Satellite Observation VIS') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13825,7 +13827,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+			map.removeLayer(X158);
         }
         if (uncheckLayer == 'Satellite Observation CTBT') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13833,7 +13835,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+			map.removeLayer(X159);
         }
         if (uncheckLayer == 'Satellite Observation LOW LEVEL CONVERGENCE') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13841,7 +13843,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+			map.removeLayer(X160);
         }
         if (uncheckLayer == 'Satellite Observation UPPER LEVEL DIVEGENCE') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13849,7 +13851,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+			map.removeLayer(X161);
         }
         if (uncheckLayer == 'Satellite Observation MID LEVEL SHEAR') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13857,7 +13859,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+			map.removeLayer(X162);
         }
         if (uncheckLayer == 'Satellite Observation VORTICITY AT 200hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13865,7 +13867,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+			map.removeLayer(X163);
         }
         if (uncheckLayer == 'Satellite Observation VORTICITY AT 500hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13873,7 +13875,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+			map.removeLayer(X164);
         }
         if (uncheckLayer == 'Satellite Observation VORTICITY AT 700hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13881,7 +13883,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+			map.removeLayer(X165);
         }
         if (uncheckLayer == 'Satellite ObservationVORTICITY AT 850hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13889,7 +13891,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+			map.removeLayer(X166);
         }
 
         if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
