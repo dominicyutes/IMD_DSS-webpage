@@ -8,7 +8,7 @@ body {
     position: relative;
     height: 100vh;
     width: 100%;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .text {
@@ -257,6 +257,7 @@ body {
     border-radius: 10px;
     font-size: 14px;
     border: 1px solid #646464;
+    margin-bottom: 5px;
 }
 
 .mac_TimeHR {
@@ -265,6 +266,7 @@ body {
     border-radius: 10px;
     color: #02275f;
     font-size: 14px;
+    margin-bottom: 5px;
 }
 
 .mac_TimeMin {
@@ -296,6 +298,7 @@ body {
     color: ghostwhite;
     border-color: mediumaquamarine;
     font-size: 14px;
+    margin-bottom: 8px;
 }
 
 /* Style the dropdown content (hidden by default) */

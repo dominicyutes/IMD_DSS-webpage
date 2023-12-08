@@ -268,7 +268,7 @@
                             </select>
                         </span>
                     </div>
-                    <span>&nbsp;</span>
+                    <!-- <span>&nbsp;</span> -->
                     </select>
                 </form>
                 <button id="mac_submitButton" onclick="macSubmitForm()" class="macSubmitBtn">Save</button>
@@ -396,7 +396,7 @@
                     <h5 id="METAR23UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR23UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-					<div id="metarTempImage" style="margin-left: 40px"></div>
+                    <div id="metarTempImage" style="margin-left: 40px"></div>
                 </div>
 
                 <!-- SYNOP -->
