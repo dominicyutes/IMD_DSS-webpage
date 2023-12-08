@@ -222,11 +222,11 @@
         <div id="macroContainer" class="hidden macClass col-2">
             <!-- <h4>MACRO</h4> -->
             <div class="dropdown">
-                <button class="dropdown-button">Select an Option</button>
+                <button class="dropdown-button">MACRO Option</button>
                 <div class="dropdown-content">
-                    <button onclick="buttonClicked('Option 1')">Option 1</button>
+                    <!-- <button onclick="buttonClicked('Option 1')">Option 1</button>
                     <button onclick="buttonClicked('Option 2')">Option 2</button>
-                    <button onclick="buttonClicked('Option 3')">Option 3</button>
+                    <button onclick="buttonClicked('Option 3')">Option 3</button> -->
                 </div>
             </div>
             <button id="createMacro" onclick="createMacroForm()">Create Macro</button>
@@ -493,7 +493,8 @@
                 </div>
                 <!-- MESOLSCALE -->
                 <div class="row" id="MESOLSCALE_Row" style="display: none;">
-                    <h4 id="MESOLSCALE" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
+                    <h4 id="MESOLSCALE" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
+                    </h4>
 
                     <h5 id="WRFReflectivity-Title" style="color: #000000;"></h5>
                     <p id="WRFReflectivity-lists" style="display: flex; flex-wrap: wrap;"></p>
