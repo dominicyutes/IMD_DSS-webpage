@@ -1526,6 +1526,28 @@ function macSubmitForm() {
         "End Date: " + mac_toDate + "\n" +
         "Time: " + mac_hour_Select + ":" + mac_minute_Select;
     alert(message);
+
+
+
+    // Create a new button
+    let newButton = document.createElement('button');
+    newButton.classList.add('save-button');
+    newButton.id = mac_macroNames; // Use the macroNames as the ID of the new button
+    newButton.innerText = mac_macroNames;
+
+    // Add a click event listener to the new button
+    newButton.addEventListener('click', function() {
+        console.log('Details of the saved button:', mac_macroNames, mac_model_Names, mac_parameter_Names,
+            mac_sub_parameter, mac_fromDate, mac_toDate, mac_hour_Select, mac_minute_Select);
+        alert('Details of the saved button:' + mac_macroNames + mac_model_Names + mac_parameter_Names +
+            mac_sub_parameter + mac_fromDate + mac_toDate + mac_hour_Select + mac_minute_Select);
+    });
+    // Append the new button to the dropdown content
+    document.querySelector('.dropdown-content').appendChild(newButton);
+
+    // Clear the form fields
+    document.getElementById('macroNames').value = '';
+    // Add code to clear other form fields if needed
 }
 
 //MACRO-toggleObservation
@@ -1793,9 +1815,10 @@ var ObservationButton = L.Control.extend({
         position: 'bottomleft'
     },
     onAdd: function() {
-        var obsbtn = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
+        var obsbtn = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn');
         obsbtn.innerHTML = 'Observation';
-        obsbtn.style = "margin-left:30px;"
+        // obsbtn.style = "margin-left:30px;"
         //click event
         L.DomEvent.on(obsbtn, 'click', function() {
             // alert('Button clicked!');
@@ -1815,9 +1838,10 @@ var MacroButton = L.Control.extend({
         position: 'bottomleft'
     },
     onAdd: function() {
-        var macbtn = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
+        var macbtn = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn2');
         macbtn.innerHTML = 'Macro';
-        macbtn.style = "margin-left:30px;"
+        // macbtn.style = "margin-left:30px;"
         //click event
         L.DomEvent.on(macbtn, 'click', function() {
             // alert('MACRO Button clicked!');
@@ -1838,10 +1862,11 @@ var LegendButton = L.Control.extend({
     },
     onAdd: function() {
         // Create a button element
-        var button = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
+        var button = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn3');
         button.innerHTML = 'Legend';
         button.id = 'popup';
-        button.style = "margin-left:30px;"
+        // button.style = "margin-left:30px;"
         //click event listener
         L.DomEvent.on(button, 'click', function() {
             // alert('Button clicked!');
@@ -2188,6 +2213,323 @@ X61.bindPopup("<b>X61</b>").openPopup();
 
 var X62 = L.marker([18.5674, 83.3674]);
 X62.bindPopup("<b>X62</b>").openPopup();
+
+var X63 = L.marker([18.5675, 83.3675]);
+X63.bindPopup("<b>X63</b>").openPopup();
+
+var X64 = L.marker([18.5676, 83.3676]);
+X64.bindPopup("<b>X64</b>").openPopup();
+
+var X65 = L.marker([18.5677, 83.3677]);
+X65.bindPopup("<b>X65</b>").openPopup();
+
+var X66 = L.marker([18.5678, 83.3678]);
+X66.bindPopup("<b>X66</b>").openPopup();
+
+var X67 = L.marker([18.5679, 83.3679]);
+X67.bindPopup("<b>X67</b>").openPopup();
+
+var X67 = L.marker([18.5680, 83.3680]);
+X67.bindPopup("<b>X67</b>").openPopup();
+
+var X68 = L.marker([18.5681, 83.3681]);
+X68.bindPopup("<b>X68</b>").openPopup();
+
+var X69 = L.marker([18.5682, 83.3682]);
+X69.bindPopup("<b>X69</b>").openPopup();
+
+var X70 = L.marker([18.5683, 83.3683]);
+X70.bindPopup("<b>X70</b>").openPopup();
+
+var X71 = L.marker([18.5685, 83.3685]);
+X71.bindPopup("<b>X71</b>").openPopup();
+
+var X72 = L.marker([18.5686, 83.3686]);
+X72.bindPopup("<b>X72</b>").openPopup();
+
+var X73 = L.marker([18.5687, 83.3687]);
+X73.bindPopup("<b>X73</b>").openPopup();
+
+var X74 = L.marker([18.5688, 83.3688]);
+X74.bindPopup("<b>X74</b>").openPopup();
+
+var X75 = L.marker([18.5689, 83.3689]);
+X75.bindPopup("<b>X75</b>").openPopup();
+
+var X76 = L.marker([18.5712, 83.3712]);
+X76.bindPopup("<b>X76</b>").openPopup();
+
+var X77 = L.marker([18.5713, 83.3713]);
+X77.bindPopup("<b>X77</b>").openPopup();
+
+var X78 = L.marker([18.5714, 83.3714]);
+X78.bindPopup("<b>X78</b>").openPopup();
+
+var X79 = L.marker([18.5690, 83.3690]);
+X79.bindPopup("<b>X79</b>").openPopup();
+
+var X80 = L.marker([18.5691, 83.3691]);
+X80.bindPopup("<b>X80</b>").openPopup();
+
+var X81 = L.marker([18.5692, 83.3692]);
+X81.bindPopup("<b>X81</b>").openPopup();
+
+var X82 = L.marker([18.5693, 83.3693]);
+X82.bindPopup("<b>X82</b>").openPopup();
+
+var X83 = L.marker([18.5694, 83.3694]);
+X83.bindPopup("<b>X83</b>").openPopup();
+
+var X84 = L.marker([18.5695, 83.3695]);
+X84.bindPopup("<b>X84</b>").openPopup();
+
+var X85 = L.marker([18.5696, 83.3696]);
+X85.bindPopup("<b>X85</b>").openPopup();
+
+var X86 = L.marker([18.5697, 83.3697]);
+X86.bindPopup("<b>X86</b>").openPopup();
+
+var X87 = L.marker([18.5698, 83.3698]);
+X87.bindPopup("<b>X87</b>").openPopup();
+
+var X88 = L.marker([18.5699, 83.3699]);
+X88.bindPopup("<b>X88</b>").openPopup();
+
+var X89 = L.marker([18.5700, 83.3700]);
+X89.bindPopup("<b>X89</b>").openPopup();
+
+var X90 = L.marker([18.5701, 83.3701]);
+X90.bindPopup("<b>X90</b>").openPopup();
+
+var X91 = L.marker([18.5702, 83.3702]);
+X91.bindPopup("<b>X91</b>").openPopup();
+
+var X92 = L.marker([18.5703, 83.3703]);
+X92.bindPopup("<b>X92</b>").openPopup();
+
+var X93 = L.marker([18.5704, 83.3704]);
+X93.bindPopup("<b>X93</b>").openPopup();
+
+var X94 = L.marker([18.5705, 83.3705]);
+X94.bindPopup("<b>X94</b>").openPopup();
+
+var X95 = L.marker([18.5706, 83.3706]);
+X95.bindPopup("<b>X95</b>").openPopup();
+
+var X96 = L.marker([18.5707, 83.3707]);
+X96.bindPopup("<b>X96</b>").openPopup();
+
+var X97 = L.marker([18.5708, 83.3708]);
+X97.bindPopup("<b>X97</b>").openPopup();
+
+var X98 = L.marker([18.5709, 83.3709]);
+X98.bindPopup("<b>X98</b>").openPopup();
+
+var X99 = L.marker([18.5710, 83.3710]);
+X99.bindPopup("<b>X99</b>").openPopup();
+
+var X100 = L.marker([18.5711, 83.3711]);
+X100.bindPopup("<b>X100</b>").openPopup();
+
+var X101 = L.marker([18.5715, 83.3715]);
+X101.bindPopup("<b>X101</b>").openPopup();
+
+var X102 = L.marker([18.5716, 83.3716]);
+X102.bindPopup("<b>X102</b>").openPopup();
+
+var X103 = L.marker([18.5717, 83.3717]);
+X103.bindPopup("<b>X103</b>").openPopup();
+
+var X104 = L.marker([18.5718, 83.3718]);
+X104.bindPopup("<b>X104</b>").openPopup();
+
+var X105 = L.marker([18.5719, 83.3719]);
+X105.bindPopup("<b>X105</b>").openPopup();
+
+var X106 = L.marker([18.5720, 83.3720]);
+X106.bindPopup("<b>X106</b>").openPopup();
+
+var X107 = L.marker([18.5721, 83.3721]);
+X107.bindPopup("<b>X107</b>").openPopup();
+
+var X108 = L.marker([18.5722, 83.3722]);
+X108.bindPopup("<b>X108</b>").openPopup();
+
+var X109 = L.marker([18.5723, 83.3723]);
+X109.bindPopup("<b>X109</b>").openPopup();
+
+var X110 = L.marker([18.5724, 83.3724]);
+X110.bindPopup("<b>X110</b>").openPopup();
+
+var X111 = L.marker([18.5725, 83.3725]);
+X111.bindPopup("<b>X111</b>").openPopup();
+
+var X112 = L.marker([18.5726, 83.3726]);
+X112.bindPopup("<b>X112</b>").openPopup();
+
+var X113 = L.marker([18.5727, 83.3727]);
+X113.bindPopup("<b>X113</b>").openPopup();
+
+var X114 = L.marker([18.5728, 83.3728]);
+X114.bindPopup("<b>X114</b>").openPopup();
+
+var X115 = L.marker([18.5729, 83.3729]);
+X115.bindPopup("<b>X115</b>").openPopup();
+
+var X116 = L.marker([18.5730, 83.3730]);
+X116.bindPopup("<b>X116</b>").openPopup();
+
+var X117 = L.marker([18.5731, 83.3731]);
+X117.bindPopup("<b>X117</b>").openPopup();
+
+var X118 = L.marker([18.5732, 83.3732]);
+X118.bindPopup("<b>X118</b>").openPopup();
+
+var X119 = L.marker([18.5733, 83.3733]);
+X119.bindPopup("<b>X118</b>").openPopup();
+
+var X120 = L.marker([18.5734, 83.3734]);
+X120.bindPopup("<b>X120</b>").openPopup();
+
+var X121 = L.marker([18.5735, 83.3735]);
+X121.bindPopup("<b>X121</b>").openPopup();
+
+var X122 = L.marker([18.5736, 83.3736]);
+X122.bindPopup("<b>X122</b>").openPopup();
+
+var X123 = L.marker([18.5737, 83.3737]);
+X123.bindPopup("<b>X123</b>").openPopup();
+
+var X124 = L.marker([18.5738, 83.3738]);
+X124.bindPopup("<b>X124</b>").openPopup();
+
+var X125 = L.marker([18.5739, 83.3739]);
+X125.bindPopup("<b>X125</b>").openPopup();
+
+var X126 = L.marker([18.5740, 83.3740]);
+X126.bindPopup("<b>X126</b>").openPopup();
+
+var X127 = L.marker([18.5741, 83.3741]);
+X127.bindPopup("<b>X127</b>").openPopup();
+
+var X128 = L.marker([18.5742, 83.3742]);
+X128.bindPopup("<b>X128</b>").openPopup();
+
+var X129 = L.marker([18.5743, 83.3743]);
+X129.bindPopup("<b>X129</b>").openPopup();
+
+var X130 = L.marker([18.5744, 83.3744]);
+X130.bindPopup("<b>X130</b>").openPopup();
+
+var X131 = L.marker([18.5745, 83.3745]);
+X131.bindPopup("<b>X131</b>").openPopup();
+
+var X132 = L.marker([18.5746, 83.3746]);
+X132.bindPopup("<b>X132</b>").openPopup();
+
+var X133 = L.marker([18.5747, 83.3747]);
+X133.bindPopup("<b>X133</b>").openPopup();
+
+var X134 = L.marker([18.5748, 83.3748]);
+X134.bindPopup("<b>X134</b>").openPopup();
+
+var X135 = L.marker([18.5749, 83.3749]);
+X135.bindPopup("<b>X135</b>").openPopup();
+
+var X136 = L.marker([18.5750, 83.3750]);
+X136.bindPopup("<b>X136</b>").openPopup();
+
+var X137 = L.marker([18.5751, 83.3751]);
+X137.bindPopup("<b>X137</b>").openPopup();
+
+var X138 = L.marker([18.5752, 83.3752]);
+X138.bindPopup("<b>X138</b>").openPopup();
+
+var X139 = L.marker([18.5753, 83.3753]);
+X139.bindPopup("<b>X139</b>").openPopup();
+
+var X140 = L.marker([18.5754, 83.3754]);
+X140.bindPopup("<b>X140</b>").openPopup();
+
+var X141 = L.marker([18.5755, 83.3755]);
+X141.bindPopup("<b>X141</b>").openPopup();
+
+var X142 = L.marker([18.5756, 83.3756]);
+X142.bindPopup("<b>X142</b>").openPopup();
+
+var X143 = L.marker([18.5757, 83.3757]);
+X143.bindPopup("<b>X143</b>").openPopup();
+
+var X144 = L.marker([18.5758, 83.3758]);
+X144.bindPopup("<b>X144</b>").openPopup();
+
+var X145 = L.marker([18.5759, 83.3759]);
+X145.bindPopup("<b>X145</b>").openPopup();
+
+var X146 = L.marker([18.5760, 83.3760]);
+X146.bindPopup("<b>X146</b>").openPopup();
+
+var X147 = L.marker([18.5761, 83.3761]);
+X147.bindPopup("<b>X147</b>").openPopup();
+
+var X148 = L.marker([18.5762, 83.3762]);
+X148.bindPopup("<b>X148</b>").openPopup();
+
+var X149 = L.marker([18.5763, 83.3763]);
+X149.bindPopup("<b>X149</b>").openPopup();
+
+var X150 = L.marker([18.5764, 83.3764]);
+X150.bindPopup("<b>X150</b>").openPopup();
+
+var X151 = L.marker([18.5765, 83.3765]);
+X151.bindPopup("<b>X151</b>").openPopup();
+
+var X152 = L.marker([18.5766, 83.3766]);
+X152.bindPopup("<b>X152</b>").openPopup();
+
+var X153 = L.marker([18.5767, 83.3767]);
+X153.bindPopup("<b>X153</b>").openPopup();
+
+var X154 = L.marker([18.5768, 83.3768]);
+X154.bindPopup("<b>X154</b>").openPopup();
+
+var X155 = L.marker([18.5769, 83.3769]);
+X155.bindPopup("<b>X155</b>").openPopup();
+
+var X156 = L.marker([18.5770, 83.3770]);
+X156.bindPopup("<b>X156</b>").openPopup();
+
+var X157 = L.marker([18.5771, 83.3771]);
+X157.bindPopup("<b>X157</b>").openPopup();
+
+var X158 = L.marker([18.5772, 83.3772]);
+X158.bindPopup("<b>X158</b>").openPopup();
+
+var X159 = L.marker([18.5773, 83.3773]);
+X159.bindPopup("<b>X159</b>").openPopup();
+
+var X160 = L.marker([18.5774, 83.3774]);
+X160.bindPopup("<b>X160</b>").openPopup();
+
+var X161 = L.marker([18.5775, 83.3775]);
+X161.bindPopup("<b>X161</b>").openPopup();
+
+var X162 = L.marker([18.5776, 83.3776]);
+X162.bindPopup("<b>X162</b>").openPopup();
+
+var X163 = L.marker([18.5777, 83.3777]);
+X163.bindPopup("<b>X163</b>").openPopup();
+
+var X164 = L.marker([18.5778, 83.3778]);
+X164.bindPopup("<b>X164</b>").openPopup();
+
+var X165 = L.marker([18.5779, 83.3779]);
+X165.bindPopup("<b>X165</b>").openPopup();
+
+var X166 = L.marker([18.5780, 83.3780]);
+X166.bindPopup("<b>X166</b>").openPopup();
+
+
 
 // mywmsIITM mywmsNcum mywmsNowcast
 const overLayers = [{
@@ -2645,22 +2987,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X63
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X64
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X65
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X66
             },
 
         ]
@@ -2672,22 +3014,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X67
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X68
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X69
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X70
             },
 
         ]
@@ -2699,22 +3041,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X71
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X72
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X73
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X74
             },
 
         ]
@@ -2727,22 +3069,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X75
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X76
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X77
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X78
             },
 
         ]
@@ -2754,22 +3096,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X79
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X80
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X81
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X82
             },
 
         ]
@@ -2781,22 +3123,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X83
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X84
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X85
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X86
             },
 
         ]
@@ -2808,22 +3150,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X87
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X88
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X89
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X90
             },
 
         ]
@@ -2835,22 +3177,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X91
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X92
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X93
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X94
             },
 
         ]
@@ -2862,22 +3204,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X95
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X96
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X97
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X98
             },
 
         ]
@@ -2889,22 +3231,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X99
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X100
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X101
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X102
             },
 
         ]
@@ -2916,22 +3258,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X103
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X104
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X105
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X106
             },
 
         ]
@@ -2943,22 +3285,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X107
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X108
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X109
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X110
             },
 
         ]
@@ -2970,22 +3312,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X111
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X112
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X113
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X114
             },
 
         ]
@@ -2997,22 +3339,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X115
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X116
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X117
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X118
             },
 
         ]
@@ -3024,22 +3366,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X119
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X120
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X121
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X122
             },
 
         ]
@@ -3051,22 +3393,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X123
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X124
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X125
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X126
             },
 
         ]
@@ -3078,22 +3420,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X127
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X128
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X129
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X130
             },
 
         ]
@@ -3105,22 +3447,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X131
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X132
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X133
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X134
             },
 
         ]
@@ -3132,22 +3474,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X135
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X136
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X137
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X138
             },
 
         ]
@@ -3159,22 +3501,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X139
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X140
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X141
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X142
             },
 
         ]
@@ -3186,22 +3528,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X143
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X144
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X145
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X146
             },
 
         ]
@@ -3213,22 +3555,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X147
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X148
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X149
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X150
             },
 
         ]
@@ -3240,22 +3582,22 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X151
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X152
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X153
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X154
             },
 
         ]
@@ -3976,52 +4318,52 @@ var overLayers6 = [{
         layers: [{
                 active: false,
                 name: "TIR1",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X157
             },
             {
                 active: false,
                 name: "VIS",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X158
             },
             {
                 active: false,
                 name: "CTBT",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X159
             },
             {
                 active: false,
                 name: "LOW LEVEL CONVERGENCE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X160
             },
             {
                 active: false,
                 name: "UPPER LEVEL DIVEGENCE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X161
             },
             {
                 active: false,
                 name: "MID LEVEL SHEAR",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X162
             },
             {
                 active: false,
                 name: "VORTICITY AT 200hPa",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X163
             },
             {
                 active: false,
                 name: "VORTICITY AT 500hPa",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X164
             },
             {
                 active: false,
                 name: "VORTICITY AT 700hPa",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X165
             },
             {
                 active: false,
                 name: "VORTICITY AT 850hPa",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X166
             },
 
 
@@ -4037,12 +4379,12 @@ var overLayers7 = [{
         layers: [{
                 active: false,
                 name: "Radar Reflectivity",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X155
             },
             {
                 active: false,
                 name: "Radar Animation",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X156
             },
 
         ]
@@ -5012,8 +5354,10 @@ function clickHandler_ship(event_ship) {
 }
 
 document.getElementById("parent").addEventListener("click", clickHandler_ship);
-//
 
+
+// Image
+let metarTempLegendImage = document.querySelector('#metarTempImage');
 
 // model popup
 let model = document.querySelector('.model');
@@ -5578,16 +5922,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
-</span>`
+						<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+					</span>`
                 );
+                metarTempImage()
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
@@ -5657,15 +5995,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR01UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR01UTCLists.push(
@@ -5735,15 +6068,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR02UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR02UTCLists.push(
@@ -5813,15 +6141,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR03UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR03UTCLists.push(
@@ -5891,15 +6214,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR04UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR04UTCLists.push(
@@ -5969,15 +6287,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR05UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR05UTCLists.push(
@@ -6047,15 +6360,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR06UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR06UTCLists.push(
@@ -6125,15 +6433,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR07UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR07UTCLists.push(
@@ -6203,15 +6506,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR08UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR08UTCLists.push(
@@ -6281,15 +6579,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR09UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR09UTCLists.push(
@@ -6359,15 +6652,9 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR10UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR10UTCLists.push(
@@ -6437,15 +6724,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR11UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR11UTCLists.push(
@@ -6515,15 +6797,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR12UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR12UTCLists.push(
@@ -6593,15 +6870,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR13UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR13UTCLists.push(
@@ -6671,15 +6943,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR14UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR14UTCLists.push(
@@ -6749,15 +7016,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR15UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR15UTCLists.push(
@@ -6827,15 +7089,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR16UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR16UTCLists.push(
@@ -6905,15 +7162,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR17UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR17UTCLists.push(
@@ -6983,15 +7235,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR18UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR18UTCLists.push(
@@ -7061,15 +7308,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR19UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR19UTCLists.push(
@@ -7139,15 +7381,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR20UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR20UTCLists.push(
@@ -7217,15 +7454,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR21UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR21UTCLists.push(
@@ -7295,15 +7527,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR22UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR22UTCLists.push(
@@ -7373,15 +7600,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR23UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR23UTCLists.push(
@@ -7453,15 +7675,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff30ac; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15-30</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fdff2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">30-35</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ffab2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">35-40</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f86929; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">40-45</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP00UTCLists.push(
@@ -8926,7 +9143,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'UPPER LEVEL DIVEGENCE') {
                 clickedSATELLITELists.push(
-                      `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
     <span style="align-items: center; width:20px; height:18px; border-radius: 15%; background-color: #1a9641; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0</span>
@@ -9147,7 +9364,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == 'Nowcast Alerts') {
                 clickedLIGHTININGLists.push(
-                 `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
                     ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
                     `</span>`
@@ -9167,7 +9384,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9181,7 +9398,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '850 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9195,7 +9412,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '700 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9209,7 +9426,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '500 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9223,7 +9440,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '300 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9237,7 +9454,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '200 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9251,7 +9468,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '100 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9265,7 +9482,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '50 hpa WIND') {
                 clickedSOUNDING00UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9290,7 +9507,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9304,7 +9521,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '850 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9318,7 +9535,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '700 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9332,7 +9549,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '500 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9346,7 +9563,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '300 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9360,7 +9577,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '200 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9374,7 +9591,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '100 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9388,7 +9605,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '50 hpa WIND') {
                 clickedSOUNDING12UTCWINDLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9413,7 +9630,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9427,7 +9644,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '850 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9441,7 +9658,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '700 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9455,7 +9672,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '500 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9469,7 +9686,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '300 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9483,7 +9700,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '200 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9497,7 +9714,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '100 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9511,7 +9728,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '50 hpa TEMP') {
                 clickedSOUNDING00UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9536,7 +9753,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9550,7 +9767,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '850 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9564,7 +9781,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '700 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9578,7 +9795,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '500 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9592,7 +9809,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '300 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9606,7 +9823,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '200 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9620,7 +9837,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '100 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9634,7 +9851,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '50 hpa TEMP') {
                 clickedSOUNDING12UTCTEMPLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9659,7 +9876,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9673,7 +9890,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '850 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9687,7 +9904,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '700 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9701,7 +9918,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '500 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9715,7 +9932,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '300 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9729,7 +9946,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '200 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9743,7 +9960,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '100 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9757,7 +9974,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '50 hpa DEW POINT') {
                 clickedSOUNDING00UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9782,7 +9999,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '1000 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9796,7 +10013,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '850 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9810,7 +10027,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '700 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9824,7 +10041,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '500 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9838,7 +10055,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '300 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9852,7 +10069,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '200 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9866,7 +10083,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '100 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -9880,7 +10097,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             if (layer_name == '50 hpa DEW POINT') {
                 clickedSOUNDING12UTCDEWPOINTLists.push(
-                   `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
      <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
@@ -13505,7 +13722,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X63);
         }
         if (uncheckLayer == 'METAR 01UTC DEW POINT TEMPERATURE') {
             clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
@@ -13513,7 +13730,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X64);
         }
         if (uncheckLayer == 'METAR 01UTC VISIBILITY') {
             clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
@@ -13521,7 +13738,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X65);
         }
         if (uncheckLayer == 'METAR 01UTC WIND SPEED AND DIRECTION') {
             clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
@@ -13529,7 +13746,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X66);
         }
 
         if (panelLayerMETAR01UTC_lists.innerHTML == '') {
@@ -13550,7 +13767,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X67);
         }
         if (uncheckLayer == 'METAR 02UTC DEW POINT TEMPERATURE') {
             clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
@@ -13558,7 +13775,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X68);
         }
         if (uncheckLayer == 'METAR 02UTC VISIBILITY') {
             clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
@@ -13566,7 +13783,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X69);
         }
         if (uncheckLayer == 'METAR 02UTC WIND SPEED AND DIRECTION') {
             clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
@@ -13574,7 +13791,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X70);
         }
 
         if (panelLayerMETAR02UTC_lists.innerHTML == '') {
@@ -13594,7 +13811,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X71);
         }
         if (uncheckLayer == 'METAR 03UTC DEW POINT TEMPERATURE') {
             clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
@@ -13602,7 +13819,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X72);
         }
         if (uncheckLayer == 'METAR 03UTC VISIBILITY') {
             clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
@@ -13610,7 +13827,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X73);
         }
         if (uncheckLayer == 'METAR 03UTC WIND SPEED AND DIRECTION') {
             clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
@@ -13618,7 +13835,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X74);
         }
 
         if (panelLayerMETAR03UTC_lists.innerHTML == '') {
@@ -13638,7 +13855,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X75);
         }
         if (uncheckLayer == 'METAR 04UTC DEW POINT TEMPERATURE') {
             clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
@@ -13646,7 +13863,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X76);
         }
         if (uncheckLayer == 'METAR 04UTC VISIBILITY') {
             clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
@@ -13654,7 +13871,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X77);
         }
         if (uncheckLayer == 'METAR 04UTC WIND SPEED AND DIRECTION') {
             clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
@@ -13662,7 +13879,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X78);
         }
 
         if (panelLayerMETAR04UTC_lists.innerHTML == '') {
@@ -13683,7 +13900,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X79);
         }
         if (uncheckLayer == 'METAR 05UTC DEW POINT TEMPERATURE') {
             clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
@@ -13691,7 +13908,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X80);
         }
         if (uncheckLayer == 'METAR 05UTC VISIBILITY') {
             clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
@@ -13699,7 +13916,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X81);
         }
         if (uncheckLayer == 'METAR 05UTC WIND SPEED AND DIRECTION') {
             clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
@@ -13707,7 +13924,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X82);
         }
 
         if (panelLayerMETAR05UTC_lists.innerHTML == '') {
@@ -13727,7 +13944,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X83);
         }
         if (uncheckLayer == 'METAR 06UTC DEW POINT TEMPERATURE') {
             clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
@@ -13735,7 +13952,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X84);
         }
         if (uncheckLayer == 'METAR 06UTC VISIBILITY') {
             clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
@@ -13743,7 +13960,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X85);
         }
         if (uncheckLayer == 'METAR 06UTC WIND SPEED AND DIRECTION') {
             clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
@@ -13751,7 +13968,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X86);
         }
 
         if (panelLayerMETAR06UTC_lists.innerHTML == '') {
@@ -13771,7 +13988,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X87);
         }
         if (uncheckLayer == 'METAR 07UTC DEW POINT TEMPERATURE') {
             clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
@@ -13779,7 +13996,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X88);
         }
         if (uncheckLayer == 'METAR 07UTC VISIBILITY') {
             clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
@@ -13787,7 +14004,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X89);
         }
         if (uncheckLayer == 'METAR 07UTC WIND SPEED AND DIRECTION') {
             clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
@@ -13795,7 +14012,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X90);
         }
 
         if (panelLayerMETAR07UTC_lists.innerHTML == '') {
@@ -13815,7 +14032,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X91);
         }
         if (uncheckLayer == 'METAR 08UTC DEW POINT TEMPERATURE') {
             clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
@@ -13823,7 +14040,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X92);
         }
         if (uncheckLayer == 'METAR 08UTC VISIBILITY') {
             clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
@@ -13831,7 +14048,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X93);
         }
         if (uncheckLayer == 'METAR 08UTC WIND SPEED AND DIRECTION') {
             clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
@@ -13839,7 +14056,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X94);
         }
 
         if (panelLayerMETAR08UTC_lists.innerHTML == '') {
@@ -13860,7 +14077,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X95);
         }
         if (uncheckLayer == 'METAR 09UTC DEW POINT TEMPERATURE') {
             clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
@@ -13868,7 +14085,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X96);
         }
         if (uncheckLayer == 'METAR 09UTC VISIBILITY') {
             clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
@@ -13876,7 +14093,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X97);
         }
         if (uncheckLayer == 'METAR 09UTC WIND SPEED AND DIRECTION') {
             clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
@@ -13884,7 +14101,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X98);
         }
 
         if (panelLayerMETAR09UTC_lists.innerHTML == '') {
@@ -13904,7 +14121,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X99);
         }
         if (uncheckLayer == 'METAR 10UTC DEW POINT TEMPERATURE') {
             clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
@@ -13912,7 +14129,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X100);
         }
         if (uncheckLayer == 'METAR 10UTC VISIBILITY') {
             clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
@@ -13920,7 +14137,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X101);
         }
         if (uncheckLayer == 'METAR 10UTC WIND SPEED AND DIRECTION') {
             clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
@@ -13928,7 +14145,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X102);
         }
 
         if (panelLayerMETAR10UTC_lists.innerHTML == '') {
@@ -13949,7 +14166,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X103);
         }
         if (uncheckLayer == 'METAR 11UTC DEW POINT TEMPERATURE') {
             clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
@@ -13957,7 +14174,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X104);
         }
         if (uncheckLayer == 'METAR 11UTC VISIBILITY') {
             clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
@@ -13965,7 +14182,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X105);
         }
         if (uncheckLayer == 'METAR 11UTC WIND SPEED AND DIRECTION') {
             clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
@@ -13973,7 +14190,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X106);
         }
 
         if (panelLayerMETAR11UTC_lists.innerHTML == '') {
@@ -13994,7 +14211,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X107);
         }
         if (uncheckLayer == 'METAR 12UTC DEW POINT TEMPERATURE') {
             clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
@@ -14002,7 +14219,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X108);
         }
         if (uncheckLayer == 'METAR 12UTC VISIBILITY') {
             clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
@@ -14010,7 +14227,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X109);
         }
         if (uncheckLayer == 'METAR 12UTC WIND SPEED AND DIRECTION') {
             clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
@@ -14018,7 +14235,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X110);
         }
 
         if (panelLayerMETAR12UTC_lists.innerHTML == '') {
@@ -14039,7 +14256,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X111);
         }
         if (uncheckLayer == 'METAR 13UTC DEW POINT TEMPERATURE') {
             clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
@@ -14047,7 +14264,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X112);
         }
         if (uncheckLayer == 'METAR 13UTC VISIBILITY') {
             clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
@@ -14055,7 +14272,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X113);
         }
         if (uncheckLayer == 'METAR 13UTC WIND SPEED AND DIRECTION') {
             clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
@@ -14063,7 +14280,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X114);
         }
 
         if (panelLayerMETAR13UTC_lists.innerHTML == '') {
@@ -14084,7 +14301,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X115);
         }
         if (uncheckLayer == 'METAR 14UTC DEW POINT TEMPERATURE') {
             clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
@@ -14092,7 +14309,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X116);
         }
         if (uncheckLayer == 'METAR 14UTC VISIBILITY') {
             clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
@@ -14100,7 +14317,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X117);
         }
         if (uncheckLayer == 'METAR 14UTC WIND SPEED AND DIRECTION') {
             clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
@@ -14108,7 +14325,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X118);
         }
 
         if (panelLayerMETAR14UTC_lists.innerHTML == '') {
@@ -14129,7 +14346,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X119);
         }
         if (uncheckLayer == 'METAR 15UTC DEW POINT TEMPERATURE') {
             clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
@@ -14137,7 +14354,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X120);
         }
         if (uncheckLayer == 'METAR 15UTC VISIBILITY') {
             clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
@@ -14145,7 +14362,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X121);
         }
         if (uncheckLayer == 'METAR 15UTC WIND SPEED AND DIRECTION') {
             clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
@@ -14153,7 +14370,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X122);
         }
 
         if (panelLayerMETAR15UTC_lists.innerHTML == '') {
@@ -14174,7 +14391,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X123);
         }
         if (uncheckLayer == 'METAR 16UTC DEW POINT TEMPERATURE') {
             clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
@@ -14182,7 +14399,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X124);
         }
         if (uncheckLayer == 'METAR 16UTC VISIBILITY') {
             clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
@@ -14190,7 +14407,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X125);
         }
         if (uncheckLayer == 'METAR 16UTC WIND SPEED AND DIRECTION') {
             clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
@@ -14198,7 +14415,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X126);
         }
 
         if (panelLayerMETAR16UTC_lists.innerHTML == '') {
@@ -14219,7 +14436,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X127);
         }
         if (uncheckLayer == 'METAR 17UTC DEW POINT TEMPERATURE') {
             clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
@@ -14227,7 +14444,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X128);
         }
         if (uncheckLayer == 'METAR 17UTC VISIBILITY') {
             clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
@@ -14235,7 +14452,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X129);
         }
         if (uncheckLayer == 'METAR 17UTC WIND SPEED AND DIRECTION') {
             clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
@@ -14243,7 +14460,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X130);
         }
 
         if (panelLayerMETAR17UTC_lists.innerHTML == '') {
@@ -14264,7 +14481,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X131);
         }
         if (uncheckLayer == 'METAR 18UTC DEW POINT TEMPERATURE') {
             clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
@@ -14272,7 +14489,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X132);
         }
         if (uncheckLayer == 'METAR 18UTC VISIBILITY') {
             clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
@@ -14280,7 +14497,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X133);
         }
         if (uncheckLayer == 'METAR 18UTC WIND SPEED AND DIRECTION') {
             clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
@@ -14288,7 +14505,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X134);
         }
 
         if (panelLayerMETAR18UTC_lists.innerHTML == '') {
@@ -14309,7 +14526,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X135);
         }
         if (uncheckLayer == 'METAR 19UTC DEW POINT TEMPERATURE') {
             clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
@@ -14317,7 +14534,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X136);
         }
         if (uncheckLayer == 'METAR 19UTC VISIBILITY') {
             clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
@@ -14325,7 +14542,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X137);
         }
         if (uncheckLayer == 'METAR 19UTC WIND SPEED AND DIRECTION') {
             clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
@@ -14333,7 +14550,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X138);
         }
 
         if (panelLayerMETAR19UTC_lists.innerHTML == '') {
@@ -14353,7 +14570,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X139);
         }
         if (uncheckLayer == 'METAR 20UTC DEW POINT TEMPERATURE') {
             clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
@@ -14361,7 +14578,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X140);
         }
         if (uncheckLayer == 'METAR 20UTC VISIBILITY') {
             clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
@@ -14369,7 +14586,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X141);
         }
         if (uncheckLayer == 'METAR 20UTC WIND SPEED AND DIRECTION') {
             clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
@@ -14377,7 +14594,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X142);
         }
 
         if (panelLayerMETAR20UTC_lists.innerHTML == '') {
@@ -14398,7 +14615,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X143);
         }
         if (uncheckLayer == 'METAR 21UTC DEW POINT TEMPERATURE') {
             clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
@@ -14406,7 +14623,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X144);
         }
         if (uncheckLayer == 'METAR 21UTC VISIBILITY') {
             clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
@@ -14414,7 +14631,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X145);
         }
         if (uncheckLayer == 'METAR 21UTC WIND SPEED AND DIRECTION') {
             clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
@@ -14422,7 +14639,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X146);
         }
 
         if (panelLayerMETAR21UTC_lists.innerHTML == '') {
@@ -14443,7 +14660,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
-            map.removeLayer(SuratMarker);
+            map.removeLayer(X147);
         }
         if (uncheckLayer == 'METAR 22UTC DEW POINT TEMPERATURE') {
             clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
@@ -14451,7 +14668,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X148);
         }
         if (uncheckLayer == 'METAR 22UTC VISIBILITY') {
             clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
@@ -14459,7 +14676,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
-            map.removeLayer(KanpurMarker);
+            map.removeLayer(X149);
         }
         if (uncheckLayer == 'METAR 22UTC WIND SPEED AND DIRECTION') {
             clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
@@ -14467,7 +14684,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
-            map.removeLayer(MeerutMarker);
+            map.removeLayer(X150);
         }
 
         if (panelLayerMETAR22UTC_lists.innerHTML == '') {
@@ -14482,6 +14699,50 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
 
+        if (uncheckLayer == 'METAR 23UTC TEMPERATURE') {
+            clickedMETAR23UTCLists = clickedMETAR23UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR23UTC_lists.innerHTML = clickedMETAR23UTCLists.join("");
+            map.removeLayer(X151);
+        }
+        if (uncheckLayer == 'METAR 23UTC DEW POINT TEMPERATURE') {
+            clickedMETAR23UTCLists = clickedMETAR23UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR23UTC_lists.innerHTML = clickedMETAR23UTCLists.join("");
+            map.removeLayer(X152);
+        }
+        if (uncheckLayer == 'METAR 23UTC VISIBILITY') {
+            clickedMETAR23UTCLists = clickedMETAR23UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR23UTC_lists.innerHTML = clickedMETAR23UTCLists.join("");
+            map.removeLayer(X153);
+        }
+        if (uncheckLayer == 'METAR 23UTC WIND SPEED AND DIRECTION') {
+            clickedMETAR23UTCLists = clickedMETAR23UTCLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerMETAR23UTC_lists.innerHTML = clickedMETAR23UTCLists.join("");
+            map.removeLayer(X154);
+        }
+
+        if (panelLayerMETAR23UTC_lists.innerHTML == '') {
+            panelLayerMETAR23UTC_Title.innerHTML = '';
+            METAR.innerHTML = '';
+        }
+
+        //GroupPanelLayer-collapsible-METAR23UTC
+        if (panelLayerMETAR23UTC_lists.innerHTML != '') {
+            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        }
+
         // SYNOP UNCHECK
         if (uncheckLayer == 'SYNOP 00UTC TEMPERATURE') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -14490,7 +14751,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
 
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(HHHHHH);
         }
         if (uncheckLayer == 'SYNOP 00UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -14498,7 +14759,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(ggg);
         }
         if (uncheckLayer == 'SYNOP 00UTC CLOUD COVER') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -14506,7 +14767,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(X1);
         }
         if (uncheckLayer == 'SYNOP 00UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -14514,7 +14775,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(X2);
         }
         if (uncheckLayer == 'SYNOP 00UTC RELATIVE HUMIDITY') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -14522,7 +14783,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(X3);
         }
         if (uncheckLayer == 'SYNOP 00UTC VISIBILITY') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -14530,7 +14791,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(X4);
         }
         if (uncheckLayer == 'SYNOP 00UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -14538,7 +14799,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(X5);
         }
         if (uncheckLayer == 'SYNOP 00UTC 3h RAINFALL') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -14546,7 +14807,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(X6);
         }
 
         if (panelLayerSYNOP00UTC_lists.innerHTML == '') {
@@ -14566,8 +14827,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X7);
         }
         if (uncheckLayer == 'SYNOP 03UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -14575,7 +14835,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X8);
         }
         if (uncheckLayer == 'SYNOP 03UTC CLOUD COVER') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -14583,7 +14843,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X9);
         }
         if (uncheckLayer == 'SYNOP 03UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -14591,7 +14851,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X10);
         }
         if (uncheckLayer == 'SYNOP 03UTC RELATIVE HUMIDITY') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -14599,7 +14859,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X11);
         }
         if (uncheckLayer == 'SYNOP 03UTC VISIBILITY') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -14607,7 +14867,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X12);
         }
         if (uncheckLayer == 'SYNOP 03UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -14615,7 +14875,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X3);
         }
         if (uncheckLayer == 'SYNOP 03UTC 3h RAINFALL') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -14623,7 +14883,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X14);
         }
 
         if (panelLayerSYNOP03UTC_lists.innerHTML == '') {
@@ -14642,8 +14902,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X15);
         }
         if (uncheckLayer == 'SYNOP 06UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -14651,7 +14910,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X16);
         }
         if (uncheckLayer == 'SYNOP 06UTC CLOUD COVER') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -14659,7 +14918,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X17);
         }
         if (uncheckLayer == 'SYNOP 06UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -14667,7 +14926,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X18);
         }
         if (uncheckLayer == 'SYNOP 06UTC RELATIVE HUMIDITY') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -14675,7 +14934,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X19);
         }
         if (uncheckLayer == 'SYNOP 06UTC VISIBILITY') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -14683,7 +14942,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X20);
         }
         if (uncheckLayer == 'SYNOP 06UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -14691,7 +14950,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X21);
         }
         if (uncheckLayer == 'SYNOP 06UTC 3h RAINFALL') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -14699,7 +14958,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X22);
         }
 
         if (panelLayerSYNOP06UTC_lists.innerHTML == '') {
@@ -14718,8 +14977,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X23);
         }
         if (uncheckLayer == 'SYNOP 09UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -14727,7 +14985,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X24);
         }
         if (uncheckLayer == 'SYNOP 09UTC CLOUD COVER') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -14735,7 +14993,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X25);
         }
         if (uncheckLayer == 'SYNOP 09UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -14743,7 +15001,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X26);
         }
         if (uncheckLayer == 'SYNOP 09UTC RELATIVE HUMIDITY') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -14751,7 +15009,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X27);
         }
         if (uncheckLayer == 'SYNOP 09UTC VISIBILITY') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -14759,7 +15017,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X28);
         }
         if (uncheckLayer == 'SYNOP 09UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -14767,7 +15025,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X29);
         }
         if (uncheckLayer == 'SYNOP 09UTC 3h RAINFALL') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -14775,7 +15033,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X30);
         }
 
         if (panelLayerSYNOP09UTC_lists.innerHTML == '') {
@@ -14795,8 +15053,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X31);
         }
         if (uncheckLayer == 'SYNOP 12UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -14804,7 +15061,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X32);
         }
         if (uncheckLayer == 'SYNOP 12UTC CLOUD COVER') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -14812,7 +15069,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X33);
         }
         if (uncheckLayer == 'SYNOP 12UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -14820,7 +15077,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X34);
         }
         if (uncheckLayer == 'SYNOP 12UTC RELATIVE HUMIDITY') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -14828,7 +15085,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X35);
         }
         if (uncheckLayer == 'SYNOP 12UTC VISIBILITY') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -14836,7 +15093,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X36);
         }
         if (uncheckLayer == 'SYNOP 12UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -14844,7 +15101,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X37);
         }
         if (uncheckLayer == 'SYNOP 12UTC 3h RAINFALL') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -14852,7 +15109,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X38);
         }
 
         if (panelLayerSYNOP12UTC_lists.innerHTML == '') {
@@ -14872,8 +15129,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X39);
         }
         if (uncheckLayer == 'SYNOP 15UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -14881,7 +15137,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X40);
         }
         if (uncheckLayer == 'SYNOP 15UTC CLOUD COVER') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -14889,7 +15145,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X41);
         }
         if (uncheckLayer == 'SYNOP 15UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -14897,7 +15153,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X42);
         }
         if (uncheckLayer == 'SYNOP 15UTC RELATIVE HUMIDITY') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -14905,7 +15161,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X43);
         }
         if (uncheckLayer == 'SYNOP 15UTC VISIBILITY') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -14913,7 +15169,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X44);
         }
         if (uncheckLayer == 'SYNOP 15UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -14921,7 +15177,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X45);
         }
         if (uncheckLayer == 'SYNOP 15UTC 3h RAINFALL') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -14929,7 +15185,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X46);
         }
 
         if (panelLayerSYNOP15UTC_lists.innerHTML == '') {
@@ -14949,8 +15205,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X47);
         }
         if (uncheckLayer == 'SYNOP 18UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -14958,7 +15213,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X48);
         }
         if (uncheckLayer == 'SYNOP 18UTC CLOUD COVER') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -14966,7 +15221,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X49);
         }
         if (uncheckLayer == 'SYNOP 18UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -14974,7 +15229,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X50);
         }
         if (uncheckLayer == 'SYNOP 18UTC RELATIVE HUMIDITY') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -14982,7 +15237,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X51);
         }
         if (uncheckLayer == 'SYNOP 18UTC VISIBILITY') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -14990,7 +15245,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X52);
         }
         if (uncheckLayer == 'SYNOP 18UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -14998,7 +15253,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X53);
         }
         if (uncheckLayer == 'SYNOP 18UTC 3h RAINFALL') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -15006,7 +15261,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X54);
         }
 
         if (panelLayerSYNOP18UTC_lists.innerHTML == '') {
@@ -15026,8 +15281,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X55);
         }
         if (uncheckLayer == 'SYNOP 21UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -15035,7 +15289,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X56);
         }
         if (uncheckLayer == 'SYNOP 21UTC CLOUD COVER') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -15043,7 +15297,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X57);
         }
         if (uncheckLayer == 'SYNOP 21UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -15051,7 +15305,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X58);
         }
         if (uncheckLayer == 'SYNOP 21UTC RELATIVE HUMIDITY') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -15059,7 +15313,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X59);
         }
         if (uncheckLayer == 'SYNOP 21UTC VISIBILITY') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -15067,7 +15321,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X60);
         }
         if (uncheckLayer == 'SYNOP 21UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -15075,7 +15329,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X61);
         }
         if (uncheckLayer == 'SYNOP 21UTC 3h RAINFALL') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -15083,7 +15337,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X62);
         }
 
         if (panelLayerSYNOP21UTC_lists.innerHTML == '') {
@@ -15103,6 +15357,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
+            map.removeLayer(X155);
         }
         if (uncheckLayer == 'Radar Products Radar Animation') {
             clickedRADARPRODUCTSLists = clickedRADARPRODUCTSLists.filter(checkList => {
@@ -15110,6 +15365,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
+            map.removeLayer(X156);
         }
 
         if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
@@ -15129,7 +15385,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+            map.removeLayer(X157);
         }
         if (uncheckLayer == 'Satellite Observation VIS') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -15137,7 +15393,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+            map.removeLayer(X158);
         }
         if (uncheckLayer == 'Satellite Observation CTBT') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -15145,7 +15401,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+            map.removeLayer(X159);
         }
         if (uncheckLayer == 'Satellite Observation LOW LEVEL CONVERGENCE') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -15153,7 +15409,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+            map.removeLayer(X160);
         }
         if (uncheckLayer == 'Satellite Observation UPPER LEVEL DIVEGENCE') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -15161,7 +15417,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+            map.removeLayer(X161);
         }
         if (uncheckLayer == 'Satellite Observation MID LEVEL SHEAR') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -15169,7 +15425,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+            map.removeLayer(X162);
         }
         if (uncheckLayer == 'Satellite Observation VORTICITY AT 200hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -15177,7 +15433,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+            map.removeLayer(X163);
         }
         if (uncheckLayer == 'Satellite Observation VORTICITY AT 500hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -15185,7 +15441,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+            map.removeLayer(X164);
         }
         if (uncheckLayer == 'Satellite Observation VORTICITY AT 700hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -15193,7 +15449,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+            map.removeLayer(X165);
         }
         if (uncheckLayer == 'Satellite ObservationVORTICITY AT 850hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -15201,7 +15457,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-
+            map.removeLayer(X166);
         }
 
         if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
@@ -16990,6 +17246,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 });
 //
 
+function metarTempImage() {
+    metarTempLegendImage.innerHTML = `<span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>`
+
+}
 
 
 //closeModel
