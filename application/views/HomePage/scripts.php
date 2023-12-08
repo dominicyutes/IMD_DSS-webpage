@@ -2489,6 +2489,22 @@ X160.bindPopup("<b>X160</b>").openPopup();
 var X161 = L.marker([18.5775, 83.3775]);
 X161.bindPopup("<b>X161</b>").openPopup();
 
+var X162 = L.marker([18.5776, 83.3776]);
+X162.bindPopup("<b>X162</b>").openPopup();
+
+var X163 = L.marker([18.5777, 83.3777]);
+X163.bindPopup("<b>X163</b>").openPopup();
+
+var X164 = L.marker([18.5778, 83.3778]);
+X164.bindPopup("<b>X164</b>").openPopup();
+
+var X165 = L.marker([18.5779, 83.3779]);
+X165.bindPopup("<b>X165</b>").openPopup();
+
+var X166 = L.marker([18.5780, 83.3780]);
+X166.bindPopup("<b>X166</b>").openPopup();
+
+
 
 // mywmsIITM mywmsNcum mywmsNowcast
 const overLayers = [{
@@ -4277,52 +4293,52 @@ var overLayers6 = [{
         layers: [{
                 active: false,
                 name: "TIR1",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X157
             },
             {
                 active: false,
                 name: "VIS",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X158
             },
             {
                 active: false,
                 name: "CTBT",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X159
             },
             {
                 active: false,
                 name: "LOW LEVEL CONVERGENCE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X160
             },
             {
                 active: false,
                 name: "UPPER LEVEL DIVEGENCE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X161
             },
             {
                 active: false,
                 name: "MID LEVEL SHEAR",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X162
             },
             {
                 active: false,
                 name: "VORTICITY AT 200hPa",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X163
             },
             {
                 active: false,
                 name: "VORTICITY AT 500hPa",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X164
             },
             {
                 active: false,
                 name: "VORTICITY AT 700hPa",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X165
             },
             {
                 active: false,
                 name: "VORTICITY AT 850hPa",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X166
             },
 
 
@@ -4338,12 +4354,12 @@ var overLayers7 = [{
         layers: [{
                 active: false,
                 name: "Radar Reflectivity",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X155
             },
             {
                 active: false,
                 name: "Radar Animation",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X156
             },
 
         ]
