@@ -9146,7 +9146,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 MESOLSCALE_Row.style.display = 'block';
             }
 
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'Next 03Hrs') {
                 clickedWRFlightningProductLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}<br>`
                 );
