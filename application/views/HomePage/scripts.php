@@ -5351,8 +5351,10 @@ function clickHandler_ship(event_ship) {
 }
 
 document.getElementById("parent").addEventListener("click", clickHandler_ship);
-//
 
+
+// Image
+let metarTempLegendImage = document.querySelector('#metarTempImage');
 
 // model popup
 let model = document.querySelector('.model');
@@ -5917,16 +5919,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
-</span>`
+						<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+					</span>`
                 );
+                metarTempImage()
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
@@ -5996,15 +5992,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR01UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR01UTCLists.push(
@@ -6074,15 +6065,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR02UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR02UTCLists.push(
@@ -6152,15 +6138,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR03UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR03UTCLists.push(
@@ -6230,15 +6211,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR04UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR04UTCLists.push(
@@ -6308,15 +6284,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR05UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR05UTCLists.push(
@@ -6386,15 +6357,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR06UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR06UTCLists.push(
@@ -6464,15 +6430,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR07UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR07UTCLists.push(
@@ -6542,15 +6503,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR08UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR08UTCLists.push(
@@ -6620,15 +6576,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR09UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR09UTCLists.push(
@@ -6698,15 +6649,9 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR10UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR10UTCLists.push(
@@ -6776,15 +6721,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR11UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR11UTCLists.push(
@@ -6854,15 +6794,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR12UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR12UTCLists.push(
@@ -6932,15 +6867,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR13UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR13UTCLists.push(
@@ -7010,15 +6940,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR14UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR14UTCLists.push(
@@ -7088,15 +7013,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR15UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR15UTCLists.push(
@@ -7166,15 +7086,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR16UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR16UTCLists.push(
@@ -7244,15 +7159,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR17UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR17UTCLists.push(
@@ -7322,15 +7232,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR18UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR18UTCLists.push(
@@ -7400,15 +7305,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR19UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR19UTCLists.push(
@@ -7478,15 +7378,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR20UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR20UTCLists.push(
@@ -7556,15 +7451,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR21UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR21UTCLists.push(
@@ -7634,15 +7524,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR22UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR22UTCLists.push(
@@ -7712,15 +7597,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR23UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR23UTCLists.push(
@@ -7792,15 +7672,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff30ac; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15-30</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fdff2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">30-35</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ffab2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">35-40</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f86929; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">40-45</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP00UTCLists.push(
@@ -10244,122 +10119,290 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == '00UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '01UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '02UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '03UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '04UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '05UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '06UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '07UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '08UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '09UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '10UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '11UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '12UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '13UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '14UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '15UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '16UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '17UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '18UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '19UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '20UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '21UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '22UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == '23UTC') {
                 clickedSHIPANDBUOYLists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
 
@@ -11319,32 +11362,128 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NCUM DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NEPS DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'WRF DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'GEFS DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
 
@@ -11359,32 +11498,128 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NCUM DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NEPS DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'WRF DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'GEFS DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
 
@@ -11399,32 +11634,128 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NCUM DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NEPS DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'WRF DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'GEFS DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
 
@@ -11439,32 +11770,128 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NCUM DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NEPS DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'WRF DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'GEFS DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
 
@@ -11479,32 +11906,128 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NCUM DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NEPS DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'WRF DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'GEFS DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                            `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #fedf08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #b9dd08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0add08; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-40</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #069af3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-70</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #0652ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">70-130</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #e3671b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">130-200</span>
+    <span style="align-items: center; width:45px; height:18px; border-radius: 15%; background-color: #ff0000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>200</span>
+   
+    </span>
+    </span>
+</span>`
                 );
             }
 
@@ -11529,32 +12052,194 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY1') {
                 clickedMSLPDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NCUM DAY1') {
                 clickedMSLPDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NEPS DAY1') {
                 clickedMSLPDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'WRF DAY1') {
                 clickedMSLPDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'GEFS DAY1') {
                 clickedMSLPDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY1') {
                 clickedMSLPDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
 
@@ -11569,32 +12254,194 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY2') {
                 clickedMSLPDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NCUM DAY2') {
                 clickedMSLPDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NEPS DAY2') {
                 clickedMSLPDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'WRF DAY2') {
                 clickedMSLPDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'GEFS DAY2') {
                 clickedMSLPDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY2') {
                 clickedMSLPDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
 
@@ -11609,32 +12456,194 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY3') {
                 clickedMSLPDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NCUM DAY3') {
                 clickedMSLPDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NEPS DAY3') {
                 clickedMSLPDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'WRF DAY3') {
                 clickedMSLPDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'GEFS DAY3') {
                 clickedMSLPDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY3') {
                 clickedMSLPDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
 
@@ -11649,32 +12658,194 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY4') {
                 clickedMSLPDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NCUM DAY4') {
                 clickedMSLPDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NEPS DAY4') {
                 clickedMSLPDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'WRF DAY4') {
                 clickedMSLPDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'GEFS DAY4') {
                 clickedMSLPDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY4') {
                 clickedMSLPDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
 
@@ -11689,32 +12860,194 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY5') {
                 clickedMSLPDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NCUM DAY5') {
                 clickedMSLPDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'NEPS DAY5') {
                 clickedMSLPDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'WRF DAY5') {
                 clickedMSLPDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'GEFS DAY5') {
                 clickedMSLPDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY5') {
                 clickedMSLPDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                        `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f00082; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><998</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">998-1000</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-1002</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1002-1004</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6af2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1004-1006</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e6dc32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1006-1008</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1008-1010</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1010-1012</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00c8c8; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1012-1014</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #00a0ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1014-1016</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1016-1018</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #8200dc; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>1018</span>
+    </span>
+
+    </span>
+</span>`
                 );
             }
 
@@ -11732,34 +13065,74 @@ $("body").on("change", "input[type=checkbox]", function() {
                 MEDIUM_Row.style.display = 'block';
             }
 
-            if (layer_name == 'GFS DAY1') {
-                clicked10mWINDDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
-                );
-            }
+            if (layer_name === 'GFS DAY1') {
+    var checkboxHTML = '<span style="flex-direction: column; margin-right: 20px; margin-bottom: 10px;">' +
+        '<input type="checkbox" class="' + layer_group_name + ' ' + layer_name + '" checked/> ' + layer_name +'<br>'+
+        '<img src="img/windspeed-and-direction/10knots.png" width="20" height="30" />' +
+        '<img src="img/windspeed-and-direction/15knots.png" width="20" height="30" />' +
+        '</span>';
+
+    clicked10mWINDDay1Lists.push(checkboxHTML);
+}
+
             if (layer_name == 'NCUM DAY1') {
                 clicked10mWINDDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'NEPS DAY1') {
                 clicked10mWINDDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'WRF DAY1') {
                 clicked10mWINDDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'GEFS DAY1') {
                 clicked10mWINDDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY1') {
                 clicked10mWINDDay1Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
 
@@ -11774,32 +13147,74 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY2') {
                 clicked10mWINDDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'NCUM DAY2') {
                 clicked10mWINDDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'NEPS DAY2') {
                 clicked10mWINDDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'WRF DAY2') {
                 clicked10mWINDDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'GEFS DAY2') {
                 clicked10mWINDDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY2') {
                 clicked10mWINDDay2Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
 
@@ -11814,32 +13229,74 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY3') {
                 clicked10mWINDDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'NCUM DAY3') {
                 clicked10mWINDDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'NEPS DAY3') {
                 clicked10mWINDDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'WRF DAY3') {
                 clicked10mWINDDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'GEFS DAY3') {
                 clicked10mWINDDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY3') {
                 clicked10mWINDDay3Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
 
@@ -11854,32 +13311,74 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY4') {
                 clicked10mWINDDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'NCUM DAY4') {
                 clicked10mWINDDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'NEPS DAY4') {
                 clicked10mWINDDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'WRF DAY4') {
                 clicked10mWINDDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'GEFS DAY4') {
                 clicked10mWINDDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY4') {
                 clicked10mWINDDay4Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
 
@@ -11894,32 +13393,74 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY5') {
                 clicked10mWINDDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'NCUM DAY5') {
                 clicked10mWINDDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'NEPS DAY5') {
                 clicked10mWINDDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'WRF DAY5') {
                 clicked10mWINDDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'GEFS DAY5') {
                 clicked10mWINDDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
             if (layer_name == 'ECMWF DAY5') {
                 clicked10mWINDDay5Lists.push(
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}`
+                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`
                 );
             }
 
@@ -15702,6 +17243,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 });
 //
 
+function metarTempImage() {
+    metarTempLegendImage.innerHTML = `<span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>`
+
+}
 
 
 //closeModel

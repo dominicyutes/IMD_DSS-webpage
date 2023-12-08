@@ -395,6 +395,8 @@
 
                     <h5 id="METAR23UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR23UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+
+					<div id="metarTempImage" style="margin-left: 40px"></div>
                 </div>
 
                 <!-- SYNOP -->
