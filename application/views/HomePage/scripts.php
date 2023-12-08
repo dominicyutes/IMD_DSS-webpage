@@ -1374,7 +1374,7 @@ let ShipAndBuoyObservation = ['00UTC', '01UTC', '02UTC', '03UTC', '04UTC', '05UT
 ];
 //
 
-//ModelNames-Dropdown    MA-ModelsArray
+//observation ModelNames-Dropdown    MA-ModelsArray
 let getModelNames = document.getElementById("modelNames");
 let pushModelNames = '';
 for (let MA = 0; MA < modelNamesArr.length; MA++) {
@@ -1382,7 +1382,7 @@ for (let MA = 0; MA < modelNamesArr.length; MA++) {
 }
 getModelNames.innerHTML = pushModelNames;
 
-//secondDropdown-SD
+//secondDropdown-SD observation
 function showParameterNames(value) {
     let getparameterNames = document.getElementById("parameterNames");
     let pushparameterNames = '';
@@ -1396,14 +1396,10 @@ function showParameterNames(value) {
     showSubParameterNames(SecondDropdown[0].name);
 }
 
-
-//secondDropdown-SD
+//OBSERVATION thirdDropdown-SD
 function showSubParameterNames(value) {
-    // alert(value)
     let getsubparameterNames = document.getElementById("subparameter");
     let pushsubparameterNames = '';
-
-    // console.log(subParametersList)
     var SecondDropdown = subParametersList.filter(x => x.category == value);
     for (let SD = 0; SD < SecondDropdown.length; SD++) {
         if (SecondDropdown[SD].name) {
@@ -1430,7 +1426,7 @@ for (let MS = 0; MS < 60; MS++) {
 }
 getMinSelect.innerHTML = pushMinSelect;
 
-//submitForm
+//submitForm for observation
 function submitForm() {
     let model_Names = document.getElementById('modelNames').value;
     let parameter_Names = document.getElementById('parameterNames').value;
@@ -1440,13 +1436,118 @@ function submitForm() {
     let hour_Select = document.getElementById('hourSelect').value;
     let minute_Select = document.getElementById('minuteSelect').value;
 
-    let message = "Model: " + model_Names + "\n" +
+    let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
         "Parameter: " + parameter_Names + "\n" +
         "SubParameter: " + sub_parameter + "\n" +
         "Start Date: " + fromDate + "\n" +
         "End Date: " + toDate + "\n" +
         "Time: " + hour_Select + ":" + minute_Select;
     alert(message);
+}
+
+//Observation-toggleObservation
+function toggleObservation() {
+    let observationContainerFn = document.getElementById("ObservationContainer");
+    let map = document.getElementById('map');
+    let isHidden = observationContainerFn.classList.contains('hidden');
+    observationContainerFn.classList.toggle('hidden');
+    map.style.width = isHidden ? '83%' : '99%';
+}
+//
+
+// MACRO
+//macro ModelNames-Dropdown    MA-ModelsArray
+let getMacModelNames = document.getElementById("mac_modelNames");
+let pushMacModelNames = '';
+for (let MA = 0; MA < modelNamesArr.length; MA++) {
+    pushMacModelNames += `<option class="test">${modelNamesArr[MA]}</option><br/><br/>`;
+}
+getMacModelNames.innerHTML = pushMacModelNames;
+
+//macro secondDropdown-MSD MACRO
+function macShowParameterNames(value) {
+    let macGetParameterNames = document.getElementById("mac_parameterNames");
+    let macPushParameterNames = '';
+    var macSecondDropdown = Parameters.filter(y => y.category == value);
+    for (let MSD = 0; MSD < macSecondDropdown.length; MSD++) {
+        if (macSecondDropdown[MSD].name) {
+            macPushParameterNames += `<option>${macSecondDropdown[MSD].name}</option><br/><br/>`;
+        }
+    }
+    macGetParameterNames.innerHTML = macPushParameterNames;
+    macShowSubParameterNames(macSecondDropdown[0].name);
+}
+
+//MACRO-ThirdDropdown-MTD
+function macShowSubParameterNames(value) {
+    let macGetSubParameterNames = document.getElementById("mac_subparameter");
+    let macPushSubParameterNames = '';
+    var macSecondDropdown = subParametersList.filter(x => x.category == value);
+    for (let MTD = 0; MTD < macSecondDropdown.length; MTD++) {
+        if (macSecondDropdown[MTD].name) {
+            macPushSubParameterNames += `<option>${macSecondDropdown[MTD].name}</option><br/><br/>`;
+        }
+    }
+    macGetSubParameterNames.innerHTML = macPushSubParameterNames;
+}
+
+//MACRO hr HS-hourSelect
+let macGetHourSelect = document.getElementById("mac_hourSelect");
+let macPushHourSelect = '';
+for (let MHS = 0; MHS < 25; MHS++) {
+    macPushHourSelect += `<option>${[MHS]}</option><br/><br/>`;
+}
+macGetHourSelect.innerHTML = macPushHourSelect;
+
+//MACRO min MS-minuteSelect
+let macGetMinSelect = document.getElementById("mac_minuteSelect");
+let macPushMinSelect = '';
+for (let MMS = 0; MMS < 60; MMS++) {
+    macPushMinSelect += `<option>${[MMS]}</option><br/><br/>`;
+}
+macGetMinSelect.innerHTML = macPushMinSelect;
+
+//submitForm for MACRO
+function macSubmitForm() {
+    let mac_macroNames = document.getElementById('macroNames').value;
+    let mac_model_Names = document.getElementById('mac_modelNames').value;
+    let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
+    let mac_sub_parameter = document.getElementById('mac_subparameter').value;
+    let mac_fromDate = document.getElementById('mac_start_date').value;
+    let mac_toDate = document.getElementById('mac_end_date').value;
+    let mac_hour_Select = document.getElementById('mac_hourSelect').value;
+    let mac_minute_Select = document.getElementById('mac_minuteSelect').value;
+
+    let message = "MACRO" + "\n" + "Macro Names: " + mac_macroNames + "\n" +
+        "Model: " + mac_model_Names + "\n" +
+        "Parameter: " + mac_parameter_Names + "\n" +
+        "SubParameter: " + mac_sub_parameter + "\n" +
+        "Start Date: " + mac_fromDate + "\n" +
+        "End Date: " + mac_toDate + "\n" +
+        "Time: " + mac_hour_Select + ":" + mac_minute_Select;
+    alert(message);
+}
+
+//MACRO-toggleObservation
+function macToggleObservation() {
+    let macroContainerFn = document.getElementById("macroContainer");
+    let map = document.getElementById('map');
+    let isHidden = macroContainerFn.classList.contains('hidden');
+    macroContainerFn.classList.toggle('hidden');
+    map.style.width = isHidden ? '83%' : '99%';
+}
+//Macro Create Macro Toggle
+function createMacroForm() {
+    let clickMacro = document.getElementById("showCreateMacroLayers");
+    if (clickMacro.style.display === "block" || clickMacro.style.display === "") {
+        clickMacro.style.display = "none";
+    } else {
+        clickMacro.style.display = "block";
+    }
+}
+
+function buttonClicked(option) {
+    alert('Button clicked: ' + option);
 }
 
 //leaflet starts here
@@ -1460,22 +1561,6 @@ function submitForm() {
 //     },
 //     timeDimensionControl: true
 // }).setView([22.79459, 80.06406], 5);
-
-//leaflet starts here
-var today = new Date();
-var today_month = today.getMonth() + 1;
-var date = today.getFullYear() + '-' + today_month + '-' + today.getDate();
-var time = today.getHours() + ":00:00";
-var time = '00:00:00';
-var dateTime = date + ' ' + time;
-
-var startDate = new Date(dateTime);
-// console.log("startDate::" + startDate);
-
-var endDate_TM = new Date();
-endDate_TM.setDate(endDate_TM.getDate() + 1);
-endDate_TM.setUTCMinutes(0, 0, 0);
-// console.log("endDate_TM:::" + endDate_TM);
 
 //MAP
 var map = L.map('map', {
@@ -1499,6 +1584,23 @@ var map = L.map('map', {
     },
     center: [22.79459, 80.06406],
 });
+
+//leaflet starts here
+var today = new Date();
+var today_month = today.getMonth() + 1;
+var date = today.getFullYear() + '-' + today_month + '-' + today.getDate();
+var time = today.getHours() + ":00:00";
+var time = '00:00:00';
+var dateTime = date + ' ' + time;
+
+var startDate = new Date(dateTime);
+// console.log("startDate::" + startDate);
+
+var endDate_TM = new Date();
+endDate_TM.setDate(endDate_TM.getDate() + 1);
+endDate_TM.setUTCMinutes(0, 0, 0);
+// console.log("endDate_TM:::" + endDate_TM);
+
 Date.prototype.format = function(mask, utc) {
     return dateFormat(this, mask, utc);
 };
@@ -1517,47 +1619,36 @@ var timeDimensionControl = new L.Control.TimeDimensionCustom({
     }
 });
 
-//imd geoserver
-const mywmsNcum1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:LLWS_12hr_fcst_FL',
-    format: 'image/png',
-    transparent: true,
-    attribution: "LLWS_12hr_fcst_FL",
-    opacity: 0.8,
-    layerName: "mywmsNcum"
-});
-
-var tdWmsLayer = L.timeDimension.layer.wms(mywmsNcum1);
-mywmsNcum1.addTo(map);
-
 // Add the GeoJSON data to the map
-_dist_geojson = "<?php echo base_url(); ?>DATA/INDIA_COUNTRY.json";
-var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
-    color: 'black',
-    weight: 1,
-    style: {
-        color: '#3f51b5',
-        opacity: 0.5,
-        fillOpacity: 0.5,
-        weight: 1
-    }
-});
+// _dist_geojson = "<?php echo base_url(); ?>DATA/INDIA_COUNTRY.json";
+// var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
+//     color: 'black',
+//     weight: 1,
+//     style: {
+//         color: '#3f51b5',
+//         opacity: 0.5,
+//         fillOpacity: 0.5,
+//         weight: 1
+//     }
+// });
 
-geojson.on('data:loaded', function() {
-    geojson.addTo(map);
-});
+// geojson.on('data:loaded', function() {
+//     geojson.addTo(map);
+// });
 //
 
-//Observation-toggleObservation
-function toggleObservation() {
-    var observationContainerFn = document.getElementById("ObservationContainer");
-    var map = document.getElementById('map');
-    var isHidden = observationContainerFn.classList.contains('hidden');
-    observationContainerFn.classList.toggle('hidden');
-    map.style.width = isHidden ? '83%' : '99%';
-}
-// var observationContainerFn = document.getElementById("ObservationContainer");
-// observationContainerFn.addEventListener('click', toggleObservation);
+//imd geoserver
+// const mywmsNcum1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:LLWS_12hr_fcst_FL',
+//     format: 'image/png',
+//     transparent: true,
+//     attribution: "LLWS_12hr_fcst_FL",
+//     opacity: 0.8,
+//     layerName: "mywmsNcum"
+// });
+
+// var tdWmsLayer = L.timeDimension.layer.wms(mywmsNcum1);
+// mywmsNcum1.addTo(map);
 
 //
 const OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1695,30 +1786,11 @@ L.control.mousePosition({
 //add map scale
 // L.control.scale().addTo(map);
 
-// ************
-// Create a custom control button for model popup
-var LegendButton = L.Control.extend({
-    options: {
-        position: 'topleft'
-    },
-    onAdd: function() {
-        // Create a button element
-        var button = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
-        button.innerHTML = 'Legend';
-        button.id = 'popup';
-        //click event listener
-        L.DomEvent.on(button, 'click', function() {
-            // alert('Button clicked!');
-        });
-        return button;
-    }
-});
-map.addControl(new LegendButton());
-
+var customButtonsContainer = L.DomUtil.create('div', 'leaflet-bar leaflet-control customClass');
 // Create a custom control button for ObservationButton
 var ObservationButton = L.Control.extend({
     options: {
-        position: 'topleft'
+        position: 'bottomleft'
     },
     onAdd: function() {
         var obsbtn = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
@@ -1732,26 +1804,57 @@ var ObservationButton = L.Control.extend({
         return obsbtn;
     }
 });
-map.addControl(new ObservationButton());
+// map.addControl(new ObservationButton());
+// buttonContainer.appendChild(new ObservationButton().onAdd(map));
+
 
 // Create a custom control button for ObservationButton
 var MacroButton = L.Control.extend({
     options: {
-        position: 'topleft'
+        position: 'bottomleft'
     },
     onAdd: function() {
         var macbtn = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
         macbtn.innerHTML = 'Macro';
         //click event
         L.DomEvent.on(macbtn, 'click', function() {
-            alert('MACRO Button clicked!');
-            // toggleObservation();
+            // alert('MACRO Button clicked!');
+            macToggleObservation();
         });
 
         return macbtn;
     }
 });
-map.addControl(new MacroButton());
+// map.addControl(new MacroButton());
+// buttonContainer.appendChild(new MacroButton().onAdd(map));
+
+
+// Create a custom control button for model popup
+var LegendButton = L.Control.extend({
+    options: {
+        position: 'bottomleft'
+    },
+    onAdd: function() {
+        // Create a button element
+        var button = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
+        button.innerHTML = 'Legend';
+        button.id = 'popup';
+        //click event listener
+        L.DomEvent.on(button, 'click', function() {
+            // alert('Button clicked!');
+        });
+        return button;
+    }
+});
+// map.addControl(new LegendButton());
+// buttonContainer.appendChild(new LegendButton().onAdd(map));
+
+customButtonsContainer.appendChild(new ObservationButton().onAdd());
+customButtonsContainer.appendChild(new MacroButton().onAdd());
+customButtonsContainer.appendChild(new LegendButton().onAdd());
+
+// Add the container to the map
+map.getContainer().appendChild(customButtonsContainer);
 // ************
 
 // Custom Control
@@ -1851,6 +1954,238 @@ BobbiliMarker.bindPopup("<b>Bobbili</b>").openPopup();
 var ggg = L.marker([18.5696, 83.3668]);
 ggg.bindPopup("<b>ggg</b>").openPopup();
 
+// Add a marker for Bobbili
+var HHHHHH = L.marker([18.5611, 83.3615]);
+HHHHHH.bindPopup("<b>gggggggg</b>").openPopup();
+
+//
+var X1 = L.marker([18.5612, 83.3612]);
+X1.bindPopup("<b>X1</b>").openPopup();
+
+//
+var X2 = L.marker([18.5613, 83.3613]);
+X2.bindPopup("<b>X2</b>").openPopup();
+
+//
+var X3 = L.marker([18.5614, 83.3614]);
+X3.bindPopup("<b>X3</b>").openPopup();
+
+//
+var X4 = L.marker([18.5615, 83.3615]);
+X4.bindPopup("<b>X4</b>").openPopup();
+
+//
+var X5 = L.marker([18.5616, 83.3616]);
+X5.bindPopup("<b>X5</b>").openPopup();
+
+//
+var X6 = L.marker([18.5617, 83.3617]);
+X6.bindPopup("<b>X6</b>").openPopup();
+
+//
+var X7 = L.marker([18.5618, 83.3618]);
+X7.bindPopup("<b>X7</b>").openPopup();
+
+//
+var X8 = L.marker([18.5619, 83.3619]);
+X8.bindPopup("<b>X8</b>").openPopup();
+
+//
+var X9 = L.marker([18.5620, 83.3620]);
+X9.bindPopup("<b>X9</b>").openPopup();
+
+//
+var X10 = L.marker([18.5621, 83.3621]);
+X10.bindPopup("<b>X10</b>").openPopup();
+
+//
+var X11 = L.marker([18.5622, 83.3622]);
+X11.bindPopup("<b>X11</b>").openPopup();
+
+//
+var X11 = L.marker([18.5623, 83.3623]);
+X11.bindPopup("<b>X11</b>").openPopup();
+
+//
+var X12 = L.marker([18.5624, 83.3624]);
+X12.bindPopup("<b>X12</b>").openPopup();
+
+//
+var X13 = L.marker([18.5625, 83.3625]);
+X13.bindPopup("<b>X13</b>").openPopup();
+
+//
+var X14 = L.marker([18.5626, 83.3626]);
+X14.bindPopup("<b>X14</b>").openPopup();
+
+//
+var X15 = L.marker([18.5627, 83.3627]);
+X15.bindPopup("<b>X15</b>").openPopup();
+
+//
+var X16 = L.marker([18.5628, 83.3628]);
+X16.bindPopup("<b>X16</b>").openPopup();
+
+//
+var X17 = L.marker([18.5629, 83.3629]);
+X17.bindPopup("<b>X17</b>").openPopup();
+
+//
+var X18 = L.marker([18.5630, 83.3630]);
+X18.bindPopup("<b>X18</b>").openPopup();
+
+//
+var X19 = L.marker([18.5631, 83.3631]);
+X19.bindPopup("<b>X19</b>").openPopup();
+
+//
+var X20 = L.marker([18.5632, 83.3632]);
+X20.bindPopup("<b>X20</b>").openPopup();
+
+//
+var X21 = L.marker([18.5633, 83.3633]);
+X21.bindPopup("<b>X21</b>").openPopup();
+
+//
+var X22 = L.marker([18.5634, 83.3634]);
+X22.bindPopup("<b>X22</b>").openPopup();
+
+//
+var X23 = L.marker([18.5635, 83.3635]);
+X23.bindPopup("<b>X23</b>").openPopup();
+
+//
+var X24 = L.marker([18.5636, 83.3636]);
+X24.bindPopup("<b>X24</b>").openPopup();
+
+//
+var X25 = L.marker([18.5637, 83.3637]);
+X25.bindPopup("<b>X25</b>").openPopup();
+
+//
+var X26 = L.marker([18.5638, 83.3638]);
+X26.bindPopup("<b>X26</b>").openPopup();
+
+//
+var X27 = L.marker([18.5639, 83.3639]);
+X27.bindPopup("<b>X27</b>").openPopup();
+
+//
+var X28 = L.marker([18.5640, 83.3640]);
+X28.bindPopup("<b>X28</b>").openPopup();
+
+//
+var X29 = L.marker([18.5641, 83.3641]);
+X29.bindPopup("<b>X29</b>").openPopup();
+
+//
+var X30 = L.marker([18.5642, 83.3642]);
+X30.bindPopup("<b>X30</b>").openPopup();
+
+//
+var X31 = L.marker([18.5643, 83.3643]);
+X31.bindPopup("<b>X31</b>").openPopup();
+
+//
+var X32 = L.marker([18.5644, 83.3644]);
+X32.bindPopup("<b>X32</b>").openPopup();
+
+//
+var X33 = L.marker([18.5645, 83.3645]);
+X33.bindPopup("<b>X33</b>").openPopup();
+
+//
+var X34 = L.marker([18.5646, 83.3646]);
+X34.bindPopup("<b>X34</b>").openPopup();
+
+//
+var X35 = L.marker([18.5647, 83.3647]);
+X35.bindPopup("<b>X35</b>").openPopup();
+
+//
+var X36 = L.marker([18.5648, 83.3648]);
+X36.bindPopup("<b>X36</b>").openPopup();
+
+//
+var X37 = L.marker([18.5649, 83.3649]);
+X37.bindPopup("<b>X37</b>").openPopup();
+
+//
+var X38 = L.marker([18.5650, 83.3650]);
+X38.bindPopup("<b>X38</b>").openPopup();
+
+var X39 = L.marker([18.5651, 83.3652]);
+X39.bindPopup("<b>X39</b>").openPopup();
+
+var X40 = L.marker([18.5652, 83.3652]);
+X40.bindPopup("<b>X40</b>").openPopup();
+
+var X41 = L.marker([18.5653, 83.3653]);
+X41.bindPopup("<b>X41</b>").openPopup();
+
+var X42 = L.marker([18.5654, 83.3654]);
+X42.bindPopup("<b>X42</b>").openPopup();
+
+var X43 = L.marker([18.5655, 83.3655]);
+X43.bindPopup("<b>X43</b>").openPopup();
+
+var X44 = L.marker([18.5656, 83.3656]);
+X44.bindPopup("<b>X44</b>").openPopup();
+
+var X45 = L.marker([18.5657, 83.3657]);
+X45.bindPopup("<b>X45</b>").openPopup();
+
+var X46 = L.marker([18.5658, 83.3658]);
+X46.bindPopup("<b>X46</b>").openPopup();
+
+var X47 = L.marker([18.5659, 83.3659]);
+X47.bindPopup("<b>X47</b>").openPopup();
+
+var X48 = L.marker([18.5660, 83.3660]);
+X48.bindPopup("<b>X48</b>").openPopup();
+
+var X49 = L.marker([18.5661, 83.3661]);
+X49.bindPopup("<b>X49</b>").openPopup();
+
+var X50 = L.marker([18.5662, 83.3662]);
+X50.bindPopup("<b>X50</b>").openPopup();
+
+var X51 = L.marker([18.5663, 83.3663]);
+X51.bindPopup("<b>X51</b>").openPopup();
+
+var X52 = L.marker([18.5664, 83.3664]);
+X52.bindPopup("<b>X52</b>").openPopup();
+
+var X53 = L.marker([18.5665, 83.3665]);
+X53.bindPopup("<b>X53</b>").openPopup();
+
+var X54 = L.marker([18.5666, 83.3666]);
+X54.bindPopup("<b>X54</b>").openPopup();
+
+var X55 = L.marker([18.5667, 83.3667]);
+X55.bindPopup("<b>X55</b>").openPopup();
+
+var X56 = L.marker([18.5668, 83.3668]);
+X56.bindPopup("<b>X56</b>").openPopup();
+
+var X57 = L.marker([18.5669, 83.3669]);
+X57.bindPopup("<b>X57</b>").openPopup();
+
+var X58 = L.marker([18.5670, 83.3670]);
+X58.bindPopup("<b>X58</b>").openPopup();
+
+var X59 = L.marker([18.5671, 83.3671]);
+X59.bindPopup("<b>X59</b>").openPopup();
+
+var X60 = L.marker([18.5672, 83.3672]);
+X60.bindPopup("<b>X60</b>").openPopup();
+
+var X61 = L.marker([18.5673, 83.3673]);
+X61.bindPopup("<b>X61</b>").openPopup();
+
+var X62 = L.marker([18.5674, 83.3674]);
+X62.bindPopup("<b>X62</b>").openPopup();
+
 // mywmsIITM mywmsNcum mywmsNowcast
 const overLayers = [{
         group: "Lightning",
@@ -1908,42 +2243,42 @@ var overLayers2 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: ggg
+                layer: HHHHHH
             },
             {
                 active: false,
                 name: "MEAN SEA LEVEL PRESSURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: ggg
             },
             {
                 active: false,
                 name: "CLOUD COVER",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X1
             },
             {
                 active: false,
                 name: "GEOPOTENTIAL HEIGHT",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X2
             },
             {
                 active: false,
                 name: "RELATIVE HUMIDITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X3
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X4
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X5
             },
             {
                 active: false,
                 name: "3h RAINFALL",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X6
             },
         ]
     },
@@ -1954,42 +2289,42 @@ var overLayers2 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X7
             },
             {
                 active: false,
                 name: "MEAN SEA LEVEL PRESSURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X8
             },
             {
                 active: false,
                 name: "CLOUD COVER",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X9
             },
             {
                 active: false,
                 name: "GEOPOTENTIAL HEIGHT",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X10
             },
             {
                 active: false,
                 name: "RELATIVE HUMIDITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X11
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X12
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X13
             },
             {
                 active: false,
                 name: "3h RAINFALL",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X14
             },
         ]
     },
@@ -2000,42 +2335,42 @@ var overLayers2 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X15
             },
             {
                 active: false,
                 name: "MEAN SEA LEVEL PRESSURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X16
             },
             {
                 active: false,
                 name: "CLOUD COVER",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X17
             },
             {
                 active: false,
                 name: "GEOPOTENTIAL HEIGHT",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X18
             },
             {
                 active: false,
                 name: "RELATIVE HUMIDITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X19
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X20
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X21
             },
             {
                 active: false,
                 name: "3h RAINFALL",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X22
             },
         ]
     },
@@ -2046,42 +2381,42 @@ var overLayers2 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X23
             },
             {
                 active: false,
                 name: "MEAN SEA LEVEL PRESSURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X24
             },
             {
                 active: false,
                 name: "CLOUD COVER",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X25
             },
             {
                 active: false,
                 name: "GEOPOTENTIAL HEIGHT",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X26
             },
             {
                 active: false,
                 name: "RELATIVE HUMIDITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X27
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X28
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X29
             },
             {
                 active: false,
                 name: "3h RAINFALL",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X30
             },
         ]
     },
@@ -2092,42 +2427,42 @@ var overLayers2 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X31
             },
             {
                 active: false,
                 name: "MEAN SEA LEVEL PRESSURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X32
             },
             {
                 active: false,
                 name: "CLOUD COVER",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X33
             },
             {
                 active: false,
                 name: "GEOPOTENTIAL HEIGHT",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X34
             },
             {
                 active: false,
                 name: "RELATIVE HUMIDITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X35
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X36
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X37
             },
             {
                 active: false,
                 name: "3h RAINFALL",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X38
             },
         ]
     },
@@ -2138,42 +2473,42 @@ var overLayers2 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X39
             },
             {
                 active: false,
                 name: "MEAN SEA LEVEL PRESSURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X40
             },
             {
                 active: false,
                 name: "CLOUD COVER",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X41
             },
             {
                 active: false,
                 name: "GEOPOTENTIAL HEIGHT",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X42
             },
             {
                 active: false,
                 name: "RELATIVE HUMIDITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X43
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X44
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X45
             },
             {
                 active: false,
                 name: "3h RAINFALL",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X46
             },
         ]
     },
@@ -2184,42 +2519,42 @@ var overLayers2 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X47
             },
             {
                 active: false,
                 name: "MEAN SEA LEVEL PRESSURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X48
             },
             {
                 active: false,
                 name: "CLOUD COVER",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X49
             },
             {
                 active: false,
                 name: "GEOPOTENTIAL HEIGHT",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X50
             },
             {
                 active: false,
                 name: "RELATIVE HUMIDITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X51
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X52
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X53
             },
             {
                 active: false,
                 name: "3h RAINFALL",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X54
             },
         ]
     },
@@ -2230,42 +2565,42 @@ var overLayers2 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X55
             },
             {
                 active: false,
                 name: "MEAN SEA LEVEL PRESSURE",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X56
             },
             {
                 active: false,
                 name: "CLOUD COVER",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X57
             },
             {
                 active: false,
                 name: "GEOPOTENTIAL HEIGHT",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X58
             },
             {
                 active: false,
                 name: "RELATIVE HUMIDITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X59
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X60
             },
             {
                 active: false,
                 name: "WIND SPEED AND DIRECTION",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X61
             },
             {
                 active: false,
                 name: "3h RAINFALL",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: X62
             },
         ]
     },

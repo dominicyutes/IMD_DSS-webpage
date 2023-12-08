@@ -54,7 +54,7 @@ body {
     vertical-align: baseline;
     font-weight: inherit;
     font-style: inherit;
-    font-size: 1.1em;
+    font-size: 18px;
     outline: 0;
     padding: 5px;
     margin: 0;
@@ -91,6 +91,19 @@ body {
 
 .border-end {
     border-right: var(--bs-border-width) var(--bs-border-style) #abaeb1 !important;
+}
+
+/* media query for navbar */
+@media (max-width: 1354px) {
+    .btn-val {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1287px) {
+    .btn-val {
+        font-size: 14px;
+    }
 }
 
 @keyframes loadingAnimation {
@@ -160,10 +173,6 @@ body {
     overflow-y: auto;
 }
 
-.dropdownSelect {
-    width: 20%;
-}
-
 .dateDD {
     width: 100%;
     height: 34px;
@@ -201,6 +210,124 @@ body {
     font-size: 1.1em;
 }
 
+/*  */
+
+/* Macro */
+.macClass {
+    margin-top: -2%;
+}
+
+.macroNameLabel,
+.mac_firstDDLabel,
+.mac_secondDDLabel,
+.mac_thirdDDLabel,
+.mac_dateDDLabel,
+.mac_TimeLabel {
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.macroNameInput,
+.mac_firstDD,
+.mac_secondDD,
+.mac_thirdDD {
+    width: 100%;
+    height: 32px;
+    border-radius: 10px;
+    color: #02275f;
+    overflow-y: auto;
+}
+
+/* .mac_secondDDLabel {
+    margin-left: 0;
+    color: #fff;
+    font-size: 1.1em;
+} */
+
+/* .mac_secondDD {
+    width: 100%;
+    height: 32px;
+    border-radius: 10px;
+    color: #02275f;
+    overflow-y: auto;
+} */
+
+/* .mac_thirdDDLabel {
+    margin-left: 0;
+    color: #fff;
+    font-size: 1.1em;
+} */
+
+/* .mac_thirdDD {
+    width: 100%;
+    height: 32px;
+    border-radius: 10px;
+    color: #02275f;
+    overflow-y: auto;
+} */
+
+.mac_dateDD {
+    width: 100%;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid #646464;
+}
+
+.mac_TimeHR {
+    width: 24%;
+    height: 34px;
+    border-radius: 10px;
+    color: #02275f;
+}
+
+.mac_TimeMin {
+    width: 24%;
+    height: 34px;
+    border-radius: 10px;
+    color: #02275f;
+}
+
+/*  */
+/* Style the dropdown button */
+.dropdown-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Style the buttons inside the dropdown */
+.dropdown-content button {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+/* Change color on hover */
+.dropdown-content button:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown content when the dropdown button is clicked */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*  MACRO CSS*/
+
 /* map starts here*/
 #map {
     height: 81vh;
@@ -210,10 +337,16 @@ body {
     position: relative;
 }
 
-.leaflet-top .leaflet-control {
-    margin-top: 0px;
-    margin-left: 20px;
+.customClass {
+    float: none;
 }
+
+/* .leaflet-top,
+.leaflet-control {
+    margin-top: 0px;
+    float: none;
+    margin-left: 17px;
+} */
 
 /* custom control button */
 .leaflet-control-custom {

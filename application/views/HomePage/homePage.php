@@ -167,7 +167,7 @@
         <div id="ObservationContainer" class="obsClass hidden col-2">
             <h4>OBSERVATION</h4>
             <!-- model -->
-            <form id="myForm">
+            <form id="obsForm">
                 <div>
                     <label for="modelNames" class="firstDDLabel">Model:</label>
                     <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
@@ -217,6 +217,76 @@
                 <button id="submitButton" onclick="submitForm()" class="submitBtn">Submit</button>
             </div>
         </div>
+
+        <!-- MACRO -->
+        <div id="macroContainer" class="hidden macClass col-2">
+            <!-- <h4>MACRO</h4> -->
+            <div class="dropdown">
+                <button class="dropdown-button">Select an Option</button>
+                <div class="dropdown-content">
+                    <button onclick="buttonClicked('Option 1')">Option 1</button>
+                    <button onclick="buttonClicked('Option 2')">Option 2</button>
+                    <button onclick="buttonClicked('Option 3')">Option 3</button>
+                </div>
+            </div>
+            <button id="createMacro" onclick="createMacroForm()">Create Macro</button>
+            <!-- model -->
+            <div style="display: none" id="showCreateMacroLayers">
+                <form id="myForm">
+                    <div>
+                        <label for="macroNames" class="macroNameLabel">Macro Name:</label>
+                        <input type="text" class="macroNameInput" id="macroNames" placeholder="customize name" &nbsp;>
+                    </div>
+                    <div>
+                        <label for="mac_modelNames" class="mac_firstDDLabel">Model:</label>
+                        <select class="mac_firstDD" id="mac_modelNames" onchange="macShowParameterNames(this.value)"
+                            &nbsp;>
+                        </select>
+                    </div>
+                    <!-- <span>&nbsp;</span> -->
+                    <!-- parameter -->
+                    <div>
+                        <label for="mac_parameter" class="mac_secondDDLabel">parameter:</label>
+                        <select class="mac_secondDD" id="mac_parameterNames"
+                            onchange="macShowSubParameterNames(this.value)" &nbsp;>
+                        </select>
+                    </div>
+                    <!-- <span>&nbsp;</span> -->
+                    <!-- SubParameter -->
+                    <div>
+                        <label for="mac_subparameter" class="mac_thirdDDLabel">SubParameter</label>
+                        <select class="mac_thirdDD" id="mac_subparameter" &nbsp;>
+                        </select>
+                    </div>
+                    <!-- <span>&nbsp;</span> -->
+                    <div>
+                        <label for="mac_start_date" class="mac_dateDDLabel">From Date:</label>
+                        <input type="date" id="mac_start_date" class="mac_dateDD">
+                    </div>
+                    <!-- <span>&nbsp;</span> -->
+                    <div>
+                        <label for="end_date" class="mac_dateDDLabel">To Date:</label>
+                        <input type="date" id="mac_end_date" class="mac_dateDD">
+                    </div>
+                    <!-- <span>&nbsp;</span> -->
+                    <div>
+                        <span style="display: contents;">
+                            <label for="mac_hourSelect" class="mac_TimeLabel">Time:</label>
+                            <select id="mac_hourSelect" class="mac_TimeHR">
+                            </select>
+                            <select id="mac_minuteSelect" class="mac_TimeMin">
+                            </select>
+                        </span>
+                    </div>
+                    <!-- <span>&nbsp;</span> -->
+                    </select>
+                </form>
+                <button id="mac_submitButton" onclick="macSubmitForm()" class="macSubmitBtn">Save</button>
+                <!-- Submit -->
+
+            </div>
+        </div>
+    </div>
     </div>
     </div>
 
@@ -227,8 +297,9 @@
         <div class="model-body" style="position: relative;">
             <div
                 style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px; align-items: center;">
-                <legend style="cursor: pointer;color: #83ffee;">X</legend>
-                <!-- <legend style="font-size: 12px; cursor: pointer;">❌</legend> -->
+                <legend
+                    style="cursor: pointer;color: #83ffee;text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;">
+                    X</legend>
                 <h4 style="margin: 0 auto;">Selected Parameters</h4>
             </div>
 
