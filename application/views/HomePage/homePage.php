@@ -329,256 +329,256 @@
                 <div id="METAR_Row">
                     <!-- <div class="col-5"> -->
                     <!-- HomePage-Lightning -->
-                    <h4 id="METAR" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
+                    <h4 id="METAR" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
                     <!-- METAR00UTC -->
-                    <h5 id="METAR00UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR00UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR00UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR01UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR01UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR01UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR02UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR02UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR02UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR03UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR03UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR03UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR04UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR04UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR04UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR05UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR05UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR05UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR06UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR06UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR06UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR07UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR07UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR07UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR08UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR08UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR08UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR09UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR09UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR09UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR10UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR10UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR10UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR11UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR11UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR11UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR12UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR12UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR12UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR13UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR13UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR13UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR14UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR14UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR14UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR15UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR15UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR15UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR16UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR16UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR16UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR17UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR17UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR17UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR18UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR18UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR18UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR19UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR19UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR19UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR20UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR20UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR20UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR21UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR21UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR21UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR22UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR22UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR22UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <h5 id="METAR23UTC-Title" style="color: red;"></h5>
+                    <h5 id="METAR23UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR23UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
                 </div>
 
                 <!-- SYNOP -->
                 <div class="row" id="SYNOP_Row" style="display: none;">
-                    <h4 id="SYNOP" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
+                    <h4 id="SYNOP" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
 
-                    <h5 id="SYNOP00UTC-Title" style="color: red;"></h5>
+                    <h5 id="SYNOP00UTC-Title" style="color: #000000;"></h5>
                     <p id="SYNOP00UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="SYNOP03UTC-Title" style="color: red;"></h5>
+                    <h5 id="SYNOP03UTC-Title" style="color: #000000;"></h5>
                     <p id="SYNOP03UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="SYNOP06UTC-Title" style="color: red;"></h5>
+                    <h5 id="SYNOP06UTC-Title" style="color: #000000;"></h5>
                     <p id="SYNOP06UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="SYNOP09UTC-Title" style="color: red;"></h5>
+                    <h5 id="SYNOP09UTC-Title" style="color: #000000;"></h5>
                     <p id="SYNOP09UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="SYNOP12UTC-Title" style="color: red;"></h5>
+                    <h5 id="SYNOP12UTC-Title" style="color: #000000;"></h5>
                     <p id="SYNOP12UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="SYNOP15UTC-Title" style="color: red;"></h5>
+                    <h5 id="SYNOP15UTC-Title" style="color: #000000;"></h5>
                     <p id="SYNOP15UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="SYNOP18UTC-Title" style="color: red;"></h5>
+                    <h5 id="SYNOP18UTC-Title" style="color: #000000;"></h5>
                     <p id="SYNOP18UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="SYNOP21UTC-Title" style="color: red;"></h5>
+                    <h5 id="SYNOP21UTC-Title" style="color: #000000;"></h5>
                     <p id="SYNOP21UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
                 </div>
 
                 <!-- Radar -->
                 <div class="row" id="RADAR_Row" style="display: none;">
-                    <h4 id="RADARPRODUCTS" style=" border-radius: 8px; background-color: yellow; text-align: center;">
+                    <h4 id="RADARPRODUCTS" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
                     </h4>
 
-                    <h5 id="RADARPRODUCTS-Title" style="color: red;"></h5>
+                    <h5 id="RADARPRODUCTS-Title" style="color: #000000;"></h5>
                     <p id="RADARPRODUCTS-lists" style="display: flex; flex-wrap: wrap;"></p>
                 </div>
 
                 <!-- SATELLITE -->
                 <div class="row" id="SATELLITE_Row" style="display: none;">
-                    <h4 id="SATELLITE" style=" border-radius: 8px; background-color: yellow; text-align: center;">
+                    <h4 id="SATELLITE" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
                     </h4>
 
-                    <h5 id="SATELLITE-Title" style="color: red;"></h5>
+                    <h5 id="SATELLITE-Title" style="color: #000000;"></h5>
                     <p id="SATELLITE-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                 </div>
 
                 <!-- LIGHTINING -->
                 <div class="row" id="LIGHTINING_Row" style="display: none;">
-                    <h4 id="LIGHTINING" style=" border-radius: 8px; background-color: yellow; text-align: center;">
+                    <h4 id="LIGHTINING" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
                     </h4>
 
-                    <h5 id="LIGHTINING-Title" style="color: red;"></h5>
+                    <h5 id="LIGHTINING-Title" style="color: #000000;"></h5>
                     <p id="LIGHTINING-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                 </div>
                 <!-- SOUNDING -->
                 <div class="row" id="SOUNDING_Row" style="display: none;">
-                    <h4 id="SOUNDING" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
+                    <h4 id="SOUNDING" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
 
-                    <h5 id="SOUNDING00UTCWIND-Title" style="color: red;"></h5>
+                    <h5 id="SOUNDING00UTCWIND-Title" style="color: #000000;"></h5>
                     <p id="SOUNDING00UTCWIND-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="SOUNDING12UTCWIND-Title" style="color: red;"></h5>
+                    <h5 id="SOUNDING12UTCWIND-Title" style="color: #000000;"></h5>
                     <p id="SOUNDING12UTCWIND-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="SOUNDING00UTCTEMP-Title" style="color: red;"></h5>
+                    <h5 id="SOUNDING00UTCTEMP-Title" style="color: #000000;"></h5>
                     <p id="SOUNDING00UTCTEMP-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="SOUNDING12UTCTEMP-Title" style="color: red;"></h5>
+                    <h5 id="SOUNDING12UTCTEMP-Title" style="color: #000000;"></h5>
                     <p id="SOUNDING12UTCTEMP-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="SOUNDING00UTCDEWPOINT-Title" style="color: red;"></h5>
+                    <h5 id="SOUNDING00UTCDEWPOINT-Title" style="color: #000000;"></h5>
                     <p id="SOUNDING00UTCDEWPOINT-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="SOUNDING12UTCDEWPOINT-Title" style="color: red;"></h5>
+                    <h5 id="SOUNDING12UTCDEWPOINT-Title" style="color: #000000;"></h5>
                     <p id="SOUNDING12UTCDEWPOINT-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                 </div>
                 <!-- SHIPANDBUOY -->
                 <div class="row" id="SHIPANDBUOY_Row" style="display: none;">
-                    <h4 id="SHIPANDBUOY" style=" border-radius: 8px; background-color: yellow; text-align: center;">
+                    <h4 id="SHIPANDBUOY" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
                     </h4>
-                    <h5 id="SHIPANDBUOY-Title" style="color: red;"></h5>
+                    <h5 id="SHIPANDBUOY-Title" style="color: #000000;"></h5>
                     <p id="SHIPANDBUOY-lists" style="display: flex; flex-wrap: wrap;"></p>
                 </div>
                 <!-- MESOLSCALE -->
                 <div class="row" id="MESOLSCALE_Row" style="display: none;">
-                    <h4 id="MESOLSCALE" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
+                    <h4 id="MESOLSCALE" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
 
-                    <h5 id="WRFReflectivity-Title" style="color: red;"></h5>
+                    <h5 id="WRFReflectivity-Title" style="color: #000000;"></h5>
                     <p id="WRFReflectivity-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="WRFlightningProduct-Title" style="color: red;"></h5>
+                    <h5 id="WRFlightningProduct-Title" style="color: #000000;"></h5>
                     <p id="WRFlightningProduct-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="WRFAccumlatedRainfall-Title" style="color: red;"></h5>
+                    <h5 id="WRFAccumlatedRainfall-Title" style="color: #000000;"></h5>
                     <p id="WRFAccumlatedRainfall-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="lightningPotentialindex-Title" style="color: red;"></h5>
+                    <h5 id="lightningPotentialindex-Title" style="color: #000000;"></h5>
                     <p id="lightningPotentialindex-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="NCUMRlightningProduct-Title" style="color: red;"></h5>
+                    <h5 id="NCUMRlightningProduct-Title" style="color: #000000;"></h5>
                     <p id="NCUMRlightningProduct-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="NCUMRWindGust-Title" style="color: red;"></h5>
+                    <h5 id="NCUMRWindGust-Title" style="color: #000000;"></h5>
                     <p id="NCUMRWindGust-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="NCUMRRainfall-Title" style="color: red;"></h5>
+                    <h5 id="NCUMRRainfall-Title" style="color: #000000;"></h5>
                     <p id="NCUMRRainfall-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="HRRR_SPHourlyDBZ-Title" style="color: red;"></h5>
+                    <h5 id="HRRR_SPHourlyDBZ-Title" style="color: #000000;"></h5>
                     <p id="HRRR_SPHourlyDBZ-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="HRRR_NEHourlyDBZ-Title" style="color: red;"></h5>
+                    <h5 id="HRRR_NEHourlyDBZ-Title" style="color: #000000;"></h5>
                     <p id="HRRR_NEHourlyDBZ-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="HRRR_NWHourlyDBZ-Title" style="color: red;"></h5>
+                    <h5 id="HRRR_NWHourlyDBZ-Title" style="color: #000000;"></h5>
                     <p id="HRRR_NWHourlyDBZ-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="EWRFMaxZ-Title" style="color: red;"></h5>
+                    <h5 id="EWRFMaxZ-Title" style="color: #000000;"></h5>
                     <p id="EWRFMaxZ-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="EWRFLightning-Title" style="color: red;"></h5>
+                    <h5 id="EWRFLightning-Title" style="color: #000000;"></h5>
                     <p id="EWRFLightning-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                 </div>
                 <!-- MEDIUM -->
                 <div class="row" id="MEDIUM_Row" style="display: none;">
-                    <h4 id="MEDIUM" style=" border-radius: 8px; background-color: yellow; text-align: center;"></h4>
+                    <h4 id="MEDIUM" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
 
-                    <h5 id="RainfallIntensityDay1-Title" style="color: red;"></h5>
+                    <h5 id="RainfallIntensityDay1-Title" style="color: #000000;"></h5>
                     <p id="RainfallIntensityDay1-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="RainfallIntensityDay2-Title" style="color: red;"></h5>
+                    <h5 id="RainfallIntensityDay2-Title" style="color: #000000;"></h5>
                     <p id="RainfallIntensityDay2-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="RainfallIntensityDay3-Title" style="color: red;"></h5>
+                    <h5 id="RainfallIntensityDay3-Title" style="color: #000000;"></h5>
                     <p id="RainfallIntensityDay3-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="RainfallIntensityDay4-Title" style="color: red;"></h5>
+                    <h5 id="RainfallIntensityDay4-Title" style="color: #000000;"></h5>
                     <p id="RainfallIntensityDay4-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="RainfallIntensityDay5-Title" style="color: red;"></h5>
+                    <h5 id="RainfallIntensityDay5-Title" style="color: #000000;"></h5>
                     <p id="RainfallIntensityDay5-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="MSLPDay1-Title" style="color: red;"></h5>
+                    <h5 id="MSLPDay1-Title" style="color: #000000;"></h5>
                     <p id="MSLPDay1-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="MSLPDay2-Title" style="color: red;"></h5>
+                    <h5 id="MSLPDay2-Title" style="color: #000000;"></h5>
                     <p id="MSLPDay2-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="MSLPDay3-Title" style="color: red;"></h5>
+                    <h5 id="MSLPDay3-Title" style="color: #000000;"></h5>
                     <p id="MSLPDay3-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="MSLPDay4-Title" style="color: red;"></h5>
+                    <h5 id="MSLPDay4-Title" style="color: #000000;"></h5>
                     <p id="MSLPDay4-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="MSLPDay5-Title" style="color: red;"></h5>
+                    <h5 id="MSLPDay5-Title" style="color: #000000;"></h5>
                     <p id="MSLPDay5-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="mWINDDay1-Title" style="color: red;"></h5>
+                    <h5 id="mWINDDay1-Title" style="color: #000000;"></h5>
                     <p id="mWINDDay1-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="mWINDDay2-Title" style="color: red;"></h5>
+                    <h5 id="mWINDDay2-Title" style="color: #000000;"></h5>
                     <p id="mWINDDay2-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="mWINDDay3-Title" style="color: red;"></h5>
+                    <h5 id="mWINDDay3-Title" style="color: #000000;"></h5>
                     <p id="mWINDDay3-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="mWINDDay4-Title" style="color: red;"></h5>
+                    <h5 id="mWINDDay4-Title" style="color: #000000;"></h5>
                     <p id="mWINDDay4-lists" style="display: flex; flex-wrap: wrap;"></p>
 
-                    <h5 id="mWINDDay5-Title" style="color: red;"></h5>
+                    <h5 id="mWINDDay5-Title" style="color: #000000;"></h5>
                     <p id="mWINDDay5-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                 </div>
