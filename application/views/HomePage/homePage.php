@@ -95,12 +95,6 @@
         </div>
     </div>
 
-    <!-- <div style="width: 92%; margin-bottom:1em; background-color:#ffffff;" class="mx-auto">
-        <div class="text-center"
-            style="background-image: linear-gradient(to right top, #eae0e0, #efe8ea, #f3f0f2, #f9f7f9, #ffffff); padding: 10px 0px 10px 0px;">
-            <span class="minsistry-text">Weather Decison Support System</span>
-        </div> -->
-
     <!-- navbar -->
     <div style="width: 100%; margin-bottom:1em; background-color:#f4fcff;" class="mx-auto">
         <div style="display:flex;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto heightChange">
@@ -219,17 +213,13 @@
         </div>
 
         <!-- MACRO -->
-        <div id="macroContainer" class="hidden macClass col-2">
-            <!-- <h4>MACRO</h4> -->
+        <div id="macroContainer" class="hidden obsClass col-2">
             <div class="dropdown">
-                <button class="dropdown-button">MACRO Option</button>
+                <button class="macOptCls">MACRO Option</button>
                 <div class="dropdown-content">
-                    <!-- <button onclick="buttonClicked('Option 1')">Option 1</button>
-                    <button onclick="buttonClicked('Option 2')">Option 2</button>
-                    <button onclick="buttonClicked('Option 3')">Option 3</button> -->
                 </div>
             </div>
-            <button id="createMacro" onclick="createMacroForm()">Create Macro</button>
+            <button id="createMacro" class="createMacroCls" onclick="createMacroForm()">Create Macro</button>
             <!-- model -->
             <div style="display: none" id="showCreateMacroLayers">
                 <form id="myForm">
@@ -278,7 +268,7 @@
                             </select>
                         </span>
                     </div>
-                    <!-- <span>&nbsp;</span> -->
+                    <span>&nbsp;</span>
                     </select>
                 </form>
                 <button id="mac_submitButton" onclick="macSubmitForm()" class="macSubmitBtn">Save</button>
@@ -286,6 +276,9 @@
 
             </div>
         </div>
+
+
+
     </div>
     </div>
     </div>

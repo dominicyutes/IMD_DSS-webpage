@@ -1539,8 +1539,9 @@ function macSubmitForm() {
     newButton.addEventListener('click', function() {
         console.log('Details of the saved button:', mac_macroNames, mac_model_Names, mac_parameter_Names,
             mac_sub_parameter, mac_fromDate, mac_toDate, mac_hour_Select, mac_minute_Select);
-        alert('Details of the saved button:' + mac_macroNames + mac_model_Names + mac_parameter_Names +
-            mac_sub_parameter + mac_fromDate + mac_toDate + mac_hour_Select + mac_minute_Select);
+        alert('Details of the saved button:' + "\n" + mac_macroNames + "\n" + mac_model_Names + "\n" +
+            mac_parameter_Names + "\n" + mac_sub_parameter + "\n" + mac_fromDate + "\n" + mac_toDate +
+            "\n" + mac_hour_Select + ":" + mac_minute_Select);
     });
     // Append the new button to the dropdown content
     document.querySelector('.dropdown-content').appendChild(newButton);
@@ -1566,10 +1567,6 @@ function createMacroForm() {
     } else {
         clickMacro.style.display = "block";
     }
-}
-
-function buttonClicked(option) {
-    alert('Button clicked: ' + option);
 }
 
 //leaflet starts here
@@ -13158,7 +13155,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
 
-		if (uncheckLayer == 'METAR 23UTC TEMPERATURE') {
+        if (uncheckLayer == 'METAR 23UTC TEMPERATURE') {
             clickedMETAR23UTCLists = clickedMETAR23UTCLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
@@ -13816,7 +13813,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
-			map.removeLayer(X155);
+            map.removeLayer(X155);
         }
         if (uncheckLayer == 'Radar Products Radar Animation') {
             clickedRADARPRODUCTSLists = clickedRADARPRODUCTSLists.filter(checkList => {
@@ -13824,7 +13821,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
-			map.removeLayer(X156);
+            map.removeLayer(X156);
         }
 
         if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
@@ -13844,7 +13841,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X157);
+            map.removeLayer(X157);
         }
         if (uncheckLayer == 'Satellite Observation VIS') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13852,7 +13849,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X158);
+            map.removeLayer(X158);
         }
         if (uncheckLayer == 'Satellite Observation CTBT') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13860,7 +13857,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X159);
+            map.removeLayer(X159);
         }
         if (uncheckLayer == 'Satellite Observation LOW LEVEL CONVERGENCE') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13868,7 +13865,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X160);
+            map.removeLayer(X160);
         }
         if (uncheckLayer == 'Satellite Observation UPPER LEVEL DIVEGENCE') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13876,7 +13873,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X161);
+            map.removeLayer(X161);
         }
         if (uncheckLayer == 'Satellite Observation MID LEVEL SHEAR') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13884,7 +13881,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X162);
+            map.removeLayer(X162);
         }
         if (uncheckLayer == 'Satellite Observation VORTICITY AT 200hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13892,7 +13889,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X163);
+            map.removeLayer(X163);
         }
         if (uncheckLayer == 'Satellite Observation VORTICITY AT 500hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13900,7 +13897,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X164);
+            map.removeLayer(X164);
         }
         if (uncheckLayer == 'Satellite Observation VORTICITY AT 700hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13908,7 +13905,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X165);
+            map.removeLayer(X165);
         }
         if (uncheckLayer == 'Satellite ObservationVORTICITY AT 850hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13916,7 +13913,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X166);
+            map.removeLayer(X166);
         }
 
         if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {

@@ -1,57 +1,64 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leaflet TimeDimension with METAR Data</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-timedimension/dist/leaflet.timedimension.control.min.css" />
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet-timedimension/dist/leaflet.timedimension.min.js"></script>
-</head>
-<body>
+<div id="macroContainer" class="hidden macClass col-2">
+    <!-- <h4>MACRO</h4> -->
+    <div class="dropdown">
+        <button class="macOptCls">MACRO Option</button>
+        <div class="dropdown-content">
+        </div>
+    </div>
+    <br /><br />
+    <button id="createMacro" class="createMacroCls" onclick="createMacroForm()">Create Macro</button>
+    <!-- model -->
+    <div style="display: none" id="showCreateMacroLayers">
+        <form id="myForm">
+            <div>
+                <label for="macroNames" class="macroNameLabel">Macro Name:</label>
+                <input type="text" class="macroNameInput" id="macroNames" placeholder="customize name" &nbsp;>
+            </div>
+            <div>
+                <label for="mac_modelNames" class="mac_firstDDLabel">Model:</label>
+                <select class="mac_firstDD" id="mac_modelNames" onchange="macShowParameterNames(this.value)" &nbsp;>
+                </select>
+            </div>
+            <!-- <span>&nbsp;</span> -->
+            <!-- parameter -->
+            <div>
+                <label for="mac_parameter" class="mac_secondDDLabel">parameter:</label>
+                <select class="mac_secondDD" id="mac_parameterNames" onchange="macShowSubParameterNames(this.value)"
+                    &nbsp;>
+                </select>
+            </div>
+            <!-- <span>&nbsp;</span> -->
+            <!-- SubParameter -->
+            <div>
+                <label for="mac_subparameter" class="mac_thirdDDLabel">SubParameter</label>
+                <select class="mac_thirdDD" id="mac_subparameter" &nbsp;>
+                </select>
+            </div>
+            <!-- <span>&nbsp;</span> -->
+            <div>
+                <label for="mac_start_date" class="mac_dateDDLabel">From Date:</label>
+                <input type="date" id="mac_start_date" class="mac_dateDD">
+            </div>
+            <!-- <span>&nbsp;</span> -->
+            <div>
+                <label for="end_date" class="mac_dateDDLabel">To Date:</label>
+                <input type="date" id="mac_end_date" class="mac_dateDD">
+            </div>
+            <!-- <span>&nbsp;</span> -->
+            <div>
+                <span style="display: contents;">
+                    <label for="mac_hourSelect" class="mac_TimeLabel">Time:</label>
+                    <select id="mac_hourSelect" class="mac_TimeHR">
+                    </select>
+                    <select id="mac_minuteSelect" class="mac_TimeMin">
+                    </select>
+                </span>
+            </div>
+            <span>&nbsp;</span>
+            </select>
+        </form>
+        <button id="mac_submitButton" onclick="macSubmitForm()" class="macSubmitBtn">Save</button>
+        <!-- Submit -->
 
-<div id="map" style="height: 500px;"></div>
-
-<script>
-  var map = L.map('map').setView([10.92, 79.72], 6);
-
-  // Add a base map layer (you can change this to any other tile provider)
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(map);
-
-  // Create a TimeDimension layer
-  var timeDimensionLayer = L.timeDimension.layer.wms({
-    updateTimeDimension: true,
-    requestTimeFromCapabilities: true,
-    updateTimeDimensionMode: 'replace',
-    updateTimeDimensionMode: 'replace',
-    wmsVersion: '1.3.0',
-    getCapabilitiesUrl: 'METAR_CAPABILITIES_URL', // Replace with the URL of your METAR WMS server capabilities
-    getCapabilitiesParams: { 'SERVICE': 'WMS', 'VERSION': '1.3.0', 'REQUEST': 'GetCapabilities' },
-    layer: 'METAR_LAYER_NAME', // Replace with the name of your METAR layer
-    name: 'METAR Data',
-  });
-
-  // Add the TimeDimension layer to the map
-  var player = new L.TimeDimension.Player({
-    loop: false,
-    startOver: true,
-  }, timeDimensionLayer);
-
-  // Add TimeDimension controls to the map
-  var timeDimensionControl = new L.Control.TimeDimension({
-    player: player,
-    position: 'bottomleft',
-    autoPlay: true,
-    timeSteps: 23, // Number of METAR intervals (METAR 001 UTC to METAR 023 UTC)
-  });
-  map.addControl(timeDimensionControl);
-
-  // Add a timeDimensionControl to the map
-  map.timeDimension = player;
-  map.addLayer(timeDimensionLayer);
-</script>
-
-</body>
-</html>
+    </div>
+</div>

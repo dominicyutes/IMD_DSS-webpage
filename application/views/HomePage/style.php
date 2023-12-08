@@ -8,7 +8,7 @@ body {
     position: relative;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .text {
@@ -123,6 +123,7 @@ body {
 
 .obsClass {
     margin-top: -2%;
+    height: 79vh;
 }
 
 .firstDD {
@@ -217,6 +218,16 @@ body {
     margin-top: -2%;
 }
 
+.createMacroCls {
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+    background-color: #eff4ff;
+    color: #244c7e;
+    border-color: #ffffff91;
+    font-size: 14px;
+}
+
 .macroNameLabel,
 .mac_firstDDLabel,
 .mac_secondDDLabel,
@@ -224,7 +235,8 @@ body {
 .mac_dateDDLabel,
 .mac_TimeLabel {
     color: #fff;
-    font-size: 1.1em;
+    font-size: 14px;
+    border: 0;
 }
 
 .macroNameInput,
@@ -235,41 +247,15 @@ body {
     height: 32px;
     border-radius: 10px;
     color: #02275f;
+    font-size: 14px;
     overflow-y: auto;
 }
-
-/* .mac_secondDDLabel {
-    margin-left: 0;
-    color: #fff;
-    font-size: 1.1em;
-} */
-
-/* .mac_secondDD {
-    width: 100%;
-    height: 32px;
-    border-radius: 10px;
-    color: #02275f;
-    overflow-y: auto;
-} */
-
-/* .mac_thirdDDLabel {
-    margin-left: 0;
-    color: #fff;
-    font-size: 1.1em;
-} */
-
-/* .mac_thirdDD {
-    width: 100%;
-    height: 32px;
-    border-radius: 10px;
-    color: #02275f;
-    overflow-y: auto;
-} */
 
 .mac_dateDD {
     width: 100%;
     height: 34px;
     border-radius: 10px;
+    font-size: 14px;
     border: 1px solid #646464;
 }
 
@@ -278,6 +264,7 @@ body {
     height: 34px;
     border-radius: 10px;
     color: #02275f;
+    font-size: 14px;
 }
 
 .mac_TimeMin {
@@ -285,41 +272,60 @@ body {
     height: 34px;
     border-radius: 10px;
     color: #02275f;
+    font-size: 14px;
+}
+
+.macSubmitBtn {
+    width: 50%;
+    height: auto;
+    border-radius: 7px;
+    background-color: #244c7e;
+    color: ghostwhite;
+    border-color: mediumaquamarine;
+    font-size: 14px;
+    margin-left: 24%;
 }
 
 /*  */
 /* Style the dropdown button */
-.dropdown-button {
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
+.macOptCls {
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+    background-color: #244c7e;
+    color: ghostwhite;
+    border-color: mediumaquamarine;
+    font-size: 14px;
 }
 
 /* Style the dropdown content (hidden by default) */
 .dropdown-content {
     display: none;
     position: absolute;
+    width: 100%;
     background-color: #f9f9f9;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     z-index: 1;
 }
 
 /* Style the buttons inside the dropdown */
 .dropdown-content button {
     width: 100%;
+    height: auto;
     text-align: left;
-    padding: 10px;
-    border: none;
-    background-color: inherit;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
     cursor: pointer;
+    background-color: #dfdfdf;
+    color: #1a1a1d;
+    font-size: 14px;
 }
 
 /* Change color on hover */
-.dropdown-content button:hover {
+/* .dropdown-content button:hover {
     background-color: #ddd;
-}
+} */
 
 /* Show the dropdown content when the dropdown button is clicked */
 .dropdown:hover .dropdown-content {
