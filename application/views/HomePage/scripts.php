@@ -5329,8 +5329,10 @@ function clickHandler_ship(event_ship) {
 }
 
 document.getElementById("parent").addEventListener("click", clickHandler_ship);
-//
 
+
+// Image
+let metarTempLegendImage = document.querySelector('#metarTempImage');
 
 // model popup
 let model = document.querySelector('.model');
@@ -5895,16 +5897,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
-</span>`
+						<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
+					</span>`
                 );
+                metarTempImage()
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR00UTCLists.push(
@@ -5974,15 +5970,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR01UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR01UTCLists.push(
@@ -6052,15 +6043,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR02UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR02UTCLists.push(
@@ -6130,15 +6116,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR03UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR03UTCLists.push(
@@ -6208,15 +6189,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR04UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR04UTCLists.push(
@@ -6286,15 +6262,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR05UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR05UTCLists.push(
@@ -6364,15 +6335,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR06UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR06UTCLists.push(
@@ -6442,15 +6408,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR07UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR07UTCLists.push(
@@ -6520,15 +6481,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR08UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR08UTCLists.push(
@@ -6598,15 +6554,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR09UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR09UTCLists.push(
@@ -6676,15 +6627,9 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR10UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR10UTCLists.push(
@@ -6754,15 +6699,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR11UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR11UTCLists.push(
@@ -6832,15 +6772,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR12UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR12UTCLists.push(
@@ -6910,15 +6845,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR13UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR13UTCLists.push(
@@ -6988,15 +6918,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR14UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR14UTCLists.push(
@@ -7066,15 +6991,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR15UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR15UTCLists.push(
@@ -7144,15 +7064,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR16UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR16UTCLists.push(
@@ -7222,15 +7137,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR17UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR17UTCLists.push(
@@ -7300,15 +7210,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR18UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR18UTCLists.push(
@@ -7378,15 +7283,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR19UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR19UTCLists.push(
@@ -7456,15 +7356,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR20UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR20UTCLists.push(
@@ -7534,15 +7429,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR21UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR21UTCLists.push(
@@ -7612,15 +7502,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR22UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR22UTCLists.push(
@@ -7690,15 +7575,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMETAR23UTCLists.push(
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-     <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 clickedMETAR23UTCLists.push(
@@ -7770,15 +7650,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                     `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-  <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #6230fa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">10-15</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff30ac; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">15-30</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #fdff2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">30-35</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ffab2a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">35-40</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #f86929; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">40-45</span>
-    <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
-  </span>
 </span>`
                 );
+				metarTempImage()
+
             }
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 clickedSYNOP00UTCLists.push(
@@ -13133,7 +13008,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
 
-		if (uncheckLayer == 'METAR 23UTC TEMPERATURE') {
+        if (uncheckLayer == 'METAR 23UTC TEMPERATURE') {
             clickedMETAR23UTCLists = clickedMETAR23UTCLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
@@ -13791,7 +13666,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
-			map.removeLayer(X155);
+            map.removeLayer(X155);
         }
         if (uncheckLayer == 'Radar Products Radar Animation') {
             clickedRADARPRODUCTSLists = clickedRADARPRODUCTSLists.filter(checkList => {
@@ -13799,7 +13674,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
-			map.removeLayer(X156);
+            map.removeLayer(X156);
         }
 
         if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
@@ -13819,7 +13694,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X157);
+            map.removeLayer(X157);
         }
         if (uncheckLayer == 'Satellite Observation VIS') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13827,7 +13702,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X158);
+            map.removeLayer(X158);
         }
         if (uncheckLayer == 'Satellite Observation CTBT') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13835,7 +13710,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X159);
+            map.removeLayer(X159);
         }
         if (uncheckLayer == 'Satellite Observation LOW LEVEL CONVERGENCE') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13843,7 +13718,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X160);
+            map.removeLayer(X160);
         }
         if (uncheckLayer == 'Satellite Observation UPPER LEVEL DIVEGENCE') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13851,7 +13726,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X161);
+            map.removeLayer(X161);
         }
         if (uncheckLayer == 'Satellite Observation MID LEVEL SHEAR') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13859,7 +13734,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X162);
+            map.removeLayer(X162);
         }
         if (uncheckLayer == 'Satellite Observation VORTICITY AT 200hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13867,7 +13742,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X163);
+            map.removeLayer(X163);
         }
         if (uncheckLayer == 'Satellite Observation VORTICITY AT 500hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13875,7 +13750,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X164);
+            map.removeLayer(X164);
         }
         if (uncheckLayer == 'Satellite Observation VORTICITY AT 700hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13883,7 +13758,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X165);
+            map.removeLayer(X165);
         }
         if (uncheckLayer == 'Satellite ObservationVORTICITY AT 850hPa') {
             clickedSATELLITELists = clickedSATELLITELists.filter(checkList => {
@@ -13891,7 +13766,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
-			map.removeLayer(X166);
+            map.removeLayer(X166);
         }
 
         if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
@@ -15680,6 +15555,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 });
 //
 
+function metarTempImage() {
+    metarTempLegendImage.innerHTML = `<span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+  </span>`
+
+}
 
 
 //closeModel
