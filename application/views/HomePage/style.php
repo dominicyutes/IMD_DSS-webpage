@@ -440,4 +440,18 @@ body {
     color: #000;
     background: #f9f9f9;
 }
+
+.custom-btn {
+    margin-left: 43px;
+    margin-top: 10px;
+}
+
+.custom-btn2,
+.custom-btn3 {
+    margin-left: 43px;
+}
+
+.leaflet-bar {
+    border: 0;
+}
 </style>

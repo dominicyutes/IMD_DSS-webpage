@@ -1526,6 +1526,28 @@ function macSubmitForm() {
         "End Date: " + mac_toDate + "\n" +
         "Time: " + mac_hour_Select + ":" + mac_minute_Select;
     alert(message);
+
+
+
+    // Create a new button
+    let newButton = document.createElement('button');
+    newButton.classList.add('save-button');
+    newButton.id = mac_macroNames; // Use the macroNames as the ID of the new button
+    newButton.innerText = mac_macroNames;
+
+    // Add a click event listener to the new button
+    newButton.addEventListener('click', function() {
+        console.log('Details of the saved button:', mac_macroNames, mac_model_Names, mac_parameter_Names,
+            mac_sub_parameter, mac_fromDate, mac_toDate, mac_hour_Select, mac_minute_Select);
+        alert('Details of the saved button:' + mac_macroNames + mac_model_Names + mac_parameter_Names +
+            mac_sub_parameter + mac_fromDate + mac_toDate + mac_hour_Select + mac_minute_Select);
+    });
+    // Append the new button to the dropdown content
+    document.querySelector('.dropdown-content').appendChild(newButton);
+
+    // Clear the form fields
+    document.getElementById('macroNames').value = '';
+    // Add code to clear other form fields if needed
 }
 
 //MACRO-toggleObservation
@@ -1793,9 +1815,10 @@ var ObservationButton = L.Control.extend({
         position: 'bottomleft'
     },
     onAdd: function() {
-        var obsbtn = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
+        var obsbtn = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn');
         obsbtn.innerHTML = 'Observation';
-        obsbtn.style = "margin-left:30px;"
+        // obsbtn.style = "margin-left:30px;"
         //click event
         L.DomEvent.on(obsbtn, 'click', function() {
             // alert('Button clicked!');
@@ -1815,9 +1838,10 @@ var MacroButton = L.Control.extend({
         position: 'bottomleft'
     },
     onAdd: function() {
-        var macbtn = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
+        var macbtn = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn2');
         macbtn.innerHTML = 'Macro';
-        macbtn.style = "margin-left:30px;"
+        // macbtn.style = "margin-left:30px;"
         //click event
         L.DomEvent.on(macbtn, 'click', function() {
             // alert('MACRO Button clicked!');
@@ -1838,10 +1862,11 @@ var LegendButton = L.Control.extend({
     },
     onAdd: function() {
         // Create a button element
-        var button = L.DomUtil.create('span', 'leaflet-bar leaflet-control leaflet-control-custom');
+        var button = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn3');
         button.innerHTML = 'Legend';
         button.id = 'popup';
-        button.style = "margin-left:30px;"
+        // button.style = "margin-left:30px;"
         //click event listener
         L.DomEvent.on(button, 'click', function() {
             // alert('Button clicked!');
