@@ -12812,7 +12812,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
 
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(HHHHHH);
         }
         if (uncheckLayer == 'SYNOP 00UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -12820,7 +12820,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(ggg);
         }
         if (uncheckLayer == 'SYNOP 00UTC CLOUD COVER') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -12828,7 +12828,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(X1);
         }
         if (uncheckLayer == 'SYNOP 00UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -12836,7 +12836,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(X2);
         }
         if (uncheckLayer == 'SYNOP 00UTC RELATIVE HUMIDITY') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -12844,7 +12844,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(X3);
         }
         if (uncheckLayer == 'SYNOP 00UTC VISIBILITY') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -12852,7 +12852,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(X4);
         }
         if (uncheckLayer == 'SYNOP 00UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -12860,7 +12860,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(X5);
         }
         if (uncheckLayer == 'SYNOP 00UTC 3h RAINFALL') {
             clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
@@ -12868,7 +12868,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
-
+            map.removeLayer(X6);
         }
 
         if (panelLayerSYNOP00UTC_lists.innerHTML == '') {
@@ -12888,8 +12888,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X7);
         }
         if (uncheckLayer == 'SYNOP 03UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -12897,7 +12896,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X8);
         }
         if (uncheckLayer == 'SYNOP 03UTC CLOUD COVER') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -12905,7 +12904,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X9);
         }
         if (uncheckLayer == 'SYNOP 03UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -12913,7 +12912,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X10);
         }
         if (uncheckLayer == 'SYNOP 03UTC RELATIVE HUMIDITY') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -12921,7 +12920,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X11);
         }
         if (uncheckLayer == 'SYNOP 03UTC VISIBILITY') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -12929,7 +12928,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X12);
         }
         if (uncheckLayer == 'SYNOP 03UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -12937,7 +12936,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X3);
         }
         if (uncheckLayer == 'SYNOP 03UTC 3h RAINFALL') {
             clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
@@ -12945,7 +12944,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
-
+            map.removeLayer(X14);
         }
 
         if (panelLayerSYNOP03UTC_lists.innerHTML == '') {
@@ -12964,8 +12963,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X15);
         }
         if (uncheckLayer == 'SYNOP 06UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -12973,7 +12971,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X16);
         }
         if (uncheckLayer == 'SYNOP 06UTC CLOUD COVER') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -12981,7 +12979,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X17);
         }
         if (uncheckLayer == 'SYNOP 06UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -12989,7 +12987,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X18);
         }
         if (uncheckLayer == 'SYNOP 06UTC RELATIVE HUMIDITY') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -12997,7 +12995,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X19);
         }
         if (uncheckLayer == 'SYNOP 06UTC VISIBILITY') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -13005,7 +13003,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X20);
         }
         if (uncheckLayer == 'SYNOP 06UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -13013,7 +13011,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X21);
         }
         if (uncheckLayer == 'SYNOP 06UTC 3h RAINFALL') {
             clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
@@ -13021,7 +13019,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
-
+            map.removeLayer(X22);
         }
 
         if (panelLayerSYNOP06UTC_lists.innerHTML == '') {
@@ -13040,8 +13038,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X23);
         }
         if (uncheckLayer == 'SYNOP 09UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -13049,7 +13046,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X24);
         }
         if (uncheckLayer == 'SYNOP 09UTC CLOUD COVER') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -13057,7 +13054,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X25);
         }
         if (uncheckLayer == 'SYNOP 09UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -13065,7 +13062,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X26);
         }
         if (uncheckLayer == 'SYNOP 09UTC RELATIVE HUMIDITY') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -13073,7 +13070,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X27);
         }
         if (uncheckLayer == 'SYNOP 09UTC VISIBILITY') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -13081,7 +13078,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X28);
         }
         if (uncheckLayer == 'SYNOP 09UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -13089,7 +13086,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X29);
         }
         if (uncheckLayer == 'SYNOP 09UTC 3h RAINFALL') {
             clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
@@ -13097,7 +13094,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
-
+            map.removeLayer(X30);
         }
 
         if (panelLayerSYNOP09UTC_lists.innerHTML == '') {
@@ -13117,8 +13114,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X31);
         }
         if (uncheckLayer == 'SYNOP 12UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -13126,7 +13122,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X32);
         }
         if (uncheckLayer == 'SYNOP 12UTC CLOUD COVER') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -13134,7 +13130,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X33);
         }
         if (uncheckLayer == 'SYNOP 12UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -13142,7 +13138,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X34);
         }
         if (uncheckLayer == 'SYNOP 12UTC RELATIVE HUMIDITY') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -13150,7 +13146,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X35);
         }
         if (uncheckLayer == 'SYNOP 12UTC VISIBILITY') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -13158,7 +13154,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X36);
         }
         if (uncheckLayer == 'SYNOP 12UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -13166,7 +13162,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X37);
         }
         if (uncheckLayer == 'SYNOP 12UTC 3h RAINFALL') {
             clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
@@ -13174,7 +13170,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
-
+            map.removeLayer(X38);
         }
 
         if (panelLayerSYNOP12UTC_lists.innerHTML == '') {
@@ -13194,8 +13190,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X39);
         }
         if (uncheckLayer == 'SYNOP 15UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -13203,7 +13198,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X40);
         }
         if (uncheckLayer == 'SYNOP 15UTC CLOUD COVER') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -13211,7 +13206,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X41);
         }
         if (uncheckLayer == 'SYNOP 15UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -13219,7 +13214,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X42);
         }
         if (uncheckLayer == 'SYNOP 15UTC RELATIVE HUMIDITY') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -13227,7 +13222,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X43);
         }
         if (uncheckLayer == 'SYNOP 15UTC VISIBILITY') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -13235,7 +13230,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X44);
         }
         if (uncheckLayer == 'SYNOP 15UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -13243,7 +13238,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X45);
         }
         if (uncheckLayer == 'SYNOP 15UTC 3h RAINFALL') {
             clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
@@ -13251,7 +13246,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
-
+            map.removeLayer(X46);
         }
 
         if (panelLayerSYNOP15UTC_lists.innerHTML == '') {
@@ -13271,8 +13266,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X47);
         }
         if (uncheckLayer == 'SYNOP 18UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -13280,7 +13274,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X48);
         }
         if (uncheckLayer == 'SYNOP 18UTC CLOUD COVER') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -13288,7 +13282,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X49);
         }
         if (uncheckLayer == 'SYNOP 18UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -13296,7 +13290,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X50);
         }
         if (uncheckLayer == 'SYNOP 18UTC RELATIVE HUMIDITY') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -13304,7 +13298,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X51);
         }
         if (uncheckLayer == 'SYNOP 18UTC VISIBILITY') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -13312,7 +13306,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X52);
         }
         if (uncheckLayer == 'SYNOP 18UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -13320,7 +13314,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X53);
         }
         if (uncheckLayer == 'SYNOP 18UTC 3h RAINFALL') {
             clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
@@ -13328,7 +13322,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
-
+            map.removeLayer(X54);
         }
 
         if (panelLayerSYNOP18UTC_lists.innerHTML == '') {
@@ -13348,8 +13342,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
-            map.removeLayer(JodhpurMarker);
+            map.removeLayer(X55);
         }
         if (uncheckLayer == 'SYNOP 21UTC MEAN SEA LEVEL PRESSURE') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -13357,7 +13350,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X56);
         }
         if (uncheckLayer == 'SYNOP 21UTC CLOUD COVER') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -13365,7 +13358,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X57);
         }
         if (uncheckLayer == 'SYNOP 21UTC GEOPOTENTIAL HEIGHT') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -13373,7 +13366,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X58);
         }
         if (uncheckLayer == 'SYNOP 21UTC RELATIVE HUMIDITY') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -13381,7 +13374,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X59);
         }
         if (uncheckLayer == 'SYNOP 21UTC VISIBILITY') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -13389,7 +13382,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X60);
         }
         if (uncheckLayer == 'SYNOP 21UTC WIND SPEED AND DIRECTION') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -13397,7 +13390,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X61);
         }
         if (uncheckLayer == 'SYNOP 21UTC 3h RAINFALL') {
             clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
@@ -13405,7 +13398,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return clickedLayer != uncheckLayer
             });
             panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
-
+            map.removeLayer(X62);
         }
 
         if (panelLayerSYNOP21UTC_lists.innerHTML == '') {
