@@ -13066,11 +13066,14 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
 
             if (layer_name === 'GFS DAY1') {
-    var checkboxHTML = '<span style="flex-direction: column; margin-right: 20px; margin-bottom: 10px;">' +
-        '<input type="checkbox" class="' + layer_group_name + ' ' + layer_name + '" checked/> ' + layer_name +'<br>'+
-        '<img src="img/windspeed-and-direction/10knots.png" width="20" height="30" />' +
-        '<img src="img/windspeed-and-direction/15knots.png" width="20" height="30" />' +
-        '</span>';
+    var checkboxHTML =    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` + `<svg width="60" height="50" style="transform: rotate(90deg);">
+                <g>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+                    <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+                </g>
+                </svg>` + `</span>`;
 
     clicked10mWINDDay1Lists.push(checkboxHTML);
 }
