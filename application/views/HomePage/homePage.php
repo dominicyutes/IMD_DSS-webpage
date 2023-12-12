@@ -158,16 +158,7 @@
     <div class="row">
         <!-- MAP -->
         <div id="map" class="col-10"></div>
-
-        <form method="post" action="<?php echo base_url('map/download'); ?>">
-        <select name="format">
-            <option value="pdf">PDF</option>
-            <option value="jpg">JPG</option>
-            <option value="png">PNG</option>
-        </select>
-        <button type="submit">Download Map</button>
-    </form>
-
+        
         <!-- OBSERVATION -->
         <div id="ObservationContainer" class="obsClass hidden col-2">
             <h4>OBSERVATION</h4>
