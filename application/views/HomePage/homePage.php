@@ -81,6 +81,8 @@
     </script>
     <!-- leaflet-side-by-side -->
     <script src="https://lab.digital-democracy.org/leaflet-side-by-side/leaflet-side-by-side.js"></script>
+   
+
     <!-- adding css -->
     <?php $this->load->view('HomePage/style'); ?>
 
@@ -585,5 +587,13 @@
         <!-- adding JS -->
         <?php $this->load->view('HomePage/scripts'); ?>
 </body>
+<!-- print -->
+<script src="leaflet.browser.print.min.js"></script>
+
+<script>
+//print
+L.control.browserPrint().addTo(map);
+</script>
 
 </html>
+
