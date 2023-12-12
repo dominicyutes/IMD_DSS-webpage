@@ -320,11 +320,28 @@
 
                 <!-- METAR -->
                 <div id="METAR_Row">
-                    <!-- <div class="col-5"> -->
-                    <!-- HomePage-Lightning -->
                     <h4 id="METAR" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
-                    <!-- METAR00UTC -->
-                    <h5 id="METAR00UTC-Title" style="color: #000000;"></h5>
+                    <!-- METARTEMP -->
+                    <h5 id="metarTemp-Title" style="color: #000000;"></h5>
+                    <div id="metarTempImage" style="margin-left: 40px"></div>
+                    <p id="metarTemp-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+
+                    <!-- METARDewPoint -->
+                    <h5 id="metarDewPoint-Title" style="color: #000000;"></h5>
+                    <div id="metarDewPointImage" style="margin-left: 40px"></div>
+                    <p id="metarDewPoint-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+
+                    <!-- METARVisibility -->
+                    <h5 id="metarVisibility-Title" style="color: #000000;"></h5>
+                    <div id="metarVisibilityImage" style="margin-left: 40px"></div>
+                    <p id="metarVisibility-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+
+                    <!-- METARWindSpeedAndDirection -->
+                    <h5 id="metarWindSpeedAndDirection-Title" style="color: #000000;"></h5>
+                    <div id="metarWindSpeedAndDirectionImage" style="margin-left: 40px"></div>
+                    <p id="metarWindSpeedAndDirection-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+
+                    <!-- <h5 id="METAR00UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR00UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR01UTC-Title" style="color: #000000;"></h5>
@@ -394,9 +411,8 @@
                     <p id="METAR22UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR23UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR23UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+                    <p id="METAR23UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p> -->
 
-                    <div id="metarTempImage" style="margin-left: 40px"></div>
                 </div>
 
                 <!-- SYNOP -->
