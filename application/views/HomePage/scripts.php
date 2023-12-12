@@ -1737,6 +1737,9 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
     layerName: "mywmsNowcast"
 });
 
+
+
+
 //Leaflet-sideBySide
 L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast).addTo(map);
 
@@ -1802,6 +1805,7 @@ L.control.mousePosition({
     position: "bottomleft"
 }).addTo(map);
 
+
 //add map scale
 // L.control.scale().addTo(map);
 
@@ -1850,7 +1854,6 @@ var MacroButton = L.Control.extend({
 });
 // map.addControl(new MacroButton());
 // buttonContainer.appendChild(new MacroButton().onAdd(map));
-
 
 // Create a custom control button for model popup
 var LegendButton = L.Control.extend({
