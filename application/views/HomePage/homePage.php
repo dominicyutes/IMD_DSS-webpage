@@ -325,22 +325,22 @@
                     <h4 id="METAR" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
                     <!-- METARTEMP -->
                     <h5 id="metarTemp-Title" style="color: #000000;"></h5>
-                    <div id="metarTempImage" style="margin-left: 40px"></div>
+                    <div id="metarTempImage" style="margin-left: 40px; display: flex; flex-wrap: wrap;"></div>
                     <p id="metarTemp-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <!-- METARDewPoint -->
                     <h5 id="metarDewPoint-Title" style="color: #000000;"></h5>
-                    <div id="metarDewPointImage" style="margin-left: 40px"></div>
+                    <div id="metarDewPointImage" style="margin-left: 40px; display: flex; flex-wrap: wrap;"></div>
                     <p id="metarDewPoint-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <!-- METARVisibility -->
                     <h5 id="metarVisibility-Title" style="color: #000000;"></h5>
-                    <div id="metarVisibilityImage" style="margin-left: 40px"></div>
+                    <div id="metarVisibilityImage" style="margin-left: 40px; display: flex; flex-wrap: wrap;"></div>
                     <p id="metarVisibility-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <!-- METARWindSpeedAndDirection -->
                     <h5 id="metarWindSpeedAndDirection-Title" style="color: #000000;"></h5>
-                    <div id="metarWindSpeedAndDirectionImage" style="margin-left: 40px"></div>
+                    <div id="metarWindSpeedAndDirectionImage" style="margin-left: 40px; display: flex; flex-wrap: wrap;"></div>
                     <p id="metarWindSpeedAndDirection-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <!-- <h5 id="METAR00UTC-Title" style="color: #000000;"></h5>
