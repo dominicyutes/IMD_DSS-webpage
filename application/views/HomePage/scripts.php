@@ -10504,11 +10504,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR UNCHECK
         if (uncheckLayer == 'METAR 00UTC TEMPERATURE') {
-            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(SuratMarker);
         }
         if (uncheckLayer == 'METAR 00UTC DEW POINT TEMPERATURE') {
@@ -10536,24 +10536,24 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(MeerutMarker);
         }
 
-        if (panelLayerMETAR00UTC_lists.innerHTML == '') {
-            panelLayerMETAR00UTC_Title.innerHTML = '';
-            METAR.innerHTML = '';
-        }
+        // if (panelLayerMETAR00UTC_lists.innerHTML == '') {
+        //     panelLayerMETAR00UTC_Title.innerHTML = '';
+        //     METAR.innerHTML = '';
+        // }
 
-        //GroupPanelLayer-collapsible-METAR00UTC
-        if (panelLayerMETAR00UTC_lists.innerHTML != '') {
-            document.querySelectorAll('.collapsible')[0].classList.add('expanded');
-            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
-        }
+        // //GroupPanelLayer-collapsible-METAR00UTC
+        // if (panelLayerMETAR00UTC_lists.innerHTML != '') {
+        //     document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+        //     document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+        // }
 
 
         if (uncheckLayer == 'METAR 01UTC TEMPERATURE') {
-            clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X63);
         }
         if (uncheckLayer == 'METAR 01UTC DEW POINT TEMPERATURE') {
@@ -10594,11 +10594,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 02UTC TEMPERATURE') {
-            clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X67);
         }
         if (uncheckLayer == 'METAR 02UTC DEW POINT TEMPERATURE') {
@@ -10638,11 +10638,11 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         if (uncheckLayer == 'METAR 03UTC TEMPERATURE') {
-            clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X71);
         }
         if (uncheckLayer == 'METAR 03UTC DEW POINT TEMPERATURE') {
@@ -10682,11 +10682,11 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         if (uncheckLayer == 'METAR 04UTC TEMPERATURE') {
-            clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X75);
         }
         if (uncheckLayer == 'METAR 04UTC DEW POINT TEMPERATURE') {
@@ -10727,11 +10727,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 05UTC TEMPERATURE') {
-            clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X79);
         }
         if (uncheckLayer == 'METAR 05UTC DEW POINT TEMPERATURE') {
@@ -10771,11 +10771,11 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         if (uncheckLayer == 'METAR 06UTC TEMPERATURE') {
-            clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X83);
         }
         if (uncheckLayer == 'METAR 06UTC DEW POINT TEMPERATURE') {
@@ -10815,11 +10815,11 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         if (uncheckLayer == 'METAR 07UTC TEMPERATURE') {
-            clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X87);
         }
         if (uncheckLayer == 'METAR 07UTC DEW POINT TEMPERATURE') {
@@ -10859,11 +10859,11 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         if (uncheckLayer == 'METAR 08UTC TEMPERATURE') {
-            clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X91);
         }
         if (uncheckLayer == 'METAR 08UTC DEW POINT TEMPERATURE') {
@@ -10904,11 +10904,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 09UTC TEMPERATURE') {
-            clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X95);
         }
         if (uncheckLayer == 'METAR 09UTC DEW POINT TEMPERATURE') {
@@ -10948,11 +10948,11 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         if (uncheckLayer == 'METAR 10UTC TEMPERATURE') {
-            clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X99);
         }
         if (uncheckLayer == 'METAR 10UTC DEW POINT TEMPERATURE') {
@@ -10993,11 +10993,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 11UTC TEMPERATURE') {
-            clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X103);
         }
         if (uncheckLayer == 'METAR 11UTC DEW POINT TEMPERATURE') {
@@ -11038,11 +11038,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 12UTC TEMPERATURE') {
-            clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X107);
         }
         if (uncheckLayer == 'METAR 12UTC DEW POINT TEMPERATURE') {
@@ -11083,11 +11083,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 13UTC TEMPERATURE') {
-            clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X111);
         }
         if (uncheckLayer == 'METAR 13UTC DEW POINT TEMPERATURE') {
@@ -11128,11 +11128,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 14UTC TEMPERATURE') {
-            clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X115);
         }
         if (uncheckLayer == 'METAR 14UTC DEW POINT TEMPERATURE') {
@@ -11173,11 +11173,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 15UTC TEMPERATURE') {
-            clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X119);
         }
         if (uncheckLayer == 'METAR 15UTC DEW POINT TEMPERATURE') {
@@ -11218,11 +11218,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 16UTC TEMPERATURE') {
-            clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X123);
         }
         if (uncheckLayer == 'METAR 16UTC DEW POINT TEMPERATURE') {
@@ -11263,11 +11263,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 17UTC TEMPERATURE') {
-            clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X127);
         }
         if (uncheckLayer == 'METAR 17UTC DEW POINT TEMPERATURE') {
@@ -11308,11 +11308,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 18UTC TEMPERATURE') {
-            clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X131);
         }
         if (uncheckLayer == 'METAR 18UTC DEW POINT TEMPERATURE') {
@@ -11353,11 +11353,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 19UTC TEMPERATURE') {
-            clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X135);
         }
         if (uncheckLayer == 'METAR 19UTC DEW POINT TEMPERATURE') {
@@ -11397,11 +11397,11 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         if (uncheckLayer == 'METAR 20UTC TEMPERATURE') {
-            clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X139);
         }
         if (uncheckLayer == 'METAR 20UTC DEW POINT TEMPERATURE') {
@@ -11442,11 +11442,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 21UTC TEMPERATURE') {
-            clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X143);
         }
         if (uncheckLayer == 'METAR 21UTC DEW POINT TEMPERATURE') {
@@ -11487,11 +11487,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 22UTC TEMPERATURE') {
-            clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X147);
         }
         if (uncheckLayer == 'METAR 22UTC DEW POINT TEMPERATURE') {
@@ -11532,11 +11532,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'METAR 23UTC TEMPERATURE') {
-            clickedMETAR23UTCLists = clickedMETAR23UTCLists.filter(checkList => {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR23UTC_lists.innerHTML = clickedMETAR23UTCLists.join("");
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
             map.removeLayer(X151);
         }
         if (uncheckLayer == 'METAR 23UTC DEW POINT TEMPERATURE') {
@@ -11577,11 +11577,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // SYNOP UNCHECK
         if (uncheckLayer == 'SYNOP 00UTC TEMPERATURE') {
-            clickedSYNOP00UTCLists = clickedSYNOP00UTCLists.filter(checkList => {
+            clickedSetarTempLists = clickedSetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerSYNOP00UTC_lists.innerHTML = clickedSYNOP00UTCLists.join("");
+            panelLayerSetarTemp_lists.innerHTML = clickedSetarTempLists.join("");
 
             map.removeLayer(HHHHHH);
         }
@@ -11654,11 +11654,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'SYNOP 03UTC TEMPERATURE') {
-            clickedSYNOP03UTCLists = clickedSYNOP03UTCLists.filter(checkList => {
+            clickedSetarTempLists = clickedSetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerSYNOP03UTC_lists.innerHTML = clickedSYNOP03UTCLists.join("");
+            panelLayerSetarTemp_lists.innerHTML = clickedSetarTempLists.join("");
             map.removeLayer(X7);
         }
         if (uncheckLayer == 'SYNOP 03UTC MEAN SEA LEVEL PRESSURE') {
@@ -11729,11 +11729,11 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         if (uncheckLayer == 'SYNOP 06UTC TEMPERATURE') {
-            clickedSYNOP06UTCLists = clickedSYNOP06UTCLists.filter(checkList => {
+            clickedSetarTempLists = clickedSetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerSYNOP06UTC_lists.innerHTML = clickedSYNOP06UTCLists.join("");
+            panelLayerSetarTemp_lists.innerHTML = clickedSetarTempLists.join("");
             map.removeLayer(X15);
         }
         if (uncheckLayer == 'SYNOP 06UTC MEAN SEA LEVEL PRESSURE') {
@@ -11804,11 +11804,11 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         if (uncheckLayer == 'SYNOP 09UTC TEMPERATURE') {
-            clickedSYNOP09UTCLists = clickedSYNOP09UTCLists.filter(checkList => {
+            clickedSetarTempLists = clickedSetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerSYNOP09UTC_lists.innerHTML = clickedSYNOP09UTCLists.join("");
+            panelLayerSetarTemp_lists.innerHTML = clickedSetarTempLists.join("");
             map.removeLayer(X23);
         }
         if (uncheckLayer == 'SYNOP 09UTC MEAN SEA LEVEL PRESSURE') {
@@ -11880,11 +11880,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'SYNOP 12UTC TEMPERATURE') {
-            clickedSYNOP12UTCLists = clickedSYNOP12UTCLists.filter(checkList => {
+            clickedSetarTempLists = clickedSetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerSYNOP12UTC_lists.innerHTML = clickedSYNOP12UTCLists.join("");
+            panelLayerSetarTemp_lists.innerHTML = clickedSetarTempLists.join("");
             map.removeLayer(X31);
         }
         if (uncheckLayer == 'SYNOP 12UTC MEAN SEA LEVEL PRESSURE') {
@@ -11956,11 +11956,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'SYNOP 15UTC TEMPERATURE') {
-            clickedSYNOP15UTCLists = clickedSYNOP15UTCLists.filter(checkList => {
+            clickedSetarTempLists = clickedSetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerSYNOP15UTC_lists.innerHTML = clickedSYNOP15UTCLists.join("");
+            panelLayerSetarTemp_lists.innerHTML = clickedSetarTempLists.join("");
             map.removeLayer(X39);
         }
         if (uncheckLayer == 'SYNOP 15UTC MEAN SEA LEVEL PRESSURE') {
@@ -12032,11 +12032,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'SYNOP 18UTC TEMPERATURE') {
-            clickedSYNOP18UTCLists = clickedSYNOP18UTCLists.filter(checkList => {
+            clickedSetarTempLists = clickedSetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerSYNOP18UTC_lists.innerHTML = clickedSYNOP18UTCLists.join("");
+            panelLayerSetarTemp_lists.innerHTML = clickedSetarTempLists.join("");
             map.removeLayer(X47);
         }
         if (uncheckLayer == 'SYNOP 18UTC MEAN SEA LEVEL PRESSURE') {
@@ -12108,11 +12108,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         if (uncheckLayer == 'SYNOP 21UTC TEMPERATURE') {
-            clickedSYNOP21UTCLists = clickedSYNOP21UTCLists.filter(checkList => {
+            clickedSetarTempLists = clickedSetarTempLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerSYNOP21UTC_lists.innerHTML = clickedSYNOP21UTCLists.join("");
+            panelLayerSetarTemp_lists.innerHTML = clickedSetarTempLists.join("");
             map.removeLayer(X55);
         }
         if (uncheckLayer == 'SYNOP 21UTC MEAN SEA LEVEL PRESSURE') {
