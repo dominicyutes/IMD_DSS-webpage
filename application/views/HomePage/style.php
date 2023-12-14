@@ -231,12 +231,15 @@ body {
 .macroNameLabel,
 .mac_firstDDLabel,
 .mac_secondDDLabel,
-.mac_thirdDDLabel,
-.mac_dateDDLabel,
-.mac_TimeLabel {
+.mac_thirdDDLabel {
     color: #fff;
     font-size: 14px;
     border: 0;
+}
+
+.macroNameLabel::after {
+    content: " *";
+    color: red;
 }
 
 .macroNameInput,
@@ -251,33 +254,9 @@ body {
     overflow-y: auto;
 }
 
-.mac_dateDD {
-    width: 100%;
-    height: 34px;
-    border-radius: 10px;
-    font-size: 14px;
-    border: 1px solid #646464;
-    margin-bottom: 5px;
-}
-
-.mac_TimeHR {
-    width: 24%;
-    height: 34px;
-    border-radius: 10px;
-    color: #02275f;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.mac_TimeMin {
-    width: 24%;
-    height: 34px;
-    border-radius: 10px;
-    color: #02275f;
-    font-size: 14px;
-}
-
 .macSubmitBtn {
+    justify-content: center;
+    margin-top: 6%;
     width: 50%;
     height: auto;
     border-radius: 7px;
@@ -285,7 +264,21 @@ body {
     color: ghostwhite;
     border-color: mediumaquamarine;
     font-size: 14px;
-    margin-left: 24%;
+    /* margin-left: 21%; */
+}
+
+.listContainerMacro {
+    display: none;
+}
+
+.addBox {
+    height: 220px;
+    width: 100%;
+    background-Color: #eff4ff;
+    overflow-y: scroll;
+    margin-top: 12px;
+    font-size: 13px;
+    border-radius: 8px;
 }
 
 /*  */
