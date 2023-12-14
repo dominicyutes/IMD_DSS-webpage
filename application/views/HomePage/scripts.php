@@ -1800,7 +1800,39 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
 
 
 //Leaflet-sideBySide
-L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast).addTo(map);
+let sideBySideControl = null; 
+let sideBySideVisible = false; 
+
+function toggleSideBySide() {
+    if (sideBySideVisible) {
+        if (sideBySideControl !== null) {
+            map.removeControl(sideBySideControl);
+            sideBySideControl = null;
+        }
+        sideBySideVisible = false;
+    } else {
+        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast).addTo(map);
+        sideBySideVisible = true;
+    }
+}
+
+const ToggleControl = L.Control.extend({
+    onAdd: function(map) {
+        const button = L.DomUtil.create('button', 'toggle-button');
+        button.textContent = 'Toggle Layers';
+        button.onclick = function() {
+            toggleSideBySide();
+            button.textContent = sideBySideVisible ? 'Hide Layers' : 'Show Layers';
+        };
+        return button;
+    },
+
+    onRemove: function(map) {
+    }
+});
+
+(new ToggleControl()).addTo(map);
+
 
 //leaflet Fullscreen
 map.addControl(new L.Control.Fullscreen({
