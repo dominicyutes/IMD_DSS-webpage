@@ -605,50 +605,53 @@
                 <div class="row" id="MEDIUM_Row" style="display: none;">
                     <h4 id="MEDIUM" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
 
+					<div id="RainfallIntensityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <h5 id="RainfallIntensityDay1-Title" style="color: #000000;"></h5>
-                    <p id="RainfallIntensityDay1-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="RainfallIntensityDay1-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="RainfallIntensityDay2-Title" style="color: #000000;"></h5>
-                    <p id="RainfallIntensityDay2-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="RainfallIntensityDay2-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="RainfallIntensityDay3-Title" style="color: #000000;"></h5>
-                    <p id="RainfallIntensityDay3-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="RainfallIntensityDay3-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="RainfallIntensityDay4-Title" style="color: #000000;"></h5>
-                    <p id="RainfallIntensityDay4-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="RainfallIntensityDay4-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="RainfallIntensityDay5-Title" style="color: #000000;"></h5>
-                    <p id="RainfallIntensityDay5-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="RainfallIntensityDay5-lists" style="flex-wrap: wrap;"></p>
 
+					<div id="MSLPDayImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <h5 id="MSLPDay1-Title" style="color: #000000;"></h5>
-                    <p id="MSLPDay1-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="MSLPDay1-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="MSLPDay2-Title" style="color: #000000;"></h5>
-                    <p id="MSLPDay2-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="MSLPDay2-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="MSLPDay3-Title" style="color: #000000;"></h5>
-                    <p id="MSLPDay3-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="MSLPDay3-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="MSLPDay4-Title" style="color: #000000;"></h5>
-                    <p id="MSLPDay4-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="MSLPDay4-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="MSLPDay5-Title" style="color: #000000;"></h5>
-                    <p id="MSLPDay5-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="MSLPDay5-lists" style="flex-wrap: wrap;"></p>
 
+					<div id="mWINDDayImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <h5 id="mWINDDay1-Title" style="color: #000000;"></h5>
-                    <p id="mWINDDay1-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="mWINDDay1-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="mWINDDay2-Title" style="color: #000000;"></h5>
-                    <p id="mWINDDay2-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="mWINDDay2-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="mWINDDay3-Title" style="color: #000000;"></h5>
-                    <p id="mWINDDay3-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="mWINDDay3-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="mWINDDay4-Title" style="color: #000000;"></h5>
-                    <p id="mWINDDay4-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="mWINDDay4-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="mWINDDay5-Title" style="color: #000000;"></h5>
-                    <p id="mWINDDay5-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="mWINDDay5-lists" style="flex-wrap: wrap;"></p>
 
                 </div>
 
