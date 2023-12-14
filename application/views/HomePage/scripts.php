@@ -1492,20 +1492,20 @@ function macShowSubParameterNames(value) {
 }
 
 //MACRO hr HS-hourSelect
-let macGetHourSelect = document.getElementById("mac_hourSelect");
-let macPushHourSelect = '';
-for (let MHS = 0; MHS < 25; MHS++) {
-    macPushHourSelect += `<option>${[MHS]}</option><br/><br/>`;
-}
-macGetHourSelect.innerHTML = macPushHourSelect;
+// let macGetHourSelect = document.getElementById("mac_hourSelect");
+// // let macPushHourSelect = '';
+// for (let MHS = 0; MHS < 25; MHS++) {
+//     macPushHourSelect += `<option>${[MHS]}</option><br/><br/>`;
+// }
+// macGetHourSelect.innerHTML = macPushHourSelect;
 
 //MACRO min MS-minuteSelect
-let macGetMinSelect = document.getElementById("mac_minuteSelect");
-let macPushMinSelect = '';
-for (let MMS = 0; MMS < 60; MMS++) {
-    macPushMinSelect += `<option>${[MMS]}</option><br/><br/>`;
-}
-macGetMinSelect.innerHTML = macPushMinSelect;
+// let macGetMinSelect = document.getElementById("mac_minuteSelect");
+// let macPushMinSelect = '';
+// for (let MMS = 0; MMS < 60; MMS++) {
+//     macPushMinSelect += `<option>${[MMS]}</option><br/><br/>`;
+// }
+// macGetMinSelect.innerHTML = macPushMinSelect;
 
 //submitForm for MACRO
 function macSubmitForm() {
@@ -10512,27 +10512,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(SuratMarker);
         }
         if (uncheckLayer == 'METAR 00UTC DEW POINT TEMPERATURE') {
-            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDewPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(JodhpurMarker);
         }
         if (uncheckLayer == 'METAR 00UTC VISIBILITY') {
-            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(KanpurMarker);
         }
         if (uncheckLayer == 'METAR 00UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR00UTCLists = clickedMETAR00UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(MeerutMarker);
         }
 
@@ -10557,27 +10557,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X63);
         }
         if (uncheckLayer == 'METAR 01UTC DEW POINT TEMPERATURE') {
-            clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X64);
         }
         if (uncheckLayer == 'METAR 01UTC VISIBILITY') {
-            clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X65);
         }
         if (uncheckLayer == 'METAR 01UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR01UTCLists = clickedMETAR01UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR01UTC_lists.innerHTML = clickedMETAR01UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X66);
         }
 
@@ -10602,27 +10602,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X67);
         }
         if (uncheckLayer == 'METAR 02UTC DEW POINT TEMPERATURE') {
-            clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X68);
         }
         if (uncheckLayer == 'METAR 02UTC VISIBILITY') {
-            clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X69);
         }
         if (uncheckLayer == 'METAR 02UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR02UTCLists = clickedMETAR02UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR02UTC_lists.innerHTML = clickedMETAR02UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X70);
         }
 
@@ -10646,27 +10646,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X71);
         }
         if (uncheckLayer == 'METAR 03UTC DEW POINT TEMPERATURE') {
-            clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X72);
         }
         if (uncheckLayer == 'METAR 03UTC VISIBILITY') {
-            clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X73);
         }
         if (uncheckLayer == 'METAR 03UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR03UTCLists = clickedMETAR03UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR03UTC_lists.innerHTML = clickedMETAR03UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X74);
         }
 
@@ -10690,27 +10690,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X75);
         }
         if (uncheckLayer == 'METAR 04UTC DEW POINT TEMPERATURE') {
-            clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X76);
         }
         if (uncheckLayer == 'METAR 04UTC VISIBILITY') {
-            clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X77);
         }
         if (uncheckLayer == 'METAR 04UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR04UTCLists = clickedMETAR04UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR04UTC_lists.innerHTML = clickedMETAR04UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X78);
         }
 
@@ -10735,27 +10735,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X79);
         }
         if (uncheckLayer == 'METAR 05UTC DEW POINT TEMPERATURE') {
-            clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X80);
         }
         if (uncheckLayer == 'METAR 05UTC VISIBILITY') {
-            clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X81);
         }
         if (uncheckLayer == 'METAR 05UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR05UTCLists = clickedMETAR05UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR05UTC_lists.innerHTML = clickedMETAR05UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X82);
         }
 
@@ -10779,27 +10779,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X83);
         }
         if (uncheckLayer == 'METAR 06UTC DEW POINT TEMPERATURE') {
-            clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X84);
         }
         if (uncheckLayer == 'METAR 06UTC VISIBILITY') {
-            clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X85);
         }
         if (uncheckLayer == 'METAR 06UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR06UTCLists = clickedMETAR06UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR06UTC_lists.innerHTML = clickedMETAR06UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X86);
         }
 
@@ -10823,27 +10823,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X87);
         }
         if (uncheckLayer == 'METAR 07UTC DEW POINT TEMPERATURE') {
-            clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X88);
         }
         if (uncheckLayer == 'METAR 07UTC VISIBILITY') {
-            clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X89);
         }
         if (uncheckLayer == 'METAR 07UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR07UTCLists = clickedMETAR07UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR07UTC_lists.innerHTML = clickedMETAR07UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X90);
         }
 
@@ -10867,27 +10867,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X91);
         }
         if (uncheckLayer == 'METAR 08UTC DEW POINT TEMPERATURE') {
-            clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X92);
         }
         if (uncheckLayer == 'METAR 08UTC VISIBILITY') {
-            clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X93);
         }
         if (uncheckLayer == 'METAR 08UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR08UTCLists = clickedMETAR08UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR08UTC_lists.innerHTML = clickedMETAR08UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X94);
         }
 
@@ -10912,27 +10912,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X95);
         }
         if (uncheckLayer == 'METAR 09UTC DEW POINT TEMPERATURE') {
-            clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X96);
         }
         if (uncheckLayer == 'METAR 09UTC VISIBILITY') {
-            clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X97);
         }
         if (uncheckLayer == 'METAR 09UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR09UTCLists = clickedMETAR09UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR09UTC_lists.innerHTML = clickedMETAR09UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X98);
         }
 
@@ -10956,27 +10956,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X99);
         }
         if (uncheckLayer == 'METAR 10UTC DEW POINT TEMPERATURE') {
-            clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X100);
         }
         if (uncheckLayer == 'METAR 10UTC VISIBILITY') {
-            clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X101);
         }
         if (uncheckLayer == 'METAR 10UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR10UTCLists = clickedMETAR10UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR10UTC_lists.innerHTML = clickedMETAR10UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X102);
         }
 
@@ -11001,27 +11001,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X103);
         }
         if (uncheckLayer == 'METAR 11UTC DEW POINT TEMPERATURE') {
-            clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X104);
         }
         if (uncheckLayer == 'METAR 11UTC VISIBILITY') {
-            clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X105);
         }
         if (uncheckLayer == 'METAR 11UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR11UTCLists = clickedMETAR11UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR11UTC_lists.innerHTML = clickedMETAR11UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X106);
         }
 
@@ -11046,27 +11046,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X107);
         }
         if (uncheckLayer == 'METAR 12UTC DEW POINT TEMPERATURE') {
-            clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X108);
         }
         if (uncheckLayer == 'METAR 12UTC VISIBILITY') {
-            clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X109);
         }
         if (uncheckLayer == 'METAR 12UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR12UTCLists = clickedMETAR12UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR12UTC_lists.innerHTML = clickedMETAR12UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X110);
         }
 
@@ -11091,27 +11091,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X111);
         }
         if (uncheckLayer == 'METAR 13UTC DEW POINT TEMPERATURE') {
-            clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X112);
         }
         if (uncheckLayer == 'METAR 13UTC VISIBILITY') {
-            clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X113);
         }
         if (uncheckLayer == 'METAR 13UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR13UTCLists = clickedMETAR13UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR13UTC_lists.innerHTML = clickedMETAR13UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X114);
         }
 
@@ -11136,27 +11136,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X115);
         }
         if (uncheckLayer == 'METAR 14UTC DEW POINT TEMPERATURE') {
-            clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X116);
         }
         if (uncheckLayer == 'METAR 14UTC VISIBILITY') {
-            clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X117);
         }
         if (uncheckLayer == 'METAR 14UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR14UTCLists = clickedMETAR14UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR14UTC_lists.innerHTML = clickedMETAR14UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X118);
         }
 
@@ -11181,27 +11181,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X119);
         }
         if (uncheckLayer == 'METAR 15UTC DEW POINT TEMPERATURE') {
-            clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X120);
         }
         if (uncheckLayer == 'METAR 15UTC VISIBILITY') {
-            clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X121);
         }
         if (uncheckLayer == 'METAR 15UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR15UTCLists = clickedMETAR15UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR15UTC_lists.innerHTML = clickedMETAR15UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X122);
         }
 
@@ -11226,27 +11226,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X123);
         }
         if (uncheckLayer == 'METAR 16UTC DEW POINT TEMPERATURE') {
-            clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X124);
         }
         if (uncheckLayer == 'METAR 16UTC VISIBILITY') {
-            clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X125);
         }
         if (uncheckLayer == 'METAR 16UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR16UTCLists = clickedMETAR16UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR16UTC_lists.innerHTML = clickedMETAR16UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X126);
         }
 
@@ -11271,27 +11271,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X127);
         }
         if (uncheckLayer == 'METAR 17UTC DEW POINT TEMPERATURE') {
-            clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X128);
         }
         if (uncheckLayer == 'METAR 17UTC VISIBILITY') {
-            clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X129);
         }
         if (uncheckLayer == 'METAR 17UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR17UTCLists = clickedMETAR17UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR17UTC_lists.innerHTML = clickedMETAR17UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X130);
         }
 
@@ -11316,27 +11316,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X131);
         }
         if (uncheckLayer == 'METAR 18UTC DEW POINT TEMPERATURE') {
-            clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X132);
         }
         if (uncheckLayer == 'METAR 18UTC VISIBILITY') {
-            clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X133);
         }
         if (uncheckLayer == 'METAR 18UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR18UTCLists = clickedMETAR18UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR18UTC_lists.innerHTML = clickedMETAR18UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X134);
         }
 
@@ -11361,27 +11361,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X135);
         }
         if (uncheckLayer == 'METAR 19UTC DEW POINT TEMPERATURE') {
-            clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X136);
         }
         if (uncheckLayer == 'METAR 19UTC VISIBILITY') {
-            clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X137);
         }
         if (uncheckLayer == 'METAR 19UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR19UTCLists = clickedMETAR19UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR19UTC_lists.innerHTML = clickedMETAR19UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X138);
         }
 
@@ -11405,27 +11405,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X139);
         }
         if (uncheckLayer == 'METAR 20UTC DEW POINT TEMPERATURE') {
-            clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X140);
         }
         if (uncheckLayer == 'METAR 20UTC VISIBILITY') {
-            clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X141);
         }
         if (uncheckLayer == 'METAR 20UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR20UTCLists = clickedMETAR20UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR20UTC_lists.innerHTML = clickedMETAR20UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X142);
         }
 
@@ -11450,27 +11450,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X143);
         }
         if (uncheckLayer == 'METAR 21UTC DEW POINT TEMPERATURE') {
-            clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X144);
         }
         if (uncheckLayer == 'METAR 21UTC VISIBILITY') {
-            clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X145);
         }
         if (uncheckLayer == 'METAR 21UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR21UTCLists = clickedMETAR21UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR21UTC_lists.innerHTML = clickedMETAR21UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X146);
         }
 
@@ -11495,27 +11495,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X147);
         }
         if (uncheckLayer == 'METAR 22UTC DEW POINT TEMPERATURE') {
-            clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X148);
         }
         if (uncheckLayer == 'METAR 22UTC VISIBILITY') {
-            clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X149);
         }
         if (uncheckLayer == 'METAR 22UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR22UTCLists = clickedMETAR22UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR22UTC_lists.innerHTML = clickedMETAR22UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X150);
         }
 
@@ -11540,27 +11540,27 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X151);
         }
         if (uncheckLayer == 'METAR 23UTC DEW POINT TEMPERATURE') {
-            clickedMETAR23UTCLists = clickedMETAR23UTCLists.filter(checkList => {
+            clickedMetarDewPointLists = clickedMetarDeoPointLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR23UTC_lists.innerHTML = clickedMETAR23UTCLists.join("");
+            panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
             map.removeLayer(X152);
         }
         if (uncheckLayer == 'METAR 23UTC VISIBILITY') {
-            clickedMETAR23UTCLists = clickedMETAR23UTCLists.filter(checkList => {
+            clickedMetarVisibilityLists = clickedMetarVisibilityLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR23UTC_lists.innerHTML = clickedMETAR23UTCLists.join("");
+            panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
             map.removeLayer(X153);
         }
         if (uncheckLayer == 'METAR 23UTC WIND SPEED AND DIRECTION') {
-            clickedMETAR23UTCLists = clickedMETAR23UTCLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayerMETAR23UTC_lists.innerHTML = clickedMETAR23UTCLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
             map.removeLayer(X154);
         }
 
