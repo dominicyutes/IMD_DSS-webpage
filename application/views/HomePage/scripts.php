@@ -5374,6 +5374,19 @@ let synop3hRainfallLegendImage = document.querySelector('#synop3hRainfallImage')
 let soundingImage = document.querySelector('#soundingImage');
 let SHIPANDBUOYImage = document.querySelector('#SHIPANDBUOYImage');
 
+let WRFReflectivityImage = document.querySelector('#WRFReflectivityImage');
+let WRFlightningProductImage = document.querySelector('#WRFlightningProductImage');
+let WRFAccumlatedRainfallImage = document.querySelector('#WRFAccumlatedRainfallImage');
+let lightningPotentialindexImage = document.querySelector('#lightningPotentialindexImage');
+let NCUMRlightningProductImage = document.querySelector('#NCUMRlightningProductImage');
+let NCUMRWindGustImage = document.querySelector('#NCUMRWindGustImage');
+let NCUMRRainfallImage = document.querySelector('#NCUMRRainfallImage');
+let HRRR_SPHourlyDBZImage = document.querySelector('#HRRR_SPHourlyDBZImage');
+let HRRR_NEHourlyDBZImage = document.querySelector('#HRRR_NEHourlyDBZImage');
+let HRRR_NWHourlyDBZImage = document.querySelector('#HRRR_NWHourlyDBZImage');
+let EWRFMaxZImage = document.querySelector('#EWRFMaxZImage');
+let EWRFLightningImage = document.querySelector('#EWRFLightningImage');
+
 // model popup
 let model = document.querySelector('.model');
 let modelBody = document.querySelector('.model-body');
@@ -7270,145 +7283,145 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '01UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '02UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '03UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '04UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '05UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '06UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '07UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '08UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '09UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '10UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '11UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '12UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '13UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '14UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '15UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '16UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '17UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '18UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '19UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '20UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '21UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '22UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == '23UTC') {
                 clickedSHIPANDBUOYLists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
 
             panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
@@ -7422,85 +7435,16 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 03 Hrs') {
                 clickedWRFReflectivityLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                WRFReflectivityLegendImage();
             }
             if (layer_name == 'Next 03-06 Hrs') {
                 clickedWRFReflectivityLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                WRFReflectivityLegendImage();
             }
-
             panelLayerWRFReflectivity_lists.innerHTML = clickedWRFReflectivityLists.join("");
         }
         if (_this.context._layer.group.name == "WRF lightning Product") {
@@ -7512,57 +7456,15 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 03Hrs') {
                 clickedWRFlightningProductLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #00bfff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1-5</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #00ff00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">5-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32cd32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-15</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #228b22; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">15-20</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffff00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-25</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffd700; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25-30</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffa500; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #b80000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-50</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #850000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>50</span>
-   
-    </span>
-
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                WRFlightningProductLegendImage();
             }
             if (layer_name == 'Next 03-06 Hrs') {
                 clickedWRFlightningProductLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #00bfff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1-5</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #00ff00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">5-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32cd32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-15</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #228b22; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">15-20</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffff00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-25</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffd700; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25-30</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffa500; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #b80000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-50</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #850000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>50</span>
-   
-    </span>
-
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                WRFlightningProductLegendImage();
             }
 
             panelLayerWRFlightningProduct_lists.innerHTML = clickedWRFlightningProductLists.join("");
@@ -7576,43 +7478,15 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 03 Hrs') {
                 clickedWRFAccumlatedRainfallLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #fbfae5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-30</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #009aff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30-40</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-50</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-60</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>60</span>
-   
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                WRFAccumlatedRainfallLegendImage();
             }
             if (layer_name == 'Next 03-06 Hrs') {
                 clickedWRFAccumlatedRainfallLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #fbfae5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-30</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #009aff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30-40</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-50</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-60</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>60</span>
-   
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                WRFAccumlatedRainfallLegendImage();
             }
 
             panelLayerWRFAccumlatedRainfall_lists.innerHTML = clickedWRFAccumlatedRainfallLists.join("");
@@ -7626,39 +7500,21 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 01 Hrs') {
                 clickedlightningPotentialindexLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:50px; height:18px; border-radius: 15%; background-color: #ffc14b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">LOW</span>
-    <span style="align-items: center; width:50px; height:18px; border-radius: 15%; background-color: #ff611e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">MEDIUM</span>
-    <span style="align-items: center; width:50px; height:18px; border-radius: 15%; background-color: #a80108; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>01</span>
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                lightningPotentialindexLegendImage();
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 clickedlightningPotentialindexLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:50px; height:18px; border-radius: 15%; background-color: #ffc14b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">LOW</span>
-    <span style="align-items: center; width:50px; height:18px; border-radius: 15%; background-color: #ff611e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">MEDIUM</span>
-    <span style="align-items: center; width:50px; height:18px; border-radius: 15%; background-color: #a80108; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>01</span>
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                lightningPotentialindexLegendImage();
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 clickedlightningPotentialindexLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:50px; height:18px; border-radius: 15%; background-color: #ffc14b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">LOW</span>
-    <span style="align-items: center; width:50px; height:18px; border-radius: 15%; background-color: #ff611e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">MEDIUM</span>
-    <span style="align-items: center; width:50px; height:18px; border-radius: 15%; background-color: #a80108; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>01</span>
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                lightningPotentialindexLegendImage();
             }
 
             panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join("");
@@ -7672,19 +7528,15 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 03 Hrs') {
                 clickedNCUMRlightningProductLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
-                    `</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                NCUMRlightningProductLegendImage();
             }
             if (layer_name == 'Next 03-06 Hrs') {
                 clickedNCUMRlightningProductLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
-                    `</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                NCUMRlightningProductLegendImage();
             }
 
             panelLayerNCUMRlightningProduct_lists.innerHTML = clickedNCUMRlightningProductLists.join("");
@@ -7698,57 +7550,15 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 03 Hrs') {
                 clickedNCUMRWindGustLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #feebe2; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1-5</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fccbc9; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">5-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #bd20fb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-15</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #f98ead; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">15-20</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #f768a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-25</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #de4195; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25-30</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #c51b8a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #9f0e80; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #7a0177; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>40</span>
-   
-    </span>
-
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                NCUMRWindGustLegendImage();
             }
             if (layer_name == 'Next 03-06 Hrs') {
                 clickedNCUMRWindGustLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #feebe2; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1-5</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fccbc9; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">5-10</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #bd20fb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-15</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #f98ead; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">15-20</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #f768a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-25</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #de4195; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25-30</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #c51b8a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30-35</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #9f0e80; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">35-40</span>
-    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #7a0177; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>40</span>
-   
-    </span>
-
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                NCUMRWindGustLegendImage();
             }
 
             panelLayerNCUMRWindGust_lists.innerHTML = clickedNCUMRWindGustLists.join("");
@@ -7762,43 +7572,15 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 03 Hrs') {
                 clickedNCUMRRainfallLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #fbfae5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-30</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #009aff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30-40</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-50</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-60</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>60</span>
-   
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                NCUMRRainfallLegendImage();
             }
             if (layer_name == 'Next 03-06 Hrs') {
                 clickedNCUMRRainfallLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #fbfae5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-30</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #009aff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30-40</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-50</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-60</span>
-    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>60</span>
-   
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                NCUMRRainfallLegendImage();
             }
 
             panelLayerNCUMRRainfall_lists.innerHTML = clickedNCUMRRainfallLists.join("");
@@ -7812,123 +7594,21 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 01 Hrs') {
                 clickedHRRR_SPHourlyDBZLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                HRRR_SPHourlyDBZLegendImage();
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 clickedHRRR_SPHourlyDBZLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                HRRR_SPHourlyDBZLegendImage();
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 clickedHRRR_SPHourlyDBZLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                HRRR_SPHourlyDBZLegendImage();
             }
 
             panelLayerHRRR_SPHourlyDBZ_lists.innerHTML = clickedHRRR_SPHourlyDBZLists.join("");
@@ -7942,123 +7622,21 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 01 Hrs') {
                 clickedHRRR_NEHourlyDBZLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                HRRR_NEHourlyDBZLegendImage();
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 clickedHRRR_NEHourlyDBZLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                HRRR_NEHourlyDBZLegendImage();
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 clickedHRRR_NEHourlyDBZLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                HRRR_NEHourlyDBZLegendImage();
             }
 
             panelLayerHRRR_NEHourlyDBZ_lists.innerHTML = clickedHRRR_NEHourlyDBZLists.join("");
@@ -8072,123 +7650,21 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 01 Hrs') {
                 clickedHRRR_NWHourlyDBZLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                HRRR_NWHourlyDBZLegendImage();
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 clickedHRRR_NWHourlyDBZLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                HRRR_NWHourlyDBZLegendImage();
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 clickedHRRR_NWHourlyDBZLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                HRRR_NWHourlyDBZLegendImage();
             }
 
             panelLayerHRRR_NWHourlyDBZ_lists.innerHTML = clickedHRRR_NWHourlyDBZLists.join("");
@@ -8202,123 +7678,21 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 01 Hrs') {
                 clickedEWRFMaxZLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                EWRFMaxZLegendImage();
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 clickedEWRFMaxZLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                EWRFMaxZLegendImage();
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 clickedEWRFMaxZLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-  <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
-  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
-   
-    </span>
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
-    </span>
-
-    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
-    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
-    </span>
-
-    
-    
-    </span>
-</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                EWRFMaxZLegendImage();
             }
 
             panelLayerEWRFMaxZ_lists.innerHTML = clickedEWRFMaxZLists.join("");
@@ -8332,27 +7706,21 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'Next 01 Hrs') {
                 clickedEWRFLightningLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
-                    `</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                EWRFLightningLegendImage();
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 clickedEWRFLightningLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
-                    `</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                EWRFLightningLegendImage();
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 clickedEWRFLightningLists.push(
-                    `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">` +
-                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-                    ` <img src="img/lighting.jpg" style="width: 125px; height: 20px;">` +
-                    `</span>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
+                EWRFLightningLegendImage();
             }
 
             panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
@@ -10088,31 +9456,31 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clicked10mWINDDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'NEPS DAY1') {
                 clicked10mWINDDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'WRF DAY1') {
                 clicked10mWINDDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'GEFS DAY1') {
                 clicked10mWINDDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'ECMWF DAY1') {
                 clicked10mWINDDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
 
             panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
@@ -10128,37 +9496,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clicked10mWINDDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'NCUM DAY2') {
                 clicked10mWINDDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'NEPS DAY2') {
                 clicked10mWINDDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'WRF DAY2') {
                 clicked10mWINDDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'GEFS DAY2') {
                 clicked10mWINDDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'ECMWF DAY2') {
                 clicked10mWINDDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
 
             panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
@@ -10174,37 +9542,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clicked10mWINDDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'NCUM DAY3') {
                 clicked10mWINDDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'NEPS DAY3') {
                 clicked10mWINDDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'WRF DAY3') {
                 clicked10mWINDDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'GEFS DAY3') {
                 clicked10mWINDDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'ECMWF DAY3') {
                 clicked10mWINDDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
 
             panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
@@ -10220,37 +9588,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clicked10mWINDDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'NCUM DAY4') {
                 clicked10mWINDDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'NEPS DAY4') {
                 clicked10mWINDDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'WRF DAY4') {
                 clicked10mWINDDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'GEFS DAY4') {
                 clicked10mWINDDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'ECMWF DAY4') {
                 clicked10mWINDDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
 
             panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
@@ -10266,37 +9634,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clicked10mWINDDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'NCUM DAY5') {
                 clicked10mWINDDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'NEPS DAY5') {
                 clicked10mWINDDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'WRF DAY5') {
                 clicked10mWINDDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'GEFS DAY5') {
                 clicked10mWINDDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
             if (layer_name == 'ECMWF DAY5') {
                 clicked10mWINDDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				SHIPANDBUOYLegendImage();
+                SHIPANDBUOYLegendImage();
             }
 
             panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
@@ -10528,11 +9896,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(KanpurMarker);
         }
         if (uncheckLayer == 'METAR 00UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(MeerutMarker);
         }
 
@@ -10573,11 +9943,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X65);
         }
         if (uncheckLayer == 'METAR 01UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X66);
         }
 
@@ -10618,11 +9990,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X69);
         }
         if (uncheckLayer == 'METAR 02UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X70);
         }
 
@@ -10662,11 +10036,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X73);
         }
         if (uncheckLayer == 'METAR 03UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X74);
         }
 
@@ -10706,11 +10082,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X77);
         }
         if (uncheckLayer == 'METAR 04UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X78);
         }
 
@@ -10751,11 +10129,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X81);
         }
         if (uncheckLayer == 'METAR 05UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X82);
         }
 
@@ -10795,11 +10175,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X85);
         }
         if (uncheckLayer == 'METAR 06UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X86);
         }
 
@@ -10839,11 +10221,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X89);
         }
         if (uncheckLayer == 'METAR 07UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X90);
         }
 
@@ -10883,11 +10267,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X93);
         }
         if (uncheckLayer == 'METAR 08UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X94);
         }
 
@@ -10928,11 +10314,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X97);
         }
         if (uncheckLayer == 'METAR 09UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X98);
         }
 
@@ -10972,11 +10360,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X101);
         }
         if (uncheckLayer == 'METAR 10UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X102);
         }
 
@@ -11017,11 +10407,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X105);
         }
         if (uncheckLayer == 'METAR 11UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X106);
         }
 
@@ -11062,11 +10454,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X109);
         }
         if (uncheckLayer == 'METAR 12UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X110);
         }
 
@@ -11107,11 +10501,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X113);
         }
         if (uncheckLayer == 'METAR 13UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X114);
         }
 
@@ -11152,11 +10548,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X117);
         }
         if (uncheckLayer == 'METAR 14UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X118);
         }
 
@@ -11197,11 +10595,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X121);
         }
         if (uncheckLayer == 'METAR 15UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X122);
         }
 
@@ -11242,11 +10642,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X125);
         }
         if (uncheckLayer == 'METAR 16UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X126);
         }
 
@@ -11287,11 +10689,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X129);
         }
         if (uncheckLayer == 'METAR 17UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X130);
         }
 
@@ -11332,11 +10736,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X133);
         }
         if (uncheckLayer == 'METAR 18UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X134);
         }
 
@@ -11377,11 +10783,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X137);
         }
         if (uncheckLayer == 'METAR 19UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X138);
         }
 
@@ -11421,11 +10829,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X141);
         }
         if (uncheckLayer == 'METAR 20UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X142);
         }
 
@@ -11466,11 +10876,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X145);
         }
         if (uncheckLayer == 'METAR 21UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X146);
         }
 
@@ -11511,11 +10923,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X149);
         }
         if (uncheckLayer == 'METAR 22UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X150);
         }
 
@@ -11556,11 +10970,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X153);
         }
         if (uncheckLayer == 'METAR 23UTC WIND SPEED AND DIRECTION') {
-            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(checkList => {
+            clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
+            panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X154);
         }
 
@@ -11626,11 +11042,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X4);
         }
         if (uncheckLayer == 'SYNOP 00UTC WIND SPEED AND DIRECTION') {
-            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(checkList => {
+            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join("");
+            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X5);
         }
         if (uncheckLayer == 'SYNOP 00UTC 3h RAINFALL') {
@@ -11702,11 +11120,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X12);
         }
         if (uncheckLayer == 'SYNOP 03UTC WIND SPEED AND DIRECTION') {
-            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(checkList => {
+            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join("");
+            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X3);
         }
         if (uncheckLayer == 'SYNOP 03UTC 3h RAINFALL') {
@@ -11777,11 +11197,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X20);
         }
         if (uncheckLayer == 'SYNOP 06UTC WIND SPEED AND DIRECTION') {
-            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(checkList => {
+            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join("");
+            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X21);
         }
         if (uncheckLayer == 'SYNOP 06UTC 3h RAINFALL') {
@@ -11852,11 +11274,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X28);
         }
         if (uncheckLayer == 'SYNOP 09UTC WIND SPEED AND DIRECTION') {
-            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(checkList => {
+            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join("");
+            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X29);
         }
         if (uncheckLayer == 'SYNOP 09UTC 3h RAINFALL') {
@@ -11928,11 +11352,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X36);
         }
         if (uncheckLayer == 'SYNOP 12UTC WIND SPEED AND DIRECTION') {
-            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(checkList => {
+            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join("");
+            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X37);
         }
         if (uncheckLayer == 'SYNOP 12UTC 3h RAINFALL') {
@@ -12004,11 +11430,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X44);
         }
         if (uncheckLayer == 'SYNOP 15UTC WIND SPEED AND DIRECTION') {
-            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(checkList => {
+            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join("");
+            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X45);
         }
         if (uncheckLayer == 'SYNOP 15UTC 3h RAINFALL') {
@@ -12080,11 +11508,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X52);
         }
         if (uncheckLayer == 'SYNOP 18UTC WIND SPEED AND DIRECTION') {
-            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(checkList => {
+            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join("");
+            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X53);
         }
         if (uncheckLayer == 'SYNOP 18UTC 3h RAINFALL') {
@@ -12156,11 +11586,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             map.removeLayer(X60);
         }
         if (uncheckLayer == 'SYNOP 21UTC WIND SPEED AND DIRECTION') {
-            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(checkList => {
+            clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
+            checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
             });
-            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join("");
+            panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
+                "");
             map.removeLayer(X61);
         }
         if (uncheckLayer == 'SYNOP 21UTC 3h RAINFALL') {
@@ -14184,8 +13616,8 @@ function metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name) 
 
 function synopTempImageAndLegend(layer_group_name, layer_name) {
     SYNOP.innerHTML = "SYNOP"
-	SYNOP_Row.style.display = 'block';
-	SYNOP_Row.style.display = 'block';
+    SYNOP_Row.style.display = 'block';
+    SYNOP_Row.style.display = 'block';
     panelLayersynopTemp_lists.style.display = 'flex';
 
     panelLayersynopTemp_Title.innerHTML = layer_name;
@@ -14209,7 +13641,7 @@ function synopTempImageAndLegend(layer_group_name, layer_name) {
 
 function synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name) {
     SYNOP.innerHTML = "SYNOP"
-	SYNOP_Row.style.display = 'block';
+    SYNOP_Row.style.display = 'block';
     panelLayersynopMeanSeaLevel_lists.style.display = 'flex';
 
     panelLayersynopMeanSeaLevel_Title.innerHTML = layer_name;
@@ -14249,7 +13681,7 @@ function synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name) {
 
 function synopCloudCoverImageAndLegend(layer_group_name, layer_name) {
     SYNOP.innerHTML = "SYNOP"
-	SYNOP_Row.style.display = 'block';
+    SYNOP_Row.style.display = 'block';
     panelLayersynopCloudCover_lists.style.display = 'flex';
 
     panelLayersynopCloudCover_Title.innerHTML = layer_name;
@@ -14278,7 +13710,7 @@ function synopCloudCoverImageAndLegend(layer_group_name, layer_name) {
 
 function synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name) {
     SYNOP.innerHTML = "SYNOP"
-	SYNOP_Row.style.display = 'block';
+    SYNOP_Row.style.display = 'block';
     panelLayersynopGeopotentialHeight_lists.style.display = 'flex';
 
     panelLayersynopGeopotentialHeight_Title.innerHTML = layer_name;
@@ -14311,7 +13743,7 @@ function synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name) {
 
 function synopRelativeHumidityImageAndLegend(layer_group_name, layer_name) {
     SYNOP.innerHTML = "SYNOP"
-	SYNOP_Row.style.display = 'block';
+    SYNOP_Row.style.display = 'block';
     panelLayersynopRelativeHumidity_lists.style.display = 'flex';
 
     panelLayersynopRelativeHumidity_Title.innerHTML = layer_name;
@@ -14334,7 +13766,7 @@ function synopRelativeHumidityImageAndLegend(layer_group_name, layer_name) {
 
 function synopVisibilityImageAndLegend(layer_group_name, layer_name) {
     SYNOP.innerHTML = "SYNOP"
-	SYNOP_Row.style.display = 'block';
+    SYNOP_Row.style.display = 'block';
     panelLayersynopVisibility_lists.style.display = 'flex';
 
     panelLayersynopVisibility_Title.innerHTML = layer_name;
@@ -14372,7 +13804,7 @@ function synopVisibilityImageAndLegend(layer_group_name, layer_name) {
 
 function synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name) {
     SYNOP.innerHTML = "SYNOP"
-	SYNOP_Row.style.display = 'block';
+    SYNOP_Row.style.display = 'block';
     panelLayersynopWindSpeedAndDirection_lists.style.display = 'flex';
 
     panelLayersynopWindSpeedAndDirection_Title.innerHTML = layer_name;
@@ -14395,7 +13827,7 @@ function synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name) 
 
 function synop3hRainfallImageAndLegend(layer_group_name, layer_name) {
     SYNOP.innerHTML = "SYNOP"
-	SYNOP_Row.style.display = 'block';
+    SYNOP_Row.style.display = 'block';
     panelLayersynop3hRainfall_lists.style.display = 'flex';
 
     panelLayersynop3hRainfall_Title.innerHTML = layer_name;
@@ -14434,6 +13866,264 @@ function SHIPANDBUOYLegendImage() {
 	</g>
 	</svg>`
 }
+
+function WRFReflectivityLegendImage() {
+    WRFReflectivityImage.innerHTML = `  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
+    </span>
+
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
+    </span>
+	</span>`
+}
+
+function WRFlightningProductLegendImage() {
+    WRFlightningProductImage.innerHTML = `<span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #00bfff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1-5</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #00ff00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">5-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32cd32; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-15</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #228b22; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">15-20</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffff00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-25</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffd700; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25-30</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffa500; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #b80000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-50</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #850000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>50</span>
+    </span>
+    </span>`
+}
+
+function WRFAccumlatedRainfallLegendImage() {
+    WRFAccumlatedRainfallImage.innerHTML = `  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #fbfae5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-30</span>
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #009aff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30-40</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-50</span>
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-60</span>
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>60</span>
+   
+    </span>`
+}
+
+function lightningPotentialindexLegendImage() {
+    lightningPotentialindexImage.innerHTML = `  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:50px; height:18px; border-radius: 15%; background-color: #ffc14b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">LOW</span>
+    <span style="align-items: center; width:50px; height:18px; border-radius: 15%; background-color: #ff611e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">MEDIUM</span>
+    <span style="align-items: center; width:50px; height:18px; border-radius: 15%; background-color: #a80108; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>01</span>
+    </span>`
+}
+
+function NCUMRlightningProductLegendImage() {
+    NCUMRlightningProductImage.innerHTML = `<img src="img/lighting.jpg" style="width: 125px; height: 20px;">`
+}
+
+function NCUMRWindGustLegendImage() {
+    NCUMRWindGustImage.innerHTML = `  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #feebe2; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1-5</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fccbc9; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">5-10</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #bd20fb; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-15</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #f98ead; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">15-20</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #f768a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-25</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #de4195; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25-30</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #c51b8a; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30-35</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #9f0e80; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">35-40</span>
+    <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #7a0177; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>40</span>
+   
+    </span>
+
+    </span>`
+}
+
+function NCUMRRainfallLegendImage() {
+    NCUMRRainfallImage.innerHTML = `  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #fbfae5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0.1-10</span>
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #a0e632; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">10-20</span>
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #00dc00; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20-30</span>
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #009aff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30-40</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #1e3cff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40-50</span>
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #f08228; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">50-60</span>
+    <span style="align-items: center; width:40px; height:18px; border-radius: 15%; background-color: #fa3c3c; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>60</span>
+   
+    </span>`
+}
+
+function HRRR_SPHourlyDBZLegendImage() {
+    HRRR_SPHourlyDBZImage.innerHTML = `  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
+    </span>
+
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
+    </span>
+    </span>`
+}
+
+function HRRR_NEHourlyDBZLegendImage() {
+    HRRR_NEHourlyDBZImage.innerHTML = `  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
+    </span>
+
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
+    </span>
+    </span>`
+}
+
+function HRRR_NWHourlyDBZLegendImage() {
+    HRRR_NWHourlyDBZImage.innerHTML = `  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
+    </span>
+
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
+    </span>
+    </span>`
+}
+
+function EWRFMaxZLegendImage() {
+    EWRFMaxZImage.innerHTML = `  <span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
+  <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #c30432; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;"><58.3->60.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #e32201; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">54.7-57.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fe5c05; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">52.0-54.7</span>
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fda000; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">49.3-52.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #fed100; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">46.7-49.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">44.0-46.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #faef5ebf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">41.3-44.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #b0f6ff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">38.7-41.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #6de3fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">36.0-38.7</span>
+   
+    </span>
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #31baff; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">33.3-36.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0f92fd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30.7-33.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #004dfd; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">28.0-30.7</span>
+    </span>
+
+    <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #0117df; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">25.3-28.0</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
+    <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
+    </span>
+    </span>`
+}
+
+function EWRFLightningLegendImage() {
+    EWRFLightningImage.innerHTML = `<img src="img/lighting.jpg" style="width: 125px; height: 20px;">`
+}
+
 
 //closeModel
 closeModel.onclick = () => {

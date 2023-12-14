@@ -553,40 +553,52 @@
                     </h4>
 
                     <h5 id="WRFReflectivity-Title" style="color: #000000;"></h5>
-                    <p id="WRFReflectivity-lists" style="display: flex; flex-wrap: wrap;"></p>
+					<div id="WRFReflectivityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <p id="WRFReflectivity-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="WRFlightningProduct-Title" style="color: #000000;"></h5>
-                    <p id="WRFlightningProduct-lists" style="display: flex; flex-wrap: wrap;"></p>
+					<div id="WRFlightningProductImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <p id="WRFlightningProduct-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="WRFAccumlatedRainfall-Title" style="color: #000000;"></h5>
-                    <p id="WRFAccumlatedRainfall-lists" style="display: flex; flex-wrap: wrap;"></p>
+					<div id="WRFAccumlatedRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <p id="WRFAccumlatedRainfall-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="lightningPotentialindex-Title" style="color: #000000;"></h5>
-                    <p id="lightningPotentialindex-lists" style="display: flex; flex-wrap: wrap;"></p>
+					<div id="lightningPotentialindexImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <p id="lightningPotentialindex-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="NCUMRlightningProduct-Title" style="color: #000000;"></h5>
-                    <p id="NCUMRlightningProduct-lists" style="display: flex; flex-wrap: wrap;"></p>
+					<div id="NCUMRlightningProductImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <p id="NCUMRlightningProduct-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="NCUMRWindGust-Title" style="color: #000000;"></h5>
-                    <p id="NCUMRWindGust-lists" style="display: flex; flex-wrap: wrap;"></p>
+					<div id="NCUMRWindGustImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <p id="NCUMRWindGust-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="NCUMRRainfall-Title" style="color: #000000;"></h5>
-                    <p id="NCUMRRainfall-lists" style="display: flex; flex-wrap: wrap;"></p>
+					<div id="NCUMRRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <p id="NCUMRRainfall-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="HRRR_SPHourlyDBZ-Title" style="color: #000000;"></h5>
-                    <p id="HRRR_SPHourlyDBZ-lists" style="display: flex; flex-wrap: wrap;"></p>
+					<div id="HRRR_SPHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <p id="HRRR_SPHourlyDBZ-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="HRRR_NEHourlyDBZ-Title" style="color: #000000;"></h5>
-                    <p id="HRRR_NEHourlyDBZ-lists" style="display: flex; flex-wrap: wrap;"></p>
+					<div id="HRRR_NEHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <p id="HRRR_NEHourlyDBZ-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="HRRR_NWHourlyDBZ-Title" style="color: #000000;"></h5>
-                    <p id="HRRR_NWHourlyDBZ-lists" style="display: flex; flex-wrap: wrap;"></p>
+					<div id="HRRR_NWHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <p id="HRRR_NWHourlyDBZ-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="EWRFMaxZ-Title" style="color: #000000;"></h5>
-                    <p id="EWRFMaxZ-lists" style="display: flex; flex-wrap: wrap;"></p>
+					<div id="EWRFMaxZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <p id="EWRFMaxZ-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="EWRFLightning-Title" style="color: #000000;"></h5>
-                    <p id="EWRFLightning-lists" style="display: flex; flex-wrap: wrap;"></p>
+					<div id="EWRFLightningImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <p id="EWRFLightning-lists" style="flex-wrap: wrap;"></p>
 
                 </div>
                 <!-- MEDIUM -->
