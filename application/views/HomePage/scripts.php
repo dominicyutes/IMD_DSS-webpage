@@ -1483,6 +1483,7 @@ function macShowSubParameterNames(value) {
     let macGetSubParameterNames = document.getElementById("mac_subparameter");
     let macPushSubParameterNames = '';
     var macSecondDropdown = subParametersList.filter(x => x.category == value);
+
     for (let MTD = 0; MTD < macSecondDropdown.length; MTD++) {
         if (macSecondDropdown[MTD].name) {
             macPushSubParameterNames += `<option>${macSecondDropdown[MTD].name}</option><br/><br/>`;
@@ -1491,74 +1492,122 @@ function macShowSubParameterNames(value) {
     macGetSubParameterNames.innerHTML = macPushSubParameterNames;
 }
 
-//MACRO hr HS-hourSelect
-let macGetHourSelect = document.getElementById("mac_hourSelect");
-let macPushHourSelect = '';
-for (let MHS = 0; MHS < 25; MHS++) {
-    macPushHourSelect += `<option>${[MHS]}</option><br/><br/>`;
-}
-macGetHourSelect.innerHTML = macPushHourSelect;
+function handleInputChange() {
+    const inputValue = document.getElementById("macroNames").value;
+    const buttons = document.querySelectorAll(".macSubmitBtn");
 
-//MACRO min MS-minuteSelect
-let macGetMinSelect = document.getElementById("mac_minuteSelect");
-let macPushMinSelect = '';
-for (let MMS = 0; MMS < 60; MMS++) {
-    macPushMinSelect += `<option>${[MMS]}</option><br/><br/>`;
+    if (inputValue) {
+        for (const button of buttons) {
+            button.disabled = false; // Enable the buttons when there is a value
+        }
+    } else {
+        for (const button of buttons) {
+            button.disabled = true; // Disable the buttons when there is no value
+        }
+    }
 }
-macGetMinSelect.innerHTML = macPushMinSelect;
 
-//submitForm for MACRO
-function macSubmitForm() {
+
+// AddButtonForm for MACRO
+let macroData = [];
+let saveMacro = [];
+let counter = 0;
+
+function macAddForm() {
+    event.preventDefault();
+    //
+    const addedInfoContainerVisible = document.getElementById("addedInfoContainer");
+
+    let isVisible = window.getComputedStyle(addedInfoContainerVisible).display !== "none";
+    addedInfoContainerVisible.style.display = isVisible ? "block" : "block";
+
     let mac_macroNames = document.getElementById('macroNames').value;
     let mac_model_Names = document.getElementById('mac_modelNames').value;
     let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
     let mac_sub_parameter = document.getElementById('mac_subparameter').value;
-    let mac_fromDate = document.getElementById('mac_start_date').value;
-    let mac_toDate = document.getElementById('mac_end_date').value;
-    let mac_hour_Select = document.getElementById('mac_hourSelect').value;
-    let mac_minute_Select = document.getElementById('mac_minuteSelect').value;
+    //
+    let ulId = "listContainerMacro_" + counter++;
+    //
+    let addedInfoDiv = document.createElement("div");
+    addedInfoDiv.innerHTML = `<div id="toggleDiv">
+        <span onclick="MacroPlusToggle('${ulId}')">+ Macro Name: ${mac_macroNames}</span>
+        <ul id="${ulId}" class="listContainerMacro">
+            <li>${mac_model_Names}</li>
+            <li>${mac_parameter_Names}</li>
+            <li>${mac_sub_parameter}</li>
+        </ul>
+    </div>`;
 
-    let message = "MACRO" + "\n" + "Macro Names: " + mac_macroNames + "\n" +
-        "Model: " + mac_model_Names + "\n" +
-        "Parameter: " + mac_parameter_Names + "\n" +
-        "SubParameter: " + mac_sub_parameter + "\n" +
-        "Start Date: " + mac_fromDate + "\n" +
-        "End Date: " + mac_toDate + "\n" +
-        "Time: " + mac_hour_Select + ":" + mac_minute_Select;
-    alert(message);
+    macroData.push(addedInfoDiv.innerHTML);
+
+    saveMacro.push({
+        macroName: mac_macroNames,
+        mac_sub_parameter: mac_sub_parameter
+    });
+
+    addedInfoContainerVisible.innerHTML = macroData.join("");
+    console.log(ulId, ": ", macroData, saveMacro);
+}
+
+function MacroPlusToggle(ulId) {
+    let macListContainer = document.getElementById(ulId);
+    if (macListContainer.style.display === "none" || macListContainer.style.display === "") {
+        macListContainer.style.display = "block";
+    } else {
+        macListContainer.style.display = "none";
+    }
+}
 
 
+// submitForm for MACRO
+function macSubmitForm() {
+    event.preventDefault();
+    //
+    let mac_macroNames = document.getElementById('macroNames').value;
+    let mac_model_Names = document.getElementById('mac_modelNames').value;
+    let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
+    let mac_sub_parameter = document.getElementById('mac_subparameter').value;
+
+    let addedInfoContainer = document.getElementById("addedInfoContainer");
+    let isVisible = window.getComputedStyle(addedInfoContainer).display == "none";
+    //
+
+    let savedMacroInfo = '';
+    // SM saveMacro
+    for (let SM = 0; SM < saveMacro.length; SM++) {
+        savedMacroInfo += `Data ${SM + 1}:\n`;
+        savedMacroInfo += `Macro Name: ${saveMacro[SM].macroName}\n`;
+        savedMacroInfo += `Sub Parameter: ${saveMacro[SM].mac_sub_parameter}\n\n`;
+    }
+    console.log(savedMacroInfo);
+
+    let subParameters = [];
+    //SP subParameters
+    for (let SP = 0; SP < saveMacro.length; SP++) {
+        subParameters.push(saveMacro[SP].mac_sub_parameter);
+    }
+    console.log(subParameters);
 
     // Create a new button
     let newButton = document.createElement('button');
     newButton.classList.add('save-button');
-    newButton.id = mac_macroNames; // Use the macroNames as the ID of the new button
+    newButton.id = mac_macroNames;
     newButton.innerText = mac_macroNames;
 
     // Add a click event listener to the new button
     newButton.addEventListener('click', function() {
-        console.log('Details of the saved button:', mac_macroNames, mac_model_Names, mac_parameter_Names,
-            mac_sub_parameter, mac_fromDate, mac_toDate, mac_hour_Select, mac_minute_Select);
-        alert('Details of the saved button:' + "\n" + mac_macroNames + "\n" + mac_model_Names + "\n" +
-            mac_parameter_Names + "\n" + mac_sub_parameter + "\n" + mac_fromDate + "\n" + mac_toDate +
-            "\n" + mac_hour_Select + ":" + mac_minute_Select);
+        console.log('Details of the saved button:', subParameters);
     });
     // Append the new button to the dropdown content
     document.querySelector('.dropdown-content').appendChild(newButton);
 
-    // Clear the form fields
+    // // Clear the form fields
     document.getElementById('macroNames').value = '';
-    // Add code to clear other form fields if needed
+    document.getElementById('mac_modelNames').value = '';
+    document.getElementById('mac_parameterNames').value = '';
+    document.getElementById('mac_subparameter').value = '';
 }
 
-//MACRO-toggleObservation
-function macToggleObservation() {
-    let macroContainerFn = document.getElementById("macroContainer");
-    let map = document.getElementById('map');
-    let isHidden = macroContainerFn.classList.contains('hidden');
-    macroContainerFn.classList.toggle('hidden');
-    map.style.width = isHidden ? '83%' : '99%';
-}
 //Macro Create Macro Toggle
 function createMacroForm() {
     let clickMacro = document.getElementById("showCreateMacroLayers");
@@ -1569,6 +1618,16 @@ function createMacroForm() {
     }
 }
 
+//MACRO-toggleObservation
+function macToggleObservation() {
+    let macroContainerFn = document.getElementById("macroContainer");
+    let map = document.getElementById('map');
+    let isHidden = macroContainerFn.classList.contains('hidden');
+    macroContainerFn.classList.toggle('hidden');
+    map.style.width = isHidden ? '83%' : '99%';
+}
+
+// ***********************************************************************
 //leaflet starts here
 // const map = L.map('map', {
 //     cursor: true,
@@ -1739,42 +1798,9 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
 
 
 
-// side-by-side
-let sideBySideControl = null; 
-let sideBySideVisible = false;
 
-function toggleSideBySide() {
-    if (sideBySideVisible) {
-        // If visible, remove the side-by-side control
-        if (sideBySideControl !== null) {
-            map.removeControl(sideBySideControl);
-            sideBySideControl = null;
-        }
-        sideBySideVisible = false;
-    } else {
-        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast).addTo(map);
-        sideBySideVisible = true;
-    }
-}
-
-const ToggleControl = L.Control.extend({
-    onAdd: function(map) {
-        const button = L.DomUtil.create('button', 'toggle-button');
-        button.textContent = 'Toggle Layers';
-        button.onclick = function() {
-            toggleSideBySide();
-            button.textContent = sideBySideVisible ? 'Split OFF' : 'Split ON';
-        };
-        return button;
-    },
-
-    onRemove: function(map) {
-    }
-});
-
-(new ToggleControl()).addTo(map);
-
-
+//Leaflet-sideBySide
+L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast).addTo(map);
 
 //leaflet Fullscreen
 map.addControl(new L.Control.Fullscreen({
@@ -1862,9 +1888,6 @@ var ObservationButton = L.Control.extend({
         return obsbtn;
     }
 });
-// map.addControl(new ObservationButton());
-// buttonContainer.appendChild(new ObservationButton().onAdd(map));
-
 
 // Create a custom control button for ObservationButton
 var MacroButton = L.Control.extend({
@@ -1897,7 +1920,7 @@ var CustomControls = L.Control.extend({
         var dropdown = L.DomUtil.create('select', 'custom-dropdown', container);
         dropdown.innerHTML = `
             <option value="pdf">PDF</option>
-            <option value="jpeg">JPEG</option>
+            <option value="jpg">JPEG</option>
             <option value="png">PNG</option>
         `;
 
@@ -1906,7 +1929,7 @@ var CustomControls = L.Control.extend({
 
         var loadingSymbol = document.createElement('div');
         loadingSymbol.className = 'loading-symbol';
-        loadingSymbol.innerHTML = 'Loading...'; 
+        loadingSymbol.innerHTML = 'Loading...';
         loadingSymbol.style.display = 'none';
 
         dropdown.style.margin = '0';
@@ -1917,75 +1940,56 @@ var CustomControls = L.Control.extend({
             loadingSymbol.style.display = 'inline-block';
 
             if (selectedOption === 'pdf') {
-                $(this).addClass('running');
-                html2canvas($("#map"), {
-                    useCORS: true,
-                    onrendered: function(canvas) {
-                        var image = Canvas2Image.convertToJPEG(canvas);
-                        var image_data = $(image).attr('src');
-                        var random_name = new Date().toISOString().replace(/[^\w]/g, '');
-                        $.ajax({
-                            type: "POST",
-                            url: "<?php echo base_url(); ?>Pdf_report/index",
-                            data: { 
-                                base64: image_data,
-                                r_file_name: 'map_img_' + random_name + '.jpeg',
-                            },
-                            success: function() {
-                                console.log('PDF Report generated');
-                                loadingSymbol.style.display = 'none';
-                            },
-                            error: function() {
-                                console.error('Error generating PDF Report');
-                                loadingSymbol.style.display = 'none';
-                            }
-                        });
-                    }
-                });
-            } else if (selectedOption === 'jpeg') {
+                console.log('Downloading as PDF');
+                // Add logic for downloading as PDF if needed
+            } else if (selectedOption === 'jpg') {
                 var currentDate = new Date().toLocaleString('en-GB', {
                     timeZone: 'UTC'
-                }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(/_/g, '');
+                }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
+                    /_/g, '');
+
                 htmlToImage.toJpeg(document.getElementById('map'), {
-                    quality: 0.95
-                })
-                .then(function(dataUrl) {
-                    var link = document.createElement('a');
-                    link.download = 'IMD-DSS_' + currentDate + '.jpeg';
-                    link.href = dataUrl;
-                    link.click();
-                    loadingSymbol.style.display = 'none'; 
-                })
-                .catch(function(error) {
-                    console.error('Error:', error);
-                    loadingSymbol.style.display = 'none'; 
-                });
+                        quality: 0.95
+                    })
+                    .then(function(dataUrl) {
+                        var link = document.createElement('a');
+                        link.download = 'IMD-DSS_' + currentDate + '.jpeg';
+                        link.href = dataUrl;
+
+                        link.click();
+                        loadingSymbol.style.display = 'none';
+                    })
+                    .catch(function(error) {
+                        console.error('Error:', error);
+                    });
             } else if (selectedOption === 'png') {
                 var currentDate = new Date().toLocaleString('en-GB', {
                     timeZone: 'UTC'
-                }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(/_/g, '');
+                }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
+                    /_/g, '');
+
                 htmlToImage.toPng(document.getElementById('map'))
-                .then(function(dataUrl) {
-                    var link = document.createElement('a');
-                    link.download = 'IMD-DSS_' + currentDate + '.png';
-                    link.href = dataUrl;
-                    link.click();
-                    loadingSymbol.style.display = 'none'; 
-                })
-                .catch(function(error) {
-                    console.error('Error:', error);
-                    loadingSymbol.style.display = 'none'; 
-                });
+                    .then(function(dataUrl) {
+                        var link = document.createElement('a');
+                        link.download = 'IMD-DSS_' + currentDate + '.png';
+                        link.href = dataUrl;
+
+                        link.click();
+                        loadingSymbol.style.display = 'none';
+                    })
+                    .catch(function(error) {
+                        console.error('Error:', error);
+                    });
             }
         });
 
-        container.appendChild(dropdown);
-        container.appendChild(ExportButton);
         container.appendChild(loadingSymbol);
 
         return container;
     }
 });
+
+
 
 var customControl = new CustomControls();
 customControl.addTo(map);
@@ -2029,27 +2033,6 @@ customButtonsContainer.appendChild(new LegendButton().onAdd());
 // Add the container to the map
 map.getContainer().appendChild(customButtonsContainer);
 // ************
-
-// Custom Control
-// var customControl = L.control({
-//     position: 'topleft'
-// });
-
-// customControl.onAdd = function(map) {
-//     var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-
-//     container.innerHTML = '<div class="custom-buttons-container">' +
-//         '<div class="custom-button" onclick="alert(\'Legend!\')">Legend</div>' +
-//         '<div class="custom-button" onclick="observationBtn()">Observation</div>' +
-//         '<div class="custom-button" onclick="alert(\'Button 3 clicked!\')">Button</div>' +
-//         '</div>';
-
-//     return container;
-// };
-
-// customControl.addTo(map);
-
-
 
 // Add a marker for Delhi
 var delhiMarker = L.marker([28.6139, 77.2090]);
@@ -4861,7 +4844,7 @@ var overLayers9 = [{
 //Exposure 
 var overLayers10 = [{
     group: "Exposure Layers",
-    collapsed: true,
+    collapsed: false,
     layers: [{
             active: false,
             name: "District Boundaries",

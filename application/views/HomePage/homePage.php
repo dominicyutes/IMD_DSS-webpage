@@ -10,7 +10,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/arrows-expand-right-alt.css' rel='stylesheet'>
     <!-- Include Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- leaflet-draw CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
     <!-- Include Leaflet fullscreen CSS -->
@@ -31,8 +31,10 @@
     <!-- leaflet time dimensions -->
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.min.css" />
-    <!-- Leaflet Side-by-Side CSS -->
+    <!-- Leaflet Side-by-Side CSS-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Include Leaflet Side-by-Side CSS -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-side-by-side@1.0.4/dist/leaflet-side-by-side.css" /> -->
 
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -97,73 +99,74 @@
 </head>
 
 <body>
-    <!-- nav start here -->
-    <div style="width: 100%;" class="mx-auto">
-        <div class="text-end" style="
-    padding-bottom: 0.5em;">
-            <span class="mr-3 text">WEATHER DECISION SUPPORT SYSTEM</span>
+    <!-- Title start here -->
+    <div>
+        <div style="width: 100%;" class="mx-auto">
+            <div class="text-end" style="padding-bottom: 0.5em;">
+                <span class="mr-3 text">WEATHER DECISION SUPPORT SYSTEM</span>
+            </div>
         </div>
-    </div>
 
-    <!-- navbar -->
-    <div style="width: 100%; margin-bottom:1em; background-color:#f4fcff;" class="mx-auto">
-        <div style="display:flex;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto heightChange">
-            <div style="width: 100%;display: flex;">
-                <div class="d-flex flex-wrap w-100 gx-3 gy-3 mt-1" id="parent" style="justify-content: space-between">
+        <!-- navbar -->
+        <div style="width: 100%; margin-bottom:1em; background-color:#f4fcff;" class="mx-auto">
+            <div style="display:flex;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto heightChange">
+                <div style="width: 100%;display: flex;">
+                    <div class="d-flex flex-wrap w-100 gx-3 gy-3 mt-1" id="parent"
+                        style="justify-content: space-between">
 
-                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                        <p class="btn-val" id="exposure">Exposure</p>
-                        <div class="underline"></div>
-                    </button>
-                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                        <p class="btn-val" id="metar">Metar</p>
-                        <div class="underline"></div>
-                    </button>
-                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                        <p class="btn-val" id="synop">Synop</p>
-                        <div class="underline"></div>
-                    </button>
-                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                        <p class="btn-val" id="radar">Radar</p>
-                        <div class="underline"></div>
-                    </button>
-                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                        <p class="btn-val" id="satellite">Satellite</p>
-                        <div class="underline"></div>
-                    </button>
-                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                        <p class="btn-val" id="lightning">Lightining</p>
-                        <div class="underline"></div>
-                    </button>
-                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                        <p class="btn-val" id="sounding">Sounding</p>
-                        <div class="underline"></div>
-                    </button>
-                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                        <p class="btn-val" id="ship_and_buoy">Ship and Buoy</p>
-                        <div class="underline"></div>
-                    </button>
-                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                        <p class="btn-val" id="mesolscale">Mesolscale Forecast</p>
-                        <div class="underline"></div>
-                    </button>
-                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                        <p class="btn-val" id="medium_range">Medium Range</p>
-                        <div class="underline"></div>
-                    </button>
-                    <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                        <p class="btn-val">Export Polygon</p>
-                        <div class="underline"></div>
-                    </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val" id="exposure">Exposure</p>
+                            <div class="underline"></div>
+                        </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val" id="metar">Metar</p>
+                            <div class="underline"></div>
+                        </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val" id="synop">Synop</p>
+                            <div class="underline"></div>
+                        </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val" id="radar">Radar</p>
+                            <div class="underline"></div>
+                        </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val" id="satellite">Satellite</p>
+                            <div class="underline"></div>
+                        </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val" id="lightning">Lightining</p>
+                            <div class="underline"></div>
+                        </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val" id="sounding">Sounding</p>
+                            <div class="underline"></div>
+                        </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val" id="ship_and_buoy">Ship and Buoy</p>
+                            <div class="underline"></div>
+                        </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val" id="mesolscale">Mesolscale Forecast</p>
+                            <div class="underline"></div>
+                        </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val" id="medium_range">Medium Range</p>
+                            <div class="underline"></div>
+                        </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val">Export Polygon</p>
+                            <div class="underline"></div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- nav ends here -->
 
 
     <br>
-    <div class="row">
+    <div class="row" ;>
         <!-- MAP -->
         <div id="map" class="col-10"></div>
 
@@ -236,7 +239,8 @@
                 <form id="myForm">
                     <div>
                         <label for="macroNames" class="macroNameLabel">Macro Name:</label>
-                        <input type="text" class="macroNameInput" id="macroNames" placeholder="customize name" &nbsp;>
+                        <input type="text" class="macroNameInput" id="macroNames" placeholder="customize name"
+                            onchange="handleInputChange()" required &nbsp;>
                     </div>
                     <div>
                         <label for="mac_modelNames" class="mac_firstDDLabel">Model:</label>
@@ -244,7 +248,6 @@
                             &nbsp;>
                         </select>
                     </div>
-                    <!-- <span>&nbsp;</span> -->
                     <!-- parameter -->
                     <div>
                         <label for="mac_parameter" class="mac_secondDDLabel">parameter:</label>
@@ -252,48 +255,29 @@
                             onchange="macShowSubParameterNames(this.value)" &nbsp;>
                         </select>
                     </div>
-                    <!-- <span>&nbsp;</span> -->
                     <!-- SubParameter -->
                     <div>
                         <label for="mac_subparameter" class="mac_thirdDDLabel">SubParameter</label>
                         <select class="mac_thirdDD" id="mac_subparameter" &nbsp;>
                         </select>
                     </div>
-                    <!-- <span>&nbsp;</span> -->
-                    <div>
-                        <label for="mac_start_date" class="mac_dateDDLabel">From Date:</label>
-                        <input type="date" id="mac_start_date" class="mac_dateDD">
+
+                    <!-- Submit -->
+                    <div style="display: flex;">
+                        <button id="mac_AddButton" onclick="macAddForm()" class="macSubmitBtn" type="button"
+                            disabled>Add</button>
+                        <button id="mac_submitButton" onclick="macSubmitForm()" class="macSubmitBtn" type="button"
+                            disabled>Save</button>
                     </div>
-                    <!-- <span>&nbsp;</span> -->
-                    <div>
-                        <label for="end_date" class="mac_dateDDLabel">To Date:</label>
-                        <input type="date" id="mac_end_date" class="mac_dateDD">
-                    </div>
-                    <!-- <span>&nbsp;</span> -->
-                    <div>
-                        <span style="display: contents;">
-                            <label for="mac_hourSelect" class="mac_TimeLabel">Time:</label>
-                            <select id="mac_hourSelect" class="mac_TimeHR">
-                            </select>
-                            <select id="mac_minuteSelect" class="mac_TimeMin">
-                            </select>
-                        </span>
-                    </div>
-                    <!-- <span>&nbsp;</span> -->
-                    </select>
                 </form>
-                <button id="mac_submitButton" onclick="macSubmitForm()" class="macSubmitBtn">Save</button>
-                <!-- Submit -->
+                <!--  -->
+                <div class="addBox hidden" id="addedInfoContainer">
+                </div>
 
             </div>
         </div>
-
-
-
     </div>
-    </div>
-    </div>
-
+    <!--  -->
     <div style="background-color: white;">Model's Time Update</div>
 
     <!-- model popup -->
