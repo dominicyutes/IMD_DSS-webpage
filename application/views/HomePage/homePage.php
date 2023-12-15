@@ -601,8 +601,17 @@
 <!-- print -->
 <script src="leaflet.browser.print.min.js"></script>
 <script>
-L.control.browserPrint().addTo(map);
+    
+// Customize the print options
+var printOptions = {
+    position: 'topleft',
+    logoUrl: 'img\IMDlogo_Ipart.png',
+    logoStyle: 'max-height: 50px; max-width: 50px;',
+    documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
+    printLayer: true,
+};
 
+L.control.browserPrint(printOptions).addTo(map);
 </script>
 
 

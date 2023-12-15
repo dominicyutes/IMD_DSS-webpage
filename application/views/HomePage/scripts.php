@@ -1820,9 +1820,18 @@ const ToggleControl = L.Control.extend({
     onAdd: function(map) {
         const button = L.DomUtil.create('button', 'toggle-button');
         button.textContent = 'Toggle Layers';
+
+        // Function to handle button click
+        function handleButtonClick() {
+            alert('Select Only Two Layers!');
+            L.DomEvent.off(button, 'click', handleButtonClick);
+        }
+
+        L.DomEvent.on(button, 'click', handleButtonClick);
+
         button.onclick = function() {
             toggleSideBySide();
-            button.textContent = sideBySideVisible ? 'Hide Layers' : 'Show Layers';
+            button.textContent = sideBySideVisible ? 'Hide side-by-side' : 'Show side-by-side';
         };
         return button;
     },
@@ -1831,7 +1840,8 @@ const ToggleControl = L.Control.extend({
     }
 });
 
-(new ToggleControl()).addTo(map);
+(new ToggleControl()).addTo(map); 
+
 
 
 //leaflet Fullscreen
@@ -1941,90 +1951,99 @@ var MacroButton = L.Control.extend({
     }
 });
 
-var CustomControls = L.Control.extend({
-    options: {
-        position: 'topright'
-    },
+// var CustomControls = L.Control.extend({
+//     options: {
+//         position: 'topright'
+//     },
 
-    onAdd: function(map) {
-        var container = L.DomUtil.create('div');
+//     onAdd: function(map) {
+//         var container = L.DomUtil.create('div');
 
-        var dropdown = L.DomUtil.create('select', 'custom-dropdown', container);
-        dropdown.innerHTML = `
-            <option value="pdf">PDF</option>
-            <option value="jpg">JPEG</option>
-            <option value="png">PNG</option>
-        `;
+//         var dropdown = L.DomUtil.create('select', 'custom-dropdown', container);
+//         dropdown.innerHTML = `
+//             <option value="pdf">PDF</option>
+//             <option value="jpg">JPEG</option>
+//             <option value="png">PNG</option>
+//         `;
 
-        var ExportButton = L.DomUtil.create('button', 'custom-btn', container);
-        ExportButton.innerHTML = 'Export';
+//         var ExportButton = L.DomUtil.create('button', 'custom-btn', container);
+//         ExportButton.innerHTML = 'Export';
 
-        var loadingSymbol = document.createElement('div');
-        loadingSymbol.className = 'loading-symbol';
-        loadingSymbol.innerHTML = 'Loading...';
-        loadingSymbol.style.display = 'none';
+//         var loadingSymbol = document.createElement('div');
+//         loadingSymbol.className = 'loading-symbol';
+//         loadingSymbol.innerHTML = 'Loading...';
+//         loadingSymbol.style.display = 'none';
 
-        dropdown.style.margin = '0';
-        ExportButton.style.margin = '0';
+//         dropdown.style.margin = '0';
+//         ExportButton.style.margin = '0';
 
-        L.DomEvent.on(ExportButton, 'click', function(e) {
-            var selectedOption = dropdown.options[dropdown.selectedIndex].value;
-            loadingSymbol.style.display = 'inline-block';
+//         L.DomEvent.on(ExportButton, 'click', function(e) {
+//             var selectedOption = dropdown.options[dropdown.selectedIndex].value;
+//             loadingSymbol.style.display = 'inline-block';
 
-            if (selectedOption === 'pdf') {
-                console.log('Downloading as PDF');
-                // Add logic for downloading as PDF if needed
-            } else if (selectedOption === 'jpg') {
-                var currentDate = new Date().toLocaleString('en-GB', {
-                    timeZone: 'UTC'
-                }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
-                    /_/g, '');
+//             if (selectedOption === 'pdf') {
+//                 var logoImg = 'data:image/png;base64, [YourLogoBase64Data]'; // Replace with your base64 image data
 
-                htmlToImage.toJpeg(document.getElementById('map'), {
-                        quality: 0.95
-                    })
-                    .then(function(dataUrl) {
-                        var link = document.createElement('a');
-                        link.download = 'IMD-DSS_' + currentDate + '.jpeg';
-                        link.href = dataUrl;
+//                 html2canvas(document.getElementById('map')).then(function(canvas) {
+//                     var imgData = canvas.toDataURL('image/png');
 
-                        link.click();
-                        loadingSymbol.style.display = 'none';
-                    })
-                    .catch(function(error) {
-                        console.error('Error:', error);
-                    });
-            } else if (selectedOption === 'png') {
-                var currentDate = new Date().toLocaleString('en-GB', {
-                    timeZone: 'UTC'
-                }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
-                    /_/g, '');
+//                     var pdf = new jsPDF('p', 'pt', 'a4');
 
-                htmlToImage.toPng(document.getElementById('map'))
-                    .then(function(dataUrl) {
-                        var link = document.createElement('a');
-                        link.download = 'IMD-DSS_' + currentDate + '.png';
-                        link.href = dataUrl;
+//                     var imgWidth = 595;
+//                     var imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-                        link.click();
-                        loadingSymbol.style.display = 'none';
-                    })
-                    .catch(function(error) {
-                        console.error('Error:', error);
-                    });
-            }
-        });
+//                     pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+//                     pdf.addImage(logoImg, 'PNG', 20, 20, 50, 50);
+//                     pdf.text('Your Default Text', 20, 80);
 
-        container.appendChild(loadingSymbol);
+//                     pdf.save('pageContent.pdf');
+//                     loadingSymbol.style.display = 'none';
+//                 });
+//             } else if (selectedOption === 'jpg') {
+//                 var currentDate = new Date().toLocaleString('en-GB', {
+//                     timeZone: 'UTC'
+//                 }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
+//                     /_/g, '');
 
-        return container;
-    }
-});
+//                 htmlToImage.toJpeg(document.getElementById('map'), {
+//                     quality: 0.95
+//                 }).then(function(dataUrl) {
+//                     var link = document.createElement('a');
+//                     link.download = 'IMD-DSS_' + currentDate + '.jpeg';
+//                     link.href = dataUrl;
 
+//                     link.click();
+//                     loadingSymbol.style.display = 'none';
+//                 }).catch(function(error) {
+//                     console.error('Error:', error);
+//                 });
+//             } else if (selectedOption === 'png') {
+//                 var currentDate = new Date().toLocaleString('en-GB', {
+//                     timeZone: 'UTC'
+//                 }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
+//                     /_/g, '');
 
+//                 htmlToImage.toPng(document.getElementById('map')).then(function(dataUrl) {
+//                     var link = document.createElement('a');
+//                     link.download = 'IMD-DSS_' + currentDate + '.png';
+//                     link.href = dataUrl;
 
-var customControl = new CustomControls();
-customControl.addTo(map);
+//                     link.click();
+//                     loadingSymbol.style.display = 'none';
+//                 }).catch(function(error) {
+//                     console.error('Error:', error);
+//                 });
+//             }
+//         });
+
+//         container.appendChild(loadingSymbol);
+
+//         return container;
+//     }
+// });
+
+// var customControl = new CustomControls();
+// customControl.addTo(map);
 
 
 
