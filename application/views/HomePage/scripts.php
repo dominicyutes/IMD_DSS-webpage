@@ -1895,90 +1895,90 @@ var MacroButton = L.Control.extend({
     }
 });
 
-var CustomControls = L.Control.extend({
-    options: {
-        position: 'topright'
-    },
+// var CustomControls = L.Control.extend({
+//     options: {
+//         position: 'topright'
+//     },
 
-    onAdd: function(map) {
-        var container = L.DomUtil.create('div');
+//     onAdd: function(map) {
+//         var container = L.DomUtil.create('div');
 
-        var dropdown = L.DomUtil.create('select', 'custom-dropdown', container);
-        dropdown.innerHTML = `
-            <option value="pdf">PDF</option>
-            <option value="jpg">JPEG</option>
-            <option value="png">PNG</option>
-        `;
+//         var dropdown = L.DomUtil.create('select', 'custom-dropdown', container);
+//         dropdown.innerHTML = `
+//             <option value="pdf">PDF</option>
+//             <option value="jpg">JPEG</option>
+//             <option value="png">PNG</option>
+//         `;
 
-        var ExportButton = L.DomUtil.create('button', 'custom-btn', container);
-        ExportButton.innerHTML = 'Export';
+//         var ExportButton = L.DomUtil.create('button', 'custom-btn', container);
+//         ExportButton.innerHTML = 'Export';
 
-        var loadingSymbol = document.createElement('div');
-        loadingSymbol.className = 'loading-symbol';
-        loadingSymbol.innerHTML = 'Loading...';
-        loadingSymbol.style.display = 'none';
+//         var loadingSymbol = document.createElement('div');
+//         loadingSymbol.className = 'loading-symbol';
+//         loadingSymbol.innerHTML = 'Loading...';
+//         loadingSymbol.style.display = 'none';
 
-        dropdown.style.margin = '0';
-        ExportButton.style.margin = '0';
+//         dropdown.style.margin = '0';
+//         ExportButton.style.margin = '0';
 
-        L.DomEvent.on(ExportButton, 'click', function(e) {
-            var selectedOption = dropdown.options[dropdown.selectedIndex].value;
-            loadingSymbol.style.display = 'inline-block';
+//         L.DomEvent.on(ExportButton, 'click', function(e) {
+//             var selectedOption = dropdown.options[dropdown.selectedIndex].value;
+//             loadingSymbol.style.display = 'inline-block';
 
-            if (selectedOption === 'pdf') {
-                console.log('Downloading as PDF');
-                // Add logic for downloading as PDF if needed
-            } else if (selectedOption === 'jpg') {
-                var currentDate = new Date().toLocaleString('en-GB', {
-                    timeZone: 'UTC'
-                }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
-                    /_/g, '');
+//             if (selectedOption === 'pdf') {
+//                 console.log('Downloading as PDF');
+//                 // Add logic for downloading as PDF if needed
+//             } else if (selectedOption === 'jpg') {
+//                 var currentDate = new Date().toLocaleString('en-GB', {
+//                     timeZone: 'UTC'
+//                 }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
+//                     /_/g, '');
 
-                htmlToImage.toJpeg(document.getElementById('map'), {
-                        quality: 0.95
-                    })
-                    .then(function(dataUrl) {
-                        var link = document.createElement('a');
-                        link.download = 'IMD-DSS_' + currentDate + '.jpeg';
-                        link.href = dataUrl;
+//                 htmlToImage.toJpeg(document.getElementById('map'), {
+//                         quality: 0.95
+//                     })
+//                     .then(function(dataUrl) {
+//                         var link = document.createElement('a');
+//                         link.download = 'IMD-DSS_' + currentDate + '.jpeg';
+//                         link.href = dataUrl;
 
-                        link.click();
-                        loadingSymbol.style.display = 'none';
-                    })
-                    .catch(function(error) {
-                        console.error('Error:', error);
-                    });
-            } else if (selectedOption === 'png') {
-                var currentDate = new Date().toLocaleString('en-GB', {
-                    timeZone: 'UTC'
-                }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
-                    /_/g, '');
+//                         link.click();
+//                         loadingSymbol.style.display = 'none';
+//                     })
+//                     .catch(function(error) {
+//                         console.error('Error:', error);
+//                     });
+//             } else if (selectedOption === 'png') {
+//                 var currentDate = new Date().toLocaleString('en-GB', {
+//                     timeZone: 'UTC'
+//                 }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
+//                     /_/g, '');
 
-                htmlToImage.toPng(document.getElementById('map'))
-                    .then(function(dataUrl) {
-                        var link = document.createElement('a');
-                        link.download = 'IMD-DSS_' + currentDate + '.png';
-                        link.href = dataUrl;
+//                 htmlToImage.toPng(document.getElementById('map'))
+//                     .then(function(dataUrl) {
+//                         var link = document.createElement('a');
+//                         link.download = 'IMD-DSS_' + currentDate + '.png';
+//                         link.href = dataUrl;
 
-                        link.click();
-                        loadingSymbol.style.display = 'none';
-                    })
-                    .catch(function(error) {
-                        console.error('Error:', error);
-                    });
-            }
-        });
+//                         link.click();
+//                         loadingSymbol.style.display = 'none';
+//                     })
+//                     .catch(function(error) {
+//                         console.error('Error:', error);
+//                     });
+//             }
+//         });
 
-        container.appendChild(loadingSymbol);
+//         container.appendChild(loadingSymbol);
 
-        return container;
-    }
-});
+//         return container;
+//     }
+// });
 
 
 
-var customControl = new CustomControls();
-customControl.addTo(map);
+// var customControl = new CustomControls();
+// customControl.addTo(map);
 
 
 
