@@ -1741,6 +1741,7 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
 
 
 //Leaflet-sideBySide
+//Leaflet-sideBySide
 let sideBySideControl = null; 
 let sideBySideVisible = false; 
 
@@ -1761,9 +1762,18 @@ const ToggleControl = L.Control.extend({
     onAdd: function(map) {
         const button = L.DomUtil.create('button', 'toggle-button');
         button.textContent = 'Toggle Layers';
+
+        // Function to handle button click
+        function handleButtonClick() {
+            alert('Select Only Two Layers!');
+            L.DomEvent.off(button, 'click', handleButtonClick);
+        }
+
+        L.DomEvent.on(button, 'click', handleButtonClick);
+
         button.onclick = function() {
             toggleSideBySide();
-            button.textContent = sideBySideVisible ? 'Hide Layers' : 'Show Layers';
+            button.textContent = sideBySideVisible ? 'Hide side-by-side' : 'Show side-by-side';
         };
         return button;
     },
@@ -1772,7 +1782,7 @@ const ToggleControl = L.Control.extend({
     }
 });
 
-(new ToggleControl()).addTo(map);
+(new ToggleControl()).addTo(map); 
 
 
 //leaflet Fullscreen
