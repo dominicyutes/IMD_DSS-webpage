@@ -1492,44 +1492,46 @@ function macShowSubParameterNames(value) {
     macGetSubParameterNames.innerHTML = macPushSubParameterNames;
 }
 
+// for disabled the ADD and SAVE buttons
 function handleInputChange() {
-    const inputValue = document.getElementById("macroNames").value;
+    const inputValue = document.getElementById("macroNames").value.trim();
+    console.log(inputValue, "dfghjk");
     const buttons = document.querySelectorAll(".macSubmitBtn");
 
     if (inputValue) {
         for (const button of buttons) {
-            button.disabled = false; // Enable the buttons when there is a value
+            button.disabled = false;
         }
     } else {
         for (const button of buttons) {
-            button.disabled = true; // Disable the buttons when there is no value
+            button.disabled = true;
         }
     }
+    if (!document.getElementById("macroNames").classList.contains("blurred-listener")) {
+        document.getElementById("macroNames").addEventListener("blur", handleInputChange);
+        document.getElementById("macroNames").classList.add("blurred-listener");
+    }
 }
-
+handleInputChange();
 
 // AddButtonForm for MACRO
-let macroData = [];
-let saveMacro = [];
+let macroData = []; // for add btn, saving 3 list 
+let saveMacro = []; //for save btn
 let counter = 0;
 
 function macAddForm() {
     event.preventDefault();
-    //
-    const addedInfoContainerVisible = document.getElementById("addedInfoContainer");
 
-    let isVisible = window.getComputedStyle(addedInfoContainerVisible).display !== "none";
-    addedInfoContainerVisible.style.display = isVisible ? "block" : "block";
+    let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
 
     let mac_macroNames = document.getElementById('macroNames').value;
     let mac_model_Names = document.getElementById('mac_modelNames').value;
     let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
     let mac_sub_parameter = document.getElementById('mac_subparameter').value;
-    //
+
     let ulId = "listContainerMacro_" + counter++;
-    //
-    let addedInfoDiv = document.createElement("div");
-    addedInfoDiv.innerHTML = `<div id="toggleDiv">
+
+    let addedInfoDiv = `<div id="toggleDiv">
         <span onclick="MacroPlusToggle('${ulId}')">+ Macro Name: ${mac_macroNames}</span>
         <ul id="${ulId}" class="listContainerMacro">
             <li>${mac_model_Names}</li>
@@ -1538,17 +1540,23 @@ function macAddForm() {
         </ul>
     </div>`;
 
-    macroData.push(addedInfoDiv.innerHTML);
+    macroData.push(addedInfoDiv);
 
     saveMacro.push({
+        ulId: ulId,
         macroName: mac_macroNames,
+        mac_model_Names: mac_model_Names,
+        mac_parameter_Names: mac_parameter_Names,
         mac_sub_parameter: mac_sub_parameter
     });
 
-    addedInfoContainerVisible.innerHTML = macroData.join("");
-    console.log(ulId, ": ", macroData, saveMacro);
+    addedInfoContainerDiv.innerHTML = macroData.join("");
+    console.log(ulId, ": ", "macroData: ", macroData, "saveMacro: ", saveMacro);
+    handleInputChange();
 }
 
+
+//MacroGroupList Toggle 
 function MacroPlusToggle(ulId) {
     let macListContainer = document.getElementById(ulId);
     if (macListContainer.style.display === "none" || macListContainer.style.display === "") {
@@ -1557,7 +1565,6 @@ function MacroPlusToggle(ulId) {
         macListContainer.style.display = "none";
     }
 }
-
 
 // submitForm for MACRO
 function macSubmitForm() {
@@ -1568,25 +1575,7 @@ function macSubmitForm() {
     let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
     let mac_sub_parameter = document.getElementById('mac_subparameter').value;
 
-    let addedInfoContainer = document.getElementById("addedInfoContainer");
-    let isVisible = window.getComputedStyle(addedInfoContainer).display == "none";
-    //
-
-    let savedMacroInfo = '';
-    // SM saveMacro
-    for (let SM = 0; SM < saveMacro.length; SM++) {
-        savedMacroInfo += `Data ${SM + 1}:\n`;
-        savedMacroInfo += `Macro Name: ${saveMacro[SM].macroName}\n`;
-        savedMacroInfo += `Sub Parameter: ${saveMacro[SM].mac_sub_parameter}\n\n`;
-    }
-    console.log(savedMacroInfo);
-
-    let subParameters = [];
-    //SP subParameters
-    for (let SP = 0; SP < saveMacro.length; SP++) {
-        subParameters.push(saveMacro[SP].mac_sub_parameter);
-    }
-    console.log(subParameters);
+    let addedInfoContainerSub = document.getElementById('addedInfoContainer');
 
     // Create a new button
     let newButton = document.createElement('button');
@@ -1594,10 +1583,30 @@ function macSubmitForm() {
     newButton.id = mac_macroNames;
     newButton.innerText = mac_macroNames;
 
-    // Add a click event listener to the new button
     newButton.addEventListener('click', function() {
-        console.log('Details of the saved button:', subParameters);
+        showMacro = [];
+        let filteredMicro = saveMacro.filter(x => x.macroName == mac_macroNames);
+        filteredMicro.forEach(macro => {
+            console.log(macro, mac_macroNames, "kkkkkk");
+            if (macro) {
+                showInfoDiv = `<div id="toggleDiv">
+                <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.macroName}</span>
+                <ul id="${macro.ulId}" class="listContainerMacro">
+                    <li>${macro.mac_model_Names}</li>
+                    <li>${macro.mac_parameter_Names}</li>
+                    <li>${macro.mac_sub_parameter}</li>
+                </ul>
+                <button class="edit-button" onclick="editMacro('${macro.ulId}', '${macro.macroName}', '${macro.mac_model_Names}', '${macro.mac_parameter_Names}', '${macro.mac_sub_parameter}')">E</button>
+                <button class="delete-button" onclick="deleteMacro('${macro.ulId}')">D</button>
+            </div>`;
+                showMacro.push(showInfoDiv);
+            } else {
+                console.log('Details not found for:', newButton.id);
+            }
+        })
+        addedInfoContainer.innerHTML = showMacro.join('');
     });
+
     // Append the new button to the dropdown content
     document.querySelector('.dropdown-content').appendChild(newButton);
 
@@ -1606,8 +1615,62 @@ function macSubmitForm() {
     document.getElementById('mac_modelNames').value = '';
     document.getElementById('mac_parameterNames').value = '';
     document.getElementById('mac_subparameter').value = '';
+    //
+    handleInputChange();
+    macroData = [];
+    addedInfoContainer.innerHTML = "";
 }
 
+//*********** */
+function editMacro(ulId, macroName, modelNames, parameterNames, subParameter) {
+    // // Set values in the form for editing
+    document.getElementById('macroNames').value = macroName;
+    document.getElementById('mac_modelNames').value = modelNames;
+    document.getElementById('mac_parameterNames').value = parameterNames;
+    document.getElementById('mac_subparameter').value = subParameter;
+
+    let findID = saveMacro.find(x => x.ulId == ulId);
+    console.log(findID, "jacob");
+    handleInputChange();
+}
+
+
+
+//*********** */
+
+//Delete for macroList
+function deleteMacro(ulId) {
+    removeElementById(ulId);
+}
+
+function removeElementById(elementId) {
+    let element = document.getElementById(elementId);
+    if (element) {
+        element.parentNode.removeChild(element);
+        // Update the saveMacro array by removing the corresponding entry
+        saveMacro = saveMacro.filter(macro => macro.ulId !== elementId);
+        // Update the macroData array by regenerating the HTML
+        macroData = saveMacro.map(macro => generateAddedInfoDiv(macro)).join("");
+        document.getElementById('addedInfoContainer').innerHTML = macroData;
+    }
+    handleInputChange();
+}
+
+function generateAddedInfoDiv(macro) {
+    return `<div id="toggleDiv">
+        <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.macroName}</span>
+        <ul id="${macro.ulId}" class="listContainerMacro">
+            <li>${macro.mac_model_Names}</li>
+            <li>${macro.mac_parameter_Names}</li>
+            <li>${macro.mac_sub_parameter}</li>
+        </ul>
+        <button class="edit-button" onclick="editMacro('${macro.ulId}', '${macro.macroName}', '${macro.mac_model_Names}', '${macro.mac_parameter_Names}', '${macro.mac_sub_parameter}')">E</button>
+        <button class="delete-button" onclick="deleteMacro('${macro.ulId}')">D</button>
+    </div>`;
+}
+
+
+//********************************************************* */
 //Macro Create Macro Toggle
 function createMacroForm() {
     let clickMacro = document.getElementById("showCreateMacroLayers");
@@ -1944,9 +2007,10 @@ var CustomControls = L.Control.extend({
                 // Add logic for downloading as PDF if needed
             } else if (selectedOption === 'jpg') {
                 var currentDate = new Date().toLocaleString('en-GB', {
-                    timeZone: 'UTC'
-                }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
-                    /_/g, '');
+                        timeZone: 'UTC'
+                    }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2)
+                    .replace(
+                        /_/g, '');
 
                 htmlToImage.toJpeg(document.getElementById('map'), {
                         quality: 0.95
@@ -1964,9 +2028,10 @@ var CustomControls = L.Control.extend({
                     });
             } else if (selectedOption === 'png') {
                 var currentDate = new Date().toLocaleString('en-GB', {
-                    timeZone: 'UTC'
-                }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
-                    /_/g, '');
+                        timeZone: 'UTC'
+                    }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2)
+                    .replace(
+                        /_/g, '');
 
                 htmlToImage.toPng(document.getElementById('map'))
                     .then(function(dataUrl) {
@@ -9395,7 +9460,8 @@ $("body").on("change", "input[type=checkbox]", function() {
                 );
             }
 
-            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join("");
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join(
+                "");
         }
         if (_this.context._layer.group.name == "NCUMR lightning Product") {
             if (panelLayerNCUMRlightningProduct_Title.innerHTML == '') {
