@@ -1875,6 +1875,7 @@ var ObservationButton = L.Control.extend({
 // buttonContainer.appendChild(new ObservationButton().onAdd(map));
 
 
+
 // Create a custom control button for ObservationButton
 var MacroButton = L.Control.extend({
     options: {

@@ -662,6 +662,11 @@
         <?php $this->load->view('HomePage/scripts'); ?>
 </body>
 
+<script src="https://unpkg.com/leaflet"></script>
+<script src="https://unpkg.com/leaflet-simple-map-screenshoter"></script>
+<script>
+L.simpleMapScreenshoter().addTo(map);
+</script>
 
 <!-- print -->
 <script src="leaflet.browser.print.min.js"></script>
@@ -669,13 +674,16 @@
 // Customize the print options
 var printOptions = {
     position: 'topleft',
-    logoUrl: 'img\IMDlogo_Ipart.png',
+    logoUrl: 'img/IMDlogo_Ipart.png',
     logoStyle: 'max-height: 50px; max-width: 50px;',
-    documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
+    documentTitle: 'WEATHER DECISION SUPPORT SYSTEM - IMD',
     printLayer: true,
+    header: 'Your Custom Header Text',
+    footer: 'Your Custom Footer Text',
 };
 
 L.control.browserPrint(printOptions).addTo(map);
+
 
 </script>
 
