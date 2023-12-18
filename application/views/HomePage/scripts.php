@@ -1483,6 +1483,7 @@ function macShowSubParameterNames(value) {
     let macGetSubParameterNames = document.getElementById("mac_subparameter");
     let macPushSubParameterNames = '';
     var macSecondDropdown = subParametersList.filter(x => x.category == value);
+
     for (let MTD = 0; MTD < macSecondDropdown.length; MTD++) {
         if (macSecondDropdown[MTD].name) {
             macPushSubParameterNames += `<option>${macSecondDropdown[MTD].name}</option><br/><br/>`;
@@ -1491,64 +1492,193 @@ function macShowSubParameterNames(value) {
     macGetSubParameterNames.innerHTML = macPushSubParameterNames;
 }
 
-//MACRO hr HS-hourSelect
-// let macGetHourSelect = document.getElementById("mac_hourSelect");
-// // let macPushHourSelect = '';
-// for (let MHS = 0; MHS < 25; MHS++) {
-//     macPushHourSelect += `<option>${[MHS]}</option><br/><br/>`;
-// }
-// macGetHourSelect.innerHTML = macPushHourSelect;
+// for disabled the ADD and SAVE buttons
+function handleInputChange() {
+    const inputValue = document.getElementById("macroNames").value.trim();
+    console.log(inputValue, "dfghjk");
+    const buttons = document.querySelectorAll(".macSubmitBtn");
 
-//MACRO min MS-minuteSelect
-// let macGetMinSelect = document.getElementById("mac_minuteSelect");
-// let macPushMinSelect = '';
-// for (let MMS = 0; MMS < 60; MMS++) {
-//     macPushMinSelect += `<option>${[MMS]}</option><br/><br/>`;
-// }
-// macGetMinSelect.innerHTML = macPushMinSelect;
+    if (inputValue) {
+        for (const button of buttons) {
+            button.disabled = false;
+        }
+    } else {
+        for (const button of buttons) {
+            button.disabled = true;
+        }
+    }
+    if (!document.getElementById("macroNames").classList.contains("blurred-listener")) {
+        document.getElementById("macroNames").addEventListener("blur", handleInputChange);
+        document.getElementById("macroNames").classList.add("blurred-listener");
+    }
+}
+handleInputChange();
 
-//submitForm for MACRO
-function macSubmitForm() {
+// AddButtonForm for MACRO
+let macroData = []; // for add btn, saving 3 list 
+let saveMacro = []; //for save btn
+let counter = 0;
+
+function macAddForm() {
+    event.preventDefault();
+
+    let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
+
     let mac_macroNames = document.getElementById('macroNames').value;
     let mac_model_Names = document.getElementById('mac_modelNames').value;
     let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
     let mac_sub_parameter = document.getElementById('mac_subparameter').value;
-    let mac_fromDate = document.getElementById('mac_start_date').value;
-    let mac_toDate = document.getElementById('mac_end_date').value;
-    let mac_hour_Select = document.getElementById('mac_hourSelect').value;
-    let mac_minute_Select = document.getElementById('mac_minuteSelect').value;
 
-    let message = "MACRO" + "\n" + "Macro Names: " + mac_macroNames + "\n" +
-        "Model: " + mac_model_Names + "\n" +
-        "Parameter: " + mac_parameter_Names + "\n" +
-        "SubParameter: " + mac_sub_parameter + "\n" +
-        "Start Date: " + mac_fromDate + "\n" +
-        "End Date: " + mac_toDate + "\n" +
-        "Time: " + mac_hour_Select + ":" + mac_minute_Select;
-    alert(message);
+    let ulId = "listContainerMacro_" + counter++;
+
+    let addedInfoDiv = `<div id="toggleDiv">
+        <span onclick="MacroPlusToggle('${ulId}')">+ Macro Name: ${mac_macroNames}</span>
+        <ul id="${ulId}" class="listContainerMacro">
+            <li>${mac_model_Names}</li>
+            <li>${mac_parameter_Names}</li>
+            <li>${mac_sub_parameter}</li>
+        </ul>
+    </div>`;
+
+    macroData.push(addedInfoDiv);
+
+    saveMacro.push({
+        ulId: ulId,
+        macroName: mac_macroNames,
+        mac_model_Names: mac_model_Names,
+        mac_parameter_Names: mac_parameter_Names,
+        mac_sub_parameter: mac_sub_parameter
+    });
+
+    addedInfoContainerDiv.innerHTML = macroData.join("");
+    console.log(ulId, ": ", "macroData: ", macroData, "saveMacro: ", saveMacro);
+    handleInputChange();
+}
 
 
+//MacroGroupList Toggle 
+function MacroPlusToggle(ulId) {
+    let macListContainer = document.getElementById(ulId);
+    if (macListContainer.style.display === "none" || macListContainer.style.display === "") {
+        macListContainer.style.display = "block";
+    } else {
+        macListContainer.style.display = "none";
+    }
+}
+
+// submitForm for MACRO
+function macSubmitForm() {
+    event.preventDefault();
+    //
+    let mac_macroNames = document.getElementById('macroNames').value;
+    let mac_model_Names = document.getElementById('mac_modelNames').value;
+    let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
+    let mac_sub_parameter = document.getElementById('mac_subparameter').value;
+
+    let addedInfoContainerSub = document.getElementById('addedInfoContainer');
 
     // Create a new button
     let newButton = document.createElement('button');
     newButton.classList.add('save-button');
-    newButton.id = mac_macroNames; // Use the macroNames as the ID of the new button
+    newButton.id = mac_macroNames;
     newButton.innerText = mac_macroNames;
 
-    // Add a click event listener to the new button
     newButton.addEventListener('click', function() {
-        console.log('Details of the saved button:', mac_macroNames, mac_model_Names, mac_parameter_Names,
-            mac_sub_parameter, mac_fromDate, mac_toDate, mac_hour_Select, mac_minute_Select);
-        alert('Details of the saved button:' + "\n" + mac_macroNames + "\n" + mac_model_Names + "\n" +
-            mac_parameter_Names + "\n" + mac_sub_parameter + "\n" + mac_fromDate + "\n" + mac_toDate +
-            "\n" + mac_hour_Select + ":" + mac_minute_Select);
+        showMacro = [];
+        let filteredMicro = saveMacro.filter(x => x.macroName == mac_macroNames);
+        filteredMicro.forEach(macro => {
+            console.log(macro, mac_macroNames, "kkkkkk");
+            if (macro) {
+                showInfoDiv = `<div id="toggleDiv">
+                <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.macroName}</span>
+                <ul id="${macro.ulId}" class="listContainerMacro">
+                    <li>${macro.mac_model_Names}</li>
+                    <li>${macro.mac_parameter_Names}</li>
+                    <li>${macro.mac_sub_parameter}</li>
+                </ul>
+                <button class="edit-button" onclick="editMacro('${macro.ulId}', '${macro.macroName}', '${macro.mac_model_Names}', '${macro.mac_parameter_Names}', '${macro.mac_sub_parameter}')">E</button>
+                <button class="delete-button" onclick="deleteMacro('${macro.ulId}')">D</button>
+            </div>`;
+                showMacro.push(showInfoDiv);
+            } else {
+                console.log('Details not found for:', newButton.id);
+            }
+        })
+        addedInfoContainer.innerHTML = showMacro.join('');
     });
+
     // Append the new button to the dropdown content
     document.querySelector('.dropdown-content').appendChild(newButton);
 
-    // Clear the form fields
+    // // Clear the form fields
     document.getElementById('macroNames').value = '';
-    // Add code to clear other form fields if needed
+    document.getElementById('mac_modelNames').value = '';
+    document.getElementById('mac_parameterNames').value = '';
+    document.getElementById('mac_subparameter').value = '';
+    //
+    handleInputChange();
+    macroData = [];
+    addedInfoContainer.innerHTML = "";
+}
+
+//*********** */
+function editMacro(ulId, macroName, modelNames, parameterNames, subParameter) {
+    // // Set values in the form for editing
+    document.getElementById('macroNames').value = macroName;
+    document.getElementById('mac_modelNames').value = modelNames;
+    document.getElementById('mac_parameterNames').value = parameterNames;
+    document.getElementById('mac_subparameter').value = subParameter;
+
+    let findID = saveMacro.find(x => x.ulId == ulId);
+    console.log(findID, "jacob");
+    handleInputChange();
+}
+
+
+
+//*********** */
+
+//Delete for macroList
+function deleteMacro(ulId) {
+    removeElementById(ulId);
+}
+
+function removeElementById(elementId) {
+    let element = document.getElementById(elementId);
+    if (element) {
+        element.parentNode.removeChild(element);
+        // Update the saveMacro array by removing the corresponding entry
+        saveMacro = saveMacro.filter(macro => macro.ulId !== elementId);
+        // Update the macroData array by regenerating the HTML
+        macroData = saveMacro.map(macro => generateAddedInfoDiv(macro)).join("");
+        document.getElementById('addedInfoContainer').innerHTML = macroData;
+    }
+    handleInputChange();
+}
+
+function generateAddedInfoDiv(macro) {
+    return `<div id="toggleDiv">
+        <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.macroName}</span>
+        <ul id="${macro.ulId}" class="listContainerMacro">
+            <li>${macro.mac_model_Names}</li>
+            <li>${macro.mac_parameter_Names}</li>
+            <li>${macro.mac_sub_parameter}</li>
+        </ul>
+        <button class="edit-button" onclick="editMacro('${macro.ulId}', '${macro.macroName}', '${macro.mac_model_Names}', '${macro.mac_parameter_Names}', '${macro.mac_sub_parameter}')">E</button>
+        <button class="delete-button" onclick="deleteMacro('${macro.ulId}')">D</button>
+    </div>`;
+}
+
+
+//********************************************************* */
+//Macro Create Macro Toggle
+function createMacroForm() {
+    let clickMacro = document.getElementById("showCreateMacroLayers");
+    if (clickMacro.style.display === "block" || clickMacro.style.display === "") {
+        clickMacro.style.display = "none";
+    } else {
+        clickMacro.style.display = "block";
+    }
 }
 
 //MACRO-toggleObservation
@@ -1558,15 +1688,6 @@ function macToggleObservation() {
     let isHidden = macroContainerFn.classList.contains('hidden');
     macroContainerFn.classList.toggle('hidden');
     map.style.width = isHidden ? '83%' : '99%';
-}
-//Macro Create Macro Toggle
-function createMacroForm() {
-    let clickMacro = document.getElementById("showCreateMacroLayers");
-    if (clickMacro.style.display === "block" || clickMacro.style.display === "") {
-        clickMacro.style.display = "none";
-    } else {
-        clickMacro.style.display = "block";
-    }
 }
 
 //leaflet starts here
@@ -1741,8 +1862,9 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
 
 
 //Leaflet-sideBySide
-let sideBySideControl = null; 
-let sideBySideVisible = false; 
+//Leaflet-sideBySide
+let sideBySideControl = null;
+let sideBySideVisible = false;
 
 function toggleSideBySide() {
     if (sideBySideVisible) {
@@ -1777,8 +1899,7 @@ const ToggleControl = L.Control.extend({
         return button;
     },
 
-    onRemove: function(map) {
-    }
+    onRemove: function(map) {}
 });
 
 (new ToggleControl()).addTo(map);
@@ -1819,6 +1940,30 @@ var baseMaps = [{
 map.addControl(L.control.styleEditor({
     position: "topleft"
 }))
+
+// drawControl starts here
+// let drawnItems = new L.FeatureGroup();
+// map.addLayer(drawnItems);
+
+// let drawControl = new L.Control.Draw({
+//     draw: {
+//         polyline: true,
+//         polygon: true,
+//         rectangle: true,
+//         circle: true,
+//         marker: true
+//     },
+//     edit: {
+//         featureGroup: drawnItems
+//     }
+// });
+
+// if (drawControl) {
+//     map.addControl(drawControl);
+//     console.log("draw working");
+// } else {
+//     console.error('draw not working');
+// }
 
 // drawControl starts here
 const drawnItems = new L.FeatureGroup();
@@ -7873,37 +8018,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedRainfallIntensityDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'NCUM DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'NEPS DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'WRF DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'GEFS DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'ECMWF DAY1') {
                 clickedRainfallIntensityDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
 
             panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
@@ -7919,37 +8064,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedRainfallIntensityDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'NCUM DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'NEPS DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'WRF DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'GEFS DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'ECMWF DAY2') {
                 clickedRainfallIntensityDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
 
             panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
@@ -7965,37 +8110,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedRainfallIntensityDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'NCUM DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'NEPS DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'WRF DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'GEFS DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'ECMWF DAY3') {
                 clickedRainfallIntensityDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
 
             panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
@@ -8011,37 +8156,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedRainfallIntensityDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'NCUM DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'NEPS DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'WRF DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'GEFS DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'ECMWF DAY4') {
                 clickedRainfallIntensityDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
 
             panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
@@ -8057,37 +8202,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedRainfallIntensityDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'NCUM DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'NEPS DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'WRF DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'GEFS DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
             if (layer_name == 'ECMWF DAY5') {
                 clickedRainfallIntensityDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				RainfallIntensityLegendImage();
+                RainfallIntensityLegendImage();
             }
 
             panelLayerRainfallIntensityDay5_lists.innerHTML = clickedRainfallIntensityDay5Lists.join("");
@@ -8113,37 +8258,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMSLPDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'NCUM DAY1') {
                 clickedMSLPDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'NEPS DAY1') {
                 clickedMSLPDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'WRF DAY1') {
                 clickedMSLPDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'GEFS DAY1') {
                 clickedMSLPDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'ECMWF DAY1') {
                 clickedMSLPDay1Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
 
             panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
@@ -8159,37 +8304,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMSLPDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'NCUM DAY2') {
                 clickedMSLPDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'NEPS DAY2') {
                 clickedMSLPDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'WRF DAY2') {
                 clickedMSLPDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'GEFS DAY2') {
                 clickedMSLPDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'ECMWF DAY2') {
                 clickedMSLPDay2Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
 
             panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
@@ -8205,37 +8350,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMSLPDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'NCUM DAY3') {
                 clickedMSLPDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'NEPS DAY3') {
                 clickedMSLPDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'WRF DAY3') {
                 clickedMSLPDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'GEFS DAY3') {
                 clickedMSLPDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'ECMWF DAY3') {
                 clickedMSLPDay3Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
 
             panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
@@ -8251,37 +8396,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMSLPDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'NCUM DAY4') {
                 clickedMSLPDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'NEPS DAY4') {
                 clickedMSLPDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'WRF DAY4') {
                 clickedMSLPDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'GEFS DAY4') {
                 clickedMSLPDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'ECMWF DAY4') {
                 clickedMSLPDay4Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
 
             panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
@@ -8297,37 +8442,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 clickedMSLPDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'NCUM DAY5') {
                 clickedMSLPDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'NEPS DAY5') {
                 clickedMSLPDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'WRF DAY5') {
                 clickedMSLPDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'GEFS DAY5') {
                 clickedMSLPDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
             if (layer_name == 'ECMWF DAY5') {
                 clickedMSLPDay5Lists.push(
                     `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				MSLPDayLegendImage();
+                MSLPDayLegendImage();
             }
 
             panelLayerMSLPDay5_lists.innerHTML = clickedMSLPDay5Lists.join("");
@@ -8345,41 +8490,41 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
 
             if (layer_name === 'GFS DAY1') {
-				clicked10mWINDDay1Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                clicked10mWINDDay1Lists.push(
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
 
             if (layer_name == 'NCUM DAY1') {
                 clicked10mWINDDay1Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'NEPS DAY1') {
                 clicked10mWINDDay1Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'WRF DAY1') {
                 clicked10mWINDDay1Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'GEFS DAY1') {
                 clicked10mWINDDay1Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'ECMWF DAY1') {
                 clicked10mWINDDay1Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
 
             panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
@@ -8393,39 +8538,39 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY2') {
                 clicked10mWINDDay2Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'NCUM DAY2') {
                 clicked10mWINDDay2Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'NEPS DAY2') {
                 clicked10mWINDDay2Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'WRF DAY2') {
                 clicked10mWINDDay2Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'GEFS DAY2') {
                 clicked10mWINDDay2Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'ECMWF DAY2') {
                 clicked10mWINDDay2Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
 
             panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
@@ -8439,39 +8584,39 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY3') {
                 clicked10mWINDDay3Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'NCUM DAY3') {
                 clicked10mWINDDay3Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'NEPS DAY3') {
                 clicked10mWINDDay3Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'WRF DAY3') {
                 clicked10mWINDDay3Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'GEFS DAY3') {
                 clicked10mWINDDay3Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'ECMWF DAY3') {
                 clicked10mWINDDay3Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
 
             panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
@@ -8485,39 +8630,39 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY4') {
                 clicked10mWINDDay4Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'NCUM DAY4') {
                 clicked10mWINDDay4Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'NEPS DAY4') {
                 clicked10mWINDDay4Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'WRF DAY4') {
                 clicked10mWINDDay4Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'GEFS DAY4') {
                 clicked10mWINDDay4Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'ECMWF DAY4') {
                 clicked10mWINDDay4Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
 
             panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
@@ -8531,39 +8676,39 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             if (layer_name == 'GFS DAY5') {
                 clicked10mWINDDay5Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'NCUM DAY5') {
                 clicked10mWINDDay5Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'NEPS DAY5') {
                 clicked10mWINDDay5Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'WRF DAY5') {
                 clicked10mWINDDay5Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'GEFS DAY5') {
                 clicked10mWINDDay5Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
             if (layer_name == 'ECMWF DAY5') {
                 clicked10mWINDDay5Lists.push(
-					`<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
+                    `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                 );
-				mWINDDayLegendImage();
+                mWINDDayLegendImage();
             }
 
             panelLayer10mWINDDay5_lists.innerHTML = clicked10mWINDDay5Lists.join("");
@@ -8796,10 +8941,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 00UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(MeerutMarker);
@@ -8843,10 +8988,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 01UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X66);
@@ -8890,10 +9035,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 02UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X70);
@@ -8936,10 +9081,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 03UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X74);
@@ -8982,10 +9127,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 04UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X78);
@@ -9029,10 +9174,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 05UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X82);
@@ -9075,10 +9220,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 06UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X86);
@@ -9121,10 +9266,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 07UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X90);
@@ -9167,10 +9312,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 08UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X94);
@@ -9214,10 +9359,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 09UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X98);
@@ -9260,10 +9405,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 10UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X102);
@@ -9307,10 +9452,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 11UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X106);
@@ -9354,10 +9499,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 12UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X110);
@@ -9401,10 +9546,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 13UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X114);
@@ -9448,10 +9593,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 14UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X118);
@@ -9495,10 +9640,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 15UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X122);
@@ -9542,10 +9687,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 16UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X126);
@@ -9589,10 +9734,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 17UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X130);
@@ -9636,10 +9781,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 18UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X134);
@@ -9683,10 +9828,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 19UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X138);
@@ -9729,10 +9874,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 20UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X142);
@@ -9776,10 +9921,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 21UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X146);
@@ -9823,10 +9968,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 22UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X150);
@@ -9870,10 +10015,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'METAR 23UTC WIND SPEED AND DIRECTION') {
             clickedMetarWindSpeedAndDirectionLists = clickedMetarWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X154);
@@ -9942,10 +10087,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'SYNOP 00UTC WIND SPEED AND DIRECTION') {
             clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X5);
@@ -10020,10 +10165,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'SYNOP 03UTC WIND SPEED AND DIRECTION') {
             clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X3);
@@ -10097,10 +10242,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'SYNOP 06UTC WIND SPEED AND DIRECTION') {
             clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X21);
@@ -10174,10 +10319,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'SYNOP 09UTC WIND SPEED AND DIRECTION') {
             clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X29);
@@ -10252,10 +10397,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'SYNOP 12UTC WIND SPEED AND DIRECTION') {
             clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X37);
@@ -10330,10 +10475,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'SYNOP 15UTC WIND SPEED AND DIRECTION') {
             clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X45);
@@ -10408,10 +10553,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'SYNOP 18UTC WIND SPEED AND DIRECTION') {
             clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X53);
@@ -10486,10 +10631,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'SYNOP 21UTC WIND SPEED AND DIRECTION') {
             clickedSynopWindSpeedAndDirectionLists = clickedSynopWindSpeedAndDirectionLists.filter(
-            checkList => {
-                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-                return clickedLayer != uncheckLayer
-            });
+                checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
             panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join(
                 "");
             map.removeLayer(X61);
@@ -13039,6 +13184,7 @@ function RainfallIntensityLegendImage() {
     </span>
     </span>`
 }
+
 function MSLPDayLegendImage() {
     MSLPDayImage.innerHTML = `<span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
   <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -13066,6 +13212,7 @@ function MSLPDayLegendImage() {
 
     </span>`
 }
+
 function mWINDDayLegendImage() {
     mWINDDayImage.innerHTML = `<svg width="60" height="50" style="transform: rotate(90deg);">
 	<g>

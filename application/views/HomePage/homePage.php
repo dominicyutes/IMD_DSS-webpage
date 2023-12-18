@@ -37,7 +37,6 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"  crossorigin="anonymous"/>
     <!-- Include Leaflet Side-by-Side CSS -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-side-by-side@1.0.4/dist/leaflet-side-by-side.css" /> -->
-
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
@@ -46,8 +45,12 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- Include Leaflet fullscreen JS-->
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+
     <!-- leaflet-draw JS -->
     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script> -->
+
     <!-- Include Leaflet LocationSearch JS -->
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
     <!-- Include Leaflet mouseposition JS -->
@@ -242,7 +245,7 @@
                     <div>
                         <label for="macroNames" class="macroNameLabel">Macro Name:</label>
                         <input type="text" class="macroNameInput" id="macroNames" placeholder="customize name"
-                            onchange="handleInputChange()" required &nbsp;>
+                            onchange="handleInputChange()" autocomplete="off" required &nbsp;>
                     </div>
                     <div>
                         <label for="mac_modelNames" class="mac_firstDDLabel">Model:</label>
@@ -273,7 +276,7 @@
                     </div>
                 </form>
                 <!--  -->
-                <div class="addBox hidden" id="addedInfoContainer">
+                <div class="addBox" id="addedInfoContainer">
                 </div>
 
             </div>
@@ -460,8 +463,7 @@
 
                     <!-- synop3hRainfall -->
                     <h5 id="synop3hRainfall-Title" style="color: #000000;"></h5>
-                    <div id="synop3hRainfallImage"
-                        style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                    <div id="synop3hRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
                     </div>
                     <p id="synop3hRainfall-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
@@ -521,7 +523,8 @@
                 <!-- SOUNDING -->
                 <div id="SOUNDING_Row" style="display: none;">
                     <h4 id="SOUNDING" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
-                    <div id="soundingImage" style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;"></div>
+                    <div id="soundingImage" style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
+                    </div>
 
                     <h5 id="SOUNDING00UTCWIND-Title" style="color: #000000;"></h5>
                     <p id="SOUNDING00UTCWIND-lists" style="flex-wrap: wrap;"></p>
@@ -546,7 +549,8 @@
                 <div class="row" id="SHIPANDBUOY_Row" style="display: none;">
                     <h4 id="SHIPANDBUOY" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
                     </h4>
-					<div id="SHIPANDBUOYImage" style="margin-left: 50px; margin-top: 10px display: flex; flex-wrap: wrap;"></div>
+                    <div id="SHIPANDBUOYImage"
+                        style="margin-left: 50px; margin-top: 10px display: flex; flex-wrap: wrap;"></div>
                     <h5 id="SHIPANDBUOY-Title" style="color: #000000;"></h5>
                     <p id="SHIPANDBUOY-lists" style="flex-wrap: wrap;"></p>
                 </div>
@@ -556,51 +560,54 @@
                     </h4>
 
                     <h5 id="WRFReflectivity-Title" style="color: #000000;"></h5>
-					<div id="WRFReflectivityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="WRFReflectivityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <p id="WRFReflectivity-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="WRFlightningProduct-Title" style="color: #000000;"></h5>
-					<div id="WRFlightningProductImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="WRFlightningProductImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <p id="WRFlightningProduct-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="WRFAccumlatedRainfall-Title" style="color: #000000;"></h5>
-					<div id="WRFAccumlatedRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="WRFAccumlatedRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                    </div>
                     <p id="WRFAccumlatedRainfall-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="lightningPotentialindex-Title" style="color: #000000;"></h5>
-					<div id="lightningPotentialindexImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="lightningPotentialindexImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                    </div>
                     <p id="lightningPotentialindex-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="NCUMRlightningProduct-Title" style="color: #000000;"></h5>
-					<div id="NCUMRlightningProductImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="NCUMRlightningProductImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                    </div>
                     <p id="NCUMRlightningProduct-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="NCUMRWindGust-Title" style="color: #000000;"></h5>
-					<div id="NCUMRWindGustImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="NCUMRWindGustImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <p id="NCUMRWindGust-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="NCUMRRainfall-Title" style="color: #000000;"></h5>
-					<div id="NCUMRRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="NCUMRRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <p id="NCUMRRainfall-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="HRRR_SPHourlyDBZ-Title" style="color: #000000;"></h5>
-					<div id="HRRR_SPHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="HRRR_SPHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <p id="HRRR_SPHourlyDBZ-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="HRRR_NEHourlyDBZ-Title" style="color: #000000;"></h5>
-					<div id="HRRR_NEHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="HRRR_NEHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <p id="HRRR_NEHourlyDBZ-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="HRRR_NWHourlyDBZ-Title" style="color: #000000;"></h5>
-					<div id="HRRR_NWHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="HRRR_NWHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <p id="HRRR_NWHourlyDBZ-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="EWRFMaxZ-Title" style="color: #000000;"></h5>
-					<div id="EWRFMaxZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="EWRFMaxZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <p id="EWRFMaxZ-lists" style="flex-wrap: wrap;"></p>
 
                     <h5 id="EWRFLightning-Title" style="color: #000000;"></h5>
-					<div id="EWRFLightningImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="EWRFLightningImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <p id="EWRFLightning-lists" style="flex-wrap: wrap;"></p>
 
                 </div>
@@ -608,7 +615,7 @@
                 <div class="row" id="MEDIUM_Row" style="display: none;">
                     <h4 id="MEDIUM" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
 
-					<div id="RainfallIntensityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="RainfallIntensityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <h5 id="RainfallIntensityDay1-Title" style="color: #000000;"></h5>
                     <p id="RainfallIntensityDay1-lists" style="flex-wrap: wrap;"></p>
 
@@ -624,7 +631,7 @@
                     <h5 id="RainfallIntensityDay5-Title" style="color: #000000;"></h5>
                     <p id="RainfallIntensityDay5-lists" style="flex-wrap: wrap;"></p>
 
-					<div id="MSLPDayImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="MSLPDayImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <h5 id="MSLPDay1-Title" style="color: #000000;"></h5>
                     <p id="MSLPDay1-lists" style="flex-wrap: wrap;"></p>
 
@@ -640,7 +647,7 @@
                     <h5 id="MSLPDay5-Title" style="color: #000000;"></h5>
                     <p id="MSLPDay5-lists" style="flex-wrap: wrap;"></p>
 
-					<div id="mWINDDayImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                    <div id="mWINDDayImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
                     <h5 id="mWINDDay1-Title" style="color: #000000;"></h5>
                     <p id="mWINDDay1-lists" style="flex-wrap: wrap;"></p>
 
@@ -674,20 +681,7 @@ L.simpleMapScreenshoter().addTo(map);
 <!-- print -->
 <script src="leaflet.browser.print.min.js"></script>
 <script>
-// Customize the print options
-var printOptions = {
-    position: 'topleft',
-    logoUrl: 'img/IMDlogo_Ipart.png',
-    logoStyle: 'max-height: 50px; max-width: 50px;',
-    documentTitle: 'WEATHER DECISION SUPPORT SYSTEM - IMD',
-    printLayer: true,
-    header: 'Your Custom Header Text',
-    footer: 'Your Custom Footer Text',
-};
-
-L.control.browserPrint(printOptions).addTo(map);
-
-
+L.control.browserPrint().addTo(map);
 </script>
 
 
