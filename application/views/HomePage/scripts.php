@@ -1702,67 +1702,67 @@ function macToggleObservation() {
 //     timeDimensionControl: true
 // }).setView([22.79459, 80.06406], 5);
 
-// const map = L.map('map', {
-//     zoom: 5,
-//     cursor: true
-// }).setView([22.79459, 80.06406]);
+const map = L.map('map', {
+    zoom: 5,
+    cursor: true
+}).setView([22.79459, 80.06406]);
 
 //MAP
-var map = L.map('map', {
-    zoom: 5,
-    timeDimension: true,
-    timeDimensionControl: true,
-    timeDimensionOptions: {
-        timeInterval: "2023-12-05/2023-12-06",
-        period: "PT1H",
-        validTimeRange: "00:00/23:00",
-        currentTime: startDate
-    },
+// var map = L.map('map', {
+//     zoom: 5,
+//     timeDimension: true,
+//     timeDimensionControl: true,
+//     timeDimensionOptions: {
+//         timeInterval: "2023-12-05/2023-12-06",
+//         period: "PT1H",
+//         validTimeRange: "00:00/23:00",
+//         currentTime: startDate
+//     },
 
-    timeDimensionControlOptions: {
-        autoPlay: false,
-        playerOptions: {
-            buffer: 10,
-            transitionTime: 500,
-            loop: true,
-        }
-    },
-    center: [22.79459, 80.06406],
-});
+//     timeDimensionControlOptions: {
+//         autoPlay: false,
+//         playerOptions: {
+//             buffer: 10,
+//             transitionTime: 500,
+//             loop: true,
+//         }
+//     },
+//     center: [22.79459, 80.06406],
+// });
 
 //timeDimension
-var today = new Date();
-var today_month = today.getMonth() + 1;
-var date = today.getFullYear() + '-' + today_month + '-' + today.getDate();
-var time = today.getHours() + ":00:00";
-var time = '00:00:00';
-var dateTime = date + ' ' + time;
+// var today = new Date();
+// var today_month = today.getMonth() + 1;
+// var date = today.getFullYear() + '-' + today_month + '-' + today.getDate();
+// var time = today.getHours() + ":00:00";
+// var time = '00:00:00';
+// var dateTime = date + ' ' + time;
 
-var startDate = new Date(dateTime);
-// console.log("startDate::" + startDate);
+// var startDate = new Date(dateTime);
+// // console.log("startDate::" + startDate);
 
-var endDate_TM = new Date();
-endDate_TM.setDate(endDate_TM.getDate() + 1);
-endDate_TM.setUTCMinutes(0, 0, 0);
-// console.log("endDate_TM:::" + endDate_TM);
+// var endDate_TM = new Date();
+// endDate_TM.setDate(endDate_TM.getDate() + 1);
+// endDate_TM.setUTCMinutes(0, 0, 0);
+// // console.log("endDate_TM:::" + endDate_TM);
 
-Date.prototype.format = function(mask, utc) {
-    return dateFormat(this, mask, utc);
-};
+// Date.prototype.format = function(mask, utc) {
+//     return dateFormat(this, mask, utc);
+// };
 
-L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
-    _getDisplayDateFormat: function(date) {
-        return moment(date).format("LL h A");
-    }
-});
-var timeDimensionControl = new L.Control.TimeDimensionCustom({
-    autoPlay: false,
-    playerOptions: {
-        buffer: 10,
-        transitionTime: 500,
-        loop: true,
-    }
-});
+// L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
+//     _getDisplayDateFormat: function(date) {
+//         return moment(date).format("LL h A");
+//     }
+// });
+// var timeDimensionControl = new L.Control.TimeDimensionCustom({
+//     autoPlay: false,
+//     playerOptions: {
+//         buffer: 10,
+//         transitionTime: 500,
+//         loop: true,
+//     }
+// });
 
 // Add the GeoJSON data to the map
 // _dist_geojson = "<?php echo base_url(); ?>DATA/INDIA_COUNTRY.json";
