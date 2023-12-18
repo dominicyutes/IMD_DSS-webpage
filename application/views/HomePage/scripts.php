@@ -1702,6 +1702,11 @@ function macToggleObservation() {
 //     timeDimensionControl: true
 // }).setView([22.79459, 80.06406], 5);
 
+// const map = L.map('map', {
+//     zoom: 5,
+//     cursor: true
+// }).setView([22.79459, 80.06406]);
+
 //MAP
 var map = L.map('map', {
     zoom: 5,
@@ -1725,7 +1730,7 @@ var map = L.map('map', {
     center: [22.79459, 80.06406],
 });
 
-//leaflet starts here
+//timeDimension
 var today = new Date();
 var today_month = today.getMonth() + 1;
 var date = today.getFullYear() + '-' + today_month + '-' + today.getDate();
@@ -1777,18 +1782,22 @@ var timeDimensionControl = new L.Control.TimeDimensionCustom({
 // });
 //
 
-//imd geoserver
-// const mywmsNcum1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     attribution: "LLWS_12hr_fcst_FL",
-//     opacity: 0.8,
-//     layerName: "mywmsNcum"
+//
+// const Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
+//     minZoom: 0,
+//     maxZoom: 20,
+//     attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+//     ext: 'png'
 // });
 
-// var tdWmsLayer = L.timeDimension.layer.wms(mywmsNcum1);
-// mywmsNcum1.addTo(map);
+//
+const Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
+    minZoom: 0,
+    maxZoom: 20,
+    attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    ext: 'png'
+});
+Stadia_Outdoors.addTo(map);
 
 //
 const OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1796,14 +1805,6 @@ const OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.pn
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
 // OpenStreetMap.addTo(map);
-
-const streets = L.tileLayer(
-    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 32,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-    }
-);
-streets.addTo(map);
 
 const imagery = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -1822,12 +1823,19 @@ const Stadia_AlidadeSmoothDark = L.tileLayer(
 );
 // Stadia_AlidadeSmoothDark.addTo(map);
 
-const darkGreyCanvas = L.tileLayer(
-    'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 20,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-    }
-);
+const Stadia_StamenToner = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.{ext}', {
+    minZoom: 0,
+    maxZoom: 20,
+    attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    ext: 'png'
+});
+
+// const darkGreyCanvas = L.tileLayer(
+//     'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+//         maxZoom: 20,
+//         subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+//     }
+// );
 // darkGreyCanvas.addTo(map);
 
 // 
@@ -1858,10 +1866,6 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
     layerName: "mywmsNowcast"
 });
 
-
-
-
-//Leaflet-sideBySide
 //Leaflet-sideBySide
 let sideBySideControl = null;
 let sideBySideVisible = false;
@@ -1914,8 +1918,8 @@ map.addControl(new L.Control.Fullscreen({
 }));
 
 var baseMaps = [{
-        name: "Streets",
-        layer: streets
+        name: "Stadia_Outdoors",
+        layer: Stadia_Outdoors
     },
     {
         name: "Open Street Map",
@@ -1930,8 +1934,8 @@ var baseMaps = [{
         layer: Stadia_AlidadeSmoothDark
     },
     {
-        name: "Dark Gray Canvas",
-        layer: darkGreyCanvas
+        name: "Stadia_StamenToner",
+        layer: Stadia_StamenToner
     },
 
 ];
@@ -1977,7 +1981,9 @@ const drawControl = new L.Control.Draw({
 map.addControl(drawControl);
 
 map.on('draw:created', function(e) {
+    console.log(e, "eeeeeeeeee");
     const layer = e.layer;
+    console.log(layer, "layer");
     drawnItems.addLayer(layer);
 });
 

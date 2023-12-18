@@ -3,38 +3,45 @@
 
 <head>
     <title>IMD_DSS</title>
-  
+
 
     <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/arrows-expand-right-alt.css' rel='stylesheet'  crossorigin="anonymous">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/arrows-expand-right-alt.css' rel='stylesheet'
+        crossorigin="anonymous">
     <!-- Include Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin="anonymous" />
     <!-- leaflet-draw CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" crossorigin="anonymous" />
     <!-- Include Leaflet fullscreen CSS -->
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
         rel='stylesheet' crossorigin="anonymous" />
     <!-- Include Leaflet LocationSearch CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"
+        crossorigin="anonymous" />
     <!-- Include Leaflet mouseposition CSS -->
     <link href="https://cdn.jsdelivr.net/npm/leaflet-mouse-position@1.2.0/src/L.Control.MousePosition.min.css"
-        rel="stylesheet"  crossorigin="anonymous">
+        rel="stylesheet" crossorigin="anonymous">
     <!-- Include Leaflet styleEditor CSS -->
     <link href="https://cdn.jsdelivr.net/npm/leaflet-styleeditor@0.1.21/dist/css/Leaflet.StyleEditor.min.css"
-        rel="stylesheet"  crossorigin="anonymous">
+        rel="stylesheet" crossorigin="anonymous">
     <!-- leaflet-panel-layers -->
     <link href="
     https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layers.min.css
-    " rel="stylesheet"  crossorigin="anonymous">
+    " rel="stylesheet" crossorigin="anonymous">
     <!-- leaflet time dimensions -->
     <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.min.css"  crossorigin="anonymous" />
+        href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.min.css"
+        crossorigin="anonymous" />
     <!-- Leaflet Side-by-Side CSS-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"  crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin="anonymous" />
     <!-- Include Leaflet Side-by-Side CSS -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-side-by-side@1.0.4/dist/leaflet-side-by-side.css" /> -->
     <!-- bootstrap -->
@@ -45,7 +52,6 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- Include Leaflet fullscreen JS-->
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-
     <!-- leaflet-draw JS -->
     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.min.js"></script> -->
@@ -90,15 +96,15 @@
     <script src="https://lab.digital-democracy.org/leaflet-side-by-side/leaflet-side-by-side.js"></script>
     <!-- <script src="https://unpkg.com/leaflet-side-by-side@1.0.2/dist/leaflet-side-by-side.min.js"></script> -->
 
-<!-- for map picture -->
-<!-- <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/html2canvas/html2canvas.min.js"></script>
+    <!-- for map picture -->
+    <!-- <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/html2canvas/html2canvas.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/canvas2image/canvas2image.js"></script>
 <script type="text/javascript" src="<?= site_url('stylesheet/chosen.jquery.min.js')?>"></script> -->
 
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script> -->
 
-<!-- <script src="<?php echo base_url(); ?>stylesheet/html-to-image.js"></script> -->
+    <!-- <script src="<?php echo base_url(); ?>stylesheet/html-to-image.js"></script> -->
     <!-- adding css -->
     <?php $this->load->view('HomePage/style'); ?>
 
@@ -108,7 +114,7 @@
     <!-- Title start here -->
     <div>
         <div style="width: 100%;" class="mx-auto">
-            <div class="text-end" style="padding-bottom: 0.5em;">
+            <div class="text-end">
                 <span class="mr-3 text">WEATHER DECISION SUPPORT SYSTEM</span>
             </div>
         </div>
@@ -175,10 +181,10 @@
     <div class="row" ;>
         <!-- MAP -->
         <div id="map" class="col-10"></div>
-    
+
         <!-- OBSERVATION -->
         <div id="ObservationContainer" class="obsClass hidden col-2">
-            <h4>OBSERVATION</h4>
+            <h4 class="obsh4">OBSERVATION</h4>
             <!-- model -->
             <form id="obsForm">
                 <div>
@@ -186,33 +192,33 @@
                     <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
                     </select>
                 </div>
-                <span>&nbsp;</span>
+                <!-- <span>&nbsp;</span> -->
                 <!-- parameter -->
                 <div>
                     <label for="parameter" class="secondDDLabel">parameter:</label>
                     <select class="secondDD" id="parameterNames" onchange="showSubParameterNames(this.value)" &nbsp;>
                     </select>
                 </div>
-                <span>&nbsp;</span>
+                <!-- <span>&nbsp;</span> -->
                 <!-- SubParameter -->
                 <div>
                     <label for="subparameter" class="thirdDDLabel">SubParameter</label>
                     <select class="thirdDD" id="subparameter" &nbsp;>
                     </select>
                 </div>
-                <span>&nbsp;</span>
+                <!-- <span>&nbsp;</span> -->
 
 
                 <div>
                     <label for="start_date" class="dateDDLabel">From Date:</label>
                     <input type="date" id="start_date" class="dateDD">
                 </div>
-                <span>&nbsp;</span>
+                <!-- <span>&nbsp;</span> -->
                 <div>
                     <label for="end_date" class="dateDDLabel">To Date:</label>
                     <input type="date" id="end_date" class="dateDD">
                 </div>
-                <span>&nbsp;</span>
+                <!-- <span>&nbsp;</span> -->
                 <div>
                     <span style="display: contents;">
                         <label for="hourSelect" class="TimeLabel">Time:</label>
@@ -222,7 +228,7 @@
                         </select>
                     </span>
                 </div>
-                <span>&nbsp;</span>
+                <!-- <span>&nbsp;</span> -->
                 </select>
             </form>
             <!-- Submit -->

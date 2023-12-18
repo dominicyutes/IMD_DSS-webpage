@@ -13,26 +13,11 @@ body {
 
 .text {
     margin-right: 2%;
-    padding-bottom: 10px;
-    text-transform: uppercase;
-    font-family: verdana;
+    font-family: 'Archivo', sans-serif;
     font-size: 2em;
     font-weight: 600;
-    color: #e6e6e6;
-    text-shadow: 1px 1px 1px #919191,
-        1px 2px 1px #919191,
-        1px 3px 1px #919191,
-        1px 4px 1px #919191,
-        1px 5px 1px #919191,
-        1px 6px 1px #919191,
-        1px 7px 1px #919191,
-        1px 8px 1px #919191,
-        1px 9px 1px #919191,
-        1px 10px 1px #919191,
-        1px 18px 6px rgba(16, 16, 16, 0.4),
-        1px 22px 10px rgba(16, 16, 16, 0.2),
-        1px 25px 35px rgba(16, 16, 16, 0.2),
-        1px 30px 60px rgba(16, 16, 16, 0.4);
+    color: white;
+    letter-spacing: 3px;
 }
 
 .btn {
@@ -122,16 +107,15 @@ body {
 }
 
 .obsClass {
+    color: white;
     margin-top: -2%;
     height: 79vh;
 }
 
-.firstDD {
-    width: 100%;
-    height: 32px;
-    border-radius: 10px;
-    color: #02275f;
-    overflow-y: auto;
+.obsh4 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .firstDDLabel {
@@ -158,12 +142,27 @@ body {
     font-size: 1.1em;
 }
 
+.TimeLabel {
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.firstDD {
+    width: 100%;
+    height: 32px;
+    border-radius: 10px;
+    color: #02275f;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
 .secondDD {
     width: 100%;
     height: 32px;
     border-radius: 10px;
     color: #02275f;
     overflow-y: auto;
+    margin-bottom: 10px;
 }
 
 .thirdDD {
@@ -172,6 +171,7 @@ body {
     border-radius: 10px;
     color: #02275f;
     overflow-y: auto;
+    margin-bottom: 10px;
 }
 
 .dateDD {
@@ -179,11 +179,7 @@ body {
     height: 34px;
     border-radius: 10px;
     border: 1px solid #646464;
-}
-
-.TimeLabel {
-    color: #fff;
-    font-size: 1.1em;
+    margin-bottom: 10px;
 }
 
 .TimeHR {
@@ -198,6 +194,8 @@ body {
     height: 34px;
     border-radius: 10px;
     color: #02275f;
+    margin-top: 7px;
+    margin-bottom: 21px;
 
 }
 
@@ -209,6 +207,7 @@ body {
     color: ghostwhite;
     border-color: mediumaquamarine;
     font-size: 1.1em;
+    margin-left: 26%;
 }
 
 /*  */
@@ -272,7 +271,7 @@ body {
 }
 
 .addBox {
-    height: 330px;
+    height: 220px;
     width: 100%;
     background-Color: #eff4ff;
     overflow-y: scroll;
@@ -318,21 +317,14 @@ body {
     font-size: 14px;
 }
 
-/* Change color on hover */
-/* .dropdown-content button:hover {
-    background-color: #ddd;
-} */
-
 /* Show the dropdown content when the dropdown button is clicked */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/*  MACRO CSS*/
-
 /* map starts here*/
 #map {
-    height: 81vh;
+    height: 83vh;
     width: 99%;
     border: 1px solid black;
     margin-top: -39px;
@@ -343,12 +335,17 @@ body {
     float: none;
 }
 
-/* .leaflet-top,
-.leaflet-control {
+/* .leaflet-top, */
+/* .leaflet-control {
     margin-top: 0px;
     float: none;
     margin-left: 17px;
 } */
+
+.leaflet-touch .leaflet-bar {
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    /* background-clip: padding-box; */
+}
 
 /* custom control button */
 .leaflet-control-custom {
