@@ -272,7 +272,7 @@ body {
 }
 
 .addBox {
-    height: 220px;
+    height: 330px;
     width: 100%;
     background-Color: #eff4ff;
     overflow-y: scroll;
