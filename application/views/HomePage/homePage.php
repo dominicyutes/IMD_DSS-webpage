@@ -238,14 +238,14 @@
         </div>
 
         <!-- MACRO -->
-        <div id="macroContainer" class="hidden obsClass col-2">
-            <div class="dropdown">
-                <button class="macOptCls">MACRO Option</button>
-                <div class="dropdown-content">
-                </div>
-            </div>
+        <div id="macroListContainer" class="hidden obsClass col-2">
             <button id="createMacro" class="createMacroCls" onclick="createMacroForm()">Create Macro</button>
+            <div id="listOfMacro">
+            </div>
             <!-- model -->
+        </div>
+
+        <div id="macroFormContainer" class="hidden obsClass col-2">
             <div style="display: none" id="showCreateMacroLayers">
                 <form id="myForm">
                     <div>
@@ -287,6 +287,7 @@
 
             </div>
         </div>
+
     </div>
     <!--  -->
     <div style="background-color: white;">Model's Time Update</div>

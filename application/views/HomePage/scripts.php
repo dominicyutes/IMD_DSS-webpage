@@ -1464,6 +1464,8 @@ for (let MA = 0; MA < modelNamesArr.length; MA++) {
 }
 getMacModelNames.innerHTML = pushMacModelNames;
 
+console.log(pushMacModelNames, "hhhhhhhhhhhhhhhhhhhh")
+
 //macro secondDropdown-MSD MACRO
 function macShowParameterNames(value) {
     let macGetParameterNames = document.getElementById("mac_parameterNames");
@@ -1584,7 +1586,7 @@ function macSubmitForm() {
     newButton.innerText = mac_macroNames;
 
     newButton.addEventListener('click', function() {
-        showMacro = [];
+        let showMacro = [];
         let filteredMicro = saveMacro.filter(x => x.macroName == mac_macroNames);
         filteredMicro.forEach(macro => {
             console.log(macro, mac_macroNames, "kkkkkk");
@@ -1608,7 +1610,32 @@ function macSubmitForm() {
     });
 
     // Append the new button to the dropdown content
-    document.querySelector('.dropdown-content').appendChild(newButton);
+
+    let listOfMacro = [];
+    saveMacro.forEach(macro => {
+        console.log(macro, mac_macroNames, "kkkkkk");
+        if (macro) {
+            showInfoDiv = `<div id="toggleDiv">
+			<span onclick="MacroPlusToggle('${macro.ulId}')">${macro.macroName}</span>
+			<ul id="${macro.ulId}" class="listContainerMacro">
+				<li>${macro.mac_model_Names}</li>
+				<li>${macro.mac_parameter_Names}</li>
+				<li>${macro.mac_sub_parameter}</li>
+			</ul>
+			<button class="delete-button" onclick="runMacro('${macro.ulId}')">R</button>
+			<button class="edit-button" onclick="editMacro('${macro.ulId}', '${macro.macroName}', '${macro.mac_model_Names}', '${macro.mac_parameter_Names}', '${macro.mac_sub_parameter}')">E</button>
+			<button class="delete-button" onclick="deleteMacro('${macro.ulId}')">D</button>
+		</div>`;
+            listOfMacro.push(showInfoDiv);
+        } else {
+            console.log('Details not found for:', newButton.id);
+        }
+    })
+
+    console.log(listOfMacro, "hhhhhhhhhhhhhhhhhhhhhh")
+    let hh = document.getElementById('listOfMacro');
+    hh.innerHTML = listOfMacro.join('');
+
 
     // // Clear the form fields
     document.getElementById('macroNames').value = '';
@@ -1619,6 +1646,12 @@ function macSubmitForm() {
     handleInputChange();
     macroData = [];
     addedInfoContainer.innerHTML = "";
+    let macroFormContainerFn = document.getElementById("macroFormContainer");
+    macroFormContainerFn.style.display = "none";;
+
+    let macroListContainerFn = document.getElementById("macroListContainer");
+    macroListContainerFn.style.display = "block";;
+
 }
 
 //*********** */
@@ -1679,14 +1712,24 @@ function createMacroForm() {
     } else {
         clickMacro.style.display = "block";
     }
+
+    let macroListContainerFn = document.getElementById("macroListContainer");
+    macroListContainerFn.style.display = "none";;
+
+    let macroFormContainerFn = document.getElementById("macroFormContainer");
+    let map = document.getElementById('map');
+    let isHidden = macroFormContainerFn.classList.contains('hidden');
+    macroFormContainerFn.classList.toggle('hidden');
+    map.style.width = isHidden ? '83%' : '99%';
+
 }
 
 //MACRO-toggleObservation
 function macToggleObservation() {
-    let macroContainerFn = document.getElementById("macroContainer");
+    let macroListContainerFn = document.getElementById("macroListContainer");
     let map = document.getElementById('map');
-    let isHidden = macroContainerFn.classList.contains('hidden');
-    macroContainerFn.classList.toggle('hidden');
+    let isHidden = macroListContainerFn.classList.contains('hidden');
+    macroListContainerFn.classList.toggle('hidden');
     map.style.width = isHidden ? '83%' : '99%';
 }
 
