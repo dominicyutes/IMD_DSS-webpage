@@ -1741,7 +1741,6 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
 
 
 //Leaflet-sideBySide
-//Leaflet-sideBySide
 let sideBySideControl = null; 
 let sideBySideVisible = false; 
 
@@ -1782,7 +1781,7 @@ const ToggleControl = L.Control.extend({
     }
 });
 
-(new ToggleControl()).addTo(map); 
+(new ToggleControl()).addTo(map);
 
 
 //leaflet Fullscreen
