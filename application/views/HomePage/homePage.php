@@ -5,16 +5,22 @@
     <title>IMD_DSS</title>
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/arrows-expand-right-alt.css' rel='stylesheet'>
     <!-- Include Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> -->
 
     <!-- leaflet-draw CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.css" /> -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" /> -->
 
     <!-- Include Leaflet fullscreen CSS -->
@@ -47,7 +53,6 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- Include Leaflet fullscreen JS-->
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-
     <!-- leaflet-draw JS -->
     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.min.js"></script> -->
@@ -109,7 +114,7 @@
     <!-- Title start here -->
     <div>
         <div style="width: 100%;" class="mx-auto">
-            <div class="text-end" style="padding-bottom: 0.5em;">
+            <div class="text-end">
                 <span class="mr-3 text">WEATHER DECISION SUPPORT SYSTEM</span>
             </div>
         </div>
@@ -179,7 +184,7 @@
 
         <!-- OBSERVATION -->
         <div id="ObservationContainer" class="obsClass hidden col-2">
-            <h4>OBSERVATION</h4>
+            <h4 class="obsh4">OBSERVATION</h4>
             <!-- model -->
             <form id="obsForm">
                 <div>
@@ -187,33 +192,33 @@
                     <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
                     </select>
                 </div>
-                <span>&nbsp;</span>
+                <!-- <span>&nbsp;</span> -->
                 <!-- parameter -->
                 <div>
                     <label for="parameter" class="secondDDLabel">parameter:</label>
                     <select class="secondDD" id="parameterNames" onchange="showSubParameterNames(this.value)" &nbsp;>
                     </select>
                 </div>
-                <span>&nbsp;</span>
+                <!-- <span>&nbsp;</span> -->
                 <!-- SubParameter -->
                 <div>
                     <label for="subparameter" class="thirdDDLabel">SubParameter</label>
                     <select class="thirdDD" id="subparameter" &nbsp;>
                     </select>
                 </div>
-                <span>&nbsp;</span>
+                <!-- <span>&nbsp;</span> -->
 
 
                 <div>
                     <label for="start_date" class="dateDDLabel">From Date:</label>
                     <input type="date" id="start_date" class="dateDD">
                 </div>
-                <span>&nbsp;</span>
+                <!-- <span>&nbsp;</span> -->
                 <div>
                     <label for="end_date" class="dateDDLabel">To Date:</label>
                     <input type="date" id="end_date" class="dateDD">
                 </div>
-                <span>&nbsp;</span>
+                <!-- <span>&nbsp;</span> -->
                 <div>
                     <span style="display: contents;">
                         <label for="hourSelect" class="TimeLabel">Time:</label>
@@ -223,7 +228,7 @@
                         </select>
                     </span>
                 </div>
-                <span>&nbsp;</span>
+                <!-- <span>&nbsp;</span> -->
                 </select>
             </form>
             <!-- Submit -->
