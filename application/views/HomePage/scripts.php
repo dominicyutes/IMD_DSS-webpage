@@ -1702,67 +1702,114 @@ function macToggleObservation() {
 //     timeDimensionControl: true
 // }).setView([22.79459, 80.06406], 5);
 
-const map = L.map('map', {
-    zoom: 5,
-    cursor: true
-}).setView([22.79459, 80.06406]);
+// const map = L.map('map', {
+//     zoom: 5,
+//     cursor: true
+// }).setView([22.79459, 80.06406]);
 
 //MAP
-// var map = L.map('map', {
-//     zoom: 5,
-//     timeDimension: true,
-//     timeDimensionControl: true,
-//     timeDimensionOptions: {
-//         timeInterval: "2023-12-05/2023-12-06",
-//         period: "PT1H",
-//         validTimeRange: "00:00/23:00",
-//         currentTime: startDate
-//     },
+var startDate = new Date(); // You need to define `startDate`
 
-//     timeDimensionControlOptions: {
-//         autoPlay: false,
-//         playerOptions: {
-//             buffer: 10,
-//             transitionTime: 500,
-//             loop: true,
-//         }
-//     },
-//     center: [22.79459, 80.06406],
-// });
+// Your Leaflet map initialization
+var map = L.map('map', {
+    zoom: 5,
+    timeDimension: true,
+    timeDimensionControl: false, // Initially set to false
+    timeDimensionOptions: {
+        timeInterval: "2023-12-05/2023-12-06",
+        period: "PT1H",
+        validTimeRange: "00:00/23:00",
+        currentTime: startDate
+    },
+    timeDimensionControlOptions: {
+        autoPlay: false,
+        playerOptions: {
+            buffer: 10,
+            transitionTime: 500,
+            loop: true,
+        }
+    },
+    center: [22.79459, 80.06406],
+});
 
-//timeDimension
-// var today = new Date();
-// var today_month = today.getMonth() + 1;
-// var date = today.getFullYear() + '-' + today_month + '-' + today.getDate();
-// var time = today.getHours() + ":00:00";
-// var time = '00:00:00';
-// var dateTime = date + ' ' + time;
+// Function to toggle timeDimensionControl
+function toggleTimeDimensionControl() {
+    if (!map.timeDimensionControl) {
+        map.timeDimensionControl = L.control.timeDimension({
+            position: 'topleft',
+            autoPlay: false, // Set your options here
+            playerOptions: {
+                buffer: 10,
+                transitionTime: 500,
+                loop: true,
+            }
+        }).addTo(map);
+    } else {
+        map.removeControl(map.timeDimensionControl);
+        map.timeDimensionControl = null;
+    }
+}
 
-// var startDate = new Date(dateTime);
-// // console.log("startDate::" + startDate);
+// Create a custom control
+var timeDimensionControlButton = L.Control.extend({
+    onAdd: function() {
+        var button = L.DomUtil.create('button');
+        button.innerHTML = 'Time Dimension';
+        // button.style.backgroundColor = 'white';
+        // button.style.border = '1px solid black';
+        button.style.padding = '2px';
+        button.style.cursor = 'pointer';
 
-// var endDate_TM = new Date();
-// endDate_TM.setDate(endDate_TM.getDate() + 1);
-// endDate_TM.setUTCMinutes(0, 0, 0);
-// // console.log("endDate_TM:::" + endDate_TM);
+        button.onclick = function() {
+            toggleTimeDimensionControl();
+        };
 
-// Date.prototype.format = function(mask, utc) {
-//     return dateFormat(this, mask, utc);
-// };
+        return button;
+    },
 
-// L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
-//     _getDisplayDateFormat: function(date) {
-//         return moment(date).format("LL h A");
-//     }
-// });
-// var timeDimensionControl = new L.Control.TimeDimensionCustom({
-//     autoPlay: false,
-//     playerOptions: {
-//         buffer: 10,
-//         transitionTime: 500,
-//         loop: true,
-//     }
-// });
+    onRemove: function() {
+        // Nothing to do here
+    }
+});
+
+// Add the custom control to the map
+var timeDimensionControl = new timeDimensionControlButton({ position: 'topright' });
+timeDimensionControl.addTo(map);
+
+
+// timeDimension
+var today = new Date();
+var today_month = today.getMonth() + 1;
+var date = today.getFullYear() + '-' + today_month + '-' + today.getDate();
+var time = today.getHours() + ":00:00";
+var time = '00:00:00';
+var dateTime = date + ' ' + time;
+
+var startDate = new Date(dateTime);
+// console.log("startDate::" + startDate);
+
+var endDate_TM = new Date();
+endDate_TM.setDate(endDate_TM.getDate() + 1);
+endDate_TM.setUTCMinutes(0, 0, 0);
+// console.log("endDate_TM:::" + endDate_TM);
+
+Date.prototype.format = function(mask, utc) {
+    return dateFormat(this, mask, utc);
+};
+
+L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
+    _getDisplayDateFormat: function(date) {
+        return moment(date).format("LL h A");
+    }
+});
+var timeDimensionControl = new L.Control.TimeDimensionCustom({
+    autoPlay: false,
+    playerOptions: {
+        buffer: 10,
+        transitionTime: 500,
+        loop: true,
+    }
+});
 
 // Add the GeoJSON data to the map
 // _dist_geojson = "<?php echo base_url(); ?>DATA/INDIA_COUNTRY.json";
