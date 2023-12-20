@@ -1432,7 +1432,6 @@ function submitForm() {
     let parameter_Names = document.getElementById('parameterNames').value;
     let sub_parameter = document.getElementById('subparameter').value;
     let fromDate = document.getElementById('start_date').value;
-    let toDate = document.getElementById('end_date').value;
     let hour_Select = document.getElementById('hourSelect').value;
     let minute_Select = document.getElementById('minuteSelect').value;
 
@@ -1440,22 +1439,89 @@ function submitForm() {
         "Parameter: " + parameter_Names + "\n" +
         "SubParameter: " + sub_parameter + "\n" +
         "Start Date: " + fromDate + "\n" +
-        "End Date: " + toDate + "\n" +
         "Time: " + hour_Select + ":" + minute_Select;
     alert(message);
 }
 
+//MACRO toggle
+function macToggleObservation() {
+    let observationContainerFn = document.getElementById("ObservationContainer");
+    let isHiddenObser = observationContainerFn.classList.contains('hidden');
+    let test;
+    if (isHiddenObser) {
+        test = true;
+
+    } else {
+        observationContainerFn.classList.toggle('hidden');
+        test = true;
+    }
+    if (test) {
+        let macroContainerFn = document.getElementById("macroContainer");
+        let map = document.getElementById('map');
+        let isHidden = macroContainerFn.classList.contains('hidden');
+        macroContainerFn.classList.toggle('hidden');
+        map.style.width = isHidden ? '83%' : '99%';
+    }
+}
+
 //Observation-toggleObservation
 function toggleObservation() {
-    let observationContainerFn = document.getElementById("ObservationContainer");
-    let map = document.getElementById('map');
-    let isHidden = observationContainerFn.classList.contains('hidden');
-    observationContainerFn.classList.toggle('hidden');
-    map.style.width = isHidden ? '83%' : '99%';
+    let macroContainerFn = document.getElementById("macroContainer");
+    let isHiddenMacro = macroContainerFn.classList.contains('hidden');
+    let test
+
+    if (isHiddenMacro) {
+        test = true;
+
+    } else {
+        macroContainerFn.classList.toggle('hidden');
+        test = true;
+    }
+    if (test) {
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let map = document.getElementById('map');
+        let isHidden = observationContainerFn.classList.contains('hidden');
+        observationContainerFn.classList.toggle('hidden');
+        map.style.width = isHidden ? '83%' : '99%';
+    }
 }
 //
 
 // MACRO
+// MACRO create popup
+let create_Macro = document.querySelector('.create_Macro');
+let create_Macro_body = document.querySelector('.create_Macro_body');
+let create_Macro_close = document.querySelector('.create_Macro_body .macroLegend');
+//
+document.querySelectorAll('#createMacro').forEach(function(openModel) {
+    openModel.onclick = () => {
+        console.log("createMacro,openModel working!!!");
+        create_Macro.style.display = 'block';
+    }
+});
+//create-Macro-close
+create_Macro_close.onclick = () => {
+    create_Macro.style.display = 'none';
+}
+
+//View MACRO
+let view_Create_Macro = document.querySelector('.view_Create_Macro');
+let view_Create_Macro_body = document.querySelector('.view_Create_Macro_body');
+let view_Create_Macro_body_close = document.querySelector('.view_Create_Macro_body .viewMacroLegend');
+//
+
+document.querySelectorAll('.viewButton').forEach(function(openModel) {
+    openModel.onclick = () => {
+        console.log("view_Create_Macro,openModel working!!!");
+        view_Create_Macro.style.display = 'block';
+    }
+});
+
+// View - create - Macro - close
+view_Create_Macro_body_close.onclick = () => {
+    view_Create_Macro.style.display = 'none';
+}
+
 //macro ModelNames-Dropdown    MA-ModelsArray
 let getMacModelNames = document.getElementById("mac_modelNames");
 let pushMacModelNames = '';
@@ -1531,7 +1597,7 @@ function macAddForm() {
 
     let ulId = "listContainerMacro_" + counter++;
 
-    let addedInfoDiv = `<div id="toggleDiv">
+    let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
         <span onclick="MacroPlusToggle('${ulId}')">+ Macro Name: ${mac_macroNames}</span>
         <ul id="${ulId}" class="listContainerMacro">
             <li>${mac_model_Names}</li>
@@ -1567,81 +1633,121 @@ function MacroPlusToggle(ulId) {
 }
 
 // submitForm for MACRO
+function createActionButton(action, buttonClass, buttonId) {
+    let button = document.createElement("button");
+    button.innerText = action;
+    button.className = buttonClass;
+    button.id = buttonId;
+    // button.onclick = function() {
+    //     if (buttonId === viewButtonId) {
+    //         view_Create_Macro.style.display = 'block';
+    //     }
+
+    //     console.log(action + " clicked");
+    // };
+    console.log("action:" + action, "buttonClass:" + buttonClass, "buttonId:" + buttonId);
+    return button;
+
+}
+
 function macSubmitForm() {
     event.preventDefault();
-    //
+
+    let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
+
     let mac_macroNames = document.getElementById('macroNames').value;
     let mac_model_Names = document.getElementById('mac_modelNames').value;
     let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
     let mac_sub_parameter = document.getElementById('mac_subparameter').value;
 
-    let addedInfoContainerSub = document.getElementById('addedInfoContainer');
-
-    // Create a new button
-    let newButton = document.createElement('button');
-    newButton.classList.add('save-button');
-    newButton.id = mac_macroNames;
+    // Create a new button with the ID of macroNames
+    let newButton = document.createElement("button");
     newButton.innerText = mac_macroNames;
+    newButton.id = mac_macroNames + "_button";
+    newButton.onclick = function() {
+        console.log("Clicked on macroNames:", mac_macroNames);
+        console.log("mac_model_Names:", mac_model_Names);
+        console.log("mac_parameter_Names:", mac_parameter_Names);
+        console.log("mac_sub_parameter:", mac_sub_parameter);
+    };
 
-    newButton.addEventListener('click', function() {
-        showMacro = [];
-        let filteredMicro = saveMacro.filter(x => x.macroName == mac_macroNames);
-        filteredMicro.forEach(macro => {
-            console.log(macro, mac_macroNames, "kkkkkk");
-            if (macro) {
-                showInfoDiv = `<div id="toggleDiv">
-                <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.macroName}</span>
-                <ul id="${macro.ulId}" class="listContainerMacro">
-                    <li>${macro.mac_model_Names}</li>
-                    <li>${macro.mac_parameter_Names}</li>
-                    <li>${macro.mac_sub_parameter}</li>
-                </ul>
-                <button class="edit-button" onclick="editMacro('${macro.ulId}', '${macro.macroName}', '${macro.mac_model_Names}', '${macro.mac_parameter_Names}', '${macro.mac_sub_parameter}')">E</button>
-                <button class="delete-button" onclick="deleteMacro('${macro.ulId}')">D</button>
-            </div>`;
-                showMacro.push(showInfoDiv);
-            } else {
-                console.log('Details not found for:', newButton.id);
-            }
-        })
-        addedInfoContainer.innerHTML = showMacro.join('');
-    });
+    // Create Play, View, Edit, and Delete buttons with different IDs and classes
+    //PVED ID
+    let playButtonId = mac_macroNames + "P";
+    let viewButtonId = mac_macroNames + "V";
+    let editButtonId = mac_macroNames + "E";
+    let deleteButtonId = mac_macroNames + "D";
 
-    // Append the new button to the dropdown content
-    document.querySelector('.dropdown-content').appendChild(newButton);
+    //PVED fn
+    let playButtonFn = mac_macroNames + "pClick";
+    let viewButtonFn = mac_macroNames + "vClick";
+    let editButtonFn = mac_macroNames + "eClick";
+    let deleteButtonFn = mac_macroNames + "dClick";
 
-    // // Clear the form fields
-    document.getElementById('macroNames').value = '';
-    document.getElementById('mac_modelNames').value = '';
-    document.getElementById('mac_parameterNames').value = '';
-    document.getElementById('mac_subparameter').value = '';
-    //
-    handleInputChange();
-    macroData = [];
-    addedInfoContainer.innerHTML = "";
+    let playButton = createActionButton("P", "playButton", playButtonId, playButtonFn);
+    let viewButton = createActionButton("V", "viewButton", viewButtonId, viewButtonFn);
+    let editButton = createActionButton("E", "editButton", editButtonId, editButtonFn);
+    let deleteButton = createActionButton("D", "deleteButton", deleteButtonFn);
+    console.log(playButton, viewButton, editButton, deleteButton);
+
+    // Create a container for the buttons
+    let buttonContainer = document.createElement("div");
+    buttonContainer.appendChild(newButton);
+    buttonContainer.appendChild(playButton);
+    buttonContainer.appendChild(viewButton);
+    buttonContainer.appendChild(editButton);
+    buttonContainer.appendChild(deleteButton);
+
+    addedInfoContainerDiv.appendChild(buttonContainer);
+
+    // Append the button container to the element with the ID showCreatedMacro
+    document.getElementById("showCreatedMacro").appendChild(buttonContainer);
 }
+
+// 
+
+// function playButtonFn() {
+//     ...
+// }
+// or
+// const playButtonFn = () =>
+function playButtonFn() {
+    console.log("PlayButton");
+}
+
+function viewButtonFn() {
+    console.log("viewButton");
+}
+
+function editButtonFn() {
+    console.log("editButtonFn");
+}
+
+function deleteButtonFn() {
+    console.log("deleteButtonFn");
+}
+
+
+
 
 //*********** */
-function editMacro(ulId, macroName, modelNames, parameterNames, subParameter) {
-    // // Set values in the form for editing
-    document.getElementById('macroNames').value = macroName;
-    document.getElementById('mac_modelNames').value = modelNames;
-    document.getElementById('mac_parameterNames').value = parameterNames;
-    document.getElementById('mac_subparameter').value = subParameter;
+// function editMacro(ulId, macroName, modelNames, parameterNames, subParameter) {
+//     // // Set values in the form for editing
+//     document.getElementById('macroNames').value = macroName;
+//     document.getElementById('mac_modelNames').value = modelNames;
+//     document.getElementById('mac_parameterNames').value = parameterNames;
+//     document.getElementById('mac_subparameter').value = subParameter;
 
-    let findID = saveMacro.find(x => x.ulId == ulId);
-    console.log(findID, "jacob");
-    handleInputChange();
-}
+//     let findID = saveMacro.find(x => x.ulId == ulId);
+//     console.log(findID, "jacob");
+//     handleInputChange();
+// }
 
-
-
+//  Delete for macroList
+// function deleteMacro(ulId) {
+//     removeElementById(ulId);
+// }
 //*********** */
-
-//Delete for macroList
-function deleteMacro(ulId) {
-    removeElementById(ulId);
-}
 
 function removeElementById(elementId) {
     let element = document.getElementById(elementId);
@@ -1681,14 +1787,8 @@ function createMacroForm() {
     }
 }
 
-//MACRO-toggleObservation
-function macToggleObservation() {
-    let macroContainerFn = document.getElementById("macroContainer");
-    let map = document.getElementById('map');
-    let isHidden = macroContainerFn.classList.contains('hidden');
-    macroContainerFn.classList.toggle('hidden');
-    map.style.width = isHidden ? '83%' : '99%';
-}
+//MACRO-toggle
+
 
 //leaflet starts here
 // const map = L.map('map', {
@@ -1773,7 +1873,9 @@ var timeDimensionControlButton = L.Control.extend({
 });
 
 // Add the custom control to the map
-var timeDimensionControl = new timeDimensionControlButton({ position: 'topright' });
+var timeDimensionControl = new timeDimensionControlButton({
+    position: 'topright'
+});
 timeDimensionControl.addTo(map);
 
 
@@ -1950,30 +2052,6 @@ var baseMaps = [{
 map.addControl(L.control.styleEditor({
     position: "topleft"
 }))
-
-// drawControl starts here
-// let drawnItems = new L.FeatureGroup();
-// map.addLayer(drawnItems);
-
-// let drawControl = new L.Control.Draw({
-//     draw: {
-//         polyline: true,
-//         polygon: true,
-//         rectangle: true,
-//         circle: true,
-//         marker: true
-//     },
-//     edit: {
-//         featureGroup: drawnItems
-//     }
-// });
-
-// if (drawControl) {
-//     map.addControl(drawControl);
-//     console.log("draw working");
-// } else {
-//     console.error('draw not working');
-// }
 
 // drawControl starts here
 const drawnItems = new L.FeatureGroup();

@@ -113,9 +113,9 @@
 <body>
     <!-- Title start here -->
     <div>
-        <div style="width: 100%;" class="mx-auto">
-            <div class="text-end">
-                <span class="mr-3 text">WEATHER DECISION SUPPORT SYSTEM</span>
+        <div style="width: 100%;">
+            <div>
+                <span class="text">WEATHER DECISION SUPPORT SYSTEM</span>
             </div>
         </div>
 
@@ -139,6 +139,14 @@
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val" id="sounding">Sounding</p>
+                            <div class="underline"></div>
+                        </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                            <p class="btn-val" id="ship_and_buoy">Ship and Buoy</p>
+                            <div class="underline"></div>
+                        </button>
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                             <p class="btn-val" id="radar">Radar</p>
                             <div class="underline"></div>
                         </button>
@@ -148,14 +156,6 @@
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                             <p class="btn-val" id="lightning">Lightining</p>
-                            <div class="underline"></div>
-                        </button>
-                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="sounding">Sounding</p>
-                            <div class="underline"></div>
-                        </button>
-                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="ship_and_buoy">Ship and Buoy</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
@@ -188,36 +188,37 @@
             <!-- model -->
             <form id="obsForm">
                 <div>
-                    <label for="modelNames" class="firstDDLabel">Model:</label>
+                    <label for="modelNames" class="firstDDLabel">Type:</label>
                     <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
                     </select>
                 </div>
                 <!-- <span>&nbsp;</span> -->
                 <!-- parameter -->
                 <div>
-                    <label for="parameter" class="secondDDLabel">parameter:</label>
+                    <label for="parameter" class="secondDDLabel">Time:</label>
                     <select class="secondDD" id="parameterNames" onchange="showSubParameterNames(this.value)" &nbsp;>
                     </select>
                 </div>
                 <!-- <span>&nbsp;</span> -->
                 <!-- SubParameter -->
                 <div>
-                    <label for="subparameter" class="thirdDDLabel">SubParameter</label>
+                    <label for="subparameter" class="thirdDDLabel">Parameter</label>
                     <select class="thirdDD" id="subparameter" &nbsp;>
                     </select>
+                    <div id="checkboxListContainer"></div>
                 </div>
                 <!-- <span>&nbsp;</span> -->
 
 
                 <div>
-                    <label for="start_date" class="dateDDLabel">From Date:</label>
+                    <label for="start_date" class="dateDDLabel">Date:</label>
                     <input type="date" id="start_date" class="dateDD">
                 </div>
                 <!-- <span>&nbsp;</span> -->
-                <div>
+                <!-- <div>
                     <label for="end_date" class="dateDDLabel">To Date:</label>
                     <input type="date" id="end_date" class="dateDD">
-                </div>
+                </div> -->
                 <!-- <span>&nbsp;</span> -->
                 <div>
                     <span style="display: contents;">
@@ -238,53 +239,72 @@
         </div>
 
         <!-- MACRO -->
-        <div id="macroListContainer" class="hidden obsClass col-2">
-            <button id="createMacro" class="createMacroCls" onclick="createMacroForm()">Create Macro</button>
-            <div id="listOfMacro">
+        <div id="macroContainer" class="hidden obsClass col-2">
+
+            <div style="display:flex;">
+                <button id="createMacro" class="createMacroCls" onclick="createMacroForm()">+</button>
+                <span class="hoverPlus">Create Macro</span>
             </div>
-            <!-- model -->
-        </div>
-
-        <div id="macroFormContainer" class="hidden obsClass col-2">
-            <div style="display: none" id="showCreateMacroLayers">
-                <form id="myForm">
-                    <div>
-                        <label for="macroNames" class="macroNameLabel">Macro Name:</label>
-                        <input type="text" class="macroNameInput" id="macroNames" placeholder="customize name"
-                            onchange="handleInputChange()" autocomplete="off" required &nbsp;>
-                    </div>
-                    <div>
-                        <label for="mac_modelNames" class="mac_firstDDLabel">Model:</label>
-                        <select class="mac_firstDD" id="mac_modelNames" onchange="macShowParameterNames(this.value)"
-                            &nbsp;>
-                        </select>
-                    </div>
-                    <!-- parameter -->
-                    <div>
-                        <label for="mac_parameter" class="mac_secondDDLabel">parameter:</label>
-                        <select class="mac_secondDD" id="mac_parameterNames"
-                            onchange="macShowSubParameterNames(this.value)" &nbsp;>
-                        </select>
-                    </div>
-                    <!-- SubParameter -->
-                    <div>
-                        <label for="mac_subparameter" class="mac_thirdDDLabel">SubParameter</label>
-                        <select class="mac_thirdDD" id="mac_subparameter" &nbsp;>
-                        </select>
+            <div id="showCreatedMacro"></div>
+            <!--  -->
+            <div class="create_Macro">
+                <div class="create_Macro_body" style="position: relative;">
+                    <div class="create_Macro_body_div">
+                        <span class="macroLegend">X</span>
+                        <h4 class="create_Macro_h4" style="margin: 0 auto;">Create Macro</h4>
                     </div>
 
-                    <!-- Submit -->
-                    <div style="display: flex;">
-                        <button id="mac_AddButton" onclick="macAddForm()" class="macSubmitBtn" type="button"
-                            disabled>Add</button>
-                        <button id="mac_submitButton" onclick="macSubmitForm()" class="macSubmitBtn" type="button"
-                            disabled>Save</button>
+                    <!-- MACRO-model -->
+                    <div id="showCreateMacroLayers">
+                        <form id="myForm">
+                            <div>
+                                <label for="macroNames" class="macroNameLabel">Macro Name:</label>
+                                <input type="text" class="macroNameInput" id="macroNames" placeholder="customize name"
+                                    onchange="handleInputChange()" autocomplete="off" required &nbsp;>
+                            </div>
+                            <div>
+                                <label for="mac_modelNames" class="mac_firstDDLabel">Type:</label>
+                                <select class="mac_firstDD" id="mac_modelNames"
+                                    onchange="macShowParameterNames(this.value)" &nbsp;>
+                                </select>
+                            </div>
+                            <!-- parameter -->
+                            <div>
+                                <label for="mac_parameter" class="mac_secondDDLabel">Time:</label>
+                                <select class="mac_secondDD" id="mac_parameterNames"
+                                    onchange="macShowSubParameterNames(this.value)" &nbsp;>
+                                </select>
+                            </div>
+                            <!-- SubParameter -->
+                            <div>
+                                <label for="mac_subparameter" class="mac_thirdDDLabel">Parameter</label>
+                                <select class="mac_thirdDD" id="mac_subparameter" &nbsp;>
+                                </select>
+                            </div>
+
+                            <!-- Submit -->
+                            <div style="display: flex;">
+                                <button id="mac_AddButton" onclick="macAddForm()" class="macSubmitBtn" type="button"
+                                    disabled>Add</button>
+                                <button id="mac_submitButton" onclick="macSubmitForm()" class="macSubmitBtn"
+                                    type="button" disabled>Save</button>
+                            </div>
+                        </form>
+                        <!--  -->
+                        <div class="addBox" id="addedInfoContainer">
+                        </div>
                     </div>
-                </form>
-                <!--  -->
-                <div class="addBox" id="addedInfoContainer">
+                    <!--MACRO model_end  -->
                 </div>
+            </div>
 
+            <div class="view_Create_Macro">
+                <div class="view_Create_Macro_body" style="position: relative;">
+                    <div class="view_Create_Macro_body_div">
+                        <span class="viewMacroLegend">X</span>
+                        <h4 class="view_Macro_h4" style="margin: 0 auto;">View MACRO</h4>
+                    </div>
+                </div>
             </div>
         </div>
 
