@@ -1493,12 +1493,12 @@ let create_Macro = document.querySelector('.create_Macro');
 let create_Macro_body = document.querySelector('.create_Macro_body');
 let create_Macro_close = document.querySelector('.create_Macro_body .macroLegend');
 //
-document.querySelectorAll('#createMacro').forEach(function(openModel) {
-    openModel.onclick = () => {
-        console.log("createMacro,openModel working!!!");
-        create_Macro.style.display = 'block';
-    }
-});
+// document.querySelectorAll('#createMacro').forEach(function(openModel) {
+//     openModel.onclick = () => {
+//         console.log("createMacro,openModel working!!!");
+//         create_Macro.style.display = 'block';
+//     }
+// });
 //create-Macro-close
 create_Macro_close.onclick = () => {
     create_Macro.style.display = 'none';
@@ -1510,12 +1510,12 @@ let view_Create_Macro_body = document.querySelector('.view_Create_Macro_body');
 let view_Create_Macro_body_close = document.querySelector('.view_Create_Macro_body .viewMacroLegend');
 //
 
-document.querySelectorAll('.viewButton').forEach(function(openModel) {
-    openModel.onclick = () => {
-        console.log("view_Create_Macro,openModel working!!!");
-        view_Create_Macro.style.display = 'block';
-    }
-});
+// document.querySelectorAll('.viewButton').forEach(function(openModel) {
+//     openModel.onclick = () => {
+//         console.log("view_Create_Macro,openModel working!!!");
+//         view_Create_Macro.style.display = 'block';
+//     }
+// });
 
 // View - create - Macro - close
 view_Create_Macro_body_close.onclick = () => {
@@ -1581,10 +1581,17 @@ function handleInputChange() {
 handleInputChange();
 
 // AddButtonForm for MACRO
-let savedMacro = []; // for add btn, saving 3 list 
-let addedTempMacro = {}; //for save btn
+let savedMacro = [];
+let addedTempMacro = {
+    "macroGroupName": "ddd",
+    "listOfMacro": [{
+        "ulId": "listContainerMacro_0",
+        "mac_model_Names": "Satellite",
+        "mac_parameter_Names": "Satellite Observation",
+        "mac_sub_parameter": "TIR1"
+    }]
+}
 let listOfMacro = [];
-let showSavedMacro = [];
 let counter = 0;
 
 let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
@@ -1609,6 +1616,11 @@ function macAddForm() {
         listOfMacro: listOfMacro
     };
 
+    viewAddedAndDeletedMacro();
+    handleInputChange();
+}
+
+function viewAddedAndDeletedMacro() {
     let showAddedTempMacro = [];
     addedTempMacro.listOfMacro.forEach(macro => {
         let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
@@ -1618,15 +1630,14 @@ function macAddForm() {
             <li>${macro.mac_parameter_Names}</li>
             <li>${macro.mac_sub_parameter}</li>
         </ul>
+		<span onclick="deleteMacroLayer('${macro.ulId}')">X</span>
+		<span onclick="editMacroLayer('${macro.ulId}')">E</span>
     </div>`;
         showAddedTempMacro.push(addedInfoDiv);
     })
 
     addedInfoContainerDiv.innerHTML = showAddedTempMacro.join("");
-    console.log(ulId, ": ", "showAddedTempMacro: ", showAddedTempMacro, "addedTempMacro: ", addedTempMacro);
-    handleInputChange();
 }
-
 
 //MacroGroupList Toggle 
 function MacroPlusToggle(ulId) {
@@ -1658,24 +1669,8 @@ function createActionButton(action, buttonClass, buttonId) {
 
 function macSubmitForm() {
     event.preventDefault();
-    let showAllCreatedMacro = document.getElementById("showCreatedMacro");
     savedMacro.push(addedTempMacro);
-    savedMacro.forEach(macro => {
-        if (macro) {
-            showInfoDiv = `<div>
-                <span>${macro.macroGroupName}</span>
-                <button class="edit-button" onclick="editMacro(${macro.macroGroupName})">R</button>
-                <button class="delete-button" onclick="deleteMacro(${macro.macroGroupName})">E</button>
-                <button class="delete-button" onclick="viewButtonFn('${macro.macroGroupName}')">V</button>
-                <button class="delete-button" onclick="deleteMacro('${macro.macroGroupName})">D</button>
-            </div>`;
-            showSavedMacro.push(showInfoDiv);
-        } else {
-            console.log('Details not found for:', newButton.id);
-        }
-    })
-    showAllCreatedMacro.innerHTML = showSavedMacro.join('');
-
+    showSavedMacroList();
     document.getElementById('macroNames').value = '';
     document.getElementById('mac_modelNames').value = '';
     document.getElementById('mac_parameterNames').value = '';
@@ -1686,6 +1681,25 @@ function macSubmitForm() {
 };
 
 
+function showSavedMacroList() {
+    let showAllCreatedMacro = document.getElementById("showCreatedMacro");
+    let showSavedMacro = [];
+    savedMacro.forEach(macro => {
+        if (macro) {
+            showInfoDiv = `<div>
+                <span>${macro.macroGroupName}</span>
+                <button class="edit-button" onclick="playMacro('${macro.macroGroupName}')">R</button>
+                <button class="delete-button" onclick="editMacro('${macro.macroGroupName}')">E</button>
+                <button class="delete-button" onclick="viewMacro('${macro.macroGroupName}')">V</button>
+                <button class="delete-button" onclick="deleteMacro('${macro.macroGroupName}')">D</button>
+            </div>`;
+            showSavedMacro.push(showInfoDiv);
+        } else {
+            console.log('Details not found for:', newButton.id);
+        }
+    })
+    showAllCreatedMacro.innerHTML = showSavedMacro.join('');
+}
 
 // let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
 
@@ -1745,13 +1759,24 @@ function macSubmitForm() {
 // }
 // or
 // const playButtonFn = () =>
-function playButtonFn() {
-    console.log("PlayButton");
+function playMacro(macroGroupName) {
+    let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
+    const numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let currentIndex = 0;
+
+    function displayNumber() {
+        if (currentIndex < macro.listOfMacro.length) {
+            console.log(numberArray[currentIndex]);
+            currentIndex++;
+        } else {
+            clearInterval(intervalId);
+        }
+    }
+    const intervalId = setInterval(displayNumber, 2000);
 }
 
-function viewButtonFn(macroGroupName) {
+function viewMacro(macroGroupName) {
     let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
-    console.log(macro, "ppppppppppp")
     view_Create_Macro.style.display = 'block';
     let viewMacroDetails = document.getElementById("viewMacroDetails");
     let viewTempMacro = [];
@@ -1766,20 +1791,44 @@ function viewButtonFn(macroGroupName) {
     </div>`;
         viewTempMacro.push(addedInfoDiv);
     })
-
     viewMacroDetails.innerHTML = viewTempMacro.join("");
 }
 
-function editButtonFn() {
-    console.log("editButtonFn");
+function editMacro(macroGroupName) {
+    create_Macro.style.display = 'block';
+    let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
+    addedTempMacro = macro;
+    viewAddedAndDeletedMacro();
 }
 
-function deleteButtonFn() {
-    console.log("deleteButtonFn");
+function deleteMacro(macroGroupName) {
+    savedMacro = savedMacro.filter(x => x.macroGroupName != macroGroupName);
+    showSavedMacroList();
 }
 
+function deleteMacroLayer(value) {
+    addedTempMacro.listOfMacro = addedTempMacro.listOfMacro.filter(x => x.ulId != value);
+    viewAddedAndDeletedMacro();
+}
 
+let editId;
+function editMacroLayer(value) {
+	editId = value;
+    let layer = addedTempMacro.listOfMacro.find(x => x.ulId == value);
+    document.getElementById('macroNames').value = addedTempMacro.macroGroupName;
+    document.getElementById('mac_modelNames').value = layer.mac_model_Names;
+    document.getElementById('mac_parameterNames').value = layer.mac_parameter_Names;
+    document.getElementById('mac_subparameter').value = layer.mac_sub_parameter;
+}
 
+function updateForm(){
+	let layer = addedTempMacro.listOfMacro.find(x => x.ulId == editId);
+	layer.macroGroupName = document.getElementById('macroNames').value;
+    layer.mac_model_Names = document.getElementById('mac_modelNames').value;
+    layer.mac_parameter_Names = document.getElementById('mac_parameterNames').value;
+    layer.mac_sub_parameter = document.getElementById('mac_subparameter').value;
+	viewAddedAndDeletedMacro();
+}
 
 //*********** */
 // function editMacro(ulId, macroName, modelNames, parameterNames, subParameter) {
@@ -1830,12 +1879,12 @@ function generateAddedInfoDiv(macro) {
 //********************************************************* */
 //Macro Create Macro Toggle
 function createMacroForm() {
-    let clickMacro = document.getElementById("showCreateMacroLayers");
-    if (clickMacro.style.display === "block" || clickMacro.style.display === "") {
-        clickMacro.style.display = "none";
-    } else {
-        clickMacro.style.display = "block";
-    }
+    // let clickMacro = document.getElementById("showCreateMacroLayers");
+    // if (clickMacro.style.display === "block" || clickMacro.style.display === "") {
+    //     clickMacro.style.display = "none";
+    // } else {
+    create_Macro.style.display = "block";
+    // }
 }
 
 //MACRO-toggle
@@ -2175,6 +2224,7 @@ var MacroButton = L.Control.extend({
         L.DomEvent.on(macbtn, 'click', function() {
             // alert('MACRO Button clicked!');
             macToggleObservation();
+            macSubmitForm();
         });
 
         return macbtn;

@@ -242,7 +242,7 @@
         <div id="macroContainer" class="hidden obsClass col-2">
 
             <div style="display:flex;">
-                <button id="createMacro" class="createMacroCls" onclick="createMacroForm()">+</button>
+                <button class="createMacroCls" onclick="createMacroForm()">+</button>
                 <span class="hoverPlus">Create Macro</span>
             </div>
             <div id="showCreatedMacro"></div>
@@ -288,6 +288,9 @@
                                     disabled>Add</button>
                                 <button id="mac_submitButton" onclick="macSubmitForm()" class="macSubmitBtn"
                                     type="button" disabled>Save</button>
+								<button id="mac_submitButton" onclick="updateForm()" class="macSubmitBtn"
+                                    type="button" disabled>Update</button>
+
                             </div>
                         </form>
                         <!--  -->
