@@ -690,7 +690,9 @@ L.simpleMapScreenshoter().addTo(map);
 <!-- print -->
 <script src="leaflet.browser.print.min.js"></script>
 <script>
-L.control.browserPrint().addTo(map);
+ L.control.browserPrint({
+    documentTitle: "WEATHER DECISION SUPPORT SYSTEM"
+    }).addTo(map);
 </script>
 
 
