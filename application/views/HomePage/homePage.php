@@ -113,14 +113,14 @@
 <body>
     <!-- Title start here -->
     <div>
-        <div style="width: 100%;">
+        <div style="height: 6vh;width: 100%;">
             <div>
                 <span class="text">WEATHER DECISION SUPPORT SYSTEM</span>
             </div>
         </div>
 
         <!-- navbar -->
-        <div style="width: 100%; margin-bottom:1em; background-color:#f4fcff;" class="mx-auto">
+        <div style="height: 8vh;width: 100%; margin-bottom:1em; background-color:#f4fcff;" class="mx-auto">
             <div style="display:flex;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto heightChange">
                 <div style="width: 100%;display: flex;">
                     <div class="d-flex flex-wrap w-100 gx-3 gy-3 mt-1" id="parent"
@@ -303,6 +303,7 @@
                     <div class="view_Create_Macro_body_div">
                         <span class="viewMacroLegend">X</span>
                         <h4 class="view_Macro_h4" style="margin: 0 auto;">View MACRO</h4>
+                        <div id="viewMacroDetails">Hello</div>
                     </div>
                 </div>
             </div>
@@ -310,7 +311,7 @@
 
     </div>
     <!--  -->
-    <div style="background-color: white;">Model's Time Update</div>
+    <div style="height: 3vh; background-color: white;">Model's Time Update</div>
 
     <!-- model popup -->
     <div class="model" style="display: none; left: 253px; top: 94px; height:0;">

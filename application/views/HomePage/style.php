@@ -8,7 +8,7 @@ body {
     position: relative;
     height: 100vh;
     width: 100%;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .text {
@@ -310,7 +310,7 @@ body {
 
 /* map starts here*/
 #map {
-    height: 83vh;
+    height: 82vh;
     width: 99%;
     border: 1px solid black;
     margin-top: -39px;

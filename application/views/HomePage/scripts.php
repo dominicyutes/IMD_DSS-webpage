@@ -1581,43 +1581,49 @@ function handleInputChange() {
 handleInputChange();
 
 // AddButtonForm for MACRO
-let macroData = []; // for add btn, saving 3 list 
-let saveMacro = []; //for save btn
+let savedMacro = []; // for add btn, saving 3 list 
+let addedTempMacro = {}; //for save btn
+let listOfMacro = [];
+let showSavedMacro = [];
 let counter = 0;
+
+let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
 
 function macAddForm() {
     event.preventDefault();
-
-    let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
-
     let mac_macroNames = document.getElementById('macroNames').value;
     let mac_model_Names = document.getElementById('mac_modelNames').value;
     let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
     let mac_sub_parameter = document.getElementById('mac_subparameter').value;
-
     let ulId = "listContainerMacro_" + counter++;
 
-    let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
-        <span onclick="MacroPlusToggle('${ulId}')">+ Macro Name: ${mac_macroNames}</span>
-        <ul id="${ulId}" class="listContainerMacro">
-            <li>${mac_model_Names}</li>
-            <li>${mac_parameter_Names}</li>
-            <li>${mac_sub_parameter}</li>
-        </ul>
-    </div>`;
-
-    macroData.push(addedInfoDiv);
-
-    saveMacro.push({
+    listOfMacro.push({
         ulId: ulId,
-        macroName: mac_macroNames,
         mac_model_Names: mac_model_Names,
         mac_parameter_Names: mac_parameter_Names,
         mac_sub_parameter: mac_sub_parameter
-    });
+    })
 
-    addedInfoContainerDiv.innerHTML = macroData.join("");
-    console.log(ulId, ": ", "macroData: ", macroData, "saveMacro: ", saveMacro);
+    addedTempMacro = {
+        macroGroupName: mac_macroNames,
+        listOfMacro: listOfMacro
+    };
+
+    let showAddedTempMacro = [];
+    addedTempMacro.listOfMacro.forEach(macro => {
+        let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
+        <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.mac_sub_parameter}</span>
+        <ul id="${macro.ulId}" class="listContainerMacro">
+            <li>${macro.mac_model_Names}</li>
+            <li>${macro.mac_parameter_Names}</li>
+            <li>${macro.mac_sub_parameter}</li>
+        </ul>
+    </div>`;
+        showAddedTempMacro.push(addedInfoDiv);
+    })
+
+    addedInfoContainerDiv.innerHTML = showAddedTempMacro.join("");
+    console.log(ulId, ": ", "showAddedTempMacro: ", showAddedTempMacro, "addedTempMacro: ", addedTempMacro);
     handleInputChange();
 }
 
@@ -1652,57 +1658,85 @@ function createActionButton(action, buttonClass, buttonId) {
 
 function macSubmitForm() {
     event.preventDefault();
+    let showAllCreatedMacro = document.getElementById("showCreatedMacro");
+    savedMacro.push(addedTempMacro);
+    savedMacro.forEach(macro => {
+        if (macro) {
+            showInfoDiv = `<div>
+                <span>${macro.macroGroupName}</span>
+                <button class="edit-button" onclick="editMacro(${macro.macroGroupName})">R</button>
+                <button class="delete-button" onclick="deleteMacro(${macro.macroGroupName})">E</button>
+                <button class="delete-button" onclick="viewButtonFn('${macro.macroGroupName}')">V</button>
+                <button class="delete-button" onclick="deleteMacro('${macro.macroGroupName})">D</button>
+            </div>`;
+            showSavedMacro.push(showInfoDiv);
+        } else {
+            console.log('Details not found for:', newButton.id);
+        }
+    })
+    showAllCreatedMacro.innerHTML = showSavedMacro.join('');
 
-    let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
+    document.getElementById('macroNames').value = '';
+    document.getElementById('mac_modelNames').value = '';
+    document.getElementById('mac_parameterNames').value = '';
+    document.getElementById('mac_subparameter').value = '';
+    addedTempMacro = {};
+    listOfMacro = [];
+    addedInfoContainerDiv.innerHTML = ' '
+};
 
-    let mac_macroNames = document.getElementById('macroNames').value;
-    let mac_model_Names = document.getElementById('mac_modelNames').value;
-    let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
-    let mac_sub_parameter = document.getElementById('mac_subparameter').value;
 
-    // Create a new button with the ID of macroNames
-    let newButton = document.createElement("button");
-    newButton.innerText = mac_macroNames;
-    newButton.id = mac_macroNames + "_button";
-    newButton.onclick = function() {
-        console.log("Clicked on macroNames:", mac_macroNames);
-        console.log("mac_model_Names:", mac_model_Names);
-        console.log("mac_parameter_Names:", mac_parameter_Names);
-        console.log("mac_sub_parameter:", mac_sub_parameter);
-    };
 
-    // Create Play, View, Edit, and Delete buttons with different IDs and classes
-    //PVED ID
-    let playButtonId = mac_macroNames + "P";
-    let viewButtonId = mac_macroNames + "V";
-    let editButtonId = mac_macroNames + "E";
-    let deleteButtonId = mac_macroNames + "D";
+// let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
 
-    //PVED fn
-    let playButtonFn = mac_macroNames + "pClick";
-    let viewButtonFn = mac_macroNames + "vClick";
-    let editButtonFn = mac_macroNames + "eClick";
-    let deleteButtonFn = mac_macroNames + "dClick";
+// let mac_macroNames = document.getElementById('macroNames').value;
+// let mac_model_Names = document.getElementById('mac_modelNames').value;
+// let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
+// let mac_sub_parameter = document.getElementById('mac_subparameter').value;
 
-    let playButton = createActionButton("P", "playButton", playButtonId, playButtonFn);
-    let viewButton = createActionButton("V", "viewButton", viewButtonId, viewButtonFn);
-    let editButton = createActionButton("E", "editButton", editButtonId, editButtonFn);
-    let deleteButton = createActionButton("D", "deleteButton", deleteButtonFn);
-    console.log(playButton, viewButton, editButton, deleteButton);
+// // Create a new button with the ID of macroNames
+// let newButton = document.createElement("button");
+// newButton.innerText = mac_macroNames;
+// newButton.id = mac_macroNames + "_button";
+// newButton.onclick = function() {
+//     console.log("Clicked on macroNames:", mac_macroNames);
+//     console.log("mac_model_Names:", mac_model_Names);
+//     console.log("mac_parameter_Names:", mac_parameter_Names);
+//     console.log("mac_sub_parameter:", mac_sub_parameter);
+// };
 
-    // Create a container for the buttons
-    let buttonContainer = document.createElement("div");
-    buttonContainer.appendChild(newButton);
-    buttonContainer.appendChild(playButton);
-    buttonContainer.appendChild(viewButton);
-    buttonContainer.appendChild(editButton);
-    buttonContainer.appendChild(deleteButton);
+// // Create Play, View, Edit, and Delete buttons with different IDs and classes
+// //PVED ID
+// let playButtonId = mac_macroNames + "P";
+// let viewButtonId = mac_macroNames + "V";
+// let editButtonId = mac_macroNames + "E";
+// let deleteButtonId = mac_macroNames + "D";
 
-    addedInfoContainerDiv.appendChild(buttonContainer);
+// //PVED fn
+// let playButtonFn = mac_macroNames + "pClick";
+// let viewButtonFn = mac_macroNames + "vClick";
+// let editButtonFn = mac_macroNames + "eClick";
+// let deleteButtonFn = mac_macroNames + "dClick";
 
-    // Append the button container to the element with the ID showCreatedMacro
-    document.getElementById("showCreatedMacro").appendChild(buttonContainer);
-}
+// let playButton = createActionButton("P", "playButton", playButtonId, playButtonFn);
+// let viewButton = createActionButton("V", "viewButton", viewButtonId, viewButtonFn);
+// let editButton = createActionButton("E", "editButton", editButtonId, editButtonFn);
+// let deleteButton = createActionButton("D", "deleteButton", deleteButtonFn);
+// console.log(playButton, viewButton, editButton, deleteButton);
+
+// // Create a container for the buttons
+// let buttonContainer = document.createElement("div");
+// buttonContainer.appendChild(newButton);
+// buttonContainer.appendChild(playButton);
+// buttonContainer.appendChild(viewButton);
+// buttonContainer.appendChild(editButton);
+// buttonContainer.appendChild(deleteButton);
+
+// addedInfoContainerDiv.appendChild(buttonContainer);
+
+// // Append the button container to the element with the ID showCreatedMacro
+// document.getElementById("showCreatedMacro").appendChild(buttonContainer);
+
 
 // 
 
@@ -1715,8 +1749,25 @@ function playButtonFn() {
     console.log("PlayButton");
 }
 
-function viewButtonFn() {
-    console.log("viewButton");
+function viewButtonFn(macroGroupName) {
+    let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
+    console.log(macro, "ppppppppppp")
+    view_Create_Macro.style.display = 'block';
+    let viewMacroDetails = document.getElementById("viewMacroDetails");
+    let viewTempMacro = [];
+    macro.listOfMacro.forEach(macro => {
+        let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
+        <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.mac_sub_parameter}</span>
+        <ul id="${macro.ulId}" class="listContainerMacro">
+            <li>${macro.mac_model_Names}</li>
+            <li>${macro.mac_parameter_Names}</li>
+            <li>${macro.mac_sub_parameter}</li>
+        </ul>
+    </div>`;
+        viewTempMacro.push(addedInfoDiv);
+    })
+
+    viewMacroDetails.innerHTML = viewTempMacro.join("");
 }
 
 function editButtonFn() {
@@ -1738,7 +1789,7 @@ function deleteButtonFn() {
 //     document.getElementById('mac_parameterNames').value = parameterNames;
 //     document.getElementById('mac_subparameter').value = subParameter;
 
-//     let findID = saveMacro.find(x => x.ulId == ulId);
+//     let findID = addedTempMacro.find(x => x.ulId == ulId);
 //     console.log(findID, "jacob");
 //     handleInputChange();
 // }
@@ -1753,11 +1804,11 @@ function removeElementById(elementId) {
     let element = document.getElementById(elementId);
     if (element) {
         element.parentNode.removeChild(element);
-        // Update the saveMacro array by removing the corresponding entry
-        saveMacro = saveMacro.filter(macro => macro.ulId !== elementId);
-        // Update the macroData array by regenerating the HTML
-        macroData = saveMacro.map(macro => generateAddedInfoDiv(macro)).join("");
-        document.getElementById('addedInfoContainer').innerHTML = macroData;
+        // Update the addedTempMacro array by removing the corresponding entry
+        addedTempMacro = addedTempMacro.filter(macro => macro.ulId !== elementId);
+        // Update the savedMacro array by regenerating the HTML
+        savedMacro = addedTempMacro.map(macro => generateAddedInfoDiv(macro)).join("");
+        document.getElementById('addedInfoContainer').innerHTML = savedMacro;
     }
     handleInputChange();
 }
