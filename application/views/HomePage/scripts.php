@@ -1582,15 +1582,7 @@ handleInputChange();
 
 // AddButtonForm for MACRO
 let savedMacro = [];
-let addedTempMacro = {
-    "macroGroupName": "ddd",
-    "listOfMacro": [{
-        "ulId": "listContainerMacro_0",
-        "mac_model_Names": "Satellite",
-        "mac_parameter_Names": "Satellite Observation",
-        "mac_sub_parameter": "TIR1"
-    }]
-}
+let addedTempMacro = {};
 let listOfMacro = [];
 let counter = 0;
 
@@ -2224,7 +2216,6 @@ var MacroButton = L.Control.extend({
         L.DomEvent.on(macbtn, 'click', function() {
             // alert('MACRO Button clicked!');
             macToggleObservation();
-            macSubmitForm();
         });
 
         return macbtn;
