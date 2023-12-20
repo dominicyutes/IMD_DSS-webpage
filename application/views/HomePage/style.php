@@ -8,16 +8,18 @@ body {
     position: relative;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .text {
-    margin-right: 2%;
     font-family: 'Archivo', sans-serif;
     font-size: 2em;
     font-weight: 600;
     color: white;
     letter-spacing: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn {
@@ -217,21 +219,33 @@ body {
     margin-top: -2%;
 }
 
+.hoverPlus {
+    display: none;
+}
+
 .createMacroCls {
-    width: 100%;
+    margin-bottom: 10px;
+    width: 14%;
     height: auto;
     border-radius: 7px;
     background-color: #eff4ff;
-    color: #244c7e;
+    color: #070f19;
     border-color: #ffffff91;
-    font-size: 14px;
+    font-size: 16px;
+}
+
+.createMacroCls:hover+.hoverPlus {
+    display: block;
+    color: #fff;
+    margin-left: 10px;
 }
 
 .macroNameLabel,
 .mac_firstDDLabel,
 .mac_secondDDLabel,
 .mac_thirdDDLabel {
-    color: #fff;
+    margin: 0 4px;
+    color: #041014;
     font-size: 14px;
     border: 0;
 }
@@ -245,17 +259,18 @@ body {
 .mac_firstDD,
 .mac_secondDD,
 .mac_thirdDD {
-    width: 100%;
+    margin: 0 10px;
+    width: 92%;
     height: 32px;
     border-radius: 10px;
-    color: #02275f;
+    color: #041014;
     font-size: 14px;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 .macSubmitBtn {
     justify-content: center;
-    margin-top: 6%;
+    margin: 6% 2% 0 2%;
     width: 50%;
     height: auto;
     border-radius: 7px;
@@ -270,6 +285,18 @@ body {
     display: none;
 }
 
+.macroListCSS {
+    color: black;
+}
+
+.button-container {
+    display: flex;
+}
+
+.button-container button {
+    margin-right: 5px;
+}
+
 .addBox {
     height: 220px;
     width: 100%;
@@ -280,47 +307,6 @@ body {
     border-radius: 8px;
 }
 
-/*  */
-/* Style the dropdown button */
-.macOptCls {
-    width: 100%;
-    height: auto;
-    border-radius: 7px;
-    background-color: #244c7e;
-    color: ghostwhite;
-    border-color: mediumaquamarine;
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-/* Style the dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    width: 100%;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    z-index: 1;
-}
-
-/* Style the buttons inside the dropdown */
-.dropdown-content button {
-    width: 100%;
-    height: auto;
-    text-align: left;
-    padding: 5px;
-    border: 1px solid black;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #dfdfdf;
-    color: #1a1a1d;
-    font-size: 14px;
-}
-
-/* Show the dropdown content when the dropdown button is clicked */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
 /* map starts here*/
 #map {
@@ -334,13 +320,6 @@ body {
 .customClass {
     float: none;
 }
-
-/* .leaflet-top, */
-/* .leaflet-control {
-    margin-top: 0px;
-    float: none;
-    margin-left: 17px;
-} */
 
 .leaflet-touch .leaflet-bar {
     border: 2px solid rgba(0, 0, 0, 0.2);
@@ -364,7 +343,142 @@ body {
     z-index: 999;
 }
 
-/* Draggable Model PopUp */
+/* MACRO CSS starts here */
+.create_Macro {
+    width: 35%;
+    position: fixed;
+    z-index: 99999;
+    display: none;
+    left: 1155px;
+    top: -25px;
+    height: 0;
+}
+
+.create_Macro_body {
+    position: absolute;
+    width: 250px;
+    height: 580px;
+    margin: 416px 0 0 0px;
+    transform: translate(-50%, -50%);
+    background-color: #f3fbfe;
+    box-shadow: inset -1px 2px 10px 0 rgba(0, 0, 0, 0.404);
+    border-radius: 6px;
+    /* user-select: none; */
+    overflow: auto;
+    position: relative;
+    border: ridge;
+    /* resize: both; */
+}
+
+.create_Macro_body_div {
+    z-index: 999;
+    display: flex;
+    position: sticky;
+    top: 0;
+    font-family: Arial, sans-serif;
+    background-color: #00415a;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.macroLegend {
+    cursor: pointer;
+    color: #83ffee;
+    text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;
+    font-size: 17px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.addedInfoDiv_ul {
+    display: flex;
+}
+
+.create_Macro_h4 {
+    color: #ffffffcc;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 11px;
+    margin: 5px 0 0 0px;
+}
+
+/* MACRO CSS ends here */
+
+/* Macro View Btn starts here */
+.view_Create_Macro {
+    width: 35%;
+    position: fixed;
+    z-index: 99999;
+    display: none;
+    left: 1155px;
+    top: -25px;
+    height: 0;
+}
+
+.view_Create_Macro_body {
+    position: absolute;
+    width: 250px;
+    height: 580px;
+    margin: 416px 0 0 0px;
+    transform: translate(-50%, -50%);
+    background-color: #f3fbfe;
+    box-shadow: inset -1px 2px 10px 0 rgba(0, 0, 0, 0.404);
+    border-radius: 6px;
+    /* user-select: none; */
+    overflow: auto;
+    position: relative;
+    border: ridge;
+    /* resize: both; */
+}
+
+.view_Create_Macro_body_div {
+    z-index: 999;
+    display: flex;
+    position: sticky;
+    top: 0;
+    font-family: Arial, sans-serif;
+    background-color: #00415a;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.viewMacroLegend {
+    cursor: pointer;
+    color: #83ffee;
+    text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;
+    font-size: 21px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+/* .addedInfoDiv_ul {
+    display: flex;
+} */
+
+.view_Macro_h4 {
+    color: #ffffffcc;
+    font-size: 16px;
+    padding-left: 11px;
+    margin: 5px 0 0 0px;
+}
+
+/* Macro View Btn ends here */
+
+/* Draggable Model PopUp for Legend */
 .model {
     width: 35%;
     height: 55vh;
@@ -426,6 +540,8 @@ body {
 #model-details {
     padding-left: 11px;
 }
+
+/* Draggable Model PopUp for Legend Ends here */
 
 .leaflet-panel-layers.expanded {
     padding: 12px;
