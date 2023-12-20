@@ -6,7 +6,9 @@
 
 
     <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- GoogleFonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -305,9 +307,9 @@
                 <div class="view_Create_Macro_body" style="position: relative;">
                     <div class="view_Create_Macro_body_div">
                         <span class="viewMacroLegend">X</span>
-                        <h4 class="view_Macro_h4" style="margin: 0 auto;">View MACRO</h4>
-                        <div id="viewMacroDetails">Hello</div>
+                        <h4 class="view_Macro_h4" style="margin: 0 auto;">View Macro</h4>
                     </div>
+                    <div style="color:black;" id="viewMacroDetails"></div>
                 </div>
             </div>
         </div>
@@ -714,9 +716,9 @@ L.simpleMapScreenshoter().addTo(map);
 <!-- print -->
 <script src="leaflet.browser.print.min.js"></script>
 <script>
- L.control.browserPrint({
+L.control.browserPrint({
     documentTitle: "WEATHER DECISION SUPPORT SYSTEM"
-    }).addTo(map);
+}).addTo(map);
 </script>
 
 

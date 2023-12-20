@@ -1647,13 +1647,6 @@ function createActionButton(action, buttonClass, buttonId) {
     button.innerText = action;
     button.className = buttonClass;
     button.id = buttonId;
-    // button.onclick = function() {
-    //     if (buttonId === viewButtonId) {
-    //         view_Create_Macro.style.display = 'block';
-    //     }
-
-    //     console.log(action + " clicked");
-    // };
     console.log("action:" + action, "buttonClass:" + buttonClass, "buttonId:" + buttonId);
     return button;
 
@@ -1663,6 +1656,39 @@ function macSubmitForm() {
     event.preventDefault();
     savedMacro.push(addedTempMacro);
     showSavedMacroList();
+    savedMacro.forEach(macro => {
+        if (macro) {
+            showInfoDiv = `<div>
+                <div><i class="fa-sharp fa-solid fa-star fa-2xs" style="color: #030407;"></i>
+                <span style="font-size: 22px;">${macro.macroGroupName}</span>
+                </div>
+                
+                <div style="border-radius: 5px;">
+                <button class="run-button" onclick="editMacro(${macro.macroGroupName})">
+                <i class="fa-sharp fa-solid fa-play fa-xs" style="color: #00415a;"></i>
+                </button>
+                
+                <button class="view-button" onclick="viewButtonFn('${macro.macroGroupName}')">
+                <i class="fa-sharp fa-solid fa-eye fa-xs" style="color: #00415a;"></i>
+                </button>
+
+                <button class="edit-button" onclick="deleteMacro(${macro.macroGroupName})">
+                <i class="fa-sharp fa-solid fa-pen-to-square fa-xs" style="color: #00415a;"></i>
+                </button>
+                
+                <button class="delete-button" onclick="deleteMacro('${macro.macroGroupName})">
+                <i class="fa-sharp fa-solid fa-trash fa-xs" style="color: #00415a;"></i>
+                </button>
+                </div>
+                
+            </div>`;
+            showSavedMacro.push(showInfoDiv);
+        } else {
+            console.log('Details not found for:', newButton.id);
+        }
+    })
+    showAllCreatedMacro.innerHTML = showSavedMacro.join('');
+
     document.getElementById('macroNames').value = '';
     document.getElementById('mac_modelNames').value = '';
     document.getElementById('mac_parameterNames').value = '';
@@ -1758,7 +1784,7 @@ function playMacro(macroGroupName) {
 
     function displayNumber() {
         if (currentIndex < macro.listOfMacro.length) {
-			new L.marker([28.6139-numberArray[currentIndex], 77.2090-numberArray[currentIndex]]).addTo(map);
+            new L.marker([28.6139 - numberArray[currentIndex], 77.2090 - numberArray[currentIndex]]).addTo(map);
             currentIndex++;
         } else {
             clearInterval(intervalId);
@@ -1804,8 +1830,9 @@ function deleteMacroLayer(value) {
 }
 
 let editId;
+
 function editMacroLayer(value) {
-	editId = value;
+    editId = value;
     let layer = addedTempMacro.listOfMacro.find(x => x.ulId == value);
     document.getElementById('macroNames').value = addedTempMacro.macroGroupName;
     document.getElementById('mac_modelNames').value = layer.mac_model_Names;
@@ -1813,13 +1840,13 @@ function editMacroLayer(value) {
     document.getElementById('mac_subparameter').value = layer.mac_sub_parameter;
 }
 
-function updateForm(){
-	let layer = addedTempMacro.listOfMacro.find(x => x.ulId == editId);
-	layer.macroGroupName = document.getElementById('macroNames').value;
+function updateForm() {
+    let layer = addedTempMacro.listOfMacro.find(x => x.ulId == editId);
+    layer.macroGroupName = document.getElementById('macroNames').value;
     layer.mac_model_Names = document.getElementById('mac_modelNames').value;
     layer.mac_parameter_Names = document.getElementById('mac_parameterNames').value;
     layer.mac_sub_parameter = document.getElementById('mac_subparameter').value;
-	viewAddedAndDeletedMacro();
+    viewAddedAndDeletedMacro();
 }
 
 //*********** */
@@ -5933,10 +5960,6 @@ let RainfallIntensityImage = document.querySelector('#RainfallIntensityImage');
 let MSLPDayImage = document.querySelector('#MSLPDayImage');
 let mWINDDayImage = document.querySelector('#mWINDDayImage');
 
-// model popup
-let model = document.querySelector('.model');
-let modelBody = document.querySelector('.model-body');
-let closeModel = document.querySelector('.model-body legend');
 //
 let panelLayerLightningTitle = document.querySelector('#panelLayer-Lightning-Title')
 let panelLayerLightninglists = document.querySelector('#panelLayer-Lightning-lists')
@@ -13488,12 +13511,18 @@ function mWINDDayLegendImage() {
 	</svg>`
 }
 
+
+//drag popup
+// model popup for legend starts here
+let model = document.querySelector('.model');
+let modelBody = document.querySelector('.model-body');
+let closeModel = document.querySelector('.model-body legend');
+
 //closeModel
 closeModel.onclick = () => {
     model.style.display = 'none';
 }
 
-//drag popup
 function onDrag({
     movementX,
     movementY
@@ -13514,4 +13543,70 @@ document.addEventListener('mouseup', () => {
     modelBody.style.cursor = 'default';
     modelBody.removeEventListener('mousemove', onDrag);
 })
+// model popup for legend endsHere
+
+// model popup- createMacro startsHere
+let createMacroDrag = document.querySelector('.create_Macro');
+let createMacroBody = document.querySelector('.create_Macro_body');
+let closeModelCreateMac = document.querySelector('.create_Macro_body .macroLegend');
+
+//closeModel createMacro
+closeModelCreateMac.onclick = () => {
+    createMacroDrag.style.display = 'none';
+}
+
+function onDragCreateMacro({
+    movementX,
+    movementY
+}) {
+    let getStyle = window.getComputedStyle(createMacroDrag);
+    let leftValue = parseInt(getStyle.left);
+    let topValue = parseInt(getStyle.top);
+    createMacroDrag.style.left = `${leftValue + movementX}px`;
+    createMacroDrag.style.top = `${topValue + movementY}px`;
+}
+//
+document.addEventListener('mousedown', () => {
+    createMacroBody.style.cursor = 'all-scroll';
+    createMacroBody.addEventListener('mousemove', onDragCreateMacro);
+})
+//
+document.addEventListener('mouseup', () => {
+    createMacroBody.style.cursor = 'default';
+    createMacroBody.removeEventListener('mousemove', onDragCreateMacro);
+})
+// model popup- createMacro endsHere
+
+
+// model popup- viewMacro startsHere
+let viewCreateMacrodrag = document.querySelector('.view_Create_Macro');
+let viewCreateMacroBody = document.querySelector('.view_Create_Macro_body');
+let closeModelViewMac = document.querySelector('.view_Create_Macro_body .viewMacroLegend');
+
+//closeModel viewMacro
+closeModelViewMac.onclick = () => {
+    viewCreateMacrodrag.style.display = 'none';
+}
+
+function onDragViewMacro({
+    movementX,
+    movementY
+}) {
+    let getStyle = window.getComputedStyle(viewCreateMacrodrag);
+    let leftValue = parseInt(getStyle.left);
+    let topValue = parseInt(getStyle.top);
+    viewCreateMacrodrag.style.left = `${leftValue + movementX}px`;
+    viewCreateMacrodrag.style.top = `${topValue + movementY}px`;
+}
+//
+document.addEventListener('mousedown', () => {
+    viewCreateMacroBody.style.cursor = 'all-scroll';
+    viewCreateMacroBody.addEventListener('mousemove', onDragViewMacro);
+})
+//
+document.addEventListener('mouseup', () => {
+    viewCreateMacroBody.style.cursor = 'default';
+    viewCreateMacroBody.removeEventListener('mousemove', onDragViewMacro);
+})
+// model popup- viewMacro endsHere
 </script>

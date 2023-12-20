@@ -357,7 +357,7 @@ body {
 .create_Macro_body {
     position: absolute;
     width: 250px;
-    height: 580px;
+    height: 570px;
     margin: 416px 0 0 0px;
     transform: translate(-50%, -50%);
     background-color: #f3fbfe;
@@ -417,7 +417,7 @@ body {
     position: fixed;
     z-index: 99999;
     display: none;
-    left: 1155px;
+    left: 887px;
     top: -25px;
     height: 0;
 }
@@ -425,7 +425,7 @@ body {
 .view_Create_Macro_body {
     position: absolute;
     width: 250px;
-    height: 580px;
+    height: 570px;
     margin: 416px 0 0 0px;
     transform: translate(-50%, -50%);
     background-color: #f3fbfe;
@@ -454,7 +454,7 @@ body {
     cursor: pointer;
     color: #83ffee;
     text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;
-    font-size: 21px;
+    font-size: 17px;
     font-weight: bold;
     position: absolute;
     top: 5px;
@@ -472,8 +472,25 @@ body {
 .view_Macro_h4 {
     color: #ffffffcc;
     font-size: 16px;
+    font-weight: bold;
     padding-left: 11px;
     margin: 5px 0 0 0px;
+}
+
+.run-button {
+    border-radius: 6px;
+}
+
+.view-button {
+    border-radius: 6px;
+}
+
+.edit-button {
+    border-radius: 6px;
+}
+
+.delete-button {
+    border-radius: 6px;
 }
 
 /* Macro View Btn ends here */
