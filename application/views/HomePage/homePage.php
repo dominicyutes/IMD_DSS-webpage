@@ -702,10 +702,10 @@
 
 
 <!-- screenshoter -->
-<script src="https://unpkg.com/leaflet-simple-map-screenshoter"></script>
+<!-- <script src="https://unpkg.com/leaflet-simple-map-screenshoter"></script>
 <script>
 L.simpleMapScreenshoter().addTo(map);
-</script>
+</script> -->
 
 <!-- print -->
 <script src="leaflet.browser.print.min.js"></script>

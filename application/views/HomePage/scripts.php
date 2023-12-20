@@ -1802,18 +1802,25 @@ function createMacroForm() {
 //     timeDimensionControl: true
 // }).setView([22.79459, 80.06406], 5);
 
+// const map = L.map('map', {
+//     zoom: 5,
+//     cursor: true
+// }).setView([22.79459, 80.06406]);
+
 //MAP
+var startDate = new Date(); // You need to define `startDate`
+
+// Your Leaflet map initialization
 var map = L.map('map', {
     zoom: 5,
     timeDimension: true,
-    timeDimensionControl: false,
+    timeDimensionControl: false, // Initially set to false
     timeDimensionOptions: {
         timeInterval: "2023-12-05/2023-12-06",
         period: "PT1H",
         validTimeRange: "00:00/23:00",
         currentTime: startDate
     },
-
     timeDimensionControlOptions: {
         autoPlay: false,
         playerOptions: {
@@ -1824,6 +1831,53 @@ var map = L.map('map', {
     },
     center: [22.79459, 80.06406],
 });
+
+// Function to toggle timeDimensionControl
+function toggleTimeDimensionControl() {
+    if (!map.timeDimensionControl) {
+        map.timeDimensionControl = L.control.timeDimension({
+            position: 'topleft',
+            autoPlay: false, // Set your options here
+            playerOptions: {
+                buffer: 10,
+                transitionTime: 500,
+                loop: true,
+            }
+        }).addTo(map);
+    } else {
+        map.removeControl(map.timeDimensionControl);
+        map.timeDimensionControl = null;
+    }
+}
+
+// Create a custom control
+var timeDimensionControlButton = L.Control.extend({
+    onAdd: function() {
+        var button = L.DomUtil.create('button');
+        button.innerHTML = 'Time Dimension';
+        // button.style.backgroundColor = 'white';
+        // button.style.border = '1px solid black';
+        button.style.padding = '2px';
+        button.style.cursor = 'pointer';
+
+        button.onclick = function() {
+            toggleTimeDimensionControl();
+        };
+
+        return button;
+    },
+
+    onRemove: function() {
+        // Nothing to do here
+    }
+});
+
+// Add the custom control to the map
+var timeDimensionControl = new timeDimensionControlButton({
+    position: 'topright'
+});
+timeDimensionControl.addTo(map);
+
 
 // timeDimension
 var today = new Date();
@@ -1961,47 +2015,6 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
     layerName: "mywmsNowcast"
 });
 
-//Leaflet-sideBySide
-let sideBySideControl = null;
-let sideBySideVisible = false;
-
-function toggleSideBySide() {
-    if (sideBySideVisible) {
-        if (sideBySideControl !== null) {
-            map.removeControl(sideBySideControl);
-            sideBySideControl = null;
-        }
-        sideBySideVisible = false;
-    } else {
-        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast).addTo(map);
-        sideBySideVisible = true;
-    }
-}
-
-const ToggleControl = L.Control.extend({
-    onAdd: function(map) {
-        const button = L.DomUtil.create('button', 'toggle-button');
-        button.textContent = 'Toggle Layers';
-
-        // Function to handle button click
-        function handleButtonClick() {
-            alert('Select Only Two Layers!');
-            L.DomEvent.off(button, 'click', handleButtonClick);
-        }
-
-        L.DomEvent.on(button, 'click', handleButtonClick);
-
-        button.onclick = function() {
-            toggleSideBySide();
-            button.textContent = sideBySideVisible ? 'Hide side-by-side' : 'Show side-by-side';
-        };
-        return button;
-    },
-
-    onRemove: function(map) {}
-});
-
-(new ToggleControl()).addTo(map);
 
 
 //leaflet Fullscreen
@@ -2886,6 +2899,78 @@ X166.bindPopup("<b>X166</b>").openPopup();
 
 
 
+
+
+//Leaflet-sideBySide
+let sideBySideControl = null;
+let sideBySideVisible = false;
+let activeLayers = 0;
+
+function toggleSideBySide() {
+    if (sideBySideVisible) {
+        if (sideBySideControl !== null) {
+            map.removeControl(sideBySideControl);
+            sideBySideControl = null;
+        }
+        sideBySideVisible = false;
+    } else {
+        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast).addTo(map);
+        sideBySideVisible = true;
+    }
+    // Check the number of active layers when toggling side-by-side
+    updateActiveLayers();
+}
+
+function updateActiveLayers() {
+    activeLayers = 0;
+    overLayers.forEach(group => {
+        group.layers.forEach(layer => {
+            if (layer.active) {
+                activeLayers++;
+            }
+        });
+    });
+
+    // Check if side-by-side is active and more than 2 layers are active
+    if (sideBySideVisible && activeLayers > 2) {
+        alert("Only two layers can be active when side-by-side view is active!");
+        // Disable additional layers
+        overLayers.forEach(group => {
+            group.layers.forEach(layer => {
+                if (layer.active && activeLayers > 2) {
+                    layer.active = false;
+                    activeLayers--;
+                }
+            });
+        });
+    }
+}
+
+const ToggleControl = L.Control.extend({
+    onAdd: function(map) {
+        const button = L.DomUtil.create('button', 'toggle-button');
+        button.textContent = 'Toggle Layers';
+
+        // Function to handle button click
+        function handleButtonClick() {
+            L.DomEvent.off(button, 'click', handleButtonClick);
+        }
+
+        L.DomEvent.on(button, 'click', handleButtonClick);
+
+        button.onclick = function() {
+            toggleSideBySide();
+            button.textContent = sideBySideVisible ? 'Hide side-by-side' : 'Show side-by-side';
+        };
+        return button;
+    },
+
+    onRemove: function(map) {}
+});
+
+(new ToggleControl()).addTo(map);
+
+
 // mywmsIITM mywmsNcum mywmsNowcast
 const overLayers = [{
         group: "Lightning",
@@ -2900,13 +2985,11 @@ const overLayers = [{
                 active: false,
                 name: "Last 05-10 min",
                 layer: mywmsNcum,
-                // layer: jaipurMarker,
             },
             {
                 active: false,
                 name: "Last 10-15 min",
                 layer: mywmsNowcast,
-                // layer: bhopalMarker,
             },
         ]
     },
@@ -2927,6 +3010,18 @@ const overLayers = [{
         ]
     }
 ];
+
+// Hook into layer changes to update activeLayers
+overLayers.forEach(group => {
+    group.layers.forEach(layer => {
+        layer.layer.on('add remove', function() {
+            layer.active = !layer.active;
+            updateActiveLayers();
+        });
+    });
+});
+
+
 
 // PanelLayers collapse group
 var panelLayers = new L.Control.PanelLayers(baseMaps, overLayers, {
