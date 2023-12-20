@@ -1766,13 +1766,13 @@ function playMacro(macroGroupName) {
 
     function displayNumber() {
         if (currentIndex < macro.listOfMacro.length) {
-            console.log(numberArray[currentIndex]);
+			new L.marker([28.6139-numberArray[currentIndex], 77.2090-numberArray[currentIndex]]).addTo(map);
             currentIndex++;
         } else {
             clearInterval(intervalId);
         }
     }
-    const intervalId = setInterval(displayNumber, 2000);
+    const intervalId = setInterval(displayNumber, 5000);
 }
 
 function viewMacro(macroGroupName) {
