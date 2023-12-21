@@ -1561,7 +1561,7 @@ function macShowSubParameterNames(value) {
 // for disabled the ADD and SAVE buttons
 function handleInputChange() {
     const inputValue = document.getElementById("macroNames").value.trim();
-    console.log(inputValue, "dfghjk");
+    // console.log(inputValue, "dfghjk");
     const buttons = document.querySelectorAll(".macSubmitBtn");
 
     if (inputValue) {
@@ -1855,10 +1855,10 @@ var timeDimensionControlButton = L.Control.extend({
     onAdd: function() {
         var button = L.DomUtil.create('button');
         button.innerHTML = 'Time Dimension';
-        // button.style.backgroundColor = 'white';
+        button.style.backgroundColor = 'white';
         // button.style.border = '1px solid black';
-        button.style.padding = '2px';
-        button.style.cursor = 'pointer';
+        // button.style.padding = '2px';
+        // button.style.cursor = 'pointer';
 
         button.onclick = function() {
             toggleTimeDimensionControl();
@@ -1940,20 +1940,19 @@ var timeDimensionControl = new L.Control.TimeDimensionCustom({
 // });
 
 //
-const Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
-    minZoom: 0,
-    maxZoom: 20,
-    attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    ext: 'png'
-});
-Stadia_Outdoors.addTo(map);
-
-//
 const OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
 // OpenStreetMap.addTo(map);
+
+const streets = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 32,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    }
+);
+streets.addTo(map);
 
 const imagery = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -1972,20 +1971,17 @@ const Stadia_AlidadeSmoothDark = L.tileLayer(
 );
 // Stadia_AlidadeSmoothDark.addTo(map);
 
-const Stadia_StamenToner = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.{ext}', {
-    minZoom: 0,
-    maxZoom: 20,
-    attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    ext: 'png'
-});
-
-// const darkGreyCanvas = L.tileLayer(
-//     'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-//         maxZoom: 20,
-//         subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-//     }
-// );
+const darkGreyCanvas = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    }
+);
 // darkGreyCanvas.addTo(map);
+
+
+
+
 
 // 
 const mywmsIITM = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
@@ -2026,8 +2022,8 @@ map.addControl(new L.Control.Fullscreen({
 }));
 
 var baseMaps = [{
-        name: "Stadia_Outdoors",
-        layer: Stadia_Outdoors
+        name: "Streets",
+        layer: streets
     },
     {
         name: "Open Street Map",
@@ -2042,9 +2038,9 @@ var baseMaps = [{
         layer: Stadia_AlidadeSmoothDark
     },
     {
-        name: "Stadia_StamenToner",
-        layer: Stadia_StamenToner
-    },
+        name: "Dark Gray Canvas",
+        layer: darkGreyCanvas
+    },
 
 ];
 
@@ -2949,8 +2945,8 @@ function updateActiveLayers() {
 const ToggleControl = L.Control.extend({
     onAdd: function(map) {
         const button = L.DomUtil.create('button', 'toggle-button');
-        button.textContent = 'Toggle Layers';
-
+        button.textContent = 'side-by-side Layers';
+        button.style.backgroundColor = 'white';
         // Function to handle button click
         function handleButtonClick() {
             L.DomEvent.off(button, 'click', handleButtonClick);
