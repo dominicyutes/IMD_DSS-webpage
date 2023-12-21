@@ -2063,7 +2063,7 @@ const OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.pn
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
-// OpenStreetMap.addTo(map);
+OpenStreetMap.addTo(map);
 
 const streets = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -2071,7 +2071,7 @@ const streets = L.tileLayer(
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
     }
 );
-streets.addTo(map);
+// streets.addTo(map);
 
 const imagery = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
