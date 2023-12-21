@@ -813,7 +813,7 @@
         </table>
         <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
         <script src="https://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
-        <script src="dist/leaflet.browser.print.js"></script>
+        <!-- <script src="dist/leaflet.browser.print.js"></script> -->
         <script src="https://leaflet.github.io/Leaflet.markercluster/example/realworld.388.js">
 
         </script>
