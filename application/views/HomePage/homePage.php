@@ -136,7 +136,8 @@
                             <p class="btn-val" id="metar">Metar</p>
                             <div class="underline"></div>
                         </button>
-                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
+                        <button class="d-flex btn border-end border-2 pe-3" id="synophighLightBtn"
+                            style="flex-direction:column;">
                             <p class="btn-val" id="synop">Synop</p>
                             <div class="underline"></div>
                         </button>
@@ -247,6 +248,7 @@
                 <button class="createMacroCls" onclick="createMacroForm()">+</button>
                 <span class="hoverPlus">Create Macro</span>
             </div>
+
             <div id="showCreatedMacro"></div>
             <!--  -->
             <div class="create_Macro">
@@ -286,13 +288,12 @@
 
                             <!-- Submit -->
                             <div style="display: flex;">
-                                <button id="mac_AddButton" onclick="macAddForm()" class="macSubmitBtn" type="button"
+                                <button id="mac_addButton" onclick="macAddForm()" class="macSubmitBtn" type="button"
                                     disabled>Add</button>
-                                <button id="mac_submitButton" onclick="macSubmitForm()" class="macSubmitBtn"
-                                    type="button" disabled>Save</button>
-								<button id="mac_submitButton" onclick="updateForm()" class="macSubmitBtn"
-                                    type="button" disabled>Update</button>
-
+                                <button id="mac_submitButton" style="display:block" onclick="macSubmitForm()"
+                                    class="macSubmitBtn" type="button" disabled>Save</button>
+                                <button id="mac_updateButton" onclick="updateForm()" class="macSubmitBtn" type="button"
+                                    style="display:none" disabled>Update</button>
                             </div>
                         </form>
                         <!--  -->
@@ -316,7 +317,7 @@
 
     </div>
     <!--  -->
-    <div style="height: 3vh; background-color: white;">Model's Time Update</div>
+    <div style="height: 4vh; background-color: white;">Model's Time Update</div>
 
     <!-- model popup -->
     <div class="model" style="display: none; left: 253px; top: 94px; height:0;">
