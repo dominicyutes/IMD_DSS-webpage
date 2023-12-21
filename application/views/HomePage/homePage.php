@@ -6,7 +6,9 @@
 
 
     <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- GoogleFonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,14 +115,14 @@
 <body>
     <!-- Title start here -->
     <div>
-        <div style="width: 100%;">
+        <div style="height: 6vh;width: 100%;">
             <div>
                 <span class="text">WEATHER DECISION SUPPORT SYSTEM</span>
             </div>
         </div>
 
         <!-- navbar -->
-        <div style="width: 100%; margin-bottom:1em; background-color:#f4fcff;" class="mx-auto">
+        <div style="height: 8vh;width: 100%; margin-bottom:1em; background-color:#f4fcff;" class="mx-auto">
             <div style="display:flex;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto heightChange">
                 <div style="width: 100%;display: flex;">
                     <div class="d-flex flex-wrap w-100 gx-3 gy-3 mt-1" id="parent"
@@ -242,7 +244,7 @@
         <div id="macroContainer" class="hidden obsClass col-2">
 
             <div style="display:flex;">
-                <button id="createMacro" class="createMacroCls" onclick="createMacroForm()">+</button>
+                <button class="createMacroCls" onclick="createMacroForm()">+</button>
                 <span class="hoverPlus">Create Macro</span>
             </div>
             <div id="showCreatedMacro"></div>
@@ -288,6 +290,9 @@
                                     disabled>Add</button>
                                 <button id="mac_submitButton" onclick="macSubmitForm()" class="macSubmitBtn"
                                     type="button" disabled>Save</button>
+								<button id="mac_submitButton" onclick="updateForm()" class="macSubmitBtn"
+                                    type="button" disabled>Update</button>
+
                             </div>
                         </form>
                         <!--  -->
@@ -302,15 +307,16 @@
                 <div class="view_Create_Macro_body" style="position: relative;">
                     <div class="view_Create_Macro_body_div">
                         <span class="viewMacroLegend">X</span>
-                        <h4 class="view_Macro_h4" style="margin: 0 auto;">View MACRO</h4>
+                        <h4 class="view_Macro_h4" style="margin: 0 auto;">View Macro</h4>
                     </div>
+                    <div style="color:black;" id="viewMacroDetails"></div>
                 </div>
             </div>
         </div>
 
     </div>
     <!--  -->
-    <div style="background-color: white;">Model's Time Update</div>
+    <div style="height: 3vh; background-color: white;">Model's Time Update</div>
 
     <!-- model popup -->
     <div class="model" style="display: none; left: 253px; top: 94px; height:0;">
@@ -710,9 +716,9 @@ L.simpleMapScreenshoter().addTo(map);
 <!-- print -->
 <script src="leaflet.browser.print.min.js"></script>
 <script>
- L.control.browserPrint({
+L.control.browserPrint({
     documentTitle: "WEATHER DECISION SUPPORT SYSTEM"
-    }).addTo(map);
+}).addTo(map);
 </script>
 
 
