@@ -1493,12 +1493,7 @@ let create_Macro = document.querySelector('.create_Macro');
 let create_Macro_body = document.querySelector('.create_Macro_body');
 let create_Macro_close = document.querySelector('.create_Macro_body .macroLegend');
 //
-// document.querySelectorAll('#createMacro').forEach(function(openModel) {
-//     openModel.onclick = () => {
-//         console.log("createMacro,openModel working!!!");
-//         create_Macro.style.display = 'block';
-//     }
-// });
+
 //create-Macro-close
 create_Macro_close.onclick = () => {
     create_Macro.style.display = 'none';
@@ -1509,13 +1504,6 @@ let view_Create_Macro = document.querySelector('.view_Create_Macro');
 let view_Create_Macro_body = document.querySelector('.view_Create_Macro_body');
 let view_Create_Macro_body_close = document.querySelector('.view_Create_Macro_body .viewMacroLegend');
 //
-
-// document.querySelectorAll('.viewButton').forEach(function(openModel) {
-//     openModel.onclick = () => {
-//         console.log("view_Create_Macro,openModel working!!!");
-//         view_Create_Macro.style.display = 'block';
-//     }
-// });
 
 // View - create - Macro - close
 view_Create_Macro_body_close.onclick = () => {
@@ -1561,7 +1549,7 @@ function macShowSubParameterNames(value) {
 // for disabled the ADD and SAVE buttons
 function handleInputChange() {
     const inputValue = document.getElementById("macroNames").value.trim();
-    console.log(inputValue, "dfghjk");
+    // console.log(inputValue, "dfghjk");
     const buttons = document.querySelectorAll(".macSubmitBtn");
 
     if (inputValue) {
@@ -1598,6 +1586,7 @@ function macAddForm() {
 
     listOfMacro.push({
         ulId: ulId,
+        mac_macroNames: mac_macroNames,
         mac_model_Names: mac_model_Names,
         mac_parameter_Names: mac_parameter_Names,
         mac_sub_parameter: mac_sub_parameter
@@ -1608,6 +1597,11 @@ function macAddForm() {
         listOfMacro: listOfMacro
     };
 
+    // document.getElementById('macroNames').value = '';
+    document.getElementById('mac_modelNames').value = '';
+    document.getElementById('mac_parameterNames').value = '';
+    document.getElementById('mac_subparameter').value = '';
+
     viewAddedAndDeletedMacro();
     handleInputChange();
 }
@@ -1616,14 +1610,18 @@ function viewAddedAndDeletedMacro() {
     let showAddedTempMacro = [];
     addedTempMacro.listOfMacro.forEach(macro => {
         let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
-        <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.mac_sub_parameter}</span>
+        <div>
+        <span onclick="MacroPlusToggle('${macro.ulId}')">
+        <div><i class="fa-solid fa-plus fa-xs"></i> ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>&nbsp;&nbsp;</div>
+		<span onclick="editMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i></span>
+        <span onclick="deleteMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-trash fa-xs"></i></span>
+        </div>
         <ul id="${macro.ulId}" class="listContainerMacro">
             <li>${macro.mac_model_Names}</li>
             <li>${macro.mac_parameter_Names}</li>
             <li>${macro.mac_sub_parameter}</li>
         </ul>
-		<span onclick="deleteMacroLayer('${macro.ulId}')">X</span>
-		<span onclick="editMacroLayer('${macro.ulId}')">E</span>
+		
     </div>`;
         showAddedTempMacro.push(addedInfoDiv);
     })
@@ -1647,13 +1645,6 @@ function createActionButton(action, buttonClass, buttonId) {
     button.innerText = action;
     button.className = buttonClass;
     button.id = buttonId;
-    // button.onclick = function() {
-    //     if (buttonId === viewButtonId) {
-    //         view_Create_Macro.style.display = 'block';
-    //     }
-
-    //     console.log(action + " clicked");
-    // };
     console.log("action:" + action, "buttonClass:" + buttonClass, "buttonId:" + buttonId);
     return button;
 
@@ -1679,11 +1670,23 @@ function showSavedMacroList() {
     savedMacro.forEach(macro => {
         if (macro) {
             showInfoDiv = `<div>
-                <span>${macro.macroGroupName}</span>
-                <button class="edit-button" onclick="playMacro('${macro.macroGroupName}')">R</button>
-                <button class="delete-button" onclick="editMacro('${macro.macroGroupName}')">E</button>
-                <button class="delete-button" onclick="viewMacro('${macro.macroGroupName}')">V</button>
-                <button class="delete-button" onclick="deleteMacro('${macro.macroGroupName}')">D</button>
+                <div><i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #010a14;"></i>&nbsp;
+                <span style="color:black"> ${macro.macroGroupName}</span>
+                </div>
+
+                <div class="saveMacroView">
+                <button class="play-button" onclick="playMacro('${macro.macroGroupName}')">
+                <i class="fa-solid fa-play fa-xs"></i></button>
+
+                <button class="view-button" onclick="viewMacro('${macro.macroGroupName}')">
+                <i class="fa-solid fa-eye fa-xs"></i></button>
+
+                <button class="edit-button" onclick="editMacro('${macro.macroGroupName}')">
+                <i class="fa-solid fa-pen-to-square fa-xs"></i></button>
+
+                <button class="delete-button" onclick="deleteMacro('${macro.macroGroupName}')">
+                <i class="fa-solid fa-trash fa-xs"></i></button>
+                </div>
             </div>`;
             showSavedMacro.push(showInfoDiv);
         } else {
@@ -1693,64 +1696,6 @@ function showSavedMacroList() {
     showAllCreatedMacro.innerHTML = showSavedMacro.join('');
 }
 
-// let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
-
-// let mac_macroNames = document.getElementById('macroNames').value;
-// let mac_model_Names = document.getElementById('mac_modelNames').value;
-// let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
-// let mac_sub_parameter = document.getElementById('mac_subparameter').value;
-
-// // Create a new button with the ID of macroNames
-// let newButton = document.createElement("button");
-// newButton.innerText = mac_macroNames;
-// newButton.id = mac_macroNames + "_button";
-// newButton.onclick = function() {
-//     console.log("Clicked on macroNames:", mac_macroNames);
-//     console.log("mac_model_Names:", mac_model_Names);
-//     console.log("mac_parameter_Names:", mac_parameter_Names);
-//     console.log("mac_sub_parameter:", mac_sub_parameter);
-// };
-
-// // Create Play, View, Edit, and Delete buttons with different IDs and classes
-// //PVED ID
-// let playButtonId = mac_macroNames + "P";
-// let viewButtonId = mac_macroNames + "V";
-// let editButtonId = mac_macroNames + "E";
-// let deleteButtonId = mac_macroNames + "D";
-
-// //PVED fn
-// let playButtonFn = mac_macroNames + "pClick";
-// let viewButtonFn = mac_macroNames + "vClick";
-// let editButtonFn = mac_macroNames + "eClick";
-// let deleteButtonFn = mac_macroNames + "dClick";
-
-// let playButton = createActionButton("P", "playButton", playButtonId, playButtonFn);
-// let viewButton = createActionButton("V", "viewButton", viewButtonId, viewButtonFn);
-// let editButton = createActionButton("E", "editButton", editButtonId, editButtonFn);
-// let deleteButton = createActionButton("D", "deleteButton", deleteButtonFn);
-// console.log(playButton, viewButton, editButton, deleteButton);
-
-// // Create a container for the buttons
-// let buttonContainer = document.createElement("div");
-// buttonContainer.appendChild(newButton);
-// buttonContainer.appendChild(playButton);
-// buttonContainer.appendChild(viewButton);
-// buttonContainer.appendChild(editButton);
-// buttonContainer.appendChild(deleteButton);
-
-// addedInfoContainerDiv.appendChild(buttonContainer);
-
-// // Append the button container to the element with the ID showCreatedMacro
-// document.getElementById("showCreatedMacro").appendChild(buttonContainer);
-
-
-// 
-
-// function playButtonFn() {
-//     ...
-// }
-// or
-// const playButtonFn = () =>
 function playMacro(macroGroupName) {
     let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
     const numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -1758,7 +1703,7 @@ function playMacro(macroGroupName) {
 
     function displayNumber() {
         if (currentIndex < macro.listOfMacro.length) {
-			new L.marker([28.6139-numberArray[currentIndex], 77.2090-numberArray[currentIndex]]).addTo(map);
+            new L.marker([28.6139 - numberArray[currentIndex], 77.2090 - numberArray[currentIndex]]).addTo(map);
             currentIndex++;
         } else {
             clearInterval(intervalId);
@@ -1774,7 +1719,7 @@ function viewMacro(macroGroupName) {
     let viewTempMacro = [];
     macro.listOfMacro.forEach(macro => {
         let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
-        <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.mac_sub_parameter}</span>
+        <span onclick="MacroPlusToggle('${macro.ulId}')">+ ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>
         <ul id="${macro.ulId}" class="listContainerMacro">
             <li>${macro.mac_model_Names}</li>
             <li>${macro.mac_parameter_Names}</li>
@@ -1789,56 +1734,76 @@ function viewMacro(macroGroupName) {
 function editMacro(macroGroupName) {
     create_Macro.style.display = 'block';
     let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
+    console.log("Found EDIT UPDATE macro:", macro);
     addedTempMacro = macro;
     viewAddedAndDeletedMacro();
+
+    document.getElementById('macroNames').value = macro.macroGroupName;
+
+    document.getElementById("mac_addButton").style.display = "block";
+    document.getElementById("mac_submitButton").style.display = "block";
+    document.getElementById("mac_updateButton").style.display = "block";
+
+    // viewMacro();
 }
 
 function deleteMacro(macroGroupName) {
     savedMacro = savedMacro.filter(x => x.macroGroupName != macroGroupName);
     showSavedMacroList();
+
+    document.getElementById('macroNames').value = '';
+    document.getElementById('mac_modelNames').value = '';
+    document.getElementById('mac_parameterNames').value = '';
+    document.getElementById('mac_subparameter').value = '';
 }
 
 function deleteMacroLayer(value) {
     addedTempMacro.listOfMacro = addedTempMacro.listOfMacro.filter(x => x.ulId != value);
     viewAddedAndDeletedMacro();
+
+    // document.getElementById('macroNames').value = '';
+    document.getElementById('mac_modelNames').value = '';
+    document.getElementById('mac_parameterNames').value = '';
+    document.getElementById('mac_subparameter').value = '';
+
+    // viewMacro();
 }
 
 let editId;
+
 function editMacroLayer(value) {
-	editId = value;
+    editId = value;
     let layer = addedTempMacro.listOfMacro.find(x => x.ulId == value);
     document.getElementById('macroNames').value = addedTempMacro.macroGroupName;
     document.getElementById('mac_modelNames').value = layer.mac_model_Names;
     document.getElementById('mac_parameterNames').value = layer.mac_parameter_Names;
     document.getElementById('mac_subparameter').value = layer.mac_sub_parameter;
+
+    document.getElementById("mac_addButton").style.display = "none";
+    document.getElementById("mac_submitButton").style.display = "none";
+    document.getElementById("mac_updateButton").style.display = "block";
+
+    // viewMacro();
 }
 
-function updateForm(){
-	let layer = addedTempMacro.listOfMacro.find(x => x.ulId == editId);
-	layer.macroGroupName = document.getElementById('macroNames').value;
+function updateForm() {
+    let layer = addedTempMacro.listOfMacro.find(x => x.ulId == editId);
+    layer.macroGroupName = document.getElementById('macroNames').value;
     layer.mac_model_Names = document.getElementById('mac_modelNames').value;
     layer.mac_parameter_Names = document.getElementById('mac_parameterNames').value;
     layer.mac_sub_parameter = document.getElementById('mac_subparameter').value;
-	viewAddedAndDeletedMacro();
+    viewAddedAndDeletedMacro();
+
+    document.getElementById('mac_modelNames').value = '';
+    document.getElementById('mac_parameterNames').value = '';
+    document.getElementById('mac_subparameter').value = '';
+
+    document.getElementById("mac_addButton").style.display = "block";
+    document.getElementById("mac_submitButton").style.display = "block";
+    document.getElementById("mac_updateButton").style.display = "none";
+
+    // viewMacro();
 }
-
-//*********** */
-// function editMacro(ulId, macroName, modelNames, parameterNames, subParameter) {
-//     // // Set values in the form for editing
-//     document.getElementById('macroNames').value = macroName;
-//     document.getElementById('mac_modelNames').value = modelNames;
-//     document.getElementById('mac_parameterNames').value = parameterNames;
-//     document.getElementById('mac_subparameter').value = subParameter;
-
-//     let findID = addedTempMacro.find(x => x.ulId == ulId);
-//     console.log(findID, "jacob");
-//     handleInputChange();
-// }
-
-//  Delete for macroList
-// function deleteMacro(ulId) {
-//     removeElementById(ulId);
-// }
 //*********** */
 
 function removeElementById(elementId) {
@@ -1871,15 +1836,8 @@ function generateAddedInfoDiv(macro) {
 //********************************************************* */
 //Macro Create Macro Toggle
 function createMacroForm() {
-    // let clickMacro = document.getElementById("showCreateMacroLayers");
-    // if (clickMacro.style.display === "block" || clickMacro.style.display === "") {
-    //     clickMacro.style.display = "none";
-    // } else {
     create_Macro.style.display = "block";
-    // }
 }
-
-//MACRO-toggle
 
 
 //leaflet starts here
@@ -1947,10 +1905,10 @@ var timeDimensionControlButton = L.Control.extend({
     onAdd: function() {
         var button = L.DomUtil.create('button');
         button.innerHTML = 'Time Dimension';
-        // button.style.backgroundColor = 'white';
+        button.style.backgroundColor = 'white';
         // button.style.border = '1px solid black';
-        button.style.padding = '2px';
-        button.style.cursor = 'pointer';
+        // button.style.padding = '2px';
+        // button.style.cursor = 'pointer';
 
         button.onclick = function() {
             toggleTimeDimensionControl();
@@ -2032,20 +1990,27 @@ var timeDimensionControl = new L.Control.TimeDimensionCustom({
 // });
 
 //
-const Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
-    minZoom: 0,
-    maxZoom: 20,
-    attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    ext: 'png'
-});
-Stadia_Outdoors.addTo(map);
-
-//
 const OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
-// OpenStreetMap.addTo(map);
+OpenStreetMap.addTo(map);
+
+const streets = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 32,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    }
+);
+// streets.addTo(map);
+
+const streets = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 32,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    }
+);
+streets.addTo(map);
 
 const imagery = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -2064,20 +2029,17 @@ const Stadia_AlidadeSmoothDark = L.tileLayer(
 );
 // Stadia_AlidadeSmoothDark.addTo(map);
 
-const Stadia_StamenToner = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.{ext}', {
-    minZoom: 0,
-    maxZoom: 20,
-    attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    ext: 'png'
-});
-
-// const darkGreyCanvas = L.tileLayer(
-//     'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-//         maxZoom: 20,
-//         subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-//     }
-// );
+const darkGreyCanvas = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    }
+);
 // darkGreyCanvas.addTo(map);
+
+
+
+
 
 // 
 const mywmsIITM = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
@@ -2118,25 +2080,30 @@ map.addControl(new L.Control.Fullscreen({
 }));
 
 var baseMaps = [{
-        name: "Stadia_Outdoors",
-        layer: Stadia_Outdoors
+            name: "Streets",
+            layer: streets
+        },
+        {
+            name: "Open Street Map",
+            layer: OpenStreetMap
+        },
+        {
+            name: "Imagery",
+            layer: imagery
+        },
+        {
+            name: "Dark",
+            layer: Stadia_AlidadeSmoothDark
+        },
+        {
+            name: "Dark Gray Canvas",
+            layer: darkGreyCanvas <<
+                << << < HEAD
+        }, ===
+        === =
     },
-    {
-        name: "Open Street Map",
-        layer: OpenStreetMap
-    },
-    {
-        name: "Imagery",
-        layer: imagery
-    },
-    {
-        name: "Dark",
-        layer: Stadia_AlidadeSmoothDark
-    },
-    {
-        name: "Stadia_StamenToner",
-        layer: Stadia_StamenToner
-    },
+    >>>
+    >>> > 00762 de5981d12323158c09fbb0c30bfe6d4342a
 
 ];
 
@@ -3041,8 +3008,8 @@ function updateActiveLayers() {
 const ToggleControl = L.Control.extend({
     onAdd: function(map) {
         const button = L.DomUtil.create('button', 'toggle-button');
-        button.textContent = 'Toggle Layers';
-
+        button.textContent = 'side-by-side Layers';
+        button.style.backgroundColor = 'white';
         // Function to handle button click
         function handleButtonClick() {
             L.DomEvent.off(button, 'click', handleButtonClick);
@@ -5503,43 +5470,41 @@ const legendModelMet = document.getElementById('legendModelMetar');
 
 
 // synop
-function clickHandler_synop(event_synop) {
-    const targetElement_synop = event_synop.target;
-    const currentColorsynop = targetElement_synop.style.backgroundColor;
+let synopButtonState = true;
 
-    if (event_synop.target && event_synop.target.id == "synop") {
-        if (currentColorsynop === 'rgb(180, 194, 224)') { // highlighted color
-            targetElement_synop.style.backgroundColor = '#eff4ff'; // Reset to default color
-            map.addControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers11);
-            map.removeControl(panelLayers10);
-        } else {
-            targetElement_synop.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
-            map.removeControl(panelLayers);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers10);
-            map.removeControl(panelLayers11);
-            map.addControl(panelLayers2);
-        }
-
+function clickHandler_synop(event) {
+    if (synopButtonState) {
+        map.removeControl(panelLayers);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
+        map.addControl(panelLayers2);
+    } else {
+        map.addControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
     }
-    console.log(event_synop.target.id);
+
+    synopButtonState = !synopButtonState;
+    // const synopButton = document.getElementById('synop');
+    // synopButton.style.backgroundColor = synopButtonState ? '#eff4ff' : 'rgb(180, 194, 224)';
 }
-document.getElementById("parent").addEventListener("click", clickHandler_synop);
+
+document.getElementById("synop").addEventListener("click", clickHandler_synop);
 
 //metar
 function clickHandler_metar(event_metar) {
@@ -5934,9 +5899,9 @@ let MSLPDayImage = document.querySelector('#MSLPDayImage');
 let mWINDDayImage = document.querySelector('#mWINDDayImage');
 
 // model popup
-let model = document.querySelector('.model');
-let modelBody = document.querySelector('.model-body');
-let closeModel = document.querySelector('.model-body legend');
+// let model = document.querySelector('.model');
+// let modelBody = document.querySelector('.model-body');
+// let closeModel = document.querySelector('.model-body legend');
 //
 let panelLayerLightningTitle = document.querySelector('#panelLayer-Lightning-Title')
 let panelLayerLightninglists = document.querySelector('#panelLayer-Lightning-lists')
@@ -13488,12 +13453,17 @@ function mWINDDayLegendImage() {
 	</svg>`
 }
 
+///drag popup
+// model popup for legend starts here
+let model = document.querySelector('.model');
+let modelBody = document.querySelector('.model-body');
+let closeModel = document.querySelector('.model-body legend');
+
 //closeModel
 closeModel.onclick = () => {
     model.style.display = 'none';
 }
 
-//drag popup
 function onDrag({
     movementX,
     movementY
@@ -13514,4 +13484,70 @@ document.addEventListener('mouseup', () => {
     modelBody.style.cursor = 'default';
     modelBody.removeEventListener('mousemove', onDrag);
 })
+// model popup for legend endsHere
+
+// model popup- createMacro startsHere
+let createMacroDrag = document.querySelector('.create_Macro');
+let createMacroBody = document.querySelector('.create_Macro_body');
+let closeModelCreateMac = document.querySelector('.create_Macro_body .macroLegend');
+
+//closeModel createMacro
+closeModelCreateMac.onclick = () => {
+    createMacroDrag.style.display = 'none';
+}
+
+function onDragCreateMacro({
+    movementX,
+    movementY
+}) {
+    let getStyle = window.getComputedStyle(createMacroDrag);
+    let leftValue = parseInt(getStyle.left);
+    let topValue = parseInt(getStyle.top);
+    createMacroDrag.style.left = `${leftValue + movementX}px`;
+    createMacroDrag.style.top = `${topValue + movementY}px`;
+}
+//
+document.addEventListener('mousedown', () => {
+    createMacroBody.style.cursor = 'all-scroll';
+    createMacroBody.addEventListener('mousemove', onDragCreateMacro);
+})
+//
+document.addEventListener('mouseup', () => {
+    createMacroBody.style.cursor = 'default';
+    createMacroBody.removeEventListener('mousemove', onDragCreateMacro);
+})
+// model popup- createMacro endsHere
+
+
+// model popup- viewMacro startsHere
+let viewCreateMacrodrag = document.querySelector('.view_Create_Macro');
+let viewCreateMacroBody = document.querySelector('.view_Create_Macro_body');
+let closeModelViewMac = document.querySelector('.view_Create_Macro_body .viewMacroLegend');
+
+//closeModel viewMacro
+closeModelViewMac.onclick = () => {
+    viewCreateMacrodrag.style.display = 'none';
+}
+
+function onDragViewMacro({
+    movementX,
+    movementY
+}) {
+    let getStyle = window.getComputedStyle(viewCreateMacrodrag);
+    let leftValue = parseInt(getStyle.left);
+    let topValue = parseInt(getStyle.top);
+    viewCreateMacrodrag.style.left = `${leftValue + movementX}px`;
+    viewCreateMacrodrag.style.top = `${topValue + movementY}px`;
+}
+//
+document.addEventListener('mousedown', () => {
+    viewCreateMacroBody.style.cursor = 'all-scroll';
+    viewCreateMacroBody.addEventListener('mousemove', onDragViewMacro);
+})
+//
+document.addEventListener('mouseup', () => {
+    viewCreateMacroBody.style.cursor = 'default';
+    viewCreateMacroBody.removeEventListener('mousemove', onDragViewMacro);
+})
+// model popup- viewMacro endsHere
 </script>

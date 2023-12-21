@@ -5,7 +5,7 @@ body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
     background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
-    position: relative;
+    position: relaftive;
     height: 100vh;
     width: 100%;
     overflow: hidden;
@@ -27,8 +27,9 @@ body {
     padding: 0;
     background: none;
     cursor: pointer;
-    font: inherit;
+    /* font: inherit; */
     outline: inherit;
+    font-weight: bolder;
 }
 
 .btn:focus>.underline {
@@ -39,7 +40,7 @@ body {
     color: #02275f;
     background-color: #eff4ff;
     vertical-align: baseline;
-    font-weight: inherit;
+    font-weight: bold;
     font-style: inherit;
     font-size: 18px;
     outline: 0;
@@ -109,45 +110,31 @@ body {
 }
 
 .obsClass {
-    color: white;
-    margin-top: -2%;
-    height: 79vh;
+    background-color: #eff4ff;
+    color: #2c5383;
+    margin-top: -39px;
+    height: 82vh;
+    width: 16%;
+    border: 1px solid #2c5383;
 }
 
 .obsh4 {
     font-family: 'Archivo', sans-serif;
     font-size: 18px;
     font-weight: 600;
+    color: black;
 }
 
-.firstDDLabel {
-    margin-left: 0;
-    color: #fff;
-    font-size: 1.1em;
-}
-
-.secondDDLabel {
-    margin-left: 0;
-    color: #fff;
-    font-size: 1.1em;
-}
-
-.thirdDDLabel {
-    margin-left: 0;
-    color: #fff;
-    font-size: 1.1em;
-}
-
-.dateDDLabel {
-    margin-left: 0;
-    color: #fff;
-    font-size: 1.1em;
-}
-
+.firstDDLabel,
+.secondDDLabel,
+.thirdDDLabel,
+.dateDDLabel,
 .TimeLabel {
-    color: #fff;
+    margin-left: 0;
+    color: black;
     font-size: 1.1em;
 }
+
 
 .firstDD {
     width: 100%;
@@ -228,15 +215,15 @@ body {
     width: 14%;
     height: auto;
     border-radius: 7px;
-    background-color: #eff4ff;
-    color: #070f19;
+    background-color: #327ad2;
+    color: #ffffff;
     border-color: #ffffff91;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .createMacroCls:hover+.hoverPlus {
     display: block;
-    color: #fff;
+    color: #1e3a5d;
     margin-left: 10px;
 }
 
@@ -278,11 +265,11 @@ body {
     color: ghostwhite;
     border-color: mediumaquamarine;
     font-size: 14px;
-    /* margin-left: 21%; */
 }
 
 .listContainerMacro {
     display: none;
+    font-size: 11px;
 }
 
 .macroListCSS {
@@ -297,14 +284,20 @@ body {
     margin-right: 5px;
 }
 
+.saveMacroView {
+    margin-bottom: 12px;
+}
+
 .addBox {
-    height: 220px;
+    height: 252px;
     width: 100%;
     background-Color: #eff4ff;
     overflow-y: scroll;
-    margin-top: 12px;
-    font-size: 13px;
+    margin-top: 9px;
+    font-size: 14px;
     border-radius: 8px;
+    border: outset;
+    box-shadow: inset -1px 2px 10px 0 rgb(173 234 255);
 }
 
 
@@ -355,19 +348,15 @@ body {
 }
 
 .create_Macro_body {
-    position: absolute;
     width: 250px;
-    height: 580px;
+    height: 570px;
     margin: 416px 0 0 0px;
     transform: translate(-50%, -50%);
     background-color: #f3fbfe;
-    box-shadow: inset -1px 2px 10px 0 rgba(0, 0, 0, 0.404);
+    box-shadow: inset -1px 2px 10px 0 rgb(0 183 239 / 40%);
+    border: outset;
     border-radius: 6px;
-    /* user-select: none; */
     overflow: auto;
-    position: relative;
-    border: ridge;
-    /* resize: both; */
 }
 
 .create_Macro_body_div {
@@ -378,7 +367,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #00415a;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 6px;
     align-items: center;
 }
 
@@ -417,7 +406,7 @@ body {
     position: fixed;
     z-index: 99999;
     display: none;
-    left: 1155px;
+    left: 887px;
     top: -25px;
     height: 0;
 }
@@ -425,7 +414,7 @@ body {
 .view_Create_Macro_body {
     position: absolute;
     width: 250px;
-    height: 580px;
+    height: 570px;
     margin: 416px 0 0 0px;
     transform: translate(-50%, -50%);
     background-color: #f3fbfe;
@@ -434,7 +423,7 @@ body {
     /* user-select: none; */
     overflow: auto;
     position: relative;
-    border: ridge;
+    border: outset;
     /* resize: both; */
 }
 
@@ -454,7 +443,7 @@ body {
     cursor: pointer;
     color: #83ffee;
     text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;
-    font-size: 21px;
+    font-size: 17px;
     font-weight: bold;
     position: absolute;
     top: 5px;
@@ -472,8 +461,25 @@ body {
 .view_Macro_h4 {
     color: #ffffffcc;
     font-size: 16px;
+    font-weight: bold;
     padding-left: 11px;
     margin: 5px 0 0 0px;
+}
+
+.run-button {
+    border-radius: 6px;
+}
+
+.view-button {
+    border-radius: 6px;
+}
+
+.edit-button {
+    border-radius: 6px;
+}
+
+.delete-button {
+    border-radius: 6px;
 }
 
 /* Macro View Btn ends here */
