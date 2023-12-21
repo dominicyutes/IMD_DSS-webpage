@@ -2004,14 +2004,6 @@ const streets = L.tileLayer(
 );
 // streets.addTo(map);
 
-const streets = L.tileLayer(
-    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 32,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-    }
-);
-streets.addTo(map);
-
 const imagery = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         maxZoom: 29,
@@ -2080,31 +2072,25 @@ map.addControl(new L.Control.Fullscreen({
 }));
 
 var baseMaps = [{
-            name: "Streets",
-            layer: streets
-        },
-        {
-            name: "Open Street Map",
-            layer: OpenStreetMap
-        },
-        {
-            name: "Imagery",
-            layer: imagery
-        },
-        {
-            name: "Dark",
-            layer: Stadia_AlidadeSmoothDark
-        },
-        {
-            name: "Dark Gray Canvas",
-            layer: darkGreyCanvas <<
-                << << < HEAD
-        }, ===
-        === =
+        name: "Streets",
+        layer: streets
     },
-    >>>
-    >>> > 00762 de5981d12323158c09fbb0c30bfe6d4342a
-
+    {
+        name: "Open Street Map",
+        layer: OpenStreetMap
+    },
+    {
+        name: "Imagery",
+        layer: imagery
+    },
+    {
+        name: "Dark",
+        layer: Stadia_AlidadeSmoothDark
+    },
+    {
+        name: "Dark Gray Canvas",
+        layer: darkGreyCanvas
+    },
 ];
 
 // styleEditor starts here

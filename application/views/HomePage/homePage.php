@@ -58,6 +58,9 @@
     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.min.js"></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script> -->
+    <!-- timeDimension CSS -->
+    <!-- <link rel="stylesheet"
+        href="https://raw.githubusercontent.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.css"> -->
 
     <!-- Include Leaflet LocationSearch JS -->
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
@@ -72,31 +75,45 @@
     <script src="https://unpkg.com/leaflet-ajax@2.1.0/dist/leaflet.ajax.js"></script>
     <!-- jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
     <!-- leaflet time dimensions -->
+    <!-- <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.control.css">
+    </script> -->
+    <!-- <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.control.js">
+    </script> -->
+    <!-- <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.layer.geojson">
+    </script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.layer"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.layer.wms">
+    </script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.player"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.util"></script> -->
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
     <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.js">
     </script>
     <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.util.js">
     </script>
-    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.js">
-    </script>
-    <script type="text/javascript"
-        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.wms.js"></script>
-    <script type="text/javascript"
-        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.geojson.js"></script>
     <script type="text/javascript"
         src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.player.js"></script>
     <script type="text/javascript"
         src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script>
-    <script type="text/javascript"
+    <!-- <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.js">
+    </script> -->
+    <!-- <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.wms.js"></script> -->
+    <!-- <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.geojson.js"></script> -->
+    <!-- <script type="text/javascript"
         src="https://apps.socib.es/Leaflet.TimeDimension/examples/js/extras/leaflet.timedimension.circlelabelmarker.js">
-    </script>
-    <script type="text/javascript"
+    </script> -->
+    <!-- <script type="text/javascript"
         src="https://apps.socib.es/Leaflet.TimeDimension/examples/js/extras/leaflet.timedimension.layer.wms.timeseries.js">
-    </script>
+    </script> -->
+
     <!-- leaflet-side-by-side -->
     <script src="https://lab.digital-democracy.org/leaflet-side-by-side/leaflet-side-by-side.js"></script>
-    <!-- <script src="https://unpkg.com/leaflet-side-by-side@1.0.2/dist/leaflet-side-by-side.min.js"></script> -->
 
     <!-- for map picture -->
     <!-- <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/html2canvas/html2canvas.min.js"></script>
