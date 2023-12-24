@@ -1678,6 +1678,9 @@ function macSubmitForm() {
     addedTempMacro = {};
     listOfMacro = [];
     addedInfoContainerDiv.innerHTML = ' '
+	if(view_Create_Macro.style.display == 'block'){
+		viewMacro(editMacroGroupName);
+	}
 };
 
 
