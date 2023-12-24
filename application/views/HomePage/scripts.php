@@ -1794,6 +1794,7 @@ function deleteMacroLayer(value) {
 function editMacroLayer(value) {
     editId = value;
     let layer = addedTempMacro.listOfMacro.find(x => x.ulId == value);
+	macShowParameterNames(layer.mac_model_Names);
     document.getElementById('macroNames').value = addedTempMacro.macroGroupName;
     document.getElementById('mac_modelNames').value = layer.mac_model_Names;
     document.getElementById('mac_parameterNames').value = layer.mac_parameter_Names;
