@@ -44,8 +44,15 @@
         crossorigin="anonymous" />
     <!-- Leaflet Side-by-Side CSS-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin="anonymous" />
+
     <!-- Include Leaflet Side-by-Side CSS -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-side-by-side@1.0.4/dist/leaflet-side-by-side.css" /> -->
+
+
+
+
+
+
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
@@ -115,15 +122,18 @@
     <!-- leaflet-side-by-side -->
     <script src="https://lab.digital-democracy.org/leaflet-side-by-side/leaflet-side-by-side.js"></script>
 
+    <!-- print -->
+    <script src="leaflet.browser.print.min.js"></script>
+
     <!-- for map picture -->
     <!-- <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/html2canvas/html2canvas.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/canvas2image/canvas2image.js"></script>
-<script type="text/javascript" src="<?= site_url('stylesheet/chosen.jquery.min.js')?>"></script> -->
+    <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/canvas2image/canvas2image.js"></script>
+    <script type="text/javascript" src="<?= site_url('stylesheet/chosen.jquery.min.js')?>"></script> -->
 
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script> -->
-
     <!-- <script src="<?php echo base_url(); ?>stylesheet/html-to-image.js"></script> -->
+
     <!-- adding css -->
     <?php $this->load->view('HomePage/style'); ?>
 
@@ -719,10 +729,10 @@
             </div>
         </div>
 
-        <!-- adding JS -->
-        <?php $this->load->view('HomePage/scripts'); ?>
-</body>
 
+</body>
+<!-- adding JS -->
+<?php $this->load->view('HomePage/scripts'); ?>
 
 
 <!-- screenshoter -->
@@ -731,13 +741,68 @@
 L.simpleMapScreenshoter().addTo(map);
 </script>
 
-<!-- print -->
-<!-- <script src="leaflet.browser.print.min.js"></script>
+<!-- navbar btn bg-clr -->
 <script>
-L.control.browserPrint({
-    documentTitle: "WEATHER DECISION SUPPORT SYSTEM"
-}).addTo(map);
+// function changeColor(button) {
+//     button.querySelector('.btn-val').style.backgroundColor = 'rgb(180, 194, 224)';
+// }
+
+// function changeColor(button) {
+//     var isAnyActive = false;
+
+//     // Loop through all groups in overLayers3
+//     for (var j = 0; j < overLayers3.length; j++) {
+//         var metarGroup = overLayers3[j];
+//         // console.log(metarGroup, "group METAR");
+
+//         // Loop through layers in the current group
+//         for (var i = 0; i < metarGroup.layers.length; i++) {
+//             metarGroup.layers[i].active, "Layer " + i
+//             // console.log(metarGroup.layers[i].active, "Layer " + i);
+//             if (metarGroup.layers[i].active) {
+//                 isAnyActive = true;
+//                 break;
+//             }
+//         }
+
+//         if (isAnyActive) {
+//             break;
+//         }
+//     }
+
+//     // console.log(isAnyActive, "isAnyActive");
+//     button.querySelector('.btn-val').style.backgroundColor = isAnyActive ? 'rgb(180, 194, 224)' : '#eff4ff';
+// }
 </script>
 
-
 </html>
+
+
+<script>
+L.control.browserPrint({
+    title: 'Just print me!',
+    documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
+    printLayer: L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 10,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }),
+    closePopupsOnPrint: false,
+    printModes: [
+        L.BrowserPrint.Mode.Portrait("A4", {
+            title: "Portrait",
+            width: 210,
+            height: 100
+        }),
+        L.BrowserPrint.Mode.Landscape("A4", {
+            title: "Landscape"
+        }),
+        L.BrowserPrint.Mode.Auto("A4", {
+            title: "Auto"
+        }),
+        L.BrowserPrint.Mode.Custom("A4", {
+            title: "Custom"
+        })
+    ],
+    manualMode: false
+}).addTo(map);
+</script>
