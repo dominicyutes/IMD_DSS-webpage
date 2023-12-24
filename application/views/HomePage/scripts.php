@@ -1623,12 +1623,12 @@ function viewAddedAndDeletedMacro() {
     addedTempMacro.listOfMacro.forEach(macro => {
         let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
         <div>
-        <span onclick="MacroPlusToggle('${macro.ulId}')">
+        <span onclick="MacroPlusToggle('${macro.ulId}adddelete')">
         <div><i class="fa-solid fa-plus fa-xs"></i> ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>&nbsp;&nbsp;</div>
 		<span onclick="editMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i></span>
         <span onclick="deleteMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-trash fa-xs"></i></span>
         </div>
-        <ul id="${macro.ulId}" class="listContainerMacro">
+        <ul id="${macro.ulId}adddelete" class="listContainerMacro">
             <li>${macro.mac_model_Names}</li>
             <li>${macro.mac_parameter_Names}</li>
             <li>${macro.mac_sub_parameter}</li>
@@ -1736,8 +1736,8 @@ function viewMacro(macroGroupName) {
     let viewTempMacro = [];
     macro.listOfMacro.forEach(macro => {
         let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
-        <span onclick="MacroPlusToggle('${macro.ulId}')">+ ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>
-        <ul id="${macro.ulId}" class="listContainerMacro">
+        <span onclick="MacroPlusToggle('${macro.ulId}view')">+ ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>
+        <ul id="${macro.ulId}view" class="listContainerMacro">
             <li>${macro.mac_model_Names}</li>
             <li>${macro.mac_parameter_Names}</li>
             <li>${macro.mac_sub_parameter}</li>
