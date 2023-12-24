@@ -208,21 +208,21 @@
             <!-- model -->
             <form id="obsForm">
                 <div>
-                    <label for="modelNames" class="firstDDLabel">Type:</label>
+                    <label name="modelNames" class="firstDDLabel">Type:</label>
                     <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
                     </select>
                 </div>
                 <!-- <span>&nbsp;</span> -->
                 <!-- parameter -->
                 <div>
-                    <label for="parameter" class="secondDDLabel">Time:</label>
+                    <label name="parameter" class="secondDDLabel">Time:</label>
                     <select class="secondDD" id="parameterNames" onchange="showSubParameterNames(this.value)" &nbsp;>
                     </select>
                 </div>
                 <!-- <span>&nbsp;</span> -->
                 <!-- SubParameter -->
                 <div>
-                    <label for="subparameter" class="thirdDDLabel">Parameter</label>
+                    <label name="subparameter" class="thirdDDLabel">Parameter</label>
                     <select class="thirdDD" id="subparameter" &nbsp;>
                     </select>
                     <div id="checkboxListContainer"></div>
@@ -231,7 +231,7 @@
 
 
                 <div>
-                    <label for="start_date" class="dateDDLabel">Date:</label>
+                    <label name="start_date" class="dateDDLabel">Date:</label>
                     <input type="date" id="start_date" class="dateDD">
                 </div>
                 <!-- <span>&nbsp;</span> -->
@@ -242,7 +242,7 @@
                 <!-- <span>&nbsp;</span> -->
                 <div>
                     <span style="display: contents;">
-                        <label for="hourSelect" class="TimeLabel">Time:</label>
+                        <label name="hourSelect" class="TimeLabel">Time:</label>
                         <select id="hourSelect" class="TimeHR">
                         </select>
                         <select id="minuteSelect" class="TimeMin">
@@ -279,26 +279,26 @@
                     <div id="showCreateMacroLayers">
                         <form id="myForm">
                             <div>
-                                <label for="macroNames" class="macroNameLabel">Macro Name:</label>
+                                <label name="macroNames" class="macroNameLabel">Macro Name:</label>
                                 <input type="text" class="macroNameInput" id="macroNames" placeholder="customize name"
                                     onchange="handleInputChange()" autocomplete="off" required &nbsp;>
                             </div>
                             <div>
-                                <label for="mac_modelNames" class="mac_firstDDLabel">Type:</label>
+                                <label name="mac_modelNames" class="mac_firstDDLabel">Type:</label>
                                 <select class="mac_firstDD" id="mac_modelNames"
                                     onchange="macShowParameterNames(this.value)" &nbsp;>
                                 </select>
                             </div>
                             <!-- parameter -->
                             <div>
-                                <label for="mac_parameter" class="mac_secondDDLabel">Time:</label>
+                                <label name="mac_parameter" class="mac_secondDDLabel">Time:</label>
                                 <select class="mac_secondDD" id="mac_parameterNames"
                                     onchange="macShowSubParameterNames(this.value)" &nbsp;>
                                 </select>
                             </div>
                             <!-- SubParameter -->
                             <div>
-                                <label for="mac_subparameter" class="mac_thirdDDLabel">Parameter</label>
+                                <label name="mac_subparameter" class="mac_thirdDDLabel">Parameter</label>
                                 <select class="mac_thirdDD" id="mac_subparameter" &nbsp;>
                                 </select>
                             </div>

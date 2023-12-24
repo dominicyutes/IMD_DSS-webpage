@@ -1573,6 +1573,8 @@ let savedMacro = [];
 let addedTempMacro = {};
 let listOfMacro = [];
 let counter = 0;
+let editId;
+let editMacroGroupName;
 
 let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
 
@@ -1584,18 +1586,28 @@ function macAddForm() {
     let mac_sub_parameter = document.getElementById('mac_subparameter').value;
     let ulId = "listContainerMacro_" + counter++;
 
-    listOfMacro.push({
-        ulId: ulId,
-        mac_macroNames: mac_macroNames,
-        mac_model_Names: mac_model_Names,
-        mac_parameter_Names: mac_parameter_Names,
-        mac_sub_parameter: mac_sub_parameter
-    })
+    if (addedTempMacro && editMacroGroupName) {
+        addedTempMacro.listOfMacro.push({
+            ulId: ulId,
+            mac_macroNames: mac_macroNames,
+            mac_model_Names: mac_model_Names,
+            mac_parameter_Names: mac_parameter_Names,
+            mac_sub_parameter: mac_sub_parameter
+        })
+    } else {
+        listOfMacro.push({
+            ulId: ulId,
+            mac_macroNames: mac_macroNames,
+            mac_model_Names: mac_model_Names,
+            mac_parameter_Names: mac_parameter_Names,
+            mac_sub_parameter: mac_sub_parameter
+        })
 
-    addedTempMacro = {
-        macroGroupName: mac_macroNames,
-        listOfMacro: listOfMacro
-    };
+        addedTempMacro = {
+            macroGroupName: mac_macroNames,
+            listOfMacro: listOfMacro
+        };
+    }
 
     // document.getElementById('macroNames').value = '';
     document.getElementById('mac_modelNames').value = '';
@@ -1652,7 +1664,12 @@ function createActionButton(action, buttonClass, buttonId) {
 
 function macSubmitForm() {
     event.preventDefault();
-    savedMacro.push(addedTempMacro);
+    if (editMacroGroupName) {
+        let editAddMacro = savedMacro.find(x => x.macroGroupName == editMacroGroupName);
+        editAddMacro = addedTempMacro;
+    } else {
+        savedMacro.push(addedTempMacro);
+    }
     showSavedMacroList();
     document.getElementById('macroNames').value = '';
     document.getElementById('mac_modelNames').value = '';
@@ -1734,6 +1751,7 @@ function viewMacro(macroGroupName) {
 function editMacro(macroGroupName) {
     create_Macro.style.display = 'block';
     let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
+    editMacroGroupName = macro.macroGroupName;
     console.log("Found EDIT UPDATE macro:", macro);
     addedTempMacro = macro;
     viewAddedAndDeletedMacro();
@@ -1769,7 +1787,6 @@ function deleteMacroLayer(value) {
     // viewMacro();
 }
 
-let editId;
 
 function editMacroLayer(value) {
     editId = value;
@@ -1806,31 +1823,31 @@ function updateForm() {
 }
 //*********** */
 
-function removeElementById(elementId) {
-    let element = document.getElementById(elementId);
-    if (element) {
-        element.parentNode.removeChild(element);
-        // Update the addedTempMacro array by removing the corresponding entry
-        addedTempMacro = addedTempMacro.filter(macro => macro.ulId !== elementId);
-        // Update the savedMacro array by regenerating the HTML
-        savedMacro = addedTempMacro.map(macro => generateAddedInfoDiv(macro)).join("");
-        document.getElementById('addedInfoContainer').innerHTML = savedMacro;
-    }
-    handleInputChange();
-}
+// function removeElementById(elementId) {
+//     let element = document.getElementById(elementId);
+//     if (element) {
+//         element.parentNode.removeChild(element);
+//         // Update the addedTempMacro array by removing the corresponding entry
+//         addedTempMacro = addedTempMacro.filter(macro => macro.ulId !== elementId);
+//         // Update the savedMacro array by regenerating the HTML
+//         savedMacro = addedTempMacro.map(macro => generateAddedInfoDiv(macro)).join("");
+//         document.getElementById('addedInfoContainer').innerHTML = savedMacro;
+//     }
+//     handleInputChange();
+// }
 
-function generateAddedInfoDiv(macro) {
-    return `<div id="toggleDiv">
-        <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.macroName}</span>
-        <ul id="${macro.ulId}" class="listContainerMacro">
-            <li>${macro.mac_model_Names}</li>
-            <li>${macro.mac_parameter_Names}</li>
-            <li>${macro.mac_sub_parameter}</li>
-        </ul>
-        <button class="edit-button" onclick="editMacro('${macro.ulId}', '${macro.macroName}', '${macro.mac_model_Names}', '${macro.mac_parameter_Names}', '${macro.mac_sub_parameter}')">E</button>
-        <button class="delete-button" onclick="deleteMacro('${macro.ulId}')">D</button>
-    </div>`;
-}
+// function generateAddedInfoDiv(macro) {
+//     return `<div id="toggleDiv">
+//         <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.macroName}</span>
+//         <ul id="${macro.ulId}" class="listContainerMacro">
+//             <li>${macro.mac_model_Names}</li>
+//             <li>${macro.mac_parameter_Names}</li>
+//             <li>${macro.mac_sub_parameter}</li>
+//         </ul>
+//         <button class="edit-button" onclick="editMacro('${macro.ulId}', '${macro.macroName}', '${macro.mac_model_Names}', '${macro.mac_parameter_Names}', '${macro.mac_sub_parameter}')">E</button>
+//         <button class="delete-button" onclick="deleteMacro('${macro.ulId}')">D</button>
+//     </div>`;
+// }
 
 
 //********************************************************* */
