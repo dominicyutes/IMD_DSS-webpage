@@ -45,8 +45,15 @@
         crossorigin="anonymous" />
     <!-- Leaflet Side-by-Side CSS-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin="anonymous" />
+
     <!-- Include Leaflet Side-by-Side CSS -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-side-by-side@1.0.4/dist/leaflet-side-by-side.css" /> -->
+
+
+
+
+
+
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
@@ -116,15 +123,18 @@
     <!-- leaflet-side-by-side -->
     <script src="https://lab.digital-democracy.org/leaflet-side-by-side/leaflet-side-by-side.js"></script>
 
+    <!-- print -->
+    <script src="leaflet.browser.print.min.js"></script>
+
     <!-- for map picture -->
     <!-- <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/html2canvas/html2canvas.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/canvas2image/canvas2image.js"></script>
-<script type="text/javascript" src="<?= site_url('stylesheet/chosen.jquery.min.js')?>"></script> -->
+    <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/canvas2image/canvas2image.js"></script>
+    <script type="text/javascript" src="<?= site_url('stylesheet/chosen.jquery.min.js')?>"></script> -->
 
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script> -->
-
     <!-- <script src="<?php echo base_url(); ?>stylesheet/html-to-image.js"></script> -->
+
     <!-- adding css -->
     <?php $this->load->view('HomePage/style'); ?>
 
@@ -209,21 +219,21 @@
             <!-- model -->
             <form id="obsForm">
                 <div>
-                    <label for="modelNames" class="firstDDLabel">Type:</label>
+                    <label name="modelNames" class="firstDDLabel">Type:</label>
                     <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
                     </select>
                 </div>
                 <!-- <span>&nbsp;</span> -->
                 <!-- parameter -->
                 <div>
-                    <label for="parameter" class="secondDDLabel">Time:</label>
+                    <label name="parameter" class="secondDDLabel">Time:</label>
                     <select class="secondDD" id="parameterNames" onchange="showSubParameterNames(this.value)" &nbsp;>
                     </select>
                 </div>
                 <!-- <span>&nbsp;</span> -->
                 <!-- SubParameter -->
                 <div>
-                    <label for="subparameter" class="thirdDDLabel">Parameter</label>
+                    <label name="subparameter" class="thirdDDLabel">Parameter</label>
                     <select class="thirdDD" id="subparameter" &nbsp;>
                     </select>
                     <div id="checkboxListContainer"></div>
@@ -232,7 +242,7 @@
 
 
                 <div>
-                    <label for="start_date" class="dateDDLabel">Date:</label>
+                    <label name="start_date" class="dateDDLabel">Date:</label>
                     <input type="date" id="start_date" class="dateDD">
                 </div>
                 <!-- <span>&nbsp;</span> -->
@@ -243,7 +253,7 @@
                 <!-- <span>&nbsp;</span> -->
                 <div>
                     <span style="display: contents;">
-                        <label for="hourSelect" class="TimeLabel">Time:</label>
+                        <label name="hourSelect" class="TimeLabel">Time:</label>
                         <select id="hourSelect" class="TimeHR">
                         </select>
                         <select id="minuteSelect" class="TimeMin">
@@ -280,26 +290,26 @@
                     <div id="showCreateMacroLayers">
                         <form id="myForm">
                             <div>
-                                <label for="macroNames" class="macroNameLabel">Macro Name:</label>
+                                <label name="macroNames" class="macroNameLabel">Macro Name:</label>
                                 <input type="text" class="macroNameInput" id="macroNames" placeholder="customize name"
                                     onchange="handleInputChange()" autocomplete="off" required &nbsp;>
                             </div>
                             <div>
-                                <label for="mac_modelNames" class="mac_firstDDLabel">Type:</label>
+                                <label name="mac_modelNames" class="mac_firstDDLabel">Type:</label>
                                 <select class="mac_firstDD" id="mac_modelNames"
                                     onchange="macShowParameterNames(this.value)" &nbsp;>
                                 </select>
                             </div>
                             <!-- parameter -->
                             <div>
-                                <label for="mac_parameter" class="mac_secondDDLabel">Time:</label>
+                                <label name="mac_parameter" class="mac_secondDDLabel">Time:</label>
                                 <select class="mac_secondDD" id="mac_parameterNames"
                                     onchange="macShowSubParameterNames(this.value)" &nbsp;>
                                 </select>
                             </div>
                             <!-- SubParameter -->
                             <div>
-                                <label for="mac_subparameter" class="mac_thirdDDLabel">Parameter</label>
+                                <label name="mac_subparameter" class="mac_thirdDDLabel">Parameter</label>
                                 <select class="mac_thirdDD" id="mac_subparameter" &nbsp;>
                                 </select>
                             </div>
@@ -720,10 +730,10 @@
             </div>
         </div>
 
-        <!-- adding JS -->
-        <?php $this->load->view('HomePage/scripts'); ?>
-</body>
 
+</body>
+<!-- adding JS -->
+<?php $this->load->view('HomePage/scripts'); ?>
 
 
 <!-- screenshoter -->
@@ -732,12 +742,68 @@
 L.simpleMapScreenshoter().addTo(map);
 </script> -->
 
-<!-- print -->
-<script src="leaflet.browser.print.min.js"></script>
+<!-- navbar btn bg-clr -->
 <script>
-L.control.browserPrint({
-    documentTitle: "WEATHER DECISION SUPPORT SYSTEM"
-}).addTo(map);
+// function changeColor(button) {
+//     button.querySelector('.btn-val').style.backgroundColor = 'rgb(180, 194, 224)';
+// }
+
+// function changeColor(button) {
+//     var isAnyActive = false;
+
+//     // Loop through all groups in overLayers3
+//     for (var j = 0; j < overLayers3.length; j++) {
+//         var metarGroup = overLayers3[j];
+//         // console.log(metarGroup, "group METAR");
+
+//         // Loop through layers in the current group
+//         for (var i = 0; i < metarGroup.layers.length; i++) {
+//             metarGroup.layers[i].active, "Layer " + i
+//             // console.log(metarGroup.layers[i].active, "Layer " + i);
+//             if (metarGroup.layers[i].active) {
+//                 isAnyActive = true;
+//                 break;
+//             }
+//         }
+
+//         if (isAnyActive) {
+//             break;
+//         }
+//     }
+
+//     // console.log(isAnyActive, "isAnyActive");
+//     button.querySelector('.btn-val').style.backgroundColor = isAnyActive ? 'rgb(180, 194, 224)' : '#eff4ff';
+// }
 </script>
 
 </html>
+
+
+<script>
+L.control.browserPrint({
+    title: 'Just print me!',
+    documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
+    printLayer: L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 10,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }),
+    closePopupsOnPrint: false,
+    printModes: [
+        L.BrowserPrint.Mode.Portrait("A4", {
+            title: "Portrait",
+            width: 210,
+            height: 100
+        }),
+        L.BrowserPrint.Mode.Landscape("A4", {
+            title: "Landscape"
+        }),
+        L.BrowserPrint.Mode.Auto("A4", {
+            title: "Auto"
+        }),
+        L.BrowserPrint.Mode.Custom("A4", {
+            title: "Custom"
+        })
+    ],
+    manualMode: false
+}).addTo(map);
+</script>

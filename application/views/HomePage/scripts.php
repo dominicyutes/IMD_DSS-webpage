@@ -1573,6 +1573,8 @@ let savedMacro = [];
 let addedTempMacro = {};
 let listOfMacro = [];
 let counter = 0;
+let editId;
+let editMacroGroupName;
 
 let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
 
@@ -1584,18 +1586,28 @@ function macAddForm() {
     let mac_sub_parameter = document.getElementById('mac_subparameter').value;
     let ulId = "listContainerMacro_" + counter++;
 
-    listOfMacro.push({
-        ulId: ulId,
-        mac_macroNames: mac_macroNames,
-        mac_model_Names: mac_model_Names,
-        mac_parameter_Names: mac_parameter_Names,
-        mac_sub_parameter: mac_sub_parameter
-    })
+    if (addedTempMacro && editMacroGroupName) {
+        addedTempMacro.listOfMacro.push({
+            ulId: ulId,
+            mac_macroNames: mac_macroNames,
+            mac_model_Names: mac_model_Names,
+            mac_parameter_Names: mac_parameter_Names,
+            mac_sub_parameter: mac_sub_parameter
+        })
+    } else {
+        listOfMacro.push({
+            ulId: ulId,
+            mac_macroNames: mac_macroNames,
+            mac_model_Names: mac_model_Names,
+            mac_parameter_Names: mac_parameter_Names,
+            mac_sub_parameter: mac_sub_parameter
+        })
 
-    addedTempMacro = {
-        macroGroupName: mac_macroNames,
-        listOfMacro: listOfMacro
-    };
+        addedTempMacro = {
+            macroGroupName: mac_macroNames,
+            listOfMacro: listOfMacro
+        };
+    }
 
     // document.getElementById('macroNames').value = '';
     document.getElementById('mac_modelNames').value = '';
@@ -1611,12 +1623,12 @@ function viewAddedAndDeletedMacro() {
     addedTempMacro.listOfMacro.forEach(macro => {
         let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
         <div>
-        <span onclick="MacroPlusToggle('${macro.ulId}')">
+        <span onclick="MacroPlusToggle('${macro.ulId}adddelete')">
         <div><i class="fa-solid fa-plus fa-xs"></i> ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>&nbsp;&nbsp;</div>
 		<span onclick="editMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i></span>
         <span onclick="deleteMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-trash fa-xs"></i></span>
         </div>
-        <ul id="${macro.ulId}" class="listContainerMacro">
+        <ul id="${macro.ulId}adddelete" class="listContainerMacro">
             <li>${macro.mac_model_Names}</li>
             <li>${macro.mac_parameter_Names}</li>
             <li>${macro.mac_sub_parameter}</li>
@@ -1652,7 +1664,12 @@ function createActionButton(action, buttonClass, buttonId) {
 
 function macSubmitForm() {
     event.preventDefault();
-    savedMacro.push(addedTempMacro);
+    if (editMacroGroupName) {
+        let editAddMacro = savedMacro.find(x => x.macroGroupName == editMacroGroupName);
+        editAddMacro = addedTempMacro;
+    } else {
+        savedMacro.push(addedTempMacro);
+    }
     showSavedMacroList();
     document.getElementById('macroNames').value = '';
     document.getElementById('mac_modelNames').value = '';
@@ -1661,6 +1678,9 @@ function macSubmitForm() {
     addedTempMacro = {};
     listOfMacro = [];
     addedInfoContainerDiv.innerHTML = ' '
+	if(view_Create_Macro.style.display == 'block'){
+		viewMacro(editMacroGroupName);
+	}
 };
 
 
@@ -1719,8 +1739,8 @@ function viewMacro(macroGroupName) {
     let viewTempMacro = [];
     macro.listOfMacro.forEach(macro => {
         let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
-        <span onclick="MacroPlusToggle('${macro.ulId}')">+ ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>
-        <ul id="${macro.ulId}" class="listContainerMacro">
+        <span onclick="MacroPlusToggle('${macro.ulId}view')">+ ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>
+        <ul id="${macro.ulId}view" class="listContainerMacro">
             <li>${macro.mac_model_Names}</li>
             <li>${macro.mac_parameter_Names}</li>
             <li>${macro.mac_sub_parameter}</li>
@@ -1734,6 +1754,7 @@ function viewMacro(macroGroupName) {
 function editMacro(macroGroupName) {
     create_Macro.style.display = 'block';
     let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
+    editMacroGroupName = macro.macroGroupName;
     console.log("Found EDIT UPDATE macro:", macro);
     addedTempMacro = macro;
     viewAddedAndDeletedMacro();
@@ -1769,11 +1790,11 @@ function deleteMacroLayer(value) {
     // viewMacro();
 }
 
-let editId;
 
 function editMacroLayer(value) {
     editId = value;
     let layer = addedTempMacro.listOfMacro.find(x => x.ulId == value);
+	macShowParameterNames(layer.mac_model_Names);
     document.getElementById('macroNames').value = addedTempMacro.macroGroupName;
     document.getElementById('mac_modelNames').value = layer.mac_model_Names;
     document.getElementById('mac_parameterNames').value = layer.mac_parameter_Names;
@@ -1806,31 +1827,31 @@ function updateForm() {
 }
 //*********** */
 
-function removeElementById(elementId) {
-    let element = document.getElementById(elementId);
-    if (element) {
-        element.parentNode.removeChild(element);
-        // Update the addedTempMacro array by removing the corresponding entry
-        addedTempMacro = addedTempMacro.filter(macro => macro.ulId !== elementId);
-        // Update the savedMacro array by regenerating the HTML
-        savedMacro = addedTempMacro.map(macro => generateAddedInfoDiv(macro)).join("");
-        document.getElementById('addedInfoContainer').innerHTML = savedMacro;
-    }
-    handleInputChange();
-}
+// function removeElementById(elementId) {
+//     let element = document.getElementById(elementId);
+//     if (element) {
+//         element.parentNode.removeChild(element);
+//         // Update the addedTempMacro array by removing the corresponding entry
+//         addedTempMacro = addedTempMacro.filter(macro => macro.ulId !== elementId);
+//         // Update the savedMacro array by regenerating the HTML
+//         savedMacro = addedTempMacro.map(macro => generateAddedInfoDiv(macro)).join("");
+//         document.getElementById('addedInfoContainer').innerHTML = savedMacro;
+//     }
+//     handleInputChange();
+// }
 
-function generateAddedInfoDiv(macro) {
-    return `<div id="toggleDiv">
-        <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.macroName}</span>
-        <ul id="${macro.ulId}" class="listContainerMacro">
-            <li>${macro.mac_model_Names}</li>
-            <li>${macro.mac_parameter_Names}</li>
-            <li>${macro.mac_sub_parameter}</li>
-        </ul>
-        <button class="edit-button" onclick="editMacro('${macro.ulId}', '${macro.macroName}', '${macro.mac_model_Names}', '${macro.mac_parameter_Names}', '${macro.mac_sub_parameter}')">E</button>
-        <button class="delete-button" onclick="deleteMacro('${macro.ulId}')">D</button>
-    </div>`;
-}
+// function generateAddedInfoDiv(macro) {
+//     return `<div id="toggleDiv">
+//         <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.macroName}</span>
+//         <ul id="${macro.ulId}" class="listContainerMacro">
+//             <li>${macro.mac_model_Names}</li>
+//             <li>${macro.mac_parameter_Names}</li>
+//             <li>${macro.mac_sub_parameter}</li>
+//         </ul>
+//         <button class="edit-button" onclick="editMacro('${macro.ulId}', '${macro.macroName}', '${macro.mac_model_Names}', '${macro.mac_parameter_Names}', '${macro.mac_sub_parameter}')">E</button>
+//         <button class="delete-button" onclick="deleteMacro('${macro.ulId}')">D</button>
+//     </div>`;
+// }
 
 
 //********************************************************* */
@@ -2127,7 +2148,6 @@ L.control.mousePosition({
     position: "bottomleft"
 }).addTo(map);
 
-
 //add map scale
 // L.control.scale().addTo(map);
 
@@ -2156,7 +2176,7 @@ var ObservationButton = L.Control.extend({
 
 
 
-// Create a custom control button for ObservationButton
+// Create a custom control button for MacroButton
 var MacroButton = L.Control.extend({
     options: {
         position: 'bottomleft'
@@ -2256,18 +2276,6 @@ var MacroButton = L.Control.extend({
 //     }
 // });
 
-
-
-// var customControl = new CustomControls();
-// customControl.addTo(map);
-
-
-
-
-
-// map.addControl(new MacroButton());
-// buttonContainer.appendChild(new MacroButton().onAdd(map));
-
 // Create a custom control button for model popup
 var LegendButton = L.Control.extend({
     options: {
@@ -2279,21 +2287,36 @@ var LegendButton = L.Control.extend({
             'leaflet-bar leaflet-control leaflet-control-custom custom-btn3');
         button.innerHTML = 'Legend';
         button.id = 'popup';
+        //click event listener
+        L.DomEvent.on(button, 'click', function() {});
+        return button;
+    }
+});
+
+// Create a custom control button for printMap
+var PrintButton = L.Control.extend({
+    options: {
+        position: 'bottomleft'
+    },
+    onAdd: function() {
+        // Create a button element
+        var button = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn3');
+        button.innerHTML = 'Print';
+        button.id = 'printMap';
         // button.style = "margin-left:30px;"
         //click event listener
-        L.DomEvent.on(button, 'click', function() {
-            // alert('Button clicked!');
+        L.DomEvent.on(button, 'click', function PrintMap() {
+            alert('PrintMap Button clicked!');
         });
         return button;
     }
 });
 
-// map.addControl(new LegendButton());
-// buttonContainer.appendChild(new LegendButton().onAdd(map));
-
 customButtonsContainer.appendChild(new ObservationButton().onAdd());
 customButtonsContainer.appendChild(new MacroButton().onAdd());
 customButtonsContainer.appendChild(new LegendButton().onAdd());
+customButtonsContainer.appendChild(new PrintButton().onAdd());
 
 // Add the container to the map
 map.getContainer().appendChild(customButtonsContainer);
@@ -2317,7 +2340,6 @@ map.getContainer().appendChild(customButtonsContainer);
 // };
 
 // customControl.addTo(map);
-
 
 
 // Add a marker for Delhi
@@ -5293,8 +5315,6 @@ var overLayers10 = [{
             name: "Socio Economic Zone",
             layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
         },
-
-
         {
             active: false,
             name: "Railway Network",
@@ -5481,22 +5501,10 @@ const legendModelMet = document.getElementById('legendModelMetar');
 
 
 // synop
-let synopButtonState = true;
+let synopButtonState = false;
 
 function clickHandler_synop(event) {
     if (synopButtonState) {
-        map.removeControl(panelLayers);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers2);
-    } else {
         map.addControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
@@ -5508,370 +5516,422 @@ function clickHandler_synop(event) {
         map.removeControl(panelLayers9);
         map.removeControl(panelLayers10);
         map.removeControl(panelLayers11);
+        console.log(synopButtonState, "synopButtonState..1");
+    } else {
+        map.addControl(panelLayers2);
+        map.removeControl(panelLayers);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
+        // 
+        metarButtonState = false;
+        mesolscaleButtonState = false;
+        medium_rangeButtonState = false;
+        satelliteButtonState = false;
+        radarButtonState = false;
+        lightningButtonState = false;
+        soundingButtonState = false;
+        exposureButtonState = false;
+        ship_and_buoyButtonState = false;
+        console.log(synopButtonState, "synopButtonState..2");
     }
-
     synopButtonState = !synopButtonState;
-    // const synopButton = document.getElementById('synop');
-    // synopButton.style.backgroundColor = synopButtonState ? '#eff4ff' : 'rgb(180, 194, 224)';
 }
-
 document.getElementById("synop").addEventListener("click", clickHandler_synop);
 
 //metar
-function clickHandler_metar(event_metar) {
-    const targetElement_metar = event_metar.target;
-    const currentColormetar = targetElement_metar.style.backgroundColor;
+let metarButtonState = false;
 
-    if (event_metar.target && event_metar.target.id == "metar") {
-        if (currentColormetar === 'rgb(180, 194, 224)') { // highlighted color
-            targetElement_metar.style.backgroundColor = '#eff4ff'; // Reset to default color
-            map.addControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers11);
-            map.removeControl(panelLayers10);
-        } else {
-            targetElement_metar.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
-            map.removeControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers10);
-            map.removeControl(panelLayers11);
-            map.addControl(panelLayers3);
-        }
-
+function clickHandler_metar(event) {
+    if (metarButtonState) {
+        map.addControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers11);
+        map.removeControl(panelLayers10);
+    } else {
+        map.removeControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
+        map.addControl(panelLayers3);
+        // 
+        synopButtonState = false;
+        mesolscaleButtonState = false;
+        medium_rangeButtonState = false;
+        satelliteButtonState = false;
+        radarButtonState = false;
+        lightningButtonState = false;
+        soundingButtonState = false;
+        exposureButtonState = false;
+        ship_and_buoyButtonState = false;
     }
-    console.log(event_metar.target.id);
+    metarButtonState = !metarButtonState;
 }
-document.getElementById("parent").addEventListener("click", clickHandler_metar);
+document.getElementById("metar").addEventListener("click", clickHandler_metar);
 
 //mesolscale
-function clickHandler_mesolscale(event_mesolscale) {
-    const targetElement_mesolscale = event_mesolscale.target;
-    const currentColormesolscale = targetElement_mesolscale.style.backgroundColor;
+let mesolscaleButtonState = false;
 
-    if (event_mesolscale.target && event_mesolscale.target.id == "mesolscale") {
-        if (currentColormesolscale === 'rgb(180, 194, 224)') { // highlighted color
-            targetElement_mesolscale.style.backgroundColor =
-                '#eff4ff'; // Reset to default color
-            map.addControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers11);
-            map.removeControl(panelLayers10);
-        } else {
-            targetElement_mesolscale.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
-            map.removeControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers10);
-            map.removeControl(panelLayers11);
-            map.addControl(panelLayers4);
-        }
-
+function clickHandler_mesolscale(event) {
+    if (mesolscaleButtonState) {
+        map.addControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers11);
+        map.removeControl(panelLayers10);
+    } else {
+        map.removeControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
+        map.addControl(panelLayers4);
+        //
+        synopButtonState = false;
+        metarButtonState = false;
+        medium_rangeButtonState = false;
+        satelliteButtonState = false;
+        radarButtonState = false;
+        lightningButtonState = false;
+        soundingButtonState = false;
+        exposureButtonState = false;
+        ship_and_buoyButtonState = false;
     }
-    console.log(event_mesolscale.target.id);
+    mesolscaleButtonState = !mesolscaleButtonState;
 }
-document.getElementById("parent").addEventListener("click", clickHandler_mesolscale);
+document.getElementById("mesolscale").addEventListener("click", clickHandler_mesolscale);
 
 //medium_range
-function clickHandler_medium(event_medium) {
-    const targetElement_medium = event_medium.target;
-    const currentColormedium = targetElement_medium.style.backgroundColor;
+let medium_rangeButtonState = false;
 
-    if (event_medium.target && event_medium.target.id == "medium_range") {
-        if (currentColormedium === 'rgb(180, 194, 224)') { // highlighted color
-            targetElement_medium.style.backgroundColor = '#eff4ff'; // Reset to default color
-            map.addControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers11);
-            map.removeControl(panelLayers10);
-        } else {
-            targetElement_medium.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
-            map.removeControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers10);
-            map.removeControl(panelLayers11);
-            map.addControl(panelLayers5);
-        }
-
+function clickHandler_medium(event) {
+    if (medium_rangeButtonState) {
+        map.addControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers11);
+        map.removeControl(panelLayers10);
+    } else {
+        map.removeControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
+        map.addControl(panelLayers5);
+        //
+        synopButtonState = false;
+        metarButtonState = false;
+        mesolscaleButtonState = false;
+        satelliteButtonState = false;
+        radarButtonState = false;
+        lightningButtonState = false;
+        soundingButtonState = false;
+        exposureButtonState = false;
+        ship_and_buoyButtonState = false;
     }
-    console.log(event_medium.target.id);
+    medium_rangeButtonState = !medium_rangeButtonState;
 }
-document.getElementById("parent").addEventListener("click", clickHandler_medium);
+document.getElementById("medium_range").addEventListener("click", clickHandler_medium);
 
 //satellite
-function clickHandler_satellite(event_satellite) {
-    const targetElement_satellite = event_satellite.target;
-    const currentColorsatellite = targetElement_satellite.style.backgroundColor;
+let satelliteButtonState = false;
 
-    if (event_satellite.target && event_satellite.target.id == "satellite") {
-        if (currentColorsatellite === 'rgb(180, 194, 224)') { // highlighted color
-            targetElement_satellite.style.backgroundColor =
-                '#eff4ff'; // Reset to default color
-            map.addControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers11);
-            map.removeControl(panelLayers10);
-        } else {
-            targetElement_satellite.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
-            map.removeControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers10);
-            map.removeControl(panelLayers11);
-            map.addControl(panelLayers6);
-        }
-
+function clickHandler_satellite(event) {
+    if (satelliteButtonState) {
+        map.addControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers11);
+        map.removeControl(panelLayers10);
+    } else {
+        map.removeControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
+        map.addControl(panelLayers6);
+        //
+        synopButtonState = false;
+        metarButtonState = false;
+        mesolscaleButtonState = false;
+        medium_rangeButtonState = false;
+        radarButtonState = false;
+        lightningButtonState = false;
+        soundingButtonState = false;
+        exposureButtonState = false;
+        ship_and_buoyButtonState = false;
     }
-    console.log(event_satellite.target.id);
+    satelliteButtonState = !satelliteButtonState;
 }
-document.getElementById("parent").addEventListener("click", clickHandler_satellite);
+document.getElementById("satellite").addEventListener("click", clickHandler_satellite);
 
 // radar
-function clickHandler_radar(event_radar) {
-    const targetElement_radar = event_radar.target;
-    const currentColorradar = targetElement_radar.style.backgroundColor;
+let radarButtonState = false;
 
-    if (event_radar.target && event_radar.target.id == "radar") {
-        if (currentColorradar === 'rgb(180, 194, 224)') { // highlighted color
-            targetElement_radar.style.backgroundColor = '#eff4ff'; // Reset to default color
-            map.addControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers11);
-            map.removeControl(panelLayers10);
-        } else {
-            targetElement_radar.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
-            map.removeControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers10);
-            map.removeControl(panelLayers11);
-            map.addControl(panelLayers7);
-        }
-
+function clickHandler_radar(event) {
+    if (radarButtonState) {
+        map.addControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers11);
+        map.removeControl(panelLayers10);
+    } else {
+        map.removeControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
+        map.addControl(panelLayers7);
+        //
+        synopButtonState = false;
+        metarButtonState = false;
+        mesolscaleButtonState = false;
+        medium_rangeButtonState = false;
+        satelliteButtonState = false;
+        lightningButtonState = false;
+        soundingButtonState = false;
+        exposureButtonState = false;
+        ship_and_buoyButtonState = false;
     }
-    console.log(event_radar.target.id);
+    radarButtonState = !radarButtonState;
 }
-document.getElementById("parent").addEventListener("click", clickHandler_radar);
+document.getElementById("radar").addEventListener("click", clickHandler_radar);
 
 //lightning
-function clickHandler_lightning(event_lightning) {
-    const targetElement_lightning = event_lightning.target;
-    const currentColorlightning = targetElement_lightning.style.backgroundColor;
+let lightningButtonState = false;
 
-    if (event_lightning.target && event_lightning.target.id == "lightning") {
-        if (currentColorlightning === 'rgb(180, 194, 224)') { // highlighted color
-            targetElement_lightning.style.backgroundColor =
-                '#eff4ff'; // Reset to default color
-            map.addControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers11);
-            map.removeControl(panelLayers10);
-        } else {
-            targetElement_lightning.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
-            map.removeControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers10);
-            map.removeControl(panelLayers11);
-            map.addControl(panelLayers8);
-        }
-
+function clickHandler_lightning(event) {
+    if (lightningButtonState) {
+        map.addControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers11);
+        map.removeControl(panelLayers10);
+    } else {
+        map.removeControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
+        map.addControl(panelLayers8);
+        //
+        synopButtonState = false;
+        metarButtonState = false;
+        mesolscaleButtonState = false;
+        medium_rangeButtonState = false;
+        satelliteButtonState = false;
+        radarButtonState = false;
+        soundingButtonState = false;
+        exposureButtonState = false;
+        ship_and_buoyButtonState = false;
     }
-    console.log(event_lightning.target.id);
+    lightningButtonState = !lightningButtonState;
 }
-document.getElementById("parent").addEventListener("click", clickHandler_lightning);
+document.getElementById("lightning").addEventListener("click", clickHandler_lightning);
 
 //sounding
-function clickHandler_sounding(event_sounding) {
-    const targetElement_sounding = event_sounding.target;
-    const currentColorsounding = targetElement_sounding.style.backgroundColor;
+let soundingButtonState = false;
 
-    if (event_sounding.target && event_sounding.target.id == "sounding") {
-        if (currentColorsounding === 'rgb(180, 194, 224)') { // highlighted color
-            targetElement_sounding.style.backgroundColor =
-                '#eff4ff'; // Reset to default color
-            map.addControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers11);
-            map.removeControl(panelLayers10);
-        } else {
-            targetElement_sounding.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
-            map.removeControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers10);
-            map.removeControl(panelLayers11);
-            map.addControl(panelLayers9);
-        }
-
+function clickHandler_sounding(event) {
+    if (soundingButtonState) {
+        map.addControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers11);
+        map.removeControl(panelLayers10);
+    } else {
+        map.removeControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
+        map.addControl(panelLayers9);
+        //
+        synopButtonState = false;
+        metarButtonState = false;
+        mesolscaleButtonState = false;
+        medium_rangeButtonState = false;
+        satelliteButtonState = false;
+        radarButtonState = false;
+        lightningButtonState = false;
+        exposureButtonState = false;
+        ship_and_buoyButtonState = false;
     }
-    console.log(event_sounding.target.id);
+    soundingButtonState = !soundingButtonState;
 }
-document.getElementById("parent").addEventListener("click", clickHandler_sounding);
+document.getElementById("sounding").addEventListener("click", clickHandler_sounding);
 
 // exposure
-function clickHandler_expo(event_expo) {
-    const targetElement_expo = event_expo.target;
-    const currentColorexpo = targetElement_expo.style.backgroundColor;
+let exposureButtonState = false;
 
-    if (event_expo.target && event_expo.target.id == "exposure") {
-        if (currentColorexpo === 'rgb(180, 194, 224)') { // highlighted color
-            targetElement_expo.style.backgroundColor = '#eff4ff'; // Reset to default color
-            map.addControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers11);
-            map.removeControl(panelLayers10);
-        } else {
-            targetElement_expo.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
-            map.removeControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers11);
-            map.addControl(panelLayers10);
-        }
-
+function clickHandler_expo(event) {
+    if (exposureButtonState) {
+        map.addControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers11);
+        map.removeControl(panelLayers10);
+    } else {
+        map.removeControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers11);
+        map.addControl(panelLayers10);
+        //
+        synopButtonState = false;
+        metarButtonState = false;
+        mesolscaleButtonState = false;
+        medium_rangeButtonState = false;
+        satelliteButtonState = false;
+        radarButtonState = false;
+        lightningButtonState = false;
+        soundingButtonState = false;
+        ship_and_buoyButtonState = false;
     }
-    // console.log(event_expo.target.id);
+    exposureButtonState = !exposureButtonState;
 }
-
-document.getElementById("parent").addEventListener("click", clickHandler_expo);
+document.getElementById("exposure").addEventListener("click", clickHandler_expo);
 
 //ship_and_buoy
-function clickHandler_ship(event_ship) {
-    const targetElement_ship = event_ship.target;
-    const currentColorship = targetElement_ship.style.backgroundColor;
+let ship_and_buoyButtonState = false;
 
-    if (event_ship.target && event_ship.target.id == "ship_and_buoy") {
-        if (currentColorship === 'rgb(180, 194, 224)') { // highlighted color
-            targetElement_ship.style.backgroundColor = '#eff4ff'; // Reset to default color
-            map.addControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers11);
-            map.removeControl(panelLayers10);
-        } else {
-            targetElement_ship.style.backgroundColor = 'rgb(180, 194, 224)'; // highlighted color
-            map.removeControl(panelLayers);
-            map.removeControl(panelLayers2);
-            map.removeControl(panelLayers3);
-            map.removeControl(panelLayers4);
-            map.removeControl(panelLayers5);
-            map.removeControl(panelLayers6);
-            map.removeControl(panelLayers7);
-            map.removeControl(panelLayers8);
-            map.removeControl(panelLayers9);
-            map.removeControl(panelLayers10);
-            map.addControl(panelLayers11);
-        }
-
+function clickHandler_ship(event) {
+    if (ship_and_buoyButtonState) {
+        map.addControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers11);
+        map.removeControl(panelLayers10);
+    } else {
+        map.removeControl(panelLayers);
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.addControl(panelLayers11);
+        //
+        synopButtonState = false;
+        metarButtonState = false;
+        mesolscaleButtonState = false;
+        medium_rangeButtonState = false;
+        satelliteButtonState = false;
+        radarButtonState = false;
+        lightningButtonState = false;
+        soundingButtonState = false;
+        exposureButtonState = false;
     }
+    ship_and_buoyButtonState = !ship_and_buoyButtonState;
 }
 
-document.getElementById("parent").addEventListener("click", clickHandler_ship);
+document.getElementById("ship_and_buoy").addEventListener("click", clickHandler_ship);
 
 
 // Image
@@ -5919,6 +5979,7 @@ let panelLayerLightninglists = document.querySelector('#panelLayer-Lightning-lis
 //
 let panelLayerRadarTitle = document.querySelector('#panelLayer-radar-Title')
 let panelLayerRadarlists = document.querySelector('#panelLayer-radar-lists')
+// console.log(panelLayerRadarlists, "______panelLayerRadarlists");
 
 //EXPOSURE
 let panelLayerExposureTitle = document.querySelector('#exposure-layers-Title')
@@ -6293,18 +6354,83 @@ let clickedSynopVisibilityLists = [];
 let clickedSynopWindSpeedAndDirectionLists = [];
 let clickedSynop3hRainfallLists = [];
 
+var metarArrayBg = ["METAR 00UTC", "METAR 01UTC", "METAR 02UTC", "METAR 03UTC", "METAR 04UTC", "METAR 05UTC",
+    "METAR 06UTC", "METAR 07UTC", "METAR 08UTC", "METAR 09UTC", "METAR 10UTC", "METAR 11UTC", "METAR 12UTC",
+    "METAR 13UTC", "METAR 14UTC", "METAR 15UTC", "METAR 16UTC", "METAR 17UTC", "METAR 18UTC", "METAR 19UTC",
+    "METAR 20UTC", "METAR 21UTC", "METAR 22UTC", "METAR 23UTC"
+];
+
+var synopArrayBg = ["SYNOP 00UTC", "SYNOP 03UTC",
+    "SYNOP 06UTC", "SYNOP 09UTC", "SYNOP 12UTC", "SYNOP 15UTC", "SYNOP 18UTC", "SYNOP 21UTC"
+];
+
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
     console.log(_this, '_this');
-    var isChecked = $(this).attr('checked');
+    var isChecked = _this.prop('checked');
+    // var isChecked = $(this).attr('checked');
     var layer_group_name = _this.context._layer ? _this.context._layer.group.name : '';
     console.log(layer_group_name, "layer_group_name");
+    var layer_name;
+    //
 
     if (isChecked) { // True
         console.log("Checked");
-        var layer_name = _this.context._layer ? _this.context._layer.name : _this.context
-            .className;
+        layer_name = _this.context._layer ? _this.context._layer.name : _this.context.className;
         console.log(layer_name, "layer_name");
+
+        //EXPOSURE
+        if (layer_name === "District Boundaries" || layer_name === "Airport" || layer_name ===
+            "Oil Refineries" || layer_name === "Power Station" || layer_name === "Power Plant" || layer_name ===
+            "DEM" || layer_name === "Hospital" || layer_name === "Industrail" || layer_name === "sports" ||
+            layer_name === "Road Network" || layer_name === "Socio Economic Zone" || layer_name ===
+            "Railway Network" || layer_name === "LULC") {
+            $("#exposure").css("background-color", 'rgb(180, 194, 224)');
+            console.log("EXPOSURE working....", layer_name);
+        } else {
+            $("#exposure").css("background-color", '#eff4ff');
+            console.log("EXPOSURE not working....", layer_name);
+        }
+
+        //METAR
+        var isLayerInMetarArray = metarArrayBg.includes(layer_group_name);
+        console.log("Is layer in metarArrayBg?", isLayerInMetarArray);
+        if (isLayerInMetarArray) {
+            if (layer_name === "TEMPERATURE" || layer_name === "DEW POINT TEMPERATURE" || layer_name ===
+                "VISIBILITY" || layer_name === "WIND SPEED AND DIRECTION") {
+                $("#metar").css("background-color", 'rgb(180, 194, 224)');
+                console.log("METAR working", layer_name);
+            } else {
+                $("#metar").css("background-color", '#eff4ff');
+            }
+        } else {
+            console.log("METAR not working");
+        }
+
+        //SYNOP
+        var isLayerInSynopArray = synopArrayBg.includes(layer_group_name);
+        console.log("Is layer in synopArrayBg?", isLayerInSynopArray);
+        if (isLayerInSynopArray) {
+            if (layer_name === "TEMPERATURE" || layer_name === "MEAN SEA LEVEL PRESSURE" || layer_name ===
+                "CLOUD COVER" || layer_name === "GEOPOTENTIAL HEIGHT" || layer_name === "RELATIVE HUMIDITY" ||
+                layer_name === "VISIBILITY" || layer_name === "WIND SPEED AND DIRECTION" || layer_name ===
+                "3 h RAINFALL") {
+                $("#synop").css("background-color", 'rgb(180, 194, 224)');
+                console.log("SYNOP working", layer_name);
+            } else {
+                $("#synop").css("background-color", '#eff4ff');
+            }
+        } else {
+            console.log("SYNOP not working");
+        }
+
+
+        // if (layer_name === "Radar Reflectivity" || layer_name === "Radar Animation") {
+        //     $("#radar").css("background-color", 'rgb(180, 194, 224)');
+        // }
+        // else {
+        //     $("#radar").css("background-color", '#eff4ff');
+        // }
 
         //HomePage_Lightning
         if (_this.context._layer.group.name == "Lightning") {
@@ -8957,10 +9083,117 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
     } else {
-        console.log("Not Checked");
+        // debugger;
+
+        console.log("unChecked");
         var uncheckLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer.name : _this
-            .context
-            .className;
+            .context.className;
+
+        layer_name = _this.context._layer ? _this.context._layer.name : _this.context.className;
+
+
+        console.log("overLayers10overLayers10-->,", overLayers10);
+
+        let x = document.getElementById("491");
+        let districtBoundaries = x._layer.active;
+        let y = document.getElementById("492");
+        let airport = y._layer.active;
+        let z = document.getElementById("493");
+        let oilrefineries = z._layer.active;
+        let xz = document.getElementById("494");
+        let powerStation = xz._layer.active;
+        let yz = document.getElementById("495");
+        let powerPlant = yz._layer.active;
+        let zz = document.getElementById("496");
+        let Dem = zz._layer.active;
+
+        // let za = document.getElementById("497");
+        // let hospital = za._layer.active;
+        // let zb = document.getElementById("498");
+        // let industrial = zb._layer.active;
+
+        let zc = document.getElementById("497");
+        let sports = zc._layer.active;
+
+        let ze = document.getElementById("498");
+        let roadNetwork = ze._layer.active;
+
+        let zf = document.getElementById("499");
+        let sez = zf._layer.active;
+
+        let zg = document.getElementById("500");
+        let railWay = zg._layer.active;
+
+        let zh = document.getElementById("501");
+        let LULC = zh._layer.active;
+
+        //EXPOSURE
+        if (districtBoundaries === false && airport === false && oilrefineries === false && powerStation ===
+            false &&
+            powerPlant === false && Dem === false && sports ===
+            false &&
+            roadNetwork === false && sez === false && railWay === false && LULC === false) {
+            $("#exposure").css("background-color", '#eff4ff');
+            console.log("EXPOSURE working....", layer_name);
+        } else {
+            $("#exposure").css("background-color", 'rgb(180, 194, 224)');
+            console.log("EXPOSURE not working....", layer_name);
+        }
+
+        // METAR
+        if (isLayerInMetarArray) {
+            if (layer_name === "TEMPERATURE" && layer_name === "DEW POINT TEMPERATURE" && layer_name ===
+                "VISIBILITY" && layer_name === "WIND SPEED AND DIRECTION") {
+                $("#metar").css("background-color", '#eff4ff');
+                console.log("METAR working");
+            } else {
+                $("#metar").css("background-color", 'rgb(180, 194, 224)');
+                console.log("METAR unchecked color not working");
+            }
+        } else {
+            console.log("METAR not working");
+        }
+
+        //SYNOP
+        var isLayerInSynopArray = synopArrayBg.includes(layer_group_name);
+        console.log("Is layer in synopArrayBg?", isLayerInSynopArray);
+        if (isLayerInSynopArray) {
+            if (layer_name === "TEMPERATURE" && layer_name === "MEAN SEA LEVEL PRESSURE" && layer_name ===
+                "CLOUD COVER" && layer_name === "GEOPOTENTIAL HEIGHT" && layer_name === "RELATIVE HUMIDITY" &&
+                layer_name === "VISIBILITY" && layer_name === "WIND SPEED AND DIRECTION" && layer_name ===
+                "3 h RAINFALL") {
+                $("#synop").css("background-color", 'rgb(180, 194, 224)');
+                console.log("SYNOP working", layer_name);
+            } else {
+                $("#synop").css("background-color", '#eff4ff');
+            }
+        } else {
+            console.log("SYNOP not working");
+        }
+
+
+
+        // if (isLayerInMetarArray) {
+        //     if (layer_name === "TEMPERATURE" && layer_name === "DEW POINT TEMPERATURE" && layer_name ===
+        //         "VISIBILITY" && layer_name === "WIND SPEED AND DIRECTION") {
+        //         $("#metar").css("background-color", '#eff4ff');
+        //         console.log("METAR unchecked color");
+        //     } else {
+        //         $("#metar").css("background-color", 'rgb(180, 194, 224)');
+        //         console.log("METAR unchecked color not working");
+        //     }
+        // } else {
+        //     console.log("METAR not working");
+        // }
+
+        // if (layer_name === "Radar Reflectivity" && layer_name === "Radar Animation") {
+        //     $("#radar").css("background-color", '#eff4ff');
+        //     console.log("Radar unchecked color");
+        // } else {
+        //     $("#radar").css("background-color", 'rgb(180, 194, 224)');
+        //     console.log("Radar unchecked color not working");
+        // }
+
         //Lightning UNCHECK
         if (uncheckLayer == 'Lightning Last 00-05 min') {
             clickedLightningLists = clickedLightningLists.filter(checkList => {
@@ -12794,6 +13027,7 @@ $("body").on("change", "input[type=checkbox]", function() {
     }
 });
 //
+
 
 function metarTempImageAndLegend(layer_group_name, layer_name) {
     METAR.innerHTML = "METAR"

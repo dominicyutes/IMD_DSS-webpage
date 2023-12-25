@@ -27,7 +27,6 @@ body {
     padding: 0;
     background: none;
     cursor: pointer;
-    /* font: inherit; */
     outline: inherit;
     font-weight: bolder;
 }
