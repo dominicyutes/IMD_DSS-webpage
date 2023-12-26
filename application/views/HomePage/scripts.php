@@ -1924,7 +1924,8 @@ function toggleTimeDimensionControl() {
 // Create a custom control
 var timeDimensionControlButton = L.Control.extend({
     onAdd: function() {
-        var button = L.DomUtil.create('button', 'yourButtonClass'); // Create a button with a specified class
+        var button = L.DomUtil.create('button',
+            'yourButtonClass'); // Create a button with a specified class
         button.innerHTML = '<i class="fas fa-clock"></i>';
         button.style.backgroundColor = 'white';
         button.style.border = '1px solid black';
@@ -1986,21 +1987,21 @@ var timeDimensionControl = new L.Control.TimeDimensionCustom({
 });
 
 // Add the GeoJSON data to the map
-// _dist_geojson = "<?php echo base_url(); ?>DATA/INDIA_COUNTRY.json";
-// var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
-//     color: 'black',
-//     weight: 1,
-//     style: {
-//         color: '#3f51b5',
-//         opacity: 0.5,
-//         fillOpacity: 0.5,
-//         weight: 1
-//     }
-// });
+_dist_geojson = "<?php echo base_url(); ?>DATA/INDIA_COUNTRY.json";
+var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
+    color: 'black',
+    weight: 1,
+    style: {
+        color: '#3f51b5',
+        opacity: 0.5,
+        fillOpacity: 0.5,
+        weight: 1
+    }
+});
 
-// geojson.on('data:loaded', function() {
-//     geojson.addTo(map);
-// });
+geojson.on('data:loaded', function() {
+    geojson.addTo(map);
+});
 //
 
 //
@@ -2016,7 +2017,7 @@ const OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.pn
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
-OpenStreetMap.addTo(map);
+// OpenStreetMap.addTo(map);
 
 const streets = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -2024,7 +2025,7 @@ const streets = L.tileLayer(
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
     }
 );
-// streets.addTo(map);
+streets.addTo(map);
 
 const imagery = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -2293,34 +2294,35 @@ var LegendButton = L.Control.extend({
     }
 });
 
+// Create a custom control button for MacroButton
+var PrintButton = L.Control.extend({
+    options: {
+        position: 'bottomleft'
+    },
+    onAdd: function() {
+        var printbtn = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn2 printbutton');
+        printbtn.innerHTML = 'Print';
+        L.DomEvent.on(printbtn, 'click', function() {
+            printFn();
+        });
+
+        return printbtn;
+    }
+});
+
+function printFn() {
+    console.log("print working");
+};
 
 customButtonsContainer.appendChild(new ObservationButton().onAdd());
 customButtonsContainer.appendChild(new MacroButton().onAdd());
 customButtonsContainer.appendChild(new LegendButton().onAdd());
+customButtonsContainer.appendChild(new PrintButton().onAdd());
 
 // Add the container to the map
 map.getContainer().appendChild(customButtonsContainer);
 // ************
-
-// Custom Control
-// var customControl = L.control({
-//     position: 'topleft'
-// });
-
-// customControl.onAdd = function(map) {
-//     var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-
-//     container.innerHTML = '<div class="custom-buttons-container">' +
-//         '<div class="custom-button" onclick="alert(\'Legend!\')">Legend</div>' +
-//         '<div class="custom-button" onclick="observationBtn()">Observation</div>' +
-//         '<div class="custom-button" onclick="alert(\'Button 3 clicked!\')">Button</div>' +
-//         '</div>';
-
-//     return container;
-// };
-
-// customControl.addTo(map);
-
 
 // Add a marker for Delhi
 var delhiMarker = L.marker([28.6139, 77.2090]);
@@ -2997,31 +2999,35 @@ function updateActiveLayers() {
 const ToggleControl = L.Control.extend({
     onAdd: function(map) {
         // Extracting the hand symbol and curved arrow paths from the provided SVG
-const handArrowSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-handArrowSVG.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-handArrowSVG.setAttribute('viewBox', '0 0 24 24');
-handArrowSVG.setAttribute('width', '24');
-handArrowSVG.setAttribute('height', '24');
+        const handArrowSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        handArrowSVG.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        handArrowSVG.setAttribute('viewBox', '0 0 24 24');
+        handArrowSVG.setAttribute('width', '24');
+        handArrowSVG.setAttribute('height', '24');
 
-// Creating and appending the hand symbol path to the new SVG
-const handPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-handPath.setAttribute('d', 'M20.13 3.87C18.69 2.17 15.6 1 12 1S5.31 2.17 3.87 3.87L2 2v5h5L4.93 4.93c1-1.29 3.7-2.43 7.07-2.43s6.07 1.14 7.07 2.43L17 7h5V2l-1.87 1.87z');
-handPath.setAttribute('fill', 'currentColor'); // Change the fill color if needed
-handArrowSVG.appendChild(handPath);
+        // Creating and appending the hand symbol path to the new SVG
+        const handPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        handPath.setAttribute('d',
+            'M20.13 3.87C18.69 2.17 15.6 1 12 1S5.31 2.17 3.87 3.87L2 2v5h5L4.93 4.93c1-1.29 3.7-2.43 7.07-2.43s6.07 1.14 7.07 2.43L17 7h5V2l-1.87 1.87z'
+        );
+        handPath.setAttribute('fill', 'currentColor'); // Change the fill color if needed
+        handArrowSVG.appendChild(handPath);
 
-// Creating and appending the curved arrow path to the new SVG
-const arrowPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-arrowPath.setAttribute('d', 'm18.89 14.75-4.09-2.04c-.28-.14-.58-.21-.89-.21H13v-6c0-.83-.67-1.5-1.5-1.5S10 5.67 10 6.5v10.74l-3.25-.74c-.33-.07-.68.03-.92.28l-.83.84 4.54 4.79c.38.38 1.14.59 1.67.59h6.16c1 0 1.84-.73 1.98-1.72l.63-4.46c.12-.85-.32-1.68-1.09-2.07z');
-arrowPath.setAttribute('fill', 'currentColor'); // Change the fill color if needed
-handArrowSVG.appendChild(arrowPath);
+        // Creating and appending the curved arrow path to the new SVG
+        const arrowPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        arrowPath.setAttribute('d',
+            'm18.89 14.75-4.09-2.04c-.28-.14-.58-.21-.89-.21H13v-6c0-.83-.67-1.5-1.5-1.5S10 5.67 10 6.5v10.74l-3.25-.74c-.33-.07-.68.03-.92.28l-.83.84 4.54 4.79c.38.38 1.14.59 1.67.59h6.16c1 0 1.84-.73 1.98-1.72l.63-4.46c.12-.85-.32-1.68-1.09-2.07z'
+        );
+        arrowPath.setAttribute('fill', 'currentColor'); // Change the fill color if needed
+        handArrowSVG.appendChild(arrowPath);
 
-// Creating and styling the toggle button
-const button = L.DomUtil.create('button', 'toggle-button');
-// button.textContent = 'side-by-side Layers';
-button.style.backgroundColor = 'white';
+        // Creating and styling the toggle button
+        const button = L.DomUtil.create('button', 'toggle-button');
+        // button.textContent = 'side-by-side Layers';
+        button.style.backgroundColor = 'white';
 
-// Appending the hand symbol and curved arrow SVG to the toggle button
-button.appendChild(handArrowSVG);
+        // Appending the hand symbol and curved arrow SVG to the toggle button
+        button.appendChild(handArrowSVG);
 
         // Function to handle button click
         function handleButtonClick() {
@@ -6508,6 +6514,29 @@ if (
     $("#mesolscale").css("background-color", '#eff4ff');
 } else {
     $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
+}
+
+//medium_range 
+if (
+    bgClickedRainfallIntensityDay1Lists.length === 0 &&
+    bgClickedRainfallIntensityDay2Lists.length === 0 &&
+    bgClickedRainfallIntensityDay3Lists.length === 0 &&
+    bgClickedRainfallIntensityDay4Lists.length === 0 &&
+    bgClickedRainfallIntensityDay5Lists.length === 0 &&
+    bgClickedMSLPDay1Lists.length === 0 &&
+    bgClickedMSLPDay2Lists.length === 0 &&
+    bgClickedMSLPDay3Lists.length === 0 &&
+    bgClickedMSLPDay4Lists.length === 0 &&
+    bgClickedMSLPDay5Lists.length === 0 &&
+    bgClicked10mWINDDay1Lists.length === 0 &&
+    bgClicked10mWINDDay2Lists.length === 0 &&
+    bgClicked10mWINDDay3Lists.length === 0 &&
+    bgClicked10mWINDDay4Lists.length === 0 &&
+    bgClicked10mWINDDay5Lists.length === 0
+) {
+    $("#medium_range").css("background-color", '#eff4ff');
+} else {
+    $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
 }
 
 //medium_range 
@@ -18165,6 +18194,29 @@ $("body").on("change", "input[type=checkbox]", function() {
         $("#mesolscale").css("background-color", '#eff4ff');
     } else {
         $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //medium_range 
+    if (
+        bgClickedRainfallIntensityDay1Lists.length === 0 &&
+        bgClickedRainfallIntensityDay2Lists.length === 0 &&
+        bgClickedRainfallIntensityDay3Lists.length === 0 &&
+        bgClickedRainfallIntensityDay4Lists.length === 0 &&
+        bgClickedRainfallIntensityDay5Lists.length === 0 &&
+        bgClickedMSLPDay1Lists.length === 0 &&
+        bgClickedMSLPDay2Lists.length === 0 &&
+        bgClickedMSLPDay3Lists.length === 0 &&
+        bgClickedMSLPDay4Lists.length === 0 &&
+        bgClickedMSLPDay5Lists.length === 0 &&
+        bgClicked10mWINDDay1Lists.length === 0 &&
+        bgClicked10mWINDDay2Lists.length === 0 &&
+        bgClicked10mWINDDay3Lists.length === 0 &&
+        bgClicked10mWINDDay4Lists.length === 0 &&
+        bgClicked10mWINDDay5Lists.length === 0
+    ) {
+        $("#medium_range").css("background-color", '#eff4ff');
+    } else {
+        $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
     }
 
     //medium_range 
