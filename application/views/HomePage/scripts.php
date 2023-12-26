@@ -3033,6 +3033,7 @@ button.appendChild(handArrowSVG);
         button.onclick = function() {
             toggleSideBySide();
             button.textContent = sideBySideVisible ? 'Hide' : 'Show';
+            position: "topright"
         };
         return button;
     },
