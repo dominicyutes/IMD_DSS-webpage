@@ -83,6 +83,7 @@
     <!-- jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
+
     <!-- leaflet time dimensions -->
     <!-- <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.control.css">
     </script> -->
@@ -122,6 +123,13 @@
     <!-- leaflet-side-by-side -->
     <script src="https://lab.digital-democracy.org/leaflet-side-by-side/leaflet-side-by-side.js"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@latest/dist/leaflet.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css">
+    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+
     <!-- print -->
     <script src="leaflet.browser.print.min.js"></script>
 
@@ -136,6 +144,19 @@
 
     <!-- adding css -->
     <?php $this->load->view('HomePage/style'); ?>
+
+    <style>
+    @media print {
+
+        body,
+        html,
+        #map {
+            width: 80%;
+            margin: auto;
+            height: 70%;
+        }
+    }
+    </style>
 
 </head>
 
@@ -741,57 +762,19 @@
 L.simpleMapScreenshoter().addTo(map);
 </script> -->
 
-<!-- navbar btn bg-clr -->
-<script>
-// function changeColor(button) {
-//     button.querySelector('.btn-val').style.backgroundColor = 'rgb(180, 194, 224)';
-// }
-
-// function changeColor(button) {
-//     var isAnyActive = false;
-
-//     // Loop through all groups in overLayers3
-//     for (var j = 0; j < overLayers3.length; j++) {
-//         var metarGroup = overLayers3[j];
-//         // console.log(metarGroup, "group METAR");
-
-//         // Loop through layers in the current group
-//         for (var i = 0; i < metarGroup.layers.length; i++) {
-//             metarGroup.layers[i].active, "Layer " + i
-//             // console.log(metarGroup.layers[i].active, "Layer " + i);
-//             if (metarGroup.layers[i].active) {
-//                 isAnyActive = true;
-//                 break;
-//             }
-//         }
-
-//         if (isAnyActive) {
-//             break;
-//         }
-//     }
-
-//     // console.log(isAnyActive, "isAnyActive");
-//     button.querySelector('.btn-val').style.backgroundColor = isAnyActive ? 'rgb(180, 194, 224)' : '#eff4ff';
-// }
-</script>
-
-</html>
-
 
 <script>
 L.control.browserPrint({
-    title: 'Just print me!',
     documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
     printLayer: L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 10,
+        maxZoom: 22,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }),
     closePopupsOnPrint: false,
     printModes: [
-        L.BrowserPrint.Mode.Portrait("A4", {
-            title: "Portrait",
-            width: 210,
-            height: 100
+        L.browserPrint.mode("Portrait", {
+            pageSize: 'B4',
+            orientation: 'Portrait'
         }),
         L.BrowserPrint.Mode.Landscape("A4", {
             title: "Landscape"

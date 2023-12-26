@@ -1678,9 +1678,9 @@ function macSubmitForm() {
     addedTempMacro = {};
     listOfMacro = [];
     addedInfoContainerDiv.innerHTML = ' '
-	if(view_Create_Macro.style.display == 'block'){
-		viewMacro(editMacroGroupName);
-	}
+    if (view_Create_Macro.style.display == 'block') {
+        viewMacro(editMacroGroupName);
+    }
 };
 
 
@@ -1794,7 +1794,7 @@ function deleteMacroLayer(value) {
 function editMacroLayer(value) {
     editId = value;
     let layer = addedTempMacro.listOfMacro.find(x => x.ulId == value);
-	macShowParameterNames(layer.mac_model_Names);
+    macShowParameterNames(layer.mac_model_Names);
     document.getElementById('macroNames').value = addedTempMacro.macroGroupName;
     document.getElementById('mac_modelNames').value = layer.mac_model_Names;
     document.getElementById('mac_parameterNames').value = layer.mac_parameter_Names;
@@ -2292,30 +2292,10 @@ var LegendButton = L.Control.extend({
     }
 });
 
-// Create a custom control button for printMap
-var PrintButton = L.Control.extend({
-    options: {
-        position: 'bottomleft'
-    },
-    onAdd: function() {
-        // Create a button element
-        var button = L.DomUtil.create('span',
-            'leaflet-bar leaflet-control leaflet-control-custom custom-btn3');
-        button.innerHTML = 'Print';
-        button.id = 'printMap';
-        // button.style = "margin-left:30px;"
-        //click event listener
-        L.DomEvent.on(button, 'click', function PrintMap() {
-            alert('PrintMap Button clicked!');
-        });
-        return button;
-    }
-});
 
 customButtonsContainer.appendChild(new ObservationButton().onAdd());
 customButtonsContainer.appendChild(new MacroButton().onAdd());
 customButtonsContainer.appendChild(new LegendButton().onAdd());
-customButtonsContainer.appendChild(new PrintButton().onAdd());
 
 // Add the container to the map
 map.getContainer().appendChild(customButtonsContainer);
@@ -5233,7 +5213,7 @@ var overLayers9 = [{
 //Exposure 
 var overLayers10 = [{
     group: "Exposure Layers",
-    collapsed: true,
+    collapsed: false,
     layers: [{
             active: false,
             name: "District Boundaries",
@@ -5473,6 +5453,7 @@ const legendImage1 = document.getElementById('legendModel1');
 const legendImage2 = document.getElementById('legendModel2');
 const legendModelExpo = document.getElementById('legendModelExposure');
 const legendModelMet = document.getElementById('legendModelMetar');
+
 
 
 // synop
@@ -6275,14 +6256,18 @@ let clickedExposureLists = [];
 // let clickedSYNOP21UTCLists = [];
 
 let clickedRADARPRODUCTSLists = [];
+
 let clickedSATELLITELists = [];
+
 let clickedLIGHTININGLists = [];
+
 let clickedSOUNDING00UTCWINDLists = [];
 let clickedSOUNDING12UTCWINDLists = [];
 let clickedSOUNDING00UTCTEMPLists = [];
 let clickedSOUNDING12UTCTEMPLists = [];
 let clickedSOUNDING00UTCDEWPOINTLists = [];
 let clickedSOUNDING12UTCDEWPOINTLists = [];
+
 let clickedSHIPANDBUOYLists = [];
 
 let clickedWRFReflectivityLists = [];
@@ -6329,15 +6314,199 @@ let clickedSynopVisibilityLists = [];
 let clickedSynopWindSpeedAndDirectionLists = [];
 let clickedSynop3hRainfallLists = [];
 
-var metarArrayBg = ["METAR 00UTC", "METAR 01UTC", "METAR 02UTC", "METAR 03UTC", "METAR 04UTC", "METAR 05UTC",
-    "METAR 06UTC", "METAR 07UTC", "METAR 08UTC", "METAR 09UTC", "METAR 10UTC", "METAR 11UTC", "METAR 12UTC",
-    "METAR 13UTC", "METAR 14UTC", "METAR 15UTC", "METAR 16UTC", "METAR 17UTC", "METAR 18UTC", "METAR 19UTC",
-    "METAR 20UTC", "METAR 21UTC", "METAR 22UTC", "METAR 23UTC"
-];
+// var metarArrayBg = ["METAR 00UTC", "METAR 01UTC", "METAR 02UTC", "METAR 03UTC", "METAR 04UTC", "METAR 05UTC",
+//     "METAR 06UTC", "METAR 07UTC", "METAR 08UTC", "METAR 09UTC", "METAR 10UTC", "METAR 11UTC", "METAR 12UTC",
+//     "METAR 13UTC", "METAR 14UTC", "METAR 15UTC", "METAR 16UTC", "METAR 17UTC", "METAR 18UTC", "METAR 19UTC",
+//     "METAR 20UTC", "METAR 21UTC", "METAR 22UTC", "METAR 23UTC"
+// ];
 
-var synopArrayBg = ["SYNOP 00UTC", "SYNOP 03UTC",
-    "SYNOP 06UTC", "SYNOP 09UTC", "SYNOP 12UTC", "SYNOP 15UTC", "SYNOP 18UTC", "SYNOP 21UTC"
-];
+// var synopArrayBg = ["SYNOP 00UTC", "SYNOP 03UTC",
+//     "SYNOP 06UTC", "SYNOP 09UTC", "SYNOP 12UTC", "SYNOP 15UTC", "SYNOP 18UTC", "SYNOP 21UTC"
+// ];
+
+
+//
+//bg color List
+let bgClickedExposureLists = [];
+
+let bgClickedMetarTempLists = [];
+let bgClickedMetarDewPointLists = [];
+let bgClickedMetarVisibilityLists = [];
+let bgClickedMetarWindSpeedAndDirectionLists = [];
+
+let bgClickedSynopTempLists = [];
+let bgClickedSynopMeanSeaLevelLists = [];
+let bgClickedSynopCloudCoverLists = [];
+let bgClickedSynopGeopotentialHeightLists = [];
+let bgClickedSynopRelativeHumidityLists = [];
+let bgClickedSynopVisibilityLists = [];
+let bgClickedSynopWindSpeedAndDirectionLists = [];
+let bgClickedSynop3hRainfallLists = [];
+
+let bgClickedSOUNDING00UTCWINDLists = [];
+let bgClickedSOUNDING12UTCWINDLists = [];
+let bgClickedSOUNDING00UTCTEMPLists = [];
+let bgClickedSOUNDING12UTCTEMPLists = [];
+let bgClickedSOUNDING00UTCDEWPOINTLists = [];
+let bgClickedSOUNDING12UTCDEWPOINTLists = [];
+
+let bgClickedSHIPANDBUOYLists = [];
+
+let bgClickedRadarLists = [];
+
+let bgClickedLightningLists = [];
+
+let bgClickedSATELLITELists = [];
+
+let bgClickedWRFReflectivityLists = [];
+let bgClickedWRFlightningProductLists = [];
+let bgClickedWRFAccumlatedRainfallLists = [];
+let bgClickedlightningPotentialindexLists = [];
+let bgClickedNCUMRlightningProductLists = [];
+let bgClickedNCUMRWindGustLists = [];
+let bgClickedNCUMRRainfallLists = [];
+let bgClickedHRRR_SPHourlyDBZLists = [];
+let bgClickedHRRR_NEHourlyDBZLists = [];
+let bgClickedHRRR_NWHourlyDBZLists = [];
+let bgClickedEWRFMaxZLists = [];
+
+let bgClickedEWRFLightningLists = [];
+
+let bgClickedRainfallIntensityDay1Lists = [];
+let bgClickedRainfallIntensityDay2Lists = [];
+let bgClickedRainfallIntensityDay3Lists = [];
+let bgClickedRainfallIntensityDay4Lists = [];
+let bgClickedRainfallIntensityDay5Lists = [];
+let bgClickedMSLPDay1Lists = [];
+let bgClickedMSLPDay2Lists = [];
+let bgClickedMSLPDay3Lists = [];
+let bgClickedMSLPDay4Lists = [];
+let bgClickedMSLPDay5Lists = [];
+let bgClicked10mWINDDay1Lists = [];
+let bgClicked10mWINDDay2Lists = [];
+let bgClicked10mWINDDay3Lists = [];
+let bgClicked10mWINDDay4Lists = [];
+let bgClicked10mWINDDay5Lists = [];
+
+//exposure bgClickedExposureLists
+if (bgClickedExposureLists.length > 0) {
+    $("#exposure").css("background-color", 'rgb(180, 194, 224)');
+} else {
+    $("#exposure").css("background-color", '#eff4ff');
+}
+
+//metar bgClickedMetarLists
+if (
+    bgClickedMetarTempLists.length === 0 &&
+    bgClickedMetarDewPointLists.length === 0 &&
+    bgClickedMetarVisibilityLists.length === 0 &&
+    bgClickedMetarWindSpeedAndDirectionLists.length === 0
+) {
+    $("#metar").css("background-color", '#eff4ff');
+} else {
+    $("#metar").css("background-color", 'rgb(180, 194, 224)');
+}
+
+//synop bgClickedSynopLists
+if (
+    bgClickedSynopTempLists.length === 0 &&
+    bgClickedSynopMeanSeaLevelLists.length === 0 &&
+    bgClickedSynopCloudCoverLists.length === 0 &&
+    bgClickedSynopGeopotentialHeightLists.length === 0 &&
+    bgClickedSynopRelativeHumidityLists.length === 0 &&
+    bgClickedSynopVisibilityLists.length === 0 &&
+    bgClickedSynopWindSpeedAndDirectionLists.length === 0 &&
+    bgClickedSynop3hRainfallLists.length === 0
+) {
+    $("#synop").css("background-color", '#eff4ff');
+} else {
+    $("#synop").css("background-color", 'rgb(180, 194, 224)');
+}
+
+//SOUNDING bgClickedSoundingLists
+if (
+    bgClickedSOUNDING00UTCWINDLists.length === 0 &&
+    bgClickedSOUNDING12UTCWINDLists.length === 0 &&
+    bgClickedSOUNDING00UTCTEMPLists.length === 0 &&
+    bgClickedSOUNDING12UTCTEMPLists.length === 0 &&
+    bgClickedSOUNDING00UTCDEWPOINTLists.length === 0 &&
+    bgClickedSOUNDING12UTCDEWPOINTLists.length === 0
+) {
+    $("#sounding").css("background-color", '#eff4ff');
+} else {
+    $("#sounding").css("background-color", 'rgb(180, 194, 224)');
+}
+
+//SHIPANDBUOY bgClickedSHIPANDBUOYLists[]
+if (bgClickedSHIPANDBUOYLists.length > 0) {
+    $("#ship_and_buoy").css("background-color", 'rgb(180, 194, 224)');
+} else {
+    $("#ship_and_buoy").css("background-color", '#eff4ff');
+}
+
+//radar bgClickedRadarLists
+if (bgClickedRadarLists.length > 0) {
+    $("#radar").css("background-color", 'rgb(180, 194, 224)');
+} else {
+    $("#radar").css("background-color", '#eff4ff');
+}
+
+//SATELLITE bgClickedSATELLITELists
+if (bgClickedSATELLITELists.length > 0) {
+    $("#satellite").css("background-color", 'rgb(180, 194, 224)');
+} else {
+    $("#satellite").css("background-color", '#eff4ff');
+}
+
+//lightning bgClickedLightningLists
+if (bgClickedLightningLists.length > 0) {
+    $("#lightning").css("background-color", 'rgb(180, 194, 224)');
+} else {
+    $("#lightning").css("background-color", '#eff4ff');
+}
+
+//mesolscale 
+if (
+    bgClickedWRFReflectivityLists.length === 0 &&
+    bgClickedWRFlightningProductLists.length === 0 &&
+    bgClickedWRFAccumlatedRainfallLists.length === 0 &&
+    bgClickedlightningPotentialindexLists.length === 0 &&
+    bgClickedNCUMRlightningProductLists.length === 0 &&
+    bgClickedNCUMRWindGustLists.length === 0 &&
+    bgClickedNCUMRRainfallLists.length === 0 &&
+    bgClickedHRRR_SPHourlyDBZLists.length === 0 &&
+    bgClickedHRRR_NEHourlyDBZLists.length === 0 &&
+    bgClickedHRRR_NWHourlyDBZLists.length === 0 &&
+    bgClickedEWRFMaxZLists.length === 0 &&
+    bgClickedEWRFLightningLists.length === 0
+) {
+    $("#mesolscale").css("background-color", '#eff4ff');
+} else {
+    $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
+}
+
+//medium_range 
+if (
+    bgClickedRainfallIntensityDay1Lists.length === 0 &&
+    bgClickedRainfallIntensityDay2Lists.length === 0 &&
+    bgClickedRainfallIntensityDay3Lists.length === 0 &&
+    bgClickedRainfallIntensityDay4Lists.length === 0 &&
+    bgClickedRainfallIntensityDay5Lists.length === 0 &&
+    bgClickedMSLPDay1Lists.length === 0 &&
+    bgClickedMSLPDay2Lists.length === 0 &&
+    bgClickedMSLPDay3Lists.length === 0 &&
+    bgClickedMSLPDay4Lists.length === 0 &&
+    bgClickedMSLPDay5Lists.length === 0 &&
+    bgClicked10mWINDDay1Lists.length === 0 &&
+    bgClicked10mWINDDay2Lists.length === 0 &&
+    bgClicked10mWINDDay3Lists.length === 0 &&
+    bgClicked10mWINDDay4Lists.length === 0 &&
+    bgClicked10mWINDDay5Lists.length === 0
+) {
+    $("#medium_range").css("background-color", '#eff4ff');
+} else {
+    $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
+}
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
@@ -6353,59 +6522,1795 @@ $("body").on("change", "input[type=checkbox]", function() {
         console.log("Checked");
         layer_name = _this.context._layer ? _this.context._layer.name : _this.context.className;
         console.log(layer_name, "layer_name");
+        // debugger;
 
-        //EXPOSURE
-        if (layer_name === "District Boundaries" || layer_name === "Airport" || layer_name ===
-            "Oil Refineries" || layer_name === "Power Station" || layer_name === "Power Plant" || layer_name ===
-            "DEM" || layer_name === "Hospital" || layer_name === "Industrail" || layer_name === "sports" ||
-            layer_name === "Road Network" || layer_name === "Socio Economic Zone" || layer_name ===
-            "Railway Network" || layer_name === "LULC") {
-            $("#exposure").css("background-color", 'rgb(180, 194, 224)');
-            console.log("EXPOSURE working....", layer_name);
-        } else {
-            $("#exposure").css("background-color", '#eff4ff');
-            console.log("EXPOSURE not working....", layer_name);
-        }
-
-        //METAR
-        var isLayerInMetarArray = metarArrayBg.includes(layer_group_name);
-        console.log("Is layer in metarArrayBg?", isLayerInMetarArray);
-        if (isLayerInMetarArray) {
-            if (layer_name === "TEMPERATURE" || layer_name === "DEW POINT TEMPERATURE" || layer_name ===
-                "VISIBILITY" || layer_name === "WIND SPEED AND DIRECTION") {
-                $("#metar").css("background-color", 'rgb(180, 194, 224)');
-                console.log("METAR working", layer_name);
-            } else {
-                $("#metar").css("background-color", '#eff4ff');
+        //bgClickedExposureLists[]
+        if (_this.context._layer.group.name == "Exposure Layers") {
+            if (layer_name == 'District Boundaries') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
             }
-        } else {
-            console.log("METAR not working");
-        }
-
-        //SYNOP
-        var isLayerInSynopArray = synopArrayBg.includes(layer_group_name);
-        console.log("Is layer in synopArrayBg?", isLayerInSynopArray);
-        if (isLayerInSynopArray) {
-            if (layer_name === "TEMPERATURE" || layer_name === "MEAN SEA LEVEL PRESSURE" || layer_name ===
-                "CLOUD COVER" || layer_name === "GEOPOTENTIAL HEIGHT" || layer_name === "RELATIVE HUMIDITY" ||
-                layer_name === "VISIBILITY" || layer_name === "WIND SPEED AND DIRECTION" || layer_name ===
-                "3 h RAINFALL") {
-                $("#synop").css("background-color", 'rgb(180, 194, 224)');
-                console.log("SYNOP working", layer_name);
-            } else {
-                $("#synop").css("background-color", '#eff4ff');
+            if (layer_name == 'Airport') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
             }
-        } else {
-            console.log("SYNOP not working");
+            if (layer_name == 'Oil Refineries') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'Power Station') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'Power Plant') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'DEM') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'Hospital') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'Industrail') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'sports') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'Road Network') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'Socio Economic Zone') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'Railway Network') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'LULC') {
+                bgClickedExposureLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            console.log(bgClickedExposureLists, "....bgClickedExposureLists");
         }
 
+        //bgClicked METAR 00UTC[]
+        if (_this.context._layer.group.name == "METAR 00UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
 
-        // if (layer_name === "Radar Reflectivity" || layer_name === "Radar Animation") {
-        //     $("#radar").css("background-color", 'rgb(180, 194, 224)');
-        // }
-        // else {
-        //     $("#radar").css("background-color", '#eff4ff');
-        // }
+        //bgClicked METAR 01UTC[]
+        if (_this.context._layer.group.name == "METAR 01UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 02UTC[]
+        if (_this.context._layer.group.name == "METAR 02UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 03UTC[]
+        if (_this.context._layer.group.name == "METAR 03UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 04UTC[]
+        if (_this.context._layer.group.name == "METAR 04UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 05UTC[]
+        if (_this.context._layer.group.name == "METAR 05UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 06UTC[]
+        if (_this.context._layer.group.name == "METAR 06UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 07UTC[]
+        if (_this.context._layer.group.name == "METAR 07UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 08UTC[]
+        if (_this.context._layer.group.name == "METAR 08UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 09UTC[]
+        if (_this.context._layer.group.name == "METAR 09UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 10UTC[]
+        if (_this.context._layer.group.name == "METAR 10UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 11UTC[]
+        if (_this.context._layer.group.name == "METAR 11UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 12UTC[]
+        if (_this.context._layer.group.name == "METAR 12UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 13UTC[]
+        if (_this.context._layer.group.name == "METAR 13UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 14UTC[]
+        if (_this.context._layer.group.name == "METAR 14UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 15UTC[]
+        if (_this.context._layer.group.name == "METAR 15UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 16UTC[]
+        if (_this.context._layer.group.name == "METAR 16UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 17UTC[]
+        if (_this.context._layer.group.name == "METAR 17UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 18UTC[]
+        if (_this.context._layer.group.name == "METAR 18UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 19UTC[]
+        if (_this.context._layer.group.name == "METAR 19UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 20UTC[]
+        if (_this.context._layer.group.name == "METAR 20UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 21UTC[]
+        if (_this.context._layer.group.name == "METAR 21UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 22UTC[]
+        if (_this.context._layer.group.name == "METAR 22UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked METAR 23UTC[]
+        if (_this.context._layer.group.name == "METAR 23UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedMetarTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
+            }
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                bgClickedMetarDewPointLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedMetarVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedMetarWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked SYNOP 00UTC[]
+        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedSynopTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                bgClickedSynopMeanSeaLevelLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
+            }
+            if (layer_name == 'CLOUD COVER') {
+                bgClickedSynopCloudCoverLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                bgClickedSynopGeopotentialHeightLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "....bgClickedSynopGeopotentialHeightLists");
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                bgClickedSynopRelativeHumidityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "....bgClickedSynopRelativeHumidityLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedSynopVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopVisibilityLists,
+                    "....bgClickedSynopVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedSynopWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+            if (layer_name == '3h RAINFALL') {
+                bgClickedSynop3hRainfallLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynop3hRainfallLists,
+                    "....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //bgClicked SYNOP 03UTC[]
+        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedSynopTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                bgClickedSynopMeanSeaLevelLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
+            }
+            if (layer_name == 'CLOUD COVER') {
+                bgClickedSynopCloudCoverLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                bgClickedSynopGeopotentialHeightLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "....bgClickedSynopGeopotentialHeightLists");
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                bgClickedSynopRelativeHumidityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "....bgClickedSynopRelativeHumidityLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedSynopVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopVisibilityLists,
+                    "....bgClickedSynopVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedSynopWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+            if (layer_name == '3h RAINFALL') {
+                bgClickedSynop3hRainfallLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynop3hRainfallLists,
+                    "....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //bgClicked SYNOP 06UTC[]
+        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedSynopTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                bgClickedSynopMeanSeaLevelLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
+            }
+            if (layer_name == 'CLOUD COVER') {
+                bgClickedSynopCloudCoverLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                bgClickedSynopGeopotentialHeightLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "....bgClickedSynopGeopotentialHeightLists");
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                bgClickedSynopRelativeHumidityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "....bgClickedSynopRelativeHumidityLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedSynopVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopVisibilityLists,
+                    "....bgClickedSynopVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedSynopWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+            if (layer_name == '3h RAINFALL') {
+                bgClickedSynop3hRainfallLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynop3hRainfallLists,
+                    "....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //bgClicked SYNOP 09UTC[]
+        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedSynopTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                bgClickedSynopMeanSeaLevelLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
+            }
+            if (layer_name == 'CLOUD COVER') {
+                bgClickedSynopCloudCoverLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                bgClickedSynopGeopotentialHeightLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "....bgClickedSynopGeopotentialHeightLists");
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                bgClickedSynopRelativeHumidityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "....bgClickedSynopRelativeHumidityLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedSynopVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopVisibilityLists,
+                    "....bgClickedSynopVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedSynopWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+            if (layer_name == '3h RAINFALL') {
+                bgClickedSynop3hRainfallLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynop3hRainfallLists,
+                    "....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //bgClicked SYNOP 12UTC[]
+        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedSynopTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                bgClickedSynopMeanSeaLevelLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
+            }
+            if (layer_name == 'CLOUD COVER') {
+                bgClickedSynopCloudCoverLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                bgClickedSynopGeopotentialHeightLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "....bgClickedSynopGeopotentialHeightLists");
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                bgClickedSynopRelativeHumidityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "....bgClickedSynopRelativeHumidityLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedSynopVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopVisibilityLists,
+                    "....bgClickedSynopVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedSynopWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+            if (layer_name == '3h RAINFALL') {
+                bgClickedSynop3hRainfallLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynop3hRainfallLists,
+                    "....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //bgClicked SYNOP 15UTC[]
+        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedSynopTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                bgClickedSynopMeanSeaLevelLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
+            }
+            if (layer_name == 'CLOUD COVER') {
+                bgClickedSynopCloudCoverLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                bgClickedSynopGeopotentialHeightLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "....bgClickedSynopGeopotentialHeightLists");
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                bgClickedSynopRelativeHumidityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "....bgClickedSynopRelativeHumidityLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedSynopVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopVisibilityLists,
+                    "....bgClickedSynopVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedSynopWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+            if (layer_name == '3h RAINFALL') {
+                bgClickedSynop3hRainfallLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynop3hRainfallLists,
+                    "....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //bgClicked SYNOP 18UTC[]
+        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedSynopTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                bgClickedSynopMeanSeaLevelLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
+            }
+            if (layer_name == 'CLOUD COVER') {
+                bgClickedSynopCloudCoverLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                bgClickedSynopGeopotentialHeightLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "....bgClickedSynopGeopotentialHeightLists");
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                bgClickedSynopRelativeHumidityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "....bgClickedSynopRelativeHumidityLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedSynopVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopVisibilityLists,
+                    "....bgClickedSynopVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedSynopWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+            if (layer_name == '3h RAINFALL') {
+                bgClickedSynop3hRainfallLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynop3hRainfallLists,
+                    "....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //bgClicked SYNOP 21UTC[]
+        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                bgClickedSynopTempLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
+            }
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                bgClickedSynopMeanSeaLevelLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
+            }
+            if (layer_name == 'CLOUD COVER') {
+                bgClickedSynopCloudCoverLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
+            }
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                bgClickedSynopGeopotentialHeightLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "....bgClickedSynopGeopotentialHeightLists");
+            }
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                bgClickedSynopRelativeHumidityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "....bgClickedSynopRelativeHumidityLists");
+            }
+            if (layer_name == 'VISIBILITY') {
+                bgClickedSynopVisibilityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopVisibilityLists,
+                    "....bgClickedSynopVisibilityLists");
+            }
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                bgClickedSynopWindSpeedAndDirectionLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+            if (layer_name == '3h RAINFALL') {
+                bgClickedSynop3hRainfallLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSynop3hRainfallLists,
+                    "....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00_UTC WIND []
+        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+            if (layer_name == '1000 hpa WIND') {
+                bgClickedSOUNDING00UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCWINDLists, "....bgClickedSOUNDING00UTCWINDLists");
+            }
+            if (layer_name == '850 hpa WIND') {
+                bgClickedSOUNDING00UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCWINDLists, "....bgClickedSOUNDING00UTCWINDLists");
+            }
+            if (layer_name == '700 hpa WIND') {
+                bgClickedSOUNDING00UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCWINDLists, "....bgClickedSOUNDING00UTCWINDLists");
+            }
+            if (layer_name == '500 hpa WIND') {
+                bgClickedSOUNDING00UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "....bgClickedSOUNDING00UTCWINDLists");
+            }
+            if (layer_name == '300 hpa WIND') {
+                bgClickedSOUNDING00UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "....bgClickedSOUNDING00UTCWINDLists");
+            }
+            if (layer_name == '200 hpa WIND') {
+                bgClickedSOUNDING00UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "....bgClickedSOUNDING00UTCWINDLists");
+            }
+            if (layer_name == '100 hpa WIND') {
+                bgClickedSOUNDING00UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "....bgClickedSOUNDING00UTCWINDLists");
+            }
+            if (layer_name == '50 hpa WIND') {
+                bgClickedSOUNDING00UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "....bgClickedSOUNDING00UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12_UTC WIND []
+        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+            if (layer_name == '1000 hpa WIND') {
+                bgClickedSOUNDING12UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCWINDLists, "....bgClickedSOUNDING12UTCWINDLists");
+            }
+            if (layer_name == '850 hpa WIND') {
+                bgClickedSOUNDING12UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCWINDLists, "....bgClickedSOUNDING12UTCWINDLists");
+            }
+            if (layer_name == '700 hpa WIND') {
+                bgClickedSOUNDING12UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCWINDLists, "....bgClickedSOUNDING12UTCWINDLists");
+            }
+            if (layer_name == '500 hpa WIND') {
+                bgClickedSOUNDING12UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "....bgClickedSOUNDING12UTCWINDLists");
+            }
+            if (layer_name == '300 hpa WIND') {
+                bgClickedSOUNDING12UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "....bgClickedSOUNDING12UTCWINDLists");
+            }
+            if (layer_name == '200 hpa WIND') {
+                bgClickedSOUNDING12UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "....bgClickedSOUNDING12UTCWINDLists");
+            }
+            if (layer_name == '100 hpa WIND') {
+                bgClickedSOUNDING12UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "....bgClickedSOUNDING12UTCWINDLists");
+            }
+            if (layer_name == '50 hpa WIND') {
+                bgClickedSOUNDING12UTCWINDLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "....bgClickedSOUNDING12UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00_UTC TEMP []
+        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+            if (layer_name == '1000 hpa TEMP') {
+                bgClickedSOUNDING00UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCTEMPLists, "....bgClickedSOUNDING00UTCTEMPLists");
+            }
+            if (layer_name == '850 hpa TEMP') {
+                bgClickedSOUNDING00UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCTEMPLists, "....bgClickedSOUNDING00UTCTEMPLists");
+            }
+            if (layer_name == '700 hpa TEMP') {
+                bgClickedSOUNDING00UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCTEMPLists, "....bgClickedSOUNDING00UTCTEMPLists");
+            }
+            if (layer_name == '500 hpa TEMP') {
+                bgClickedSOUNDING00UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "....bgClickedSOUNDING00UTCTEMPLists");
+            }
+            if (layer_name == '300 hpa TEMP') {
+                bgClickedSOUNDING00UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "....bgClickedSOUNDING00UTCTEMPLists");
+            }
+            if (layer_name == '200 hpa TEMP') {
+                bgClickedSOUNDING00UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "....bgClickedSOUNDING00UTCTEMPLists");
+            }
+            if (layer_name == '100 hpa TEMP') {
+                bgClickedSOUNDING00UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "....bgClickedSOUNDING00UTCTEMPLists");
+            }
+            if (layer_name == '50 hpa TEMP') {
+                bgClickedSOUNDING00UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "....bgClickedSOUNDING00UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12_UTC TEMP []
+        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+            if (layer_name == '1000 hpa TEMP') {
+                bgClickedSOUNDING12UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCTEMPLists, "....bgClickedSOUNDING12UTCTEMPLists");
+            }
+            if (layer_name == '850 hpa TEMP') {
+                bgClickedSOUNDING12UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCTEMPLists, "....bgClickedSOUNDING12UTCTEMPLists");
+            }
+            if (layer_name == '700 hpa TEMP') {
+                bgClickedSOUNDING12UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCTEMPLists, "....bgClickedSOUNDING12UTCTEMPLists");
+            }
+            if (layer_name == '500 hpa TEMP') {
+                bgClickedSOUNDING12UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "....bgClickedSOUNDING12UTCTEMPLists");
+            }
+            if (layer_name == '300 hpa TEMP') {
+                bgClickedSOUNDING12UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "....bgClickedSOUNDING12UTCTEMPLists");
+            }
+            if (layer_name == '200 hpa TEMP') {
+                bgClickedSOUNDING12UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "....bgClickedSOUNDING12UTCTEMPLists");
+            }
+            if (layer_name == '100 hpa TEMP') {
+                bgClickedSOUNDING12UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "....bgClickedSOUNDING12UTCTEMPLists");
+            }
+            if (layer_name == '50 hpa TEMP') {
+                bgClickedSOUNDING12UTCTEMPLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "....bgClickedSOUNDING12UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC DEW POINT []
+        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+            if (layer_name == '1000 hpa DEW POINT') {
+                bgClickedSOUNDING00UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists, "....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+            if (layer_name == '850 hpa DEW POINT') {
+                bgClickedSOUNDING00UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists, "....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+            if (layer_name == '700 hpa DEW POINT') {
+                bgClickedSOUNDING00UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists, "....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+            if (layer_name == '500 hpa DEW POINT') {
+                bgClickedSOUNDING00UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+            if (layer_name == '300 hpa DEW POINT') {
+                bgClickedSOUNDING00UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+            if (layer_name == '200 hpa DEW POINT') {
+                bgClickedSOUNDING00UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+            if (layer_name == '100 hpa DEW POINT') {
+                bgClickedSOUNDING00UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+            if (layer_name == '50 hpa DEW POINT') {
+                bgClickedSOUNDING00UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC DEW POINT []
+        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+            if (layer_name == '1000 hpa DEW POINT') {
+                bgClickedSOUNDING12UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists, "....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+            if (layer_name == '850 hpa DEW POINT') {
+                bgClickedSOUNDING12UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists, "....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+            if (layer_name == '700 hpa DEW POINT') {
+                bgClickedSOUNDING12UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists, "....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+            if (layer_name == '500 hpa DEW POINT') {
+                bgClickedSOUNDING12UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+            if (layer_name == '300 hpa DEW POINT') {
+                bgClickedSOUNDING12UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+            if (layer_name == '200 hpa DEW POINT') {
+                bgClickedSOUNDING12UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+            if (layer_name == '100 hpa DEW POINT') {
+                bgClickedSOUNDING12UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+            if (layer_name == '50 hpa DEW POINT') {
+                bgClickedSOUNDING12UTCDEWPOINTLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+        }
+
+        //
+        //bgClicked SHIP AND BUOY OBSERVATION []
+        if (_this.context._layer.group.name == "SHIP AND BUOY OBSERVATION") {
+            if (layer_name == '00UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '01UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '02UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '03UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '04UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '05UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '06UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '07UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '08UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '09UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '10UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '11UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '12UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '13UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '14UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '15UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '16UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '17UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '18UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '19UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '20UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '21UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '22UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == '23UTC') {
+                bgClickedSHIPANDBUOYLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            console.log(bgClickedSHIPANDBUOYLists, "....bgClickedSHIPANDBUOYLists");
+        }
+
+        //
+        //bgClickedRadarLists[]
+        if (_this.context._layer.group.name == "Radar Products") {
+            if (layer_name == 'Radar Reflectivity') {
+                bgClickedRadarLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'Radar Animation') {
+                bgClickedRadarLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            console.log(bgClickedRadarLists, "....bgClickedRadarLists");
+        }
+
+        //
+        //bgClickedSATELLITELists[]
+        if (_this.context._layer.group.name == "Satellite Observation") {
+            if (layer_name == 'TIR1') {
+                bgClickedSATELLITELists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'VIS') {
+                bgClickedSATELLITELists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'CTBT') {
+                bgClickedSATELLITELists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'LOW LEVEL CONVERGENCE') {
+                bgClickedSATELLITELists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'UPPER LEVEL DIVEGENCE') {
+                bgClickedSATELLITELists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'MID LEVEL SHEA') {
+                bgClickedSATELLITELists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'VORTICITY AT 200hPa') {
+                bgClickedSATELLITELists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'VORTICITY AT 500hPa') {
+                bgClickedSATELLITELists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'VORTICITY AT 700hPa') {
+                bgClickedSATELLITELists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'VORTICITY AT 850hPa') {
+                bgClickedSATELLITELists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            console.log(bgClickedSATELLITELists, "....bgClickedSATELLITELists");
+        }
+
+        //Lightning
+        //bgClickedLightningLists[]
+        if (_this.context._layer.group.name == "Lightning") {
+            if (layer_name == 'Last 00-05 min') {
+                bgClickedLightningLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'Last 05-10 min') {
+                bgClickedLightningLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'Last 10-15 min') {
+                bgClickedLightningLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'ILDN Last 05 min') {
+                bgClickedLightningLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'Nowcast Alerts') {
+                bgClickedLightningLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            console.log(bgClickedLightningLists, "....bgClickedLightningLists");
+        }
+
+        //mesolscale
+        //bgClickedWRFReflectivityLists[]
+        if (_this.context._layer.group.name == "WRF Reflectivity") {
+            if (layer_name == 'Next 03 Hrs') {
+                bgClickedWRFReflectivityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedWRFReflectivityLists, "....bgClickedWRFReflectivityLists");
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                bgClickedWRFReflectivityLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedWRFReflectivityLists, "....bgClickedWRFReflectivityLists");
+            }
+        }
+
+        //bgClickedWRFlightningProductLists[]
+        if (_this.context._layer.group.name == "WRF lightning Product") {
+            if (layer_name == 'Next 03 Hrs') {
+                bgClickedWRFlightningProductLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedWRFlightningProductLists, "....bgClickedWRFlightningProductLists");
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                bgClickedWRFlightningProductLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedWRFlightningProductLists, "....bgClickedWRFlightningProductLists");
+            }
+        }
+
+        //bgClickedWRFAccumlatedRainfallLists[]
+        if (_this.context._layer.group.name == "WRF Accumlated Rainfall") {
+            if (layer_name == 'Next 03 Hrs') {
+                bgClickedWRFAccumlatedRainfallLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedWRFAccumlatedRainfallLists, "....bgClickedWRFAccumlatedRainfallLists");
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                bgClickedWRFAccumlatedRainfallLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedWRFAccumlatedRainfallLists, "....bgClickedWRFAccumlatedRainfallLists");
+            }
+        }
+
+        //bgClickedlightningPotentialindexLists[]
+        if (_this.context._layer.group.name == "lightning Potential index") {
+            if (layer_name == 'Next 01 Hrs') {
+                bgClickedlightningPotentialindexLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedlightningPotentialindexLists, "....bgClickedlightningPotentialindexLists");
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                bgClickedlightningPotentialindexLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedlightningPotentialindexLists, "....bgClickedlightningPotentialindexLists");
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                bgClickedlightningPotentialindexLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedlightningPotentialindexLists, "....bgClickedlightningPotentialindexLists");
+            }
+        }
+
+        //bgClickedNCUMRlightningProductLists[]
+        if (_this.context._layer.group.name == "NCUMR lightning Product") {
+            if (layer_name == 'Next 03 Hrs') {
+                bgClickedNCUMRlightningProductLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedNCUMRlightningProductLists, "....bgClickedNCUMRlightningProductLists");
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                bgClickedNCUMRlightningProductLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedNCUMRlightningProductLists, "....bgClickedNCUMRlightningProductLists");
+            }
+        }
+
+        //bgClickedNCUMRWindGustLists[]
+        if (_this.context._layer.group.name == "NCUMR Wind Gust") {
+            if (layer_name == 'Next 03 Hrs') {
+                bgClickedNCUMRWindGustLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedNCUMRWindGustLists, "....bgClickedNCUMRWindGustLists");
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                bgClickedNCUMRWindGustLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedNCUMRWindGustLists, "....bgClickedNCUMRWindGustLists");
+            }
+        }
+
+        //bgClickedNCUMRRainfallLists[]
+        if (_this.context._layer.group.name == "NCUMR Rainfall") {
+            if (layer_name == 'Next 03 Hrs') {
+                bgClickedNCUMRRainfallLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedNCUMRRainfallLists, "....bgClickedNCUMRRainfallLists");
+            }
+            if (layer_name == 'Next 03-06 Hrs') {
+                bgClickedNCUMRRainfallLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedNCUMRRainfallLists, "....bgClickedNCUMRRainfallLists");
+            }
+        }
+
+        //bgClickedHRRR_SPHourlyDBZLists[]
+        if (_this.context._layer.group.name == "HRRR_SP Hourly") {
+            if (layer_name == 'Next 01 Hrs') {
+                bgClickedHRRR_SPHourlyDBZLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedHRRR_SPHourlyDBZLists, "....bgClickedHRRR_SPHourlyDBZLists");
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                bgClickedHRRR_SPHourlyDBZLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedHRRR_SPHourlyDBZLists, "....bgClickedHRRR_SPHourlyDBZLists");
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                bgClickedHRRR_SPHourlyDBZLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedHRRR_SPHourlyDBZLists, "....bgClickedHRRR_SPHourlyDBZLists");
+            }
+        }
+
+        //bgClickedHRRR_NEHourlyDBZLists[]
+        if (_this.context._layer.group.name == "HRRR_NE Hourly") {
+            if (layer_name == 'Next 01 Hrs') {
+                bgClickedHRRR_NEHourlyDBZLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedHRRR_NEHourlyDBZLists, "....bgClickedHRRR_NEHourlyDBZLists");
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                bgClickedHRRR_NEHourlyDBZLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedHRRR_NEHourlyDBZLists, "....bgClickedHRRR_NEHourlyDBZLists");
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                bgClickedHRRR_NEHourlyDBZLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedHRRR_NEHourlyDBZLists, "....bgClickedHRRR_NEHourlyDBZLists");
+            }
+        }
+
+        //bgClickedHRRR_NWHourlyDBZLists[]
+        if (_this.context._layer.group.name == "HRRR_NW Hourly") {
+            if (layer_name == 'Next 01 Hrs') {
+                bgClickedHRRR_NWHourlyDBZLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedHRRR_NWHourlyDBZLists, "....bgClickedHRRR_NWHourlyDBZLists");
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                bgClickedHRRR_NWHourlyDBZLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedHRRR_NWHourlyDBZLists, "....bgClickedHRRR_NWHourlyDBZLists");
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                bgClickedHRRR_NWHourlyDBZLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedHRRR_NWHourlyDBZLists, "....bgClickedHRRR_NWHourlyDBZLists");
+            }
+        }
+
+        //bgClickedEWRFMaxZLists[]
+        if (_this.context._layer.group.name == "EWRF MaxZ") {
+            if (layer_name == 'Next 01 Hrs') {
+                bgClickedEWRFMaxZLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedEWRFMaxZLists, "....bgClickedEWRFMaxZLists");
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                bgClickedEWRFMaxZLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedEWRFMaxZLists, "....bgClickedEWRFMaxZLists");
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                bgClickedEWRFMaxZLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedEWRFMaxZLists, "....bgClickedEWRFMaxZLists");
+            }
+        }
+
+        //bgClickedEWRFLightningLists[]
+        if (_this.context._layer.group.name == "EWRF Lightning") {
+            if (layer_name == 'Next 01 Hrs') {
+                bgClickedEWRFLightningLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedEWRFLightningLists, "....bgClickedEWRFLightningLists");
+            }
+            if (layer_name == 'Next 01-02 Hrs') {
+                bgClickedEWRFLightningLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedEWRFLightningLists, "....bgClickedEWRFLightningLists");
+            }
+            if (layer_name == 'Next 02-03 Hrs') {
+                bgClickedEWRFLightningLists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedEWRFLightningLists, "....bgClickedEWRFLightningLists");
+            }
+        }
+        //mesolscale ends here
+
+
+
 
         //HomePage_Lightning
         if (_this.context._layer.group.name == "Lightning") {
@@ -7489,6 +9394,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
         }
+
         if (_this.context._layer.group.name == "Lightning") {
             if (panelLayerLIGHTINING_Title.innerHTML == '') {
                 LIGHTINING.innerHTML = "LIGHTINING"
@@ -9063,88 +10969,3223 @@ $("body").on("change", "input[type=checkbox]", function() {
         console.log("unChecked");
         var uncheckLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer.name : _this
             .context.className;
-
+        console.log("uncheckLayer............", uncheckLayer);
         layer_name = _this.context._layer ? _this.context._layer.name : _this.context.className;
 
+        //bgClickedExposureLists[]
+        if (_this.context._layer.group.name == "Exposure Layers") {
+            if (layer_name == 'District Boundaries' || layer_name == 'Airport' || layer_name ==
+                'Oil Refineries' || layer_name == 'Power Station' || layer_name == 'Power Plant' ||
+                layer_name == 'DEM' || layer_name == 'Hospital' || layer_name == 'Industrail' || layer_name ==
+                'sports' || layer_name == 'Road Network' || layer_name ==
+                'Socio Economic Zone' || layer_name == 'Railway Network' || layer_name == 'LULC') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedExposureLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedExposureLists.splice(index, 1);
+                }
+                console.log(bgClickedExposureLists, "unchecked....bgClickedExposureLists");
+            }
+        }
 
-        console.log("overLayers10overLayers10-->,", overLayers10);
+        //bgClicked METAR 00UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 00UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
 
-        let x = document.getElementById("491");
-        let districtBoundaries = x._layer.active;
-        let y = document.getElementById("492");
-        let airport = y._layer.active;
-        let z = document.getElementById("493");
-        let oilrefineries = z._layer.active;
-        let xz = document.getElementById("494");
-        let powerStation = xz._layer.active;
-        let yz = document.getElementById("495");
-        let powerPlant = yz._layer.active;
-        let zz = document.getElementById("496");
-        let Dem = zz._layer.active;
+        //bgClicked METAR 00UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 00UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 00UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 00UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 00UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 00UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 01UTC
+        //bgClicked METAR 01UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 01UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 01UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 01UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 01UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 01UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 01UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 01UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 02UTC
+        //bgClicked METAR 02UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 02UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 02UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 02UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 02UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 02UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 02UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 02UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 03UTC
+        //bgClicked METAR 03UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 03UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 03UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 03UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 03UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 03UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 03UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 03UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 04UTC
+        //bgClicked METAR 04UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 04UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 04UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 04UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 04UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 04UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 04UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 04UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 05UTC
+        //bgClicked METAR 05UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 05UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 05UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 05UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 05UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 05UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 05UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 05UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 06UTC
+        //bgClicked METAR 06UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 06UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 06UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 06UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 06UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 06UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 06UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 06UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 07UTC
+        //bgClicked METAR 07UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 07UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 07UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 07UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 07UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 07UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 07UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 07UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 08UTC
+        //bgClicked METAR 08UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 08UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 08UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 08UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 08UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 08UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 08UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 08UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 09UTC
+        //bgClicked METAR 09UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 09UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 09UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 09UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 09UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 09UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 09UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 09UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 10UTC
+        //bgClicked METAR 10UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 10UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 10UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 10UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 10UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 10UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 10UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 10UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 11UTC
+        //bgClicked METAR 11UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 11UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 11UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 11UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 11UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 11UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 11UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 11UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 12UTC
+        //bgClicked METAR 12UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 12UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 12UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 12UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 12UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 12UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 12UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 12UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 13UTC
+        //bgClicked METAR 13UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 13UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 13UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 13UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 13UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 13UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 13UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 13UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 14UTC
+        //bgClicked METAR 14UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 14UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 14UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 14UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 14UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 14UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 14UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 14UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 15UTC
+        //bgClicked METAR 15UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 15UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 15UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 15UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 15UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 15UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 15UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 15UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 16UTC
+        //bgClicked METAR 16UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 16UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 16UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 16UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 16UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 16UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 16UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 16UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 17UTC
+        //bgClicked METAR 17UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 17UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 17UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 17UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 17UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 17UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 17UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 17UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 18UTC
+        //bgClicked METAR 18UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 18UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 18UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 18UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 18UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 18UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 18UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 18UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 19UTC
+        //bgClicked METAR 19UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 19UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 19UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 19UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 19UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 15UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 19UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 15UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 20UTC
+        //bgClicked METAR 20UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 20UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 20UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 20UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 20UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 20UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 20UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 20UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 21UTC
+        //bgClicked METAR 21UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 21UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 21UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 21UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 21UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 21UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 21UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 21UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 22UTC
+        //bgClicked METAR 22UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 22UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 22UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 22UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 22UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 22UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 22UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 22UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //METAR 23UTC
+        //bgClicked METAR 23UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 23UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarTempLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarTempLists, "unchecked....bgClickedMetarTempLists");
+            }
+        }
+
+        //bgClicked METAR 23UTC DEW POINT TEMPERATURE[]
+        if (_this.context._layer.group.name == "METAR 23UTC") {
+            if (layer_name == 'DEW POINT TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarDewPointLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarDewPointLists, "unchecked....bgClickedMetarDewPointLists");
+            }
+        }
+
+        //bgClicked METAR 23UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "METAR 23UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarVisibilityLists, "unchecked....bgClickedMetarVisibilityLists");
+            }
+        }
+
+        //bgClicked METAR 23UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "METAR 23UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMetarWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedMetarWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedMetarWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked SYNOP 00UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopTempLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopTempLists,
+                    "unchecked....bgClickedSynopTempLists");
+            }
+        }
+
+        //bgClicked SYNOP 00UTC MEAN SEA LEVEL PRESSURE[]
+        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopMeanSeaLevelLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopMeanSeaLevelLists,
+                    "unchecked....bgClickedSynopMeanSeaLevelLists");
+            }
+        }
+
+        //bgClicked SYNOP 00UTC CLOUD COVER[]
+        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+            if (layer_name == 'CLOUD COVER') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopCloudCoverLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopCloudCoverLists,
+                    "unchecked....bgClickedSynopCloudCoverLists");
+            }
+        }
+
+        //bgClicked SYNOP 00UTC GEOPOTENTIAL HEIGHT[]
+        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopGeopotentialHeightLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "unchecked....bgClickedSynopGeopotentialHeightLists");
+            }
+        }
+
+        //bgClicked SYNOP 00UTC RELATIVE HUMIDITY[]
+        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopRelativeHumidityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "unchecked....bgClickedSynopRelativeHumidityLists");
+            }
+        }
+
+        //bgClicked SYNOP 00UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopVisibilityLists,
+                    "unchecked....bgClickedSynopVisibilityLists");
+            }
+        }
+
+        //bgClicked SYNOP 00UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked SYNOP 00UTC 3h RAINFALL[]
+        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+            if (layer_name == '3h RAINFALL') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynop3hRainfallLists.splice(index, 1);
+                }
+                console.log(bgClickedSynop3hRainfallLists,
+                    "unchecked....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //bgClicked SYNOP 03UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopTempLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopTempLists,
+                    "unchecked....bgClickedSynopTempLists");
+            }
+        }
+
+        //bgClicked SYNOP 03UTC MEAN SEA LEVEL PRESSURE[]
+        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopMeanSeaLevelLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopMeanSeaLevelLists,
+                    "unchecked....bgClickedSynopMeanSeaLevelLists");
+            }
+        }
+
+        //bgClicked SYNOP 03UTC CLOUD COVER[]
+        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+            if (layer_name == 'CLOUD COVER') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopCloudCoverLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopCloudCoverLists,
+                    "unchecked....bgClickedSynopCloudCoverLists");
+            }
+        }
+
+        //bgClicked SYNOP 03UTC GEOPOTENTIAL HEIGHT[]
+        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopGeopotentialHeightLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "unchecked....bgClickedSynopGeopotentialHeightLists");
+            }
+        }
+
+        //bgClicked SYNOP 03UTC RELATIVE HUMIDITY[]
+        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopRelativeHumidityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "unchecked....bgClickedSynopRelativeHumidityLists");
+            }
+        }
+
+        //bgClicked SYNOP 03UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopVisibilityLists,
+                    "unchecked....bgClickedSynopVisibilityLists");
+            }
+        }
+
+        //bgClicked SYNOP 03UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked SYNOP 03UTC 3h RAINFALL[]
+        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+            if (layer_name == '3h RAINFALL') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynop3hRainfallLists.splice(index, 1);
+                }
+                console.log(bgClickedSynop3hRainfallLists,
+                    "unchecked....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //bgClicked SYNOP 06UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopTempLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopTempLists,
+                    "unchecked....bgClickedSynopTempLists");
+            }
+        }
+
+        //bgClicked SYNOP 06UTC MEAN SEA LEVEL PRESSURE[]
+        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopMeanSeaLevelLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopMeanSeaLevelLists,
+                    "unchecked....bgClickedSynopMeanSeaLevelLists");
+            }
+        }
+
+        //bgClicked SYNOP 06UTC CLOUD COVER[]
+        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+            if (layer_name == 'CLOUD COVER') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopCloudCoverLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopCloudCoverLists,
+                    "unchecked....bgClickedSynopCloudCoverLists");
+            }
+        }
+
+        //bgClicked SYNOP 06UTC GEOPOTENTIAL HEIGHT[]
+        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopGeopotentialHeightLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "unchecked....bgClickedSynopGeopotentialHeightLists");
+            }
+        }
+
+        //bgClicked SYNOP 06UTC RELATIVE HUMIDITY[]
+        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopRelativeHumidityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "unchecked....bgClickedSynopRelativeHumidityLists");
+            }
+        }
+
+        //bgClicked SYNOP 06UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopVisibilityLists,
+                    "unchecked....bgClickedSynopVisibilityLists");
+            }
+        }
+
+        //bgClicked SYNOP 06UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked SYNOP 06UTC 3h RAINFALL[]
+        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+            if (layer_name == '3h RAINFALL') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynop3hRainfallLists.splice(index, 1);
+                }
+                console.log(bgClickedSynop3hRainfallLists,
+                    "unchecked....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //
+        //bgClicked SYNOP 09UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopTempLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopTempLists,
+                    "unchecked....bgClickedSynopTempLists");
+            }
+        }
+
+        //bgClicked SYNOP 09UTC MEAN SEA LEVEL PRESSURE[]
+        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopMeanSeaLevelLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopMeanSeaLevelLists,
+                    "unchecked....bgClickedSynopMeanSeaLevelLists");
+            }
+        }
+
+        //bgClicked SYNOP 09UTC CLOUD COVER[]
+        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+            if (layer_name == 'CLOUD COVER') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopCloudCoverLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopCloudCoverLists,
+                    "unchecked....bgClickedSynopCloudCoverLists");
+            }
+        }
+
+        //bgClicked SYNOP 09UTC GEOPOTENTIAL HEIGHT[]
+        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopGeopotentialHeightLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "unchecked....bgClickedSynopGeopotentialHeightLists");
+            }
+        }
+
+        //bgClicked SYNOP 09UTC RELATIVE HUMIDITY[]
+        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopRelativeHumidityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "unchecked....bgClickedSynopRelativeHumidityLists");
+            }
+        }
+
+        //bgClicked SYNOP 09UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopVisibilityLists,
+                    "unchecked....bgClickedSynopVisibilityLists");
+            }
+        }
+
+        //bgClicked SYNOP 09UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked SYNOP 09UTC 3h RAINFALL[]
+        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+            if (layer_name == '3h RAINFALL') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynop3hRainfallLists.splice(index, 1);
+                }
+                console.log(bgClickedSynop3hRainfallLists,
+                    "unchecked....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //
+        //bgClicked SYNOP 12UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopTempLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopTempLists,
+                    "unchecked....bgClickedSynopTempLists");
+            }
+        }
+
+        //bgClicked SYNOP 12UTC MEAN SEA LEVEL PRESSURE[]
+        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopMeanSeaLevelLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopMeanSeaLevelLists,
+                    "unchecked....bgClickedSynopMeanSeaLevelLists");
+            }
+        }
+
+        //bgClicked SYNOP 12UTC CLOUD COVER[]
+        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+            if (layer_name == 'CLOUD COVER') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopCloudCoverLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopCloudCoverLists,
+                    "unchecked....bgClickedSynopCloudCoverLists");
+            }
+        }
+
+        //bgClicked SYNOP 12UTC GEOPOTENTIAL HEIGHT[]
+        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopGeopotentialHeightLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "unchecked....bgClickedSynopGeopotentialHeightLists");
+            }
+        }
+
+        //bgClicked SYNOP 12UTC RELATIVE HUMIDITY[]
+        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopRelativeHumidityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "unchecked....bgClickedSynopRelativeHumidityLists");
+            }
+        }
+
+        //bgClicked SYNOP 12UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopVisibilityLists,
+                    "unchecked....bgClickedSynopVisibilityLists");
+            }
+        }
+
+        //bgClicked SYNOP 12UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked SYNOP 12UTC 3h RAINFALL[]
+        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+            if (layer_name == '3h RAINFALL') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynop3hRainfallLists.splice(index, 1);
+                }
+                console.log(bgClickedSynop3hRainfallLists,
+                    "unchecked....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //
+        //bgClicked SYNOP 15UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopTempLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopTempLists,
+                    "unchecked....bgClickedSynopTempLists");
+            }
+        }
+
+        //bgClicked SYNOP 15UTC MEAN SEA LEVEL PRESSURE[]
+        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopMeanSeaLevelLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopMeanSeaLevelLists,
+                    "unchecked....bgClickedSynopMeanSeaLevelLists");
+            }
+        }
+
+        //bgClicked SYNOP 15UTC CLOUD COVER[]
+        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+            if (layer_name == 'CLOUD COVER') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopCloudCoverLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopCloudCoverLists,
+                    "unchecked....bgClickedSynopCloudCoverLists");
+            }
+        }
+
+        //bgClicked SYNOP 15UTC GEOPOTENTIAL HEIGHT[]
+        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopGeopotentialHeightLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "unchecked....bgClickedSynopGeopotentialHeightLists");
+            }
+        }
+
+        //bgClicked SYNOP 15UTC RELATIVE HUMIDITY[]
+        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopRelativeHumidityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "unchecked....bgClickedSynopRelativeHumidityLists");
+            }
+        }
+
+        //bgClicked SYNOP 15UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopVisibilityLists,
+                    "unchecked....bgClickedSynopVisibilityLists");
+            }
+        }
+
+        //bgClicked SYNOP 15UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked SYNOP 15UTC 3h RAINFALL[]
+        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+            if (layer_name == '3h RAINFALL') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynop3hRainfallLists.splice(index, 1);
+                }
+                console.log(bgClickedSynop3hRainfallLists,
+                    "unchecked....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //        
+        //bgClicked SYNOP 18UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopTempLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopTempLists,
+                    "unchecked....bgClickedSynopTempLists");
+            }
+        }
+
+        //bgClicked SYNOP 18UTC MEAN SEA LEVEL PRESSURE[]
+        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopMeanSeaLevelLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopMeanSeaLevelLists,
+                    "unchecked....bgClickedSynopMeanSeaLevelLists");
+            }
+        }
+
+        //bgClicked SYNOP 18UTC CLOUD COVER[]
+        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+            if (layer_name == 'CLOUD COVER') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopCloudCoverLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopCloudCoverLists,
+                    "unchecked....bgClickedSynopCloudCoverLists");
+            }
+        }
+
+        //bgClicked SYNOP 18UTC GEOPOTENTIAL HEIGHT[]
+        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopGeopotentialHeightLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "unchecked....bgClickedSynopGeopotentialHeightLists");
+            }
+        }
+
+        //bgClicked SYNOP 18UTC RELATIVE HUMIDITY[]
+        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopRelativeHumidityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "unchecked....bgClickedSynopRelativeHumidityLists");
+            }
+        }
+
+        //bgClicked SYNOP 18UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopVisibilityLists,
+                    "unchecked....bgClickedSynopVisibilityLists");
+            }
+        }
+
+        //bgClicked SYNOP 18UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked SYNOP 18UTC 3h RAINFALL[]
+        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+            if (layer_name == '3h RAINFALL') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynop3hRainfallLists.splice(index, 1);
+                }
+                console.log(bgClickedSynop3hRainfallLists,
+                    "unchecked....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //
+        //bgClicked SYNOP 21UTC TEMPERATURE[]
+        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+            if (layer_name == 'TEMPERATURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopTempLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopTempLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopTempLists,
+                    "unchecked....bgClickedSynopTempLists");
+            }
+        }
+
+        //bgClicked SYNOP 21UTC MEAN SEA LEVEL PRESSURE[]
+        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopMeanSeaLevelLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopMeanSeaLevelLists,
+                    "unchecked....bgClickedSynopMeanSeaLevelLists");
+            }
+        }
+
+        //bgClicked SYNOP 21UTC CLOUD COVER[]
+        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+            if (layer_name == 'CLOUD COVER') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopCloudCoverLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopCloudCoverLists,
+                    "unchecked....bgClickedSynopCloudCoverLists");
+            }
+        }
+
+        //bgClicked SYNOP 21UTC GEOPOTENTIAL HEIGHT[]
+        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopGeopotentialHeightLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopGeopotentialHeightLists,
+                    "unchecked....bgClickedSynopGeopotentialHeightLists");
+            }
+        }
+
+        //bgClicked SYNOP 21UTC RELATIVE HUMIDITY[]
+        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+            if (layer_name == 'RELATIVE HUMIDITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopRelativeHumidityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopRelativeHumidityLists,
+                    "unchecked....bgClickedSynopRelativeHumidityLists");
+            }
+        }
+
+        //bgClicked SYNOP 21UTC VISIBILITY[]
+        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+            if (layer_name == 'VISIBILITY') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopVisibilityLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopVisibilityLists,
+                    "unchecked....bgClickedSynopVisibilityLists");
+            }
+        }
+
+        //bgClicked SYNOP 21UTC WIND SPEED AND DIRECTION[]
+        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+            if (layer_name == 'WIND SPEED AND DIRECTION') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynopWindSpeedAndDirectionLists.splice(index, 1);
+                }
+                console.log(bgClickedSynopWindSpeedAndDirectionLists,
+                    "unchecked....bgClickedSynopWindSpeedAndDirectionLists");
+            }
+        }
+
+        //bgClicked SYNOP 21UTC 3h RAINFALL[]
+        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+            if (layer_name == '3h RAINFALL') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSynop3hRainfallLists.splice(index, 1);
+                }
+                console.log(bgClickedSynop3hRainfallLists,
+                    "unchecked....bgClickedSynop3hRainfallLists");
+            }
+        }
+
+        //mesolscale
+        //bgClickedWRFReflectivityLists[]
+        if (_this.context._layer.group.name == "WRF Reflectivity") {
+            if (layer_name == 'Next 03 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedWRFReflectivityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedWRFReflectivityLists.splice(index, 1);
+                }
+                console.log(bgClickedWRFReflectivityLists,
+                    "unchecked....bgClickedWRFReflectivityLists");
+            }
+        }
+
+        //bgClickedWRFReflectivityLists[]
+        if (_this.context._layer.group.name == "WRF Reflectivity") {
+            if (layer_name == 'Next 03-06 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedWRFReflectivityLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedWRFReflectivityLists.splice(index, 1);
+                }
+                console.log(bgClickedWRFReflectivityLists,
+                    "unchecked....bgClickedWRFReflectivityLists");
+            }
+        }
+
+        //bgClickedWRFlightningProductLists[]
+        if (_this.context._layer.group.name == "WRF lightning Product") {
+            if (layer_name == 'Next 03 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedWRFlightningProductLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedWRFlightningProductLists.splice(index, 1);
+                }
+                console.log(bgClickedWRFlightningProductLists,
+                    "unchecked....bgClickedWRFlightningProductLists");
+            }
+        }
+
+        //bgClickedWRFlightningProductLists[]
+        if (_this.context._layer.group.name == "WRF lightning Product") {
+            if (layer_name == 'Next 03-06 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedWRFlightningProductLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedWRFlightningProductLists.splice(index, 1);
+                }
+                console.log(bgClickedWRFlightningProductLists,
+                    "unchecked....bgClickedWRFlightningProductLists");
+            }
+        }
+
+        //bgClickedWRFAccumlatedRainfallLists[]
+        if (_this.context._layer.group.name == "WRF Accumlated Rainfall") {
+            if (layer_name == 'Next 03 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedWRFAccumlatedRainfallLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedWRFAccumlatedRainfallLists.splice(index, 1);
+                }
+                console.log(bgClickedWRFAccumlatedRainfallLists,
+                    "unchecked....bgClickedWRFAccumlatedRainfallLists");
+            }
+        }
+
+        //bgClickedWRFAccumlatedRainfallLists[]
+        if (_this.context._layer.group.name == "WRF Accumlated Rainfall") {
+            if (layer_name == 'Next 03-06 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedWRFAccumlatedRainfallLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedWRFAccumlatedRainfallLists.splice(index, 1);
+                }
+                console.log(bgClickedWRFAccumlatedRainfallLists,
+                    "unchecked....bgClickedWRFAccumlatedRainfallLists");
+            }
+        }
+
+        //bgClickedlightningPotentialindexLists[]
+        if (_this.context._layer.group.name == "lightning Potential index") {
+            if (layer_name == 'Next 01 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedlightningPotentialindexLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedlightningPotentialindexLists.splice(index, 1);
+                }
+                console.log(bgClickedlightningPotentialindexLists,
+                    "unchecked....bgClickedlightningPotentialindexLists");
+            }
+        }
+
+        //bgClickedlightningPotentialindexLists[]
+        if (_this.context._layer.group.name == "lightning Potential index") {
+            if (layer_name == 'Next 01-02 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedlightningPotentialindexLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedlightningPotentialindexLists.splice(index, 1);
+                }
+                console.log(bgClickedlightningPotentialindexLists,
+                    "unchecked....bgClickedlightningPotentialindexLists");
+            }
+        }
+
+        //bgClickedlightningPotentialindexLists[]
+        if (_this.context._layer.group.name == "lightning Potential index") {
+            if (layer_name == 'Next 02-03 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedlightningPotentialindexLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedlightningPotentialindexLists.splice(index, 1);
+                }
+                console.log(bgClickedlightningPotentialindexLists,
+                    "unchecked....bgClickedlightningPotentialindexLists");
+            }
+        }
+
+        // bgClickedNCUMRlightningProductLists
+        if (_this.context._layer.group.name == "NCUMR lightning Product") {
+            if (layer_name == 'Next 03 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedNCUMRlightningProductLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedNCUMRlightningProductLists.splice(index, 1);
+                }
+                console.log(bgClickedNCUMRlightningProductLists,
+                    "unchecked....bgClickedNCUMRlightningProductLists");
+            }
+        }
+
+        // bgClickedNCUMRlightningProductLists
+        if (_this.context._layer.group.name == "NCUMR lightning Product") {
+            if (layer_name == 'Next 03-06 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedNCUMRlightningProductLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedNCUMRlightningProductLists.splice(index, 1);
+                }
+                console.log(bgClickedNCUMRlightningProductLists,
+                    "unchecked....bgClickedNCUMRlightningProductLists");
+            }
+        }
+
+        // bgClickedNCUMRWindGustLists
+        if (_this.context._layer.group.name == "NCUMR Wind Gust") {
+            if (layer_name == 'Next 03 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedNCUMRWindGustLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedNCUMRWindGustLists.splice(index, 1);
+                }
+                console.log(bgClickedNCUMRWindGustLists,
+                    "unchecked....bgClickedNCUMRWindGustLists");
+            }
+        }
+
+        // bgClickedNCUMRWindGustLists
+        if (_this.context._layer.group.name == "NCUMR Wind Gust") {
+            if (layer_name == 'Next 03-06 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedNCUMRWindGustLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedNCUMRWindGustLists.splice(index, 1);
+                }
+                console.log(bgClickedNCUMRWindGustLists,
+                    "unchecked....bgClickedNCUMRWindGustLists");
+            }
+        }
+
+        // bgClickedNCUMRRainfallLists
+        if (_this.context._layer.group.name == "NCUMR Rainfall") {
+            if (layer_name == 'Next 03 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedNCUMRRainfallLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedNCUMRRainfallLists.splice(index, 1);
+                }
+                console.log(bgClickedNCUMRRainfallLists,
+                    "unchecked....bgClickedNCUMRRainfallLists");
+            }
+        }
+
+        // bgClickedNCUMRRainfallLists
+        if (_this.context._layer.group.name == "NCUMR Rainfall") {
+            if (layer_name == 'Next 03-06 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedNCUMRRainfallLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedNCUMRRainfallLists.splice(index, 1);
+                }
+                console.log(bgClickedNCUMRRainfallLists,
+                    "unchecked....bgClickedNCUMRRainfallLists");
+            }
+        }
+
+        // bgClickedHRRR_SPHourlyDBZLists
+        if (_this.context._layer.group.name == "HRRR_SP Hourly DBZ") {
+            if (layer_name == 'Next 01 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedHRRR_SPHourlyDBZLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedHRRR_SPHourlyDBZLists.splice(index, 1);
+                }
+                console.log(bgClickedHRRR_SPHourlyDBZLists,
+                    "unchecked....bgClickedHRRR_SPHourlyDBZLists");
+            }
+        }
+
+        // bgClickedHRRR_SPHourlyDBZLists
+        if (_this.context._layer.group.name == "HRRR_SP Hourly DBZ") {
+            if (layer_name == 'Next 01-02 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedHRRR_SPHourlyDBZLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedHRRR_SPHourlyDBZLists.splice(index, 1);
+                }
+                console.log(bgClickedHRRR_SPHourlyDBZLists,
+                    "unchecked....bgClickedHRRR_SPHourlyDBZLists");
+            }
+        }
+
+        // bgClickedHRRR_SPHourlyDBZLists
+        if (_this.context._layer.group.name == "HRRR_SP Hourly DBZ") {
+            if (layer_name == 'Next 02-03 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedHRRR_SPHourlyDBZLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedHRRR_SPHourlyDBZLists.splice(index, 1);
+                }
+                console.log(bgClickedHRRR_SPHourlyDBZLists,
+                    "unchecked....bgClickedHRRR_SPHourlyDBZLists");
+            }
+        }
+
+        // bgClickedHRRR_NEHourlyDBZLists
+        if (_this.context._layer.group.name == "HRRR_NE Hourly") {
+            if (layer_name == 'Next 01 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedHRRR_NEHourlyDBZLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedHRRR_NEHourlyDBZLists.splice(index, 1);
+                }
+                console.log(bgClickedHRRR_NEHourlyDBZLists,
+                    "unchecked....bgClickedHRRR_NEHourlyDBZLists");
+            }
+        }
+
+        // bgClickedHRRR_NEHourlyDBZLists
+        if (_this.context._layer.group.name == "HRRR_NE Hourly") {
+            if (layer_name == 'Next 01-02 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedHRRR_NEHourlyDBZLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedHRRR_NEHourlyDBZLists.splice(index, 1);
+                }
+                console.log(bgClickedHRRR_NEHourlyDBZLists,
+                    "unchecked....bgClickedHRRR_NEHourlyDBZLists");
+            }
+        }
+
+        // bgClickedHRRR_NEHourlyDBZLists
+        if (_this.context._layer.group.name == "HRRR_NE Hourly") {
+            if (layer_name == 'Next 02-03 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedHRRR_NEHourlyDBZLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedHRRR_NEHourlyDBZLists.splice(index, 1);
+                }
+                console.log(bgClickedHRRR_NEHourlyDBZLists,
+                    "unchecked....bgClickedHRRR_NEHourlyDBZLists");
+            }
+        }
+
+        // bgClickedHRRR_NWHourlyDBZLists
+        if (_this.context._layer.group.name == "HRRR_NW Hourly") {
+            if (layer_name == 'Next 01 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedHRRR_NWHourlyDBZLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedHRRR_NWHourlyDBZLists.splice(index, 1);
+                }
+                console.log(bgClickedHRRR_NWHourlyDBZLists,
+                    "unchecked....bgClickedHRRR_NWHourlyDBZLists");
+            }
+        }
+
+        // bgClickedHRRR_NWHourlyDBZLists
+        if (_this.context._layer.group.name == "HRRR_NW Hourly") {
+            if (layer_name == 'Next 01-02 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedHRRR_NWHourlyDBZLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedHRRR_NWHourlyDBZLists.splice(index, 1);
+                }
+                console.log(bgClickedHRRR_NWHourlyDBZLists,
+                    "unchecked....bgClickedHRRR_NWHourlyDBZLists");
+            }
+        }
+
+        // bgClickedHRRR_NWHourlyDBZLists
+        if (_this.context._layer.group.name == "HRRR_NW Hourly") {
+            if (layer_name == 'Next 02-03 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedHRRR_NWHourlyDBZLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedHRRR_NWHourlyDBZLists.splice(index, 1);
+                }
+                console.log(bgClickedHRRR_NWHourlyDBZLists,
+                    "unchecked....bgClickedHRRR_NWHourlyDBZLists");
+            }
+        }
+
+        // bgClickedEWRFMaxZLists
+        if (_this.context._layer.group.name == "EWRF MaxZ") {
+            if (layer_name == 'Next 01 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedEWRFMaxZLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedEWRFMaxZLists.splice(index, 1);
+                }
+                console.log(bgClickedEWRFMaxZLists,
+                    "unchecked....bgClickedEWRFMaxZLists");
+            }
+        }
+
+        // bgClickedEWRFMaxZLists
+        if (_this.context._layer.group.name == "EWRF MaxZ") {
+            if (layer_name == 'Next 01-02 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedEWRFMaxZLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedEWRFMaxZLists.splice(index, 1);
+                }
+                console.log(bgClickedEWRFMaxZLists,
+                    "unchecked....bgClickedEWRFMaxZLists");
+            }
+        }
+
+        // bgClickedEWRFMaxZLists
+        if (_this.context._layer.group.name == "EWRF MaxZ") {
+            if (layer_name == 'Next 02-03 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedEWRFMaxZLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedEWRFMaxZLists.splice(index, 1);
+                }
+                console.log(bgClickedEWRFMaxZLists,
+                    "unchecked....bgClickedEWRFMaxZLists");
+            }
+        }
+
+        // bgClickedEWRFMaxZLists
+        if (_this.context._layer.group.name == "EWRF Lightning") {
+            if (layer_name == 'Next 01 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedEWRFLightningLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedEWRFLightningLists.splice(index, 1);
+                }
+                console.log(bgClickedEWRFLightningLists,
+                    "unchecked....bgClickedEWRFLightningLists");
+            }
+        }
+
+        // bgClickedEWRFMaxZLists
+        if (_this.context._layer.group.name == "EWRF Lightning") {
+            if (layer_name == 'Next 01-02 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedEWRFLightningLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedEWRFLightningLists.splice(index, 1);
+                }
+                console.log(bgClickedEWRFLightningLists,
+                    "unchecked....bgClickedEWRFLightningLists");
+            }
+        }
+
+        // bgClickedEWRFMaxZLists
+        if (_this.context._layer.group.name == "EWRF Lightning") {
+            if (layer_name == 'Next 02-03 Hrs') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedEWRFLightningLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedEWRFLightningLists.splice(index, 1);
+                }
+                console.log(bgClickedEWRFLightningLists,
+                    "unchecked....bgClickedEWRFLightningLists");
+            }
+        }
+
+
+        //SOUNDING
+        //bgClicked SOUNDING_00_UTC WIND [] 1000 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+            if (layer_name == '1000 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING00UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00_UTC WIND [] 850 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+            if (layer_name == '850 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING00UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00_UTC WIND [] 700 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+            if (layer_name == '700 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING00UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00_UTC WIND [] 500 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+            if (layer_name == '500 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING00UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00_UTC WIND [] 300 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+            if (layer_name == '300 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING00UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00_UTC WIND [] 200 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+            if (layer_name == '200 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING00UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00_UTC WIND [] 100 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+            if (layer_name == '100 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING00UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00_UTC WIND [] 50 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+            if (layer_name == '50 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING00UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12_UTC WIND [] 1000 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+            if (layer_name == '1000 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING12UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12_UTC WIND [] 850 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+            if (layer_name == '850 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING12UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12_UTC WIND [] 700 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+            if (layer_name == '700 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING12UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12_UTC WIND [] 500 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+            if (layer_name == '500 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING12UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12_UTC WIND [] 300 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+            if (layer_name == '300 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING12UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12_UTC WIND [] 200 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+            if (layer_name == '200 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING12UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12_UTC WIND [] 100 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+            if (layer_name == '100 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING12UTCWINDLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12_UTC WIND [] 50 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+            if (layer_name == '50 hpa WIND') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCWINDLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCWINDLists,
+                    "unchecked....bgClickedSOUNDING12UTCWINDLists");
+            }
+        }
+
+        //SOUND TEMP 00
+        //bgClicked SOUNDING_00UTC TEMP [] 1000 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+            if (layer_name == '1000 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING00UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC TEMP [] 850 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+            if (layer_name == '850 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING00UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC TEMP [] 700 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+            if (layer_name == '700 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING00UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC TEMP [] 500 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+            if (layer_name == '500 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING00UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC TEMP [] 300 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+            if (layer_name == '300 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING00UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC TEMP [] 200 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+            if (layer_name == '200 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING00UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC TEMP [] 100 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+            if (layer_name == '100 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING00UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC TEMP [] 50 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+            if (layer_name == '50 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING00UTCTEMPLists");
+            }
+        }
+
+        //SOUNDING_12UTC TEMP
+        //bgClicked SOUNDING_12UTC TEMP [] 1000 hpa WIND
+        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+            if (layer_name == '1000 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING12UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC TEMP [] 850 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+            if (layer_name == '850 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING12UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC TEMP [] 700 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+            if (layer_name == '700 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING12UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC TEMP [] 500 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+            if (layer_name == '500 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING12UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC TEMP [] 300 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+            if (layer_name == '300 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING12UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC TEMP [] 200 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+            if (layer_name == '200 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING12UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC TEMP [] 100 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+            if (layer_name == '100 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING12UTCTEMPLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC TEMP [] 50 hpa TEMP
+        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+            if (layer_name == '50 hpa TEMP') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCTEMPLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCTEMPLists,
+                    "unchecked....bgClickedSOUNDING12UTCTEMPLists");
+            }
+        }
+
+        //SOUND 00UTC DEW POINT 
+        //bgClicked SOUNDING_00UTC DEW POINT [] 1000 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+            if (layer_name == '1000 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC DEW POINT [] 850 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+            if (layer_name == '850 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC DEW POINT [] 700 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+            if (layer_name == '700 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC DEW POINT [] 500 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+            if (layer_name == '500 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC DEW POINT [] 300 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+            if (layer_name == '300 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC DEW POINT [] 200 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+            if (layer_name == '200 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC DEW POINT [] 100 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+            if (layer_name == '100 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_00UTC DEW POINT [] 50 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+            if (layer_name == '50 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING00UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING00UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING00UTCDEWPOINTLists");
+            }
+        }
+
+        //SOUND 12UTC DEW POINT 
+        //bgClicked SOUNDING_12UTC DEW POINT [] 1000 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+            if (layer_name == '1000 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC DEW POINT [] 850 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+            if (layer_name == '850 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC DEW POINT [] 700 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+            if (layer_name == '700 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC DEW POINT [] 500 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+            if (layer_name == '500 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC DEW POINT [] 300 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+            if (layer_name == '300 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC DEW POINT [] 200 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+            if (layer_name == '200 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC DEW POINT [] 100 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+            if (layer_name == '100 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+        }
+
+        //bgClicked SOUNDING_12UTC DEW POINT [] 50 hpa DEW POINT
+        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+            if (layer_name == '50 hpa DEW POINT') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSOUNDING12UTCDEWPOINTLists.splice(index, 1);
+                }
+                console.log(bgClickedSOUNDING12UTCDEWPOINTLists,
+                    "unchecked....bgClickedSOUNDING12UTCDEWPOINTLists");
+            }
+        }
+
+        //ship_and_buoy 
+        if (_this.context._layer.group.name == "SHIP AND BUOY OBSERVATION") {
+            if (layer_name == '00UTC' || layer_name == '01UTC' || layer_name == '02UTC' || layer_name ==
+                '03UTC' || layer_name == '04UTC' || layer_name == '05UTC' || layer_name == '06UTC' ||
+                layer_name == '07UTC' || layer_name == '08UTC' || layer_name == '09UTC' || layer_name ==
+                '10UTC' || layer_name == '11UTC' || layer_name == '12UTC' || layer_name == '13UTC' ||
+                layer_name == '14UTC' || layer_name == '15UTC' || layer_name == '16UTC' || layer_name ==
+                '17UTC' || layer_name == '18UTC' || layer_name == '19UTC' || layer_name == '20UTC' ||
+                layer_name == '21UTC' || layer_name == '22UTC' || layer_name == '23UTC') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSHIPANDBUOYLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSHIPANDBUOYLists.splice(index, 1);
+                }
+                console.log(bgClickedSHIPANDBUOYLists, "unchecked....bgClickedSHIPANDBUOYLists");
+            }
+        }
+
+        //Radar 
+        if (_this.context._layer.group.name == "Radar Products") {
+            if (layer_name == 'Radar Reflectivity' || layer_name == 'Radar Animation') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedRadarLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedRadarLists.splice(index, 1);
+                }
+                console.log(bgClickedRadarLists, "unchecked....bgClickedRadarLists");
+            }
+        }
+
+        //bgClickedSATELLITELists[]
+        if (_this.context._layer.group.name == "Satellite Observation") {
+            if (layer_name == 'TIR1' || layer_name == 'VIS' || layer_name ==
+                'CTBT' || layer_name == 'LOW LEVEL CONVERGENCE' || layer_name == 'UPPER LEVEL DIVEGENCE' ||
+                layer_name == 'MID LEVEL SHEA' || layer_name == 'VORTICITY AT 200hPa' || layer_name ==
+                'VORTICITY AT 500hPa' || layer_name == 'VORTICITY AT 700hPa' || layer_name ==
+                'VORTICITY AT 850hPa') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedSATELLITELists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedSATELLITELists.splice(index, 1);
+                }
+                console.log(bgClickedSATELLITELists, "unchecked....bgClickedSATELLITELists");
+            }
+        }
+
+        //Lightning 
+        if (_this.context._layer.group.name == "Lightning") {
+            if (layer_name == 'Last 00-05 min' || layer_name == 'Last 05-10 min' || layer_name ==
+                'Last 10-15 min' || layer_name == 'ILDN Last 05 min' || layer_name == 'Nowcast Alerts') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedLightningLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedLightningLists.splice(index, 1);
+                }
+                console.log(bgClickedLightningLists, "unchecked....bgClickedLightningLists");
+            }
+        }
+
+
+        // console.log(bgClickedLightningLists, ".....bgClickedLightningLists");
+
+
+        // console.log("overLayers10overLayers10-->,", overLayers10);
+
+        // let x = document.getElementById("491");
+        // let districtBoundaries = x._layer.active;
+        // let y = document.getElementById("492");
+        // let airport = y._layer.active;
+        // let z = document.getElementById("493");
+        // let oilrefineries = z._layer.active;
+        // let xz = document.getElementById("494");
+        // let powerStation = xz._layer.active;
+        // let yz = document.getElementById("495");
+        // let powerPlant = yz._layer.active;
+        // let zz = document.getElementById("496");
+        // let Dem = zz._layer.active;
 
         // let za = document.getElementById("497");
         // let hospital = za._layer.active;
         // let zb = document.getElementById("498");
         // let industrial = zb._layer.active;
 
-        let zc = document.getElementById("497");
-        let sports = zc._layer.active;
+        // let zc = document.getElementById("497");
+        // let sports = zc._layer.active;
 
-        let ze = document.getElementById("498");
-        let roadNetwork = ze._layer.active;
+        // let ze = document.getElementById("498");
+        // let roadNetwork = ze._layer.active;
 
-        let zf = document.getElementById("499");
-        let sez = zf._layer.active;
+        // let zf = document.getElementById("499");
+        // let sez = zf._layer.active;
 
-        let zg = document.getElementById("500");
-        let railWay = zg._layer.active;
+        // let zg = document.getElementById("500");
+        // let railWay = zg._layer.active;
 
-        let zh = document.getElementById("501");
-        let LULC = zh._layer.active;
+        // let zh = document.getElementById("501");
+        // let LULC = zh._layer.active;
 
         //EXPOSURE
-        if (districtBoundaries === false && airport === false && oilrefineries === false && powerStation ===
-            false &&
-            powerPlant === false && Dem === false && sports ===
-            false &&
-            roadNetwork === false && sez === false && railWay === false && LULC === false) {
-            $("#exposure").css("background-color", '#eff4ff');
-            console.log("EXPOSURE working....", layer_name);
-        } else {
-            $("#exposure").css("background-color", 'rgb(180, 194, 224)');
-            console.log("EXPOSURE not working....", layer_name);
-        }
+        // if (districtBoundaries === false && airport === false && oilrefineries === false && powerStation ===
+        //     false &&
+        //     powerPlant === false && Dem === false && sports ===
+        //     false &&
+        //     roadNetwork === false && sez === false && railWay === false && LULC === false) {
+        //     $("#exposure").css("background-color", '#eff4ff');
+        //     console.log("EXPOSURE working....", layer_name);
+        // } else {
+        //     $("#exposure").css("background-color", 'rgb(180, 194, 224)');
+        //     console.log("EXPOSURE not working....", layer_name);
+        // }
 
         // METAR
-        if (isLayerInMetarArray) {
-            if (layer_name === "TEMPERATURE" && layer_name === "DEW POINT TEMPERATURE" && layer_name ===
-                "VISIBILITY" && layer_name === "WIND SPEED AND DIRECTION") {
-                $("#metar").css("background-color", '#eff4ff');
-                console.log("METAR working");
-            } else {
-                $("#metar").css("background-color", 'rgb(180, 194, 224)');
-                console.log("METAR unchecked color not working");
-            }
-        } else {
-            console.log("METAR not working");
-        }
+        // if (isLayerInMetarArray) {
+        //     if (layer_name === "TEMPERATURE" && layer_name === "DEW POINT TEMPERATURE" && layer_name ===
+        //         "VISIBILITY" && layer_name === "WIND SPEED AND DIRECTION") {
+        //         $("#metar").css("background-color", '#eff4ff');
+        //         console.log("METAR working");
+        //     } else {
+        //         $("#metar").css("background-color", 'rgb(180, 194, 224)');
+        //         console.log("METAR unchecked color not working");
+        //     }
+        // } else {
+        //     console.log("METAR not working");
+        // }
 
         //SYNOP
-        var isLayerInSynopArray = synopArrayBg.includes(layer_group_name);
-        console.log("Is layer in synopArrayBg?", isLayerInSynopArray);
-        if (isLayerInSynopArray) {
-            if (layer_name === "TEMPERATURE" && layer_name === "MEAN SEA LEVEL PRESSURE" && layer_name ===
-                "CLOUD COVER" && layer_name === "GEOPOTENTIAL HEIGHT" && layer_name === "RELATIVE HUMIDITY" &&
-                layer_name === "VISIBILITY" && layer_name === "WIND SPEED AND DIRECTION" && layer_name ===
-                "3 h RAINFALL") {
-                $("#synop").css("background-color", 'rgb(180, 194, 224)');
-                console.log("SYNOP working", layer_name);
-            } else {
-                $("#synop").css("background-color", '#eff4ff');
-            }
-        } else {
-            console.log("SYNOP not working");
-        }
+        // var isLayerInSynopArray = synopArrayBg.includes(layer_group_name);
+        // console.log("Is layer in synopArrayBg?", isLayerInSynopArray);
+        // if (isLayerInSynopArray) {
+        //     if (layer_name === "TEMPERATURE" && layer_name === "MEAN SEA LEVEL PRESSURE" && layer_name ===
+        //         "CLOUD COVER" && layer_name === "GEOPOTENTIAL HEIGHT" && layer_name === "RELATIVE HUMIDITY" &&
+        //         layer_name === "VISIBILITY" && layer_name === "WIND SPEED AND DIRECTION" && layer_name ===
+        //         "3 h RAINFALL") {
+        //         $("#synop").css("background-color", 'rgb(180, 194, 224)');
+        //         console.log("SYNOP working", layer_name);
+        //     } else {
+        //         $("#synop").css("background-color", '#eff4ff');
+        //     }
+        // } else {
+        //     console.log("SYNOP not working");
+        // }
 
 
 
@@ -9174,8 +14215,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             clickedLightningLists = clickedLightningLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                 return clickedLayer != uncheckLayer
+                console.log(clickedLayer, ".......clickedLayer");
             });
             panelLayerLightninglists.innerHTML = clickedLightningLists.join("");
+            console.log(panelLayerLightninglists, "........panelLayerLightninglists");
             map.removeLayer(ggg);
         }
         if (uncheckLayer == 'Lightning Last 05-10 min') {
@@ -9210,6 +14253,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (uncheckLayer == 'Radar Reflectivity Radar Reflectivity') {
             clickedRadarLists = clickedRadarLists.filter(checkList => {
                 let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                console.log(clickedLayer, "..clickedLayer");
                 return clickedLayer != uncheckLayer
             });
             panelLayerRadarlists.innerHTML = clickedRadarLists.join("");
@@ -12999,6 +18043,126 @@ $("body").on("change", "input[type=checkbox]", function() {
             document.querySelectorAll('.collapsible')[0].classList.add('expanded');
             document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
         }
+    }
+
+    //exposure bgClickedExposureLists[]
+    if (bgClickedExposureLists.length > 0) {
+        $("#exposure").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#exposure").css("background-color", '#eff4ff');
+    }
+
+    //metar bgClickedMetarLists
+    if (
+        bgClickedMetarTempLists.length === 0 &&
+        bgClickedMetarDewPointLists.length === 0 &&
+        bgClickedMetarVisibilityLists.length === 0 &&
+        bgClickedMetarWindSpeedAndDirectionLists.length === 0
+    ) {
+        $("#metar").css("background-color", '#eff4ff');
+    } else {
+        $("#metar").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //synop bgClickedSynopLists
+    if (
+        bgClickedSynopTempLists.length === 0 &&
+        bgClickedSynopMeanSeaLevelLists.length === 0 &&
+        bgClickedSynopCloudCoverLists.length === 0 &&
+        bgClickedSynopGeopotentialHeightLists.length === 0 &&
+        bgClickedSynopRelativeHumidityLists.length === 0 &&
+        bgClickedSynopVisibilityLists.length === 0 &&
+        bgClickedSynopWindSpeedAndDirectionLists.length === 0 &&
+        bgClickedSynop3hRainfallLists.length === 0
+    ) {
+        $("#synop").css("background-color", '#eff4ff');
+    } else {
+        $("#synop").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //SOUNDING bgClickedSoundingLists
+    if (
+        bgClickedSOUNDING00UTCWINDLists.length === 0 &&
+        bgClickedSOUNDING12UTCWINDLists.length === 0 &&
+        bgClickedSOUNDING00UTCTEMPLists.length === 0 &&
+        bgClickedSOUNDING12UTCTEMPLists.length === 0 &&
+        bgClickedSOUNDING00UTCDEWPOINTLists.length === 0 &&
+        bgClickedSOUNDING12UTCDEWPOINTLists.length === 0
+    ) {
+        $("#sounding").css("background-color", '#eff4ff');
+    } else {
+        $("#sounding").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //SHIPANDBUOY bgClickedSHIPANDBUOYLists[]
+    if (bgClickedSHIPANDBUOYLists.length > 0) {
+        $("#ship_and_buoy").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#ship_and_buoy").css("background-color", '#eff4ff');
+    }
+
+    //radar bgClickedLightningLists
+    if (bgClickedRadarLists.length > 0) {
+        $("#radar").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#radar").css("background-color", '#eff4ff');
+    }
+
+    //SATELLITE bgClickedSATELLITELists
+    if (bgClickedSATELLITELists.length > 0) {
+        $("#satellite").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#satellite").css("background-color", '#eff4ff');
+    }
+
+    //lightning bgClickedLightningLists[]
+    if (bgClickedLightningLists.length > 0) {
+        $("#lightning").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#lightning").css("background-color", '#eff4ff');
+    }
+
+    //mesolscale bgClickedSynopLists
+    if (
+        bgClickedWRFReflectivityLists.length === 0 &&
+        bgClickedWRFlightningProductLists.length === 0 &&
+        bgClickedWRFAccumlatedRainfallLists.length === 0 &&
+        bgClickedlightningPotentialindexLists.length === 0 &&
+        bgClickedNCUMRlightningProductLists.length === 0 &&
+        bgClickedNCUMRWindGustLists.length === 0 &&
+        bgClickedNCUMRRainfallLists.length === 0 &&
+        bgClickedHRRR_SPHourlyDBZLists.length === 0 &&
+        bgClickedHRRR_NEHourlyDBZLists.length === 0 &&
+        bgClickedHRRR_NWHourlyDBZLists.length === 0 &&
+        bgClickedEWRFMaxZLists.length === 0 &&
+        bgClickedEWRFLightningLists.length === 0
+    ) {
+        $("#mesolscale").css("background-color", '#eff4ff');
+    } else {
+        $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //medium_range 
+    if (
+        bgClickedRainfallIntensityDay1Lists.length === 0 &&
+        bgClickedRainfallIntensityDay2Lists.length === 0 &&
+        bgClickedRainfallIntensityDay3Lists.length === 0 &&
+        bgClickedRainfallIntensityDay4Lists.length === 0 &&
+        bgClickedRainfallIntensityDay5Lists.length === 0 &&
+        bgClickedMSLPDay1Lists.length === 0 &&
+        bgClickedMSLPDay2Lists.length === 0 &&
+        bgClickedMSLPDay3Lists.length === 0 &&
+        bgClickedMSLPDay4Lists.length === 0 &&
+        bgClickedMSLPDay5Lists.length === 0 &&
+        bgClicked10mWINDDay1Lists.length === 0 &&
+        bgClicked10mWINDDay2Lists.length === 0 &&
+        bgClicked10mWINDDay3Lists.length === 0 &&
+        bgClicked10mWINDDay4Lists.length === 0 &&
+        bgClicked10mWINDDay5Lists.length === 0
+    ) {
+        $("#medium_range").css("background-color", '#eff4ff');
+    } else {
+        $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
     }
 });
 //

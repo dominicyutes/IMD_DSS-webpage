@@ -1,4 +1,88 @@
 <script>
+let bgClickedLightningLists = [];
+
+$("body").on("change", "input[type=checkbox]", function() {
+    var _this = $(this);
+    console.log(_this, '_this');
+    var isChecked = _this.prop('checked');
+    // var isChecked = $(this).attr('checked');
+    var layer_group_name = _this.context._layer ? _this.context._layer.group.name : '';
+    console.log(layer_group_name, "layer_group_name");
+    var layer_name;
+    //
+
+    if (isChecked) { // True
+        console.log("Checked");
+        layer_name = _this.context._layer ? _this.context._layer.name : _this.context.className;
+        console.log(layer_name, "layer_name");
+
+        //bgClickedLightningLists[]
+        if (_this.context._layer.group.name == "Lightning") {
+            if (layer_name == 'Last 00-05 min') {
+                bgClickedLightningLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            if (layer_name == 'Last 05-10 min') {
+                bgClickedLightningLists.push(
+                    layer_group_name + " " + layer_name
+                );
+            }
+            console.log(bgClickedLightningLists, "....bgClickedLightningLists");
+        }
+    } else {
+        console.log("unChecked");
+        var uncheckLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer.name : _this
+            .context.className;
+        console.log("uncheckLayer............", uncheckLayer);
+        layer_name = _this.context._layer ? _this.context._layer.name : _this.context.className;
+
+        if (_this.context._layer.group.name == "Lightning") {
+            if (layer_name == 'Last 00-05 min' || layer_name == 'Last 05-10 min') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedLightningLists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedLightningLists.splice(index, 1);
+                }
+                console.log(bgClickedLightningLists, "unchecked....bgClickedLightningLists");
+            }
+        }
+
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var metarArrayBg = ["METAR 00UTC", "METAR 01UTC", "METAR 02UTC", "METAR 03UTC", "METAR 04UTC", "METAR 05UTC",
     "METAR 06UTC", "METAR 07UTC", "METAR 08UTC", "METAR 09UTC", "METAR 10UTC", "METAR 11UTC", "METAR 12UTC",
     "METAR 13UTC", "METAR 14UTC", "METAR 15UTC", "METAR 16UTC", "METAR 17UTC", "METAR 18UTC", "METAR 19UTC",
