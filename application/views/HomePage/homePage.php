@@ -254,25 +254,26 @@
 
         <!-- OBSERVATION -->
         <div id="ObservationContainer" class="obsClass hidden col-2">
-            <h4 class="obsh4">OBSERVATION</h4>
+        <h4 class="obsh4" style="font-family: 'Times New Roman', Times, serif;">OBSERVATION</h4>
+
             <!-- model -->
             <form id="obsForm">
                 <div>
-                    <label name="modelNames" class="firstDDLabel">Type:</label>
+                    <label name="modelNames" class="firstDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Type:</label>
                     <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
                     </select>
                 </div>
                 <!-- <span>&nbsp;</span> -->
                 <!-- parameter -->
                 <div>
-                    <label name="parameter" class="secondDDLabel">Time:</label>
+                    <label name="parameter" class="secondDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Time:</label>
                     <select class="secondDD" id="parameterNames" onchange="showSubParameterNames(this.value)" &nbsp;>
                     </select>
                 </div>
                 <!-- <span>&nbsp;</span> -->
                 <!-- SubParameter -->
                 <div>
-                    <label name="subparameter" class="thirdDDLabel">Parameter</label>
+                    <label name="subparameter" class="thirdDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Parameter</label>
                     <select class="thirdDD" id="subparameter" &nbsp;>
                     </select>
                     <div id="checkboxListContainer"></div>
@@ -281,7 +282,7 @@
 
 
                 <div>
-                    <label name="start_date" class="dateDDLabel">Date:</label>
+                    <label name="start_date" class="dateDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Date:</label>
                     <input type="date" id="start_date" class="dateDD">
                 </div>
                 <!-- <span>&nbsp;</span> -->
@@ -292,7 +293,7 @@
                 <!-- <span>&nbsp;</span> -->
                 <div>
                     <span style="display: contents;">
-                        <label name="hourSelect" class="TimeLabel">Time:</label>
+                        <label name="hourSelect" class="TimeLabel"  style="font-family: 'Times New Roman', Times, serif;">Time:</label>
                         <select id="hourSelect" class="TimeHR">
                         </select>
                         <select id="minuteSelect" class="TimeMin">
@@ -304,7 +305,7 @@
             </form>
             <!-- Submit -->
             <div>
-                <button id="submitButton" onclick="submitForm()" class="submitBtn">Submit</button>
+                <button id="submitButton" onclick="submitForm()" class="submitBtn"  style="font-family: 'Times New Roman', Times, serif;">Submit</button>
             </div>
         </div>
 
@@ -324,33 +325,33 @@
                 <div class="create_Macro_body" style="position: relative;">
                     <div class="create_Macro_body_div">
                         <span class="macroLegend">X</span>
-                        <h4 class="create_Macro_h4" style="margin: 0 auto;">Create Macro</h4>
+                        <h4 class="create_Macro_h4" style="margin: 0 auto;"  style="font-family: 'Times New Roman', Times, serif;">Create Macro</h4>
                     </div>
 
                     <!-- MACRO-model -->
                     <div id="showCreateMacroLayers">
                         <form id="myForm">
                             <div>
-                                <label name="macroNames" class="macroNameLabel">Macro Name:</label>
+                                <label name="macroNames" class="macroNameLabel"  style="font-family: 'Times New Roman', Times, serif;">Macro Name:</label>
                                 <input type="text" class="macroNameInput" id="macroNames" placeholder="customize name"
                                     onchange="handleInputChange()" autocomplete="off" required &nbsp;>
                             </div>
                             <div>
-                                <label name="mac_modelNames" class="mac_firstDDLabel">Type:</label>
+                                <label name="mac_modelNames" class="mac_firstDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Type:</label>
                                 <select class="mac_firstDD" id="mac_modelNames"
                                     onchange="macShowParameterNames(this.value)" &nbsp;>
                                 </select>
                             </div>
                             <!-- parameter -->
                             <div>
-                                <label name="mac_parameter" class="mac_secondDDLabel">Time:</label>
+                                <label name="mac_parameter" class="mac_secondDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Time:</label>
                                 <select class="mac_secondDD" id="mac_parameterNames"
                                     onchange="macShowSubParameterNames(this.value)" &nbsp;>
                                 </select>
                             </div>
                             <!-- SubParameter -->
                             <div>
-                                <label name="mac_subparameter" class="mac_thirdDDLabel">Parameter</label>
+                                <label name="mac_subparameter" class="mac_thirdDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Parameter</label>
                                 <select class="mac_thirdDD" id="mac_subparameter" &nbsp;>
                                 </select>
                             </div>
