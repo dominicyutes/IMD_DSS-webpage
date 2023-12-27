@@ -49,6 +49,11 @@
     <!-- Include Leaflet Side-by-Side CSS -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-side-by-side@1.0.4/dist/leaflet-side-by-side.css" /> -->
 
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css">
+    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+
 
 
 
@@ -124,15 +129,24 @@
     <!-- leaflet-side-by-side -->
     <script src="https://lab.digital-democracy.org/leaflet-side-by-side/leaflet-side-by-side.js"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@latest/dist/leaflet.css" />
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css">
-    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <!-- Leaflet.Screenshot CSS and JS files -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-screenshot/dist/leaflet-screenshot.css" />
+    <script src="https://unpkg.com/leaflet-screenshot/dist/leaflet-screenshot.js"></script> -->
 
     <!-- print -->
-    <script src="leaflet.browser.print.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.browser.print@1.0.2/dist/leaflet.browser.print.min.js"></script>
+
+    <!-- <script src="leaflet.browser.print.min.js"></script> -->
+
+    <!-- // Include the necessary libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+
+    <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/html2canvas/html2canvas.js">
+    </script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/canvas2image/canvas2image.js">
+    </script>
 
     <!-- for map picture -->
     <!-- <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/html2canvas/html2canvas.min.js"></script>
@@ -155,6 +169,10 @@
             width: 80%;
             margin: auto;
             height: 70%;
+        }
+
+        .print-title {
+            font-size: 24px;
         }
     }
     </style>
@@ -756,7 +774,6 @@
 <!-- adding JS -->
 <?php $this->load->view('HomePage/scripts'); ?>
 
-
 <!-- screenshoter -->
 <!-- <script src="https://unpkg.com/leaflet-simple-map-screenshoter"></script>
 <script>
@@ -764,29 +781,58 @@ L.simpleMapScreenshoter().addTo(map);
 </script> -->
 
 
+
 <script>
-L.control.browserPrint({
-    documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
-    printLayer: L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 22,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }),
-    closePopupsOnPrint: false,
-    printModes: [
-        L.browserPrint.mode("Portrait", {
-            pageSize: 'B4',
-            orientation: 'Portrait'
-        }),
-        L.BrowserPrint.Mode.Landscape("A4", {
-            title: "Landscape"
-        }),
-        L.BrowserPrint.Mode.Auto("A4", {
-            title: "Auto"
-        }),
-        L.BrowserPrint.Mode.Custom("A4", {
-            title: "Custom"
-        })
-    ],
-    manualMode: false
-}).addTo(map);
+// Initialize the Leaflet.Screenshot control
+// L.control.screenshot().addTo(map);
+// 
+// L.control.browserPrint({
+//     position: 'topleft',
+//     documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
+//     documentTitleClass: 'print-title'
+// }).addTo(map);
+</script>
+
+<script>
+$(".printbutton").click(function() {
+    html2canvas($("#map"), {
+        useCORS: true,
+        allowTaint: false,
+        onrendered: function(canvas) {
+            var image = Canvas2Image.convertToPNG(canvas);
+            var image_data = $(image).attr('src');
+            var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
+            $.ajax({
+                type: "POST",
+                url: "<?php echo site_url(); ?>pdfController/createPdf/saveReportImg",
+                data: {
+                    base64: image_data,
+                    r_file_name: random_name
+                },
+                success: function() {
+                    printDiv('map_img_' + random_name + '.jpeg');
+                }
+            });
+        }
+    });
+
+});
+
+function printDiv(image, divName) {
+    var date = new Date();
+    var originalContents = document.body.innerHTML;
+    var win = window.open('');
+    // var htmlToPrint = "" +
+    //     '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><style type="text/css">' +
+    //     '</style>';
+    win.document.write("<center><u><h3>DSS WEBPAGE</h3></u><br>");
+    win.document.write("<label>Date and Time:" + date + "</label></center>");
+
+    win.document.write('<img src="<?php echo base_url()?>DATA/cyclone/' + image +
+        '" style="page-break-before: always;"/>');
+
+    var divToPrint = document.getElementById(divName);
+    // htmlToPrint += divToPrint.outerHTML;
+    // win.document.write(htmlToPrint);
+}
 </script>
