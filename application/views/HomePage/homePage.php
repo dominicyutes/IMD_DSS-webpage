@@ -793,12 +793,12 @@ L.simpleMapScreenshoter().addTo(map);
 // Initialize the Leaflet.Screenshot control
 // L.control.screenshot().addTo(map);
 // 
-let printMap = L.control.browserPrint({
-    position: 'topleft',
-    documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
-    documentTitleClass: 'print-title'
-}).addTo(map);
-</script>
+// let printMap = L.control.browserPrint({
+//     position: 'topleft',
+//     documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
+//     documentTitleClass: 'print-title'
+// }).addTo(map);
+// </script>
 
 <script>
 $(".printbutton").click(function() {
