@@ -314,7 +314,7 @@
             <div style="display:flex;">
                 <button class="createMacroCls" onclick="createMacroForm()">+</button>
                 <span
-                    style="font-family: 'Archivo', sans-serif;font-size: 18px;font-weight: bold;margin-left: 6%;margin-top: 1%;">Create
+                    style="color: #2c5383;font-family: 'Archivo', sans-serif;font-size: 18px;font-weight: bold;margin-left: 6%;margin-top: 1%;">Create
                     Macro</span>
             </div>
 

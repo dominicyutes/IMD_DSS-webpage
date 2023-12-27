@@ -110,11 +110,14 @@ body {
 
 .obsClass {
     background-color: #eff4ff;
-    color: #2c5383;
+    color: #1d334e;
     margin-top: -39px;
     height: 82vh;
     width: 16%;
     border: 1px solid #2c5383;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
 }
 
 .obsh4 {
@@ -130,36 +133,25 @@ body {
 .dateDDLabel,
 .TimeLabel {
     margin-left: 0;
-    color: #2c5383;
-    font-size: 1.1em;
+    color: #1d334e;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
 }
 
 
-.firstDD {
-    width: 100%;
-    height: 32px;
-    border-radius: 10px;
-    color: #2c5383;
-    overflow-y: auto;
-    margin-bottom: 10px;
-}
-
-.secondDD {
-    width: 100%;
-    height: 32px;
-    border-radius: 10px;
-    color: #02275f;
-    overflow-y: auto;
-    margin-bottom: 10px;
-}
-
+.firstDD,
+.secondDD,
 .thirdDD {
     width: 100%;
     height: 32px;
     border-radius: 10px;
-    color: #02275f;
+    color: #1d334e;
     overflow-y: auto;
     margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
 }
 
 .dateDD {
@@ -168,23 +160,32 @@ body {
     border-radius: 10px;
     border: 1px solid #646464;
     margin-bottom: 10px;
+    color: #1d334e;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
 }
 
 .TimeHR {
     width: 24%;
     height: 34px;
     border-radius: 10px;
-    color: #02275f;
+    color: #1d334e;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
 }
 
 .TimeMin {
     width: 24%;
     height: 34px;
     border-radius: 10px;
-    color: #02275f;
+    color: #1d334e;
     margin-top: 7px;
     margin-bottom: 21px;
-
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
 }
 
 .submitBtn {
@@ -194,7 +195,9 @@ body {
     background-color: #244c7e;
     color: ghostwhite;
     border-color: mediumaquamarine;
-    font-size: 1.1em;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
     margin-left: 26%;
 }
 
@@ -223,6 +226,7 @@ body {
     color: #ffffff;
     border-color: #ffffff91;
     font-size: 17px;
+    font-family: 'Archivo', sans-serif
 }
 
 .createMacroCls:hover+.hoverPlus {
@@ -236,9 +240,11 @@ body {
 .mac_secondDDLabel,
 .mac_thirdDDLabel {
     margin: 0 4px;
-    color: #041014;
+    color: #1d334e;
     font-size: 14px;
+    font-weight: 600;
     border: 0;
+    font-family: 'Archivo', sans-serif
 }
 
 .macroNameLabel::after {
@@ -254,8 +260,10 @@ body {
     width: 92%;
     height: 32px;
     border-radius: 10px;
-    color: #041014;
+    color: #1d334e;
     font-size: 14px;
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
     overflow-y: scroll;
 }
 
@@ -269,6 +277,7 @@ body {
     color: ghostwhite;
     border-color: mediumaquamarine;
     font-size: 14px;
+    font-family: 'Archivo', sans-serif
 }
 
 .listContainerMacro {
@@ -299,9 +308,11 @@ body {
     overflow-y: scroll;
     margin-top: 9px;
     font-size: 14px;
+    font-weight: 600;
     border-radius: 8px;
     border: outset;
     box-shadow: inset -1px 2px 10px 0 rgb(173 234 255);
+    font-family: 'Archivo', sans-serif
 }
 
 
@@ -388,6 +399,7 @@ body {
     height: 30px;
     text-align: center;
     line-height: 30px;
+    font-family: 'Archivo', sans-serif;
 }
 
 .addedInfoDiv_ul {
@@ -400,6 +412,7 @@ body {
     font-weight: bold;
     padding-left: 11px;
     margin: 5px 0 0 0px;
+    font-family: 'Archivo', sans-serif
 }
 
 /* MACRO CSS ends here */
@@ -413,6 +426,9 @@ body {
     left: 887px;
     top: -25px;
     height: 0;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
 }
 
 .view_Create_Macro_body {
@@ -424,11 +440,10 @@ body {
     background-color: #f3fbfe;
     box-shadow: inset -1px 2px 10px 0 rgba(0, 0, 0, 0.404);
     border-radius: 6px;
-    /* user-select: none; */
     overflow: auto;
     position: relative;
     border: outset;
-    /* resize: both; */
+    font-family: 'Archivo', sans-serif
 }
 
 .view_Create_Macro_body_div {
@@ -456,6 +471,7 @@ body {
     height: 30px;
     text-align: center;
     line-height: 30px;
+    font-family: 'Archivo', sans-serif
 }
 
 /* .addedInfoDiv_ul {
@@ -468,6 +484,7 @@ body {
     font-weight: bold;
     padding-left: 11px;
     margin: 5px 0 0 0px;
+    font-family: 'Archivo', sans-serif
 }
 
 .run-button {

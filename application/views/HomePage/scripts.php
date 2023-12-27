@@ -2211,8 +2211,8 @@ function macAddForm() {
 function viewAddedAndDeletedMacro() {
     let showAddedTempMacro = [];
     addedTempMacro.listOfMacro.forEach(macro => {
-        let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
-        <div>
+        let addedInfoDiv = `<div style="color: #1d334e;" class="macroListCSS" id="toggleDiv">
+        <div style="color: #1d334e;">
         <span onclick="MacroPlusToggle('${macro.ulId}adddelete')">
         <div><i class="fa-solid fa-plus fa-xs"></i> ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>&nbsp;&nbsp;</div>
 		<span onclick="editMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i></span>
@@ -2280,8 +2280,8 @@ function showSavedMacroList() {
     savedMacro.forEach(macro => {
         if (macro) {
             showInfoDiv = `<div class="createMacro">
-                <div><i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #010a14;"></i>&nbsp;
-                <span style="color:black"> ${macro.macroGroupName}</span>
+                <div><i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;""></i>&nbsp;
+                <span style="font-family: 'Archivo', sans-serif;font-size: 14px;font-weight: 600;color: #1d334e;"> ${macro.macroGroupName}</span>
                 </div>
 
                 <div class="saveMacroView">
@@ -2334,7 +2334,7 @@ function viewMacro(macroGroupName) {
     let viewMacroDetails = document.getElementById("viewMacroDetails");
     let viewTempMacro = [];
     macro.listOfMacro.forEach(macro => {
-        let addedInfoDiv = `<div class="macroListCSS" id="toggleDiv">
+        let addedInfoDiv = `<div style="color: #1d334e;" class="macroListCSS" id="toggleDiv">
         <span onclick="MacroPlusToggle('${macro.ulId}view')">+ ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>
         <ul id="${macro.ulId}view" class="listContainerMacro">
             <li>${macro.mac_model_Names}</li>
