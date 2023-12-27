@@ -53,4 +53,19 @@ function printDiv(imageFileName) {
         '" style="page-break-before: always;"/>');
     win.document.close();
 }
+
+
+_dist_geojson = "<?php echo base_url(); ?>DATA/INDIA_COUNTRY.json";
+var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
+    color: 'black',
+    weight: 1,
+    style: {
+        color: '#3f51b5',
+        opacity: 0.5,
+        fillOpacity: 0.5,
+        weight: 1
+    }
+});
+
+throwing cors error, how to rectify it
 </script>

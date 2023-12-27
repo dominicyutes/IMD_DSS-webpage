@@ -851,8 +851,13 @@ function printDiv(imageFileName) {
         "<span style='float: right;'><label>" + formattedDateTime + "</label></span></div>"
     );
 
-    win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
-        '" style="page-break-before: always;"/>');
+    // win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
+    //     '" style="page-break-before: always;"/>');
+
+    var base_url = "<?php echo base_url(); ?>";
+    win.document.write('<img src="' + base_url + 'D:/pdf/' + imageFileName + '" style="page-break-before: always;"/>');
+
+
     win.document.close();
 }
 </script>
