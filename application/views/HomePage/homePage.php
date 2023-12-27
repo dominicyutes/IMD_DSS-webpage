@@ -229,7 +229,7 @@
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="mesolscale">Mesolscale Forecast</p>
+                            <p class="btn-val" id="mesolscale">Mesoscale Forecast</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
@@ -798,7 +798,8 @@ L.simpleMapScreenshoter().addTo(map);
 //     documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
 //     documentTitleClass: 'print-title'
 // }).addTo(map);
-// </script>
+// 
+</script>
 
 <script>
 $(".printbutton").click(function() {
