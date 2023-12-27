@@ -313,7 +313,9 @@
 
             <div style="display:flex;">
                 <button class="createMacroCls" onclick="createMacroForm()">+</button>
-                <span class="hoverPlus">Create Macro</span>
+                <span
+                    style="font-family: 'Archivo', sans-serif;font-size: 18px;font-weight: bold;margin-left: 6%;margin-top: 1%;">Create
+                    Macro</span>
             </div>
 
             <div id="showCreatedMacro"></div>
@@ -597,7 +599,7 @@
                 <div class="row" id="RADAR_Row" style="display: none;">
                     <h4 id="RADARPRODUCTS" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
                     </h4>
-					<div id="RADARImage" style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
+                    <div id="RADARImage" style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
                     </div>
 
                     <h5 id="RADARPRODUCTS-Title" style="color: #000000;"></h5>
@@ -618,7 +620,8 @@
                 <div class="row" id="LIGHTINING_Row" style="display: none;">
                     <h4 id="LIGHTINING" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
                     </h4>
-					<div id="LIGHTININGImage" style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
+                    <div id="LIGHTININGImage"
+                        style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
                     </div>
 
                     <h5 id="LIGHTINING-Title" style="color: #000000;"></h5>
@@ -790,11 +793,11 @@ L.simpleMapScreenshoter().addTo(map);
 // Initialize the Leaflet.Screenshot control
 // L.control.screenshot().addTo(map);
 // 
-// L.control.browserPrint({
-//     position: 'topleft',
-//     documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
-//     documentTitleClass: 'print-title'
-// }).addTo(map);
+let printMap = L.control.browserPrint({
+    position: 'topleft',
+    documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
+    documentTitleClass: 'print-title'
+}).addTo(map);
 </script>
 
 <script>
@@ -822,21 +825,34 @@ $(".printbutton").click(function() {
 
 });
 
-function printDiv(image, divName) {
-    var date = new Date();
-    var originalContents = document.body.innerHTML;
+function printDiv(imageFileName) {
+    function getCurrentDateTime() {
+        const now = new Date();
+
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+
+        const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')}${ampm}`;
+        const formattedDate =
+            `${now.getDate()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getFullYear()}`;
+
+        const formattedDateTime = `${formattedTime}\n${formattedDate}`;
+
+        return formattedDateTime;
+    }
+    const formattedDateTime = getCurrentDateTime();
+
     var win = window.open('');
-    // var htmlToPrint = "" +
-    //     '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><style type="text/css">' +
-    //     '</style>';
-    win.document.write("<center><u><h3>DSS WEBPAGE</h3></u><br>");
-    win.document.write("<label>Date and Time:" + date + "</label></center>");
 
-    win.document.write('<img src="<?php echo base_url()?>DATA/cyclone/' + image +
+    win.document.write(
+        "<div style='text-align: center;'><span style='float: left;'><img src='https://mausam.imd.gov.in/responsive/img/logo/imd_logo_a.png' alt='IMD' width='50px' height='100px'></span>" +
+        "<span style='display: inline-block;'><u><h1>WEATHER DECISION SUPPORT SYSTEM</h1></u></span>" +
+        "<span style='float: right;'><label>" + formattedDateTime + "</label></span></div>"
+    );
+
+    win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
         '" style="page-break-before: always;"/>');
-
-    var divToPrint = document.getElementById(divName);
-    // htmlToPrint += divToPrint.outerHTML;
-    // win.document.write(htmlToPrint);
+    win.document.close();
 }
 </script>

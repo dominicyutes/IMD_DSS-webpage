@@ -121,7 +121,7 @@ body {
     font-family: 'Archivo', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: black;
+    color: #2c5383;
 }
 
 .firstDDLabel,
@@ -130,7 +130,7 @@ body {
 .dateDDLabel,
 .TimeLabel {
     margin-left: 0;
-    color: black;
+    color: #2c5383;
     font-size: 1.1em;
 }
 
@@ -139,7 +139,7 @@ body {
     width: 100%;
     height: 32px;
     border-radius: 10px;
-    color: #02275f;
+    color: #2c5383;
     overflow-y: auto;
     margin-bottom: 10px;
 }
@@ -205,8 +205,13 @@ body {
     margin-top: -2%;
 }
 
-.hoverPlus {
-    display: none;
+.createMacro {
+    padding: 10px 0 1px 6px;
+    border-radius: 10px;
+    width: 100%;
+    height: 0%;
+    background-color: #aeddfe;
+    margin-bottom: 3%;
 }
 
 .createMacroCls {
@@ -466,6 +471,10 @@ body {
 }
 
 .run-button {
+    border-radius: 6px;
+}
+
+.play-button {
     border-radius: 6px;
 }
 
