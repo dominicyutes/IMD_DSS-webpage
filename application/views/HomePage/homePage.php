@@ -409,7 +409,7 @@
                 </div>
             </div>
 
-            <div style="display: flex; flex-wrap: wrap;">
+            <div>
                 <!-- Exposure -->
                 <div id="ExposureRow" style="display: none; ">
                     <h4 id="EXPOSURE" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
