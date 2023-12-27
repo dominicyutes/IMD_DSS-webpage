@@ -597,9 +597,11 @@
                 <div class="row" id="RADAR_Row" style="display: none;">
                     <h4 id="RADARPRODUCTS" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
                     </h4>
+					<div id="RADARImage" style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
+                    </div>
 
                     <h5 id="RADARPRODUCTS-Title" style="color: #000000;"></h5>
-                    <p id="RADARPRODUCTS-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="RADARPRODUCTS-lists" style="flex-wrap: wrap;"></p>
                 </div>
 
                 <!-- SATELLITE -->
@@ -616,9 +618,11 @@
                 <div class="row" id="LIGHTINING_Row" style="display: none;">
                     <h4 id="LIGHTINING" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
                     </h4>
+					<div id="LIGHTININGImage" style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
+                    </div>
 
                     <h5 id="LIGHTINING-Title" style="color: #000000;"></h5>
-                    <p id="LIGHTINING-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    <p id="LIGHTINING-lists" style="flex-wrap: wrap;"></p>
 
                 </div>
                 <!-- SOUNDING -->
