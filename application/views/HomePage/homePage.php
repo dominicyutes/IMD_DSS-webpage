@@ -313,7 +313,9 @@
 
             <div style="display:flex;">
                 <button class="createMacroCls" onclick="createMacroForm()">+</button>
-                <span style="margin-left: 6%;margin-top: 1%;">Create Macro</span>
+                <span
+                    style="font-family: 'Archivo', sans-serif;font-size: 18px;font-weight: bold;margin-left: 6%;margin-top: 1%;">Create
+                    Macro</span>
             </div>
 
             <div id="showCreatedMacro"></div>
@@ -597,7 +599,7 @@
                 <div class="row" id="RADAR_Row" style="display: none;">
                     <h4 id="RADARPRODUCTS" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
                     </h4>
-					<div id="RADARImage" style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
+                    <div id="RADARImage" style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
                     </div>
 
                     <h5 id="RADARPRODUCTS-Title" style="color: #000000;"></h5>
@@ -618,7 +620,8 @@
                 <div class="row" id="LIGHTINING_Row" style="display: none;">
                     <h4 id="LIGHTINING" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
                     </h4>
-					<div id="LIGHTININGImage" style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
+                    <div id="LIGHTININGImage"
+                        style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
                     </div>
 
                     <h5 id="LIGHTINING-Title" style="color: #000000;"></h5>
