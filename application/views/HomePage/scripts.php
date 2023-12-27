@@ -1,8 +1,17 @@
 <script>
 let modelNamesArr = ["", 'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship And Buoy'];
 
+// "Exposure","Mesolscale Forecast", "Medium Range"
+let modelNamesArrMAC = ["", "Exposure",
+    'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship And Buoy', "Mesolscale Forecast",
+    "Medium Range"
+];
+
 //Parameters
 let Parameters = [{
+        name: 'Exposure',
+        category: 'Exposure'
+    }, {
         name: 'Metar 00UTC',
         category: 'Metar'
     },
@@ -170,108 +179,169 @@ let Parameters = [{
         name: 'Ship And Buoy Observation',
         category: 'Ship And Buoy'
     },
-
-];
-
-//metarParametersList
-let Metar_00UTC = ['Temperature_00', 'Dew Point temperature_00', 'Visibility_00',
-    'Wind Speed And Direction_00'
-];
-
-let Metar_01UTC = ['Temperature_01', 'Dew Point temperature_02', 'Visibility_02',
-    'Wind Speed And Direction_02'
-];
-
-let Metar_02UTC = ['Temperature_02', 'Dew Point temperature_02', 'Visibility_02',
-    'Wind Speed And Direction_02'
-];
-
-let Metar_03UTC = ['Temperature_03', 'Dew Point temperature_03', 'Visibility_03',
-    'Wind Speed And Direction_03'
-];
-
-let Metar_04UTC = ['Temperature_04', 'Dew Point temperature_04', 'Visibility_04',
-    'Wind Speed And Direction_04'
-];
-
-let Metar_05UTC = ['Temperature_05', 'Dew Point temperature_05', 'Visibility_05',
-    'Wind Speed And Direction_05'
-];
-
-let Metar_06UTC = ['Temperature_06', 'Dew Point temperature_06', 'Visibility_06',
-    'Wind Speed And Direction_06'
-];
-
-let Metar_07UTC = ['Temperature_07', 'Dew Point temperature_07', 'Visibility_07',
-    'Wind Speed And Direction_07'
-];
-
-let Metar_08UTC = ['Temperature_08', 'Dew Point temperature_08', 'Visibility_08',
-    'Wind Speed And Direction_08'
-];
-
-let Metar_09UTC = ['Temperature_09', 'Dew Point temperature_09', 'Visibility_09',
-    'Wind Speed And Direction_09'
-];
-
-let Metar_10UTC = ['Temperature_10', 'Dew Point temperature_10', 'Visibility_10',
-    'Wind Speed And Direction_10'
-];
-
-let Metar_11UTC = ['Temperature_11', 'Dew Point temperature_11', 'Visibility_11',
-    'Wind Speed And Direction_11'
-];
-
-let Metar_12UTC = ['Temperature_12', 'Dew Point temperature_12', 'Visibility_12',
-    'Wind Speed And Direction_12'
-];
-
-let Metar_13UTC = ['Temperature_13', 'Dew Point temperature_13', 'Visibility_13',
-    'Wind Speed And Direction_13'
-];
-
-let Metar_14UTC = ['Temperature_14', 'Dew Point temperature_14', 'Visibility_14',
-    'Wind Speed And Direction_14'
-];
-
-let Metar_15UTC = ['Temperature_15', 'Dew Point temperature_15', 'Visibility_15',
-    'Wind Speed And Direction_15'
-];
-
-let Metar_16UTC = ['Temperature_16', 'Dew Point temperature_16', 'Visibility_16',
-    'Wind Speed And Direction_16'
-];
-
-let Metar_17UTC = ['Temperature_17', 'Dew Point temperature_17', 'Visibility_17',
-    'Wind Speed And Direction_17'
-];
-
-let Metar_18UTC = ['Temperature_18', 'Dew Point temperature_18', 'Visibility_18',
-    'Wind Speed And Direction_18'
-];
-
-let Metar_19UTC = ['Temperature_19', 'Dew Point temperature_19', 'Visibility_19',
-    'Wind Speed And Direction_19'
-];
-
-let Metar_20UTC = ['Temperature_20', 'Dew Point temperature_20', 'Visibility_20',
-    'Wind Speed And Direction_20'
-];
-
-let Metar_21UTC = ['Temperature_21', 'Dew Point temperature_21', 'Visibility_21',
-    'Wind Speed And Direction_21'
-];
-
-let Metar_22UTC = ['Temperature_22', 'Dew Point temperature_22', 'Visibility_22',
-    'Wind Speed And Direction_22'
-];
-
-let Metar_23UTC = ['Temperature_23', 'Dew Point temperature_23', 'Visibility_23',
-    'Wind Speed And Direction_23'
+    {
+        name: 'WRF Reflectivity',
+        category: 'Mesolscale Forecast'
+    },
+    {
+        name: 'WRF lightning Product',
+        category: 'Mesolscale Forecast'
+    },
+    {
+        name: 'WRF Accumlated Rainfall',
+        category: 'Mesolscale Forecast'
+    },
+    {
+        name: 'lightning Potential index',
+        category: 'Mesolscale Forecast'
+    },
+    {
+        name: 'NCUMR lightning Product',
+        category: 'Mesolscale Forecast'
+    },
+    {
+        name: 'NCUMR Wind Gust',
+        category: 'Mesolscale Forecast'
+    },
+    {
+        name: 'NCUMR Rainfall',
+        category: 'Mesolscale Forecast'
+    },
+    {
+        name: 'HRRR_SP Hourly DBZ',
+        category: 'Mesolscale Forecast'
+    },
+    {
+        name: 'HRRR_NE Hourly DBZ',
+        category: 'Mesolscale Forecast'
+    },
+    {
+        name: 'HRRR_NW Hourly DBZ',
+        category: 'Mesolscale Forecast'
+    },
+    {
+        name: 'EWRF MaxZ',
+        category: 'Mesolscale Forecast'
+    },
+    {
+        name: 'EWRF Lightning',
+        category: 'Mesolscale Forecast'
+    },
+    {
+        name: 'Rainfall Intensity Day1',
+        category: 'Medium Range'
+    },
+    {
+        name: 'Rainfall Intensity Day2',
+        category: 'Medium Range'
+    },
+    {
+        name: 'Rainfall Intensity Day3',
+        category: 'Medium Range'
+    },
+    {
+        name: 'Rainfall Intensity Day4',
+        category: 'Medium Range'
+    },
+    {
+        name: 'Rainfall Intensity Day5',
+        category: 'Medium Range'
+    },
+    {
+        name: 'MSLP Day1',
+        category: 'Medium Range'
+    },
+    {
+        name: 'MSLP Day2',
+        category: 'Medium Range'
+    },
+    {
+        name: 'MSLP Day3',
+        category: 'Medium Range'
+    },
+    {
+        name: 'MSLP Day4',
+        category: 'Medium Range'
+    },
+    {
+        name: 'MSLP Day5',
+        category: 'Medium Range'
+    },
+    {
+        name: '10m WIND Day 1',
+        category: 'Medium Range'
+    },
+    {
+        name: '10m WIND Day 2',
+        category: 'Medium Range'
+    },
+    {
+        name: '10m WIND Day 3',
+        category: 'Medium Range'
+    },
+    {
+        name: '10m WIND Day 4',
+        category: 'Medium Range'
+    },
+    {
+        name: '10m WIND Day 5',
+        category: 'Medium Range'
+    }
 ];
 
 //metarParametersList
 let subParametersList = [{
+        name: 'District Boundaries',
+        category: 'Exposure'
+    },
+    {
+        name: 'Airport',
+        category: 'Exposure'
+    },
+    {
+        name: 'Oil Refineries',
+        category: 'Exposure'
+    },
+    {
+        name: 'Power Station',
+        category: 'Exposure'
+    },
+    {
+        name: 'Power Plant',
+        category: 'Exposure'
+    }, {
+        name: 'DEM',
+        category: 'Exposure'
+    },
+    {
+        name: 'Hospital',
+        category: 'Exposure'
+    },
+    {
+        name: 'Industrail',
+        category: 'Exposure'
+    },
+    {
+        name: 'sports',
+        category: 'Exposure'
+    },
+    {
+        name: 'Road Network',
+        category: 'Exposure'
+    },
+    {
+        name: 'Socio Economic Zone',
+        category: 'Exposure'
+    },
+    {
+        name: 'Railway Network',
+        category: 'Exposure'
+    },
+    {
+        name: 'LULC',
+        category: 'Exposure'
+    },
+    {
         name: 'Temperature_00',
         category: 'Metar 00UTC'
     },
@@ -1233,10 +1303,530 @@ let subParametersList = [{
         name: '23UTC',
         category: 'Ship And Buoy Observation'
     },
-
-
-
+    {
+        name: 'Next 03 Hrs',
+        category: 'WRF Reflectivity'
+    },
+    {
+        name: 'Next 03-06 Hrs',
+        category: 'WRF Reflectivity'
+    },
+    {
+        name: 'Next 03 Hrs',
+        category: 'WRF lightning Product'
+    },
+    {
+        name: 'Next 03-06 Hrs',
+        category: 'WRF lightning Product'
+    },
+    {
+        name: 'Next 03 Hrs',
+        category: 'WRF Accumlated Rainfall'
+    },
+    {
+        name: 'Next 03-06 Hrs',
+        category: 'WRF Accumlated Rainfall'
+    },
+    {
+        name: 'Next 01 Hrs',
+        category: 'lightning Potential index'
+    },
+    {
+        name: 'Next 01-02 Hrs',
+        category: 'lightning Potential index'
+    },
+    {
+        name: 'Next 02-03 Hrs',
+        category: 'lightning Potential index'
+    },
+    {
+        name: 'Next 03 Hrs',
+        category: 'NCUMR lightning Product'
+    },
+    {
+        name: 'Next 03-06 Hrs',
+        category: 'NCUMR lightning Product'
+    },
+    {
+        name: 'Next 03 Hrs',
+        category: 'NCUMR Wind Gust'
+    },
+    {
+        name: 'Next 03-06 Hrs',
+        category: 'NCUMR Wind Gust'
+    },
+    {
+        name: 'Next 03 Hrs',
+        category: 'NCUMR Rainfall'
+    },
+    {
+        name: 'Next 03-06 Hrs',
+        category: 'NCUMR Rainfall'
+    },
+    {
+        name: 'Next 01 Hrs',
+        category: 'HRRR_SP Hourly DBZ'
+    },
+    {
+        name: 'Next 01-02 Hrs',
+        category: 'HRRR_SP Hourly DBZ'
+    },
+    {
+        name: 'Next 02-03 Hrs',
+        category: 'HRRR_SP Hourly DBZ'
+    },
+    {
+        name: 'Next 01 Hrs',
+        category: 'HRRR_NE Hourly DBZ'
+    },
+    {
+        name: 'Next 01-02 Hrs',
+        category: 'HRRR_NE Hourly DBZ'
+    },
+    {
+        name: 'Next 02-03 Hrs',
+        category: 'HRRR_NE Hourly DBZ'
+    },
+    {
+        name: 'Next 01 Hrs',
+        category: 'HRRR_NW Hourly DBZ'
+    },
+    {
+        name: 'Next 01-02 Hrs',
+        category: 'HRRR_NW Hourly DBZ'
+    },
+    {
+        name: 'Next 02-03 Hrs',
+        category: 'HRRR_NW Hourly DBZ'
+    },
+    {
+        name: 'Next 01 Hrs',
+        category: 'EWRF MaxZ'
+    },
+    {
+        name: 'Next 01-02 Hrs',
+        category: 'EWRF MaxZ'
+    },
+    {
+        name: 'Next 02-03 Hrs',
+        category: 'EWRF MaxZ'
+    },
+    {
+        name: 'Next 01 Hrs',
+        category: 'EWRF Lightning'
+    },
+    {
+        name: 'Next 01-02 Hrs',
+        category: 'EWRF Lightning'
+    },
+    {
+        name: 'Next 02-03 Hrs',
+        category: 'EWRF Lightning'
+    },
+    {
+        name: 'GFS DAY1',
+        category: 'Rainfall Intensity Day1'
+    },
+    {
+        name: 'NCUM DAY1',
+        category: 'Rainfall Intensity Day1'
+    },
+    {
+        name: 'NEPS DAY1',
+        category: 'Rainfall Intensity Day1'
+    },
+    {
+        name: 'WRF DAY1',
+        category: 'Rainfall Intensity Day1'
+    },
+    {
+        name: 'GEFS DAY1',
+        category: 'Rainfall Intensity Day1'
+    },
+    {
+        name: 'ECMWF DAY1',
+        category: 'Rainfall Intensity Day1'
+    },
+    {
+        name: 'GFS DAY2',
+        category: 'Rainfall Intensity Day2'
+    },
+    {
+        name: 'NCUM DAY2',
+        category: 'Rainfall Intensity Day2'
+    },
+    {
+        name: 'NEPS DAY2',
+        category: 'Rainfall Intensity Day2'
+    },
+    {
+        name: 'WRF DAY2',
+        category: 'Rainfall Intensity Day2'
+    },
+    {
+        name: 'GEFS DAY2',
+        category: 'Rainfall Intensity Day2'
+    },
+    {
+        name: 'ECMWF DAY2',
+        category: 'Rainfall Intensity Day2'
+    },
+    {
+        name: 'GFS DAY3',
+        category: 'Rainfall Intensity Day3'
+    },
+    {
+        name: 'NCUM DAY3',
+        category: 'Rainfall Intensity Day3'
+    },
+    {
+        name: 'NEPS DAY3',
+        category: 'Rainfall Intensity Day3'
+    },
+    {
+        name: 'WRF DAY3',
+        category: 'Rainfall Intensity Day3'
+    },
+    {
+        name: 'GEFS DAY3',
+        category: 'Rainfall Intensity Day3'
+    },
+    {
+        name: 'ECMWF DAY3',
+        category: 'Rainfall Intensity Day3'
+    },
+    {
+        name: 'GFS DAY4',
+        category: 'Rainfall Intensity Day4'
+    },
+    {
+        name: 'NCUM DAY4',
+        category: 'Rainfall Intensity Day4'
+    },
+    {
+        name: 'NEPS DAY4',
+        category: 'Rainfall Intensity Day4'
+    },
+    {
+        name: 'GEFS DAY4',
+        category: 'Rainfall Intensity Day4'
+    },
+    {
+        name: 'ECMWF DAY4',
+        category: 'Rainfall Intensity Day4'
+    },
+    {
+        name: 'GFS DAY5',
+        category: 'Rainfall Intensity Day5'
+    },
+    {
+        name: 'NCUM DAY5',
+        category: 'Rainfall Intensity Day5'
+    },
+    {
+        name: 'NEPS DAY5',
+        category: 'Rainfall Intensity Day5'
+    },
+    {
+        name: 'GEFS DAY5',
+        category: 'Rainfall Intensity Day5'
+    },
+    {
+        name: 'ECMWF DAY5',
+        category: 'Rainfall Intensity Day5'
+    },
+    {
+        name: 'GFS DAY1',
+        category: 'MSLP Day1'
+    },
+    {
+        name: 'NCUM DAY1',
+        category: 'MSLP Day1'
+    },
+    {
+        name: 'NEPS DAY1',
+        category: 'MSLP Day1'
+    },
+    {
+        name: 'WRF DAY1',
+        category: 'MSLP Day1'
+    },
+    {
+        name: 'GEFS DAY1',
+        category: 'MSLP Day1'
+    },
+    {
+        name: 'GFS DAY2',
+        category: 'MSLP DAY2'
+    },
+    {
+        name: 'NCUM DAY2',
+        category: 'MSLP DAY2'
+    },
+    {
+        name: 'NEPS DAY2',
+        category: 'MSLP DAY2'
+    },
+    {
+        name: 'WRF DAY2',
+        category: 'MSLP DAY2'
+    },
+    {
+        name: 'GEFS DAY2',
+        category: 'MSLP DAY2'
+    },
+    {
+        name: 'GFS DAY3',
+        category: 'MSLP Day3'
+    },
+    {
+        name: 'NCUM DAY3',
+        category: 'MSLP Day3'
+    },
+    {
+        name: 'NEPS DAY3',
+        category: 'MSLP Day3'
+    },
+    {
+        name: 'WRF DAY3',
+        category: 'MSLP Day3'
+    },
+    {
+        name: 'GEFS DAY3',
+        category: 'MSLP Day3'
+    },
+    {
+        name: 'GFS DAY4',
+        category: 'MSLP Day4'
+    },
+    {
+        name: 'NCUM DAY4',
+        category: 'MSLP Day4'
+    },
+    {
+        name: 'NEPS DAY4',
+        category: 'MSLP Day4'
+    },
+    {
+        name: 'GEFS DAY4',
+        category: 'MSLP Day4'
+    },
+    {
+        name: 'GFS DAY5',
+        category: 'MSLP Day5'
+    },
+    {
+        name: 'NCUM DAY5',
+        category: 'MSLP Day5'
+    },
+    {
+        name: 'NEPS DAY5',
+        category: 'MSLP Day5'
+    },
+    {
+        name: 'GEFS DAY5',
+        category: 'MSLP Day5'
+    },
+    {
+        name: 'GFS DAY1',
+        category: '10m WIND Day 1'
+    },
+    {
+        name: 'NCUM DAY1',
+        category: '10m WIND Day 1'
+    },
+    {
+        name: 'NEPS DAY1',
+        category: '10m WIND Day 1'
+    },
+    {
+        name: 'WRF DAY1',
+        category: '10m WIND Day 1'
+    },
+    {
+        name: 'GEFS DAY1',
+        category: '10m WIND Day 1'
+    },
+    {
+        name: 'GFS DAY2',
+        category: '10m WIND Day 2'
+    },
+    {
+        name: 'NCUM DAY2',
+        category: '10m WIND Day 2'
+    },
+    {
+        name: 'NEPS DAY2',
+        category: '10m WIND Day 2'
+    },
+    {
+        name: 'WRF DAY2',
+        category: '10m WIND Day 2'
+    },
+    {
+        name: 'GEFS DAY2',
+        category: '10m WIND Day 2'
+    },
+    {
+        name: 'GFS DAY3',
+        category: '10m WIND Day 3'
+    },
+    {
+        name: 'NCUM DAY3',
+        category: '10m WIND Day 3'
+    },
+    {
+        name: 'NEPS DAY3',
+        category: '10m WIND Day 3'
+    },
+    {
+        name: 'WRF DAY3',
+        category: '10m WIND Day 3'
+    },
+    {
+        name: 'GEFS DAY3',
+        category: '10m WIND Day 3'
+    },
+    {
+        name: 'GFS DAY4',
+        category: '10m WIND Day 4'
+    },
+    {
+        name: 'NCUM DAY4',
+        category: '10m WIND Day 4'
+    },
+    {
+        name: 'NEPS DAY4',
+        category: '10m WIND Day 4'
+    },
+    {
+        name: 'WRF DAY4',
+        category: '10m WIND Day 4'
+    },
+    {
+        name: 'GEFS DAY4',
+        category: '10m WIND Day 4'
+    },
+    {
+        name: 'GFS DAY5',
+        category: '10m WIND Day 5'
+    },
+    {
+        name: 'NCUM DAY5',
+        category: '10m WIND Day 5'
+    },
+    {
+        name: 'NEPS DAY5',
+        category: '10m WIND Day 5'
+    },
+    {
+        name: 'WRF DAY5',
+        category: '10m WIND Day 5'
+    },
+    {
+        name: 'GEFS DAY5',
+        category: '10m WIND Day 5'
+    }
 ];
+
+//metarParametersList
+let Metar_00UTC = ['Temperature_00', 'Dew Point temperature_00', 'Visibility_00',
+    'Wind Speed And Direction_00'
+];
+
+let Metar_01UTC = ['Temperature_01', 'Dew Point temperature_02', 'Visibility_02',
+    'Wind Speed And Direction_02'
+];
+
+let Metar_02UTC = ['Temperature_02', 'Dew Point temperature_02', 'Visibility_02',
+    'Wind Speed And Direction_02'
+];
+
+let Metar_03UTC = ['Temperature_03', 'Dew Point temperature_03', 'Visibility_03',
+    'Wind Speed And Direction_03'
+];
+
+let Metar_04UTC = ['Temperature_04', 'Dew Point temperature_04', 'Visibility_04',
+    'Wind Speed And Direction_04'
+];
+
+let Metar_05UTC = ['Temperature_05', 'Dew Point temperature_05', 'Visibility_05',
+    'Wind Speed And Direction_05'
+];
+
+let Metar_06UTC = ['Temperature_06', 'Dew Point temperature_06', 'Visibility_06',
+    'Wind Speed And Direction_06'
+];
+
+let Metar_07UTC = ['Temperature_07', 'Dew Point temperature_07', 'Visibility_07',
+    'Wind Speed And Direction_07'
+];
+
+let Metar_08UTC = ['Temperature_08', 'Dew Point temperature_08', 'Visibility_08',
+    'Wind Speed And Direction_08'
+];
+
+let Metar_09UTC = ['Temperature_09', 'Dew Point temperature_09', 'Visibility_09',
+    'Wind Speed And Direction_09'
+];
+
+let Metar_10UTC = ['Temperature_10', 'Dew Point temperature_10', 'Visibility_10',
+    'Wind Speed And Direction_10'
+];
+
+let Metar_11UTC = ['Temperature_11', 'Dew Point temperature_11', 'Visibility_11',
+    'Wind Speed And Direction_11'
+];
+
+let Metar_12UTC = ['Temperature_12', 'Dew Point temperature_12', 'Visibility_12',
+    'Wind Speed And Direction_12'
+];
+
+let Metar_13UTC = ['Temperature_13', 'Dew Point temperature_13', 'Visibility_13',
+    'Wind Speed And Direction_13'
+];
+
+let Metar_14UTC = ['Temperature_14', 'Dew Point temperature_14', 'Visibility_14',
+    'Wind Speed And Direction_14'
+];
+
+let Metar_15UTC = ['Temperature_15', 'Dew Point temperature_15', 'Visibility_15',
+    'Wind Speed And Direction_15'
+];
+
+let Metar_16UTC = ['Temperature_16', 'Dew Point temperature_16', 'Visibility_16',
+    'Wind Speed And Direction_16'
+];
+
+let Metar_17UTC = ['Temperature_17', 'Dew Point temperature_17', 'Visibility_17',
+    'Wind Speed And Direction_17'
+];
+
+let Metar_18UTC = ['Temperature_18', 'Dew Point temperature_18', 'Visibility_18',
+    'Wind Speed And Direction_18'
+];
+
+let Metar_19UTC = ['Temperature_19', 'Dew Point temperature_19', 'Visibility_19',
+    'Wind Speed And Direction_19'
+];
+
+let Metar_20UTC = ['Temperature_20', 'Dew Point temperature_20', 'Visibility_20',
+    'Wind Speed And Direction_20'
+];
+
+let Metar_21UTC = ['Temperature_21', 'Dew Point temperature_21', 'Visibility_21',
+    'Wind Speed And Direction_21'
+];
+
+let Metar_22UTC = ['Temperature_22', 'Dew Point temperature_22', 'Visibility_22',
+    'Wind Speed And Direction_22'
+];
+
+let Metar_23UTC = ['Temperature_23', 'Dew Point temperature_23', 'Visibility_23',
+    'Wind Speed And Direction_23'
+];
+
+
 
 //SynopParametersList
 let Synop_00UTC = ['Temperature_00', 'Mean Sealevel Pressure_00', 'Cloud Cover_00',
@@ -1513,8 +2103,8 @@ view_Create_Macro_body_close.onclick = () => {
 //macro ModelNames-Dropdown    MA-ModelsArray
 let getMacModelNames = document.getElementById("mac_modelNames");
 let pushMacModelNames = '';
-for (let MA = 0; MA < modelNamesArr.length; MA++) {
-    pushMacModelNames += `<option class="test">${modelNamesArr[MA]}</option><br/><br/>`;
+for (let MA = 0; MA < modelNamesArrMAC.length; MA++) {
+    pushMacModelNames += `<option class="test">${modelNamesArrMAC[MA]}</option><br/><br/>`;
 }
 getMacModelNames.innerHTML = pushMacModelNames;
 
@@ -1689,7 +2279,7 @@ function showSavedMacroList() {
     let showSavedMacro = [];
     savedMacro.forEach(macro => {
         if (macro) {
-            showInfoDiv = `<div>
+            showInfoDiv = `<div class="createMacro">
                 <div><i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #010a14;"></i>&nbsp;
                 <span style="color:black"> ${macro.macroGroupName}</span>
                 </div>
@@ -1714,6 +2304,12 @@ function showSavedMacroList() {
         }
     })
     showAllCreatedMacro.innerHTML = showSavedMacro.join('');
+
+    if (showSavedMacro.length > 6) {
+        showAllCreatedMacro.classList.add('overflow-y-scroll');
+    } else {
+        showAllCreatedMacro.classList.remove('overflow-y-scroll');
+    }
 }
 
 function playMacro(macroGroupName) {
@@ -8363,6 +8959,492 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         //mesolscale ends here
 
+        //medium_range
+        //bgClickedRainfallIntensityDay1Lists[]
+        if (_this.context._layer.group.name == "Rainfall Intensity Day1") {
+            if (layer_name == 'GFS DAY1') {
+                bgClickedRainfallIntensityDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay1Lists, "....bgClickedRainfallIntensityDay1Lists");
+            }
+            if (layer_name == 'NCUM DAY1') {
+                bgClickedRainfallIntensityDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay1Lists, "....bgClickedRainfallIntensityDay1Lists");
+            }
+            if (layer_name == 'NEPS DAY1') {
+                bgClickedRainfallIntensityDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay1Lists, "....bgClickedRainfallIntensityDay1Lists");
+            }
+            if (layer_name == 'WRF DAY1') {
+                bgClickedRainfallIntensityDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay1Lists, "....bgClickedRainfallIntensityDay1Lists");
+            }
+            if (layer_name == 'GEFS DAY1') {
+                bgClickedRainfallIntensityDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay1Lists, "....bgClickedRainfallIntensityDay1Lists");
+            }
+            if (layer_name == 'ECMWF DAY1') {
+                bgClickedRainfallIntensityDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay1Lists, "....bgClickedRainfallIntensityDay1Lists");
+            }
+        }
+
+        //bgClickedRainfallIntensityDay2Lists[]
+        if (_this.context._layer.group.name == "Rainfall Intensity Day2") {
+            if (layer_name == 'GFS DAY2') {
+                bgClickedRainfallIntensityDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay2Lists, "....bgClickedRainfallIntensityDay2Lists");
+            }
+            if (layer_name == 'NCUM DAY2') {
+                bgClickedRainfallIntensityDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay2Lists, "....bgClickedRainfallIntensityDay2Lists");
+            }
+            if (layer_name == 'NEPS DAY2') {
+                bgClickedRainfallIntensityDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay2Lists, "....bgClickedRainfallIntensityDay2Lists");
+            }
+            if (layer_name == 'WRF DAY2') {
+                bgClickedRainfallIntensityDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay2Lists, "....bgClickedRainfallIntensityDay2Lists");
+            }
+            if (layer_name == 'GEFS DAY2') {
+                bgClickedRainfallIntensityDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay2Lists, "....bgClickedRainfallIntensityDay2Lists");
+            }
+            if (layer_name == 'ECMWF DAY2') {
+                bgClickedRainfallIntensityDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay2Lists, "....bgClickedRainfallIntensityDay2Lists");
+            }
+        }
+
+        //bgClickedRainfallIntensityDay3Lists[]
+        if (_this.context._layer.group.name == "Rainfall Intensity Day3") {
+            if (layer_name == 'GFS DAY3') {
+                bgClickedRainfallIntensityDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay3Lists, "....bgClickedRainfallIntensityDay3Lists");
+            }
+            if (layer_name == 'NCUM DAY3') {
+                bgClickedRainfallIntensityDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay3Lists, "....bgClickedRainfallIntensityDay3Lists");
+            }
+            if (layer_name == 'NEPS DAY3') {
+                bgClickedRainfallIntensityDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay3Lists, "....bgClickedRainfallIntensityDay3Lists");
+            }
+            if (layer_name == 'WRF DAY3') {
+                bgClickedRainfallIntensityDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay3Lists, "....bgClickedRainfallIntensityDay3Lists");
+            }
+            if (layer_name == 'GEFS DAY3') {
+                bgClickedRainfallIntensityDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay3Lists, "....bgClickedRainfallIntensityDay3Lists");
+            }
+            if (layer_name == 'ECMWF DAY3') {
+                bgClickedRainfallIntensityDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay3Lists, "....bgClickedRainfallIntensityDay3Lists");
+            }
+        }
+
+        //bgClickedRainfallIntensityDay4Lists[]
+        if (_this.context._layer.group.name == "Rainfall Intensity Day4") {
+            if (layer_name == 'GFS DAY4') {
+                bgClickedRainfallIntensityDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay4Lists, "....bgClickedRainfallIntensityDay4Lists");
+            }
+            if (layer_name == 'NCUM DAY4') {
+                bgClickedRainfallIntensityDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay4Lists, "....bgClickedRainfallIntensityDay4Lists");
+            }
+            if (layer_name == 'NEPS DAY4') {
+                bgClickedRainfallIntensityDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay4Lists, "....bgClickedRainfallIntensityDay4Lists");
+            }
+            if (layer_name == 'WRF DAY4') {
+                bgClickedRainfallIntensityDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay4Lists, "....bgClickedRainfallIntensityDay4Lists");
+            }
+            if (layer_name == 'GEFS DAY4') {
+                bgClickedRainfallIntensityDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay4Lists, "....bgClickedRainfallIntensityDay4Lists");
+            }
+            if (layer_name == 'ECMWF DAY4') {
+                bgClickedRainfallIntensityDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay4Lists, "....bgClickedRainfallIntensityDay4Lists");
+            }
+        }
+
+        //bgClickedRainfallIntensityDay5Lists[]
+        if (_this.context._layer.group.name == "Rainfall Intensity Day5") {
+            if (layer_name == 'GFS DAY5') {
+                bgClickedRainfallIntensityDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay5Lists, "....bgClickedRainfallIntensityDay5Lists");
+            }
+            if (layer_name == 'NCUM DAY5') {
+                bgClickedRainfallIntensityDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay5Lists, "....bgClickedRainfallIntensityDay5Lists");
+            }
+            if (layer_name == 'NEPS DAY5') {
+                bgClickedRainfallIntensityDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay5Lists, "....bgClickedRainfallIntensityDay5Lists");
+            }
+            if (layer_name == 'WRF DAY5') {
+                bgClickedRainfallIntensityDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay5Lists, "....bgClickedRainfallIntensityDay5Lists");
+            }
+            if (layer_name == 'GEFS DAY5') {
+                bgClickedRainfallIntensityDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay5Lists, "....bgClickedRainfallIntensityDay5Lists");
+            }
+            if (layer_name == 'ECMWF DAY5') {
+                bgClickedRainfallIntensityDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedRainfallIntensityDay5Lists, "....bgClickedRainfallIntensityDay5Lists");
+            }
+        }
+
+        //bgClickedMSLPDay1Lists[]
+        if (_this.context._layer.group.name == "MSLP Day1") {
+            if (layer_name == 'GFS DAY1') {
+                bgClickedMSLPDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay1Lists, "....bgClickedMSLPDay1Lists");
+            }
+            if (layer_name == 'NCUM DAY1') {
+                bgClickedMSLPDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay1Lists, "....bgClickedMSLPDay1Lists");
+            }
+            if (layer_name == 'NEPS DAY1') {
+                bgClickedMSLPDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay1Lists, "....bgClickedMSLPDay1Lists");
+            }
+            if (layer_name == 'WRF DAY1') {
+                bgClickedMSLPDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay1Lists, "....bgClickedMSLPDay1Lists");
+            }
+            if (layer_name == 'GEFS DAY1') {
+                bgClickedMSLPDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay1Lists, "....bgClickedMSLPDay1Lists");
+            }
+            if (layer_name == 'ECMWF DAY1') {
+                bgClickedMSLPDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay1Lists, "....bgClickedMSLPDay1Lists");
+            }
+        }
+
+        //bgClickedMSLPDay2Lists[]
+        if (_this.context._layer.group.name == "MSLP Day2") {
+            if (layer_name == 'GFS DAY2') {
+                bgClickedMSLPDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay2Lists, "....bgClickedMSLPDay2Lists");
+            }
+            if (layer_name == 'NCUM DAY2') {
+                bgClickedMSLPDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay2Lists, "....bgClickedMSLPDay2Lists");
+            }
+            if (layer_name == 'NEPS DAY2') {
+                bgClickedMSLPDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay2Lists, "....bgClickedMSLPDay2Lists");
+            }
+            if (layer_name == 'WRF DAY2') {
+                bgClickedMSLPDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay2Lists, "....bgClickedMSLPDay2Lists");
+            }
+            if (layer_name == 'GEFS DAY2') {
+                bgClickedMSLPDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay2Lists, "....bgClickedMSLPDay2Lists");
+            }
+            if (layer_name == 'ECMWF DAY2') {
+                bgClickedMSLPDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay2Lists, "....bgClickedMSLPDay2Lists");
+            }
+        }
+
+        //bgClickedMSLPDay3Lists[]
+        if (_this.context._layer.group.name == "MSLP Day3") {
+            if (layer_name == 'GFS DAY3') {
+                bgClickedMSLPDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay3Lists, "....bgClickedMSLPDay3Lists");
+            }
+            if (layer_name == 'NCUM DAY3') {
+                bgClickedMSLPDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay3Lists, "....bgClickedMSLPDay3Lists");
+            }
+            if (layer_name == 'NEPS DAY3') {
+                bgClickedMSLPDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay3Lists, "....bgClickedMSLPDay3Lists");
+            }
+            if (layer_name == 'WRF DAY3') {
+                bgClickedMSLPDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay3Lists, "....bgClickedMSLPDay3Lists");
+            }
+            if (layer_name == 'GEFS DAY3') {
+                bgClickedMSLPDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay3Lists, "....bgClickedMSLPDay3Lists");
+            }
+            if (layer_name == 'ECMWF DAY3') {
+                bgClickedMSLPDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay3Lists, "....bgClickedMSLPDay3Lists");
+            }
+        }
+
+        //bgClickedMSLPDay4Lists[]
+        if (_this.context._layer.group.name == "MSLP Day4") {
+            if (layer_name == 'GFS DAY4') {
+                bgClickedMSLPDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay4Lists, "....bgClickedMSLPDay4Lists");
+            }
+            if (layer_name == 'NCUM DAY4') {
+                bgClickedMSLPDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay4Lists, "....bgClickedMSLPDay4Lists");
+            }
+            if (layer_name == 'NEPS DAY4') {
+                bgClickedMSLPDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay4Lists, "....bgClickedMSLPDay4Lists");
+            }
+            if (layer_name == 'WRF DAY4') {
+                bgClickedMSLPDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay4Lists, "....bgClickedMSLPDay4Lists");
+            }
+            if (layer_name == 'GEFS DAY4') {
+                bgClickedMSLPDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay4Lists, "....bgClickedMSLPDay4Lists");
+            }
+            if (layer_name == 'ECMWF DAY4') {
+                bgClickedMSLPDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay4Lists, "....bgClickedMSLPDay4Lists");
+            }
+        }
+
+        //bgClickedMSLPDay5Lists[]
+        if (_this.context._layer.group.name == "MSLP Day5") {
+            if (layer_name == 'GFS DAY5') {
+                bgClickedMSLPDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay5Lists, "....bgClickedMSLPDay5Lists");
+            }
+            if (layer_name == 'NCUM DAY5') {
+                bgClickedMSLPDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay5Lists, "....bgClickedMSLPDay5Lists");
+            }
+            if (layer_name == 'NEPS DAY5') {
+                bgClickedMSLPDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay5Lists, "....bgClickedMSLPDay5Lists");
+            }
+            if (layer_name == 'WRF DAY5') {
+                bgClickedMSLPDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay5Lists, "....bgClickedMSLPDay5Lists");
+            }
+            if (layer_name == 'GEFS DAY5') {
+                bgClickedMSLPDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay5Lists, "....bgClickedMSLPDay5Lists");
+            }
+            if (layer_name == 'ECMWF DAY5') {
+                bgClickedMSLPDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClickedMSLPDay5Lists, "....bgClickedMSLPDay5Lists");
+            }
+        }
+
+        //bgClicked10mWINDDay1Lists[]
+        if (_this.context._layer.group.name == "10m WIND Day 1") {
+            if (layer_name == 'GFS DAY1') {
+                bgClicked10mWINDDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay1Lists, "....bgClicked10mWINDDay1Lists");
+            }
+            if (layer_name == 'NCUM DAY1') {
+                bgClicked10mWINDDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay1Lists, "....bgClicked10mWINDDay1Lists");
+            }
+            if (layer_name == 'NEPS DAY1') {
+                bgClicked10mWINDDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay1Lists, "....bgClicked10mWINDDay1Lists");
+            }
+            if (layer_name == 'WRF DAY1') {
+                bgClicked10mWINDDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay1Lists, "....bgClicked10mWINDDay1Lists");
+            }
+            if (layer_name == 'GEFS DAY1') {
+                bgClicked10mWINDDay1Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay1Lists, "....bgClicked10mWINDDay1Lists");
+            }
+        }
+
+        //bgClicked10mWINDDay2Lists[]
+        if (_this.context._layer.group.name == "10m WIND Day 2") {
+            if (layer_name == 'GFS DAY2') {
+                bgClicked10mWINDDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay2Lists, "....bgClicked10mWINDDay2Lists");
+            }
+            if (layer_name == 'NCUM DAY2') {
+                bgClicked10mWINDDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay2Lists, "....bgClicked10mWINDDay2Lists");
+            }
+            if (layer_name == 'NEPS DAY2') {
+                bgClicked10mWINDDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay2Lists, "....bgClicked10mWINDDay2Lists");
+            }
+            if (layer_name == 'WRF DAY2') {
+                bgClicked10mWINDDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay2Lists, "....bgClicked10mWINDDay2Lists");
+            }
+            if (layer_name == 'GEFS DAY2') {
+                bgClicked10mWINDDay2Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay2Lists, "....bgClicked10mWINDDay2Lists");
+            }
+        }
+
+        //bgClicked10mWINDDay3Lists[]
+        if (_this.context._layer.group.name == "10m WIND Day 3") {
+            if (layer_name == 'GFS DAY3') {
+                bgClicked10mWINDDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay3Lists, "....bgClicked10mWINDDay3Lists");
+            }
+            if (layer_name == 'NCUM DAY3') {
+                bgClicked10mWINDDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay3Lists, "....bgClicked10mWINDDay3Lists");
+            }
+            if (layer_name == 'NEPS DAY3') {
+                bgClicked10mWINDDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay3Lists, "....bgClicked10mWINDDay3Lists");
+            }
+            if (layer_name == 'WRF DAY3') {
+                bgClicked10mWINDDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay3Lists, "....bgClicked10mWINDDay3Lists");
+            }
+            if (layer_name == 'GEFS DAY3') {
+                bgClicked10mWINDDay3Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay3Lists, "....bgClicked10mWINDDay3Lists");
+            }
+        }
+
+        //bgClicked10mWINDDay4Lists[]
+        if (_this.context._layer.group.name == "10m WIND Day 4") {
+            if (layer_name == 'GFS DAY4') {
+                bgClicked10mWINDDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay4Lists, "....bgClicked10mWINDDay4Lists");
+            }
+            if (layer_name == 'NCUM DAY4') {
+                bgClicked10mWINDDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay4Lists, "....bgClicked10mWINDDay4Lists");
+            }
+            if (layer_name == 'NEPS DAY4') {
+                bgClicked10mWINDDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay4Lists, "....bgClicked10mWINDDay4Lists");
+            }
+            // if (layer_name == 'WRF DAY4') {
+            //     bgClicked10mWINDDay4Lists.push(
+            //         layer_group_name + " " + layer_name);
+            //     console.log(bgClicked10mWINDDay4Lists, "....bgClicked10mWINDDay4Lists");
+            // }
+            if (layer_name == 'GEFS DAY4') {
+                bgClicked10mWINDDay4Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay4Lists, "....bgClicked10mWINDDay4Lists");
+            }
+        }
+
+        //bgClicked10mWINDDay5Lists[]
+        if (_this.context._layer.group.name == "10m WIND Day 5") {
+            if (layer_name == 'GFS DAY5') {
+                bgClicked10mWINDDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay5Lists, "....bgClicked10mWINDDay5Lists");
+            }
+            if (layer_name == 'NCUM DAY5') {
+                bgClicked10mWINDDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay5Lists, "....bgClicked10mWINDDay5Lists");
+            }
+            if (layer_name == 'NEPS DAY5') {
+                bgClicked10mWINDDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay5Lists, "....bgClicked10mWINDDay5Lists");
+            }
+            // if (layer_name == 'WRF DAY5') {
+            //     bgClicked10mWINDDay5Lists.push(
+            //         layer_group_name + " " + layer_name);
+            //     console.log(bgClicked10mWINDDay5Lists, "....bgClicked10mWINDDay5Lists");
+            // }
+            if (layer_name == 'GEFS DAY5') {
+                bgClicked10mWINDDay5Lists.push(
+                    layer_group_name + " " + layer_name);
+                console.log(bgClicked10mWINDDay5Lists, "....bgClicked10mWINDDay5Lists");
+            }
+        }
+
 
 
 
@@ -14158,111 +15240,229 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
         }
 
+        //medium_range 
+        if (_this.context._layer.group.name == "Rainfall Intensity Day1") {
+            if (layer_name == 'GFS DAY1' || layer_name == 'NCUM DAY1' || layer_name ==
+                'NEPS DAY1' || layer_name == 'WRF DAY1' || layer_name == 'GEFS DAY1' || layer_name ==
+                'ECMWF DAY1'
+            ) {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedRainfallIntensityDay1Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedRainfallIntensityDay1Lists.splice(index, 1);
+                }
+                console.log(bgClickedRainfallIntensityDay1Lists,
+                    "unchecked....bgClickedRainfallIntensityDay1Lists");
+            }
+        }
 
-        // console.log(bgClickedLightningLists, ".....bgClickedLightningLists");
+        //bgClickedRainfallIntensityDay2Lists[]
+        if (_this.context._layer.group.name == "Rainfall Intensity Day2") {
+            if (layer_name == 'GFS DAY2' || layer_name == 'NCUM DAY2' || layer_name ==
+                'NEPS DAY2' || layer_name == 'WRF DAY2' || layer_name == 'GEFS DAY2' || layer_name ==
+                'ECMWF DAY2') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedRainfallIntensityDay2Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedRainfallIntensityDay2Lists.splice(index, 1);
+                }
+                console.log(bgClickedRainfallIntensityDay2Lists,
+                    "unchecked....bgClickedRainfallIntensityDay2Lists");
+            }
+        }
 
+        //bgClickedRainfallIntensityDay3Lists[]
+        if (_this.context._layer.group.name == "Rainfall Intensity Day3") {
+            if (layer_name == 'GFS DAY3' || layer_name == 'NCUM DAY3' || layer_name ==
+                'NEPS DAY3' || layer_name == 'WRF DAY3' || layer_name == 'GEFS DAY3' || layer_name ==
+                'ECMWF DAY3') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedRainfallIntensityDay3Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedRainfallIntensityDay3Lists.splice(index, 1);
+                }
+                console.log(bgClickedRainfallIntensityDay3Lists,
+                    "unchecked....bgClickedRainfallIntensityDay3Lists");
+            }
+        }
 
-        // console.log("overLayers10overLayers10-->,", overLayers10);
+        //bgClickedRainfallIntensityDay4Lists[]
+        if (_this.context._layer.group.name == "Rainfall Intensity Day4") {
+            if (layer_name == 'GFS Day4' || layer_name == 'NCUM Day4' || layer_name ==
+                'NEPS Day4' || layer_name == 'WRF Day4' || layer_name == 'GEFS Day4' || layer_name ==
+                'ECMWF Day4') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedRainfallIntensityDay4Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedRainfallIntensityDay4Lists.splice(index, 1);
+                }
+                console.log(bgClickedRainfallIntensityDay4Lists,
+                    "unchecked....bgClickedRainfallIntensityDay4Lists");
+            }
+        }
 
-        // let x = document.getElementById("491");
-        // let districtBoundaries = x._layer.active;
-        // let y = document.getElementById("492");
-        // let airport = y._layer.active;
-        // let z = document.getElementById("493");
-        // let oilrefineries = z._layer.active;
-        // let xz = document.getElementById("494");
-        // let powerStation = xz._layer.active;
-        // let yz = document.getElementById("495");
-        // let powerPlant = yz._layer.active;
-        // let zz = document.getElementById("496");
-        // let Dem = zz._layer.active;
+        //bgClickedRainfallIntensityDay5Lists[]
+        if (_this.context._layer.group.name == "Rainfall Intensity Day5") {
+            if (layer_name == 'GFS Day5' || layer_name == 'NCUM Day5' || layer_name ==
+                'NEPS Day5' || layer_name == 'WRF Day5' || layer_name == 'GEFS Day5' || layer_name ==
+                'ECMWF Day5') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedRainfallIntensityDay5Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedRainfallIntensityDay5Lists.splice(index, 1);
+                }
+                console.log(bgClickedRainfallIntensityDay5Lists,
+                    "unchecked....bgClickedRainfallIntensityDay5Lists");
+            }
+        }
 
-        // let za = document.getElementById("497");
-        // let hospital = za._layer.active;
-        // let zb = document.getElementById("498");
-        // let industrial = zb._layer.active;
+        //bgClickedMSLPDay1Lists[]
+        if (_this.context._layer.group.name == "MSLP Day1") {
+            if (layer_name == 'GFS DAY1' || layer_name == 'NCUM DAY1' || layer_name ==
+                'NEPS DAY1' || layer_name == 'WRF DAY1' || layer_name == 'GEFS DAY1' || layer_name ==
+                'ECMWF DAY1') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMSLPDay1Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMSLPDay1Lists.splice(index, 1);
+                }
+                console.log(bgClickedMSLPDay1Lists,
+                    "unchecked....bgClickedMSLPDay1Lists");
+            }
+        }
 
-        // let zc = document.getElementById("497");
-        // let sports = zc._layer.active;
+        //bgClickedMSLPDay2Lists[]
+        if (_this.context._layer.group.name == "MSLP Day2") {
+            if (layer_name == 'GFS DAY2' || layer_name == 'NCUM DAY2' || layer_name ==
+                'NEPS DAY2' || layer_name == 'WRF DAY2' || layer_name == 'GEFS DAY2' || layer_name ==
+                'ECMWF DAY2') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMSLPDay2Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMSLPDay2Lists.splice(index, 1);
+                }
+                console.log(bgClickedMSLPDay2Lists,
+                    "unchecked....bgClickedMSLPDay2Lists");
+            }
+        }
 
-        // let ze = document.getElementById("498");
-        // let roadNetwork = ze._layer.active;
+        //bgClickedMSLPDay3Lists[]
+        if (_this.context._layer.group.name == "MSLP Day3") {
+            if (layer_name == 'GFS DAY3' || layer_name == 'NCUM DAY3' || layer_name ==
+                'NEPS DAY3' || layer_name == 'WRF DAY3' || layer_name == 'GEFS DAY3' || layer_name ==
+                'ECMWF DAY3') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMSLPDay3Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMSLPDay3Lists.splice(index, 1);
+                }
+                console.log(bgClickedMSLPDay3Lists,
+                    "unchecked....bgClickedMSLPDay3Lists");
+            }
+        }
 
-        // let zf = document.getElementById("499");
-        // let sez = zf._layer.active;
+        //bgClickedMSLPDay4Lists[]
+        if (_this.context._layer.group.name == "MSLP Day4") {
+            if (layer_name == 'GFS DAY4' || layer_name == 'NCUM DAY4' || layer_name ==
+                'NEPS DAY4' || layer_name == 'WRF DAY4' || layer_name == 'GEFS DAY4' || layer_name ==
+                'ECMWF DAY4') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMSLPDay4Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMSLPDay4Lists.splice(index, 1);
+                }
+                console.log(bgClickedMSLPDay4Lists,
+                    "unchecked....bgClickedMSLPDay4Lists");
+            }
+        }
 
-        // let zg = document.getElementById("500");
-        // let railWay = zg._layer.active;
+        //bgClickedMSLPDay5Lists[]
+        if (_this.context._layer.group.name == "MSLP Day5") {
+            if (layer_name == 'GFS DAY5' || layer_name == 'NCUM DAY5' || layer_name ==
+                'NEPS DAY5' || layer_name == 'WRF DAY5' || layer_name == 'GEFS DAY5' || layer_name ==
+                'ECMWF DAY5') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClickedMSLPDay5Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClickedMSLPDay5Lists.splice(index, 1);
+                }
+                console.log(bgClickedMSLPDay5Lists,
+                    "unchecked....bgClickedMSLPDay5Lists");
+            }
+        }
 
-        // let zh = document.getElementById("501");
-        // let LULC = zh._layer.active;
+        //bgClicked10mWINDDay1Lists[]
+        if (_this.context._layer.group.name == "10m WIND Day 1") {
+            if (layer_name == 'GFS DAY1' || layer_name == 'NCUM DAY1' || layer_name ==
+                'NEPS DAY1' || layer_name == 'WRF DAY1' || layer_name == 'GEFS DAY1' || layer_name ==
+                'ECMWF DAY1') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClicked10mWINDDay1Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClicked10mWINDDay1Lists.splice(index, 1);
+                }
+                console.log(bgClicked10mWINDDay1Lists,
+                    "unchecked....bgClicked10mWINDDay1Lists");
+            }
+        }
 
-        //EXPOSURE
-        // if (districtBoundaries === false && airport === false && oilrefineries === false && powerStation ===
-        //     false &&
-        //     powerPlant === false && Dem === false && sports ===
-        //     false &&
-        //     roadNetwork === false && sez === false && railWay === false && LULC === false) {
-        //     $("#exposure").css("background-color", '#eff4ff');
-        //     console.log("EXPOSURE working....", layer_name);
-        // } else {
-        //     $("#exposure").css("background-color", 'rgb(180, 194, 224)');
-        //     console.log("EXPOSURE not working....", layer_name);
-        // }
+        //bgClicked10mWINDDay2Lists[]
+        if (_this.context._layer.group.name == "10m WIND Day 2") {
+            if (layer_name == 'GFS DAY2' || layer_name == 'NCUM DAY2' || layer_name ==
+                'NEPS DAY2' || layer_name == 'WRF DAY2' || layer_name == 'GEFS DAY2') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClicked10mWINDDay2Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClicked10mWINDDay2Lists.splice(index, 1);
+                }
+                console.log(bgClicked10mWINDDay2Lists,
+                    "unchecked....bgClicked10mWINDDay2Lists");
+            }
+        }
 
-        // METAR
-        // if (isLayerInMetarArray) {
-        //     if (layer_name === "TEMPERATURE" && layer_name === "DEW POINT TEMPERATURE" && layer_name ===
-        //         "VISIBILITY" && layer_name === "WIND SPEED AND DIRECTION") {
-        //         $("#metar").css("background-color", '#eff4ff');
-        //         console.log("METAR working");
-        //     } else {
-        //         $("#metar").css("background-color", 'rgb(180, 194, 224)');
-        //         console.log("METAR unchecked color not working");
-        //     }
-        // } else {
-        //     console.log("METAR not working");
-        // }
+        //bgClicked10mWINDDay3Lists[]
+        if (_this.context._layer.group.name == "10m WIND Day 3") {
+            if (layer_name == 'GFS DAY3' || layer_name == 'NCUM DAY3' || layer_name ==
+                'NEPS DAY3' || layer_name == 'WRF DAY3' || layer_name == 'GEFS DAY3') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClicked10mWINDDay3Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClicked10mWINDDay3Lists.splice(index, 1);
+                }
+                console.log(bgClicked10mWINDDay3Lists,
+                    "unchecked....bgClicked10mWINDDay3Lists");
+            }
+        }
 
-        //SYNOP
-        // var isLayerInSynopArray = synopArrayBg.includes(layer_group_name);
-        // console.log("Is layer in synopArrayBg?", isLayerInSynopArray);
-        // if (isLayerInSynopArray) {
-        //     if (layer_name === "TEMPERATURE" && layer_name === "MEAN SEA LEVEL PRESSURE" && layer_name ===
-        //         "CLOUD COVER" && layer_name === "GEOPOTENTIAL HEIGHT" && layer_name === "RELATIVE HUMIDITY" &&
-        //         layer_name === "VISIBILITY" && layer_name === "WIND SPEED AND DIRECTION" && layer_name ===
-        //         "3 h RAINFALL") {
-        //         $("#synop").css("background-color", 'rgb(180, 194, 224)');
-        //         console.log("SYNOP working", layer_name);
-        //     } else {
-        //         $("#synop").css("background-color", '#eff4ff');
-        //     }
-        // } else {
-        //     console.log("SYNOP not working");
-        // }
+        //bgClicked10mWINDDay4Lists[]
+        if (_this.context._layer.group.name == "10m WIND Day 4") {
+            if (layer_name == 'GFS DAY4' || layer_name == 'NCUM DAY4' || layer_name ==
+                'NEPS DAY4' || layer_name == 'GEFS DAY4') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClicked10mWINDDay4Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClicked10mWINDDay4Lists.splice(index, 1);
+                }
+                console.log(bgClicked10mWINDDay4Lists,
+                    "unchecked....bgClicked10mWINDDay4Lists");
+            }
+        }
 
+        //bgClicked10mWINDDay5Lists[]
+        if (_this.context._layer.group.name == "10m WIND Day 5") {
+            if (layer_name == 'GFS DAY5' || layer_name == 'NCUM DAY5' || layer_name ==
+                'NEPS DAY5' || layer_name == 'GEFS DAY5') {
+                var itemToRemove = layer_group_name + " " + layer_name;
+                var index = bgClicked10mWINDDay5Lists.indexOf(itemToRemove);
+                if (index !== -1) {
+                    bgClicked10mWINDDay5Lists.splice(index, 1);
+                }
+                console.log(bgClicked10mWINDDay5Lists,
+                    "unchecked....bgClicked10mWINDDay5Lists");
+            }
+        }
 
-
-        // if (isLayerInMetarArray) {
-        //     if (layer_name === "TEMPERATURE" && layer_name === "DEW POINT TEMPERATURE" && layer_name ===
-        //         "VISIBILITY" && layer_name === "WIND SPEED AND DIRECTION") {
-        //         $("#metar").css("background-color", '#eff4ff');
-        //         console.log("METAR unchecked color");
-        //     } else {
-        //         $("#metar").css("background-color", 'rgb(180, 194, 224)');
-        //         console.log("METAR unchecked color not working");
-        //     }
-        // } else {
-        //     console.log("METAR not working");
-        // }
-
-        // if (layer_name === "Radar Reflectivity" && layer_name === "Radar Animation") {
-        //     $("#radar").css("background-color", '#eff4ff');
-        //     console.log("Radar unchecked color");
-        // } else {
-        //     $("#radar").css("background-color", 'rgb(180, 194, 224)');
-        //     console.log("Radar unchecked color not working");
-        // }
+        // // // // // // // // // // // // // // // // // //
 
         //Lightning UNCHECK
         if (uncheckLayer == 'Lightning Last 00-05 min') {
