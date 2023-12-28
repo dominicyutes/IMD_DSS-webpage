@@ -2585,15 +2585,17 @@ var timeDimensionControl = new L.Control.TimeDimensionCustom({
 // Add the GeoJSON data to the map
 _dist_geojson = "DATA/INDIA_COUNTRY.json";
 var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
-    color: 'black',
-    weight: 1,
-    style: {
-        color: '#3f51b5',
-        opacity: 0.5,
-        fillOpacity: 0.5,
-        weight: 1
+    style: function (feature) {
+        return {
+            color: 'black', 
+            fillColor: 'transparent', 
+            opacity: 0.5,
+            fillOpacity: 0.0, 
+            weight: 3 
+        };
     }
 });
+
 
 
 geojson.on('data:loaded', function() {
