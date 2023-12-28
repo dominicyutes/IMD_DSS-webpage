@@ -2591,7 +2591,7 @@ var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
             fillColor: 'transparent', 
             opacity: 0.5,
             fillOpacity: 0.0, 
-            weight: 3 
+            weight: 2 
         };
     }
 });
