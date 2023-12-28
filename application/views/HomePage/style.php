@@ -2,13 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
 body {
-    margin: 0;
     font-family: 'Quicksand', sans-serif;
     background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
-    position: relaftive;
+    position: relative;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
 }
 
 .text {
@@ -76,9 +74,9 @@ body {
     transition: visibility 0.1s ease;
 }
 
-.border-end {
+/* .border-end {
     border-right: var(--bs-border-width) var(--bs-border-style) #abaeb1 !important;
-}
+} */
 
 /* media query for navbar */
 @media (max-width: 1354px) {
@@ -111,9 +109,9 @@ body {
 .obsClass {
     background-color: #eff4ff;
     color: #1d334e;
-    margin-top: -39px;
+    margin-top: 0px;
     height: 82vh;
-    width: 16%;
+    width: 258px;
     border: 1px solid #2c5383;
     font-size: 14px;
     font-weight: 600;
@@ -319,9 +317,8 @@ body {
 /* map starts here*/
 #map {
     height: 82vh;
-    width: 99%;
+    width: 100%;
     border: 1px solid black;
-    margin-top: -39px;
     position: relative;
 }
 

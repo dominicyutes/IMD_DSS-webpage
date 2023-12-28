@@ -54,7 +54,9 @@
     <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
 
-
+    <!-- Leaflet EasyPrint CSS and JS -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-easyprint/dist/easyPrint.css" />
+    <script src="https://unpkg.com/leaflet-easyprint/dist/easyPrint.js"></script> -->
 
 
 
@@ -129,14 +131,6 @@
     <!-- leaflet-side-by-side -->
     <script src="https://lab.digital-democracy.org/leaflet-side-by-side/leaflet-side-by-side.js"></script>
 
-    <!-- Leaflet.Screenshot CSS and JS files -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-screenshot/dist/leaflet-screenshot.css" />
-    <script src="https://unpkg.com/leaflet-screenshot/dist/leaflet-screenshot.js"></script> -->
-
-    <!-- print -->
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.browser.print@1.0.2/dist/leaflet.browser.print.min.js"></script>
-
-    <!-- <script src="leaflet.browser.print.min.js"></script> -->
 
     <!-- // Include the necessary libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
@@ -148,14 +142,10 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/canvas2image/canvas2image.js">
     </script>
 
-    <!-- for map picture -->
-    <!-- <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/html2canvas/html2canvas.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/canvas2image/canvas2image.js"></script>
-    <script type="text/javascript" src="<?= site_url('stylesheet/chosen.jquery.min.js')?>"></script> -->
 
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script> -->
-    <!-- <script src="<?php echo base_url(); ?>stylesheet/html-to-image.js"></script> -->
+
 
     <!-- adding css -->
     <?php $this->load->view('HomePage/style'); ?>
@@ -166,13 +156,13 @@
         body,
         html,
         #map {
-            width: 80%;
+            width: 100%;
             margin: auto;
-            height: 70%;
+            height: 100%;
         }
 
         .print-title {
-            font-size: 24px;
+            font-size: 30px;
         }
     }
     </style>
@@ -181,15 +171,15 @@
 
 <body>
     <!-- Title start here -->
-    <div>
-        <div style="height: 6vh;width: 100%;">
+    <div class="body">
+        <div style="height: 10%;width: 100%; position:relative">
             <div>
                 <span class="text">WEATHER DECISION SUPPORT SYSTEM</span>
             </div>
         </div>
 
         <!-- navbar -->
-        <div style="height: 8vh;width: 100%; margin-bottom:1em; background-color:#f4fcff;" class="mx-auto">
+        <div style="height: 15%;width: 100%; background-color:#f4fcff;">
             <div style="display:flex;padding:0.2em 0.2em 0.2em 1.3em" class="mx-auto heightChange">
                 <div style="width: 100%;display: flex;">
                     <div class="d-flex flex-wrap w-100 gx-3 gy-3 mt-1" id="parent"
@@ -203,8 +193,7 @@
                             <p class="btn-val" id="metar">Metar</p>
                             <div class="underline"></div>
                         </button>
-                        <button class="d-flex btn border-end border-2 pe-3" id="synophighLightBtn"
-                            style="flex-direction:column;">
+                        <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
                             <p class="btn-val" id="synop">Synop</p>
                             <div class="underline"></div>
                         </button>
@@ -229,7 +218,7 @@
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="mesolscale">Mesoscale Forecast</p>
+                            <p class="btn-val" id="mesolscale">Mesolscale Forecast</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
@@ -244,150 +233,160 @@
                 </div>
             </div>
         </div>
-    </div>
+
+        <div style="height: 72%;width:100%;margin-left: 0px;" class="row">
+            <!-- MAP -->
+            <div id="map" class="col-lg-10"></div>
+
+            <!-- OBSERVATION -->
+            <div id="ObservationContainer" class="obsClass hidden col-sm-2">
+                <h4 class="obsh4" style="font-family: 'Times New Roman', Times, serif;">OBSERVATION</h4>
+
+                <!-- model -->
+                <form id="obsForm">
+                    <div>
+                        <label name="modelNames" class="firstDDLabel"
+                            style="font-family: 'Times New Roman', Times, serif;">Type:</label>
+                        <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
+                        </select>
+                    </div>
+                    <!-- <span>&nbsp;</span> -->
+                    <!-- parameter -->
+                    <div>
+                        <label name="parameter" class="secondDDLabel"
+                            style="font-family: 'Times New Roman', Times, serif;">Time:</label>
+                        <select class="secondDD" id="parameterNames" onchange="showSubParameterNames(this.value)"
+                            &nbsp;>
+                        </select>
+                    </div>
+                    <!-- <span>&nbsp;</span> -->
+                    <!-- SubParameter -->
+                    <div>
+                        <label name="subparameter" class="thirdDDLabel"
+                            style="font-family: 'Times New Roman', Times, serif;">Parameter</label>
+                        <select class="thirdDD" id="subparameter" &nbsp;>
+                        </select>
+                        <div id="checkboxListContainer"></div>
+                    </div>
+                    <!-- <span>&nbsp;</span> -->
 
 
-    <br>
-    <div class="row" ;>
-        <!-- MAP -->
-        <div id="map" class="col-10"></div>
-
-        <!-- OBSERVATION -->
-        <div id="ObservationContainer" class="obsClass hidden col-2">
-        <h4 class="obsh4" style="font-family: 'Times New Roman', Times, serif;">OBSERVATION</h4>
-
-            <!-- model -->
-            <form id="obsForm">
-                <div>
-                    <label name="modelNames" class="firstDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Type:</label>
-                    <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
-                    </select>
-                </div>
-                <!-- <span>&nbsp;</span> -->
-                <!-- parameter -->
-                <div>
-                    <label name="parameter" class="secondDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Time:</label>
-                    <select class="secondDD" id="parameterNames" onchange="showSubParameterNames(this.value)" &nbsp;>
-                    </select>
-                </div>
-                <!-- <span>&nbsp;</span> -->
-                <!-- SubParameter -->
-                <div>
-                    <label name="subparameter" class="thirdDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Parameter</label>
-                    <select class="thirdDD" id="subparameter" &nbsp;>
-                    </select>
-                    <div id="checkboxListContainer"></div>
-                </div>
-                <!-- <span>&nbsp;</span> -->
-
-
-                <div>
-                    <label name="start_date" class="dateDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Date:</label>
-                    <input type="date" id="start_date" class="dateDD">
-                </div>
-                <!-- <span>&nbsp;</span> -->
-                <!-- <div>
+                    <div>
+                        <label name="start_date" class="dateDDLabel"
+                            style="font-family: 'Times New Roman', Times, serif;">Date:</label>
+                        <input type="date" id="start_date" class="dateDD">
+                    </div>
+                    <!-- <span>&nbsp;</span> -->
+                    <!-- <div>
                     <label for="end_date" class="dateDDLabel">To Date:</label>
                     <input type="date" id="end_date" class="dateDD">
                 </div> -->
-                <!-- <span>&nbsp;</span> -->
+                    <!-- <span>&nbsp;</span> -->
+                    <div>
+                        <span style="display: contents;">
+                            <label name="hourSelect" class="TimeLabel"
+                                style="font-family: 'Times New Roman', Times, serif;">Time:</label>
+                            <select id="hourSelect" class="TimeHR">
+                            </select>
+                            <select id="minuteSelect" class="TimeMin">
+                            </select>
+                        </span>
+                    </div>
+                    <!-- <span>&nbsp;</span> -->
+                    </select>
+                </form>
+                <!-- Submit -->
                 <div>
-                    <span style="display: contents;">
-                        <label name="hourSelect" class="TimeLabel"  style="font-family: 'Times New Roman', Times, serif;">Time:</label>
-                        <select id="hourSelect" class="TimeHR">
-                        </select>
-                        <select id="minuteSelect" class="TimeMin">
-                        </select>
-                    </span>
+                    <button id="submitButton" onclick="submitForm()" class="submitBtn"
+                        style="font-family: 'Times New Roman', Times, serif;">Submit</button>
                 </div>
-                <!-- <span>&nbsp;</span> -->
-                </select>
-            </form>
-            <!-- Submit -->
-            <div>
-                <button id="submitButton" onclick="submitForm()" class="submitBtn"  style="font-family: 'Times New Roman', Times, serif;">Submit</button>
-            </div>
-        </div>
-
-        <!-- MACRO -->
-        <div id="macroContainer" class="hidden obsClass col-2">
-
-            <div style="display:flex;">
-                <button class="createMacroCls" onclick="createMacroForm()">+</button>
-                <span
-                    style="color: #2c5383;font-family: 'Archivo', sans-serif;font-size: 18px;font-weight: bold;margin-left: 6%;margin-top: 1%;">Create
-                    Macro</span>
             </div>
 
-            <div id="showCreatedMacro"></div>
-            <!--  -->
-            <div class="create_Macro">
-                <div class="create_Macro_body" style="position: relative;">
-                    <div class="create_Macro_body_div">
-                        <span class="macroLegend">X</span>
-                        <h4 class="create_Macro_h4" style="margin: 0 auto;"  style="font-family: 'Times New Roman', Times, serif;">Create Macro</h4>
-                    </div>
+            <!-- MACRO -->
+            <div id="macroContainer" class="hidden obsClass col-sm-2">
 
-                    <!-- MACRO-model -->
-                    <div id="showCreateMacroLayers">
-                        <form id="myForm">
-                            <div>
-                                <label name="macroNames" class="macroNameLabel"  style="font-family: 'Times New Roman', Times, serif;">Macro Name:</label>
-                                <input type="text" class="macroNameInput" id="macroNames" placeholder="customize name"
-                                    onchange="handleInputChange()" autocomplete="off" required &nbsp;>
-                            </div>
-                            <div>
-                                <label name="mac_modelNames" class="mac_firstDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Type:</label>
-                                <select class="mac_firstDD" id="mac_modelNames"
-                                    onchange="macShowParameterNames(this.value)" &nbsp;>
-                                </select>
-                            </div>
-                            <!-- parameter -->
-                            <div>
-                                <label name="mac_parameter" class="mac_secondDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Time:</label>
-                                <select class="mac_secondDD" id="mac_parameterNames"
-                                    onchange="macShowSubParameterNames(this.value)" &nbsp;>
-                                </select>
-                            </div>
-                            <!-- SubParameter -->
-                            <div>
-                                <label name="mac_subparameter" class="mac_thirdDDLabel"  style="font-family: 'Times New Roman', Times, serif;">Parameter</label>
-                                <select class="mac_thirdDD" id="mac_subparameter" &nbsp;>
-                                </select>
-                            </div>
+                <div style="display:flex;">
+                    <button class="createMacroCls" onclick="createMacroForm()">+</button>
+                    <span
+                        style="color: #2c5383;font-family: 'Archivo', sans-serif;font-size: 18px;font-weight: bold;margin-left: 6%;margin-top: 1%;">Create
+                        Macro</span>
+                </div>
 
-                            <!-- Submit -->
-                            <div style="display: flex;">
-                                <button id="mac_addButton" onclick="macAddForm()" class="macSubmitBtn" type="button"
-                                    disabled>Add</button>
-                                <button id="mac_submitButton" style="display:block" onclick="macSubmitForm()"
-                                    class="macSubmitBtn" type="button" disabled>Save</button>
-                                <button id="mac_updateButton" onclick="updateForm()" class="macSubmitBtn" type="button"
-                                    style="display:none" disabled>Update</button>
-                            </div>
-                        </form>
-                        <!--  -->
-                        <div class="addBox" id="addedInfoContainer">
+                <div id="showCreatedMacro"></div>
+                <!--  -->
+                <div class="create_Macro">
+                    <div class="create_Macro_body" style="position: relative;">
+                        <div class="create_Macro_body_div">
+                            <span class="macroLegend">X</span>
+                            <h4 class="create_Macro_h4" style="margin: 0 auto;"
+                                style="font-family: 'Times New Roman', Times, serif;">Create Macro</h4>
                         </div>
-                    </div>
-                    <!--MACRO model_end  -->
-                </div>
-            </div>
 
-            <div class="view_Create_Macro">
-                <div class="view_Create_Macro_body" style="position: relative;">
-                    <div class="view_Create_Macro_body_div">
-                        <span class="viewMacroLegend">X</span>
-                        <h4 class="view_Macro_h4" style="margin: 0 auto;">View Macro</h4>
+                        <!-- MACRO-model -->
+                        <div id="showCreateMacroLayers">
+                            <form id="myForm">
+                                <div>
+                                    <label name="macroNames" class="macroNameLabel"
+                                        style="font-family: 'Times New Roman', Times, serif;">Macro Name:</label>
+                                    <input type="text" class="macroNameInput" id="macroNames"
+                                        placeholder="customize name" onchange="handleInputChange()" autocomplete="off"
+                                        required &nbsp;>
+                                </div>
+                                <div>
+                                    <label name="mac_modelNames" class="mac_firstDDLabel"
+                                        style="font-family: 'Times New Roman', Times, serif;">Type:</label>
+                                    <select class="mac_firstDD" id="mac_modelNames"
+                                        onchange="macShowParameterNames(this.value)" &nbsp;>
+                                    </select>
+                                </div>
+                                <!-- parameter -->
+                                <div>
+                                    <label name="mac_parameter" class="mac_secondDDLabel"
+                                        style="font-family: 'Times New Roman', Times, serif;">Time:</label>
+                                    <select class="mac_secondDD" id="mac_parameterNames"
+                                        onchange="macShowSubParameterNames(this.value)" &nbsp;>
+                                    </select>
+                                </div>
+                                <!-- SubParameter -->
+                                <div>
+                                    <label name="mac_subparameter" class="mac_thirdDDLabel"
+                                        style="font-family: 'Times New Roman', Times, serif;">Parameter</label>
+                                    <select class="mac_thirdDD" id="mac_subparameter" &nbsp;>
+                                    </select>
+                                </div>
+
+                                <!-- Submit -->
+                                <div style="display: flex;">
+                                    <button id="mac_addButton" onclick="macAddForm()" class="macSubmitBtn" type="button"
+                                        disabled>Add</button>
+                                    <button id="mac_submitButton" style="display:block" onclick="macSubmitForm()"
+                                        class="macSubmitBtn" type="button" disabled>Save</button>
+                                    <button id="mac_updateButton" onclick="updateForm()" class="macSubmitBtn"
+                                        type="button" style="display:none" disabled>Update</button>
+                                </div>
+                            </form>
+                            <!--  -->
+                            <div class="addBox" id="addedInfoContainer">
+                            </div>
+                        </div>
+                        <!--MACRO model_end  -->
                     </div>
-                    <div style="color:black;" id="viewMacroDetails"></div>
+                </div>
+
+                <div class="view_Create_Macro">
+                    <div class="view_Create_Macro_body" style="position: relative;">
+                        <div class="view_Create_Macro_body_div">
+                            <span class="viewMacroLegend">X</span>
+                            <h4 class="view_Macro_h4" style="margin: 0 auto;">View Macro</h4>
+                        </div>
+                        <div style="color:black;" id="viewMacroDetails"></div>
+                    </div>
                 </div>
             </div>
         </div>
-
+        <!--  -->
+        <div style="height: 3%;width: 100%; background-color: white;">Model's Time Update</div>
     </div>
-    <!--  -->
-    <div style="height: 4vh; background-color: white;">Model's Time Update</div>
 
     <!-- model popup -->
     <div class="model" style="display: none; left: 253px; top: 94px; height:0;">
@@ -804,22 +803,23 @@ L.simpleMapScreenshoter().addTo(map);
 
 <script>
 $(".printbutton").click(function() {
+    $(this).addClass('running');
     html2canvas($("#map"), {
         useCORS: true,
-        allowTaint: false,
+        // allowTaint: false,
         onrendered: function(canvas) {
             var image = Canvas2Image.convertToPNG(canvas);
             var image_data = $(image).attr('src');
             var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
             $.ajax({
                 type: "POST",
-                url: "<?php echo site_url(); ?>pdfController/createPdf/saveReportImg",
+                url: "<?php echo site_url(); ?>Welcome/saveReportImg",
                 data: {
                     base64: image_data,
                     r_file_name: random_name
                 },
                 success: function() {
-                    printDiv('map_img_' + random_name + '.jpeg');
+                    // /generate_report('map_img_' + random_name + '.jpeg');
                 }
             });
         }
@@ -827,39 +827,45 @@ $(".printbutton").click(function() {
 
 });
 
-function printDiv(imageFileName) {
-    function getCurrentDateTime() {
-        const now = new Date();
 
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-        const ampm = hours >= 12 ? 'PM' : 'AM';
+// function printDiv(imageFileName) {
+//     function getCurrentDateTime() {
+//         const now = new Date();
 
-        const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')}${ampm}`;
-        const formattedDate =
-            `${now.getDate()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getFullYear()}`;
+//         const hours = now.getHours();
+//         const minutes = now.getMinutes();
+//         const ampm = hours >= 12 ? 'PM' : 'AM';
 
-        const formattedDateTime = `${formattedTime}\n${formattedDate}`;
+//         const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')}${ampm}`;
+//         const formattedDate =
+//             `${now.getDate()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getFullYear()}`;
 
-        return formattedDateTime;
-    }
-    const formattedDateTime = getCurrentDateTime();
+//         const formattedDateTime = `${formattedTime}\n${formattedDate}`;
 
-    var win = window.open('');
+//         return formattedDateTime;
+//     }
+//     const formattedDateTime = getCurrentDateTime();
 
-    win.document.write(
-        "<div style='text-align: center;'><span style='float: left;'><img src='https://mausam.imd.gov.in/responsive/img/logo/imd_logo_a.png' alt='IMD' width='50px' height='100px'></span>" +
-        "<span style='display: inline-block;'><u><h1>WEATHER DECISION SUPPORT SYSTEM</h1></u></span>" +
-        "<span style='float: right;'><label>" + formattedDateTime + "</label></span></div>"
-    );
+//     var win = window.open('');
 
-    // win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
-    //     '" style="page-break-before: always;"/>');
+//     win.document.write(
+//         "<div style='text-align: center;'><span style='float: left;'><img src='https://mausam.imd.gov.in/responsive/img/logo/imd_logo_a.png' alt='IMD' width='50px' height='100px'></span>" +
+//         "<span style='display: inline-block;'><u><h1>WEATHER DECISION SUPPORT SYSTEM</h1></u></span>" +
+//         "<span style='float: right;'><label>" + formattedDateTime + "</label></span></div>"
+//     );
 
-    var base_url = "<?php echo base_url(); ?>";
-    win.document.write('<img src="' + base_url + 'D:/pdf/' + imageFileName + '" style="page-break-before: always;"/>');
+//     // win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
+//     //     '" style="page-break-before: always;"/>');
 
+//     var base_url = "<?php echo base_url(); ?>";
+//     win.document.write('<img src="' + base_url + 'pdf/' + imageFileName + '" style="page-break-before: always;"/>');
 
-    win.document.close();
-}
+//     win.setTimeout('win.document.print();', 200);
+
+//     // win.document.onload = function() {
+//     //     this.print();
+//     //     this.close();
+//     // };
+//     // win.document.close();
+// }
 </script>

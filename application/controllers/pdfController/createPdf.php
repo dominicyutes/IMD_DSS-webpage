@@ -9,7 +9,7 @@ public function saveReportImg(){
             $random_name = $_POST['r_file_name']; 
             $base_to_php = explode(',', $baseFromJavascript);
             $img_data = base64_decode($base_to_php[1]);
-            $folder_path = "D:\\pdf";
+            $folder_path = "pdf";
             $filename = "map_img_".$random_name.".jpeg"; // or image.jpg
             if (!file_exists($folder_path)) {
                 mkdir($folder_path, 0777, true);

@@ -2050,7 +2050,7 @@ function macToggleObservation() {
         let map = document.getElementById('map');
         let isHidden = macroContainerFn.classList.contains('hidden');
         macroContainerFn.classList.toggle('hidden');
-        map.style.width = isHidden ? '83%' : '99%';
+        map.style.width = isHidden ? '83%' : '100%';
     }
 }
 
@@ -2072,7 +2072,7 @@ function toggleObservation() {
         let map = document.getElementById('map');
         let isHidden = observationContainerFn.classList.contains('hidden');
         observationContainerFn.classList.toggle('hidden');
-        map.style.width = isHidden ? '83%' : '99%';
+        map.style.width = isHidden ? '83%' : '100%';
     }
 }
 //
@@ -2584,15 +2584,15 @@ var timeDimensionControl = new L.Control.TimeDimensionCustom({
 
 // Add the GeoJSON data to the map
 _dist_geojson = "DATA/INDIA_COUNTRY.json";
-var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
+var geojson = new L.GeoJSON.AJAX("<?php echo base_url();?>" + _dist_geojson, {
     color: 'black',
     weight: 1,
-    style: {
-        color: '#3f51b5',
-        opacity: 0.5,
-        fillOpacity: 0.5,
-        weight: 1
-    }
+    // style: {
+    //     color: '#3f51b5',
+    //     opacity: 0.5,
+    //     fillOpacity: 0.5,
+    //     weight: 1
+    // }
 });
 
 
@@ -2794,6 +2794,7 @@ var MacroButton = L.Control.extend({
     }
 });
 
+
 // var CustomControls = L.Control.extend({
 //     options: {
 //         position: 'topright'
@@ -2920,6 +2921,7 @@ customButtonsContainer.appendChild(new PrintButton().onAdd());
 // Add the container to the map
 map.getContainer().appendChild(customButtonsContainer);
 // ************
+
 
 // Add a marker for Delhi
 var delhiMarker = L.marker([28.6139, 77.2090]);
