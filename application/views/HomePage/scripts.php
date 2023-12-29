@@ -2050,7 +2050,7 @@ function macToggleObservation() {
         let map = document.getElementById('map');
         let isHidden = macroContainerFn.classList.contains('hidden');
         macroContainerFn.classList.toggle('hidden');
-        map.style.width = isHidden ? '83%' : '100%';
+        map.style.width = isHidden ? '83%' : '99%';
     }
 }
 
@@ -2072,7 +2072,7 @@ function toggleObservation() {
         let map = document.getElementById('map');
         let isHidden = observationContainerFn.classList.contains('hidden');
         observationContainerFn.classList.toggle('hidden');
-        map.style.width = isHidden ? '83%' : '100%';
+        map.style.width = isHidden ? '83%' : '99%';
     }
 }
 //
@@ -2597,13 +2597,13 @@ var timeDimensionControl = new L.Control.TimeDimensionCustom({
 // Add the GeoJSON data to the map
 _dist_geojson = "DATA/INDIA_STATE.json";
 var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
-    style: function(feature) {
+    style: function (feature) {
         return {
-            color: 'black',
-            fillColor: 'transparent',
+            color: 'black', 
+            fillColor: 'transparent', 
             opacity: 0.5,
-            fillOpacity: 0.0,
-            weight: 2
+            fillOpacity: 0.0, 
+            weight: 2 
         };
     }
 });
@@ -2808,7 +2808,6 @@ var MacroButton = L.Control.extend({
     }
 });
 
-
 // var CustomControls = L.Control.extend({
 //     options: {
 //         position: 'topright'
@@ -2935,7 +2934,6 @@ customButtonsContainer.appendChild(new PrintButton().onAdd());
 // Add the container to the map
 map.getContainer().appendChild(customButtonsContainer);
 // ************
-
 
 // Add a marker for Delhi
 var delhiMarker = L.marker([28.6139, 77.2090]);
@@ -3586,7 +3584,7 @@ function toggleSideBySide() {
 
 function updateActiveLayers() {
     activeLayers = 0;
-    overLayers.forEach(group => {
+    allOverLayers.forEach(group => {
         group.layers.forEach(layer => {
             if (layer.active) {
                 activeLayers++;
@@ -3596,9 +3594,9 @@ function updateActiveLayers() {
 
     // Check if side-by-side is active and more than 2 layers are active
     if (sideBySideVisible && activeLayers > 2) {
-        alert("Only two layers can be active when side-by-side view is active!");
+        alert("Only two layers can be active when side-by-side view is active please unselect the layer!");
         // Disable additional layers
-        overLayers.forEach(group => {
+        allOverLayers.forEach(group => {
             group.layers.forEach(layer => {
                 if (layer.active && activeLayers > 2) {
                     layer.active = false;
@@ -3703,28 +3701,10 @@ const overLayers = [{
     }
 ];
 
-// Hook into layer changes to update activeLayers
-overLayers.forEach(group => {
-    group.layers.forEach(layer => {
-        layer.layer.on('add remove', function() {
-            layer.active = !layer.active;
-            updateActiveLayers();
-        });
-    });
-});
 
-
-
-// PanelLayers collapse group
-var panelLayers = new L.Control.PanelLayers(baseMaps, overLayers, {
-    collapsibleGroups: true,
-    collapsed: false,
-    position: "topright"
-});
-map.addControl(panelLayers);
 
 //SYNOP
-var overLayers2 = [{
+const overLayers2 = [{
         group: "SYNOP 00UTC",
         collapsed: true,
         layers: [{
@@ -4093,6 +4073,22 @@ var overLayers2 = [{
     },
 
 ];
+
+
+// Hook into layer changes to update activeLayers
+// overLayers.forEach(group => {
+//     group.layers.forEach(layer => {
+//         layer.layer.on('add remove', function() {
+//             layer.active = !layer.active;
+//             updateActiveLayers();
+//         });
+//     });
+// });
+
+
+// const allOverLayers = overLayers.concat(overLayers2);
+
+
 
 //METAR
 var overLayers3 = [{
@@ -6057,6 +6053,25 @@ var overLayers11 = [{
     ]
 }, ];
 
+const allOverLayers = overLayers.concat(overLayers2, overLayers3, overLayers4, overLayers5, overLayers6, overLayers7, overLayers8, overLayers9, overLayers10 ,overLayers11);
+
+allOverLayers.forEach(group => {
+    group.layers.forEach(layer => {
+        layer.layer.on('add remove', function() {
+            layer.active = !layer.active;
+            updateActiveLayers();
+        });
+    });
+});
+
+
+// PanelLayers collapse group
+var panelLayers = new L.Control.PanelLayers(baseMaps, overLayers, {
+    collapsibleGroups: true,
+    collapsed: false,
+    position: "topright"
+});
+map.addControl(panelLayers);
 
 var panelLayers2 = new L.Control.PanelLayers(baseMaps, overLayers2, {
     collapsibleGroups: true,
