@@ -16,7 +16,7 @@ class Welcome extends CI_Controller {
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 		$this->load->view('HomePage/homePage');
 	}
-	 function saveReportImg(){
+	public function saveReportImg(){
         if(!empty($_POST)){
             $baseFromJavascript = $_POST['base64'];
             $random_name = $_POST['r_file_name']; 
@@ -33,7 +33,7 @@ class Welcome extends CI_Controller {
         }
     }
 
-	 function generate_report($data){
+	public function generate_report($data){
         
 		//echo $data;
         error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
@@ -65,7 +65,7 @@ class Welcome extends CI_Controller {
 		 return $output_path;
          exit();
     }
-	function test(){
+	public function test(){
 		$this->load->view('HomePage/pdfReport');
 	}
 }

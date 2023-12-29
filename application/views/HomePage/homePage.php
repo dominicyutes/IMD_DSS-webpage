@@ -67,6 +67,10 @@
     </script>
     <!-- Include Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- <script src="https://unpkg.com/leaflet"></script>
+    <script src="https://unpkg.com/leaflet-simple-map-screenshoter"></script> -->
+
     <!-- Include Leaflet fullscreen JS-->
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
     <!-- leaflet-draw JS -->
@@ -86,11 +90,11 @@
     </script>
     <!-- leaflet-panel-layers -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layers.min.js"></script>
+
     <!-- Leaflet AJAX plugin -->
     <script src="https://unpkg.com/leaflet-ajax@2.1.0/dist/leaflet.ajax.js"></script>
     <!-- jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-
 
     <!-- leaflet time dimensions -->
     <!-- <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.control.css">
@@ -141,9 +145,6 @@
     </script>
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/canvas2image/canvas2image.js">
     </script>
-
-
-
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script> -->
 
 
@@ -789,44 +790,44 @@ L.simpleMapScreenshoter().addTo(map);
 
 
 
-<script>
-// Initialize the Leaflet.Screenshot control
-// L.control.screenshot().addTo(map);
-// 
-// let printMap = L.control.browserPrint({
-//     position: 'topleft',
-//     documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
-//     documentTitleClass: 'print-title'
-// }).addTo(map);
-// 
-</script>
+<!-- <script> -->
+<!-- L.simpleMapScreenshoter().addTo(map)
+Initialize the Leaflet.Screenshot control
+L.control.screenshot().addTo(map);
+let printMap = L.control.browserPrint({
+position: 'topleft',
+documentTitle: 'WEATHER DECISION SUPPORT SYSTEM',
+documentTitleClass: 'print-title'
+}).addTo(map); -->
+<!-- </script> -->
 
 <script>
-$(".printbutton").click(function() {
-    $(this).addClass('running');
-    html2canvas($("#map"), {
-        useCORS: true,
-        // allowTaint: false,
-        onrendered: function(canvas) {
-            var image = Canvas2Image.convertToPNG(canvas);
-            var image_data = $(image).attr('src');
-            var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
-            $.ajax({
-                type: "POST",
-                url: "<?php echo site_url(); ?>Welcome/saveReportImg",
-                data: {
-                    base64: image_data,
-                    r_file_name: random_name
-                },
-                success: function() {
-                    // /generate_report('map_img_' + random_name + '.jpeg');
-                }
-            });
-        }
+function generate_report_and_save() {
+    $(".printbutton").click(function() {
+        $(this).addClass('running');
+        html2canvas($("#map"), {
+            useCORS: true,
+            allowTaint: false,
+            onrendered: function(canvas) {
+                var image = Canvas2Image.convertToPNG(canvas);
+                var image_data = $(image).attr('src');
+                var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo site_url(); ?>Welcome/saveReportImg",
+                    data: {
+                        base64: image_data,
+                        r_file_name: random_name
+                    },
+                    success: function() {
+                        generate_report('map_img_' + random_name + '.jpeg');
+                    }
+                });
+            }
+        });
+
     });
-
-});
-
+}
 
 // function printDiv(imageFileName) {
 //     function getCurrentDateTime() {

@@ -111,7 +111,8 @@ body {
     color: #1d334e;
     margin-top: 0px;
     height: 82vh;
-    width: 258px;
+    /* width: 258px; */
+    width: 17%;
     border: 1px solid #2c5383;
     font-size: 14px;
     font-weight: 600;

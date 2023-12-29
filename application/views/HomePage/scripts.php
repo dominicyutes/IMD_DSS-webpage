@@ -2176,13 +2176,18 @@ function macAddForm() {
     let mac_sub_parameter = document.getElementById('mac_subparameter').value;
     let ulId = "listContainerMacro_" + counter++;
 
+    const currentISTTime = new Date().toLocaleString("en-US", {
+        timeZone: "Asia/Kolkata"
+    });
+
     if (addedTempMacro && editMacroGroupName) {
         addedTempMacro.listOfMacro.push({
             ulId: ulId,
             mac_macroNames: mac_macroNames,
             mac_model_Names: mac_model_Names,
             mac_parameter_Names: mac_parameter_Names,
-            mac_sub_parameter: mac_sub_parameter
+            mac_sub_parameter: mac_sub_parameter,
+            ist_time: currentISTTime // Add IST
         })
     } else {
         listOfMacro.push({
@@ -2190,14 +2195,15 @@ function macAddForm() {
             mac_macroNames: mac_macroNames,
             mac_model_Names: mac_model_Names,
             mac_parameter_Names: mac_parameter_Names,
-            mac_sub_parameter: mac_sub_parameter
+            mac_sub_parameter: mac_sub_parameter,
+            ist_time: currentISTTime // Add IST
         })
-
         addedTempMacro = {
             macroGroupName: mac_macroNames,
             listOfMacro: listOfMacro
         };
     }
+    console.log("IST Time added to listOfMacro:", listOfMacro);
 
     // document.getElementById('macroNames').value = '';
     document.getElementById('mac_modelNames').value = '';
@@ -2217,6 +2223,7 @@ function viewAddedAndDeletedMacro() {
         <div><i class="fa-solid fa-plus fa-xs"></i> ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>&nbsp;&nbsp;</div>
 		<span onclick="editMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i></span>
         <span onclick="deleteMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-trash fa-xs"></i></span>
+        
         </div>
         <ul id="${macro.ulId}adddelete" class="listContainerMacro">
             <li>${macro.mac_model_Names}</li>
@@ -2249,7 +2256,6 @@ function createActionButton(action, buttonClass, buttonId) {
     button.id = buttonId;
     console.log("action:" + action, "buttonClass:" + buttonClass, "buttonId:" + buttonId);
     return button;
-
 }
 
 function macSubmitForm() {
@@ -2282,6 +2288,7 @@ function showSavedMacroList() {
             showInfoDiv = `<div class="createMacro">
                 <div><i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;""></i>&nbsp;
                 <span style="font-family: 'Archivo', sans-serif;font-size: 14px;font-weight: 600;color: #1d334e;"> ${macro.macroGroupName}</span>
+                
                 </div>
 
                 <div class="saveMacroView">
@@ -2341,6 +2348,7 @@ function viewMacro(macroGroupName) {
             <li>${macro.mac_parameter_Names}</li>
             <li>${macro.mac_sub_parameter}</li>
         </ul>
+        <h6 style="font-size: 11px;">${macro.ist_time}</h6>
     </div>`;
         viewTempMacro.push(addedInfoDiv);
     })
@@ -2361,7 +2369,6 @@ function editMacro(macroGroupName) {
     document.getElementById("mac_submitButton").style.display = "block";
     document.getElementById("mac_updateButton").style.display = "block";
 
-    // viewMacro();
 }
 
 function deleteMacro(macroGroupName) {
@@ -2383,7 +2390,7 @@ function deleteMacroLayer(value) {
     document.getElementById('mac_parameterNames').value = '';
     document.getElementById('mac_subparameter').value = '';
 
-    // viewMacro();
+    viewMacro();
 }
 
 
@@ -2409,6 +2416,11 @@ function updateForm() {
     layer.mac_model_Names = document.getElementById('mac_modelNames').value;
     layer.mac_parameter_Names = document.getElementById('mac_parameterNames').value;
     layer.mac_sub_parameter = document.getElementById('mac_subparameter').value;
+    // Update the ist_time property
+    layer.ist_time = new Date().toLocaleString("en-US", {
+        timeZone: "Asia/Kolkata"
+    });
+
     viewAddedAndDeletedMacro();
 
     document.getElementById('mac_modelNames').value = '';
@@ -2419,7 +2431,7 @@ function updateForm() {
     document.getElementById("mac_submitButton").style.display = "block";
     document.getElementById("mac_updateButton").style.display = "none";
 
-    // viewMacro();
+    viewMacro(layer.macroGroupName);
 }
 //*********** */
 
