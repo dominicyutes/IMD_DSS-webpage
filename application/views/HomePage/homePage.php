@@ -3,7 +3,7 @@
 
 <head>
     <!-- <img src="img/imd_logo_a.png" alt="IMD_DSS Logo"> -->
-    <title>IMD_DSS</title>
+    <title>IMD DSS</title>
     <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
     <!-- <link rel="shortcut icon" href="img/IMDlogo_Ipart-iris.png" type="image/png"> -->
 
