@@ -2,7 +2,12 @@
 <html>
 
 <head>
+    <!-- <img src="img/imd_logo_a.png" alt="IMD_DSS Logo"> -->
     <title>IMD_DSS</title>
+    <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
+    <!-- <link rel="shortcut icon" href="img/IMDlogo_Ipart-iris.png" type="image/png"> -->
+
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
