@@ -178,11 +178,18 @@
 <body>
     <!-- Title start here -->
     <div class="body">
-        <div style="height: 10%;width: 100%; position:relative">
-            <div>
-                <span class="text">WEATHER DECISION SUPPORT SYSTEM</span>
-            </div>
-        </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; height: 60px; width: calc(100% - 60px); position: relative;">
+    <img src="img/emblem.png" alt="Emblem of India" height="50" style="margin-right: auto; margin-left: 30px; margin-top: 5px; margin-bottom: 5px;">
+    <div style="flex: 1; text-align: center;">
+        <span class="text">WEATHER DECISION SUPPORT SYSTEM</span>
+    </div>
+    <img src="img/imd_logo.png" alt="Emblem of India" height="50" style="margin-left: auto; margin-right: 30px; margin-top: 5px; margin-bottom: 5px;">
+</div>
+
+
+
+
+
 
         <!-- navbar -->
         <div style="height: 15%;width: 100%; background-color:#f4fcff;">
