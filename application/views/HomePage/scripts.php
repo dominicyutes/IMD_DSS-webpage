@@ -2750,12 +2750,15 @@ const drawControl = new L.Control.Draw({
 });
 map.addControl(drawControl);
 
+
 map.on('draw:created', function(e) {
-    console.log(e, "eeeeeeeeee");
     const layer = e.layer;
-    console.log(layer, "layer");
+    console.log(layer.toGeoJSON());
+
+    layer.bindPopup(`<p>${JSON.stringify(layer.toGeoJSON())}</p>`);
     drawnItems.addLayer(layer);
 });
+
 
 //searchControl starts here
 L.Control.geocoder({
