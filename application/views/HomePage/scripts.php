@@ -2695,7 +2695,14 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
     layerName: "mywmsNowcast"
 });
 
-
+const mywmsIIT = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:awssample',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "awssample",
+    layerName: "mywmsIIT"
+});
 
 //leaflet Fullscreen
 map.addControl(new L.Control.Fullscreen({
@@ -3710,7 +3717,7 @@ const overLayers2 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: HHHHHH
+                layer: mywmsIIT,
             },
             {
                 active: false,
