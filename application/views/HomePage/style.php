@@ -74,6 +74,18 @@ body {
     transition: visibility 0.1s ease;
 }
 
+.leaflet-panel-layers {
+    /* max-height: 300px; */
+    /* Set your desired height in pixels */
+    /* overflow-y: auto; */
+    /* Add a scrollbar if needed */
+}
+
+/* Adjust the height of the groups within the PanelLayers control */
+/* .leaflet-panel-layers .leaflet-control-layers-group {
+    max-height: 150px;
+} */
+
 /* .border-end {
     border-right: var(--bs-border-width) var(--bs-border-style) #abaeb1 !important;
 } */

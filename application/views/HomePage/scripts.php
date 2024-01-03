@@ -2597,13 +2597,13 @@ var timeDimensionControl = new L.Control.TimeDimensionCustom({
 // Add the GeoJSON data to the map
 _dist_geojson = "DATA/INDIA_STATE.json";
 var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
-    style: function (feature) {
+    style: function(feature) {
         return {
-            color: 'black', 
-            fillColor: 'transparent', 
+            color: 'black',
+            fillColor: 'transparent',
             opacity: 0.5,
-            fillOpacity: 0.0, 
-            weight: 2 
+            fillOpacity: 0.0,
+            weight: 2
         };
     }
 });
@@ -6053,7 +6053,8 @@ var overLayers11 = [{
     ]
 }, ];
 
-const allOverLayers = overLayers.concat(overLayers2, overLayers3, overLayers4, overLayers5, overLayers6, overLayers7, overLayers8, overLayers9, overLayers10 ,overLayers11);
+const allOverLayers = overLayers.concat(overLayers2, overLayers3, overLayers4, overLayers5, overLayers6, overLayers7,
+    overLayers8, overLayers9, overLayers10, overLayers11);
 
 allOverLayers.forEach(group => {
     group.layers.forEach(layer => {
@@ -6109,6 +6110,14 @@ var panelLayers11 = new L.Control.PanelLayers(baseMaps, overLayers11, {
     collapsibleGroups: true
 });
 
+//
+var panelLayersArray = [panelLayers, panelLayers2, panelLayers3, panelLayers4, panelLayers5, panelLayers6, panelLayers7,
+    panelLayers8, panelLayers9, panelLayers10, panelLayers11
+];
+
+
+
+//
 const legendImage1 = document.getElementById('legendModel1');
 const legendImage2 = document.getElementById('legendModel2');
 const legendModelExpo = document.getElementById('legendModelExposure');

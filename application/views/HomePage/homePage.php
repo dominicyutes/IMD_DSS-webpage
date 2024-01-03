@@ -26,6 +26,7 @@
         crossorigin="anonymous">
     <!-- Include Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin="anonymous" />
+
     <!-- leaflet-draw CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" crossorigin="anonymous" />
     <!-- Include Leaflet fullscreen CSS -->
@@ -220,7 +221,7 @@
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="lightning">Lightining</p>
+                            <p class="btn-val" id="lightning">Lightning</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
