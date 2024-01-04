@@ -2694,16 +2694,34 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
     attribution: "Nowcast",
     layerName: "mywmsNowcast"
 });
-
-const mywmsIIT = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+// dummy data for testing start
+const syn00utc_tem = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
     layers: 'cite:awssample',
     format: 'image/png',
     transparent: true,
     version: '1.1.0',
     attribution: "awssample",
-    layerName: "mywmsIIT"
+    layerName: "syn00utc_tem"
 });
 
+const syn00utc_men = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:LLWS_12hr_fcst_FL',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "LLWS_12hr_fcst_FL",
+    layerName: "syn00utc_men"
+});
+
+const syn00utc_clo = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+    layers: 'aasdagrometgis:Nowcast',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Nowcast",
+    layerName: "syn00utc_clo"
+});
+// dummy data for testing end
 //leaflet Fullscreen
 map.addControl(new L.Control.Fullscreen({
     title: {
@@ -2749,6 +2767,14 @@ const drawControl = new L.Control.Draw({
     }
 });
 map.addControl(drawControl);
+
+
+// map.on('draw:created', function(e) {
+//     console.log(e, "eeeeeeeeee");
+//     const layer = e.layer;
+//     console.log(layer, "layer");
+//     drawnItems.addLayer(layer);
+// });
 
 
 map.on('draw:created', function(e) {
@@ -3720,17 +3746,17 @@ const overLayers2 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: mywmsIIT,
+                layer: syn00utc_tem,
             },
             {
                 active: false,
                 name: "MEAN SEA LEVEL PRESSURE",
-                layer: ggg
+                layer: syn00utc_men,
             },
             {
                 active: false,
                 name: "CLOUD COVER",
-                layer: X1
+                layer: syn00utc_clo,
             },
             {
                 active: false,
