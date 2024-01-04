@@ -2771,7 +2771,33 @@ const mes_wrf_03_06 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cit
     layerName: "mes_wrf_03_06 "
 });
 
+//medium
+const med_gfs1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:awssample',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "awssample",
+    layerName: "med_gfs1"
+});
 
+const med_ncum1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:LLWS_12hr_fcst_FL',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "LLWS_12hr_fcst_FL",
+    layerName: "med_ncum1"
+});
+
+const med_neps1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+    layers: 'aasdagrometgis:Nowcast',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Nowcast",
+    layerName: "med_neps1"
+});
 // dummy data for testing end
 
 //leaflet Fullscreen
@@ -5071,17 +5097,17 @@ var overLayers5 = [
         layers: [{
                 active: false,
                 name: "GFS DAY1",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: med_gfs1,
             },
             {
                 active: false,
                 name: "NCUM DAY1",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: med_ncum1,
             },
             {
                 active: false,
                 name: "NEPS DAY1",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: med_neps1,
             },
             {
                 active: false,
