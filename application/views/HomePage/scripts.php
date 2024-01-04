@@ -2751,6 +2751,27 @@ const met00utc_vis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
     attribution: "Nowcast",
     layerName: "met00utc_vis"
 });
+
+//mesolscale
+const mes_wrf_03 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:awssample',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "awssample",
+    layerName: "mes_wrf_03"
+});
+
+const mes_wrf_03_06 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:LLWS_12hr_fcst_FL',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "LLWS_12hr_fcst_FL",
+    layerName: "mes_wrf_03_06 "
+});
+
+
 // dummy data for testing end
 
 //leaflet Fullscreen
@@ -4820,12 +4841,12 @@ var overLayers4 = [
         layers: [{
                 active: false,
                 name: "Next 03 Hrs",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: mes_wrf_03,
             },
             {
                 active: false,
                 name: "Next 03-06 Hrs",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: mes_wrf_03_06,
             },
         ]
     },
