@@ -2694,7 +2694,9 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
     attribution: "Nowcast",
     layerName: "mywmsNowcast"
 });
+
 // dummy data for testing start
+//synop
 const syn00utc_tem = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
     layers: 'cite:awssample',
     format: 'image/png',
@@ -2721,7 +2723,36 @@ const syn00utc_clo = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
     attribution: "Nowcast",
     layerName: "syn00utc_clo"
 });
+
+//metar
+const met00utc_tem = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:awssample',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "awssample",
+    layerName: "met00utc_tem"
+});
+
+const met00utc_dew = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:LLWS_12hr_fcst_FL',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "LLWS_12hr_fcst_FL",
+    layerName: "met00utc_dew"
+});
+
+const met00utc_vis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+    layers: 'aasdagrometgis:Nowcast',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Nowcast",
+    layerName: "met00utc_vis"
+});
 // dummy data for testing end
+
 //leaflet Fullscreen
 map.addControl(new L.Control.Fullscreen({
     title: {
@@ -4134,17 +4165,17 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: SuratMarker
+                layer: met00utc_tem,
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: JodhpurMarker
+                layer: met00utc_dew
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: KanpurMarker
+                layer: met00utc_vis,
             },
             {
                 active: false,
