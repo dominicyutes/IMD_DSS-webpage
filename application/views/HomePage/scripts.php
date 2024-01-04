@@ -2873,6 +2873,33 @@ const sou00utc_700 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
     attribution: "Nowcast",
     layerName: "sou00utc_700"
 });
+//exposure
+const exp_dis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:awssample',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "awssample",
+    layerName: "exp_dis"
+});
+
+const exp_air = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:LLWS_12hr_fcst_FL',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "LLWS_12hr_fcst_FL",
+    layerName: "exp_air"
+});
+
+const exp_oil = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+    layers: 'aasdagrometgis:Nowcast',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Nowcast",
+    layerName: "exp_oil"
+});
 // dummy data for testing end
 
 //leaflet Fullscreen
@@ -6047,17 +6074,17 @@ var overLayers10 = [{
     layers: [{
             active: false,
             name: "District Boundaries",
-            layer: PuneMarker
+            layer: exp_dis,
         },
         {
             active: false,
             name: "Airport",
-            layer: MumbaiMarker
+            layer: exp_air,
         },
         {
             active: false,
             name: "Oil Refineries",
-            layer: RanchiMarker
+            layer: exp_oil,
         },
         {
             active: false,
