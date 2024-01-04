@@ -2826,6 +2826,25 @@ const sat_ctbt = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagro
     attribution: "Nowcast",
     layerName: "sat_ctbt"
 });
+
+//radar
+const rad_ref = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:awssample',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "awssample",
+    layerName: "rad_ref"
+});
+
+const rad_ani = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:LLWS_12hr_fcst_FL',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "LLWS_12hr_fcst_FL",
+    layerName: "rad_ani"
+});
 // dummy data for testing end
 
 //leaflet Fullscreen
@@ -5659,12 +5678,12 @@ var overLayers7 = [{
         layers: [{
                 active: false,
                 name: "Radar Reflectivity",
-                layer: X155
+                layer: rad_ref,
             },
             {
                 active: false,
                 name: "Radar Animation",
-                layer: X156
+                layer: rad_ani,
             },
 
         ]
