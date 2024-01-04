@@ -2798,6 +2798,34 @@ const med_neps1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagr
     attribution: "Nowcast",
     layerName: "med_neps1"
 });
+
+//satellite
+const sat_tir1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:awssample',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "awssample",
+    layerName: "sat_tir1"
+});
+
+const sat_vis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:LLWS_12hr_fcst_FL',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "LLWS_12hr_fcst_FL",
+    layerName: "sat_vis"
+});
+
+const sat_ctbt = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+    layers: 'aasdagrometgis:Nowcast',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Nowcast",
+    layerName: "sat_ctbt"
+});
 // dummy data for testing end
 
 //leaflet Fullscreen
@@ -5570,17 +5598,17 @@ var overLayers6 = [{
         layers: [{
                 active: false,
                 name: "TIR1",
-                layer: X157
+                layer: sat_tir1,
             },
             {
                 active: false,
                 name: "VIS",
-                layer: X158
+                layer: sat_vis,
             },
             {
                 active: false,
                 name: "CTBT",
-                layer: X159
+                layer: sat_ctbt,
             },
             {
                 active: false,
