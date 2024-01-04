@@ -2845,6 +2845,34 @@ const rad_ani = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms"
     attribution: "LLWS_12hr_fcst_FL",
     layerName: "rad_ani"
 });
+
+//sounding
+const sou00utc_1000 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:awssample',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "awssample",
+    layerName: "sou00utc_1000"
+});
+
+const sou00utc_850 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:LLWS_12hr_fcst_FL',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "LLWS_12hr_fcst_FL",
+    layerName: "sou00utc_850"
+});
+
+const sou00utc_700 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+    layers: 'aasdagrometgis:Nowcast',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Nowcast",
+    layerName: "sou00utc_700"
+});
 // dummy data for testing end
 
 //leaflet Fullscreen
@@ -5734,17 +5762,17 @@ var overLayers9 = [{
         layers: [{
                 active: false,
                 name: "1000 hpa WIND",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: sou00utc_1000,
             },
             {
                 active: false,
                 name: "850 hpa WIND",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: sou00utc_850,
             },
             {
                 active: false,
                 name: "700 hpa WIND",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: sou00utc_700,
             },
             {
                 active: false,
