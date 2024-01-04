@@ -2900,6 +2900,34 @@ const exp_oil = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrom
     attribution: "Nowcast",
     layerName: "exp_oil"
 });
+
+//ship and buoy
+const ship_00utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:awssample',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "awssample",
+    layerName: "ship_00utc"
+});
+
+const ship_01utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:LLWS_12hr_fcst_FL',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "LLWS_12hr_fcst_FL",
+    layerName: "ship_01utc"
+});
+
+const ship_02utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+    layers: 'aasdagrometgis:Nowcast',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Nowcast",
+    layerName: "ship_02utc"
+});
 // dummy data for testing end
 
 //leaflet Fullscreen
@@ -6149,17 +6177,17 @@ var overLayers11 = [{
     layers: [{
             active: false,
             name: "00UTC",
-            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+            layer: ship_00utc,
         },
         {
             active: false,
             name: "01UTC",
-            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+            layer: ship_01utc,
         },
         {
             active: false,
             name: "02UTC",
-            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+            layer: ship_02utc,
         },
         {
             active: false,
