@@ -122,7 +122,7 @@ body {
     background-color: #eff4ff;
     color: #1d334e;
     margin-top: 0px;
-    height: 82vh;
+    height: 81vh;
     /* width: 258px; */
     width: 17%;
     border: 1px solid #2c5383;
@@ -349,7 +349,7 @@ body {
 
 /* map starts here*/
 #map {
-    height: 82vh;
+    height: 81vh;
     width: 100%;
     border: 1px solid black;
     position: relative;
@@ -610,7 +610,7 @@ body {
 
 .leaflet-top.leaflet-right .leaflet-panel-layers:not(.compact) {
     margin: 7px;
-    height: 600px;
+    height: 505px;
 }
 
 .leaflet-control-layers-expanded {
