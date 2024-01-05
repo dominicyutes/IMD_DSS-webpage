@@ -7,7 +7,9 @@ body {
     position: relative;
     height: 100vh;
     width: 100%;
+    zoom: 97%;
 }
+
 
 .text {
     font-family: 'Archivo', sans-serif;
