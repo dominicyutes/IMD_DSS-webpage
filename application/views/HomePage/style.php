@@ -7,7 +7,7 @@ body {
     position: relative;
     height: 100vh;
     width: 100%;
-    zoom: 97%;
+    /* zoom: 100%; */
 }
 
 
