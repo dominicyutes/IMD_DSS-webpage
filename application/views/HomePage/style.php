@@ -590,6 +590,7 @@ body {
 
 .leaflet-top.leaflet-right .leaflet-panel-layers:not(.compact) {
     margin: 7px;
+    height: 600px;
 }
 
 .leaflet-control-layers-expanded {
