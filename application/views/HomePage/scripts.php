@@ -2534,10 +2534,10 @@ var timeDimensionControlButton = L.Control.extend({
     onAdd: function() {
         var button = L.DomUtil.create('button',
             'yourButtonClass'); // Create a button with a specified class
-        button.innerHTML = '<i class="fas fa-clock"></i>';
+            button.innerHTML = '<i class="fas fa-clock" style="font-size: 17px;"></i>';
         button.style.backgroundColor = 'white';
         button.style.border = '1px solid black';
-        button.style.padding = '10px';
+        button.style.padding = '7px';
         // button.style.cursor = 'pointer';
 
         button.onclick = function() {
