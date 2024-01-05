@@ -326,6 +326,26 @@ body {
     font-family: 'Archivo', sans-serif
 }
 
+.macroPlayClass {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.macroPlayNameClass {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stopBtnClas,
+.playBtnClas,
+.pauseBtnClas,
+.leftMacBtn,
+.rightMacBtn {
+    border-radius: 6px;
+    margin-right: 2px;
+}
+
+
 
 /* map starts here*/
 #map {

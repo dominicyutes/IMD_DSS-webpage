@@ -2288,7 +2288,6 @@ function showSavedMacroList() {
             showInfoDiv = `<div class="createMacro">
                 <div><i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;""></i>&nbsp;
                 <span style="font-family: 'Archivo', sans-serif;font-size: 14px;font-weight: 600;color: #1d334e;"> ${macro.macroGroupName}</span>
-                
                 </div>
 
                 <div class="saveMacroView">
@@ -2304,6 +2303,22 @@ function showSavedMacroList() {
                 <button class="delete-button" onclick="deleteMacro('${macro.macroGroupName}')">
                 <i class="fa-solid fa-trash fa-xs"></i></button>
                 </div>
+
+            <div id="macroDetails" style="display: none;">
+                 <div class="macroPlayClass">
+                 <button class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs" style="color: #000000;"></i></button>
+                 <button class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs" style="color: #000000;"></i></button>
+                 <button class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs" style="color: #000000;"></i></button>
+                 <button class="leftMacBtn"><i class="fa-sharp fa-solid fa-arrow-left fa-xs" style="color: #000000;"></i></button>
+                 <button class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs" style="color: #000000;"></i></button>
+                 </div>
+
+                 <div class="macroPlayNameClass">
+                    <span>hello</span>
+                    <span style="padding-right: 7%;">10</span>
+                 </div>
+            </div>
+                
             </div>`;
             showSavedMacro.push(showInfoDiv);
         } else {
@@ -2333,6 +2348,8 @@ function playMacro(macroGroupName) {
         }
     }
     const intervalId = setInterval(displayNumber, 5000);
+
+    document.getElementById("macroDetails").style.display = "block";
 }
 
 function viewMacro(macroGroupName) {
@@ -7217,21 +7234,30 @@ $("body").on("change", "input[type=checkbox]", function() {
     console.log(_this, '_this');
     var isChecked = _this.prop('checked');
     // var isChecked = $(this).attr('checked');
-    var layer_group_name = _this.context._layer ? _this.context._layer.group.name : '';
+    var layer_group_name = _this.context._layer ? _this.context._layer?.group.name : '';
     console.log(layer_group_name, "layer_group_name");
     var layer_name;
     //
 
     if (isChecked) { // True
+        allOverLayers.forEach(group => {
+            group.layers.forEach(layer => {
+                // layer.layer.on('add remove', function() {
+                layer.active = !layer.active;
+                updateActiveLayers();
+                console.log(layer, "ppppppp")
+                // });
+            });
+        });
         console.log("Checked");
-        layer_name = _this.context._layer ? _this.context._layer.name : _this.context.className;
-        var forExistLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer.name : _this
+        layer_name = _this.context._layer ? _this.context._layer?.name : _this.context.className;
+        var forExistLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer?.name : _this
             .context.className;
         console.log(layer_name, "layer_name");
         // debugger;
 
         //bgClickedExposureLists[]
-        if (_this.context._layer.group.name == "Exposure Layers") {
+        if (_this.context._layer?.group.name == "Exposure Layers") {
             if (layer_name == 'District Boundaries') {
                 bgClickedExposureLists.push(
                     layer_group_name + " " + layer_name
@@ -7301,7 +7327,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 00UTC[]
-        if (_this.context._layer.group.name == "METAR 00UTC") {
+        if (_this.context._layer?.group.name == "METAR 00UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7326,7 +7352,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 01UTC[]
-        if (_this.context._layer.group.name == "METAR 01UTC") {
+        if (_this.context._layer?.group.name == "METAR 01UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7351,7 +7377,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 02UTC[]
-        if (_this.context._layer.group.name == "METAR 02UTC") {
+        if (_this.context._layer?.group.name == "METAR 02UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7376,7 +7402,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 03UTC[]
-        if (_this.context._layer.group.name == "METAR 03UTC") {
+        if (_this.context._layer?.group.name == "METAR 03UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7401,7 +7427,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 04UTC[]
-        if (_this.context._layer.group.name == "METAR 04UTC") {
+        if (_this.context._layer?.group.name == "METAR 04UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7426,7 +7452,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 05UTC[]
-        if (_this.context._layer.group.name == "METAR 05UTC") {
+        if (_this.context._layer?.group.name == "METAR 05UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7451,7 +7477,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 06UTC[]
-        if (_this.context._layer.group.name == "METAR 06UTC") {
+        if (_this.context._layer?.group.name == "METAR 06UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7476,7 +7502,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 07UTC[]
-        if (_this.context._layer.group.name == "METAR 07UTC") {
+        if (_this.context._layer?.group.name == "METAR 07UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7501,7 +7527,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 08UTC[]
-        if (_this.context._layer.group.name == "METAR 08UTC") {
+        if (_this.context._layer?.group.name == "METAR 08UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7526,7 +7552,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 09UTC[]
-        if (_this.context._layer.group.name == "METAR 09UTC") {
+        if (_this.context._layer?.group.name == "METAR 09UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7551,7 +7577,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 10UTC[]
-        if (_this.context._layer.group.name == "METAR 10UTC") {
+        if (_this.context._layer?.group.name == "METAR 10UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7576,7 +7602,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 11UTC[]
-        if (_this.context._layer.group.name == "METAR 11UTC") {
+        if (_this.context._layer?.group.name == "METAR 11UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7601,7 +7627,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 12UTC[]
-        if (_this.context._layer.group.name == "METAR 12UTC") {
+        if (_this.context._layer?.group.name == "METAR 12UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7626,7 +7652,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 13UTC[]
-        if (_this.context._layer.group.name == "METAR 13UTC") {
+        if (_this.context._layer?.group.name == "METAR 13UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7651,7 +7677,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 14UTC[]
-        if (_this.context._layer.group.name == "METAR 14UTC") {
+        if (_this.context._layer?.group.name == "METAR 14UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7676,7 +7702,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 15UTC[]
-        if (_this.context._layer.group.name == "METAR 15UTC") {
+        if (_this.context._layer?.group.name == "METAR 15UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7701,7 +7727,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 16UTC[]
-        if (_this.context._layer.group.name == "METAR 16UTC") {
+        if (_this.context._layer?.group.name == "METAR 16UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7726,7 +7752,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 17UTC[]
-        if (_this.context._layer.group.name == "METAR 17UTC") {
+        if (_this.context._layer?.group.name == "METAR 17UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7751,7 +7777,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 18UTC[]
-        if (_this.context._layer.group.name == "METAR 18UTC") {
+        if (_this.context._layer?.group.name == "METAR 18UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7776,7 +7802,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 19UTC[]
-        if (_this.context._layer.group.name == "METAR 19UTC") {
+        if (_this.context._layer?.group.name == "METAR 19UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7801,7 +7827,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 20UTC[]
-        if (_this.context._layer.group.name == "METAR 20UTC") {
+        if (_this.context._layer?.group.name == "METAR 20UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7826,7 +7852,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 21UTC[]
-        if (_this.context._layer.group.name == "METAR 21UTC") {
+        if (_this.context._layer?.group.name == "METAR 21UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7851,7 +7877,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 22UTC[]
-        if (_this.context._layer.group.name == "METAR 22UTC") {
+        if (_this.context._layer?.group.name == "METAR 22UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7876,7 +7902,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 23UTC[]
-        if (_this.context._layer.group.name == "METAR 23UTC") {
+        if (_this.context._layer?.group.name == "METAR 23UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7901,7 +7927,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 00UTC[]
-        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 00UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7950,7 +7976,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 03UTC[]
-        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 03UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -7999,7 +8025,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 06UTC[]
-        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 06UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -8048,7 +8074,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 09UTC[]
-        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 09UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -8097,7 +8123,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 12UTC[]
-        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 12UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -8146,7 +8172,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 15UTC[]
-        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 15UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -8195,7 +8221,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 18UTC[]
-        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 18UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -8244,7 +8270,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 21UTC[]
-        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 21UTC") {
             if (layer_name == 'TEMPERATURE') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
@@ -8293,7 +8319,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00_UTC WIND []
-        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_00_UTC WIND") {
             if (layer_name == '1000 hpa WIND') {
                 bgClickedSOUNDING00UTCWINDLists.push(
                     layer_group_name + " " + layer_name);
@@ -8342,7 +8368,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12_UTC WIND []
-        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_12_UTC WIND") {
             if (layer_name == '1000 hpa WIND') {
                 bgClickedSOUNDING12UTCWINDLists.push(
                     layer_group_name + " " + layer_name);
@@ -8391,7 +8417,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00_UTC TEMP []
-        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC TEMP") {
             if (layer_name == '1000 hpa TEMP') {
                 bgClickedSOUNDING00UTCTEMPLists.push(
                     layer_group_name + " " + layer_name);
@@ -8440,7 +8466,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12_UTC TEMP []
-        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC TEMP") {
             if (layer_name == '1000 hpa TEMP') {
                 bgClickedSOUNDING12UTCTEMPLists.push(
                     layer_group_name + " " + layer_name);
@@ -8489,7 +8515,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC DEW POINT []
-        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC DEW POINT") {
             if (layer_name == '1000 hpa DEW POINT') {
                 bgClickedSOUNDING00UTCDEWPOINTLists.push(
                     layer_group_name + " " + layer_name);
@@ -8538,7 +8564,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC DEW POINT []
-        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC DEW POINT") {
             if (layer_name == '1000 hpa DEW POINT') {
                 bgClickedSOUNDING12UTCDEWPOINTLists.push(
                     layer_group_name + " " + layer_name);
@@ -8588,7 +8614,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //bgClicked SHIP AND BUOY OBSERVATION []
-        if (_this.context._layer.group.name == "SHIP AND BUOY OBSERVATION") {
+        if (_this.context._layer?.group.name == "SHIP AND BUOY OBSERVATION") {
             if (layer_name == '00UTC') {
                 bgClickedSHIPANDBUOYLists.push(
                     layer_group_name + " " + layer_name
@@ -8714,7 +8740,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //bgClickedRadarLists[]
-        if (_this.context._layer.group.name == "Radar Products") {
+        if (_this.context._layer?.group.name == "Radar Products") {
             if (layer_name == 'Radar Reflectivity') {
                 bgClickedRadarLists.push(
                     layer_group_name + " " + layer_name
@@ -8730,7 +8756,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //bgClickedSATELLITELists[]
-        if (_this.context._layer.group.name == "Satellite Observation") {
+        if (_this.context._layer?.group.name == "Satellite Observation") {
             if (layer_name == 'TIR1') {
                 bgClickedSATELLITELists.push(
                     layer_group_name + " " + layer_name
@@ -8786,7 +8812,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //Lightning
         //bgClickedLightningLists[]
-        if (_this.context._layer.group.name == "Lightning") {
+        if (_this.context._layer?.group.name == "Lightning") {
             if (layer_name == 'Last 00-05 min') {
                 bgClickedLightningLists.push(
                     layer_group_name + " " + layer_name
@@ -8817,7 +8843,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //mesolscale
         //bgClickedWRFReflectivityLists[]
-        if (_this.context._layer.group.name == "WRF Reflectivity") {
+        if (_this.context._layer?.group.name == "WRF Reflectivity") {
             if (layer_name == 'Next 03 Hrs') {
                 bgClickedWRFReflectivityLists.push(
                     layer_group_name + " " + layer_name);
@@ -8831,7 +8857,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedWRFlightningProductLists[]
-        if (_this.context._layer.group.name == "WRF lightning Product") {
+        if (_this.context._layer?.group.name == "WRF lightning Product") {
             if (layer_name == 'Next 03 Hrs') {
                 bgClickedWRFlightningProductLists.push(
                     layer_group_name + " " + layer_name);
@@ -8845,7 +8871,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedWRFAccumlatedRainfallLists[]
-        if (_this.context._layer.group.name == "WRF Accumlated Rainfall") {
+        if (_this.context._layer?.group.name == "WRF Accumlated Rainfall") {
             if (layer_name == 'Next 03 Hrs') {
                 bgClickedWRFAccumlatedRainfallLists.push(
                     layer_group_name + " " + layer_name);
@@ -8859,7 +8885,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedlightningPotentialindexLists[]
-        if (_this.context._layer.group.name == "lightning Potential index") {
+        if (_this.context._layer?.group.name == "lightning Potential index") {
             if (layer_name == 'Next 01 Hrs') {
                 bgClickedlightningPotentialindexLists.push(
                     layer_group_name + " " + layer_name);
@@ -8878,7 +8904,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedNCUMRlightningProductLists[]
-        if (_this.context._layer.group.name == "NCUMR lightning Product") {
+        if (_this.context._layer?.group.name == "NCUMR lightning Product") {
             if (layer_name == 'Next 03 Hrs') {
                 bgClickedNCUMRlightningProductLists.push(
                     layer_group_name + " " + layer_name);
@@ -8892,7 +8918,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedNCUMRWindGustLists[]
-        if (_this.context._layer.group.name == "NCUMR Wind Gust") {
+        if (_this.context._layer?.group.name == "NCUMR Wind Gust") {
             if (layer_name == 'Next 03 Hrs') {
                 bgClickedNCUMRWindGustLists.push(
                     layer_group_name + " " + layer_name);
@@ -8906,7 +8932,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedNCUMRRainfallLists[]
-        if (_this.context._layer.group.name == "NCUMR Rainfall") {
+        if (_this.context._layer?.group.name == "NCUMR Rainfall") {
             if (layer_name == 'Next 03 Hrs') {
                 bgClickedNCUMRRainfallLists.push(
                     layer_group_name + " " + layer_name);
@@ -8920,7 +8946,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedHRRR_SPHourlyDBZLists[]
-        if (_this.context._layer.group.name == "HRRR_SP Hourly") {
+        if (_this.context._layer?.group.name == "HRRR_SP Hourly") {
             if (layer_name == 'Next 01 Hrs') {
                 bgClickedHRRR_SPHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
@@ -8939,7 +8965,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedHRRR_NEHourlyDBZLists[]
-        if (_this.context._layer.group.name == "HRRR_NE Hourly") {
+        if (_this.context._layer?.group.name == "HRRR_NE Hourly") {
             if (layer_name == 'Next 01 Hrs') {
                 bgClickedHRRR_NEHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
@@ -8958,7 +8984,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedHRRR_NWHourlyDBZLists[]
-        if (_this.context._layer.group.name == "HRRR_NW Hourly") {
+        if (_this.context._layer?.group.name == "HRRR_NW Hourly") {
             if (layer_name == 'Next 01 Hrs') {
                 bgClickedHRRR_NWHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
@@ -8977,7 +9003,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedEWRFMaxZLists[]
-        if (_this.context._layer.group.name == "EWRF MaxZ") {
+        if (_this.context._layer?.group.name == "EWRF MaxZ") {
             if (layer_name == 'Next 01 Hrs') {
                 bgClickedEWRFMaxZLists.push(
                     layer_group_name + " " + layer_name);
@@ -8996,7 +9022,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedEWRFLightningLists[]
-        if (_this.context._layer.group.name == "EWRF Lightning") {
+        if (_this.context._layer?.group.name == "EWRF Lightning") {
             if (layer_name == 'Next 01 Hrs') {
                 bgClickedEWRFLightningLists.push(
                     layer_group_name + " " + layer_name);
@@ -9017,7 +9043,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //medium_range
         //bgClickedRainfallIntensityDay1Lists[]
-        if (_this.context._layer.group.name == "Rainfall Intensity Day1") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day1") {
             if (layer_name == 'GFS DAY1') {
                 bgClickedRainfallIntensityDay1Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9051,7 +9077,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedRainfallIntensityDay2Lists[]
-        if (_this.context._layer.group.name == "Rainfall Intensity Day2") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day2") {
             if (layer_name == 'GFS DAY2') {
                 bgClickedRainfallIntensityDay2Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9085,7 +9111,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedRainfallIntensityDay3Lists[]
-        if (_this.context._layer.group.name == "Rainfall Intensity Day3") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day3") {
             if (layer_name == 'GFS DAY3') {
                 bgClickedRainfallIntensityDay3Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9119,7 +9145,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedRainfallIntensityDay4Lists[]
-        if (_this.context._layer.group.name == "Rainfall Intensity Day4") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day4") {
             if (layer_name == 'GFS DAY4') {
                 bgClickedRainfallIntensityDay4Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9153,7 +9179,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedRainfallIntensityDay5Lists[]
-        if (_this.context._layer.group.name == "Rainfall Intensity Day5") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day5") {
             if (layer_name == 'GFS DAY5') {
                 bgClickedRainfallIntensityDay5Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9187,7 +9213,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedMSLPDay1Lists[]
-        if (_this.context._layer.group.name == "MSLP Day1") {
+        if (_this.context._layer?.group.name == "MSLP Day1") {
             if (layer_name == 'GFS DAY1') {
                 bgClickedMSLPDay1Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9221,7 +9247,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedMSLPDay2Lists[]
-        if (_this.context._layer.group.name == "MSLP Day2") {
+        if (_this.context._layer?.group.name == "MSLP Day2") {
             if (layer_name == 'GFS DAY2') {
                 bgClickedMSLPDay2Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9255,7 +9281,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedMSLPDay3Lists[]
-        if (_this.context._layer.group.name == "MSLP Day3") {
+        if (_this.context._layer?.group.name == "MSLP Day3") {
             if (layer_name == 'GFS DAY3') {
                 bgClickedMSLPDay3Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9289,7 +9315,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedMSLPDay4Lists[]
-        if (_this.context._layer.group.name == "MSLP Day4") {
+        if (_this.context._layer?.group.name == "MSLP Day4") {
             if (layer_name == 'GFS DAY4') {
                 bgClickedMSLPDay4Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9323,7 +9349,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedMSLPDay5Lists[]
-        if (_this.context._layer.group.name == "MSLP Day5") {
+        if (_this.context._layer?.group.name == "MSLP Day5") {
             if (layer_name == 'GFS DAY5') {
                 bgClickedMSLPDay5Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9357,7 +9383,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked10mWINDDay1Lists[]
-        if (_this.context._layer.group.name == "10m WIND Day 1") {
+        if (_this.context._layer?.group.name == "10m WIND Day 1") {
             if (layer_name == 'GFS DAY1') {
                 bgClicked10mWINDDay1Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9386,7 +9412,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked10mWINDDay2Lists[]
-        if (_this.context._layer.group.name == "10m WIND Day 2") {
+        if (_this.context._layer?.group.name == "10m WIND Day 2") {
             if (layer_name == 'GFS DAY2') {
                 bgClicked10mWINDDay2Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9415,7 +9441,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked10mWINDDay3Lists[]
-        if (_this.context._layer.group.name == "10m WIND Day 3") {
+        if (_this.context._layer?.group.name == "10m WIND Day 3") {
             if (layer_name == 'GFS DAY3') {
                 bgClicked10mWINDDay3Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9444,7 +9470,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked10mWINDDay4Lists[]
-        if (_this.context._layer.group.name == "10m WIND Day 4") {
+        if (_this.context._layer?.group.name == "10m WIND Day 4") {
             if (layer_name == 'GFS DAY4') {
                 bgClicked10mWINDDay4Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9473,7 +9499,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked10mWINDDay5Lists[]
-        if (_this.context._layer.group.name == "10m WIND Day 5") {
+        if (_this.context._layer?.group.name == "10m WIND Day 5") {
             if (layer_name == 'GFS DAY5') {
                 bgClicked10mWINDDay5Lists.push(
                     layer_group_name + " " + layer_name);
@@ -9505,10 +9531,10 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         //HomePage_Lightning
-        if (_this.context._layer.group.name == "Lightning") {
+        if (_this.context._layer?.group.name == "Lightning") {
 
             // if (panelLayerLightningTitle.innerHTML == '') {
-            //     panelLayerLightningTitle.innerHTML = _this.context._layer.group.name + ':';
+            //     panelLayerLightningTitle.innerHTML = _this.context._layer?.group.name + ':';
             //     // legendModel1.src = 'http://103.215.208.18/dwr_img/GIS/legend/model_nowcast.png';
             //     // legendModel1.style.height = '35vh';
             //     // legendModel1.style.width = '72%';
@@ -9565,9 +9591,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             // panelLayerMETAR00UTC_lists.innerHTML = clickedMETAR00UTCLists.join("");
         }
         //HomePage_Radar
-        // if (_this.context._layer.group.name == "Radar Reflectivity") {
+        // if (_this.context._layer?.group.name == "Radar Reflectivity") {
         //     if (panelLayerRadarTitle.innerHTML == '') {
-        //         panelLayerRadarTitle.innerHTML = _this.context._layer.group.name + ':'
+        //         panelLayerRadarTitle.innerHTML = _this.context._layer?.group.name + ':'
         //         Light_RadarRow.style.display = 'block';
         //     }
 
@@ -9584,10 +9610,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         //     panelLayerRadarlists.innerHTML = clickedRadarLists.join("");
         // }
         //EXPOSURE
-        if (_this.context._layer.group.name == "Exposure Layers") {
+        if (_this.context._layer?.group.name == "Exposure Layers") {
             if (panelLayerExposureTitle.innerHTML == '') {
                 EXPOSURE.innerHTML = "EXPOSURE"
-                panelLayerExposureTitle.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerExposureTitle.innerHTML = _this.context._layer?.group.name + ':'
                 ExposureRow.style.display = 'block';
             }
 
@@ -9723,7 +9749,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //METAR
-        if (_this.context._layer.group.name == "METAR 00UTC") {
+        if (_this.context._layer?.group.name == "METAR 00UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9737,7 +9763,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 01UTC") {
+        if (_this.context._layer?.group.name == "METAR 01UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9751,7 +9777,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 02UTC") {
+        if (_this.context._layer?.group.name == "METAR 02UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9765,7 +9791,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 03UTC") {
+        if (_this.context._layer?.group.name == "METAR 03UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9779,7 +9805,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 04UTC") {
+        if (_this.context._layer?.group.name == "METAR 04UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9793,7 +9819,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 05UTC") {
+        if (_this.context._layer?.group.name == "METAR 05UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9807,7 +9833,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 06UTC") {
+        if (_this.context._layer?.group.name == "METAR 06UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9821,7 +9847,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 07UTC") {
+        if (_this.context._layer?.group.name == "METAR 07UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9835,7 +9861,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 08UTC") {
+        if (_this.context._layer?.group.name == "METAR 08UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9849,7 +9875,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 09UTC") {
+        if (_this.context._layer?.group.name == "METAR 09UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9863,7 +9889,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 10UTC") {
+        if (_this.context._layer?.group.name == "METAR 10UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9877,7 +9903,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 11UTC") {
+        if (_this.context._layer?.group.name == "METAR 11UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9891,7 +9917,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 12UTC") {
+        if (_this.context._layer?.group.name == "METAR 12UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9905,7 +9931,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 13UTC") {
+        if (_this.context._layer?.group.name == "METAR 13UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9919,7 +9945,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 14UTC") {
+        if (_this.context._layer?.group.name == "METAR 14UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9933,7 +9959,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 15UTC") {
+        if (_this.context._layer?.group.name == "METAR 15UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9947,7 +9973,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 16UTC") {
+        if (_this.context._layer?.group.name == "METAR 16UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9961,7 +9987,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 17UTC") {
+        if (_this.context._layer?.group.name == "METAR 17UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9975,7 +10001,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 18UTC") {
+        if (_this.context._layer?.group.name == "METAR 18UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -9989,7 +10015,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 19UTC") {
+        if (_this.context._layer?.group.name == "METAR 19UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -10003,7 +10029,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 20UTC") {
+        if (_this.context._layer?.group.name == "METAR 20UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -10017,7 +10043,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 21UTC") {
+        if (_this.context._layer?.group.name == "METAR 21UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -10031,7 +10057,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 22UTC") {
+        if (_this.context._layer?.group.name == "METAR 22UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -10045,7 +10071,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
-        if (_this.context._layer.group.name == "METAR 23UTC") {
+        if (_this.context._layer?.group.name == "METAR 23UTC") {
             if (layer_name == 'TEMPERATURE') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
@@ -10062,7 +10088,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         // SYNOP--
-        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 00UTC") {
             if (layer_name == 'TEMPERATURE') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
@@ -10088,7 +10114,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
-        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 03UTC") {
             if (layer_name == 'TEMPERATURE') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
@@ -10114,7 +10140,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
-        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 06UTC") {
             if (layer_name == 'TEMPERATURE') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
@@ -10140,7 +10166,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
-        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 09UTC") {
             if (layer_name == 'TEMPERATURE') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
@@ -10166,7 +10192,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
-        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 12UTC") {
             if (layer_name == 'TEMPERATURE') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
@@ -10192,7 +10218,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
-        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 15UTC") {
             if (layer_name == 'TEMPERATURE') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
@@ -10218,7 +10244,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
-        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 18UTC") {
             if (layer_name == 'TEMPERATURE') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
@@ -10244,7 +10270,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
-        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 21UTC") {
             if (layer_name == 'TEMPERATURE') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
@@ -10273,11 +10299,11 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         // RADAR--
-        if (_this.context._layer.group.name == "Radar Products" || _this.context._layer.group.name ==
+        if (_this.context._layer?.group.name == "Radar Products" || _this.context._layer?.group.name ==
             "Radar Reflectivity") {
             if (panelLayerRADARPRODUCTS_Title.innerHTML == '') {
                 RADARPRODUCTS.innerHTML = "RADAR"
-                panelLayerRADARPRODUCTS_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerRADARPRODUCTS_Title.innerHTML = _this.context._layer?.group.name + ':'
                 RADAR_Row.style.display = 'block';
             }
             let AlreadyExit = clickedRADARPRODUCTSLists.find(x => {
@@ -10299,10 +10325,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
         }
-        if (_this.context._layer.group.name == "Satellite Observation") {
+        if (_this.context._layer?.group.name == "Satellite Observation") {
             if (panelLayerSATELLITE_Title.innerHTML == '') {
                 SATELLITE.innerHTML = "SATELLITE"
-                panelLayerSATELLITE_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerSATELLITE_Title.innerHTML = _this.context._layer?.group.name + ':'
                 SATELLITE_Row.style.display = 'block';
             }
             let AlreadyExit = clickedSATELLITELists.find(x => {
@@ -10532,10 +10558,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
         }
 
-        if (_this.context._layer.group.name == "Lightning") {
+        if (_this.context._layer?.group.name == "Lightning") {
             if (panelLayerLIGHTINING_Title.innerHTML == '') {
                 LIGHTINING.innerHTML = "LIGHTINING"
-                panelLayerLIGHTINING_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerLIGHTINING_Title.innerHTML = _this.context._layer?.group.name + ':'
                 LIGHTINING_Row.style.display = 'block';
             }
             let AlreadyExit = clickedLIGHTININGLists.find(x => {
@@ -10577,10 +10603,10 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // SOUNDING //
-        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_00_UTC WIND") {
             if (panelLayerSOUNDING00UTCWIND_Title.innerHTML == '') {
                 SOUNDING.innerHTML = "SOUNDING"
-                panelLayerSOUNDING00UTCWIND_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerSOUNDING00UTCWIND_Title.innerHTML = _this.context._layer?.group.name + ':'
                 SOUNDING_Row.style.display = 'block';
             }
             let AlreadyExit = clickedSOUNDING00UTCWINDLists.find(x => {
@@ -10639,10 +10665,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
         }
 
-        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_12_UTC WIND") {
             if (panelLayerSOUNDING12UTCWIND_Title.innerHTML == '') {
                 SOUNDING.innerHTML = "SOUNDING"
-                panelLayerSOUNDING12UTCWIND_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerSOUNDING12UTCWIND_Title.innerHTML = _this.context._layer?.group.name + ':'
                 SOUNDING_Row.style.display = 'block';
             }
 
@@ -10702,10 +10728,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
         }
 
-        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC TEMP") {
             if (panelLayerSOUNDING00UTCTEMP_Title.innerHTML == '') {
                 SOUNDING.innerHTML = "SOUNDING"
-                panelLayerSOUNDING00UTCTEMP_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerSOUNDING00UTCTEMP_Title.innerHTML = _this.context._layer?.group.name + ':'
                 SOUNDING_Row.style.display = 'block';
             }
 
@@ -10765,10 +10791,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
         }
 
-        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC TEMP") {
             if (panelLayerSOUNDING12UTCTEMP_Title.innerHTML == '') {
                 SOUNDING.innerHTML = "SOUNDING"
-                panelLayerSOUNDING12UTCTEMP_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerSOUNDING12UTCTEMP_Title.innerHTML = _this.context._layer?.group.name + ':'
                 SOUNDING_Row.style.display = 'block';
             }
 
@@ -10829,10 +10855,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
         }
 
-        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC DEW POINT") {
             if (panelLayerSOUNDING00UTCDEWPOINT_Title.innerHTML == '') {
                 SOUNDING.innerHTML = "SOUNDING"
-                panelLayerSOUNDING00UTCDEWPOINT_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerSOUNDING00UTCDEWPOINT_Title.innerHTML = _this.context._layer?.group.name + ':'
                 SOUNDING_Row.style.display = 'block';
             }
             let AlreadyExit = clickedSOUNDING00UTCDEWPOINTLists.find(x => {
@@ -10891,10 +10917,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
         }
 
-        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC DEW POINT") {
             if (panelLayerSOUNDING12UTCDEWPOINT_Title.innerHTML == '') {
                 SOUNDING.innerHTML = "SOUNDING"
-                panelLayerSOUNDING12UTCDEWPOINT_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerSOUNDING12UTCDEWPOINT_Title.innerHTML = _this.context._layer?.group.name + ':'
                 SOUNDING_Row.style.display = 'block';
             }
             let AlreadyExit = clickedSOUNDING12UTCDEWPOINTLists.find(x => {
@@ -10953,10 +10979,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
         }
 
-        if (_this.context._layer.group.name == "SHIP AND BUOY OBSERVATION") {
+        if (_this.context._layer?.group.name == "SHIP AND BUOY OBSERVATION") {
             if (panelLayerSHIPANDBUOY_Title.innerHTML == '') {
                 SHIPANDBUOY.innerHTML = "SHIP AND BUOY"
-                panelLayerSHIPANDBUOY_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerSHIPANDBUOY_Title.innerHTML = _this.context._layer?.group.name + ':'
                 SHIPANDBUOY_Row.style.display = 'block';
             }
             let AlreadyExit = clickedSHIPANDBUOYLists.find(x => {
@@ -11110,10 +11136,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerSHIPANDBUOY_lists.innerHTML = clickedSHIPANDBUOYLists.join("");
         }
-        if (_this.context._layer.group.name == "WRF Reflectivity") {
+        if (_this.context._layer?.group.name == "WRF Reflectivity") {
             if (panelLayerWRFReflectivity_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
-                panelLayerWRFReflectivity_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerWRFReflectivity_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MESOLSCALE_Row.style.display = 'block';
             }
 
@@ -11136,10 +11162,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerWRFReflectivity_lists.innerHTML = clickedWRFReflectivityLists.join("");
         }
-        if (_this.context._layer.group.name == "WRF lightning Product") {
+        if (_this.context._layer?.group.name == "WRF lightning Product") {
             if (panelLayerWRFlightningProduct_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
-                panelLayerWRFlightningProduct_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerWRFlightningProduct_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MESOLSCALE_Row.style.display = 'block';
             }
             let AlreadyExit = clickedWRFlightningProductLists.find(x => {
@@ -11161,10 +11187,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerWRFlightningProduct_lists.innerHTML = clickedWRFlightningProductLists.join("");
         }
-        if (_this.context._layer.group.name == "WRF Accumlated Rainfall") {
+        if (_this.context._layer?.group.name == "WRF Accumlated Rainfall") {
             if (panelLayerWRFAccumlatedRainfall_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
-                panelLayerWRFAccumlatedRainfall_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerWRFAccumlatedRainfall_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MESOLSCALE_Row.style.display = 'block';
             }
 
@@ -11187,10 +11213,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerWRFAccumlatedRainfall_lists.innerHTML = clickedWRFAccumlatedRainfallLists.join("");
         }
-        if (_this.context._layer.group.name == "lightning Potential index") {
+        if (_this.context._layer?.group.name == "lightning Potential index") {
             if (panelLayerlightningPotentialindex_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
-                panelLayerlightningPotentialindex_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerlightningPotentialindex_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MESOLSCALE_Row.style.display = 'block';
             }
             let AlreadyExit = clickedlightningPotentialindexLists.find(x => {
@@ -11218,10 +11244,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join("");
         }
-        if (_this.context._layer.group.name == "NCUMR lightning Product") {
+        if (_this.context._layer?.group.name == "NCUMR lightning Product") {
             if (panelLayerNCUMRlightningProduct_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
-                panelLayerNCUMRlightningProduct_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerNCUMRlightningProduct_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MESOLSCALE_Row.style.display = 'block';
             }
             let AlreadyExit = clickedNCUMRlightningProductLists.find(x => {
@@ -11243,10 +11269,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerNCUMRlightningProduct_lists.innerHTML = clickedNCUMRlightningProductLists.join("");
         }
-        if (_this.context._layer.group.name == "NCUMR Wind Gust") {
+        if (_this.context._layer?.group.name == "NCUMR Wind Gust") {
             if (panelLayerNCUMRWindGust_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
-                panelLayerNCUMRWindGust_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerNCUMRWindGust_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MESOLSCALE_Row.style.display = 'block';
             }
             let AlreadyExit = clickedNCUMRWindGustLists.find(x => {
@@ -11268,10 +11294,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerNCUMRWindGust_lists.innerHTML = clickedNCUMRWindGustLists.join("");
         }
-        if (_this.context._layer.group.name == "NCUMR Rainfall") {
+        if (_this.context._layer?.group.name == "NCUMR Rainfall") {
             if (panelLayerNCUMRRainfall_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
-                panelLayerNCUMRRainfall_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerNCUMRRainfall_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MESOLSCALE_Row.style.display = 'block';
             }
             let AlreadyExit = clickedNCUMRRainfallLists.find(x => {
@@ -11293,10 +11319,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerNCUMRRainfall_lists.innerHTML = clickedNCUMRRainfallLists.join("");
         }
-        if (_this.context._layer.group.name == "HRRR_SP Hourly DBZ") {
+        if (_this.context._layer?.group.name == "HRRR_SP Hourly DBZ") {
             if (panelLayerHRRR_SPHourlyDBZ_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
-                panelLayerHRRR_SPHourlyDBZ_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerHRRR_SPHourlyDBZ_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MESOLSCALE_Row.style.display = 'block';
             }
             let AlreadyExit = clickedHRRR_SPHourlyDBZLists.find(x => {
@@ -11324,10 +11350,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerHRRR_SPHourlyDBZ_lists.innerHTML = clickedHRRR_SPHourlyDBZLists.join("");
         }
-        if (_this.context._layer.group.name == "HRRR_NE Hourly DBZ") {
+        if (_this.context._layer?.group.name == "HRRR_NE Hourly DBZ") {
             if (panelLayerHRRR_NEHourlyDBZ_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
-                panelLayerHRRR_NEHourlyDBZ_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerHRRR_NEHourlyDBZ_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MESOLSCALE_Row.style.display = 'block';
             }
             let AlreadyExit = clickedHRRR_NEHourlyDBZLists.find(x => {
@@ -11355,10 +11381,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerHRRR_NEHourlyDBZ_lists.innerHTML = clickedHRRR_NEHourlyDBZLists.join("");
         }
-        if (_this.context._layer.group.name == "HRRR_NW Hourly DBZ") {
+        if (_this.context._layer?.group.name == "HRRR_NW Hourly DBZ") {
             if (panelLayerHRRR_NWHourlyDBZ_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
-                panelLayerHRRR_NWHourlyDBZ_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerHRRR_NWHourlyDBZ_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MESOLSCALE_Row.style.display = 'block';
             }
             let AlreadyExit = clickedHRRR_NWHourlyDBZLists.find(x => {
@@ -11386,10 +11412,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerHRRR_NWHourlyDBZ_lists.innerHTML = clickedHRRR_NWHourlyDBZLists.join("");
         }
-        if (_this.context._layer.group.name == "EWRF MaxZ") {
+        if (_this.context._layer?.group.name == "EWRF MaxZ") {
             if (panelLayerEWRFMaxZ_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
-                panelLayerEWRFMaxZ_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerEWRFMaxZ_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MESOLSCALE_Row.style.display = 'block';
             }
             let AlreadyExit = clickedEWRFMaxZLists.find(x => {
@@ -11417,10 +11443,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerEWRFMaxZ_lists.innerHTML = clickedEWRFMaxZLists.join("");
         }
-        if (_this.context._layer.group.name == "EWRF Lightning") {
+        if (_this.context._layer?.group.name == "EWRF Lightning") {
             if (panelLayerEWRFLightning_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
-                panelLayerEWRFLightning_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerEWRFLightning_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MESOLSCALE_Row.style.display = 'block';
             }
             let AlreadyExit = clickedEWRFLightningLists.find(x => {
@@ -11449,10 +11475,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
         }
         // MEDIUM
-        if (_this.context._layer.group.name == "Rainfall Intensity Day1") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day1") {
             if (panelLayerRainfallIntensityDay1_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayerRainfallIntensityDay1_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerRainfallIntensityDay1_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clickedRainfallIntensityDay1Lists.find(x => {
@@ -11498,10 +11524,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerRainfallIntensityDay1_lists.innerHTML = clickedRainfallIntensityDay1Lists.join("");
         }
-        if (_this.context._layer.group.name == "Rainfall Intensity Day2") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day2") {
             if (panelLayerRainfallIntensityDay2_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayerRainfallIntensityDay2_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerRainfallIntensityDay2_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clickedRainfallIntensityDay2Lists.find(x => {
@@ -11547,10 +11573,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerRainfallIntensityDay2_lists.innerHTML = clickedRainfallIntensityDay2Lists.join("");
         }
-        if (_this.context._layer.group.name == "Rainfall Intensity Day3") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day3") {
             if (panelLayerRainfallIntensityDay3_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayerRainfallIntensityDay3_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerRainfallIntensityDay3_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clickedRainfallIntensityDay3Lists.find(x => {
@@ -11596,10 +11622,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerRainfallIntensityDay3_lists.innerHTML = clickedRainfallIntensityDay3Lists.join("");
         }
-        if (_this.context._layer.group.name == "Rainfall Intensity Day4") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day4") {
             if (panelLayerRainfallIntensityDay4_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayerRainfallIntensityDay4_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerRainfallIntensityDay4_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clickedRainfallIntensityDay4Lists.find(x => {
@@ -11645,10 +11671,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerRainfallIntensityDay4_lists.innerHTML = clickedRainfallIntensityDay4Lists.join("");
         }
-        if (_this.context._layer.group.name == "Rainfall Intensity Day5") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day5") {
             if (panelLayerRainfallIntensityDay5_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayerRainfallIntensityDay5_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerRainfallIntensityDay5_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clickedRainfallIntensityDay5Lists.find(x => {
@@ -11704,10 +11730,10 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
 
-        if (_this.context._layer.group.name == "MSLP Day1") {
+        if (_this.context._layer?.group.name == "MSLP Day1") {
             if (panelLayerMSLPDay1_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayerMSLPDay1_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerMSLPDay1_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clickedMSLPDay1Lists.find(x => {
@@ -11753,10 +11779,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerMSLPDay1_lists.innerHTML = clickedMSLPDay1Lists.join("");
         }
-        if (_this.context._layer.group.name == "MSLP Day2") {
+        if (_this.context._layer?.group.name == "MSLP Day2") {
             if (panelLayerMSLPDay2_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayerMSLPDay2_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerMSLPDay2_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clickedMSLPDay2Lists.find(x => {
@@ -11802,10 +11828,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerMSLPDay2_lists.innerHTML = clickedMSLPDay2Lists.join("");
         }
-        if (_this.context._layer.group.name == "MSLP Day3") {
+        if (_this.context._layer?.group.name == "MSLP Day3") {
             if (panelLayerMSLPDay3_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayerMSLPDay3_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerMSLPDay3_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clickedMSLPDay3Lists.find(x => {
@@ -11851,10 +11877,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerMSLPDay3_lists.innerHTML = clickedMSLPDay3Lists.join("");
         }
-        if (_this.context._layer.group.name == "MSLP Day4") {
+        if (_this.context._layer?.group.name == "MSLP Day4") {
             if (panelLayerMSLPDay4_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayerMSLPDay4_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerMSLPDay4_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clickedMSLPDay4Lists.find(x => {
@@ -11900,10 +11926,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerMSLPDay4_lists.innerHTML = clickedMSLPDay4Lists.join("");
         }
-        if (_this.context._layer.group.name == "MSLP Day5") {
+        if (_this.context._layer?.group.name == "MSLP Day5") {
             if (panelLayerMSLPDay5_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayerMSLPDay5_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayerMSLPDay5_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clickedMSLPDay5Lists.find(x => {
@@ -11954,10 +11980,10 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
 
-        if (_this.context._layer.group.name == "10m WIND Day 1") {
+        if (_this.context._layer?.group.name == "10m WIND Day 1") {
             if (panelLayer10mWINDDay1_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayer10mWINDDay1_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayer10mWINDDay1_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clicked10mWINDDay1Lists.find(x => {
@@ -12004,10 +12030,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day 2") {
+        if (_this.context._layer?.group.name == "10m WIND Day 2") {
             if (panelLayer10mWINDDay2_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayer10mWINDDay2_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayer10mWINDDay2_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clicked10mWINDDay2Lists.find(x => {
@@ -12053,10 +12079,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day 3") {
+        if (_this.context._layer?.group.name == "10m WIND Day 3") {
             if (panelLayer10mWINDDay3_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayer10mWINDDay3_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayer10mWINDDay3_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clicked10mWINDDay3Lists.find(x => {
@@ -12102,10 +12128,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day 4") {
+        if (_this.context._layer?.group.name == "10m WIND Day 4") {
             if (panelLayer10mWINDDay4_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayer10mWINDDay4_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayer10mWINDDay4_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clicked10mWINDDay4Lists.find(x => {
@@ -12151,10 +12177,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
         }
-        if (_this.context._layer.group.name == "10m WIND Day 5") {
+        if (_this.context._layer?.group.name == "10m WIND Day 5") {
             if (panelLayer10mWINDDay5_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
-                panelLayer10mWINDDay5_Title.innerHTML = _this.context._layer.group.name + ':'
+                panelLayer10mWINDDay5_Title.innerHTML = _this.context._layer?.group.name + ':'
                 MEDIUM_Row.style.display = 'block';
             }
             let AlreadyExit = clicked10mWINDDay5Lists.find(x => {
@@ -12206,13 +12232,13 @@ $("body").on("change", "input[type=checkbox]", function() {
         // debugger;
 
         console.log("unChecked");
-        var uncheckLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer.name : _this
+        var uncheckLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer?.name : _this
             .context.className;
         console.log("uncheckLayer............", uncheckLayer);
-        layer_name = _this.context._layer ? _this.context._layer.name : _this.context.className;
+        layer_name = _this.context._layer ? _this.context._layer?.name : _this.context.className;
 
         //bgClickedExposureLists[]
-        if (_this.context._layer.group.name == "Exposure Layers") {
+        if (_this.context._layer?.group.name == "Exposure Layers") {
             if (layer_name == 'District Boundaries' || layer_name == 'Airport' || layer_name ==
                 'Oil Refineries' || layer_name == 'Power Station' || layer_name == 'Power Plant' ||
                 layer_name == 'DEM' || layer_name == 'Hospital' || layer_name == 'Industrail' || layer_name ==
@@ -12228,7 +12254,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 00UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 00UTC") {
+        if (_this.context._layer?.group.name == "METAR 00UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12240,7 +12266,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 00UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 00UTC") {
+        if (_this.context._layer?.group.name == "METAR 00UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12252,7 +12278,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 00UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 00UTC") {
+        if (_this.context._layer?.group.name == "METAR 00UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12264,7 +12290,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 00UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 00UTC") {
+        if (_this.context._layer?.group.name == "METAR 00UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12278,7 +12304,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 01UTC
         //bgClicked METAR 01UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 01UTC") {
+        if (_this.context._layer?.group.name == "METAR 01UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12290,7 +12316,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 01UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 01UTC") {
+        if (_this.context._layer?.group.name == "METAR 01UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12302,7 +12328,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 01UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 01UTC") {
+        if (_this.context._layer?.group.name == "METAR 01UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12314,7 +12340,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 01UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 01UTC") {
+        if (_this.context._layer?.group.name == "METAR 01UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12328,7 +12354,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 02UTC
         //bgClicked METAR 02UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 02UTC") {
+        if (_this.context._layer?.group.name == "METAR 02UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12340,7 +12366,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 02UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 02UTC") {
+        if (_this.context._layer?.group.name == "METAR 02UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12352,7 +12378,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 02UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 02UTC") {
+        if (_this.context._layer?.group.name == "METAR 02UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12364,7 +12390,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 02UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 02UTC") {
+        if (_this.context._layer?.group.name == "METAR 02UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12378,7 +12404,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 03UTC
         //bgClicked METAR 03UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 03UTC") {
+        if (_this.context._layer?.group.name == "METAR 03UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12390,7 +12416,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 03UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 03UTC") {
+        if (_this.context._layer?.group.name == "METAR 03UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12402,7 +12428,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 03UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 03UTC") {
+        if (_this.context._layer?.group.name == "METAR 03UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12414,7 +12440,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 03UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 03UTC") {
+        if (_this.context._layer?.group.name == "METAR 03UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12428,7 +12454,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 04UTC
         //bgClicked METAR 04UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 04UTC") {
+        if (_this.context._layer?.group.name == "METAR 04UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12440,7 +12466,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 04UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 04UTC") {
+        if (_this.context._layer?.group.name == "METAR 04UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12452,7 +12478,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 04UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 04UTC") {
+        if (_this.context._layer?.group.name == "METAR 04UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12464,7 +12490,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 04UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 04UTC") {
+        if (_this.context._layer?.group.name == "METAR 04UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12478,7 +12504,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 05UTC
         //bgClicked METAR 05UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 05UTC") {
+        if (_this.context._layer?.group.name == "METAR 05UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12490,7 +12516,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 05UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 05UTC") {
+        if (_this.context._layer?.group.name == "METAR 05UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12502,7 +12528,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 05UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 05UTC") {
+        if (_this.context._layer?.group.name == "METAR 05UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12514,7 +12540,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 05UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 05UTC") {
+        if (_this.context._layer?.group.name == "METAR 05UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12528,7 +12554,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 06UTC
         //bgClicked METAR 06UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 06UTC") {
+        if (_this.context._layer?.group.name == "METAR 06UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12540,7 +12566,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 06UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 06UTC") {
+        if (_this.context._layer?.group.name == "METAR 06UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12552,7 +12578,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 06UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 06UTC") {
+        if (_this.context._layer?.group.name == "METAR 06UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12564,7 +12590,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 06UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 06UTC") {
+        if (_this.context._layer?.group.name == "METAR 06UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12578,7 +12604,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 07UTC
         //bgClicked METAR 07UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 07UTC") {
+        if (_this.context._layer?.group.name == "METAR 07UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12590,7 +12616,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 07UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 07UTC") {
+        if (_this.context._layer?.group.name == "METAR 07UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12602,7 +12628,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 07UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 07UTC") {
+        if (_this.context._layer?.group.name == "METAR 07UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12614,7 +12640,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 07UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 07UTC") {
+        if (_this.context._layer?.group.name == "METAR 07UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12628,7 +12654,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 08UTC
         //bgClicked METAR 08UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 08UTC") {
+        if (_this.context._layer?.group.name == "METAR 08UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12640,7 +12666,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 08UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 08UTC") {
+        if (_this.context._layer?.group.name == "METAR 08UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12652,7 +12678,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 08UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 08UTC") {
+        if (_this.context._layer?.group.name == "METAR 08UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12664,7 +12690,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 08UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 08UTC") {
+        if (_this.context._layer?.group.name == "METAR 08UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12678,7 +12704,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 09UTC
         //bgClicked METAR 09UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 09UTC") {
+        if (_this.context._layer?.group.name == "METAR 09UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12690,7 +12716,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 09UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 09UTC") {
+        if (_this.context._layer?.group.name == "METAR 09UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12702,7 +12728,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 09UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 09UTC") {
+        if (_this.context._layer?.group.name == "METAR 09UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12714,7 +12740,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 09UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 09UTC") {
+        if (_this.context._layer?.group.name == "METAR 09UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12728,7 +12754,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 10UTC
         //bgClicked METAR 10UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 10UTC") {
+        if (_this.context._layer?.group.name == "METAR 10UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12740,7 +12766,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 10UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 10UTC") {
+        if (_this.context._layer?.group.name == "METAR 10UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12752,7 +12778,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 10UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 10UTC") {
+        if (_this.context._layer?.group.name == "METAR 10UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12764,7 +12790,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 10UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 10UTC") {
+        if (_this.context._layer?.group.name == "METAR 10UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12778,7 +12804,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 11UTC
         //bgClicked METAR 11UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 11UTC") {
+        if (_this.context._layer?.group.name == "METAR 11UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12790,7 +12816,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 11UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 11UTC") {
+        if (_this.context._layer?.group.name == "METAR 11UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12802,7 +12828,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 11UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 11UTC") {
+        if (_this.context._layer?.group.name == "METAR 11UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12814,7 +12840,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 11UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 11UTC") {
+        if (_this.context._layer?.group.name == "METAR 11UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12828,7 +12854,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 12UTC
         //bgClicked METAR 12UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 12UTC") {
+        if (_this.context._layer?.group.name == "METAR 12UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12840,7 +12866,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 12UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 12UTC") {
+        if (_this.context._layer?.group.name == "METAR 12UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12852,7 +12878,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 12UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 12UTC") {
+        if (_this.context._layer?.group.name == "METAR 12UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12864,7 +12890,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 12UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 12UTC") {
+        if (_this.context._layer?.group.name == "METAR 12UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12878,7 +12904,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 13UTC
         //bgClicked METAR 13UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 13UTC") {
+        if (_this.context._layer?.group.name == "METAR 13UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12890,7 +12916,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 13UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 13UTC") {
+        if (_this.context._layer?.group.name == "METAR 13UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12902,7 +12928,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 13UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 13UTC") {
+        if (_this.context._layer?.group.name == "METAR 13UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12914,7 +12940,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 13UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 13UTC") {
+        if (_this.context._layer?.group.name == "METAR 13UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12928,7 +12954,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 14UTC
         //bgClicked METAR 14UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 14UTC") {
+        if (_this.context._layer?.group.name == "METAR 14UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12940,7 +12966,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 14UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 14UTC") {
+        if (_this.context._layer?.group.name == "METAR 14UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -12952,7 +12978,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 14UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 14UTC") {
+        if (_this.context._layer?.group.name == "METAR 14UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -12964,7 +12990,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 14UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 14UTC") {
+        if (_this.context._layer?.group.name == "METAR 14UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -12978,7 +13004,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 15UTC
         //bgClicked METAR 15UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 15UTC") {
+        if (_this.context._layer?.group.name == "METAR 15UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -12990,7 +13016,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 15UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 15UTC") {
+        if (_this.context._layer?.group.name == "METAR 15UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -13002,7 +13028,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 15UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 15UTC") {
+        if (_this.context._layer?.group.name == "METAR 15UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -13014,7 +13040,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 15UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 15UTC") {
+        if (_this.context._layer?.group.name == "METAR 15UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13028,7 +13054,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 16UTC
         //bgClicked METAR 16UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 16UTC") {
+        if (_this.context._layer?.group.name == "METAR 16UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -13040,7 +13066,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 16UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 16UTC") {
+        if (_this.context._layer?.group.name == "METAR 16UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -13052,7 +13078,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 16UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 16UTC") {
+        if (_this.context._layer?.group.name == "METAR 16UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -13064,7 +13090,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 16UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 16UTC") {
+        if (_this.context._layer?.group.name == "METAR 16UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13078,7 +13104,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 17UTC
         //bgClicked METAR 17UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 17UTC") {
+        if (_this.context._layer?.group.name == "METAR 17UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -13090,7 +13116,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 17UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 17UTC") {
+        if (_this.context._layer?.group.name == "METAR 17UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -13102,7 +13128,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 17UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 17UTC") {
+        if (_this.context._layer?.group.name == "METAR 17UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -13114,7 +13140,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 17UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 17UTC") {
+        if (_this.context._layer?.group.name == "METAR 17UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13128,7 +13154,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 18UTC
         //bgClicked METAR 18UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 18UTC") {
+        if (_this.context._layer?.group.name == "METAR 18UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -13140,7 +13166,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 18UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 18UTC") {
+        if (_this.context._layer?.group.name == "METAR 18UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -13152,7 +13178,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 18UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 18UTC") {
+        if (_this.context._layer?.group.name == "METAR 18UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -13164,7 +13190,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 18UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 18UTC") {
+        if (_this.context._layer?.group.name == "METAR 18UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13178,7 +13204,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 19UTC
         //bgClicked METAR 19UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 19UTC") {
+        if (_this.context._layer?.group.name == "METAR 19UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -13190,7 +13216,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 19UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 19UTC") {
+        if (_this.context._layer?.group.name == "METAR 19UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -13202,7 +13228,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 19UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 15UTC") {
+        if (_this.context._layer?.group.name == "METAR 15UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -13214,7 +13240,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 19UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 15UTC") {
+        if (_this.context._layer?.group.name == "METAR 15UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13228,7 +13254,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 20UTC
         //bgClicked METAR 20UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 20UTC") {
+        if (_this.context._layer?.group.name == "METAR 20UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -13240,7 +13266,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 20UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 20UTC") {
+        if (_this.context._layer?.group.name == "METAR 20UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -13252,7 +13278,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 20UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 20UTC") {
+        if (_this.context._layer?.group.name == "METAR 20UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -13264,7 +13290,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 20UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 20UTC") {
+        if (_this.context._layer?.group.name == "METAR 20UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13278,7 +13304,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 21UTC
         //bgClicked METAR 21UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 21UTC") {
+        if (_this.context._layer?.group.name == "METAR 21UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -13290,7 +13316,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 21UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 21UTC") {
+        if (_this.context._layer?.group.name == "METAR 21UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -13302,7 +13328,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 21UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 21UTC") {
+        if (_this.context._layer?.group.name == "METAR 21UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -13314,7 +13340,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 21UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 21UTC") {
+        if (_this.context._layer?.group.name == "METAR 21UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13328,7 +13354,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 22UTC
         //bgClicked METAR 22UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 22UTC") {
+        if (_this.context._layer?.group.name == "METAR 22UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -13340,7 +13366,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 22UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 22UTC") {
+        if (_this.context._layer?.group.name == "METAR 22UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -13352,7 +13378,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 22UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 22UTC") {
+        if (_this.context._layer?.group.name == "METAR 22UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -13364,7 +13390,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 22UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 22UTC") {
+        if (_this.context._layer?.group.name == "METAR 22UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13378,7 +13404,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR 23UTC
         //bgClicked METAR 23UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 23UTC") {
+        if (_this.context._layer?.group.name == "METAR 23UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
@@ -13390,7 +13416,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 23UTC DEW POINT TEMPERATURE[]
-        if (_this.context._layer.group.name == "METAR 23UTC") {
+        if (_this.context._layer?.group.name == "METAR 23UTC") {
             if (layer_name == 'DEW POINT TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
@@ -13402,7 +13428,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 23UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "METAR 23UTC") {
+        if (_this.context._layer?.group.name == "METAR 23UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
@@ -13414,7 +13440,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked METAR 23UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "METAR 23UTC") {
+        if (_this.context._layer?.group.name == "METAR 23UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13427,7 +13453,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 00UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 00UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
@@ -13440,7 +13466,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 00UTC MEAN SEA LEVEL PRESSURE[]
-        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 00UTC") {
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
@@ -13453,7 +13479,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 00UTC CLOUD COVER[]
-        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 00UTC") {
             if (layer_name == 'CLOUD COVER') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
@@ -13466,7 +13492,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 00UTC GEOPOTENTIAL HEIGHT[]
-        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 00UTC") {
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
@@ -13479,7 +13505,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 00UTC RELATIVE HUMIDITY[]
-        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 00UTC") {
             if (layer_name == 'RELATIVE HUMIDITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
@@ -13492,7 +13518,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 00UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 00UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
@@ -13505,7 +13531,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 00UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 00UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13518,7 +13544,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 00UTC 3h RAINFALL[]
-        if (_this.context._layer.group.name == "SYNOP 00UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 00UTC") {
             if (layer_name == '3h RAINFALL') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
@@ -13531,7 +13557,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 03UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 03UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
@@ -13544,7 +13570,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 03UTC MEAN SEA LEVEL PRESSURE[]
-        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 03UTC") {
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
@@ -13557,7 +13583,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 03UTC CLOUD COVER[]
-        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 03UTC") {
             if (layer_name == 'CLOUD COVER') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
@@ -13570,7 +13596,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 03UTC GEOPOTENTIAL HEIGHT[]
-        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 03UTC") {
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
@@ -13583,7 +13609,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 03UTC RELATIVE HUMIDITY[]
-        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 03UTC") {
             if (layer_name == 'RELATIVE HUMIDITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
@@ -13596,7 +13622,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 03UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 03UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
@@ -13609,7 +13635,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 03UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 03UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13622,7 +13648,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 03UTC 3h RAINFALL[]
-        if (_this.context._layer.group.name == "SYNOP 03UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 03UTC") {
             if (layer_name == '3h RAINFALL') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
@@ -13635,7 +13661,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 06UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 06UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
@@ -13648,7 +13674,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 06UTC MEAN SEA LEVEL PRESSURE[]
-        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 06UTC") {
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
@@ -13661,7 +13687,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 06UTC CLOUD COVER[]
-        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 06UTC") {
             if (layer_name == 'CLOUD COVER') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
@@ -13674,7 +13700,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 06UTC GEOPOTENTIAL HEIGHT[]
-        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 06UTC") {
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
@@ -13687,7 +13713,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 06UTC RELATIVE HUMIDITY[]
-        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 06UTC") {
             if (layer_name == 'RELATIVE HUMIDITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
@@ -13700,7 +13726,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 06UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 06UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
@@ -13713,7 +13739,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 06UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 06UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13726,7 +13752,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 06UTC 3h RAINFALL[]
-        if (_this.context._layer.group.name == "SYNOP 06UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 06UTC") {
             if (layer_name == '3h RAINFALL') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
@@ -13740,7 +13766,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //bgClicked SYNOP 09UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 09UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
@@ -13753,7 +13779,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 09UTC MEAN SEA LEVEL PRESSURE[]
-        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 09UTC") {
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
@@ -13766,7 +13792,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 09UTC CLOUD COVER[]
-        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 09UTC") {
             if (layer_name == 'CLOUD COVER') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
@@ -13779,7 +13805,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 09UTC GEOPOTENTIAL HEIGHT[]
-        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 09UTC") {
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
@@ -13792,7 +13818,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 09UTC RELATIVE HUMIDITY[]
-        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 09UTC") {
             if (layer_name == 'RELATIVE HUMIDITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
@@ -13805,7 +13831,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 09UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 09UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
@@ -13818,7 +13844,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 09UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 09UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13831,7 +13857,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 09UTC 3h RAINFALL[]
-        if (_this.context._layer.group.name == "SYNOP 09UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 09UTC") {
             if (layer_name == '3h RAINFALL') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
@@ -13845,7 +13871,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //bgClicked SYNOP 12UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 12UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
@@ -13858,7 +13884,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 12UTC MEAN SEA LEVEL PRESSURE[]
-        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 12UTC") {
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
@@ -13871,7 +13897,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 12UTC CLOUD COVER[]
-        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 12UTC") {
             if (layer_name == 'CLOUD COVER') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
@@ -13884,7 +13910,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 12UTC GEOPOTENTIAL HEIGHT[]
-        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 12UTC") {
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
@@ -13897,7 +13923,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 12UTC RELATIVE HUMIDITY[]
-        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 12UTC") {
             if (layer_name == 'RELATIVE HUMIDITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
@@ -13910,7 +13936,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 12UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 12UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
@@ -13923,7 +13949,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 12UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 12UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -13936,7 +13962,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 12UTC 3h RAINFALL[]
-        if (_this.context._layer.group.name == "SYNOP 12UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 12UTC") {
             if (layer_name == '3h RAINFALL') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
@@ -13950,7 +13976,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //bgClicked SYNOP 15UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 15UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
@@ -13963,7 +13989,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 15UTC MEAN SEA LEVEL PRESSURE[]
-        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 15UTC") {
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
@@ -13976,7 +14002,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 15UTC CLOUD COVER[]
-        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 15UTC") {
             if (layer_name == 'CLOUD COVER') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
@@ -13989,7 +14015,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 15UTC GEOPOTENTIAL HEIGHT[]
-        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 15UTC") {
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
@@ -14002,7 +14028,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 15UTC RELATIVE HUMIDITY[]
-        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 15UTC") {
             if (layer_name == 'RELATIVE HUMIDITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
@@ -14015,7 +14041,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 15UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 15UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
@@ -14028,7 +14054,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 15UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 15UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -14041,7 +14067,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 15UTC 3h RAINFALL[]
-        if (_this.context._layer.group.name == "SYNOP 15UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 15UTC") {
             if (layer_name == '3h RAINFALL') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
@@ -14055,7 +14081,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //        
         //bgClicked SYNOP 18UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 18UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
@@ -14068,7 +14094,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 18UTC MEAN SEA LEVEL PRESSURE[]
-        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 18UTC") {
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
@@ -14081,7 +14107,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 18UTC CLOUD COVER[]
-        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 18UTC") {
             if (layer_name == 'CLOUD COVER') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
@@ -14094,7 +14120,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 18UTC GEOPOTENTIAL HEIGHT[]
-        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 18UTC") {
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
@@ -14107,7 +14133,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 18UTC RELATIVE HUMIDITY[]
-        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 18UTC") {
             if (layer_name == 'RELATIVE HUMIDITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
@@ -14120,7 +14146,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 18UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 18UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
@@ -14133,7 +14159,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 18UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 18UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -14146,7 +14172,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 18UTC 3h RAINFALL[]
-        if (_this.context._layer.group.name == "SYNOP 18UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 18UTC") {
             if (layer_name == '3h RAINFALL') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
@@ -14160,7 +14186,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //bgClicked SYNOP 21UTC TEMPERATURE[]
-        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 21UTC") {
             if (layer_name == 'TEMPERATURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
@@ -14173,7 +14199,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 21UTC MEAN SEA LEVEL PRESSURE[]
-        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 21UTC") {
             if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
@@ -14186,7 +14212,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 21UTC CLOUD COVER[]
-        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 21UTC") {
             if (layer_name == 'CLOUD COVER') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
@@ -14199,7 +14225,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 21UTC GEOPOTENTIAL HEIGHT[]
-        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 21UTC") {
             if (layer_name == 'GEOPOTENTIAL HEIGHT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
@@ -14212,7 +14238,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 21UTC RELATIVE HUMIDITY[]
-        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 21UTC") {
             if (layer_name == 'RELATIVE HUMIDITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
@@ -14225,7 +14251,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 21UTC VISIBILITY[]
-        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 21UTC") {
             if (layer_name == 'VISIBILITY') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
@@ -14238,7 +14264,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 21UTC WIND SPEED AND DIRECTION[]
-        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 21UTC") {
             if (layer_name == 'WIND SPEED AND DIRECTION') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
@@ -14251,7 +14277,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SYNOP 21UTC 3h RAINFALL[]
-        if (_this.context._layer.group.name == "SYNOP 21UTC") {
+        if (_this.context._layer?.group.name == "SYNOP 21UTC") {
             if (layer_name == '3h RAINFALL') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
@@ -14265,7 +14291,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //mesolscale
         //bgClickedWRFReflectivityLists[]
-        if (_this.context._layer.group.name == "WRF Reflectivity") {
+        if (_this.context._layer?.group.name == "WRF Reflectivity") {
             if (layer_name == 'Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFReflectivityLists.indexOf(itemToRemove);
@@ -14278,7 +14304,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedWRFReflectivityLists[]
-        if (_this.context._layer.group.name == "WRF Reflectivity") {
+        if (_this.context._layer?.group.name == "WRF Reflectivity") {
             if (layer_name == 'Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFReflectivityLists.indexOf(itemToRemove);
@@ -14291,7 +14317,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedWRFlightningProductLists[]
-        if (_this.context._layer.group.name == "WRF lightning Product") {
+        if (_this.context._layer?.group.name == "WRF lightning Product") {
             if (layer_name == 'Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFlightningProductLists.indexOf(itemToRemove);
@@ -14304,7 +14330,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedWRFlightningProductLists[]
-        if (_this.context._layer.group.name == "WRF lightning Product") {
+        if (_this.context._layer?.group.name == "WRF lightning Product") {
             if (layer_name == 'Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFlightningProductLists.indexOf(itemToRemove);
@@ -14317,7 +14343,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedWRFAccumlatedRainfallLists[]
-        if (_this.context._layer.group.name == "WRF Accumlated Rainfall") {
+        if (_this.context._layer?.group.name == "WRF Accumlated Rainfall") {
             if (layer_name == 'Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFAccumlatedRainfallLists.indexOf(itemToRemove);
@@ -14330,7 +14356,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedWRFAccumlatedRainfallLists[]
-        if (_this.context._layer.group.name == "WRF Accumlated Rainfall") {
+        if (_this.context._layer?.group.name == "WRF Accumlated Rainfall") {
             if (layer_name == 'Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFAccumlatedRainfallLists.indexOf(itemToRemove);
@@ -14343,7 +14369,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedlightningPotentialindexLists[]
-        if (_this.context._layer.group.name == "lightning Potential index") {
+        if (_this.context._layer?.group.name == "lightning Potential index") {
             if (layer_name == 'Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedlightningPotentialindexLists.indexOf(itemToRemove);
@@ -14356,7 +14382,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedlightningPotentialindexLists[]
-        if (_this.context._layer.group.name == "lightning Potential index") {
+        if (_this.context._layer?.group.name == "lightning Potential index") {
             if (layer_name == 'Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedlightningPotentialindexLists.indexOf(itemToRemove);
@@ -14369,7 +14395,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedlightningPotentialindexLists[]
-        if (_this.context._layer.group.name == "lightning Potential index") {
+        if (_this.context._layer?.group.name == "lightning Potential index") {
             if (layer_name == 'Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedlightningPotentialindexLists.indexOf(itemToRemove);
@@ -14382,7 +14408,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedNCUMRlightningProductLists
-        if (_this.context._layer.group.name == "NCUMR lightning Product") {
+        if (_this.context._layer?.group.name == "NCUMR lightning Product") {
             if (layer_name == 'Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRlightningProductLists.indexOf(itemToRemove);
@@ -14395,7 +14421,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedNCUMRlightningProductLists
-        if (_this.context._layer.group.name == "NCUMR lightning Product") {
+        if (_this.context._layer?.group.name == "NCUMR lightning Product") {
             if (layer_name == 'Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRlightningProductLists.indexOf(itemToRemove);
@@ -14408,7 +14434,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedNCUMRWindGustLists
-        if (_this.context._layer.group.name == "NCUMR Wind Gust") {
+        if (_this.context._layer?.group.name == "NCUMR Wind Gust") {
             if (layer_name == 'Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRWindGustLists.indexOf(itemToRemove);
@@ -14421,7 +14447,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedNCUMRWindGustLists
-        if (_this.context._layer.group.name == "NCUMR Wind Gust") {
+        if (_this.context._layer?.group.name == "NCUMR Wind Gust") {
             if (layer_name == 'Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRWindGustLists.indexOf(itemToRemove);
@@ -14434,7 +14460,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedNCUMRRainfallLists
-        if (_this.context._layer.group.name == "NCUMR Rainfall") {
+        if (_this.context._layer?.group.name == "NCUMR Rainfall") {
             if (layer_name == 'Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRRainfallLists.indexOf(itemToRemove);
@@ -14447,7 +14473,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedNCUMRRainfallLists
-        if (_this.context._layer.group.name == "NCUMR Rainfall") {
+        if (_this.context._layer?.group.name == "NCUMR Rainfall") {
             if (layer_name == 'Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRRainfallLists.indexOf(itemToRemove);
@@ -14460,7 +14486,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedHRRR_SPHourlyDBZLists
-        if (_this.context._layer.group.name == "HRRR_SP Hourly DBZ") {
+        if (_this.context._layer?.group.name == "HRRR_SP Hourly DBZ") {
             if (layer_name == 'Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_SPHourlyDBZLists.indexOf(itemToRemove);
@@ -14473,7 +14499,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedHRRR_SPHourlyDBZLists
-        if (_this.context._layer.group.name == "HRRR_SP Hourly DBZ") {
+        if (_this.context._layer?.group.name == "HRRR_SP Hourly DBZ") {
             if (layer_name == 'Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_SPHourlyDBZLists.indexOf(itemToRemove);
@@ -14486,7 +14512,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedHRRR_SPHourlyDBZLists
-        if (_this.context._layer.group.name == "HRRR_SP Hourly DBZ") {
+        if (_this.context._layer?.group.name == "HRRR_SP Hourly DBZ") {
             if (layer_name == 'Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_SPHourlyDBZLists.indexOf(itemToRemove);
@@ -14499,7 +14525,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedHRRR_NEHourlyDBZLists
-        if (_this.context._layer.group.name == "HRRR_NE Hourly") {
+        if (_this.context._layer?.group.name == "HRRR_NE Hourly") {
             if (layer_name == 'Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NEHourlyDBZLists.indexOf(itemToRemove);
@@ -14512,7 +14538,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedHRRR_NEHourlyDBZLists
-        if (_this.context._layer.group.name == "HRRR_NE Hourly") {
+        if (_this.context._layer?.group.name == "HRRR_NE Hourly") {
             if (layer_name == 'Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NEHourlyDBZLists.indexOf(itemToRemove);
@@ -14525,7 +14551,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedHRRR_NEHourlyDBZLists
-        if (_this.context._layer.group.name == "HRRR_NE Hourly") {
+        if (_this.context._layer?.group.name == "HRRR_NE Hourly") {
             if (layer_name == 'Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NEHourlyDBZLists.indexOf(itemToRemove);
@@ -14538,7 +14564,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedHRRR_NWHourlyDBZLists
-        if (_this.context._layer.group.name == "HRRR_NW Hourly") {
+        if (_this.context._layer?.group.name == "HRRR_NW Hourly") {
             if (layer_name == 'Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NWHourlyDBZLists.indexOf(itemToRemove);
@@ -14551,7 +14577,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedHRRR_NWHourlyDBZLists
-        if (_this.context._layer.group.name == "HRRR_NW Hourly") {
+        if (_this.context._layer?.group.name == "HRRR_NW Hourly") {
             if (layer_name == 'Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NWHourlyDBZLists.indexOf(itemToRemove);
@@ -14564,7 +14590,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedHRRR_NWHourlyDBZLists
-        if (_this.context._layer.group.name == "HRRR_NW Hourly") {
+        if (_this.context._layer?.group.name == "HRRR_NW Hourly") {
             if (layer_name == 'Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NWHourlyDBZLists.indexOf(itemToRemove);
@@ -14577,7 +14603,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedEWRFMaxZLists
-        if (_this.context._layer.group.name == "EWRF MaxZ") {
+        if (_this.context._layer?.group.name == "EWRF MaxZ") {
             if (layer_name == 'Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFMaxZLists.indexOf(itemToRemove);
@@ -14590,7 +14616,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedEWRFMaxZLists
-        if (_this.context._layer.group.name == "EWRF MaxZ") {
+        if (_this.context._layer?.group.name == "EWRF MaxZ") {
             if (layer_name == 'Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFMaxZLists.indexOf(itemToRemove);
@@ -14603,7 +14629,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedEWRFMaxZLists
-        if (_this.context._layer.group.name == "EWRF MaxZ") {
+        if (_this.context._layer?.group.name == "EWRF MaxZ") {
             if (layer_name == 'Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFMaxZLists.indexOf(itemToRemove);
@@ -14616,7 +14642,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedEWRFMaxZLists
-        if (_this.context._layer.group.name == "EWRF Lightning") {
+        if (_this.context._layer?.group.name == "EWRF Lightning") {
             if (layer_name == 'Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFLightningLists.indexOf(itemToRemove);
@@ -14629,7 +14655,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedEWRFMaxZLists
-        if (_this.context._layer.group.name == "EWRF Lightning") {
+        if (_this.context._layer?.group.name == "EWRF Lightning") {
             if (layer_name == 'Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFLightningLists.indexOf(itemToRemove);
@@ -14642,7 +14668,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // bgClickedEWRFMaxZLists
-        if (_this.context._layer.group.name == "EWRF Lightning") {
+        if (_this.context._layer?.group.name == "EWRF Lightning") {
             if (layer_name == 'Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFLightningLists.indexOf(itemToRemove);
@@ -14657,7 +14683,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //SOUNDING
         //bgClicked SOUNDING_00_UTC WIND [] 1000 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_00_UTC WIND") {
             if (layer_name == '1000 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
@@ -14670,7 +14696,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00_UTC WIND [] 850 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_00_UTC WIND") {
             if (layer_name == '850 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
@@ -14683,7 +14709,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00_UTC WIND [] 700 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_00_UTC WIND") {
             if (layer_name == '700 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
@@ -14696,7 +14722,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00_UTC WIND [] 500 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_00_UTC WIND") {
             if (layer_name == '500 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
@@ -14709,7 +14735,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00_UTC WIND [] 300 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_00_UTC WIND") {
             if (layer_name == '300 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
@@ -14722,7 +14748,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00_UTC WIND [] 200 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_00_UTC WIND") {
             if (layer_name == '200 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
@@ -14735,7 +14761,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00_UTC WIND [] 100 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_00_UTC WIND") {
             if (layer_name == '100 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
@@ -14748,7 +14774,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00_UTC WIND [] 50 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_00_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_00_UTC WIND") {
             if (layer_name == '50 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCWINDLists.indexOf(itemToRemove);
@@ -14761,7 +14787,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12_UTC WIND [] 1000 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_12_UTC WIND") {
             if (layer_name == '1000 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
@@ -14774,7 +14800,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12_UTC WIND [] 850 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_12_UTC WIND") {
             if (layer_name == '850 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
@@ -14787,7 +14813,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12_UTC WIND [] 700 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_12_UTC WIND") {
             if (layer_name == '700 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
@@ -14800,7 +14826,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12_UTC WIND [] 500 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_12_UTC WIND") {
             if (layer_name == '500 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
@@ -14813,7 +14839,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12_UTC WIND [] 300 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_12_UTC WIND") {
             if (layer_name == '300 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
@@ -14826,7 +14852,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12_UTC WIND [] 200 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_12_UTC WIND") {
             if (layer_name == '200 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
@@ -14839,7 +14865,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12_UTC WIND [] 100 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_12_UTC WIND") {
             if (layer_name == '100 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
@@ -14852,7 +14878,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12_UTC WIND [] 50 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_12_UTC WIND") {
+        if (_this.context._layer?.group.name == "SOUNDING_12_UTC WIND") {
             if (layer_name == '50 hpa WIND') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCWINDLists.indexOf(itemToRemove);
@@ -14866,7 +14892,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //SOUND TEMP 00
         //bgClicked SOUNDING_00UTC TEMP [] 1000 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC TEMP") {
             if (layer_name == '1000 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
@@ -14879,7 +14905,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC TEMP [] 850 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC TEMP") {
             if (layer_name == '850 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
@@ -14892,7 +14918,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC TEMP [] 700 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC TEMP") {
             if (layer_name == '700 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
@@ -14905,7 +14931,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC TEMP [] 500 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC TEMP") {
             if (layer_name == '500 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
@@ -14918,7 +14944,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC TEMP [] 300 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC TEMP") {
             if (layer_name == '300 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
@@ -14931,7 +14957,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC TEMP [] 200 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC TEMP") {
             if (layer_name == '200 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
@@ -14944,7 +14970,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC TEMP [] 100 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC TEMP") {
             if (layer_name == '100 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
@@ -14957,7 +14983,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC TEMP [] 50 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_00UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC TEMP") {
             if (layer_name == '50 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCTEMPLists.indexOf(itemToRemove);
@@ -14971,7 +14997,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //SOUNDING_12UTC TEMP
         //bgClicked SOUNDING_12UTC TEMP [] 1000 hpa WIND
-        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC TEMP") {
             if (layer_name == '1000 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
@@ -14984,7 +15010,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC TEMP [] 850 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC TEMP") {
             if (layer_name == '850 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
@@ -14997,7 +15023,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC TEMP [] 700 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC TEMP") {
             if (layer_name == '700 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
@@ -15010,7 +15036,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC TEMP [] 500 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC TEMP") {
             if (layer_name == '500 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
@@ -15023,7 +15049,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC TEMP [] 300 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC TEMP") {
             if (layer_name == '300 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
@@ -15036,7 +15062,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC TEMP [] 200 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC TEMP") {
             if (layer_name == '200 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
@@ -15049,7 +15075,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC TEMP [] 100 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC TEMP") {
             if (layer_name == '100 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
@@ -15062,7 +15088,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC TEMP [] 50 hpa TEMP
-        if (_this.context._layer.group.name == "SOUNDING_12UTC TEMP") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC TEMP") {
             if (layer_name == '50 hpa TEMP') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCTEMPLists.indexOf(itemToRemove);
@@ -15076,7 +15102,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //SOUND 00UTC DEW POINT 
         //bgClicked SOUNDING_00UTC DEW POINT [] 1000 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC DEW POINT") {
             if (layer_name == '1000 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15089,7 +15115,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC DEW POINT [] 850 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC DEW POINT") {
             if (layer_name == '850 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15102,7 +15128,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC DEW POINT [] 700 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC DEW POINT") {
             if (layer_name == '700 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15115,7 +15141,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC DEW POINT [] 500 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC DEW POINT") {
             if (layer_name == '500 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15128,7 +15154,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC DEW POINT [] 300 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC DEW POINT") {
             if (layer_name == '300 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15141,7 +15167,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC DEW POINT [] 200 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC DEW POINT") {
             if (layer_name == '200 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15154,7 +15180,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC DEW POINT [] 100 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC DEW POINT") {
             if (layer_name == '100 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15167,7 +15193,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_00UTC DEW POINT [] 50 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_00UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_00UTC DEW POINT") {
             if (layer_name == '50 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING00UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15181,7 +15207,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //SOUND 12UTC DEW POINT 
         //bgClicked SOUNDING_12UTC DEW POINT [] 1000 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC DEW POINT") {
             if (layer_name == '1000 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15194,7 +15220,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC DEW POINT [] 850 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC DEW POINT") {
             if (layer_name == '850 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15207,7 +15233,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC DEW POINT [] 700 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC DEW POINT") {
             if (layer_name == '700 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15220,7 +15246,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC DEW POINT [] 500 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC DEW POINT") {
             if (layer_name == '500 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15233,7 +15259,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC DEW POINT [] 300 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC DEW POINT") {
             if (layer_name == '300 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15246,7 +15272,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC DEW POINT [] 200 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC DEW POINT") {
             if (layer_name == '200 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15259,7 +15285,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC DEW POINT [] 100 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC DEW POINT") {
             if (layer_name == '100 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15272,7 +15298,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked SOUNDING_12UTC DEW POINT [] 50 hpa DEW POINT
-        if (_this.context._layer.group.name == "SOUNDING_12UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "SOUNDING_12UTC DEW POINT") {
             if (layer_name == '50 hpa DEW POINT') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSOUNDING12UTCDEWPOINTLists.indexOf(itemToRemove);
@@ -15285,7 +15311,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //ship_and_buoy 
-        if (_this.context._layer.group.name == "SHIP AND BUOY OBSERVATION") {
+        if (_this.context._layer?.group.name == "SHIP AND BUOY OBSERVATION") {
             if (layer_name == '00UTC' || layer_name == '01UTC' || layer_name == '02UTC' || layer_name ==
                 '03UTC' || layer_name == '04UTC' || layer_name == '05UTC' || layer_name == '06UTC' ||
                 layer_name == '07UTC' || layer_name == '08UTC' || layer_name == '09UTC' || layer_name ==
@@ -15303,7 +15329,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //Radar 
-        if (_this.context._layer.group.name == "Radar Products") {
+        if (_this.context._layer?.group.name == "Radar Products") {
             if (layer_name == 'Radar Reflectivity' || layer_name == 'Radar Animation') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedRadarLists.indexOf(itemToRemove);
@@ -15315,7 +15341,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedSATELLITELists[]
-        if (_this.context._layer.group.name == "Satellite Observation") {
+        if (_this.context._layer?.group.name == "Satellite Observation") {
             if (layer_name == 'TIR1' || layer_name == 'VIS' || layer_name ==
                 'CTBT' || layer_name == 'LOW LEVEL CONVERGENCE' || layer_name == 'UPPER LEVEL DIVEGENCE' ||
                 layer_name == 'MID LEVEL SHEA' || layer_name == 'VORTICITY AT 200hPa' || layer_name ==
@@ -15331,7 +15357,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //Lightning 
-        if (_this.context._layer.group.name == "Lightning") {
+        if (_this.context._layer?.group.name == "Lightning") {
             if (layer_name == 'Last 00-05 min' || layer_name == 'Last 05-10 min' || layer_name ==
                 'Last 10-15 min' || layer_name == 'ILDN Last 05 min' || layer_name == 'Nowcast Alerts') {
                 var itemToRemove = layer_group_name + " " + layer_name;
@@ -15344,7 +15370,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //medium_range 
-        if (_this.context._layer.group.name == "Rainfall Intensity Day1") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day1") {
             if (layer_name == 'GFS DAY1' || layer_name == 'NCUM DAY1' || layer_name ==
                 'NEPS DAY1' || layer_name == 'WRF DAY1' || layer_name == 'GEFS DAY1' || layer_name ==
                 'ECMWF DAY1'
@@ -15360,7 +15386,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedRainfallIntensityDay2Lists[]
-        if (_this.context._layer.group.name == "Rainfall Intensity Day2") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day2") {
             if (layer_name == 'GFS DAY2' || layer_name == 'NCUM DAY2' || layer_name ==
                 'NEPS DAY2' || layer_name == 'WRF DAY2' || layer_name == 'GEFS DAY2' || layer_name ==
                 'ECMWF DAY2') {
@@ -15375,7 +15401,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedRainfallIntensityDay3Lists[]
-        if (_this.context._layer.group.name == "Rainfall Intensity Day3") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day3") {
             if (layer_name == 'GFS DAY3' || layer_name == 'NCUM DAY3' || layer_name ==
                 'NEPS DAY3' || layer_name == 'WRF DAY3' || layer_name == 'GEFS DAY3' || layer_name ==
                 'ECMWF DAY3') {
@@ -15390,7 +15416,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedRainfallIntensityDay4Lists[]
-        if (_this.context._layer.group.name == "Rainfall Intensity Day4") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day4") {
             if (layer_name == 'GFS Day4' || layer_name == 'NCUM Day4' || layer_name ==
                 'NEPS Day4' || layer_name == 'WRF Day4' || layer_name == 'GEFS Day4' || layer_name ==
                 'ECMWF Day4') {
@@ -15405,7 +15431,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedRainfallIntensityDay5Lists[]
-        if (_this.context._layer.group.name == "Rainfall Intensity Day5") {
+        if (_this.context._layer?.group.name == "Rainfall Intensity Day5") {
             if (layer_name == 'GFS Day5' || layer_name == 'NCUM Day5' || layer_name ==
                 'NEPS Day5' || layer_name == 'WRF Day5' || layer_name == 'GEFS Day5' || layer_name ==
                 'ECMWF Day5') {
@@ -15420,7 +15446,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedMSLPDay1Lists[]
-        if (_this.context._layer.group.name == "MSLP Day1") {
+        if (_this.context._layer?.group.name == "MSLP Day1") {
             if (layer_name == 'GFS DAY1' || layer_name == 'NCUM DAY1' || layer_name ==
                 'NEPS DAY1' || layer_name == 'WRF DAY1' || layer_name == 'GEFS DAY1' || layer_name ==
                 'ECMWF DAY1') {
@@ -15435,7 +15461,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedMSLPDay2Lists[]
-        if (_this.context._layer.group.name == "MSLP Day2") {
+        if (_this.context._layer?.group.name == "MSLP Day2") {
             if (layer_name == 'GFS DAY2' || layer_name == 'NCUM DAY2' || layer_name ==
                 'NEPS DAY2' || layer_name == 'WRF DAY2' || layer_name == 'GEFS DAY2' || layer_name ==
                 'ECMWF DAY2') {
@@ -15450,7 +15476,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedMSLPDay3Lists[]
-        if (_this.context._layer.group.name == "MSLP Day3") {
+        if (_this.context._layer?.group.name == "MSLP Day3") {
             if (layer_name == 'GFS DAY3' || layer_name == 'NCUM DAY3' || layer_name ==
                 'NEPS DAY3' || layer_name == 'WRF DAY3' || layer_name == 'GEFS DAY3' || layer_name ==
                 'ECMWF DAY3') {
@@ -15465,7 +15491,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedMSLPDay4Lists[]
-        if (_this.context._layer.group.name == "MSLP Day4") {
+        if (_this.context._layer?.group.name == "MSLP Day4") {
             if (layer_name == 'GFS DAY4' || layer_name == 'NCUM DAY4' || layer_name ==
                 'NEPS DAY4' || layer_name == 'WRF DAY4' || layer_name == 'GEFS DAY4' || layer_name ==
                 'ECMWF DAY4') {
@@ -15480,7 +15506,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClickedMSLPDay5Lists[]
-        if (_this.context._layer.group.name == "MSLP Day5") {
+        if (_this.context._layer?.group.name == "MSLP Day5") {
             if (layer_name == 'GFS DAY5' || layer_name == 'NCUM DAY5' || layer_name ==
                 'NEPS DAY5' || layer_name == 'WRF DAY5' || layer_name == 'GEFS DAY5' || layer_name ==
                 'ECMWF DAY5') {
@@ -15495,7 +15521,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked10mWINDDay1Lists[]
-        if (_this.context._layer.group.name == "10m WIND Day 1") {
+        if (_this.context._layer?.group.name == "10m WIND Day 1") {
             if (layer_name == 'GFS DAY1' || layer_name == 'NCUM DAY1' || layer_name ==
                 'NEPS DAY1' || layer_name == 'WRF DAY1' || layer_name == 'GEFS DAY1' || layer_name ==
                 'ECMWF DAY1') {
@@ -15510,7 +15536,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked10mWINDDay2Lists[]
-        if (_this.context._layer.group.name == "10m WIND Day 2") {
+        if (_this.context._layer?.group.name == "10m WIND Day 2") {
             if (layer_name == 'GFS DAY2' || layer_name == 'NCUM DAY2' || layer_name ==
                 'NEPS DAY2' || layer_name == 'WRF DAY2' || layer_name == 'GEFS DAY2') {
                 var itemToRemove = layer_group_name + " " + layer_name;
@@ -15524,7 +15550,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked10mWINDDay3Lists[]
-        if (_this.context._layer.group.name == "10m WIND Day 3") {
+        if (_this.context._layer?.group.name == "10m WIND Day 3") {
             if (layer_name == 'GFS DAY3' || layer_name == 'NCUM DAY3' || layer_name ==
                 'NEPS DAY3' || layer_name == 'WRF DAY3' || layer_name == 'GEFS DAY3') {
                 var itemToRemove = layer_group_name + " " + layer_name;
@@ -15538,7 +15564,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked10mWINDDay4Lists[]
-        if (_this.context._layer.group.name == "10m WIND Day 4") {
+        if (_this.context._layer?.group.name == "10m WIND Day 4") {
             if (layer_name == 'GFS DAY4' || layer_name == 'NCUM DAY4' || layer_name ==
                 'NEPS DAY4' || layer_name == 'GEFS DAY4') {
                 var itemToRemove = layer_group_name + " " + layer_name;
@@ -15552,7 +15578,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //bgClicked10mWINDDay5Lists[]
-        if (_this.context._layer.group.name == "10m WIND Day 5") {
+        if (_this.context._layer?.group.name == "10m WIND Day 5") {
             if (layer_name == 'GFS DAY5' || layer_name == 'NCUM DAY5' || layer_name ==
                 'NEPS DAY5' || layer_name == 'GEFS DAY5') {
                 var itemToRemove = layer_group_name + " " + layer_name;
@@ -15567,7 +15593,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // // // // // // // // // // // // // // // // // //
 
-        //Lightning UNCHECK
+        // Lightning UNCHECK
         // if (uncheckLayer == 'Lightning Last 00-05 min') {
         //     clickedLightningLists = clickedLightningLists.filter(checkList => {
         //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
@@ -15599,7 +15625,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //     panelLayerLightningTitle.innerHTML = '';
         // }
 
-        ////GroupPanelLayer-collapsible
+        // //GroupPanelLayer-collapsible
         // if (panelLayerLightninglists.innerHTML != '') {
         //     var yy = document.querySelectorAll('.collapsible')[0].classList.add('expanded');
         //     document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
@@ -15643,14 +15669,17 @@ $("body").on("change", "input[type=checkbox]", function() {
         // }
 
         //Exposure UNCHECK
-        // if (uncheckLayer == 'Exposure Layers District Boundaries') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(PuneMarker);
-        // }
+        if (uncheckLayer == 'Exposure Layers District Boundaries') {
+            if (_this.context._layer) {
+                clickedExposureLists = clickedExposureLists.filter(checkList => {
+                    let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                    return clickedLayer != uncheckLayer
+                });
+                panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            } else {
+                map.removeLayer(PuneMarker);
+            }
+        }
         // if (uncheckLayer == 'Exposure Layers Airport') {
         //     clickedExposureLists = clickedExposureLists.filter(checkList => {
         //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
