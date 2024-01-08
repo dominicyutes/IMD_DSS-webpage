@@ -2347,7 +2347,7 @@ function playMacro(macroGroupName) {
             clearInterval(intervalId);
         }
     }
-    const intervalId = setInterval(displayNumber, 5000);
+    const intervalId = setInterval(displayNumber, 3000);
 
     document.getElementById("macroDetails").style.display = "block";
 }
@@ -7465,11 +7465,11 @@ if (
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
-    console.log(_this, '_this');
+    // console.log(_this, '_this');
     var isChecked = _this.prop('checked');
     // var isChecked = $(this).attr('checked');
     var layer_group_name = _this.context._layer ? _this.context._layer?.group.name : '';
-    console.log(layer_group_name, "layer_group_name");
+    // console.log(layer_group_name, "layer_group_name");
     var layer_name;
     //
 
@@ -7479,7 +7479,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 // layer.layer.on('add remove', function() {
                 layer.active = !layer.active;
                 updateActiveLayers();
-                console.log(layer, "ppppppp")
+                // console.log(layer, "ppppppp")
                 // });
             });
         });
@@ -7487,7 +7487,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         layer_name = _this.context._layer ? _this.context._layer?.name : _this.context.className;
         var forExistLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer?.name : _this
             .context.className;
-        console.log(layer_name, "layer_name");
+        // console.log(layer_name, "layer_name");
         // debugger;
 
         //bgClickedExposureLists[]
@@ -7557,7 +7557,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                     layer_group_name + " " + layer_name
                 );
             }
-            console.log(bgClickedExposureLists, "....bgClickedExposureLists");
+            // console.log(bgClickedExposureLists, "....bgClickedExposureLists");
         }
 
         //bgClicked METAR 00UTC[]

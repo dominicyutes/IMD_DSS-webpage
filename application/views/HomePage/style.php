@@ -124,7 +124,7 @@ body {
     background-color: #eff4ff;
     color: #1d334e;
     margin-top: 0px;
-    height: 81vh;
+    height: 84vh;
     /* width: 258px; */
     width: 17%;
     border: 1px solid #2c5383;
@@ -351,7 +351,7 @@ body {
 
 /* map starts here*/
 #map {
-    height: 81vh;
+    height: 84vh;
     width: 100%;
     border: 1px solid black;
     position: relative;
@@ -395,8 +395,8 @@ body {
 }
 
 .create_Macro_body {
-    width: 250px;
-    height: 570px;
+    width: 252px;
+    height: 584px;
     margin: 416px 0 0 0px;
     transform: translate(-50%, -50%);
     background-color: #f3fbfe;
@@ -465,8 +465,8 @@ body {
 
 .view_Create_Macro_body {
     position: absolute;
-    width: 250px;
-    height: 570px;
+    width: 252px;
+    height: 584px;
     margin: 416px 0 0 0px;
     transform: translate(-50%, -50%);
     background-color: #f3fbfe;
@@ -612,7 +612,7 @@ body {
 
 .leaflet-top.leaflet-right .leaflet-panel-layers:not(.compact) {
     margin: 7px;
-    height: 505px;
+    /* height: 505px; */
 }
 
 .leaflet-control-layers-expanded {
