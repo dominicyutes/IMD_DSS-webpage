@@ -124,7 +124,7 @@ body {
     background-color: #eff4ff;
     color: #1d334e;
     margin-top: 0px;
-    height: 82vh;
+    height: 84vh;
     /* width: 258px; */
     width: 17%;
     border: 1px solid #2c5383;
@@ -328,6 +328,26 @@ body {
     font-family: 'Archivo', sans-serif
 }
 
+.macroPlayClass {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.macroPlayNameClass {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stopBtnClas,
+.playBtnClas,
+.pauseBtnClas,
+.leftMacBtn,
+.rightMacBtn {
+    border-radius: 6px;
+    margin-right: 2px;
+}
+
+
 
 /* map starts here*/
 #map {
@@ -375,8 +395,8 @@ body {
 }
 
 .create_Macro_body {
-    width: 250px;
-    height: 570px;
+    width: 252px;
+    height: 584px;
     margin: 416px 0 0 0px;
     transform: translate(-50%, -50%);
     background-color: #f3fbfe;
@@ -445,8 +465,8 @@ body {
 
 .view_Create_Macro_body {
     position: absolute;
-    width: 250px;
-    height: 570px;
+    width: 252px;
+    height: 584px;
     margin: 416px 0 0 0px;
     transform: translate(-50%, -50%);
     background-color: #f3fbfe;
@@ -592,7 +612,7 @@ body {
 
 .leaflet-top.leaflet-right .leaflet-panel-layers:not(.compact) {
     margin: 7px;
-    height: 600px;
+    /* height: 505px; */
 }
 
 .leaflet-control-layers-expanded {
