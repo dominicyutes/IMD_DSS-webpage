@@ -398,7 +398,7 @@
             </div>
         </div>
         <!--  -->
-        <div style="height: 3%;width: 100%; background-color: white;">Model's Time Update</div>
+        <div style="height: 60px;width: 100%; background-color: white;">Model's Time Update</div>
     </div>
 
     <!-- model popup -->

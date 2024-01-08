@@ -7,7 +7,7 @@ body {
     position: relative;
     height: 100vh;
     width: 100%;
-    /* zoom: 100%; */
+    zoom: 80%;
 }
 
 
@@ -331,7 +331,7 @@ body {
 
 /* map starts here*/
 #map {
-    height: 82vh;
+    height: 104vh;
     width: 100%;
     border: 1px solid black;
     position: relative;
