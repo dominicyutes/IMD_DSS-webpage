@@ -124,7 +124,7 @@ body {
     background-color: #eff4ff;
     color: #1d334e;
     margin-top: 0px;
-    height: 84vh;
+    height: 104vh;
     /* width: 258px; */
     width: 17%;
     border: 1px solid #2c5383;
