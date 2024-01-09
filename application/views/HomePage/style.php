@@ -652,5 +652,7 @@ body {
   font-size: 15px;
 }
 
-
+.leaflet-panel-layers-group.collapsible:not(.expanded) {
+    height: 25px;
+}
 </style>
