@@ -101,7 +101,7 @@ body {
 
 @media (max-width: 1287px) {
     .btn-val {
-        font-size: 14px;
+        font-size: 20px;
     }
 }
 
@@ -633,4 +633,18 @@ body {
 .leaflet-bar {
     border: 0;
 }
+/* Select the zoom in and zoom out buttons */
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    width: 38px !important;
+    height: 38px !important;
+    line-height: 50px; 
+}
+
+.leaflet-control-zoom-in:before,
+.leaflet-control-zoom-out:before {
+    font-size: 30px;
+}
+
+
 </style>
