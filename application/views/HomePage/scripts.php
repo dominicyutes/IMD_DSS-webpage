@@ -2050,7 +2050,7 @@ function macToggleObservation() {
         let map = document.getElementById('map');
         let isHidden = macroContainerFn.classList.contains('hidden');
         macroContainerFn.classList.toggle('hidden');
-        map.style.width = isHidden ? '83%' : '99%';
+        map.style.width = isHidden ? '83%' : '100%';
     }
 }
 
@@ -2072,7 +2072,7 @@ function toggleObservation() {
         let map = document.getElementById('map');
         let isHidden = observationContainerFn.classList.contains('hidden');
         observationContainerFn.classList.toggle('hidden');
-        map.style.width = isHidden ? '83%' : '99%';
+        map.style.width = isHidden ? '83%' : '100%';
     }
 }
 //

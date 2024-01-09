@@ -655,4 +655,7 @@ body {
 .leaflet-panel-layers-group.collapsible:not(.expanded) {
     height: 25px;
 }
+.leaflet-container .leaflet-control-mouseposition{
+    font-size: 15px;
+}
 </style>
