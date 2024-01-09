@@ -1,15 +1,15 @@
 <script>
-let modelNamesArr = ["", 'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship And Buoy'];
+let modelNamesArr = ["", 'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship and Buoy'];
 
 // "Exposure","Mesolscale Forecast", "Medium Range"
 let modelNamesArrMAC = ["", "Exposure",
-    'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship And Buoy', "Mesolscale Forecast",
+    'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship and Buoy', "Mesolscale Forecast",
     "Medium Range"
 ];
 
 //Parameters
 let Parameters = [{
-        name: 'Exposure',
+        name: 'Exposure Layers',
         category: 'Exposure'
     }, {
         name: 'Metar 00UTC',
@@ -176,8 +176,8 @@ let Parameters = [{
         category: 'Sounding'
     },
     {
-        name: 'Ship And Buoy Observation',
-        category: 'Ship And Buoy'
+        name: 'Ship and Buoy Observation',
+        category: 'Ship and Buoy'
     },
     {
         name: 'WRF Reflectivity',
@@ -292,54 +292,54 @@ let Parameters = [{
 //metarParametersList
 let subParametersList = [{
         name: 'District Boundaries',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     },
     {
         name: 'Airport',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     },
     {
         name: 'Oil Refineries',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     },
     {
         name: 'Power Station',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     },
     {
         name: 'Power Plant',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     }, {
         name: 'DEM',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     },
     {
         name: 'Hospital',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     },
     {
         name: 'Industrail',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     },
     {
         name: 'sports',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     },
     {
         name: 'Road Network',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     },
     {
         name: 'Socio Economic Zone',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     },
     {
         name: 'Railway Network',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     },
     {
         name: 'LULC',
-        category: 'Exposure'
+        category: 'Exposure Layers'
     },
     {
         name: 'Temperature_00',
@@ -973,13 +973,15 @@ let subParametersList = [{
         name: 'Low Level Convergence',
         category: 'Satellite Observation'
     },
-
     {
         name: 'Upper Level Convergence',
         category: 'Satellite Observation',
+    },
+    {
         name: 'MID Level Shear',
         category: 'Satellite Observation'
-    }, , {
+    },
+    {
         name: 'Vorticity at 200hPa',
         category: 'Satellite Observation'
     },
@@ -2315,7 +2317,7 @@ function showSavedMacroList() {
 
                  <div class="macroPlayNameClass">
                     <span>hello</span>
-                    <span style="padding-right: 7%;">10</span>
+                    <span style="padding-right: 7%;" id="counting">10</span>
                  </div>
             </div>
                 
@@ -2389,6 +2391,13 @@ function editMacro(macroGroupName) {
 }
 
 function deleteMacro(macroGroupName) {
+    // Show the deleteMacroModal
+    document.getElementById('deleteMacroModal').style.display = 'block';
+
+    // You can pass macroGroupName to the modal if needed
+    document.getElementById('deleteMacroModal').setAttribute('data-macroGroupName', macroGroupName);
+
+    //
     savedMacro = savedMacro.filter(x => x.macroGroupName != macroGroupName);
     showSavedMacroList();
 
@@ -2396,6 +2405,43 @@ function deleteMacro(macroGroupName) {
     document.getElementById('mac_modelNames').value = '';
     document.getElementById('mac_parameterNames').value = '';
     document.getElementById('mac_subparameter').value = '';
+}
+
+function closeDeleteMacroModal() {
+    // Hide the deleteMacroModal
+    document.getElementById('deleteMacroModal').style.display = 'none';
+
+    // Optionally, re-enable background interactions
+    // document.body.style.overflow = 'auto';
+}
+
+function submitDeleteMacro() {
+    // Get user input
+    const userName = document.getElementById('userName').value;
+    const deleteReason = document.getElementById('deleteReason').value;
+
+    // Get macroGroupName from the modal data attribute
+    const macroGroupName = document.getElementById('deleteMacroModal').getAttribute('data-macroGroupName');
+
+    // Perform deletion logic (use macroGroupName as needed)
+    savedMacro = savedMacro.filter(x => x.macroGroupName != macroGroupName);
+    showSavedMacroList();
+
+    alert(
+        `Macro with group name ${macroGroupName} has been deleted by ${userName}.<br>&nbsp;</br> Reason: ${deleteReason}.`
+        );
+
+    // Clear input fields or perform other actions as needed
+    document.getElementById('macroNames').value = '';
+    document.getElementById('mac_modelNames').value = '';
+    document.getElementById('mac_parameterNames').value = '';
+    document.getElementById('mac_subparameter').value = '';
+
+    document.getElementById('userName').value = "";
+    document.getElementById('deleteReason').value = "";
+
+    // Close the modal
+    closeDeleteMacroModal();
 }
 
 function deleteMacroLayer(value) {
@@ -2551,7 +2597,7 @@ var timeDimensionControlButton = L.Control.extend({
     onAdd: function() {
         var button = L.DomUtil.create('button',
             'yourButtonClass'); // Create a button with a specified class
-            button.innerHTML = '<i class="fas fa-clock" style="font-size: 14px;"></i>';
+        button.innerHTML = '<i class="fas fa-clock" style="font-size: 14px;"></i>';
         button.style.backgroundColor = 'white';
         button.style.border = '1px solid black';
         button.style.padding = '7px';

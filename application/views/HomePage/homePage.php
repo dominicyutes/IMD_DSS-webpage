@@ -401,7 +401,53 @@
         <div style="height: 60px;width: 100%; background-color: white;">Model's Time Update</div>
     </div>
 
-    <!-- model popup -->
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+    </button> -->
+
+    <!-- Modal -->
+    <!-- <div class="modal fade" id="deleteMacroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="userName">Your Name:</label>
+                    <input type="text" id="userName" required>
+                    <label for="deleteReason">Reason for Deletion:</label>
+                    <textarea id="deleteReason" rows="4" required></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="closeDeleteMacroModal()">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="submitDeleteMacro()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Add this modal HTML to your page -->
+    <div id="deleteMacroModal" class="modal" style="display: none; width: 50%; left: 253px; top: 94px; height:auto;">
+        <div class="modal-content"
+            style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: white; padding: 10px; border-radius: 10px; align-items: center;">
+            <!-- <span class="close" onclick="closeDeleteMacroModal()">&times;</span> -->
+            <label for="userName">Your Name:</label>
+            <input type="text" id="userName" required>
+            <label for="deleteReason">Reason for Deletion:</label>
+            <textarea id="deleteReason" rows="4" required></textarea>
+            <button onclick="submitDeleteMacro()">Submit</button>
+            <button onclick="closeDeleteMacroModal()">Cancel</button>
+        </div>
+    </div>
+
+
+    <!-- LEGEND model popup -->
     <div class="model" style="display: none; left: 253px; top: 94px; height:0;">
         <div class="model-body" style="position: relative;">
             <div
