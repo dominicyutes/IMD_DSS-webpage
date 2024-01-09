@@ -645,6 +645,12 @@ body {
 .leaflet-control-zoom-out:before {
     font-size: 30px;
 }
+.leaflet-panel-layers,
+.leaflet-control,
+.leaflet-control-layers-expanded,
+.leaflet-drag-target {
+  font-size: 15px;
+}
 
 
 </style>
