@@ -2597,7 +2597,7 @@ var timeDimensionControlButton = L.Control.extend({
     onAdd: function() {
         var button = L.DomUtil.create('button',
             'yourButtonClass'); // Create a button with a specified class
-        button.innerHTML = '<i class="fas fa-clock" style="font-size: 14px;"></i>';
+            button.innerHTML = '<i class="fa-regular fa-clock" style="font-size: 24px;"></i>';
         button.style.backgroundColor = 'white';
         button.style.border = '1px solid black';
         button.style.padding = '7px';
@@ -2760,246 +2760,251 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
 
 // dummy data for testing start
 //synop
-const syn00utc_tem = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:awssample',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "awssample",
-    layerName: "syn00utc_tem"
-});
+// const syn00utc_tem = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:awssample',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "awssample",
+//     layerName: "syn00utc_tem"
+// });
 
-const syn00utc_men = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:LLWS_12hr_fcst_FL',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "LLWS_12hr_fcst_FL",
-    layerName: "syn00utc_men"
-});
+// const syn00utc_men = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:LLWS_12hr_fcst_FL',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "LLWS_12hr_fcst_FL",
+//     layerName: "syn00utc_men"
+// });
 
-const syn00utc_clo = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-    layers: 'aasdagrometgis:Nowcast',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "Nowcast",
-    layerName: "syn00utc_clo"
-});
+// const syn00utc_clo = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+//     layers: 'aasdagrometgis:Nowcast',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "Nowcast",
+//     layerName: "syn00utc_clo"
+// });
 
 //metar
-const met00utc_tem = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:awssample',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "awssample",
-    layerName: "met00utc_tem"
-});
+// const met00utc_tem = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:awssample',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "awssample",
+//     layerName: "met00utc_tem"
+// });
 
-const met00utc_dew = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:LLWS_12hr_fcst_FL',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "LLWS_12hr_fcst_FL",
-    layerName: "met00utc_dew"
-});
+// const met00utc_dew = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:LLWS_12hr_fcst_FL',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "LLWS_12hr_fcst_FL",
+//     layerName: "met00utc_dew"
+// });
 
-const met00utc_vis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-    layers: 'aasdagrometgis:Nowcast',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "Nowcast",
-    layerName: "met00utc_vis"
-});
+// const met00utc_vis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+//     layers: 'aasdagrometgis:Nowcast',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "Nowcast",
+//     layerName: "met00utc_vis"
+// });
 
 //mesolscale
-const mes_wrf_03 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:awssample',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "awssample",
-    layerName: "mes_wrf_03"
-});
+// const mes_wrf_03 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:awssample',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "awssample",
+//     layerName: "mes_wrf_03"
+// });
 
-const mes_wrf_03_06 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:LLWS_12hr_fcst_FL',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "LLWS_12hr_fcst_FL",
-    layerName: "mes_wrf_03_06 "
-});
+// const mes_wrf_03_06 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:LLWS_12hr_fcst_FL',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "LLWS_12hr_fcst_FL",
+//     layerName: "mes_wrf_03_06 "
+// });
 
 //medium
-const med_gfs1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:awssample',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "awssample",
-    layerName: "med_gfs1"
-});
+// const med_gfs1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:awssample',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "awssample",
+//     layerName: "med_gfs1"
+// });
 
-const med_ncum1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:LLWS_12hr_fcst_FL',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "LLWS_12hr_fcst_FL",
-    layerName: "med_ncum1"
-});
+// const med_ncum1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:LLWS_12hr_fcst_FL',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "LLWS_12hr_fcst_FL",
+//     layerName: "med_ncum1"
+// });
 
-const med_neps1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-    layers: 'aasdagrometgis:Nowcast',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "Nowcast",
-    layerName: "med_neps1"
-});
+// const med_neps1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+//     layers: 'aasdagrometgis:Nowcast',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "Nowcast",
+//     layerName: "med_neps1"
+// });
 
 //satellite
-const sat_tir1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:awssample',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "awssample",
-    layerName: "sat_tir1"
-});
+// const sat_tir1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:awssample',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "awssample",
+//     layerName: "sat_tir1"
+// });
 
-const sat_vis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:LLWS_12hr_fcst_FL',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "LLWS_12hr_fcst_FL",
-    layerName: "sat_vis"
-});
+// const sat_vis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:LLWS_12hr_fcst_FL',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "LLWS_12hr_fcst_FL",
+//     layerName: "sat_vis"
+// });
 
-const sat_ctbt = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-    layers: 'aasdagrometgis:Nowcast',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "Nowcast",
-    layerName: "sat_ctbt"
-});
+// const sat_ctbt = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+//     layers: 'aasdagrometgis:Nowcast',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "Nowcast",
+//     layerName: "sat_ctbt"
+// });
 
 //radar
-const rad_ref = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:awssample',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "awssample",
-    layerName: "rad_ref"
-});
+// const rad_ref = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:awssample',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "awssample",
+//     layerName: "rad_ref"
+// });
 
-const rad_ani = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:LLWS_12hr_fcst_FL',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "LLWS_12hr_fcst_FL",
-    layerName: "rad_ani"
-});
+// const rad_ani = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:LLWS_12hr_fcst_FL',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "LLWS_12hr_fcst_FL",
+//     layerName: "rad_ani"
+// });
 
 //sounding
-const sou00utc_1000 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:awssample',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "awssample",
-    layerName: "sou00utc_1000"
-});
+// const sou00utc_1000 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:awssample',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "awssample",
+//     layerName: "sou00utc_1000"
+// });
 
-const sou00utc_850 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:LLWS_12hr_fcst_FL',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "LLWS_12hr_fcst_FL",
-    layerName: "sou00utc_850"
-});
+// const sou00utc_850 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:LLWS_12hr_fcst_FL',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "LLWS_12hr_fcst_FL",
+//     layerName: "sou00utc_850"
+// });
 
-const sou00utc_700 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-    layers: 'aasdagrometgis:Nowcast',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "Nowcast",
-    layerName: "sou00utc_700"
-});
+// const sou00utc_700 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+//     layers: 'aasdagrometgis:Nowcast',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "Nowcast",
+//     layerName: "sou00utc_700"
+// });
 //exposure
-const exp_dis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:awssample',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "awssample",
-    layerName: "exp_dis"
-});
+// const exp_dis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:awssample',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "awssample",
+//     layerName: "exp_dis"
+// });
 
-const exp_air = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:LLWS_12hr_fcst_FL',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "LLWS_12hr_fcst_FL",
-    layerName: "exp_air"
-});
+// const exp_air = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:LLWS_12hr_fcst_FL',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "LLWS_12hr_fcst_FL",
+//     layerName: "exp_air"
+// });
 
-const exp_oil = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-    layers: 'aasdagrometgis:Nowcast',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "Nowcast",
-    layerName: "exp_oil"
-});
+// const exp_oil = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+//     layers: 'aasdagrometgis:Nowcast',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "Nowcast",
+//     layerName: "exp_oil"
+// });
 
 //ship and buoy
-const ship_00utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:awssample',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "awssample",
-    layerName: "ship_00utc"
-});
+// const ship_00utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:awssample',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "awssample",
+//     layerName: "ship_00utc"
+// });
 
-const ship_01utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:LLWS_12hr_fcst_FL',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "LLWS_12hr_fcst_FL",
-    layerName: "ship_01utc"
-});
+// const ship_01utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+//     layers: 'cite:LLWS_12hr_fcst_FL',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "LLWS_12hr_fcst_FL",
+//     layerName: "ship_01utc"
+// });
 
-const ship_02utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-    layers: 'aasdagrometgis:Nowcast',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "Nowcast",
-    layerName: "ship_02utc"
-});
+// const ship_02utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
+//     layers: 'aasdagrometgis:Nowcast',
+//     format: 'image/png',
+//     transparent: true,
+//     version: '1.1.0',
+//     attribution: "Nowcast",
+//     layerName: "ship_02utc"
+// });
 // dummy data for testing end
 
 //leaflet Fullscreen
-map.addControl(new L.Control.Fullscreen({
-    title: {
-        'false': 'View Fullscreen',
-        'true': 'Exit Fullscreen'
-    }
-}));
+const fullscreenControl = new L.Control.Fullscreen();
+
+// Add the control to the map
+fullscreenControl.addTo(map);
+
+// Adjusting the height using inline style
+const controlElement = document.querySelector('.leaflet-control-fullscreen-button'); // Change the selector according to your control's class or structure
+controlElement.style.width = '38px';
+
+
+
 
 var baseMaps = [{
         name: "Streets",
@@ -3028,6 +3033,13 @@ map.addControl(L.control.styleEditor({
     position: "topleft"
 }))
 
+var styleEditor = document.querySelector('.leaflet-control-styleeditor-interior');
+if (styleEditor) {
+    styleEditor.style.height = '38px';
+    styleEditor.style.width = '38px';
+}
+
+
 // drawControl starts here
 const drawnItems = new L.FeatureGroup();
 map.addLayer(drawnItems);
@@ -3039,6 +3051,47 @@ const drawControl = new L.Control.Draw({
 });
 map.addControl(drawControl);
 
+
+var polylineDrawTool = document.querySelector('.leaflet-draw-draw-polyline');
+if (polylineDrawTool) {
+    polylineDrawTool.style.height = '38px';
+    polylineDrawTool.style.width = '38px';
+}
+var polylineDrawTool = document.querySelector('.leaflet-draw-draw-polygon');
+if (polylineDrawTool) {
+    polylineDrawTool.style.height = '38px';
+    polylineDrawTool.style.width = '38px';
+}
+var polylineDrawTool = document.querySelector('.leaflet-draw-draw-rectangle');
+if (polylineDrawTool) {
+    polylineDrawTool.style.height = '38px';
+    polylineDrawTool.style.width = '38px';
+}
+var polylineDrawTool = document.querySelector('.leaflet-draw-draw-circle');
+if (polylineDrawTool) {
+    polylineDrawTool.style.height = '38px';
+    polylineDrawTool.style.width = '38px';
+}
+var polylineDrawTool = document.querySelector('.leaflet-draw-draw-marker');
+if (polylineDrawTool) {
+    polylineDrawTool.style.height = '38px';
+    polylineDrawTool.style.width = '38px';
+}
+var polylineDrawTool = document.querySelector('.leaflet-draw-draw-circlemarker');
+if (polylineDrawTool) {
+    polylineDrawTool.style.height = '38px';
+    polylineDrawTool.style.width = '38px';
+}
+var polylineDrawTool = document.querySelector('.leaflet-draw-edit-edit.leaflet-disabled');
+if (polylineDrawTool) {
+    polylineDrawTool.style.height = '38px';
+    polylineDrawTool.style.width = '38px';
+}
+var polylineDrawTool = document.querySelector('.leaflet-draw-edit-remove.leaflet-disabled');
+if (polylineDrawTool) {
+    polylineDrawTool.style.height = '38px';
+    polylineDrawTool.style.width = '38px';
+}
 
 // map.on('draw:created', function(e) {
 //     console.log(e, "eeeeeeeeee");
@@ -3062,6 +3115,13 @@ L.Control.geocoder({
     position: "topleft"
 }).addTo(map);
 
+// Selector for the geocoding control
+var geocoderControl = document.querySelector('.leaflet-control-geocoder');
+if (geocoderControl) {
+    geocoderControl.style.height = '41px';
+    geocoderControl.style.width = '41px';
+}
+
 //add mousePosition
 L.control.mousePosition({
     position: "bottomleft"
@@ -3071,6 +3131,7 @@ L.control.mousePosition({
 // L.control.scale().addTo(map);
 
 var customButtonsContainer = L.DomUtil.create('div', 'leaflet-bar leaflet-control customClass');
+
 // Create a custom control button for ObservationButton
 var ObservationButton = L.Control.extend({
     options: {
@@ -3080,16 +3141,19 @@ var ObservationButton = L.Control.extend({
         var obsbtn = L.DomUtil.create('span',
             'leaflet-bar leaflet-control leaflet-control-custom custom-btn');
         obsbtn.innerHTML = 'Observation';
-        // obsbtn.style = "margin-left:30px;"
-        //click event
+        
+        // Set font size to 15px
+        obsbtn.style.fontSize = '15px';
+        
+        // click event
         L.DomEvent.on(obsbtn, 'click', function() {
-            // alert('Button clicked!');
             toggleObservation();
         });
 
         return obsbtn;
     }
 });
+
 // map.addControl(new ObservationButton());
 // buttonContainer.appendChild(new ObservationButton().onAdd(map));
 
@@ -3104,16 +3168,19 @@ var MacroButton = L.Control.extend({
         var macbtn = L.DomUtil.create('span',
             'leaflet-bar leaflet-control leaflet-control-custom custom-btn2');
         macbtn.innerHTML = 'Macro';
-        // macbtn.style = "margin-left:30px;"
-        //click event
+        
+        // Set font size to 15px
+        macbtn.style.fontSize = '15px';
+        
+        // click event
         L.DomEvent.on(macbtn, 'click', function() {
-            // alert('MACRO Button clicked!');
             macToggleObservation();
         });
 
         return macbtn;
     }
 });
+
 
 // var CustomControls = L.Control.extend({
 //     options: {
@@ -3206,11 +3273,19 @@ var LegendButton = L.Control.extend({
             'leaflet-bar leaflet-control leaflet-control-custom custom-btn3');
         button.innerHTML = 'Legend';
         button.id = 'popup';
-        //click event listener
-        L.DomEvent.on(button, 'click', function() {});
+
+        // Set font size to 15px
+        button.style.fontSize = '15px';
+
+        // click event listener
+        L.DomEvent.on(button, 'click', function() {
+            // Your click event handling code goes here
+        });
+
         return button;
     }
 });
+
 
 // Create a custom control button for MacroButton
 var PrintButton = L.Control.extend({
@@ -3221,6 +3296,10 @@ var PrintButton = L.Control.extend({
         var printbtn = L.DomUtil.create('span',
             'leaflet-bar leaflet-control leaflet-control-custom custom-btn2 printbutton');
         printbtn.innerHTML = 'Print';
+        
+        // Set font size to 15px
+        printbtn.style.fontSize = '15px';
+        
         L.DomEvent.on(printbtn, 'click', function() {
             printFn();
         });
@@ -3901,7 +3980,7 @@ function updateActiveLayers() {
 
     // Check if side-by-side is active and more than 2 layers are active
     if (sideBySideVisible && activeLayers > 2) {
-        alert("Only two layers can be active when side-by-side view is active please unselect the layer!");
+        // alert("Only two layers can be active when side-by-side view is active please unselect the layer!");
         // Disable additional layers
         allOverLayers.forEach(group => {
             group.layers.forEach(layer => {
@@ -3956,8 +4035,8 @@ const ToggleControl = L.Control.extend({
 
         button.onclick = function() {
             toggleSideBySide();
-            button.textContent = sideBySideVisible ? 'Hide' : 'Show';
-            position: "topright"
+            // button.textContent = sideBySideVisible ? 'Hide' : 'Show';
+            position: "topleft"
         };
         return button;
     },
@@ -3965,8 +4044,10 @@ const ToggleControl = L.Control.extend({
     onRemove: function(map) {}
 });
 
-(new ToggleControl()).addTo(map);
+// (new ToggleControl()).addTo(map);
 
+const toggleControl = new ToggleControl({ position: 'topleft' });
+toggleControl.addTo(map);
 
 // mywmsIITM mywmsNcum mywmsNowcast
 const overLayers = [{
@@ -4017,17 +4098,17 @@ const overLayers2 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: syn00utc_tem,
+                layer: ggg,
             },
             {
                 active: false,
                 name: "MEAN SEA LEVEL PRESSURE",
-                layer: syn00utc_men,
+                layer: HHHHHH,
             },
             {
                 active: false,
                 name: "CLOUD COVER",
-                layer: syn00utc_clo,
+                layer: X1,
             },
             {
                 active: false,
@@ -4405,17 +4486,17 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "TEMPERATURE",
-                layer: met00utc_tem,
+                layer: SuratMarker,
             },
             {
                 active: false,
                 name: "DEW POINT TEMPERATURE",
-                layer: met00utc_dew
+                layer: JodhpurMarker,
             },
             {
                 active: false,
                 name: "VISIBILITY",
-                layer: met00utc_vis,
+                layer: KanpurMarker,
             },
             {
                 active: false,
@@ -5060,12 +5141,12 @@ var overLayers4 = [
         layers: [{
                 active: false,
                 name: "Next 03 Hrs",
-                layer: mes_wrf_03,
+                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
                 name: "Next 03-06 Hrs",
-                layer: mes_wrf_03_06,
+                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
         ]
     },
@@ -5290,17 +5371,17 @@ var overLayers5 = [
         layers: [{
                 active: false,
                 name: "GFS DAY1",
-                layer: med_gfs1,
+                layer:L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
                 name: "NCUM DAY1",
-                layer: med_ncum1,
+                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
                 name: "NEPS DAY1",
-                layer: med_neps1,
+                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
@@ -5763,17 +5844,17 @@ var overLayers6 = [{
         layers: [{
                 active: false,
                 name: "TIR1",
-                layer: sat_tir1,
+                layer:X157
             },
             {
                 active: false,
                 name: "VIS",
-                layer: sat_vis,
+                layer: X158
             },
             {
                 active: false,
                 name: "CTBT",
-                layer: sat_ctbt,
+                layer: X159,
             },
             {
                 active: false,
@@ -5824,12 +5905,12 @@ var overLayers7 = [{
         layers: [{
                 active: false,
                 name: "Radar Reflectivity",
-                layer: rad_ref,
+                layer:  L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
                 name: "Radar Animation",
-                layer: rad_ani,
+                layer:  L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
         ]
@@ -5880,17 +5961,17 @@ var overLayers9 = [{
         layers: [{
                 active: false,
                 name: "1000 hpa WIND",
-                layer: sou00utc_1000,
+                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
                 name: "850 hpa WIND",
-                layer: sou00utc_850,
+                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
                 name: "700 hpa WIND",
-                layer: sou00utc_700,
+                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
@@ -6165,17 +6246,17 @@ var overLayers10 = [{
     layers: [{
             active: false,
             name: "District Boundaries",
-            layer: exp_dis,
+            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
         },
         {
             active: false,
             name: "Airport",
-            layer: exp_air,
+            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
         },
         {
             active: false,
             name: "Oil Refineries",
-            layer: exp_oil,
+            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
         },
         {
             active: false,
@@ -6240,17 +6321,17 @@ var overLayers11 = [{
     layers: [{
             active: false,
             name: "00UTC",
-            layer: ship_00utc,
+            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
         },
         {
             active: false,
             name: "01UTC",
-            layer: ship_01utc,
+            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
         },
         {
             active: false,
             name: "02UTC",
-            layer: ship_02utc,
+            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
         },
         {
             active: false,
