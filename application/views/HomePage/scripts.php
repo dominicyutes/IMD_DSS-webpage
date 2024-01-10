@@ -2557,13 +2557,12 @@ function toggleTimeDimensionControl() {
         map.timeDimensionControl = null;
     }
 }
-
 // Create a custom control
 var timeDimensionControlButton = L.Control.extend({
     onAdd: function() {
         var button = L.DomUtil.create('button',
             'yourButtonClass'); // Create a button with a specified class
-        button.innerHTML = '<i class="fas fa-clock" style="font-size: 14px;"></i>';
+        button.innerHTML = '<i class="fa-regular fa-clock" style="font-size: 26px;"></i>';
         button.style.backgroundColor = 'white';
         button.style.border = '1px solid black';
         button.style.padding = '7px';
@@ -4062,43 +4061,44 @@ const toggleControl = new ToggleControl({
 toggleControl.addTo(map);
 
 // mywmsIITM mywmsNcum mywmsNowcast
-const overLayers = [{
-        group: "Lightning",
-        collapsed: true,
-        layers: [{
-                active: false,
-                name: "Last 00-05 min",
-                class: "Last 00-05 min",
-                layer: mywmsIITM,
-            },
-            {
-                active: false,
-                name: "Last 05-10 min",
-                layer: mywmsNcum,
-            },
-            {
-                active: false,
-                name: "Last 10-15 min",
-                layer: mywmsNowcast,
-            },
-        ]
-    },
-    {
-        group: "Radar Reflectivity",
-        collapsed: true,
-        layers: [{
-                active: false,
-                name: "Radar Reflectivity",
-                layer: lucknowMarker
-            },
-            {
-                active: false,
-                name: "Radar Animation",
-                layer: patnaMarker
-            },
+const overLayers = [
+    // {
+    //     group: "Lightning",
+    //     collapsed: true,
+    //     layers: [{
+    //             active: false,
+    //             name: "Last 00-05 min",
+    //             class: "Last 00-05 min",
+    //             layer: mywmsIITM,
+    //         },
+    //         {
+    //             active: false,
+    //             name: "Last 05-10 min",
+    //             layer: mywmsNcum,
+    //         },
+    //         {
+    //             active: false,
+    //             name: "Last 10-15 min",
+    //             layer: mywmsNowcast,
+    //         },
+    //     ]
+    // },
+    // {
+    //     group: "Radar Reflectivity",
+    //     collapsed: true,
+    //     layers: [{
+    //             active: false,
+    //             name: "Radar Reflectivity",
+    //             layer: lucknowMarker
+    //         },
+    //         {
+    //             active: false,
+    //             name: "Radar Animation",
+    //             layer: patnaMarker
+    //         },
 
-        ]
-    }
+    //     ]
+    // }
 ];
 
 
