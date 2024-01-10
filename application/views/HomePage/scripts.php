@@ -2390,29 +2390,20 @@ function editMacro(macroGroupName) {
 
 }
 
+var macroGroupNameForDelete;
+
 function deleteMacro(macroGroupName) {
+    macroGroupNameForDelete = macroGroupName;
     // Show the deleteMacroModal
     document.getElementById('deleteMacroModal').style.display = 'block';
 
-    // You can pass macroGroupName to the modal if needed
-    document.getElementById('deleteMacroModal').setAttribute('data-macroGroupName', macroGroupName);
+    // savedMacro = savedMacro.filter(x => x.macroGroupName != macroGroupName);
+    // showSavedMacroList();
 
-    //
-    savedMacro = savedMacro.filter(x => x.macroGroupName != macroGroupName);
-    showSavedMacroList();
-
-    document.getElementById('macroNames').value = '';
-    document.getElementById('mac_modelNames').value = '';
-    document.getElementById('mac_parameterNames').value = '';
-    document.getElementById('mac_subparameter').value = '';
-}
-
-function closeDeleteMacroModal() {
-    // Hide the deleteMacroModal
-    document.getElementById('deleteMacroModal').style.display = 'none';
-
-    // Optionally, re-enable background interactions
-    // document.body.style.overflow = 'auto';
+    // document.getElementById('macroNames').value = '';
+    // document.getElementById('mac_modelNames').value = '';
+    // document.getElementById('mac_parameterNames').value = '';
+    // document.getElementById('mac_subparameter').value = '';
 }
 
 function submitDeleteMacro() {
@@ -2420,18 +2411,15 @@ function submitDeleteMacro() {
     const userName = document.getElementById('userName').value;
     const deleteReason = document.getElementById('deleteReason').value;
 
-    // Get macroGroupName from the modal data attribute
-    const macroGroupName = document.getElementById('deleteMacroModal').getAttribute('data-macroGroupName');
-
-    // Perform deletion logic (use macroGroupName as needed)
-    savedMacro = savedMacro.filter(x => x.macroGroupName != macroGroupName);
+    savedMacro = savedMacro.filter(x => x.macroGroupName != macroGroupNameForDelete);
     showSavedMacroList();
 
-    alert(
-        `Macro with group name ${macroGroupName} has been deleted by ${userName}.<br>&nbsp;</br> Reason: ${deleteReason}.`
-        );
+    let getAlertMsg =
+        `Macro with group name ${macroGroupNameForDelete} has been deleted by ${userName}\nReason: ${deleteReason}`
 
-    // Clear input fields or perform other actions as needed
+    alert(getAlertMsg);
+    console.log(getAlertMsg, "getting alert message...");
+
     document.getElementById('macroNames').value = '';
     document.getElementById('mac_modelNames').value = '';
     document.getElementById('mac_parameterNames').value = '';
@@ -2442,6 +2430,11 @@ function submitDeleteMacro() {
 
     // Close the modal
     closeDeleteMacroModal();
+}
+
+// Hide the deleteMacroModal
+function closeDeleteMacroModal() {
+    document.getElementById('deleteMacroModal').style.display = 'none';
 }
 
 function deleteMacroLayer(value) {
@@ -2497,33 +2490,6 @@ function updateForm() {
     viewMacro(layer.macroGroupName);
 }
 //*********** */
-
-// function removeElementById(elementId) {
-//     let element = document.getElementById(elementId);
-//     if (element) {
-//         element.parentNode.removeChild(element);
-//         // Update the addedTempMacro array by removing the corresponding entry
-//         addedTempMacro = addedTempMacro.filter(macro => macro.ulId !== elementId);
-//         // Update the savedMacro array by regenerating the HTML
-//         savedMacro = addedTempMacro.map(macro => generateAddedInfoDiv(macro)).join("");
-//         document.getElementById('addedInfoContainer').innerHTML = savedMacro;
-//     }
-//     handleInputChange();
-// }
-
-// function generateAddedInfoDiv(macro) {
-//     return `<div id="toggleDiv">
-//         <span onclick="MacroPlusToggle('${macro.ulId}')">+ Macro Name: ${macro.macroName}</span>
-//         <ul id="${macro.ulId}" class="listContainerMacro">
-//             <li>${macro.mac_model_Names}</li>
-//             <li>${macro.mac_parameter_Names}</li>
-//             <li>${macro.mac_sub_parameter}</li>
-//         </ul>
-//         <button class="edit-button" onclick="editMacro('${macro.ulId}', '${macro.macroName}', '${macro.mac_model_Names}', '${macro.mac_parameter_Names}', '${macro.mac_sub_parameter}')">E</button>
-//         <button class="delete-button" onclick="deleteMacro('${macro.ulId}')">D</button>
-//     </div>`;
-// }
-
 
 //********************************************************* */
 //Macro Create Macro Toggle
@@ -2597,7 +2563,7 @@ var timeDimensionControlButton = L.Control.extend({
     onAdd: function() {
         var button = L.DomUtil.create('button',
             'yourButtonClass'); // Create a button with a specified class
-            button.innerHTML = '<i class="fa-regular fa-clock" style="font-size: 24px;"></i>';
+        button.innerHTML = '<i class="fas fa-clock" style="font-size: 14px;"></i>';
         button.style.backgroundColor = 'white';
         button.style.border = '1px solid black';
         button.style.padding = '7px';
@@ -3000,7 +2966,8 @@ const fullscreenControl = new L.Control.Fullscreen();
 fullscreenControl.addTo(map);
 
 // Adjusting the height using inline style
-const controlElement = document.querySelector('.leaflet-control-fullscreen-button'); // Change the selector according to your control's class or structure
+const controlElement = document.querySelector(
+    '.leaflet-control-fullscreen-button'); // Change the selector according to your control's class or structure
 controlElement.style.width = '38px';
 
 
@@ -3141,10 +3108,10 @@ var ObservationButton = L.Control.extend({
         var obsbtn = L.DomUtil.create('span',
             'leaflet-bar leaflet-control leaflet-control-custom custom-btn');
         obsbtn.innerHTML = 'Observation';
-        
+
         // Set font size to 15px
         obsbtn.style.fontSize = '15px';
-        
+
         // click event
         L.DomEvent.on(obsbtn, 'click', function() {
             toggleObservation();
@@ -3168,10 +3135,10 @@ var MacroButton = L.Control.extend({
         var macbtn = L.DomUtil.create('span',
             'leaflet-bar leaflet-control leaflet-control-custom custom-btn2');
         macbtn.innerHTML = 'Macro';
-        
+
         // Set font size to 15px
         macbtn.style.fontSize = '15px';
-        
+
         // click event
         L.DomEvent.on(macbtn, 'click', function() {
             macToggleObservation();
@@ -3296,10 +3263,10 @@ var PrintButton = L.Control.extend({
         var printbtn = L.DomUtil.create('span',
             'leaflet-bar leaflet-control leaflet-control-custom custom-btn2 printbutton');
         printbtn.innerHTML = 'Print';
-        
+
         // Set font size to 15px
         printbtn.style.fontSize = '15px';
-        
+
         L.DomEvent.on(printbtn, 'click', function() {
             printFn();
         });
@@ -3320,6 +3287,48 @@ customButtonsContainer.appendChild(new PrintButton().onAdd());
 // Add the container to the map
 map.getContainer().appendChild(customButtonsContainer);
 // ************
+
+// Custom button control
+var macroDetailsControl = L.Control.extend({
+    options: {
+        position: 'topleft'
+    },
+    onAdd: function() {
+        var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+
+        container.innerHTML =
+            '<div id="macroDetails" style="background-color: white; border: 2px solid #ccc; padding: 10px; border-radius: 5px;">' +
+            '<div class="macroPlayClass">' +
+            '<button class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs" style="color: #000000;"></i></button>' +
+            '<button class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs" style="color: #000000;"></i></button>' +
+            '<button class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs" style="color: #000000;"></i></button>' +
+            '<button class="leftMacBtn"><i class="fa-sharp fa-solid fa-arrow-left fa-xs" style="color: #000000;"></i></button>' +
+            '<button class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs" style="color: #000000;"></i></button>' +
+
+            '<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hello&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' +
+            '<span style="padding-right: 7%;" id="counting">10</span>' +
+
+            '</div>' +
+            '</div>';
+
+        // Prevent click events on the container from being propagated to the map
+        L.DomEvent.disableClickPropagation(container);
+
+        return container;
+    }
+});
+
+map.addControl(new macroDetailsControl());
+
+// Show/hide macro details when clicking the custom button
+document.getElementById('macroDetails').addEventListener('click', function() {
+    this.style.display = 'none';
+});
+
+//
+setTimeout(function() {
+    document.getElementById('macroDetails').style.display = 'block';
+}, 3000);
 
 // Add a marker for Delhi
 var delhiMarker = L.marker([28.6139, 77.2090]);
@@ -4046,7 +4055,9 @@ const ToggleControl = L.Control.extend({
 
 // (new ToggleControl()).addTo(map);
 
-const toggleControl = new ToggleControl({ position: 'topleft' });
+const toggleControl = new ToggleControl({
+    position: 'topleft'
+});
 toggleControl.addTo(map);
 
 // mywmsIITM mywmsNcum mywmsNowcast
@@ -5371,7 +5382,7 @@ var overLayers5 = [
         layers: [{
                 active: false,
                 name: "GFS DAY1",
-                layer:L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
@@ -5844,7 +5855,7 @@ var overLayers6 = [{
         layers: [{
                 active: false,
                 name: "TIR1",
-                layer:X157
+                layer: X157
             },
             {
                 active: false,
@@ -5905,12 +5916,12 @@ var overLayers7 = [{
         layers: [{
                 active: false,
                 name: "Radar Reflectivity",
-                layer:  L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
                 name: "Radar Animation",
-                layer:  L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
         ]

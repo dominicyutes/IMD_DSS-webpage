@@ -604,6 +604,27 @@ body {
     padding-left: 11px;
 }
 
+.warningCls {
+    text-align: center;
+    color: #ffffffa6;
+    background-color: #2c5383;
+    width: 100%;
+    border-radius: 11%;
+}
+
+.btn-primary {
+    background-color: #2c5383;
+    padding: 5%;
+    margin: 10% 10% 0 0;
+}
+
+.labelDelMac {
+    font-weight: bold;
+    font-style: inherit;
+    font-size: 18px;
+    color: #02275fd6;
+}
+
 /* Draggable Model PopUp for Legend Ends here */
 
 .leaflet-panel-layers.expanded {
@@ -633,24 +654,24 @@ body {
 .leaflet-bar {
     border: 0;
 }
+
 /* Select the zoom in and zoom out buttons */
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
     width: 38px !important;
     height: 38px !important;
-    line-height: 50px; 
+    line-height: 50px;
 }
 
 .leaflet-control-zoom-in:before,
 .leaflet-control-zoom-out:before {
     font-size: 30px;
 }
+
 .leaflet-panel-layers,
 .leaflet-control,
 .leaflet-control-layers-expanded,
 .leaflet-drag-target {
-  font-size: 15px;
+    font-size: 15px;
 }
-
-
 </style>
