@@ -5939,17 +5939,17 @@ var overLayers8 = [{
             {
                 active: false,
                 name: "Last 00-05 min",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: mywmsIITM,
             },
             {
                 active: false,
                 name: "Last 05-10 min",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: mywmsNcum,
             },
             {
                 active: false,
                 name: "Last 10-15 min",
-                layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+                layer: mywmsNowcast,
             },
             {
                 active: false,
