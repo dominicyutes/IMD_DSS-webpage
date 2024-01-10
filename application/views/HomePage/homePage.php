@@ -253,13 +253,13 @@
 
             <!-- OBSERVATION -->
             <div id="ObservationContainer" class="obsClass hidden col-sm-2">
-                <h4 class="obsh4" style="font-family: 'Times New Roman', Times, serif;">OBSERVATION</h4>
+                <h6 class="obsh4" style="font-family: 'Times New Roman', Times, serif; font-size: 20px">OBSERVATION</h6>
 
                 <!-- model -->
                 <form id="obsForm">
                     <div>
                         <label name="modelNames" class="firstDDLabel"
-                            style="font-family: 'Times New Roman', Times, serif;">Type:</label>
+                            style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Type:</label>
                         <select class="firstDD" id="modelNames" onchange="showParameterNames(this.value)" &nbsp;>
                         </select>
                     </div>
@@ -267,7 +267,7 @@
                     <!-- parameter -->
                     <div>
                         <label name="parameter" class="secondDDLabel"
-                            style="font-family: 'Times New Roman', Times, serif;">Time:</label>
+                            style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Time:</label>
                         <select class="secondDD" id="parameterNames" onchange="showSubParameterNames(this.value)"
                             &nbsp;>
                         </select>
@@ -276,7 +276,7 @@
                     <!-- SubParameter -->
                     <div>
                         <label name="subparameter" class="thirdDDLabel"
-                            style="font-family: 'Times New Roman', Times, serif;">Parameter</label>
+                            style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Parameter</label>
                         <select class="thirdDD" id="subparameter" &nbsp;>
                         </select>
                         <div id="checkboxListContainer"></div>
@@ -286,7 +286,7 @@
 
                     <div>
                         <label name="start_date" class="dateDDLabel"
-                            style="font-family: 'Times New Roman', Times, serif;">Date:</label>
+                            style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Date:</label>
                         <input type="date" id="start_date" class="dateDD">
                     </div>
                     <!-- <span>&nbsp;</span> -->
@@ -298,7 +298,7 @@
                     <div>
                         <span style="display: contents;">
                             <label name="hourSelect" class="TimeLabel"
-                                style="font-family: 'Times New Roman', Times, serif;">Time:</label>
+                                style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Time:</label>
                             <select id="hourSelect" class="TimeHR">
                             </select>
                             <select id="minuteSelect" class="TimeMin">
@@ -311,7 +311,7 @@
                 <!-- Submit -->
                 <div>
                     <button id="submitButton" onclick="submitForm()" class="submitBtn"
-                        style="font-family: 'Times New Roman', Times, serif;">Submit</button>
+                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Submit</button>
                 </div>
             </div>
 
@@ -319,9 +319,9 @@
             <div id="macroContainer" class="hidden obsClass col-sm-2">
 
                 <div style="display:flex;">
-                    <button class="createMacroCls" onclick="createMacroForm()">+</button>
+                    <button class="createMacroCls" style="font-size: 20px" onclick="createMacroForm()">+</button>
                     <span
-                        style="color: #2c5383;font-family: 'Archivo', sans-serif;font-size: 18px;font-weight: bold;margin-left: 6%;margin-top: 1%;">Create
+                        style="color: #2c5383;font-family: 'Archivo', sans-serif;font-size: 20px;font-weight: bold;margin-left: 6%;margin-top: 1%; font-size: 20px">Create
                         Macro</span>
                 </div>
 
@@ -332,7 +332,7 @@
                         <div class="create_Macro_body_div">
                             <span class="macroLegend">X</span>
                             <h4 class="create_Macro_h4" style="margin: 0 auto;"
-                                style="font-family: 'Times New Roman', Times, serif;">Create Macro</h4>
+                                style="font-family: 'Times New Roman', Times, serif; font-size: 20px">Create Macro</h4>
                         </div>
 
                         <!-- MACRO-model -->
@@ -340,14 +340,14 @@
                             <form id="myForm">
                                 <div>
                                     <label name="macroNames" class="macroNameLabel"
-                                        style="font-family: 'Times New Roman', Times, serif;">Macro Name:</label>
+                                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Macro Name:</label>
                                     <input type="text" class="macroNameInput" id="macroNames"
                                         placeholder="customize name" onchange="handleInputChange()" autocomplete="off"
                                         required &nbsp;>
                                 </div>
                                 <div>
                                     <label name="mac_modelNames" class="mac_firstDDLabel"
-                                        style="font-family: 'Times New Roman', Times, serif;">Type:</label>
+                                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Type:</label>
                                     <select class="mac_firstDD" id="mac_modelNames"
                                         onchange="macShowParameterNames(this.value)" &nbsp;>
                                     </select>
@@ -355,7 +355,7 @@
                                 <!-- parameter -->
                                 <div>
                                     <label name="mac_parameter" class="mac_secondDDLabel"
-                                        style="font-family: 'Times New Roman', Times, serif;">Time:</label>
+                                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Time:</label>
                                     <select class="mac_secondDD" id="mac_parameterNames"
                                         onchange="macShowSubParameterNames(this.value)" &nbsp;>
                                     </select>
@@ -363,19 +363,19 @@
                                 <!-- SubParameter -->
                                 <div>
                                     <label name="mac_subparameter" class="mac_thirdDDLabel"
-                                        style="font-family: 'Times New Roman', Times, serif;">Parameter</label>
+                                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Parameter</label>
                                     <select class="mac_thirdDD" id="mac_subparameter" &nbsp;>
                                     </select>
                                 </div>
 
                                 <!-- Submit -->
                                 <div style="display: flex;">
-                                    <button id="mac_addButton" onclick="macAddForm()" class="macSubmitBtn" type="button"
+                                    <button id="mac_addButton" onclick="macAddForm()" style="font-size: 18px" class="macSubmitBtn" type="button"
                                         disabled>Add</button>
-                                    <button id="mac_submitButton" style="display:block" onclick="macSubmitForm()"
+                                    <button id="mac_submitButton" style="display:block; font-size: 18px" onclick="macSubmitForm()"
                                         class="macSubmitBtn" type="button" disabled>Save</button>
                                     <button id="mac_updateButton" onclick="updateForm()" class="macSubmitBtn"
-                                        type="button" style="display:none" disabled>Update</button>
+                                        type="button" style="display:none; font-size: 18px" disabled>Update</button>
                                 </div>
                             </form>
                             <!--  -->
@@ -390,7 +390,7 @@
                     <div class="view_Create_Macro_body" style="position: relative;">
                         <div class="view_Create_Macro_body_div">
                             <span class="viewMacroLegend">X</span>
-                            <h4 class="view_Macro_h4" style="margin: 0 auto;">View Macro</h4>
+                            <h4 class="view_Macro_h4" style="margin: 0 auto; font-size: 20px">View Macro</h4>
                         </div>
                         <div style="color:black;" id="viewMacroDetails"></div>
                     </div>
@@ -438,7 +438,7 @@
                 <legend
                     style="cursor: pointer;color: #83ffee;text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;">
                     X</legend>
-                <h4 style="margin: 0 auto;">Selected Parameters</h4>
+                <h4 style="margin: 0 auto; font-size: 20px">Selected Parameters</h4>
             </div>
 
             <div class="row" id="Light_RadarRow" style="display: none;">

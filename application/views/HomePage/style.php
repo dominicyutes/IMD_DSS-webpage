@@ -124,7 +124,7 @@ body {
     background-color: #eff4ff;
     color: #1d334e;
     margin-top: 0px;
-    height: 84vh;
+    height: 104vh;
     /* width: 258px; */
     width: 17%;
     border: 1px solid #2c5383;
@@ -440,7 +440,7 @@ body {
 
 .create_Macro_h4 {
     color: #ffffffcc;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     padding-left: 11px;
     margin: 5px 0 0 0px;
@@ -672,6 +672,13 @@ body {
 .leaflet-control,
 .leaflet-control-layers-expanded,
 .leaflet-drag-target {
+    font-size: 15px;
+}
+
+.leaflet-panel-layers-group.collapsible:not(.expanded) {
+    height: 25px;
+}
+.leaflet-container .leaflet-control-mouseposition{
     font-size: 15px;
 }
 </style>
