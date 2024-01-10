@@ -3933,7 +3933,7 @@ function updateActiveLayers() {
     });
 
     // Check if side-by-side is active and more than 2 layers are active
-    console.log(sideBySideVisible,activeLayers );
+    // console.log(sideBySideVisible,activeLayers );
     if (sideBySideVisible && activeLayers > 2) {
         alert("Only two layers can be active when side-by-side view is active please unselect the layer!");
         // Disable additional layers
