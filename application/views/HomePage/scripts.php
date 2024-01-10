@@ -3933,8 +3933,9 @@ function updateActiveLayers() {
     });
 
     // Check if side-by-side is active and more than 2 layers are active
+    console.log(sideBySideVisible,activeLayers );
     if (sideBySideVisible && activeLayers > 2) {
-        // alert("Only two layers can be active when side-by-side view is active please unselect the layer!");
+        alert("Only two layers can be active when side-by-side view is active please unselect the layer!");
         // Disable additional layers
         allOverLayers.forEach(group => {
             group.layers.forEach(layer => {
@@ -7555,15 +7556,15 @@ $("body").on("change", "input[type=checkbox]", function() {
     //
 
     if (isChecked) { // True
-        allOverLayers.forEach(group => {
-            group.layers.forEach(layer => {
-                // layer.layer.on('add remove', function() {
-                layer.active = !layer.active;
-                updateActiveLayers();
-                // console.log(layer, "ppppppp")
-                // });
-            });
-        });
+        // allOverLayers.forEach(group => {
+        //     group.layers.forEach(layer => {
+        //         // layer.layer.on('add remove', function() {
+        //         layer.active = !layer.active;
+        //         updateActiveLayers();
+        //         // console.log(layer, "ppppppp")
+        //         // });
+        //     });
+        // });
         console.log("Checked");
         layer_name = _this.context._layer ? _this.context._layer?.name : _this.context.className;
         var forExistLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer?.name : _this
