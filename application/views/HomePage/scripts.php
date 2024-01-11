@@ -2215,7 +2215,6 @@ function macAddForm() {
     viewAddedAndDeletedMacro();
     handleInputChange();
 }
-
 function viewAddedAndDeletedMacro() {
     let showAddedTempMacro = [];
     addedTempMacro.listOfMacro.forEach(macro => {
@@ -2289,7 +2288,7 @@ function showSavedMacroList() {
         if (macro) {
             showInfoDiv = `<div class="createMacro">
                 <div><i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;""></i>&nbsp;
-                <span style="font-family: 'Archivo', sans-serif;font-size: 14px;font-weight: 600;color: #1d334e;"> ${macro.macroGroupName}</span>
+                <span style="font-family: 'Times New Roman, sans-serif;font-size: 15px;font-weight: 600;color: #1d334e;"> ${macro.macroGroupName}</span>
                 </div>
 
                 <div class="saveMacroView">
@@ -2344,14 +2343,14 @@ function viewMacro(macroGroupName) {
     let viewMacroDetails = document.getElementById("viewMacroDetails");
     let viewTempMacro = [];
     macro.listOfMacro.forEach(macro => {
-        let addedInfoDiv = `<div style="color: #1d334e;" class="macroListCSS" id="toggleDiv">
+        let addedInfoDiv = `<div style="font-family: 'Times New Roman'; font-size: 15px; color: #1d334e;"class="macroListCSS" id="toggleDiv">
         <span onclick="MacroPlusToggle('${macro.ulId}view')">+ ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>
-        <ul id="${macro.ulId}view" class="listContainerMacro">
+        <ul id="${macro.ulId}view" class="listContainerMacro" style="font-family: 'Times New Roman'; font-size: 13px;">
             <li>${macro.mac_model_Names}</li>
             <li>${macro.mac_parameter_Names}</li>
             <li>${macro.mac_sub_parameter}</li>
         </ul>
-        <h6 style="font-size: 11px;">${macro.ist_time}</h6>
+        <h6 style="font-family: 'Times New Roman'; font-size: 15px;">${macro.ist_time}</h6>
     </div>`;
         viewTempMacro.push(addedInfoDiv);
     })

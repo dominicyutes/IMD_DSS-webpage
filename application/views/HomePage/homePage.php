@@ -357,14 +357,14 @@
                                     <label name="macroNames" class="macroNameLabel"
                                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Macro
                                         Name:</label>
-                                    <input type="text" class="macroNameInput" id="macroNames"
+                                    <input type="text" class="macroNameInput" id="macroNames"  style="font-family: 'Times New Roman'; font-size: 18px;"
                                         placeholder="customize name" onchange="handleInputChange()" autocomplete="off"
                                         required &nbsp;>
                                 </div>
                                 <div>
                                     <label name="mac_modelNames" class="mac_firstDDLabel"
                                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Type:</label>
-                                    <select class="mac_firstDD" id="mac_modelNames"
+                                    <select class="mac_firstDD" id="mac_modelNames"  style="font-family: 'Times New Roman'; font-size: 18px;"
                                         onchange="macShowParameterNames(this.value)" &nbsp;>
                                     </select>
                                 </div>
@@ -372,7 +372,7 @@
                                 <div>
                                     <label name="mac_parameter" class="mac_secondDDLabel"
                                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Time:</label>
-                                    <select class="mac_secondDD" id="mac_parameterNames"
+                                    <select class="mac_secondDD" id="mac_parameterNames"  style="font-family: 'Times New Roman'; font-size: 18px;"
                                         onchange="macShowSubParameterNames(this.value)" &nbsp;>
                                     </select>
                                 </div>
@@ -380,7 +380,7 @@
                                 <div>
                                     <label name="mac_subparameter" class="mac_thirdDDLabel"
                                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Parameter</label>
-                                    <select class="mac_thirdDD" id="mac_subparameter" &nbsp;>
+                                    <select class="mac_thirdDD" id="mac_subparameter"  style="font-family: 'Times New Roman'; font-size: 18px;" &nbsp;>
                                     </select>
                                 </div>
 
@@ -429,7 +429,7 @@
                 </div>
             </div>
             <!--  -->
-            <div style="height: 60px;width: 100%; background-color: white; font-family: 'Times New Roman';">Model's Time Update</div>
+            <div style="height: 58px;width: 100%; background-color: white; font-family: 'Times New Roman';">Model's Time Update</div>
         </div>
 
         <!-- MACRO Delete Warning -->
