@@ -348,14 +348,13 @@ body {
 }
 
 .playLine-container {
-    margin-left: 163px;
-    display: none;
+    /* margin-left: 163px; */
+    /* display: none; */
     align-items: center;
     background-color: white;
     border: 2px solid #ccc;
     padding: 9px;
     border-radius: 5px;
-    /* width: 360px; */
 }
 
 .playBtnClasCount {
@@ -385,14 +384,12 @@ body {
     text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;
     font-size: 17px;
     font-weight: bold;
-    /* position: absolute; */
     right: 0px;
     width: 25px;
     height: 30px;
     text-align: center;
     line-height: 30px;
     font-family: 'Archivo', sans-serif;
-    /* margin-right: 4px; */
 }
 
 /* map starts here*/
@@ -405,6 +402,10 @@ body {
 
 .customClass {
     float: none;
+}
+
+.leaflet-top .leaflet-control {
+    margin-top: 4px;
 }
 
 .leaflet-touch .leaflet-bar {
@@ -729,5 +730,4 @@ body {
     font-size: 15px;
     /* right: 266px; */
 }
-
 </style>

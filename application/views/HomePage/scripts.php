@@ -2548,8 +2548,9 @@ var timeDimensionControlButton = L.Control.extend({
             'yourButtonClass'); // Create a button with a specified class
         button.innerHTML = '<i class="fa-regular fa-clock" style="font-size: 20px;"></i>';
         button.style.backgroundColor = 'white';
-        button.style.border = '1px solid black';
+        button.style.border = '0 solid black';
         button.style.padding = '7px';
+        // button.style.margin - left = '12px';
         // button.style.cursor = 'pointer';
 
         button.onclick = function() {
@@ -3073,9 +3074,9 @@ if (geocoderControl) {
 }
 
 //add mousePosition
-L.control.mousePosition({
-    position: "bottomleft"
-}).addTo(map);
+// L.control.mousePosition({
+//     position: "bottomleft"
+// }).addTo(map);
 
 //add map scale
 // L.control.scale().addTo(map);
@@ -3251,10 +3252,19 @@ toggleControl.addTo(map);
 
 //side-by-side ends here
 
+
+var controlsContainer = L.DomUtil.create('div', 'controls-container');
+
+// Add L.control.mousePosition to the container
+L.control.mousePosition({
+    position: 'bottomleft'
+}).addTo(map);
+// }).addTo(controlsContainer);
+
 // Custom PLay button control
 var macroDetailsControl = L.Control.extend({
     options: {
-        position: 'topleft'
+        position: 'bottomleft'
     },
     onAdd: function() {
         var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
@@ -3283,11 +3293,16 @@ var macroDetailsControl = L.Control.extend({
     }
 });
 
-map.addControl(new macroDetailsControl());
+// map.addControl(new macroDetailsControl());
 
 function macroRunFnX() {
     document.getElementById("macroDetails").style.display = "none";
 }
+new macroDetailsControl().addTo(map);
+// new macroDetailsControl().addTo(bottomControlsContainer);
+
+// Add the container with both controls to the map
+// bottomControlsContainer.addTo(map);
 
 // Custom macroDetailsControl
 // var macroDetailsControlInstance = new macroDetailsControl();
