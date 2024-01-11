@@ -319,9 +319,12 @@
                     <h4
                         style="background-color: #d4e6ff; padding: 10px; margin-top: 0; border-top-left-radius: 8px; border-top-right-radius: 8px; text-align: center;">
                         Note</h4>
-                    <ul style="list-style-type: none; padding-left: 0; margin-top: 10px;">
-                        <span style="font-size: 15px; line-height: 1.6; color: #333;">This option aims to present a comprehensive summary of the observed data for various parameters. Please ensure that all fields are filled in to access the information.</span>
+                    <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; text-align: justify;">
+                        <span style="font-size: 15px; line-height: 1.6; color: #333;">
+                        This option aims to present a comprehensive summary of the observed data for various parameters. Please ensure that all fields are filled in to access the information.
+                        </span>
                     </ul>
+
                 </div>
             </div>
 
@@ -413,9 +416,15 @@
                     <h4
                         style="background-color: #d4e6ff; padding: 10px; margin-top: 0; border-top-left-radius: 8px; border-top-right-radius: 8px;">
                         Note</h4>
-                    <ul style="list-style-type: none; padding-left: 0; margin-top: 10px;">
-                        <span style="font-size: 15px; line-height: 1.6; color: #333;">This option aims to present a comprehensive summary of the observed data for various parameters. Please ensure that all fields are filled in to access the information.</span>
+                    <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; text-align: justify;">
+                        <span style="font-size: 15px; line-height: 1.6; color: #333;">
+                            The Macro feature will facilitate the user/forecaster in streamlining daily operations by
+                            storing selected layers/information in a group, therefore simplifying the process of viewing
+                            them. Click on the "+" symbol to generate a new macro and follow the instructions given to
+                            save, edit, run, and delete options.
+                        </span>
                     </ul>
+
                 </div>
             </div>
             <!--  -->
