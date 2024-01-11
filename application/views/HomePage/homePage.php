@@ -183,7 +183,8 @@
             <img src="img/emblem.png" alt="Emblem of India" height="50"
                 style="margin-right: auto; margin-left: 30px; margin-top: 5px; margin-bottom: 5px;">
             <div style="flex: 1; text-align: center;">
-                <span class="text">WEATHER DECISION SUPPORT SYSTEM</span>
+            <span class="text" style="font-family: 'Times New Roman';">WEATHER DECISION SUPPORT SYSTEM</span>
+
             </div>
             <img src="img/imd_logo.png" alt="IMD logo" height="50"
                 style="margin-left: auto; margin-right: 30px; margin-top: 5px; margin-bottom: 5px;">
@@ -199,47 +200,47 @@
                         style="justify-content: space-between">
 
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="exposure">Exposure</p>
+                            <p class="btn-val" id="exposure" style="font-family: 'Times New Roman'; font-size: 20px;">Exposure</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="metar">Metar</p>
+                            <p class="btn-val" id="metar" style="font-family: 'Times New Roman'; font-size: 20px;">Metar</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="synop">Synop</p>
+                            <p class="btn-val" id="synop" style="font-family: 'Times New Roman'; font-size: 20px;">Synop</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="sounding">Sounding</p>
+                            <p class="btn-val" id="sounding" style="font-family: 'Times New Roman'; font-size: 20px;">Sounding</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="ship_and_buoy">Ship and Buoy</p>
+                            <p class="btn-val" id="ship_and_buoy" style="font-family: 'Times New Roman'; font-size: 20px;">Ship and Buoy</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="radar">Radar</p>
+                            <p class="btn-val" id="radar" style="font-family: 'Times New Roman'; font-size: 20px;">Radar</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="satellite">Satellite</p>
+                            <p class="btn-val" id="satellite" style="font-family: 'Times New Roman'; font-size: 20px;">Satellite</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="lightning">Lightning</p>
+                            <p class="btn-val" id="lightning" style="font-family: 'Times New Roman'; font-size: 20px;">Lightning</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="mesolscale">Mesoscale Forecast</p>
+                            <p class="btn-val" id="mesolscale" style="font-family: 'Times New Roman'; font-size: 20px;">Mesoscale Forecast</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="medium_range">Medium Range</p>
+                            <p class="btn-val" id="medium_range" style="font-family: 'Times New Roman'; font-size: 20px;">Medium Range</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val">Export Polygon</p>
+                            <p style="font-family: 'Times New Roman'; font-size: 20px;" class="btn-val">Export Polygon</p>
                             <div class="underline"></div>
                         </button>
                     </div>
