@@ -3260,7 +3260,7 @@ var macroDetailsControl = L.Control.extend({
         var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
         //display: none;
         container.innerHTML =
-            '<div id="macroDetails" class="playLine-container" style="background-color: white; border: 2px solid #ccc; padding: 5px; border-radius: 5px; width: 360px;">' +
+            '<div id="macroDetails" class="playLine-container" style="display: none;background-color: white; border: 2px solid #ccc; padding: 5px; border-radius: 5px; width: 360px;">' +
             '<div class="macroPlayClass">' +
             '<button class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs" style="color: #000000;"></i></button>' +
             '<button class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs" style="color: #000000;"></i></button>' +
