@@ -252,7 +252,8 @@
             <div id="map" class="col-lg-10"></div>
 
             <!-- OBSERVATION -->
-            <div id="ObservationContainer" class="obsClass hidden col-sm-2">
+
+            <div id="ObservationContainer" class="obsClass hidden col-sm-2" style="position: relative;">
                 <h6 class="obsh4" style="font-family: 'Times New Roman', Times, serif; font-size: 20px">OBSERVATION</h6>
 
                 <!-- model -->
@@ -313,11 +314,19 @@
                     <button id="submitButton" onclick="submitForm()" class="submitBtn"
                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Submit</button>
                 </div>
+                <div
+                    style="position: absolute; bottom: 0; background-color: #f4fcff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 300px; font-family: 'Times New Roman', Times, serif;">
+                    <h4
+                        style="background-color: #d4e6ff; padding: 10px; margin-top: 0; border-top-left-radius: 8px; border-top-right-radius: 8px; text-align: center;">
+                        Note</h4>
+                    <ul style="list-style-type: none; padding-left: 0; margin-top: 10px;">
+                        <span style="font-size: 15px; line-height: 1.6; color: #333;">This option aims to present a comprehensive summary of the observed data for various parameters. Please ensure that all fields are filled in to access the information.</span>
+                    </ul>
+                </div>
             </div>
 
             <!-- MACRO -->
-            <div id="macroContainer" class="hidden obsClass col-sm-2">
-
+            <div id="macroContainer" class="hidden obsClass col-sm-2" style="position: relative;">
                 <div style="display:flex;">
                     <button class="createMacroCls" style="font-size: 20px" onclick="createMacroForm()">+</button>
                     <span
@@ -333,14 +342,17 @@
                             <span class="macroLegend">X</span>
                             <h4 class="create_Macro_h4" style="margin: 0 auto;"
                                 style="font-family: 'Times New Roman', Times, serif; font-size: 20px">Create Macro</h4>
+
                         </div>
+
 
                         <!-- MACRO-model -->
                         <div id="showCreateMacroLayers">
                             <form id="myForm">
                                 <div>
                                     <label name="macroNames" class="macroNameLabel"
-                                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Macro Name:</label>
+                                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Macro
+                                        Name:</label>
                                     <input type="text" class="macroNameInput" id="macroNames"
                                         placeholder="customize name" onchange="handleInputChange()" autocomplete="off"
                                         required &nbsp;>
@@ -370,10 +382,11 @@
 
                                 <!-- Submit -->
                                 <div style="display: flex;">
-                                    <button id="mac_addButton" onclick="macAddForm()" style="font-size: 18px" class="macSubmitBtn" type="button"
-                                        disabled>Add</button>
-                                    <button id="mac_submitButton" style="display:block; font-size: 18px" onclick="macSubmitForm()"
-                                        class="macSubmitBtn" type="button" disabled>Save</button>
+                                    <button id="mac_addButton" onclick="macAddForm()" style="font-size: 18px"
+                                        class="macSubmitBtn" type="button" disabled>Add</button>
+                                    <button id="mac_submitButton" style="display:block; font-size: 18px"
+                                        onclick="macSubmitForm()" class="macSubmitBtn" type="button"
+                                        disabled>Save</button>
                                     <button id="mac_updateButton" onclick="updateForm()" class="macSubmitBtn"
                                         type="button" style="display:none; font-size: 18px" disabled>Update</button>
                                 </div>
@@ -395,99 +408,108 @@
                         <div style="color:black;" id="viewMacroDetails"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!--  -->
-        <div style="height: 60px;width: 100%; background-color: white;">Model's Time Update</div>
-    </div>
-
-    <!-- MACRO Delete Warning -->
-    <div id="deleteMacroModal" class="modal" style="display: none; width: 27%; left: 33%; top: 9%; height: auto;">
-        <div class="modal-content"
-            style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #ffffff; padding: 10px; border-radius: 10px; align-items: center;">
-            <h3 class="warningCls">WARNING !</h3>
-            <div style="width: 100%;">
-                <div style="margin-left: 12%; width: 74%;" class="col-6">
-                    <label class="labelDelMac" for="userName">Your Name:</label>
-                    <div class="input-group mb-3">
-                        <input style="border-color: #d5caca;" type="text" class="form-control" aria-label="Default"
-                            aria-describedby="inputGroup-sizing-default" id="userName" required>
-                    </div>
-                </div>
-                <div style="margin-left: 12%; width: 74%;" class="col-6">
-                    <label class="labelDelMac" for="deleteReason">Reason for Deletion:</label>
-                    <div class="input-group mb-3">
-                        <input style="border-color: #d5caca;" type="text" class="form-control" aria-label="Default"
-                            aria-describedby="inputGroup-sizing-default" id="deleteReason" required>
-                    </div>
+                <div
+                    style="position: absolute; bottom: 0; background-color: #f4fcff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 300px; font-family: 'Times New Roman', Times, serif;text-align: center;">
+                    <h4
+                        style="background-color: #d4e6ff; padding: 10px; margin-top: 0; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+                        Note</h4>
+                    <ul style="list-style-type: none; padding-left: 0; margin-top: 10px;">
+                        <span style="font-size: 15px; line-height: 1.6; color: #333;">This option aims to present a comprehensive summary of the observed data for various parameters. Please ensure that all fields are filled in to access the information.</span>
+                    </ul>
                 </div>
             </div>
-            <div style="display: flex; align-items: center;">
-                <button type="button" onclick="closeDeleteMacroModal()" class="btn btn-primary">Cancel</button>
-                <button type="button" onclick="submitDeleteMacro()" class="btn btn-primary">Submit</button>
+            <!--  -->
+            <div style="height: 60px;width: 100%; background-color: white;">Model's Time Update</div>
+        </div>
+
+        <!-- MACRO Delete Warning -->
+        <div id="deleteMacroModal" class="modal" style="display: none; width: 27%; left: 33%; top: 9%; height: auto;">
+            <div class="modal-content"
+                style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #ffffff; padding: 10px; border-radius: 10px; align-items: center;">
+                <h3 class="warningCls">WARNING !</h3>
+                <div style="width: 100%;">
+                    <div style="margin-left: 12%; width: 74%;" class="col-6">
+                        <label class="labelDelMac" for="userName">Your Name:</label>
+                        <div class="input-group mb-3">
+                            <input style="border-color: #d5caca;" type="text" class="form-control" aria-label="Default"
+                                aria-describedby="inputGroup-sizing-default" id="userName" required>
+                        </div>
+                    </div>
+                    <div style="margin-left: 12%; width: 74%;" class="col-6">
+                        <label class="labelDelMac" for="deleteReason">Reason for Deletion:</label>
+                        <div class="input-group mb-3">
+                            <input style="border-color: #d5caca;" type="text" class="form-control" aria-label="Default"
+                                aria-describedby="inputGroup-sizing-default" id="deleteReason" required>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <button type="button" onclick="closeDeleteMacroModal()" class="btn btn-primary">Cancel</button>
+                    <button type="button" onclick="submitDeleteMacro()" class="btn btn-primary">Submit</button>
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <!-- LEGEND model popup -->
-    <div class="model" style="display: none; left: 253px; top: 94px; height:0;">
-        <div class="model-body" style="position: relative;">
-            <div
-                style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px; align-items: center;">
-                <legend
-                    style="cursor: pointer;color: #83ffee;text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;">
-                    X</legend>
-                <h4 style="margin: 0 auto; font-size: 20px">Selected Parameters</h4>
-            </div>
+        <!-- LEGEND model popup -->
+        <div class="model" style="display: none; left: 253px; top: 94px; height:0;">
+            <div class="model-body" style="position: relative;">
+                <div
+                    style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px; align-items: center;">
+                    <legend
+                        style="cursor: pointer;color: #83ffee;text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;">
+                        X</legend>
+                    <h4 style="margin: 0 auto; font-size: 20px">Selected Parameters</h4>
+                </div>
 
-            <div class="row" id="Light_RadarRow" style="display: none;">
+                <div class="row" id="Light_RadarRow" style="display: none;">
+                    <div>
+                        <!-- HomePage-Lightning -->
+                        <h5 id="panelLayer-Lightning-Title"></h5>
+                        <p id="panelLayer-Lightning-lists"></p>
+
+                        <!-- HomePage-Radar -->
+                        <h5 id="panelLayer-radar-Title"></h5>
+                        <p id="panelLayer-radar-lists" style="display: flex; flex-wrap: wrap;"></p>
+                    </div>
+                </div>
+
                 <div>
-                    <!-- HomePage-Lightning -->
-                    <h5 id="panelLayer-Lightning-Title"></h5>
-                    <p id="panelLayer-Lightning-lists"></p>
+                    <!-- Exposure -->
+                    <div id="ExposureRow" style="display: none; ">
+                        <h4 id="EXPOSURE" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
+                            EXPOSURE
+                        </h4>
+                        <h5 id="exposure-layers-Title" style="color: #000000;"></h5>
+                        <p id="exposure-layers-lists" style="display: flex; flex-wrap: wrap;">
+                    </div>
 
-                    <!-- HomePage-Radar -->
-                    <h5 id="panelLayer-radar-Title"></h5>
-                    <p id="panelLayer-radar-lists" style="display: flex; flex-wrap: wrap;"></p>
-                </div>
-            </div>
+                    <!-- METAR -->
+                    <div id="METAR_Row">
+                        <h4 id="METAR" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
+                        <!-- METARTEMP -->
+                        <h5 id="metarTemp-Title" style="color: #000000;"></h5>
+                        <div id="metarTempImage" style="margin-left: 40px; flex-wrap: wrap;"></div>
+                        <p id="metarTemp-lists" style="display: none; flex-wrap: wrap;"></p>
 
-            <div>
-                <!-- Exposure -->
-                <div id="ExposureRow" style="display: none; ">
-                    <h4 id="EXPOSURE" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
-                        EXPOSURE
-                    </h4>
-                    <h5 id="exposure-layers-Title" style="color: #000000;"></h5>
-                    <p id="exposure-layers-lists" style="display: flex; flex-wrap: wrap;">
-                </div>
+                        <!-- METARDewPoint -->
+                        <h5 id="metarDewPoint-Title" style="color: #000000;"></h5>
+                        <div id="metarDewPointImage" style="margin-left: 40px; flex-wrap: wrap;"></div>
+                        <p id="metarDewPoint-lists" style="display: none; flex-wrap: wrap;"></p>
 
-                <!-- METAR -->
-                <div id="METAR_Row">
-                    <h4 id="METAR" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
-                    <!-- METARTEMP -->
-                    <h5 id="metarTemp-Title" style="color: #000000;"></h5>
-                    <div id="metarTempImage" style="margin-left: 40px; flex-wrap: wrap;"></div>
-                    <p id="metarTemp-lists" style="display: none; flex-wrap: wrap;"></p>
+                        <!-- METARVisibility -->
+                        <h5 id="metarVisibility-Title" style="color: #000000;"></h5>
+                        <div id="metarVisibilityImage" style="margin-left: 40px; flex-wrap: wrap;"></div>
+                        <p id="metarVisibility-lists" style="display: none; flex-wrap: wrap;"></p>
 
-                    <!-- METARDewPoint -->
-                    <h5 id="metarDewPoint-Title" style="color: #000000;"></h5>
-                    <div id="metarDewPointImage" style="margin-left: 40px; flex-wrap: wrap;"></div>
-                    <p id="metarDewPoint-lists" style="display: none; flex-wrap: wrap;"></p>
+                        <!-- METARWindSpeedAndDirection -->
+                        <h5 id="metarWindSpeedAndDirection-Title" style="color: #000000;"></h5>
+                        <div id="metarWindSpeedAndDirectionImage"
+                            style="margin-left: 40px; display: flex; flex-wrap: wrap;"></div>
+                        <p id="metarWindSpeedAndDirection-lists" style="display: flex; display: none; flex-wrap: wrap;">
+                        </p>
 
-                    <!-- METARVisibility -->
-                    <h5 id="metarVisibility-Title" style="color: #000000;"></h5>
-                    <div id="metarVisibilityImage" style="margin-left: 40px; flex-wrap: wrap;"></div>
-                    <p id="metarVisibility-lists" style="display: none; flex-wrap: wrap;"></p>
-
-                    <!-- METARWindSpeedAndDirection -->
-                    <h5 id="metarWindSpeedAndDirection-Title" style="color: #000000;"></h5>
-                    <div id="metarWindSpeedAndDirectionImage"
-                        style="margin-left: 40px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="metarWindSpeedAndDirection-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <!-- <h5 id="METAR00UTC-Title" style="color: #000000;"></h5>
+                        <!-- <h5 id="METAR00UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR00UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
                     <h5 id="METAR01UTC-Title" style="color: #000000;"></h5>
@@ -559,60 +581,64 @@
                     <h5 id="METAR23UTC-Title" style="color: #000000;"></h5>
                     <p id="METAR23UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p> -->
 
-                </div>
-
-                <!-- SYNOP -->
-                <div class="row" id="SYNOP_Row" style="display: none;">
-                    <h4 id="SYNOP" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
-
-                    <!-- synopTEMP -->
-                    <h5 id="synopTemp-Title" style="color: #000000;"></h5>
-                    <div id="synopTempImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="synopTemp-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <!-- synopMeanSeaLevel -->
-                    <h5 id="synopMeanSeaLevel-Title" style="color: #000000;"></h5>
-                    <div id="synopMeanSeaLevelImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="synopMeanSeaLevel-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <!-- synopCloudCover -->
-                    <h5 id="synopCloudCover-Title" style="color: #000000;"></h5>
-                    <div id="synopCloudCoverImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="synopCloudCover-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-
-                    <!-- synopGeopotentialHeight -->
-                    <h5 id="synopGeopotentialHeight-Title" style="color: #000000;"></h5>
-                    <div id="synopGeopotentialHeightImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
                     </div>
-                    <p id="synopGeopotentialHeight-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <!-- synopRelativeHumidity -->
-                    <h5 id="synopRelativeHumidity-Title" style="color: #000000;"></h5>
-                    <div id="synopRelativeHumidityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
-                    </div>
-                    <p id="synopRelativeHumidity-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+                    <!-- SYNOP -->
+                    <div class="row" id="SYNOP_Row" style="display: none;">
+                        <h4 id="SYNOP" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
 
-                    <!-- synopVisibility -->
-                    <h5 id="synopVisibility-Title" style="color: #000000;"></h5>
-                    <div id="synopVisibilityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
-                    </div>
-                    <p id="synopVisibility-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+                        <!-- synopTEMP -->
+                        <h5 id="synopTemp-Title" style="color: #000000;"></h5>
+                        <div id="synopTempImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <p id="synopTemp-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <!-- synopWindSpeedAndDirection -->
-                    <h5 id="synopWindSpeedAndDirection-Title" style="color: #000000;"></h5>
-                    <div id="synopWindSpeedAndDirectionImage"
-                        style="margin-left: 10px; display: flex; flex-wrap: wrap;">
-                    </div>
-                    <p id="synopWindSpeedAndDirection-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+                        <!-- synopMeanSeaLevel -->
+                        <h5 id="synopMeanSeaLevel-Title" style="color: #000000;"></h5>
+                        <div id="synopMeanSeaLevelImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="synopMeanSeaLevel-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <!-- synop3hRainfall -->
-                    <h5 id="synop3hRainfall-Title" style="color: #000000;"></h5>
-                    <div id="synop3hRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
-                    </div>
-                    <p id="synop3hRainfall-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+                        <!-- synopCloudCover -->
+                        <h5 id="synopCloudCover-Title" style="color: #000000;"></h5>
+                        <div id="synopCloudCoverImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <p id="synopCloudCover-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
-                    <!-- <h5 id="SYNOP00UTC-Title" style="color: #000000;"></h5>
+
+                        <!-- synopGeopotentialHeight -->
+                        <h5 id="synopGeopotentialHeight-Title" style="color: #000000;"></h5>
+                        <div id="synopGeopotentialHeightImage"
+                            style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="synopGeopotentialHeight-lists" style="display: flex; display: none; flex-wrap: wrap;">
+                        </p>
+
+                        <!-- synopRelativeHumidity -->
+                        <h5 id="synopRelativeHumidity-Title" style="color: #000000;"></h5>
+                        <div id="synopRelativeHumidityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="synopRelativeHumidity-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+
+                        <!-- synopVisibility -->
+                        <h5 id="synopVisibility-Title" style="color: #000000;"></h5>
+                        <div id="synopVisibilityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="synopVisibility-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+
+                        <!-- synopWindSpeedAndDirection -->
+                        <h5 id="synopWindSpeedAndDirection-Title" style="color: #000000;"></h5>
+                        <div id="synopWindSpeedAndDirectionImage"
+                            style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="synopWindSpeedAndDirection-lists" style="display: flex; display: none; flex-wrap: wrap;">
+                        </p>
+
+                        <!-- synop3hRainfall -->
+                        <h5 id="synop3hRainfall-Title" style="color: #000000;"></h5>
+                        <div id="synop3hRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="synop3hRainfall-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+
+                        <!-- <h5 id="SYNOP00UTC-Title" style="color: #000000;"></h5>
                     <p id="SYNOP00UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
 
                     <h5 id="SYNOP03UTC-Title" style="color: #000000;"></h5>
@@ -635,188 +661,200 @@
 
                     <h5 id="SYNOP21UTC-Title" style="color: #000000;"></h5>
                     <p id="SYNOP21UTC-lists" style="display: flex; flex-wrap: wrap;"></p> -->
-                </div>
-
-                <!-- Radar -->
-                <div class="row" id="RADAR_Row" style="display: none;">
-                    <h4 id="RADARPRODUCTS" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
-                    </h4>
-                    <div id="RADARImage" style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
                     </div>
 
-                    <h5 id="RADARPRODUCTS-Title" style="color: #000000;"></h5>
-                    <p id="RADARPRODUCTS-lists" style="flex-wrap: wrap;"></p>
-                </div>
+                    <!-- Radar -->
+                    <div class="row" id="RADAR_Row" style="display: none;">
+                        <h4 id="RADARPRODUCTS"
+                            style=" border-radius: 8px; background-color: #00719c; text-align: center;">
+                        </h4>
+                        <div id="RADARImage"
+                            style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
+                        </div>
 
-                <!-- SATELLITE -->
-                <div class="row" id="SATELLITE_Row" style="display: none;">
-                    <h4 id="SATELLITE" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
-                    </h4>
-
-                    <h5 id="SATELLITE-Title" style="color: #000000;"></h5>
-                    <p id="SATELLITE-lists" style="display: flex; flex-wrap: wrap;"></p>
-
-                </div>
-
-                <!-- LIGHTINING -->
-                <div class="row" id="LIGHTINING_Row" style="display: none;">
-                    <h4 id="LIGHTINING" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
-                    </h4>
-                    <div id="LIGHTININGImage"
-                        style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
+                        <h5 id="RADARPRODUCTS-Title" style="color: #000000;"></h5>
+                        <p id="RADARPRODUCTS-lists" style="flex-wrap: wrap;"></p>
                     </div>
 
-                    <h5 id="LIGHTINING-Title" style="color: #000000;"></h5>
-                    <p id="LIGHTINING-lists" style="flex-wrap: wrap;"></p>
+                    <!-- SATELLITE -->
+                    <div class="row" id="SATELLITE_Row" style="display: none;">
+                        <h4 id="SATELLITE" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
+                        </h4>
 
-                </div>
-                <!-- SOUNDING -->
-                <div id="SOUNDING_Row" style="display: none;">
-                    <h4 id="SOUNDING" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
-                    <div id="soundingImage" style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
+                        <h5 id="SATELLITE-Title" style="color: #000000;"></h5>
+                        <p id="SATELLITE-lists" style="display: flex; flex-wrap: wrap;"></p>
+
                     </div>
 
-                    <h5 id="SOUNDING00UTCWIND-Title" style="color: #000000;"></h5>
-                    <p id="SOUNDING00UTCWIND-lists" style="flex-wrap: wrap;"></p>
+                    <!-- LIGHTINING -->
+                    <div class="row" id="LIGHTINING_Row" style="display: none;">
+                        <h4 id="LIGHTINING" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
+                        </h4>
+                        <div id="LIGHTININGImage"
+                            style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
+                        </div>
 
-                    <h5 id="SOUNDING12UTCWIND-Title" style="color: #000000;"></h5>
-                    <p id="SOUNDING12UTCWIND-lists" style="flex-wrap: wrap;"></p>
+                        <h5 id="LIGHTINING-Title" style="color: #000000;"></h5>
+                        <p id="LIGHTINING-lists" style="flex-wrap: wrap;"></p>
 
-                    <h5 id="SOUNDING00UTCTEMP-Title" style="color: #000000;"></h5>
-                    <p id="SOUNDING00UTCTEMP-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="SOUNDING12UTCTEMP-Title" style="color: #000000;"></h5>
-                    <p id="SOUNDING12UTCTEMP-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="SOUNDING00UTCDEWPOINT-Title" style="color: #000000;"></h5>
-                    <p id="SOUNDING00UTCDEWPOINT-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="SOUNDING12UTCDEWPOINT-Title" style="color: #000000;"></h5>
-                    <p id="SOUNDING12UTCDEWPOINT-lists" style="flex-wrap: wrap;"></p>
-
-                </div>
-                <!-- SHIPANDBUOY -->
-                <div class="row" id="SHIPANDBUOY_Row" style="display: none;">
-                    <h4 id="SHIPANDBUOY" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
-                    </h4>
-                    <div id="SHIPANDBUOYImage"
-                        style="margin-left: 50px; margin-top: 10px display: flex; flex-wrap: wrap;"></div>
-                    <h5 id="SHIPANDBUOY-Title" style="color: #000000;"></h5>
-                    <p id="SHIPANDBUOY-lists" style="flex-wrap: wrap;"></p>
-                </div>
-                <!-- MESOLSCALE -->
-                <div class="row" id="MESOLSCALE_Row" style="display: none;">
-                    <h4 id="MESOLSCALE" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
-                    </h4>
-
-                    <h5 id="WRFReflectivity-Title" style="color: #000000;"></h5>
-                    <div id="WRFReflectivityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="WRFReflectivity-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="WRFlightningProduct-Title" style="color: #000000;"></h5>
-                    <div id="WRFlightningProductImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="WRFlightningProduct-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="WRFAccumlatedRainfall-Title" style="color: #000000;"></h5>
-                    <div id="WRFAccumlatedRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
                     </div>
-                    <p id="WRFAccumlatedRainfall-lists" style="flex-wrap: wrap;"></p>
+                    <!-- SOUNDING -->
+                    <div id="SOUNDING_Row" style="display: none;">
+                        <h4 id="SOUNDING" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
+                        </h4>
+                        <div id="soundingImage"
+                            style="margin-left: 10px; margin-top: 10px display: flex; flex-wrap: wrap;">
+                        </div>
 
-                    <h5 id="lightningPotentialindex-Title" style="color: #000000;"></h5>
-                    <div id="lightningPotentialindexImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        <h5 id="SOUNDING00UTCWIND-Title" style="color: #000000;"></h5>
+                        <p id="SOUNDING00UTCWIND-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="SOUNDING12UTCWIND-Title" style="color: #000000;"></h5>
+                        <p id="SOUNDING12UTCWIND-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="SOUNDING00UTCTEMP-Title" style="color: #000000;"></h5>
+                        <p id="SOUNDING00UTCTEMP-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="SOUNDING12UTCTEMP-Title" style="color: #000000;"></h5>
+                        <p id="SOUNDING12UTCTEMP-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="SOUNDING00UTCDEWPOINT-Title" style="color: #000000;"></h5>
+                        <p id="SOUNDING00UTCDEWPOINT-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="SOUNDING12UTCDEWPOINT-Title" style="color: #000000;"></h5>
+                        <p id="SOUNDING12UTCDEWPOINT-lists" style="flex-wrap: wrap;"></p>
+
                     </div>
-                    <p id="lightningPotentialindex-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="NCUMRlightningProduct-Title" style="color: #000000;"></h5>
-                    <div id="NCUMRlightningProductImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                    <!-- SHIPANDBUOY -->
+                    <div class="row" id="SHIPANDBUOY_Row" style="display: none;">
+                        <h4 id="SHIPANDBUOY"
+                            style=" border-radius: 8px; background-color: #00719c; text-align: center;">
+                        </h4>
+                        <div id="SHIPANDBUOYImage"
+                            style="margin-left: 50px; margin-top: 10px display: flex; flex-wrap: wrap;"></div>
+                        <h5 id="SHIPANDBUOY-Title" style="color: #000000;"></h5>
+                        <p id="SHIPANDBUOY-lists" style="flex-wrap: wrap;"></p>
                     </div>
-                    <p id="NCUMRlightningProduct-lists" style="flex-wrap: wrap;"></p>
+                    <!-- MESOLSCALE -->
+                    <div class="row" id="MESOLSCALE_Row" style="display: none;">
+                        <h4 id="MESOLSCALE" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
+                        </h4>
 
-                    <h5 id="NCUMRWindGust-Title" style="color: #000000;"></h5>
-                    <div id="NCUMRWindGustImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="NCUMRWindGust-lists" style="flex-wrap: wrap;"></p>
+                        <h5 id="WRFReflectivity-Title" style="color: #000000;"></h5>
+                        <div id="WRFReflectivityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <p id="WRFReflectivity-lists" style="flex-wrap: wrap;"></p>
 
-                    <h5 id="NCUMRRainfall-Title" style="color: #000000;"></h5>
-                    <div id="NCUMRRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="NCUMRRainfall-lists" style="flex-wrap: wrap;"></p>
+                        <h5 id="WRFlightningProduct-Title" style="color: #000000;"></h5>
+                        <div id="WRFlightningProductImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="WRFlightningProduct-lists" style="flex-wrap: wrap;"></p>
 
-                    <h5 id="HRRR_SPHourlyDBZ-Title" style="color: #000000;"></h5>
-                    <div id="HRRR_SPHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="HRRR_SPHourlyDBZ-lists" style="flex-wrap: wrap;"></p>
+                        <h5 id="WRFAccumlatedRainfall-Title" style="color: #000000;"></h5>
+                        <div id="WRFAccumlatedRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="WRFAccumlatedRainfall-lists" style="flex-wrap: wrap;"></p>
 
-                    <h5 id="HRRR_NEHourlyDBZ-Title" style="color: #000000;"></h5>
-                    <div id="HRRR_NEHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="HRRR_NEHourlyDBZ-lists" style="flex-wrap: wrap;"></p>
+                        <h5 id="lightningPotentialindex-Title" style="color: #000000;"></h5>
+                        <div id="lightningPotentialindexImage"
+                            style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="lightningPotentialindex-lists" style="flex-wrap: wrap;"></p>
 
-                    <h5 id="HRRR_NWHourlyDBZ-Title" style="color: #000000;"></h5>
-                    <div id="HRRR_NWHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="HRRR_NWHourlyDBZ-lists" style="flex-wrap: wrap;"></p>
+                        <h5 id="NCUMRlightningProduct-Title" style="color: #000000;"></h5>
+                        <div id="NCUMRlightningProductImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="NCUMRlightningProduct-lists" style="flex-wrap: wrap;"></p>
 
-                    <h5 id="EWRFMaxZ-Title" style="color: #000000;"></h5>
-                    <div id="EWRFMaxZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="EWRFMaxZ-lists" style="flex-wrap: wrap;"></p>
+                        <h5 id="NCUMRWindGust-Title" style="color: #000000;"></h5>
+                        <div id="NCUMRWindGustImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <p id="NCUMRWindGust-lists" style="flex-wrap: wrap;"></p>
 
-                    <h5 id="EWRFLightning-Title" style="color: #000000;"></h5>
-                    <div id="EWRFLightningImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <p id="EWRFLightning-lists" style="flex-wrap: wrap;"></p>
+                        <h5 id="NCUMRRainfall-Title" style="color: #000000;"></h5>
+                        <div id="NCUMRRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <p id="NCUMRRainfall-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="HRRR_SPHourlyDBZ-Title" style="color: #000000;"></h5>
+                        <div id="HRRR_SPHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="HRRR_SPHourlyDBZ-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="HRRR_NEHourlyDBZ-Title" style="color: #000000;"></h5>
+                        <div id="HRRR_NEHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="HRRR_NEHourlyDBZ-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="HRRR_NWHourlyDBZ-Title" style="color: #000000;"></h5>
+                        <div id="HRRR_NWHourlyDBZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <p id="HRRR_NWHourlyDBZ-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="EWRFMaxZ-Title" style="color: #000000;"></h5>
+                        <div id="EWRFMaxZImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <p id="EWRFMaxZ-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="EWRFLightning-Title" style="color: #000000;"></h5>
+                        <div id="EWRFLightningImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <p id="EWRFLightning-lists" style="flex-wrap: wrap;"></p>
+
+                    </div>
+                    <!-- MEDIUM -->
+                    <div class="row" id="MEDIUM_Row" style="display: none;">
+                        <h4 id="MEDIUM" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
+                        </h4>
+
+                        <div id="RainfallIntensityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
+                        <h5 id="RainfallIntensityDay1-Title" style="color: #000000;"></h5>
+                        <p id="RainfallIntensityDay1-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="RainfallIntensityDay2-Title" style="color: #000000;"></h5>
+                        <p id="RainfallIntensityDay2-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="RainfallIntensityDay3-Title" style="color: #000000;"></h5>
+                        <p id="RainfallIntensityDay3-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="RainfallIntensityDay4-Title" style="color: #000000;"></h5>
+                        <p id="RainfallIntensityDay4-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="RainfallIntensityDay5-Title" style="color: #000000;"></h5>
+                        <p id="RainfallIntensityDay5-lists" style="flex-wrap: wrap;"></p>
+
+                        <div id="MSLPDayImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <h5 id="MSLPDay1-Title" style="color: #000000;"></h5>
+                        <p id="MSLPDay1-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="MSLPDay2-Title" style="color: #000000;"></h5>
+                        <p id="MSLPDay2-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="MSLPDay3-Title" style="color: #000000;"></h5>
+                        <p id="MSLPDay3-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="MSLPDay4-Title" style="color: #000000;"></h5>
+                        <p id="MSLPDay4-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="MSLPDay5-Title" style="color: #000000;"></h5>
+                        <p id="MSLPDay5-lists" style="flex-wrap: wrap;"></p>
+
+                        <div id="mWINDDayImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <h5 id="mWINDDay1-Title" style="color: #000000;"></h5>
+                        <p id="mWINDDay1-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="mWINDDay2-Title" style="color: #000000;"></h5>
+                        <p id="mWINDDay2-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="mWINDDay3-Title" style="color: #000000;"></h5>
+                        <p id="mWINDDay3-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="mWINDDay4-Title" style="color: #000000;"></h5>
+                        <p id="mWINDDay4-lists" style="flex-wrap: wrap;"></p>
+
+                        <h5 id="mWINDDay5-Title" style="color: #000000;"></h5>
+                        <p id="mWINDDay5-lists" style="flex-wrap: wrap;"></p>
+
+                    </div>
 
                 </div>
-                <!-- MEDIUM -->
-                <div class="row" id="MEDIUM_Row" style="display: none;">
-                    <h4 id="MEDIUM" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
-
-                    <div id="RainfallIntensityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <h5 id="RainfallIntensityDay1-Title" style="color: #000000;"></h5>
-                    <p id="RainfallIntensityDay1-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="RainfallIntensityDay2-Title" style="color: #000000;"></h5>
-                    <p id="RainfallIntensityDay2-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="RainfallIntensityDay3-Title" style="color: #000000;"></h5>
-                    <p id="RainfallIntensityDay3-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="RainfallIntensityDay4-Title" style="color: #000000;"></h5>
-                    <p id="RainfallIntensityDay4-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="RainfallIntensityDay5-Title" style="color: #000000;"></h5>
-                    <p id="RainfallIntensityDay5-lists" style="flex-wrap: wrap;"></p>
-
-                    <div id="MSLPDayImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <h5 id="MSLPDay1-Title" style="color: #000000;"></h5>
-                    <p id="MSLPDay1-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="MSLPDay2-Title" style="color: #000000;"></h5>
-                    <p id="MSLPDay2-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="MSLPDay3-Title" style="color: #000000;"></h5>
-                    <p id="MSLPDay3-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="MSLPDay4-Title" style="color: #000000;"></h5>
-                    <p id="MSLPDay4-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="MSLPDay5-Title" style="color: #000000;"></h5>
-                    <p id="MSLPDay5-lists" style="flex-wrap: wrap;"></p>
-
-                    <div id="mWINDDayImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
-                    <h5 id="mWINDDay1-Title" style="color: #000000;"></h5>
-                    <p id="mWINDDay1-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="mWINDDay2-Title" style="color: #000000;"></h5>
-                    <p id="mWINDDay2-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="mWINDDay3-Title" style="color: #000000;"></h5>
-                    <p id="mWINDDay3-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="mWINDDay4-Title" style="color: #000000;"></h5>
-                    <p id="mWINDDay4-lists" style="flex-wrap: wrap;"></p>
-
-                    <h5 id="mWINDDay5-Title" style="color: #000000;"></h5>
-                    <p id="mWINDDay5-lists" style="flex-wrap: wrap;"></p>
-
-                </div>
-
             </div>
-        </div>
 
 
 </body>

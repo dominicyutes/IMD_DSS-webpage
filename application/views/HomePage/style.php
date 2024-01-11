@@ -679,6 +679,7 @@ body {
 .leaflet-top.leaflet-right .leaflet-panel-layers:not(.compact) {
     margin: 7px;
     /* height: 505px; */
+    /* top: -39px; */
 }
 
 .leaflet-control-layers-expanded {
@@ -726,5 +727,7 @@ body {
 
 .leaflet-container .leaflet-control-mouseposition {
     font-size: 15px;
+    /* right: 266px; */
 }
+
 </style>
