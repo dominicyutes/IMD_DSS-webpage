@@ -429,24 +429,24 @@
                 </div>
             </div>
             <!--  -->
-            <div style="height: 60px;width: 100%; background-color: white;">Model's Time Update</div>
+            <div style="height: 60px;width: 100%; background-color: white; font-family: 'Times New Roman';">Model's Time Update</div>
         </div>
 
         <!-- MACRO Delete Warning -->
         <div id="deleteMacroModal" class="modal" style="display: none; width: 27%; left: 33%; top: 9%; height: auto;">
             <div class="modal-content"
                 style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #ffffff; padding: 10px; border-radius: 10px; align-items: center;">
-                <h3 class="warningCls">WARNING !</h3>
+                <h3 class="warningCls" style="font-family: 'Times New Roman'; font-size: 20px">WARNING !</h3>
                 <div style="width: 100%;">
                     <div style="margin-left: 12%; width: 74%;" class="col-6">
-                        <label class="labelDelMac" for="userName">Your Name:</label>
+                        <label class="labelDelMac" for="userName" style="font-family: 'Times New Roman'; font-size: 18px">Your Name:</label>
                         <div class="input-group mb-3">
                             <input style="border-color: #d5caca;" type="text" class="form-control" aria-label="Default"
                                 aria-describedby="inputGroup-sizing-default" id="userName" required>
                         </div>
                     </div>
                     <div style="margin-left: 12%; width: 74%;" class="col-6">
-                        <label class="labelDelMac" for="deleteReason">Reason for Deletion:</label>
+                        <label class="labelDelMac" for="deleteReason" style="font-family: 'Times New Roman'; font-size: 18px">Reason for Deletion:</label>
                         <div class="input-group mb-3">
                             <input style="border-color: #d5caca;" type="text" class="form-control" aria-label="Default"
                                 aria-describedby="inputGroup-sizing-default" id="deleteReason" required>
@@ -454,8 +454,8 @@
                     </div>
                 </div>
                 <div style="display: flex; align-items: center;">
-                    <button type="button" onclick="closeDeleteMacroModal()" class="btn btn-primary">Cancel</button>
-                    <button type="button" onclick="submitDeleteMacro()" class="btn btn-primary">Submit</button>
+                    <button type="button" onclick="closeDeleteMacroModal()" class="btn btn-primary" style="font-family: 'Times New Roman'; font-size: 18px">Cancel</button>
+                    <button type="button" onclick="submitDeleteMacro()" class="btn btn-primary" style="font-family: 'Times New Roman'; font-size: 18px">Submit</button>
                 </div>
             </div>
         </div>
