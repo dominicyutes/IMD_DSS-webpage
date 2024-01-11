@@ -3095,6 +3095,7 @@ var ObservationButton = L.Control.extend({
 
         // Set font size to 15px
         obsbtn.style.fontSize = '15px';
+        obsbtn.style.fontFamily = 'Times New Roman';
 
         // click event
         L.DomEvent.on(obsbtn, 'click', function() {
@@ -3133,6 +3134,7 @@ var MacroButton = L.Control.extend({
 
         // Set font size to 15px
         macbtn.style.fontSize = '15px';
+        macbtn.style.fontFamily = 'Times New Roman';
 
         // click event
         L.DomEvent.on(macbtn, 'click', function() {
@@ -3288,7 +3290,7 @@ var macroDetailsControl = L.Control.extend({
 
         // Prevent click events on the container from being propagated to the map
         L.DomEvent.disableClickPropagation(container);
-
+        
         return container;
     }
 });
@@ -3331,6 +3333,7 @@ var LegendButton = L.Control.extend({
 
         // Set font size to 15px
         button.style.fontSize = '15px';
+        button.style.fontFamily = 'Times New Roman';
 
         // click event listener
         L.DomEvent.on(button, 'click', function() {
@@ -3354,6 +3357,7 @@ var PrintButton = L.Control.extend({
 
         // Set font size to 15px
         printbtn.style.fontSize = '15px';
+        printbtn.style.fontFamily = 'Times New Roman';
 
         L.DomEvent.on(printbtn, 'click', function() {
             printFn();
