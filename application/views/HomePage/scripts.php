@@ -2305,22 +2305,6 @@ function showSavedMacroList() {
                 <button class="delete-button" onclick="deleteMacro('${macro.macroGroupName}')">
                 <i class="fa-solid fa-trash fa-xs"></i></button>
                 </div>
-
-            <div id="macroDetails" style="display: none;">
-                 <div class="macroPlayClass">
-                 <button class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs" style="color: #000000;"></i></button>
-                 <button class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs" style="color: #000000;"></i></button>
-                 <button class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs" style="color: #000000;"></i></button>
-                 <button class="leftMacBtn"><i class="fa-sharp fa-solid fa-arrow-left fa-xs" style="color: #000000;"></i></button>
-                 <button class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs" style="color: #000000;"></i></button>
-                 </div>
-
-                 <div class="macroPlayNameClass">
-                    <span>hello</span>
-                    <span style="padding-right: 7%;" id="counting">10</span>
-                 </div>
-            </div>
-                
             </div>`;
             showSavedMacro.push(showInfoDiv);
         } else {
@@ -3114,6 +3098,17 @@ var ObservationButton = L.Control.extend({
         // click event
         L.DomEvent.on(obsbtn, 'click', function() {
             toggleObservation();
+            map.addControl(panelLayers);
+            map.removeControl(panelLayers2);
+            map.removeControl(panelLayers3);
+            map.removeControl(panelLayers4);
+            map.removeControl(panelLayers5);
+            map.removeControl(panelLayers6);
+            map.removeControl(panelLayers7);
+            map.removeControl(panelLayers8);
+            map.removeControl(panelLayers9);
+            map.removeControl(panelLayers10);
+            map.removeControl(panelLayers11);
         });
 
         return obsbtn;
@@ -3146,6 +3141,227 @@ var MacroButton = L.Control.extend({
         return macbtn;
     }
 });
+
+//Leaflet-sideBySide
+let sideBySideControl = null;
+let sideBySideVisible = false;
+let activeLayers = 0;
+
+function toggleSideBySide() {
+    if (sideBySideVisible) {
+        if (sideBySideControl !== null) {
+            map.removeControl(sideBySideControl);
+            sideBySideControl = null;
+        }
+        sideBySideVisible = false;
+    } else {
+        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast).addTo(map);
+        sideBySideVisible = true;
+    }
+    // Check the number of active layers when toggling side-by-side
+    updateActiveLayers();
+}
+
+function updateActiveLayers() {
+    activeLayers = 0;
+    allOverLayers.forEach(group => {
+        group.layers.forEach(layer => {
+            if (layer.active) {
+                activeLayers++;
+            }
+        });
+    });
+
+    // Check if side-by-side is active and more than 2 layers are active
+    // console.log(sideBySideVisible,activeLayers );
+    if (sideBySideVisible && activeLayers > 2) {
+        alert("Only two layers can be active when side-by-side view is active please unselect the layer!");
+        // Disable additional layers
+        allOverLayers.forEach(group => {
+            group.layers.forEach(layer => {
+                if (layer.active && activeLayers > 2) {
+                    layer.active = false;
+                    activeLayers--;
+                }
+            });
+        });
+    }
+}
+
+// Create a container div for both controls
+var controlsContainer = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+
+const ToggleControl = L.Control.extend({
+    onAdd: function(map) {
+        // Extracting the hand symbol and curved arrow paths from the provided SVG
+        const handArrowSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        handArrowSVG.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        handArrowSVG.setAttribute('viewBox', '0 0 24 24');
+        handArrowSVG.setAttribute('width', '24');
+        handArrowSVG.setAttribute('height', '24');
+
+        // Creating and appending the hand symbol path to the new SVG
+        const handPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        handPath.setAttribute('d',
+            'M20.13 3.87C18.69 2.17 15.6 1 12 1S5.31 2.17 3.87 3.87L2 2v5h5L4.93 4.93c1-1.29 3.7-2.43 7.07-2.43s6.07 1.14 7.07 2.43L17 7h5V2l-1.87 1.87z'
+        );
+        handPath.setAttribute('fill', 'currentColor'); // Change the fill color if needed
+        handArrowSVG.appendChild(handPath);
+
+        // Creating and appending the curved arrow path to the new SVG
+        const arrowPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        arrowPath.setAttribute('d',
+            'm18.89 14.75-4.09-2.04c-.28-.14-.58-.21-.89-.21H13v-6c0-.83-.67-1.5-1.5-1.5S10 5.67 10 6.5v10.74l-3.25-.74c-.33-.07-.68.03-.92.28l-.83.84 4.54 4.79c.38.38 1.14.59 1.67.59h6.16c1 0 1.84-.73 1.98-1.72l.63-4.46c.12-.85-.32-1.68-1.09-2.07z'
+        );
+        arrowPath.setAttribute('fill', 'currentColor'); // Change the fill color if needed
+        handArrowSVG.appendChild(arrowPath);
+
+        // Creating and styling the toggle button
+        const button = L.DomUtil.create('button', 'toggle-button');
+        // button.textContent = 'side-by-side Layers';
+        button.style.backgroundColor = 'white';
+
+        // Appending the hand symbol and curved arrow SVG to the toggle button
+        button.appendChild(handArrowSVG);
+
+        // Function to handle button click
+        function handleButtonClick() {
+            L.DomEvent.off(button, 'click', handleButtonClick);
+        }
+
+        L.DomEvent.on(button, 'click', handleButtonClick);
+
+        button.onclick = function() {
+            toggleSideBySide();
+            // button.textContent = sideBySideVisible ? 'Hide' : 'Show';
+            position: "bottomleft"
+        };
+        return button;
+    },
+
+    onRemove: function(map) {}
+});
+
+// (new ToggleControl()).addTo(map);
+
+const toggleControl = new ToggleControl({
+    position: 'topleft'
+});
+toggleControl.addTo(map);
+
+//side-by-side ends here
+
+// Custom PLay button control
+var macroDetailsControl = L.Control.extend({
+    options: {
+        position: 'topleft'
+    },
+    onAdd: function() {
+        var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+        //display: none;
+        container.innerHTML =
+            '<div id="macroDetails" class="playLine-container" style="background-color: white; border: 2px solid #ccc; padding: 5px; border-radius: 5px; width: 360px;">' +
+            '<div class="macroPlayClass">' +
+            '<button class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs" style="color: #000000;"></i></button>' +
+            '<button class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs" style="color: #000000;"></i></button>' +
+            '<button class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs" style="color: #000000;"></i></button>' +
+            '<button class="leftMacBtn"><i class="fa-sharp fa-solid fa-arrow-left fa-xs" style="color: #000000;"></i></button>' +
+            '<button class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs" style="color: #000000;"></i></button>' +
+
+            '<span style="font-size: 17px;font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temperature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' +
+            '<span class="playBtnClasCount" id="counting">10</span>' +
+            '<span class="vertical-line"></span>' +
+            '<span class="playBtnClasX" id="closingPlayBtn" onClick="macroRunFnX()">X</span>' +
+            '</div>' +
+            '</div>';
+
+        // Prevent click events on the container from being propagated to the map
+        L.DomEvent.disableClickPropagation(container);
+
+        return container;
+    }
+});
+
+map.addControl(new macroDetailsControl());
+
+function macroRunFnX() {
+    document.getElementById("macroDetails").style.display = "none";
+}
+
+// Custom macroDetailsControl
+// var macroDetailsControlInstance = new macroDetailsControl();
+
+// // Append both controls to the container div
+// controlsContainer.appendChild(toggleControl.onAdd());
+// controlsContainer.appendChild(macroDetailsControlInstance.onAdd());
+
+// // Add the container div to the map
+// map.getContainer().appendChild(controlsContainer);
+// macroRun btn ends here
+
+
+
+// Create a custom control button for model popup
+var LegendButton = L.Control.extend({
+    options: {
+        position: 'bottomleft'
+    },
+    onAdd: function() {
+        // Create a button element
+        var button = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn3');
+        button.innerHTML = 'Legend';
+        button.id = 'popup';
+
+        // Set font size to 15px
+        button.style.fontSize = '15px';
+
+        // click event listener
+        L.DomEvent.on(button, 'click', function() {
+            // Your click event handling code goes here
+        });
+
+        return button;
+    }
+});
+
+
+// Create a custom control button for MacroButton
+var PrintButton = L.Control.extend({
+    options: {
+        position: 'bottomleft'
+    },
+    onAdd: function() {
+        var printbtn = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn2 printbutton');
+        printbtn.innerHTML = 'Print';
+
+        // Set font size to 15px
+        printbtn.style.fontSize = '15px';
+
+        L.DomEvent.on(printbtn, 'click', function() {
+            printFn();
+        });
+
+        return printbtn;
+    }
+});
+
+function printFn() {
+    console.log("print working");
+};
+//print ends here
+
+
+customButtonsContainer.appendChild(new ObservationButton().onAdd());
+customButtonsContainer.appendChild(new MacroButton().onAdd());
+customButtonsContainer.appendChild(new LegendButton().onAdd());
+customButtonsContainer.appendChild(new PrintButton().onAdd());
+// customButtonsContainer.appendChild(new ToggleControl().onAdd());
+// Add the container to the map
+map.getContainer().appendChild(customButtonsContainer);
+// ************
+
 
 
 // var CustomControls = L.Control.extend({
@@ -3228,107 +3444,12 @@ var MacroButton = L.Control.extend({
 //     }
 // });
 
-// Create a custom control button for model popup
-var LegendButton = L.Control.extend({
-    options: {
-        position: 'bottomleft'
-    },
-    onAdd: function() {
-        // Create a button element
-        var button = L.DomUtil.create('span',
-            'leaflet-bar leaflet-control leaflet-control-custom custom-btn3');
-        button.innerHTML = 'Legend';
-        button.id = 'popup';
-
-        // Set font size to 15px
-        button.style.fontSize = '15px';
-
-        // click event listener
-        L.DomEvent.on(button, 'click', function() {
-            // Your click event handling code goes here
-        });
-
-        return button;
-    }
-});
 
 
-// Create a custom control button for MacroButton
-var PrintButton = L.Control.extend({
-    options: {
-        position: 'bottomleft'
-    },
-    onAdd: function() {
-        var printbtn = L.DomUtil.create('span',
-            'leaflet-bar leaflet-control leaflet-control-custom custom-btn2 printbutton');
-        printbtn.innerHTML = 'Print';
 
-        // Set font size to 15px
-        printbtn.style.fontSize = '15px';
 
-        L.DomEvent.on(printbtn, 'click', function() {
-            printFn();
-        });
-
-        return printbtn;
-    }
-});
-
-function printFn() {
-    console.log("print working");
-};
-
-customButtonsContainer.appendChild(new ObservationButton().onAdd());
-customButtonsContainer.appendChild(new MacroButton().onAdd());
-customButtonsContainer.appendChild(new LegendButton().onAdd());
-customButtonsContainer.appendChild(new PrintButton().onAdd());
-
-// Add the container to the map
-map.getContainer().appendChild(customButtonsContainer);
-// ************
-
-// Custom button control
-var macroDetailsControl = L.Control.extend({
-    options: {
-        position: 'topleft'
-    },
-    onAdd: function() {
-        var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-
-        container.innerHTML =
-            '<div id="macroDetails" style="background-color: white; border: 2px solid #ccc; padding: 10px; border-radius: 5px;">' +
-            '<div class="macroPlayClass">' +
-            '<button class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs" style="color: #000000;"></i></button>' +
-            '<button class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs" style="color: #000000;"></i></button>' +
-            '<button class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs" style="color: #000000;"></i></button>' +
-            '<button class="leftMacBtn"><i class="fa-sharp fa-solid fa-arrow-left fa-xs" style="color: #000000;"></i></button>' +
-            '<button class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs" style="color: #000000;"></i></button>' +
-
-            '<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hello&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' +
-            '<span style="padding-right: 7%;" id="counting">10</span>' +
-
-            '</div>' +
-            '</div>';
-
-        // Prevent click events on the container from being propagated to the map
-        L.DomEvent.disableClickPropagation(container);
-
-        return container;
-    }
-});
-
-map.addControl(new macroDetailsControl());
-
-// Show/hide macro details when clicking the custom button
-document.getElementById('macroDetails').addEventListener('click', function() {
-    this.style.display = 'none';
-});
 
 //
-setTimeout(function() {
-    document.getElementById('macroDetails').style.display = 'block';
-}, 3000);
-
 // Add a marker for Delhi
 var delhiMarker = L.marker([28.6139, 77.2090]);
 delhiMarker.bindPopup("<b>Delhi</b>").openPopup();
@@ -3952,113 +4073,6 @@ X165.bindPopup("<b>X165</b>").openPopup();
 var X166 = L.marker([18.5780, 83.3780]);
 X166.bindPopup("<b>X166</b>").openPopup();
 
-
-
-
-
-//Leaflet-sideBySide
-let sideBySideControl = null;
-let sideBySideVisible = false;
-let activeLayers = 0;
-
-function toggleSideBySide() {
-    if (sideBySideVisible) {
-        if (sideBySideControl !== null) {
-            map.removeControl(sideBySideControl);
-            sideBySideControl = null;
-        }
-        sideBySideVisible = false;
-    } else {
-        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast).addTo(map);
-        sideBySideVisible = true;
-    }
-    // Check the number of active layers when toggling side-by-side
-    updateActiveLayers();
-}
-
-function updateActiveLayers() {
-    activeLayers = 0;
-    allOverLayers.forEach(group => {
-        group.layers.forEach(layer => {
-            if (layer.active) {
-                activeLayers++;
-            }
-        });
-    });
-
-    // Check if side-by-side is active and more than 2 layers are active
-    // console.log(sideBySideVisible,activeLayers );
-    if (sideBySideVisible && activeLayers > 2) {
-        alert("Only two layers can be active when side-by-side view is active please unselect the layer!");
-        // Disable additional layers
-        allOverLayers.forEach(group => {
-            group.layers.forEach(layer => {
-                if (layer.active && activeLayers > 2) {
-                    layer.active = false;
-                    activeLayers--;
-                }
-            });
-        });
-    }
-}
-
-const ToggleControl = L.Control.extend({
-    onAdd: function(map) {
-        // Extracting the hand symbol and curved arrow paths from the provided SVG
-        const handArrowSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        handArrowSVG.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-        handArrowSVG.setAttribute('viewBox', '0 0 24 24');
-        handArrowSVG.setAttribute('width', '24');
-        handArrowSVG.setAttribute('height', '24');
-
-        // Creating and appending the hand symbol path to the new SVG
-        const handPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        handPath.setAttribute('d',
-            'M20.13 3.87C18.69 2.17 15.6 1 12 1S5.31 2.17 3.87 3.87L2 2v5h5L4.93 4.93c1-1.29 3.7-2.43 7.07-2.43s6.07 1.14 7.07 2.43L17 7h5V2l-1.87 1.87z'
-        );
-        handPath.setAttribute('fill', 'currentColor'); // Change the fill color if needed
-        handArrowSVG.appendChild(handPath);
-
-        // Creating and appending the curved arrow path to the new SVG
-        const arrowPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        arrowPath.setAttribute('d',
-            'm18.89 14.75-4.09-2.04c-.28-.14-.58-.21-.89-.21H13v-6c0-.83-.67-1.5-1.5-1.5S10 5.67 10 6.5v10.74l-3.25-.74c-.33-.07-.68.03-.92.28l-.83.84 4.54 4.79c.38.38 1.14.59 1.67.59h6.16c1 0 1.84-.73 1.98-1.72l.63-4.46c.12-.85-.32-1.68-1.09-2.07z'
-        );
-        arrowPath.setAttribute('fill', 'currentColor'); // Change the fill color if needed
-        handArrowSVG.appendChild(arrowPath);
-
-        // Creating and styling the toggle button
-        const button = L.DomUtil.create('button', 'toggle-button');
-        // button.textContent = 'side-by-side Layers';
-        button.style.backgroundColor = 'white';
-
-        // Appending the hand symbol and curved arrow SVG to the toggle button
-        button.appendChild(handArrowSVG);
-
-        // Function to handle button click
-        function handleButtonClick() {
-            L.DomEvent.off(button, 'click', handleButtonClick);
-        }
-
-        L.DomEvent.on(button, 'click', handleButtonClick);
-
-        button.onclick = function() {
-            toggleSideBySide();
-            // button.textContent = sideBySideVisible ? 'Hide' : 'Show';
-            position: "topleft"
-        };
-        return button;
-    },
-
-    onRemove: function(map) {}
-});
-
-// (new ToggleControl()).addTo(map);
-
-const toggleControl = new ToggleControl({
-    position: 'topleft'
-});
-toggleControl.addTo(map);
 
 // mywmsIITM mywmsNcum mywmsNowcast
 const overLayers = [
@@ -6464,7 +6478,6 @@ allOverLayers.forEach(group => {
         });
     });
 });
-
 
 // PanelLayers collapse group
 var panelLayers = new L.Control.PanelLayers(baseMaps, overLayers, {

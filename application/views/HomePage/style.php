@@ -347,7 +347,46 @@ body {
     margin-right: 2px;
 }
 
+.playLine-container {
+    display: flex;
+    align-items: center;
+}
 
+.playBtnClasCount {
+    background-color: #5096b3;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    width: 25px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Archivo', sans-serif;
+}
+
+.vertical-line {
+    display: inline-block;
+    border-left: 2px solid #000;
+    margin: 0px 5px;
+    height: 30px;
+}
+
+.playBtnClasX {
+    cursor: pointer;
+    color: white;
+    background-color: #5096b3;
+    text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;
+    font-size: 17px;
+    font-weight: bold;
+    position: absolute;
+    right: 0px;
+    width: 25px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Archivo', sans-serif;
+    margin-right: 4px;
+}
 
 /* map starts here*/
 #map {
@@ -678,7 +717,8 @@ body {
 .leaflet-panel-layers-group.collapsible:not(.expanded) {
     height: 25px;
 }
-.leaflet-container .leaflet-control-mouseposition{
+
+.leaflet-container .leaflet-control-mouseposition {
     font-size: 15px;
 }
 </style>
