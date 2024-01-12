@@ -315,7 +315,7 @@ body {
 }
 
 .addBox {
-    height: 377px;
+    height: 370px;
     width: 100%;
     background-Color: #eff4ff;
     overflow-y: auto;
@@ -447,7 +447,7 @@ body {
 .create_Macro {
     width: 35%;
     position: fixed;
-    z-index: 99999;
+    z-index: 1000;
     display: none;
     right: -201px;
     top: 62px;
@@ -458,7 +458,7 @@ body {
     /* width: 252px;
     height: 584px; */
     width: 264px;
-    height: 723px;
+    height: 717px;
     margin: 416px 0 0 0px;
     transform: translate(-50%, -50%);
     background-color: #f3fbfe;
@@ -518,7 +518,7 @@ body {
     z-index: 99999;
     display: none;
     right: 62px;
-    top: -7px;
+    top: 63px;
     /* left: 887px;
     top: -25px; */
     height: 0;
@@ -530,7 +530,7 @@ body {
 .view_Create_Macro_body {
     position: absolute;
     width: 252px;
-    height: 584px;
+    height: 717px;
     margin: 416px 0 0 0px;
     transform: translate(-50%, -50%);
     background-color: #f3fbfe;

@@ -2215,7 +2215,6 @@ function macAddForm() {
     viewAddedAndDeletedMacro();
     handleInputChange();
 }
-
 function viewAddedAndDeletedMacro() {
     let showAddedTempMacro = [];
     addedTempMacro.listOfMacro.forEach(macro => {
@@ -2289,7 +2288,7 @@ function showSavedMacroList() {
         if (macro) {
             showInfoDiv = `<div class="createMacro">
                 <div><i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;""></i>&nbsp;
-                <span style="font-family: 'Archivo', sans-serif;font-size: 14px;font-weight: 600;color: #1d334e;"> ${macro.macroGroupName}</span>
+                <span style="font-family: 'Times New Roman, sans-serif;font-size: 15px;font-weight: 600;color: #1d334e;"> ${macro.macroGroupName}</span>
                 </div>
 
                 <div class="saveMacroView">
@@ -2344,14 +2343,14 @@ function viewMacro(macroGroupName) {
     let viewMacroDetails = document.getElementById("viewMacroDetails");
     let viewTempMacro = [];
     macro.listOfMacro.forEach(macro => {
-        let addedInfoDiv = `<div style="color: #1d334e;" class="macroListCSS" id="toggleDiv">
+        let addedInfoDiv = `<div style="font-family: 'Times New Roman'; font-size: 15px; color: #1d334e;"class="macroListCSS" id="toggleDiv">
         <span onclick="MacroPlusToggle('${macro.ulId}view')">+ ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>
-        <ul id="${macro.ulId}view" class="listContainerMacro">
+        <ul id="${macro.ulId}view" class="listContainerMacro" style="font-family: 'Times New Roman'; font-size: 13px;">
             <li>${macro.mac_model_Names}</li>
             <li>${macro.mac_parameter_Names}</li>
             <li>${macro.mac_sub_parameter}</li>
         </ul>
-        <h6 style="font-size: 11px;">${macro.ist_time}</h6>
+        <h6 style="font-family: 'Times New Roman'; font-size: 15px;">${macro.ist_time}</h6>
     </div>`;
         viewTempMacro.push(addedInfoDiv);
     })
@@ -4129,42 +4128,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: ggg,
             },
             {
                 active: false,
-                name: "MEAN SEA LEVEL PRESSURE",
+                name: "Mean Sea Level Pressure",
                 layer: HHHHHH,
             },
             {
                 active: false,
-                name: "CLOUD COVER",
+                name: "Cloud Cover",
                 layer: X1,
             },
             {
                 active: false,
-                name: "GEOPOTENTIAL HEIGHT",
+                name: "Geopotential Height",
                 layer: X2
             },
             {
                 active: false,
-                name: "RELATIVE HUMIDITY",
+                name: "Relative Humidity",
                 layer: X3
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X4
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X5
             },
             {
                 active: false,
-                name: "3h RAINFALL",
+                name: "3h Rainfall",
                 layer: X6
             },
         ]
@@ -4175,42 +4174,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X7
             },
             {
                 active: false,
-                name: "MEAN SEA LEVEL PRESSURE",
+                name: "Mean Sea Level Pressure",
                 layer: X8
             },
             {
                 active: false,
-                name: "CLOUD COVER",
+                name: "Cloud Cover",
                 layer: X9
             },
             {
                 active: false,
-                name: "GEOPOTENTIAL HEIGHT",
+                name: "Geopotential Height",
                 layer: X10
             },
             {
                 active: false,
-                name: "RELATIVE HUMIDITY",
+                name: "Relative Humidity",
                 layer: X11
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X12
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X13
             },
             {
                 active: false,
-                name: "3h RAINFALL",
+                name: "3h Rainfall",
                 layer: X14
             },
         ]
@@ -4221,42 +4220,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X15
             },
             {
                 active: false,
-                name: "MEAN SEA LEVEL PRESSURE",
+                name: "Mean Sea Level Pressure",
                 layer: X16
             },
             {
                 active: false,
-                name: "CLOUD COVER",
+                name: "Cloud Cover",
                 layer: X17
             },
             {
                 active: false,
-                name: "GEOPOTENTIAL HEIGHT",
+                name: "Geopotential Height",
                 layer: X18
             },
             {
                 active: false,
-                name: "RELATIVE HUMIDITY",
+                name: "Relative Humidity",
                 layer: X19
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X20
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X21
             },
             {
                 active: false,
-                name: "3h RAINFALL",
+                name: "3h Rainfall",
                 layer: X22
             },
         ]
@@ -4267,42 +4266,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X23
             },
             {
                 active: false,
-                name: "MEAN SEA LEVEL PRESSURE",
+                name: "Mean Sea Level Pressure",
                 layer: X24
             },
             {
                 active: false,
-                name: "CLOUD COVER",
+                name: "Cloud Cover",
                 layer: X25
             },
             {
                 active: false,
-                name: "GEOPOTENTIAL HEIGHT",
+                name: "Geopotential Height",
                 layer: X26
             },
             {
                 active: false,
-                name: "RELATIVE HUMIDITY",
+                name: "Relative Humidity",
                 layer: X27
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X28
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X29
             },
             {
                 active: false,
-                name: "3h RAINFALL",
+                name: "3h Rainfall",
                 layer: X30
             },
         ]
@@ -4313,42 +4312,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X31
             },
             {
                 active: false,
-                name: "MEAN SEA LEVEL PRESSURE",
+                name: "Mean Sea Level Pressure",
                 layer: X32
             },
             {
                 active: false,
-                name: "CLOUD COVER",
+                name: "Cloud Cover",
                 layer: X33
             },
             {
                 active: false,
-                name: "GEOPOTENTIAL HEIGHT",
+                name: "Geopotential Height",
                 layer: X34
             },
             {
                 active: false,
-                name: "RELATIVE HUMIDITY",
+                name: "Relative Humidity",
                 layer: X35
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X36
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X37
             },
             {
                 active: false,
-                name: "3h RAINFALL",
+                name: "3h Rainfall",
                 layer: X38
             },
         ]
@@ -4359,42 +4358,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X39
             },
             {
                 active: false,
-                name: "MEAN SEA LEVEL PRESSURE",
+                name: "Mean Sea Level Pressure",
                 layer: X40
             },
             {
                 active: false,
-                name: "CLOUD COVER",
+                name: "Cloud Cover",
                 layer: X41
             },
             {
                 active: false,
-                name: "GEOPOTENTIAL HEIGHT",
+                name: "Geopotential Height",
                 layer: X42
             },
             {
                 active: false,
-                name: "RELATIVE HUMIDITY",
+                name: "Relative Humidity",
                 layer: X43
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X44
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X45
             },
             {
                 active: false,
-                name: "3h RAINFALL",
+                name: "3h Rainfall",
                 layer: X46
             },
         ]
@@ -4405,42 +4404,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X47
             },
             {
                 active: false,
-                name: "MEAN SEA LEVEL PRESSURE",
+                name: "Mean Sea Level Pressure",
                 layer: X48
             },
             {
                 active: false,
-                name: "CLOUD COVER",
+                name: "Cloud Cover",
                 layer: X49
             },
             {
                 active: false,
-                name: "GEOPOTENTIAL HEIGHT",
+                name: "Geopotential Height",
                 layer: X50
             },
             {
                 active: false,
-                name: "RELATIVE HUMIDITY",
+                name: "Relative Humidity",
                 layer: X51
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X52
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X53
             },
             {
                 active: false,
-                name: "3h RAINFALL",
+                name: "3h Rainfall",
                 layer: X54
             },
         ]
@@ -4451,42 +4450,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X55
             },
             {
                 active: false,
-                name: "MEAN SEA LEVEL PRESSURE",
+                name: "Mean Sea Level Pressure",
                 layer: X56
             },
             {
                 active: false,
-                name: "CLOUD COVER",
+                name: "Cloud Cover",
                 layer: X57
             },
             {
                 active: false,
-                name: "GEOPOTENTIAL HEIGHT",
+                name: "Geopotential Height",
                 layer: X58
             },
             {
                 active: false,
-                name: "RELATIVE HUMIDITY",
+                name: "Relative Humidity",
                 layer: X59
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X60
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X61
             },
             {
                 active: false,
-                name: "3h RAINFALL",
+                name: "3h Rainfall",
                 layer: X62
             },
         ]
@@ -4517,22 +4516,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: SuratMarker,
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: JodhpurMarker,
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: KanpurMarker,
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: MeerutMarker
             },
 
@@ -4544,22 +4543,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X63
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X64
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X65
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X66
             },
 
@@ -4571,22 +4570,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X67
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X68
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X69
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X70
             },
 
@@ -4598,22 +4597,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X71
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X72
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X73
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X74
             },
 
@@ -4626,22 +4625,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X75
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X76
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X77
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X78
             },
 
@@ -4653,22 +4652,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X79
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X80
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X81
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X82
             },
 
@@ -4680,22 +4679,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X83
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X84
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X85
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X86
             },
 
@@ -4707,22 +4706,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X87
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X88
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X89
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X90
             },
 
@@ -4734,22 +4733,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X91
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X92
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X93
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X94
             },
 
@@ -4761,22 +4760,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X95
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X96
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X97
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X98
             },
 
@@ -4788,22 +4787,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X99
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X100
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X101
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X102
             },
 
@@ -4815,22 +4814,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X103
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X104
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X105
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X106
             },
 
@@ -4842,22 +4841,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X107
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X108
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X109
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X110
             },
 
@@ -4869,22 +4868,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X111
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X112
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X113
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X114
             },
 
@@ -4896,22 +4895,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X115
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X116
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X117
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X118
             },
 
@@ -4923,22 +4922,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X119
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X120
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X121
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X122
             },
 
@@ -4950,22 +4949,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X123
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X124
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X125
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X126
             },
 
@@ -4977,22 +4976,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X127
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X128
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X129
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X130
             },
 
@@ -5004,22 +5003,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X131
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X132
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X133
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X134
             },
 
@@ -5031,22 +5030,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X135
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X136
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X137
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X138
             },
 
@@ -5058,22 +5057,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X139
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X140
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X141
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X142
             },
 
@@ -5085,22 +5084,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X143
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X144
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X145
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X146
             },
 
@@ -5112,22 +5111,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X147
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X148
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X149
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X150
             },
 
@@ -5139,22 +5138,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "TEMPERATURE",
+                name: "Temperature",
                 layer: X151
             },
             {
                 active: false,
-                name: "DEW POINT TEMPERATURE",
+                name: "Dew Point Temperature",
                 layer: X152
             },
             {
                 active: false,
-                name: "VISIBILITY",
+                name: "Visibility",
                 layer: X153
             },
             {
                 active: false,
-                name: "WIND SPEED AND DIRECTION",
+                name: "Wind Speed and Direction",
                 layer: X154
             },
 
@@ -5185,7 +5184,7 @@ var overLayers4 = [
 
 
     {
-        group: "WRF lightning Product",
+        group: "WRF Lightning Product",
         collapsed: true,
         layers: [{
                 active: false,
@@ -5218,7 +5217,7 @@ var overLayers4 = [
 
 
     {
-        group: "lightning Potential index",
+        group: "Lightning Potential Index",
         collapsed: true,
         layers: [{
                 active: false,
@@ -5240,7 +5239,7 @@ var overLayers4 = [
 
 
     {
-        group: "NCUMR lightning Product",
+        group: "NCUMR Lightning Product",
         collapsed: true,
         layers: [{
                 active: false,
@@ -5402,32 +5401,32 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY1",
+                name: "GFS Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY1",
+                name: "NCUM Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY1",
+                name: "NEPS Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "WRF DAY1",
+                name: "WRF Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "GEFS DAY1",
+                name: "GEFS Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "ECMWF DAY1",
+                name: "ECMWF Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5438,32 +5437,32 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY2",
+                name: "GFS Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY2",
+                name: "NCUM Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY2",
+                name: "NEPS Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "WRF DAY2",
+                name: "WRF Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "GEFS DAY2",
+                name: "GEFS Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "ECMWF DAY2",
+                name: "ECMWF Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5474,32 +5473,32 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY3",
+                name: "GFS Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY3",
+                name: "NCUM Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY3",
+                name: "NEPS Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "WRF DAY3",
+                name: "WRF Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "GEFS DAY3",
+                name: "GEFS Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "ECMWF DAY3",
+                name: "ECMWF Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5510,28 +5509,28 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY4",
+                name: "GFS Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY4",
+                name: "NCUM Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY4",
+                name: "NEPS Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
             {
                 active: false,
-                name: "GEFS DAY4",
+                name: "GEFS Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "ECMWF DAY4",
+                name: "ECMWF Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5542,28 +5541,28 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY5",
+                name: "GFS Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY5",
+                name: "NCUM Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY5",
+                name: "NEPS Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
             {
                 active: false,
-                name: "GEFS DAY5",
+                name: "GEFS Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "ECMWF DAY5",
+                name: "ECMWF Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5574,27 +5573,27 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY1",
+                name: "GFS Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY1",
+                name: "NCUM Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY1",
+                name: "NEPS Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "WRF DAY1",
+                name: "WRF Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "GEFS DAY1",
+                name: "GEFS Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5605,27 +5604,27 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY2",
+                name: "GFS Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY2",
+                name: "NCUM Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY2",
+                name: "NEPS Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "WRF DAY2",
+                name: "WRF Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "GEFS DAY2",
+                name: "GEFS Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5636,27 +5635,27 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY3",
+                name: "GFS Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY3",
+                name: "NCUM Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY3",
+                name: "NEPS Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "WRF DAY3",
+                name: "WRF Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "GEFS DAY3",
+                name: "GEFS Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5667,23 +5666,23 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY4",
+                name: "GFS Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY4",
+                name: "NCUM Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY4",
+                name: "NEPS Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
             {
                 active: false,
-                name: "GEFS DAY4",
+                name: "GEFS Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5694,23 +5693,23 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY5",
+                name: "GFS Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY5",
+                name: "NCUM Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY5",
+                name: "NEPS Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
             {
                 active: false,
-                name: "GEFS DAY5",
+                name: "GEFS Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5721,27 +5720,27 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY1",
+                name: "GFS Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY1",
+                name: "NCUM Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY1",
+                name: "NEPS Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "WRF DAY1",
+                name: "WRF Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "GEFS DAY1",
+                name: "GEFS Day1",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5752,27 +5751,27 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY2",
+                name: "GFS Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY2",
+                name: "NCUM Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY2",
+                name: "NEPS Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "WRF DAY2",
+                name: "WRF Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "GEFS DAY2",
+                name: "GEFS Day2",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5783,27 +5782,27 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY3",
+                name: "GFS Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY3",
+                name: "NCUM Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY3",
+                name: "NEPS Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "WRF DAY3",
+                name: "WRF Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "GEFS DAY3",
+                name: "GEFS Day3",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5814,23 +5813,23 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY4",
+                name: "GFS Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY4",
+                name: "NCUM Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY4",
+                name: "NEPS Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
             {
                 active: false,
-                name: "GEFS DAY4",
+                name: "GEFS Day4",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5841,23 +5840,23 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS DAY5",
+                name: "GFS Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NCUM DAY5",
+                name: "NCUM Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "NEPS DAY5",
+                name: "NEPS Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
             {
                 active: false,
-                name: "GEFS DAY5",
+                name: "GEFS Day5",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
@@ -5890,37 +5889,37 @@ var overLayers6 = [{
             },
             {
                 active: false,
-                name: "LOW LEVEL CONVERGENCE",
+                name: "Low Level Convergence",
                 layer: X160
             },
             {
                 active: false,
-                name: "UPPER LEVEL DIVEGENCE",
+                name: "Upper Level Divergence",
                 layer: X161
             },
             {
                 active: false,
-                name: "MID LEVEL SHEAR",
+                name: "Mid Level Shear",
                 layer: X162
             },
             {
                 active: false,
-                name: "VORTICITY AT 200hPa",
+                name: "Vorticity at 200hPa",
                 layer: X163
             },
             {
                 active: false,
-                name: "VORTICITY AT 500hPa",
+                name: "Vorticity at 500hPa",
                 layer: X164
             },
             {
                 active: false,
-                name: "VORTICITY AT 700hPa",
+                name: "Vorticity at 700hPa",
                 layer: X165
             },
             {
                 active: false,
-                name: "VORTICITY AT 850hPa",
+                name: "Vorticity at 850hPa",
                 layer: X166
             },
 
@@ -5988,281 +5987,281 @@ var overLayers8 = [{
 
 //SOUNDING
 var overLayers9 = [{
-        group: "SOUNDING_00_UTC WIND",
+        group: "Sounding_00_UTC Wind",
         collapsed: true,
         layers: [{
                 active: false,
-                name: "1000 hpa WIND",
+                name: "1000 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "850 hpa WIND",
+                name: "850 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "700 hpa WIND",
+                name: "700 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "500 hpa WIND",
+                name: "500 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "300 hpa WIND",
+                name: "300 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "200 hpa WIND",
+                name: "200 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "100 hpa WIND",
+                name: "100 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "50 hpa WIND",
+                name: "50 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
         ]
     },
     {
-        group: "SOUNDING_12_UTC WIND",
+        group: "Sounding_12_UTC Wind",
         collapsed: true,
         layers: [{
                 active: false,
-                name: "1000 hpa WIND",
+                name: "1000 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "850 hpa WIND",
+                name: "850 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "700 hpa WIND",
+                name: "700 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "500 hpa WIND",
+                name: "500 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "300 hpa WIND",
+                name: "300 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "200 hpa WIND",
+                name: "200 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "100 hpa WIND",
+                name: "100 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "50 hpa WIND",
+                name: "50 hPa Wind",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
 
         ]
     },
     {
-        group: "SOUNDING_00UTC TEMP",
+        group: "Sounding_00UTC Temp",
         collapsed: true,
         layers: [
 
             {
                 active: false,
-                name: "1000 hpa TEMP",
+                name: "1000 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "850 hpa TEMP",
+                name: "850 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "700 hpa TEMP",
+                name: "700 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "500 hpa TEMP",
+                name: "500 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "300 hpa TEMP",
+                name: "300 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "200 hpa TEMP",
+                name: "200 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "100 hpa TEMP",
+                name: "100 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "50 hpa TEMP",
+                name: "50 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
         ]
     },
     {
-        group: "SOUNDING_12UTC TEMP",
+        group: "Sounding_12UTC Temp",
         collapsed: true,
         layers: [
 
             {
                 active: false,
-                name: "1000 hpa TEMP",
+                name: "1000 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "850 hpa TEMP",
+                name: "850 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "700 hpa TEMP",
+                name: "700 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "500 hpa TEMP",
+                name: "500 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "300 hpa TEMP",
+                name: "300 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "200 hpa TEMP",
+                name: "200 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "100 hpa TEMP",
+                name: "100 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "50 hpa TEMP",
+                name: "50 hPa Temp",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
         ]
     },
     {
-        group: "SOUNDING_00UTC DEW POINT",
+        group: "Sounding_00UTC Dew Point",
         collapsed: true,
         layers: [
 
             {
                 active: false,
-                name: "1000 hpa DEW POINT",
+                name: "1000 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "850 hpa DEW POINT",
+                name: "850 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "700 hpa DEW POINT",
+                name: "700 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "500 hpa DEW POINT",
+                name: "500 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "300 hpa DEW POINT",
+                name: "300 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "200 hpa DEW POINT",
+                name: "200 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "100 hpa DEW POINT",
+                name: "100 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "50 hpa DEW POINT",
+                name: "50 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
         ]
     },
     {
-        group: "SOUNDING_12UTC DEW POINT",
+        group: "Sounding_12UTC Dew Point",
         collapsed: true,
         layers: [
 
             {
                 active: false,
-                name: "1000 hpa DEW POINT",
+                name: "1000 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "850 hpa DEW POINT",
+                name: "850 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "700 hpa DEW POINT",
+                name: "700 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "500 hpa DEW POINT",
+                name: "500 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "300 hpa DEW POINT",
+                name: "300 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "200 hpa DEW POINT",
+                name: "200 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "100 hpa DEW POINT",
+                name: "100 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
             {
                 active: false,
-                name: "50 hpa DEW POINT",
+                name: "50 hPa Dew Point",
                 layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
             },
         ]
@@ -6348,7 +6347,7 @@ var overLayers10 = [{
 
 //SHIP AND BUOY
 var overLayers11 = [{
-    group: "SHIP AND BUOY OBSERVATION",
+    group: "Ship and Buoy Observation",
     collapsed: false,
     layers: [{
             active: false,
