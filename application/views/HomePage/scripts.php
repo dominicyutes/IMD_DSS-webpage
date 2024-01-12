@@ -2378,16 +2378,8 @@ var macroGroupNameForDelete;
 
 function deleteMacro(macroGroupName) {
     macroGroupNameForDelete = macroGroupName;
-    // Show the deleteMacroModal
+
     document.getElementById('deleteMacroModal').style.display = 'block';
-
-    // savedMacro = savedMacro.filter(x => x.macroGroupName != macroGroupName);
-    // showSavedMacroList();
-
-    // document.getElementById('macroNames').value = '';
-    // document.getElementById('mac_modelNames').value = '';
-    // document.getElementById('mac_parameterNames').value = '';
-    // document.getElementById('mac_subparameter').value = '';
 }
 
 function submitDeleteMacro() {
@@ -3223,6 +3215,7 @@ const ToggleControl = L.Control.extend({
         const button = L.DomUtil.create('button', 'toggle-button');
         // button.textContent = 'side-by-side Layers';
         button.style.backgroundColor = 'white';
+        button.style.border = '3px solid #c2c1ae';
 
         // Appending the hand symbol and curved arrow SVG to the toggle button
         button.appendChild(handArrowSVG);
@@ -3261,61 +3254,54 @@ var controlsContainer = L.DomUtil.create('div', 'controls-container');
 L.control.mousePosition({
     position: 'bottomleft'
 }).addTo(map);
-// }).addTo(controlsContainer);
-
-// Custom PLay button control
-var macroDetailsControl = L.Control.extend({
-    options: {
-        position: 'bottomleft'
-    },
-    onAdd: function() {
-        var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-        container.style.border = 'none';
-        //display: none;
-        container.innerHTML =
-            '<div id="macroDetails" class="playLine-container">' +
-            '<div class="macroPlayClass">' +
-            '<button class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs" style="color: #000000;"></i></button>' +
-            '<button class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs" style="color: #000000;"></i></button>' +
-            '<button class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs" style="color: #000000;"></i></button>' +
-            '<button class="leftMacBtn"><i class="fa-sharp fa-solid fa-arrow-left fa-xs" style="color: #000000;"></i></button>' +
-            '<button class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs" style="color: #000000;"></i></button>' +
-
-            '<span style="font-size: 17px;font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temperature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' +
-            '<span class="playBtnClasCount" id="counting">10</span>' +
-            '<span class="vertical-line"></span>' +
-            '<span class="playBtnClasX" id="closingPlayBtn" onClick="macroRunFnX()">X</span>' +
-            '</div>' +
-            '</div>';
-
-        // Prevent click events on the container from being propagated to the map
-        L.DomEvent.disableClickPropagation(container);
-        
-        return container;
-    }
-});
-
-// map.addControl(new macroDetailsControl());
 
 function macroRunFnX() {
     document.getElementById("macroDetails").style.display = "none";
 }
-new macroDetailsControl().addTo(map);
+
+// Custom PLay button control
+// var macroDetailsControl = L.Control.extend({
+//     options: {
+//         position: 'bottomleft'
+//     },
+//     onAdd: function() {
+//         var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+//         container.style.border = 'none';
+//         //display: none;
+//         container.innerHTML =
+//             '<div id="macroDetails" class="playLine-container">' +
+//             '<div class="macroPlayClass">' +
+//             '<button class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs" style="color: #000000;"></i></button>' +
+//             '<button class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs" style="color: #000000;"></i></button>' +
+//             '<button class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs" style="color: #000000;"></i></button>' +
+//             '<button class="leftMacBtn"><i class="fa-sharp fa-solid fa-arrow-left fa-xs" style="color: #000000;"></i></button>' +
+//             '<button class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs" style="color: #000000;"></i></button>' +
+
+//             '<span style="font-size: 17px;font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temperature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>' +
+//             '<span class="playBtnClasCount" id="counting">10</span>' +
+//             '<span class="vertical-line"></span>' +
+//             '<span class="playBtnClasX" id="closingPlayBtn" onClick="macroRunFnX()">X</span>' +
+//             '</div>' +
+//             '</div>';
+
+//         // Prevent click events on the container from being propagated to the map
+//         L.DomEvent.disableClickPropagation(container);
+
+//         return container;
+//     }
+// });
+
+// map.addControl(new macroDetailsControl());
+
+// function macroRunFnX() {
+//     document.getElementById("macroDetails").style.display = "none";
+// }
+// new macroDetailsControl().addTo(map);
 // new macroDetailsControl().addTo(bottomControlsContainer);
 
 // Add the container with both controls to the map
 // bottomControlsContainer.addTo(map);
 
-// Custom macroDetailsControl
-// var macroDetailsControlInstance = new macroDetailsControl();
-
-// // Append both controls to the container div
-// controlsContainer.appendChild(toggleControl.onAdd());
-// controlsContainer.appendChild(macroDetailsControlInstance.onAdd());
-
-// // Add the container div to the map
-// map.getContainer().appendChild(controlsContainer);
-// macroRun btn ends here
 
 
 
@@ -6499,52 +6485,91 @@ allOverLayers.forEach(group => {
     });
 });
 
+// var groupedOverlays = {
+//     "Layer View": {
+//         "District": streets,
+//         "Block": OpenStreetMap
+//     },
+// };
+// var options = {
+//     exclusiveGroups: ["Layer View"]
+// };
+
+// var layerControl = L.control.groupedLayers(groupedOverlays, options);
+// map.addControl(layerControl);
+
+// var groupedOverlays = {
+//     "Landmarks": {
+//         "streets": streets,
+//         "Cities": OpenStreetMap
+//     },
+//     "Points of Interest": {
+//         "Restaurants": OpenStreetMap
+//     }
+// };
+
+var baseMaps1 = {
+    "OpenStreetMap": OpenStreetMap,
+    "Streets": streets,
+    "Imagery": imagery,
+    "Stadia_AlidadeSmoothDark": Stadia_AlidadeSmoothDark,
+    "DarkGreyCanvas": darkGreyCanvas
+};
+
+var overlayMaps = {
+    // "Cities": cities
+};
+
+var layerControl = L.control.layers(baseMaps1, overlayMaps).addTo(map);
+
+
 // PanelLayers collapse group
 var panelLayers = new L.Control.PanelLayers(baseMaps, overLayers, {
-    collapsibleGroups: true,
-    collapsed: false,
+    // collapsibleGroups: true,
+    // collapsed: false,
     position: "topright"
 });
-map.addControl(panelLayers);
+// map.addControl(panelLayers);
 
-var panelLayers2 = new L.Control.PanelLayers(baseMaps, overLayers2, {
+var panelLayers2 = new L.Control.PanelLayers("", overLayers2, {
     collapsibleGroups: true,
     // collapsed: true
 });
 
-var panelLayers3 = new L.Control.PanelLayers(baseMaps, overLayers3, {
+var panelLayers3 = new L.Control.PanelLayers("", overLayers3, {
     collapsibleGroups: true
 });
 
-var panelLayers4 = new L.Control.PanelLayers(baseMaps, overLayers4, {
+var panelLayers4 = new L.Control.PanelLayers('', overLayers4, {
     collapsibleGroups: true
 });
-var panelLayers5 = new L.Control.PanelLayers(baseMaps, overLayers5, {
+var panelLayers5 = new L.Control.PanelLayers('', overLayers5, {
     collapsibleGroups: true
 });
-var panelLayers6 = new L.Control.PanelLayers(baseMaps, overLayers6, {
+var panelLayers6 = new L.Control.PanelLayers('', overLayers6, {
     collapsibleGroups: true
 });
-var panelLayers7 = new L.Control.PanelLayers(baseMaps, overLayers7, {
+var panelLayers7 = new L.Control.PanelLayers('', overLayers7, {
     collapsibleGroups: true
 });
-var panelLayers8 = new L.Control.PanelLayers(baseMaps, overLayers8, {
+var panelLayers8 = new L.Control.PanelLayers('', overLayers8, {
     collapsibleGroups: true
 });
-var panelLayers9 = new L.Control.PanelLayers(baseMaps, overLayers9, {
+var panelLayers9 = new L.Control.PanelLayers('', overLayers9, {
     collapsibleGroups: true
 });
-var panelLayers10 = new L.Control.PanelLayers(baseMaps, overLayers10, {
+var panelLayers10 = new L.Control.PanelLayers("", overLayers10, {
     collapsibleGroups: true,
     // collapsed: true
     //exposure
 });
-var panelLayers11 = new L.Control.PanelLayers(baseMaps, overLayers11, {
+var panelLayers11 = new L.Control.PanelLayers('', overLayers11, {
     collapsibleGroups: true
 });
 
-//
-var panelLayersArray = [panelLayers, panelLayers2, panelLayers3, panelLayers4, panelLayers5, panelLayers6, panelLayers7,
+//panelLayers,
+var panelLayersArray = [panelLayers, panelLayers2, panelLayers3, panelLayers4, panelLayers5, panelLayers6,
+    panelLayers7,
     panelLayers8, panelLayers9, panelLayers10, panelLayers11
 ];
 
@@ -6563,7 +6588,8 @@ let synopButtonState = false;
 
 function clickHandler_synop(event) {
     if (synopButtonState) {
-        map.addControl(panelLayers);
+        // map.addControl(layerControl);
+        // map.addControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6577,7 +6603,8 @@ function clickHandler_synop(event) {
         console.log(synopButtonState, "synopButtonState..1");
     } else {
         map.addControl(panelLayers2);
-        map.removeControl(panelLayers);
+        // map.removeControl(layerControl);
+        // map.removeControl(panelLayers);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
         map.removeControl(panelLayers5);
@@ -6608,7 +6635,7 @@ let metarButtonState = false;
 
 function clickHandler_metar(event) {
     if (metarButtonState) {
-        map.addControl(panelLayers);
+        // map.addControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6620,7 +6647,7 @@ function clickHandler_metar(event) {
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
     } else {
-        map.removeControl(panelLayers);
+        // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers4);
         map.removeControl(panelLayers5);
@@ -6651,7 +6678,7 @@ let mesolscaleButtonState = false;
 
 function clickHandler_mesolscale(event) {
     if (mesolscaleButtonState) {
-        map.addControl(panelLayers);
+        // map.addControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6663,7 +6690,7 @@ function clickHandler_mesolscale(event) {
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
     } else {
-        map.removeControl(panelLayers);
+        // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers5);
@@ -6694,7 +6721,7 @@ let medium_rangeButtonState = false;
 
 function clickHandler_medium(event) {
     if (medium_rangeButtonState) {
-        map.addControl(panelLayers);
+        // map.addControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6706,7 +6733,7 @@ function clickHandler_medium(event) {
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
     } else {
-        map.removeControl(panelLayers);
+        // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6737,7 +6764,7 @@ let satelliteButtonState = false;
 
 function clickHandler_satellite(event) {
     if (satelliteButtonState) {
-        map.addControl(panelLayers);
+        // map.addControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6749,7 +6776,7 @@ function clickHandler_satellite(event) {
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
     } else {
-        map.removeControl(panelLayers);
+        // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6780,7 +6807,7 @@ let radarButtonState = false;
 
 function clickHandler_radar(event) {
     if (radarButtonState) {
-        map.addControl(panelLayers);
+        // map.addControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6792,7 +6819,7 @@ function clickHandler_radar(event) {
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
     } else {
-        map.removeControl(panelLayers);
+        // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6823,7 +6850,7 @@ let lightningButtonState = false;
 
 function clickHandler_lightning(event) {
     if (lightningButtonState) {
-        map.addControl(panelLayers);
+        // map.addControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6835,7 +6862,7 @@ function clickHandler_lightning(event) {
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
     } else {
-        map.removeControl(panelLayers);
+        // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6866,7 +6893,7 @@ let soundingButtonState = false;
 
 function clickHandler_sounding(event) {
     if (soundingButtonState) {
-        map.addControl(panelLayers);
+        // map.addControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6878,7 +6905,7 @@ function clickHandler_sounding(event) {
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
     } else {
-        map.removeControl(panelLayers);
+        // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6909,7 +6936,7 @@ let exposureButtonState = false;
 
 function clickHandler_expo(event) {
     if (exposureButtonState) {
-        map.addControl(panelLayers);
+        // map.addControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6921,7 +6948,7 @@ function clickHandler_expo(event) {
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
     } else {
-        map.removeControl(panelLayers);
+        // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6952,7 +6979,7 @@ let ship_and_buoyButtonState = false;
 
 function clickHandler_ship(event) {
     if (ship_and_buoyButtonState) {
-        map.addControl(panelLayers);
+        // map.addControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -6964,7 +6991,7 @@ function clickHandler_ship(event) {
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
     } else {
-        map.removeControl(panelLayers);
+        // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);

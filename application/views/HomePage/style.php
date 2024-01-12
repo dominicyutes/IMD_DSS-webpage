@@ -315,6 +315,20 @@ body {
 }
 
 .addBox {
+    height: 377px;
+    width: 100%;
+    background-Color: #eff4ff;
+    overflow-y: auto;
+    margin-top: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: outset;
+    box-shadow: inset -1px 2px 10px 0 rgb(173 234 255);
+    font-family: 'Archivo', sans-serif;
+}
+
+/* .addBox {
     height: 252px;
     width: 100%;
     background-Color: #eff4ff;
@@ -326,7 +340,7 @@ body {
     border: outset;
     box-shadow: inset -1px 2px 10px 0 rgb(173 234 255);
     font-family: 'Archivo', sans-serif
-}
+} */
 
 .macroPlayClass {
     display: flex;
@@ -348,12 +362,12 @@ body {
 }
 
 .playLine-container {
-    /* margin-left: 163px; */
-    /* display: none; */
+    display: flex;
+    justify-content: center;
     align-items: center;
     background-color: white;
     border: 2px solid #ccc;
-    padding: 9px;
+    padding: 2px;
     border-radius: 5px;
 }
 
@@ -435,14 +449,16 @@ body {
     position: fixed;
     z-index: 99999;
     display: none;
-    left: 1155px;
-    top: -25px;
+    right: -201px;
+    top: 62px;
     height: 0;
 }
 
 .create_Macro_body {
-    width: 252px;
-    height: 584px;
+    /* width: 252px;
+    height: 584px; */
+    width: 264px;
+    height: 723px;
     margin: 416px 0 0 0px;
     transform: translate(-50%, -50%);
     background-color: #f3fbfe;
@@ -501,8 +517,10 @@ body {
     position: fixed;
     z-index: 99999;
     display: none;
-    left: 887px;
-    top: -25px;
+    right: 62px;
+    top: -7px;
+    /* left: 887px;
+    top: -25px; */
     height: 0;
     font-size: 14px;
     font-weight: 600;
@@ -654,7 +672,7 @@ body {
     text-align: center;
     color: #ffffffa6;
     background-color: #2c5383;
-    width: 100%;
+    width: 32%;
     border-radius: 11%;
 }
 

@@ -26,6 +26,12 @@
         crossorigin="anonymous">
     <!-- Include Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin="anonymous" />
+
+    <!-- Leaflet.GroupedLayerControl CSS and JS -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css" />
+
+
     <!-- leaflet-draw CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" crossorigin="anonymous" />
     <!-- Include Leaflet fullscreen CSS -->
@@ -62,7 +68,9 @@
     <!-- Leaflet EasyPrint CSS and JS -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-easyprint/dist/easyPrint.css" />
     <script src="https://unpkg.com/leaflet-easyprint/dist/easyPrint.js"></script> -->
-
+    <!-- Leaflet.GroupedLayerControl CSS and JS -->
+    <!-- <link rel="stylesheet" href="path/to/leaflet.groupedlayercontrol.css" />
+    <script src="path/to/leaflet.groupedlayercontrol.js"></script> -->
 
 
 
@@ -72,6 +80,10 @@
     </script>
     <!-- Include Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Leaflet.GroupedLayerControl CSS and JS -->
+    <script src="https://unpkg.com/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js"></script>
+
 
     <!-- <script src="https://unpkg.com/leaflet"></script>
     <script src="https://unpkg.com/leaflet-simple-map-screenshoter"></script> -->
@@ -183,7 +195,7 @@
             <img src="img/emblem.png" alt="Emblem of India" height="50"
                 style="margin-right: auto; margin-left: 30px; margin-top: 5px; margin-bottom: 5px;">
             <div style="flex: 1; text-align: center;">
-            <span class="text" style="font-family: 'Times New Roman';">WEATHER DECISION SUPPORT SYSTEM</span>
+                <span class="text" style="font-family: 'Times New Roman';">WEATHER DECISION SUPPORT SYSTEM</span>
 
             </div>
             <img src="img/imd_logo.png" alt="IMD logo" height="50"
@@ -200,47 +212,58 @@
                         style="justify-content: space-between">
 
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="exposure" style="font-family: 'Times New Roman'; font-size: 20px;">Exposure</p>
+                            <p class="btn-val" id="exposure" style="font-family: 'Times New Roman'; font-size: 20px;">
+                                Exposure</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="metar" style="font-family: 'Times New Roman'; font-size: 20px;">Metar</p>
+                            <p class="btn-val" id="metar" style="font-family: 'Times New Roman'; font-size: 20px;">Metar
+                            </p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="synop" style="font-family: 'Times New Roman'; font-size: 20px;">Synop</p>
+                            <p class="btn-val" id="synop" style="font-family: 'Times New Roman'; font-size: 20px;">Synop
+                            </p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="sounding" style="font-family: 'Times New Roman'; font-size: 20px;">Sounding</p>
+                            <p class="btn-val" id="sounding" style="font-family: 'Times New Roman'; font-size: 20px;">
+                                Sounding</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="ship_and_buoy" style="font-family: 'Times New Roman'; font-size: 20px;">Ship and Buoy</p>
+                            <p class="btn-val" id="ship_and_buoy"
+                                style="font-family: 'Times New Roman'; font-size: 20px;">Ship and Buoy</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="radar" style="font-family: 'Times New Roman'; font-size: 20px;">Radar</p>
+                            <p class="btn-val" id="radar" style="font-family: 'Times New Roman'; font-size: 20px;">Radar
+                            </p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="satellite" style="font-family: 'Times New Roman'; font-size: 20px;">Satellite</p>
+                            <p class="btn-val" id="satellite" style="font-family: 'Times New Roman'; font-size: 20px;">
+                                Satellite</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="lightning" style="font-family: 'Times New Roman'; font-size: 20px;">Lightning</p>
+                            <p class="btn-val" id="lightning" style="font-family: 'Times New Roman'; font-size: 20px;">
+                                Lightning</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="mesolscale" style="font-family: 'Times New Roman'; font-size: 20px;">Mesoscale Forecast</p>
+                            <p class="btn-val" id="mesolscale" style="font-family: 'Times New Roman'; font-size: 20px;">
+                                Mesoscale Forecast</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p class="btn-val" id="medium_range" style="font-family: 'Times New Roman'; font-size: 20px;">Medium Range</p>
+                            <p class="btn-val" id="medium_range"
+                                style="font-family: 'Times New Roman'; font-size: 20px;">Medium Range</p>
                             <div class="underline"></div>
                         </button>
                         <button class="d-flex btn border-end border-2 pe-3" style="flex-direction:column;">
-                            <p style="font-family: 'Times New Roman'; font-size: 20px;" class="btn-val">Export Polygon</p>
+                            <p style="font-family: 'Times New Roman'; font-size: 20px;" class="btn-val">Export Polygon
+                            </p>
                             <div class="underline"></div>
                         </button>
                     </div>
@@ -322,7 +345,8 @@
                         Note</h4>
                     <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; text-align: justify;">
                         <span style="font-size: 15px; line-height: 1.6; color: #333;">
-                        This option aims to present a comprehensive summary of the observed data for various parameters. Please ensure that all fields are filled in to access the information.
+                            This option aims to present a comprehensive summary of the observed data for various
+                            parameters. Please ensure that all fields are filled in to access the information.
                         </span>
                     </ul>
 
@@ -429,7 +453,39 @@
                 </div>
             </div>
             <!--  -->
-            <div style="height: 60px;width: 100%; background-color: white; font-family: 'Times New Roman';">Model's Time Update</div>
+            <div style="height: 60px;width: 100%; background-color: white; font-family: 'Times New Roman';">Model's Time
+                Update</div>
+        </div>
+
+        <!-- MACRO Run model; display: none; -->
+        <div id="macroDetails" class="modal" style="display:none;width: 361px; left: 11%; top: 90%;">
+            <div class="modal-content"
+                style="z-index: 999 ; font-family: Arial, sans-serif; background-color: #ffffff; border-radius: 10px; align-items: center;">
+
+
+                <div class="playLine-container">
+                    <div class="macroPlayClass">
+                        <button class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs"
+                                style="color: #000000;"></i></button>
+                        <button class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs"
+                                style="color: #000000;"></i></button>
+                        <button class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs"
+                                style="color: #000000;"></i></button>
+                        <button class="leftMacBtn"><i class="fa-sharp fa-solid fa-arrow-left fa-xs"
+                                style="color: #000000;"></i></button>
+                        <button class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs"
+                                style="color: #000000;"></i></button>
+
+                        <span
+                            style="font-size: 17px;font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temperature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span class="playBtnClasCount" id="counting">10</span>
+                        <span class="vertical-line"></span>
+                        <span class="playBtnClasX" id="closingPlayBtn" onClick="macroRunFnX()">X</span>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
 
         <!-- MACRO Delete Warning -->
@@ -439,14 +495,16 @@
                 <h3 class="warningCls" style="font-family: 'Times New Roman'; font-size: 20px">WARNING !</h3>
                 <div style="width: 100%;">
                     <div style="margin-left: 12%; width: 74%;" class="col-6">
-                        <label class="labelDelMac" for="userName" style="font-family: 'Times New Roman'; font-size: 18px">Your Name:</label>
+                        <label class="labelDelMac" for="userName"
+                            style="font-family: 'Times New Roman'; font-size: 18px">Your Name:</label>
                         <div class="input-group mb-3">
                             <input style="border-color: #d5caca;" type="text" class="form-control" aria-label="Default"
                                 aria-describedby="inputGroup-sizing-default" id="userName" required>
                         </div>
                     </div>
                     <div style="margin-left: 12%; width: 74%;" class="col-6">
-                        <label class="labelDelMac" for="deleteReason" style="font-family: 'Times New Roman'; font-size: 18px">Reason for Deletion:</label>
+                        <label class="labelDelMac" for="deleteReason"
+                            style="font-family: 'Times New Roman'; font-size: 18px">Reason for Deletion:</label>
                         <div class="input-group mb-3">
                             <input style="border-color: #d5caca;" type="text" class="form-control" aria-label="Default"
                                 aria-describedby="inputGroup-sizing-default" id="deleteReason" required>
@@ -454,8 +512,10 @@
                     </div>
                 </div>
                 <div style="display: flex; align-items: center;">
-                    <button type="button" onclick="closeDeleteMacroModal()" class="btn btn-primary" style="font-family: 'Times New Roman'; font-size: 18px">Cancel</button>
-                    <button type="button" onclick="submitDeleteMacro()" class="btn btn-primary" style="font-family: 'Times New Roman'; font-size: 18px">Submit</button>
+                    <button type="button" onclick="closeDeleteMacroModal()" class="btn btn-primary"
+                        style="font-family: 'Times New Roman'; font-size: 18px">Cancel</button>
+                    <button type="button" onclick="submitDeleteMacro()" class="btn btn-primary"
+                        style="font-family: 'Times New Roman'; font-size: 18px">Submit</button>
                 </div>
             </div>
         </div>
