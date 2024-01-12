@@ -369,7 +369,9 @@
                         <div class="create_Macro_body_div">
                             <span class="macroLegend">X</span>
                             <h4 class="create_Macro_h4" style="margin: 0 auto;"
-                                style="font-family: 'Times New Roman', Times, serif; font-size: 20px">Create Macro</h4>
+                                style="font-family: 'Times New Roman', Times, serif; font-size: 20px">
+                                <span id="creatRedit">Create Macro</span>
+                            </h4>
 
                         </div>
 
@@ -431,7 +433,9 @@
                     <div class="view_Create_Macro_body" style="position: relative;">
                         <div class="view_Create_Macro_body_div">
                             <span class="viewMacroLegend">X</span>
-                            <h4 class="view_Macro_h4" style="margin: 0 auto; font-size: 20px">View Macro</h4>
+                            <h4 class="view_Macro_h4" style="margin: 0 auto; font-size: 20px">
+                                <span id="viewMacroTitle"></span>
+                            </h4>
                         </div>
                         <div style="color:black;" id="viewMacroDetails"></div>
                     </div>
@@ -453,7 +457,7 @@
                 </div>
             </div>
             <!--  -->
-            <div style="height: 60px;width: 100%; background-color: white; font-family: 'Times New Roman';">Model's Time
+            <div style="height: 36px;width: 100%; background-color: white; font-family: 'Times New Roman';">Model's Time
                 Update</div>
         </div>
 
