@@ -355,14 +355,40 @@
 
             <!-- MACRO -->
             <div id="macroContainer" class="hidden obsClass col-sm-2" style="position: relative;">
-                <div style="display:flex;">
-                    <button class="createMacroCls" style="font-size: 20px" onclick="createMacroForm()">+</button>
-                    <span
-                        style="color: #2c5383;font-family: 'Archivo', sans-serif;font-size: 20px;font-weight: bold;margin-left: 6%;margin-top: 1%; font-size: 20px">Create
-                        Macro</span>
-                </div>
 
-                <div id="showCreatedMacro"></div>
+                <div class="row">
+                    <div style=" height: 60vh">
+                        <div style="display:flex;">
+                            <button class="createMacroCls" style="font-size: 20px"
+                                onclick="createMacroForm()">+</button>
+                            <span
+                                style="color: #2c5383;font-family: 'Archivo', sans-serif;font-size: 20px;font-weight: bold;margin-left: 6%;margin-top: 1%; font-size: 20px">Create
+                                Macro</span>
+                        </div>
+
+                        <div style="overflow: auto;" id="showCreatedMacro"></div>
+                    </div>
+
+                    <!-- MacroNote -->
+                    <div
+                        style="height: 40%;position: absolute; bottom: 0; background-color: #f4fcff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 20px; font-family: 'Times New Roman', Times, serif;text-align: center; overflow: auto;">
+                        <h4
+                            style="background-color: #d4e6ff; padding: 10px; margin-top: 0; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+                            Note</h4>
+                        <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; text-align: justify;">
+                            <span style="font-size: 15px; line-height: 1.6; color: #333;">
+                                The Macro feature will facilitate the user/forecaster in streamlining daily operations
+                                by
+                                storing selected layers/information in a group, therefore simplifying the process of
+                                viewing
+                                them. Click on the "+" symbol to generate a new macro and follow the instructions given
+                                to
+                                save, edit, run, and delete options.
+                            </span>
+                        </ul>
+                    </div>
+
+                </div>
                 <!--  -->
                 <div class="create_Macro">
                     <div class="create_Macro_body" style="position: relative;">
@@ -372,7 +398,6 @@
                                 style="font-family: 'Times New Roman', Times, serif; font-size: 20px">
                                 <span id="creatRedit">Create Macro</span>
                             </h4>
-
                         </div>
 
 
@@ -440,21 +465,7 @@
                         <div style="color:black;" id="viewMacroDetails"></div>
                     </div>
                 </div>
-                <div
-                    style="position: absolute; bottom: 0; background-color: #f4fcff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 300px; font-family: 'Times New Roman', Times, serif;text-align: center;">
-                    <h4
-                        style="background-color: #d4e6ff; padding: 10px; margin-top: 0; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-                        Note</h4>
-                    <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; text-align: justify;">
-                        <span style="font-size: 15px; line-height: 1.6; color: #333;">
-                            The Macro feature will facilitate the user/forecaster in streamlining daily operations by
-                            storing selected layers/information in a group, therefore simplifying the process of viewing
-                            them. Click on the "+" symbol to generate a new macro and follow the instructions given to
-                            save, edit, run, and delete options.
-                        </span>
-                    </ul>
 
-                </div>
             </div>
             <!--  -->
             <div style="height: 36px;width: 100%; background-color: white; font-family: 'Times New Roman';">Model's Time

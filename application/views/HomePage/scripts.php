@@ -2138,27 +2138,50 @@ function macShowSubParameterNames(value) {
     macGetSubParameterNames.innerHTML = macPushSubParameterNames;
 }
 
-// for disabled the ADD and SAVE buttons
+//
 function handleInputChange() {
-    const inputValue = document.getElementById("macroNames").value.trim();
-    // console.log(inputValue, "dfghjk");
+    const macroInputValue = document.getElementById("macroNames").value.trim();
+    const secondInputValue = document.getElementById("mac_modelNames").value.trim();
+    const thirdInputValue = document.getElementById("mac_parameterNames").value.trim();
+    const forthInputValue = document.getElementById("mac_subparameter").value.trim();
+
     const buttons = document.querySelectorAll(".macSubmitBtn");
 
-    if (inputValue) {
-        for (const button of buttons) {
-            button.disabled = false;
-        }
-    } else {
-        for (const button of buttons) {
-            button.disabled = true;
-        }
-    }
-    if (!document.getElementById("macroNames").classList.contains("blurred-listener")) {
-        document.getElementById("macroNames").addEventListener("blur", handleInputChange);
-        document.getElementById("macroNames").classList.add("blurred-listener");
-    }
+    const isEitherInputEmpty = macroInputValue === "" || secondInputValue === "";
+
+    buttons.forEach(button => {
+        button.disabled = isEitherInputEmpty;
+    });
 }
+
+document.getElementById("macroNames").addEventListener("input", handleInputChange);
+document.getElementById("mac_modelNames").addEventListener("input", handleInputChange);
+
 handleInputChange();
+
+
+// for disabled the ADD and SAVE buttons
+// function handleInputChange() {
+//     const inputValue = document.getElementById("macroNames").value.trim();
+
+//     // console.log(inputValue, "dfghjk");
+//     const buttons = document.querySelectorAll(".macSubmitBtn");
+
+//     if (inputValue) {
+//         for (const button of buttons) {
+//             button.disabled = false;
+//         }
+//     } else {
+//         for (const button of buttons) {
+//             button.disabled = true;
+//         }
+//     }
+//     if (!document.getElementById("macroNames").classList.contains("blurred-listener")) {
+//         document.getElementById("macroNames").addEventListener("blur", handleInputChange);
+//         document.getElementById("macroNames").classList.add("blurred-listener");
+//     }
+// }
+// handleInputChange();
 
 // AddButtonForm for MACRO
 let savedMacro = [];
@@ -2182,11 +2205,11 @@ function macAddForm() {
         timeZone: "Asia/Kolkata"
     });
 
-    console.log(addedTempMacro, ".....addedTempMacro", editMacroGroupName, "..........editMacroGroupName")
+    // console.log(addedTempMacro, ".....addedTempMacro", editMacroGroupName, "..........editMacroGroupName")
 
     if (addedTempMacro && editMacroGroupName) {
-        console.log(addedTempMacro, ".....addedTempMacro22", editMacroGroupName, "..........editMacroGroupName22")
-        debugger;
+        // console.log(addedTempMacro, ".....addedTempMacro22", editMacroGroupName, "..........editMacroGroupName22")
+        // debugger;
         addedTempMacro.listOfMacro.push({
             ulId: ulId,
             mac_macroNames: mac_macroNames,
@@ -2227,8 +2250,8 @@ function viewAddedAndDeletedMacro() {
         <div style="color: #1d334e;">
         <span onclick="MacroPlusToggle('${macro.ulId}adddelete')">
         <div><i class="fa-solid fa-plus fa-xs"></i> ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>&nbsp;&nbsp;</div>
-		<span onclick="editMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i></span>
-        <span onclick="deleteMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-trash fa-xs"></i></span>
+		<span title="Edit" onclick="editMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i></span>
+        <span title="Delete" onclick="deleteMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-trash fa-xs"></i></span>
         
         </div>
         <ul id="${macro.ulId}adddelete" class="listContainerMacro">
@@ -2301,16 +2324,16 @@ function showSavedMacroList() {
                 </div>
 
                 <div class="saveMacroView">
-                <button class="play-button" onclick="playMacro('${macro.macroGroupName}')">
+                <button title="Play" class="play-button" onclick="playMacro('${macro.macroGroupName}')">
                 <i class="fa-solid fa-play fa-xs"></i></button>
 
-                <button class="view-button" onclick="viewMacro('${macro.macroGroupName}')">
+                <button title="View" class="view-button" onclick="viewMacro('${macro.macroGroupName}')">
                 <i class="fa-solid fa-eye fa-xs"></i></button>
 
-                <button class="edit-button" onclick="editMacro('${macro.macroGroupName}')">
+                <button title="Edit" class="edit-button" onclick="editMacro('${macro.macroGroupName}')">
                 <i class="fa-solid fa-pen-to-square fa-xs"></i></button>
 
-                <button class="delete-button" onclick="deleteMacro('${macro.macroGroupName}')">
+                <button title="Delete" class="delete-button" onclick="deleteMacro('${macro.macroGroupName}')">
                 <i class="fa-solid fa-trash fa-xs"></i></button>
                 </div>
             </div>`;
