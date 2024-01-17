@@ -357,7 +357,7 @@
             <div id="macroContainer" class="hidden obsClass col-sm-2" style="position: relative;">
 
                 <div class="row">
-                    <div style=" height: 60vh">
+                    <div style="height: 60vh;overflow: auto; ">
                         <div style="display:flex;">
                             <button class="createMacroCls" style="font-size: 20px"
                                 onclick="createMacroForm()">+</button>

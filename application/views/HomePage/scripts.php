@@ -2142,16 +2142,35 @@ function macShowSubParameterNames(value) {
 function handleInputChange() {
     const macroInputValue = document.getElementById("macroNames").value.trim();
     const secondInputValue = document.getElementById("mac_modelNames").value.trim();
-    const thirdInputValue = document.getElementById("mac_parameterNames").value.trim();
-    const forthInputValue = document.getElementById("mac_subparameter").value.trim();
+    // const thirdInputValue = document.getElementById("mac_parameterNames").value.trim();
+    // const forthInputValue = document.getElementById("mac_subparameter").value.trim(); 
 
-    const buttons = document.querySelectorAll(".macSubmitBtn");
+    // const buttons = document.querySelectorAll(".macSubmitBtn"); 
+    let macAddBtn = document.getElementById("mac_addButton");
+    let macSubBtn = document.getElementById("mac_submitButton");
+    let macUpdBtn = document.getElementById("mac_updateButton");
 
-    const isEitherInputEmpty = macroInputValue === "" || secondInputValue === "";
+    let isEitherInputEmpty = macroInputValue === "" || secondInputValue === "";
 
-    buttons.forEach(button => {
-        button.disabled = isEitherInputEmpty;
-    });
+    if (isEitherInputEmpty) {
+        macAddBtn.disabled = true;
+    } else {
+        macAddBtn.disabled = false;
+    }
+
+    if (macroInputValue === "") {
+        macSubBtn.disabled = true;
+    } else {
+        macSubBtn.disabled = false;
+    }
+
+    if (macroInputValue === "") {
+        macUpdBtn.disabled = true;
+    } else {
+        macUpdBtn.disabled = false;
+    }
+
+
 }
 
 document.getElementById("macroNames").addEventListener("input", handleInputChange);
@@ -2204,6 +2223,9 @@ function macAddForm() {
     const currentISTTime = new Date().toLocaleString("en-US", {
         timeZone: "Asia/Kolkata"
     });
+    let Fixed_ist_time = new Date().toLocaleString("en-US", {
+        timeZone: "Asia/Kolkata"
+    });
 
     // console.log(addedTempMacro, ".....addedTempMacro", editMacroGroupName, "..........editMacroGroupName")
 
@@ -2225,7 +2247,8 @@ function macAddForm() {
             mac_model_Names: mac_model_Names,
             mac_parameter_Names: mac_parameter_Names,
             mac_sub_parameter: mac_sub_parameter,
-            ist_time: currentISTTime // Add IST
+            ist_time: currentISTTime, // Add IST
+            Fixed_ist_time: Fixed_ist_time // Add IST
         })
         addedTempMacro = {
             macroGroupName: mac_macroNames,
@@ -2317,6 +2340,7 @@ function showSavedMacroList() {
     let showAllCreatedMacro = document.getElementById("showCreatedMacro");
     let showSavedMacro = [];
     savedMacro.forEach(macro => {
+        console.log(macro, "..........macro for ist");
         if (macro) {
             showInfoDiv = `<div class="createMacro">
                 <div><i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;""></i>&nbsp;
@@ -2336,7 +2360,9 @@ function showSavedMacroList() {
                 <button title="Delete" class="delete-button" onclick="deleteMacro('${macro.macroGroupName}')">
                 <i class="fa-solid fa-trash fa-xs"></i></button>
                 </div>
-            </div>`;
+                <div><h6 style="font-family: 'Times New Roman'; font-size: 15px;">${macro.listOfMacro[0].Fixed_ist_time}</h6>
+                </div></div>
+                `;
             showSavedMacro.push(showInfoDiv);
         } else {
             console.log('Details not found for:', newButton.id);
@@ -2353,21 +2379,52 @@ function showSavedMacroList() {
 
 function playMacro(macroGroupName) {
     let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
-    const numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    let currentIndex = 0;
+    var tempmacrolayer = [];
+    allOverLayers.forEach(group => {
+        group.layers.forEach(layer => {
+            macro.listOfMacro.forEach(lm => {
+                if (layer.name == lm.mac_sub_parameter) {
+                    var layerrr = {
+                        group: lm.mac_parameter_Names,
+                        collapsed: true,
+                        layers: [{
+                            active: true,
+                            name: lm.mac_sub_parameter,
+                            layer: layer.layer,
+                        }]
+                    }
+                    tempmacrolayer.push(layerrr);
+                    console.log(layer, macro, ggg, "ooooooooo")
+                }
 
-    function displayNumber() {
-        if (currentIndex < macro.listOfMacro.length) {
-            new L.marker([28.6139 - numberArray[currentIndex], 77.2090 - numberArray[currentIndex]]).addTo(map);
-            currentIndex++;
-        } else {
-            clearInterval(intervalId);
-        }
-    }
-    const intervalId = setInterval(displayNumber, 3000);
-
+            })
+        });
+    });
+    var panelLhhhh = new L.Control.PanelLayers("", tempmacrolayer, {
+        // collapsibleGroups: true,
+        // collapsed: true
+    });
+    map.addControl(panelLhhhh);
     document.getElementById("macroDetails").style.display = "block";
 }
+
+// function playMacro(macroGroupName) {
+//     let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
+//     const numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//     let currentIndex = 0;
+
+//     function displayNumber() {
+//         if (currentIndex < macro.listOfMacro.length) {
+//             new L.marker([28.6139 - numberArray[currentIndex], 77.2090 - numberArray[currentIndex]]).addTo(map);
+//             currentIndex++;
+//         } else {
+//             clearInterval(intervalId);
+//         }
+//     }
+//     const intervalId = setInterval(displayNumber, 3000);
+
+//     document.getElementById("macroDetails").style.display = "block";
+// }
 
 function viewMacro(macroGroupName) {
     let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
@@ -6319,12 +6376,12 @@ var overLayers10 = [{
     layers: [{
             active: false,
             name: "District Boundaries",
-            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+            layer: X144
         },
         {
             active: false,
             name: "Airport",
-            layer: L.tileLayer('https://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png')
+            layer: X45
         },
         {
             active: false,
@@ -6514,7 +6571,8 @@ var overLayers11 = [{
     ]
 }, ];
 
-const allOverLayers = overLayers.concat(overLayers2, overLayers3, overLayers4, overLayers5, overLayers6, overLayers7,
+const allOverLayers = overLayers.concat(overLayers2, overLayers3, overLayers4, overLayers5, overLayers6,
+    overLayers7,
     overLayers8, overLayers9, overLayers10, overLayers11);
 
 allOverLayers.forEach(group => {
@@ -7725,7 +7783,8 @@ $("body").on("change", "input[type=checkbox]", function() {
         // });
         console.log("Checked");
         layer_name = _this.context._layer ? _this.context._layer?.name : _this.context.className;
-        var forExistLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer?.name : _this
+        var forExistLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer?.name :
+            _this
             .context.className;
         // console.log(layer_name, "layer_name");
         // debugger;
@@ -9363,17 +9422,20 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Next 01 Hrs') {
                 bgClickedlightningPotentialindexLists.push(
                     layer_group_name + " " + layer_name);
-                console.log(bgClickedlightningPotentialindexLists, "....bgClickedlightningPotentialindexLists");
+                console.log(bgClickedlightningPotentialindexLists,
+                    "....bgClickedlightningPotentialindexLists");
             }
             if (layer_name == 'Next 01-02 Hrs') {
                 bgClickedlightningPotentialindexLists.push(
                     layer_group_name + " " + layer_name);
-                console.log(bgClickedlightningPotentialindexLists, "....bgClickedlightningPotentialindexLists");
+                console.log(bgClickedlightningPotentialindexLists,
+                    "....bgClickedlightningPotentialindexLists");
             }
             if (layer_name == 'Next 02-03 Hrs') {
                 bgClickedlightningPotentialindexLists.push(
                     layer_group_name + " " + layer_name);
-                console.log(bgClickedlightningPotentialindexLists, "....bgClickedlightningPotentialindexLists");
+                console.log(bgClickedlightningPotentialindexLists,
+                    "....bgClickedlightningPotentialindexLists");
             }
         }
 
@@ -10224,338 +10286,338 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR
         if (_this.context._layer?.group.name == "METAR 00UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 01UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 02UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 03UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 04UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 05UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 06UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 07UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 08UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 09UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 10UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 11UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 12UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 13UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 14UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 15UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 16UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 17UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 18UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 19UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 20UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 21UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
             if (layer_name == 'VISIBILITY') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 22UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 23UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'DEW POINT TEMPERATURE') {
+            if (layer_name == 'Dew Point Temperature') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
@@ -10563,210 +10625,210 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // SYNOP--
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+            if (layer_name == 'Mean Sea Level Pressure') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'CLOUD COVER') {
+            if (layer_name == 'Cloud Cover') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+            if (layer_name == 'Geopotential Height') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'RELATIVE HUMIDITY') {
+            if (layer_name == 'Relative Humidity') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h RAINFALL') {
+            if (layer_name == '3h Rainfall') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+            if (layer_name == 'Mean Sea Level Pressure') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'CLOUD COVER') {
+            if (layer_name == 'Cloud Cover') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+            if (layer_name == 'Geopotential Height') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'RELATIVE HUMIDITY') {
+            if (layer_name == 'Relative Humidity') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h RAINFALL') {
+            if (layer_name == '3h Rainfall') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 06UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+            if (layer_name == 'Mean Sea Level Pressure') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'CLOUD COVER') {
+            if (layer_name == 'Cloud Cover') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+            if (layer_name == 'Geopotential Height') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'RELATIVE HUMIDITY') {
+            if (layer_name == 'Relative Humidity') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h RAINFALL') {
+            if (layer_name == '3h Rainfall') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 09UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+            if (layer_name == 'Mean Sea Level Pressure') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'CLOUD COVER') {
+            if (layer_name == 'Cloud Cover') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+            if (layer_name == 'Geopotential Height') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'RELATIVE HUMIDITY') {
+            if (layer_name == 'Relative Humidity') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h RAINFALL') {
+            if (layer_name == '3h Rainfall') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 12UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+            if (layer_name == 'Mean Sea Level Pressure') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'CLOUD COVER') {
+            if (layer_name == 'Cloud Cover') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+            if (layer_name == 'Geopotential Height') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'RELATIVE HUMIDITY') {
+            if (layer_name == 'Relative Humidity') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h RAINFALL') {
+            if (layer_name == '3h Rainfall') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 15UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+            if (layer_name == 'Mean Sea Level Pressure') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
             if (layer_name == 'CLOUD COVER') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+            if (layer_name == 'Geopotential Height') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'RELATIVE HUMIDITY') {
+            if (layer_name == 'Relative Humidity') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h RAINFALL') {
+            if (layer_name == '3h Rainfall') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 18UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+            if (layer_name == 'Mean Sea Level Pressure') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'CLOUD COVER') {
+            if (layer_name == 'Cloud Cover') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+            if (layer_name == 'Geopotential Height') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'RELATIVE HUMIDITY') {
+            if (layer_name == 'Relative Humidity') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h RAINFALL') {
+            if (layer_name == '3h Rainfall') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 21UTC") {
-            if (layer_name == 'TEMPERATURE') {
+            if (layer_name == 'Temperature') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'MEAN SEA LEVEL PRESSURE') {
+            if (layer_name == 'Mean Sea Level Pressure') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'CLOUD COVER') {
+            if (layer_name == 'Cloud Cover') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'GEOPOTENTIAL HEIGHT') {
+            if (layer_name == 'Geopotential Height') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'RELATIVE HUMIDITY') {
+            if (layer_name == 'Relative Humidity') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'WIND SPEED AND DIRECTION') {
+            if (layer_name == 'Wind Speed and Direction') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h RAINFALL') {
+            if (layer_name == '3h Rainfall') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
@@ -10799,6 +10861,8 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerRADARPRODUCTS_lists.innerHTML = clickedRADARPRODUCTSLists.join("");
         }
+
+        // Satellite--
         if (_this.context._layer?.group.name == "Satellite Observation") {
             if (panelLayerSATELLITE_Title.innerHTML == '') {
                 SATELLITE.innerHTML = "SATELLITE"
@@ -10832,7 +10896,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 </span>`
                     );
                 }
-                if (layer_name == 'LOW LEVEL CONVERGENCE') {
+                if (layer_name == 'Low Level Convergence') {
                     clickedSATELLITELists.push(
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
@@ -10849,7 +10913,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 </span>`
                     );
                 }
-                if (layer_name == 'UPPER LEVEL DIVEGENCE') {
+                if (layer_name == 'Upper Level Divergence') {
                     clickedSATELLITELists.push(
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
@@ -10866,7 +10930,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 </span>`
                     );
                 }
-                if (layer_name == 'MID LEVEL SHEAR') {
+                if (layer_name == 'Mid Level Shear') {
                     clickedSATELLITELists.push(
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
@@ -10888,7 +10952,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 </span>`
                     );
                 }
-                if (layer_name == 'VORTICITY AT 200hPa') {
+                if (layer_name == 'Vorticity at 200hPa') {
                     clickedSATELLITELists.push(
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
@@ -10923,7 +10987,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 </span>`
                     );
                 }
-                if (layer_name == 'VORTICITY AT 500hPa') {
+                if (layer_name == 'Vorticity at 500hPa') {
                     clickedSATELLITELists.push(
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
@@ -10958,7 +11022,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 </span>`
                     );
                 }
-                if (layer_name == 'VORTICITY AT 700hPa') {
+                if (layer_name == 'Vorticity at 700hPa') {
                     clickedSATELLITELists.push(
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
@@ -10993,7 +11057,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 </span>`
                     );
                 }
-                if (layer_name == 'VORTICITY AT 850hPa') {
+                if (layer_name == 'Vorticity at 850hPa') {
                     clickedSATELLITELists.push(
                         `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
   <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}
@@ -11032,6 +11096,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSATELLITE_lists.innerHTML = clickedSATELLITELists.join("");
         }
 
+        //Lightning --
         if (_this.context._layer?.group.name == "Lightning") {
             if (panelLayerLIGHTINING_Title.innerHTML == '') {
                 LIGHTINING.innerHTML = "LIGHTINING"
@@ -11077,7 +11142,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // SOUNDING //
-        if (_this.context._layer?.group.name == "SOUNDING_00_UTC WIND") {
+        if (_this.context._layer?.group.name == "Sounding_00UTC Wind") {
             if (panelLayerSOUNDING00UTCWIND_Title.innerHTML == '') {
                 SOUNDING.innerHTML = "SOUNDING"
                 panelLayerSOUNDING00UTCWIND_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -11087,49 +11152,49 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == '1000 hpa WIND') {
+                if (layer_name == '1000 hPa Wind') {
                     clickedSOUNDING00UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '850 hpa WIND') {
+                if (layer_name == '850 hPa Wind') {
                     clickedSOUNDING00UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '700 hpa WIND') {
+                if (layer_name == '700 hPa Wind') {
                     clickedSOUNDING00UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '500 hpa WIND') {
+                if (layer_name == '500 hPa Wind') {
                     clickedSOUNDING00UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '300 hpa WIND') {
+                if (layer_name == '300 hPa Wind') {
                     clickedSOUNDING00UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '200 hpa WIND') {
+                if (layer_name == '200 hPa Wind') {
                     clickedSOUNDING00UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '100 hpa WIND') {
+                if (layer_name == '100 hPa Wind') {
                     clickedSOUNDING00UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '50 hpa WIND') {
+                if (layer_name == '50 hPa Wind') {
                     clickedSOUNDING00UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -11139,7 +11204,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCWIND_lists.innerHTML = clickedSOUNDING00UTCWINDLists.join("");
         }
 
-        if (_this.context._layer?.group.name == "SOUNDING_12_UTC WIND") {
+        if (_this.context._layer?.group.name == "Sounding_12UTC Wind") {
             if (panelLayerSOUNDING12UTCWIND_Title.innerHTML == '') {
                 SOUNDING.innerHTML = "SOUNDING"
                 panelLayerSOUNDING12UTCWIND_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -11150,49 +11215,49 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == '1000 hpa WIND') {
+                if (layer_name == '1000 hPa Wind') {
                     clickedSOUNDING12UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '850 hpa WIND') {
+                if (layer_name == '850 hPa Wind') {
                     clickedSOUNDING12UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '700 hpa WIND') {
+                if (layer_name == '700 hPa Wind') {
                     clickedSOUNDING12UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '500 hpa WIND') {
+                if (layer_name == '500 hPa Wind') {
                     clickedSOUNDING12UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '300 hpa WIND') {
+                if (layer_name == '300 hPa Wind') {
                     clickedSOUNDING12UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '200 hpa WIND') {
+                if (layer_name == '200 hPa Wind') {
                     clickedSOUNDING12UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '100 hpa WIND') {
+                if (layer_name == '100 hPa Wind') {
                     clickedSOUNDING12UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '50 hpa WIND') {
+                if (layer_name == '50 hPa Wind') {
                     clickedSOUNDING12UTCWINDLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -11202,7 +11267,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING12UTCWIND_lists.innerHTML = clickedSOUNDING12UTCWINDLists.join("");
         }
 
-        if (_this.context._layer?.group.name == "SOUNDING_00UTC TEMP") {
+        if (_this.context._layer?.group.name == "Sounding_00UTC Temp") {
             if (panelLayerSOUNDING00UTCTEMP_Title.innerHTML == '') {
                 SOUNDING.innerHTML = "SOUNDING"
                 panelLayerSOUNDING00UTCTEMP_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -11213,49 +11278,49 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == '1000 hpa TEMP') {
+                if (layer_name == '1000 hPa Temp') {
                     clickedSOUNDING00UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '850 hpa TEMP') {
+                if (layer_name == '850 hPa Temp') {
                     clickedSOUNDING00UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '700 hpa TEMP') {
+                if (layer_name == '700 hPa Temp') {
                     clickedSOUNDING00UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '500 hpa TEMP') {
+                if (layer_name == '500 hPa Temp') {
                     clickedSOUNDING00UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '300 hpa TEMP') {
+                if (layer_name == '300 hPa Temp') {
                     clickedSOUNDING00UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '200 hpa TEMP') {
+                if (layer_name == '200 hPa Temp') {
                     clickedSOUNDING00UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '100 hpa TEMP') {
+                if (layer_name == '100 hPa Temp') {
                     clickedSOUNDING00UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '50 hpa TEMP') {
+                if (layer_name == '50 hPa Temp') {
                     clickedSOUNDING00UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -11265,7 +11330,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCTEMP_lists.innerHTML = clickedSOUNDING00UTCTEMPLists.join("");
         }
 
-        if (_this.context._layer?.group.name == "SOUNDING_12UTC TEMP") {
+        if (_this.context._layer?.group.name == "Sounding_12UTC Temp") {
             if (panelLayerSOUNDING12UTCTEMP_Title.innerHTML == '') {
                 SOUNDING.innerHTML = "SOUNDING"
                 panelLayerSOUNDING12UTCTEMP_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -11277,49 +11342,49 @@ $("body").on("change", "input[type=checkbox]", function() {
             })
             if (!AlreadyExit) {
 
-                if (layer_name == '1000 hpa TEMP') {
+                if (layer_name == '1000 hPa Temp') {
                     clickedSOUNDING12UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '850 hpa TEMP') {
+                if (layer_name == '850 hPa Temp') {
                     clickedSOUNDING12UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '700 hpa TEMP') {
+                if (layer_name == '700 hPa Temp') {
                     clickedSOUNDING12UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '500 hpa TEMP') {
+                if (layer_name == '500 hPa Temp') {
                     clickedSOUNDING12UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '300 hpa TEMP') {
+                if (layer_name == '300 hPa Temp') {
                     clickedSOUNDING12UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '200 hpa TEMP') {
+                if (layer_name == '200 hPa Temp') {
                     clickedSOUNDING12UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '100 hpa TEMP') {
+                if (layer_name == '100 hPa Temp') {
                     clickedSOUNDING12UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '50 hpa TEMP') {
+                if (layer_name == '50 hPa Temp') {
                     clickedSOUNDING12UTCTEMPLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -11329,7 +11394,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING12UTCTEMP_lists.innerHTML = clickedSOUNDING12UTCTEMPLists.join("");
         }
 
-        if (_this.context._layer?.group.name == "SOUNDING_00UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "Sounding_00UTC Dew Point") {
             if (panelLayerSOUNDING00UTCDEWPOINT_Title.innerHTML == '') {
                 SOUNDING.innerHTML = "SOUNDING"
                 panelLayerSOUNDING00UTCDEWPOINT_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -11339,49 +11404,49 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == '1000 hpa DEW POINT') {
+                if (layer_name == '1000 hPa Dew Point') {
                     clickedSOUNDING00UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '850 hpa DEW POINT') {
+                if (layer_name == '850 hPa Dew Point') {
                     clickedSOUNDING00UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '700 hpa DEW POINT') {
+                if (layer_name == '700 hPa Dew Point') {
                     clickedSOUNDING00UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '500 hpa DEW POINT') {
+                if (layer_name == '500 hPa Dew Point') {
                     clickedSOUNDING00UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '300 hpa DEW POINT') {
+                if (layer_name == '300 hPa Dew Point') {
                     clickedSOUNDING00UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '200 hpa DEW POINT') {
+                if (layer_name == '200 hPa Dew Point') {
                     clickedSOUNDING00UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '100 hpa DEW POINT') {
+                if (layer_name == '100 hPa Dew Point') {
                     clickedSOUNDING00UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '50 hpa DEW POINT') {
+                if (layer_name == '50 hPa Dew Point') {
                     clickedSOUNDING00UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -11391,7 +11456,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING00UTCDEWPOINT_lists.innerHTML = clickedSOUNDING00UTCDEWPOINTLists.join("");
         }
 
-        if (_this.context._layer?.group.name == "SOUNDING_12UTC DEW POINT") {
+        if (_this.context._layer?.group.name == "Sounding_12UTC Dew Point") {
             if (panelLayerSOUNDING12UTCDEWPOINT_Title.innerHTML == '') {
                 SOUNDING.innerHTML = "SOUNDING"
                 panelLayerSOUNDING12UTCDEWPOINT_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -11401,49 +11466,49 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == '1000 hpa DEW POINT') {
+                if (layer_name == '1000 hPa Dew Point') {
                     clickedSOUNDING12UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '850 hpa DEW POINT') {
+                if (layer_name == '850 hPa Dew Point') {
                     clickedSOUNDING12UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '700 hpa DEW POINT') {
+                if (layer_name == '700 hPa Dew Point') {
                     clickedSOUNDING12UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '500 hpa DEW POINT') {
+                if (layer_name == '500 hPa Dew Point') {
                     clickedSOUNDING12UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '300 hpa DEW POINT') {
+                if (layer_name == '300 hPa Dew Point') {
                     clickedSOUNDING12UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '200 hpa DEW POINT') {
+                if (layer_name == '200 hPa Dew Point') {
                     clickedSOUNDING12UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '100 hpa DEW POINT') {
+                if (layer_name == '100 hPa Dew Point') {
                     clickedSOUNDING12UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     soundingLegendImage();
                 }
-                if (layer_name == '50 hpa DEW POINT') {
+                if (layer_name == '50 hPa Dew Point') {
                     clickedSOUNDING12UTCDEWPOINTLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -11453,7 +11518,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayerSOUNDING12UTCDEWPOINT_lists.innerHTML = clickedSOUNDING12UTCDEWPOINTLists.join("");
         }
 
-        if (_this.context._layer?.group.name == "SHIP AND BUOY OBSERVATION") {
+        if (_this.context._layer?.group.name == "Ship and Buoy Observation") {
             if (panelLayerSHIPANDBUOY_Title.innerHTML == '') {
                 SHIPANDBUOY.innerHTML = "SHIP AND BUOY"
                 panelLayerSHIPANDBUOY_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -11636,7 +11701,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerWRFReflectivity_lists.innerHTML = clickedWRFReflectivityLists.join("");
         }
-        if (_this.context._layer?.group.name == "WRF lightning Product") {
+        if (_this.context._layer?.group.name == "WRF Lightning Product") {
             if (panelLayerWRFlightningProduct_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
                 panelLayerWRFlightningProduct_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -11646,7 +11711,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03Hrs') {
+                if (layer_name == 'Next 03 Hrs') {
                     clickedWRFlightningProductLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -11687,7 +11752,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerWRFAccumlatedRainfall_lists.innerHTML = clickedWRFAccumlatedRainfallLists.join("");
         }
-        if (_this.context._layer?.group.name == "lightning Potential index") {
+        if (_this.context._layer?.group.name == "Lightning Potential Index") {
             if (panelLayerlightningPotentialindex_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
                 panelLayerlightningPotentialindex_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -11716,9 +11781,10 @@ $("body").on("change", "input[type=checkbox]", function() {
                     lightningPotentialindexLegendImage();
                 }
             }
-            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join("");
+            panelLayerlightningPotentialindex_lists.innerHTML = clickedlightningPotentialindexLists.join(
+                "");
         }
-        if (_this.context._layer?.group.name == "NCUMR lightning Product") {
+        if (_this.context._layer?.group.name == "NCUMR Lightning Product") {
             if (panelLayerNCUMRlightningProduct_Title.innerHTML == '') {
                 MESOLSCALE.innerHTML = "MESOLSCALE FORECAST"
                 panelLayerNCUMRlightningProduct_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -11948,6 +12014,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayerEWRFLightning_lists.innerHTML = clickedEWRFLightningLists.join("");
         }
+
         // MEDIUM
         if (_this.context._layer?.group.name == "Rainfall Intensity Day1") {
             if (panelLayerRainfallIntensityDay1_Title.innerHTML == '') {
@@ -11959,37 +12026,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY1') {
+                if (layer_name == 'GFS Day1') {
                     clickedRainfallIntensityDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'NCUM DAY1') {
+                if (layer_name == 'NCUM Day1') {
                     clickedRainfallIntensityDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'NEPS DAY1') {
+                if (layer_name == 'NEPS Day1') {
                     clickedRainfallIntensityDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'WRF DAY1') {
+                if (layer_name == 'WRF Day1') {
                     clickedRainfallIntensityDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'GEFS DAY1') {
+                if (layer_name == 'GEFS Day1') {
                     clickedRainfallIntensityDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY1') {
+                if (layer_name == 'ECMWF Day1') {
                     clickedRainfallIntensityDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12008,37 +12075,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY2') {
+                if (layer_name == 'GFS Day2') {
                     clickedRainfallIntensityDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'NCUM DAY2') {
+                if (layer_name == 'NCUM Day2') {
                     clickedRainfallIntensityDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'NEPS DAY2') {
+                if (layer_name == 'NEPS Day2') {
                     clickedRainfallIntensityDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'WRF DAY2') {
+                if (layer_name == 'WRF Day2') {
                     clickedRainfallIntensityDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'GEFS DAY2') {
+                if (layer_name == 'GEFS Day2') {
                     clickedRainfallIntensityDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY2') {
+                if (layer_name == 'ECMWF Day2') {
                     clickedRainfallIntensityDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12057,37 +12124,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY3') {
+                if (layer_name == 'GFS Day3') {
                     clickedRainfallIntensityDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'NCUM DAY3') {
+                if (layer_name == 'NCUM Day3') {
                     clickedRainfallIntensityDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'NEPS DAY3') {
+                if (layer_name == 'NEPS Day3') {
                     clickedRainfallIntensityDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'WRF DAY3') {
+                if (layer_name == 'WRF Day3') {
                     clickedRainfallIntensityDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'GEFS DAY3') {
+                if (layer_name == 'GEFS Day3') {
                     clickedRainfallIntensityDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY3') {
+                if (layer_name == 'ECMWF Day3') {
                     clickedRainfallIntensityDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12106,37 +12173,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY4') {
+                if (layer_name == 'GFS Day4') {
                     clickedRainfallIntensityDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'NCUM DAY4') {
+                if (layer_name == 'NCUM Day4') {
                     clickedRainfallIntensityDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'NEPS DAY4') {
+                if (layer_name == 'NEPS Day4') {
                     clickedRainfallIntensityDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'WRF DAY4') {
+                if (layer_name == 'WRF Day4') {
                     clickedRainfallIntensityDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'GEFS DAY4') {
+                if (layer_name == 'GEFS Day4') {
                     clickedRainfallIntensityDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY4') {
+                if (layer_name == 'ECMWF Day4') {
                     clickedRainfallIntensityDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12155,37 +12222,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY5') {
+                if (layer_name == 'GFS Day5') {
                     clickedRainfallIntensityDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'NCUM DAY5') {
+                if (layer_name == 'NCUM Day5') {
                     clickedRainfallIntensityDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'NEPS DAY5') {
+                if (layer_name == 'NEPS Day5') {
                     clickedRainfallIntensityDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'WRF DAY5') {
+                if (layer_name == 'WRF Day5') {
                     clickedRainfallIntensityDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'GEFS DAY5') {
+                if (layer_name == 'GEFS Day5') {
                     clickedRainfallIntensityDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     RainfallIntensityLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY5') {
+                if (layer_name == 'ECMWF Day5') {
                     clickedRainfallIntensityDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12214,37 +12281,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY1') {
+                if (layer_name == 'GFS Day1') {
                     clickedMSLPDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'NCUM DAY1') {
+                if (layer_name == 'NCUM Day1') {
                     clickedMSLPDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'NEPS DAY1') {
+                if (layer_name == 'NEPS Day1') {
                     clickedMSLPDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'WRF DAY1') {
+                if (layer_name == 'WRF Day1') {
                     clickedMSLPDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'GEFS DAY1') {
+                if (layer_name == 'GEFS Day1') {
                     clickedMSLPDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY1') {
+                if (layer_name == 'ECMWF Day1') {
                     clickedMSLPDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12263,37 +12330,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY2') {
+                if (layer_name == 'GFS Day2') {
                     clickedMSLPDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'NCUM DAY2') {
+                if (layer_name == 'NCUM Day2') {
                     clickedMSLPDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'NEPS DAY2') {
+                if (layer_name == 'NEPS Day2') {
                     clickedMSLPDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'WRF DAY2') {
+                if (layer_name == 'WRF Day2') {
                     clickedMSLPDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'GEFS DAY2') {
+                if (layer_name == 'GEFS Day2') {
                     clickedMSLPDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY2') {
+                if (layer_name == 'ECMWF Day2') {
                     clickedMSLPDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12312,37 +12379,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY3') {
+                if (layer_name == 'GFS Day3') {
                     clickedMSLPDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'NCUM DAY3') {
+                if (layer_name == 'NCUM Day3') {
                     clickedMSLPDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'NEPS DAY3') {
+                if (layer_name == 'NEPS Day3') {
                     clickedMSLPDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'WRF DAY3') {
+                if (layer_name == 'WRF Day3') {
                     clickedMSLPDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'GEFS DAY3') {
+                if (layer_name == 'GEFS Day3') {
                     clickedMSLPDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY3') {
+                if (layer_name == 'ECMWF Day3') {
                     clickedMSLPDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12361,37 +12428,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY4') {
+                if (layer_name == 'GFS Day4') {
                     clickedMSLPDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'NCUM DAY4') {
+                if (layer_name == 'NCUM Day4') {
                     clickedMSLPDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'NEPS DAY4') {
+                if (layer_name == 'NEPS Day4') {
                     clickedMSLPDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'WRF DAY4') {
+                if (layer_name == 'WRF Day4') {
                     clickedMSLPDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'GEFS DAY4') {
+                if (layer_name == 'GEFS Day4') {
                     clickedMSLPDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY4') {
+                if (layer_name == 'ECMWF Day4') {
                     clickedMSLPDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12410,37 +12477,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY5') {
+                if (layer_name == 'GFS Day5') {
                     clickedMSLPDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'NCUM DAY5') {
+                if (layer_name == 'NCUM Day5') {
                     clickedMSLPDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'NEPS DAY5') {
+                if (layer_name == 'NEPS Day5') {
                     clickedMSLPDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'WRF DAY5') {
+                if (layer_name == 'WRF Day5') {
                     clickedMSLPDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'GEFS DAY5') {
+                if (layer_name == 'GEFS Day5') {
                     clickedMSLPDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     MSLPDayLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY5') {
+                if (layer_name == 'ECMWF Day5') {
                     clickedMSLPDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12454,7 +12521,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
 
-        if (_this.context._layer?.group.name == "10m WIND Day 1") {
+        if (_this.context._layer?.group.name == "10m Wind Day1") {
             if (panelLayer10mWINDDay1_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay1_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -12464,38 +12531,38 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name === 'GFS DAY1') {
+                if (layer_name === 'GFS Day1') {
                     clicked10mWINDDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
 
-                if (layer_name == 'NCUM DAY1') {
+                if (layer_name == 'NCUM Day1') {
                     clicked10mWINDDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'NEPS DAY1') {
+                if (layer_name == 'NEPS Day1') {
                     clicked10mWINDDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'WRF DAY1') {
+                if (layer_name == 'WRF Day1') {
                     clicked10mWINDDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'GEFS DAY1') {
+                if (layer_name == 'GEFS Day1') {
                     clicked10mWINDDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY1') {
+                if (layer_name == 'ECMWF Day1') {
                     clicked10mWINDDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12504,7 +12571,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayer10mWINDDay1_lists.innerHTML = clicked10mWINDDay1Lists.join("");
         }
-        if (_this.context._layer?.group.name == "10m WIND Day 2") {
+        if (_this.context._layer?.group.name == "10m Wind Day2") {
             if (panelLayer10mWINDDay2_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay2_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -12514,37 +12581,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY2') {
+                if (layer_name == 'GFS Day2') {
                     clicked10mWINDDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'NCUM DAY2') {
+                if (layer_name == 'NCUM Day2') {
                     clicked10mWINDDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'NEPS DAY2') {
+                if (layer_name == 'NEPS Day2') {
                     clicked10mWINDDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'WRF DAY2') {
+                if (layer_name == 'WRF Day2') {
                     clicked10mWINDDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'GEFS DAY2') {
+                if (layer_name == 'GEFS Day2') {
                     clicked10mWINDDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY2') {
+                if (layer_name == 'ECMWF Day2') {
                     clicked10mWINDDay2Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12553,7 +12620,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayer10mWINDDay2_lists.innerHTML = clicked10mWINDDay2Lists.join("");
         }
-        if (_this.context._layer?.group.name == "10m WIND Day 3") {
+        if (_this.context._layer?.group.name == "10m Wind Day3") {
             if (panelLayer10mWINDDay3_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay3_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -12563,37 +12630,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY3') {
+                if (layer_name == 'GFS Day3') {
                     clicked10mWINDDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'NCUM DAY3') {
+                if (layer_name == 'NCUM Day3') {
                     clicked10mWINDDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'NEPS DAY3') {
+                if (layer_name == 'NEPS Day3') {
                     clicked10mWINDDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'WRF DAY3') {
+                if (layer_name == 'WRF Day3') {
                     clicked10mWINDDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'GEFS DAY3') {
+                if (layer_name == 'GEFS Day3') {
                     clicked10mWINDDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY3') {
+                if (layer_name == 'ECMWF Day3') {
                     clicked10mWINDDay3Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12602,7 +12669,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayer10mWINDDay3_lists.innerHTML = clicked10mWINDDay3Lists.join("");
         }
-        if (_this.context._layer?.group.name == "10m WIND Day 4") {
+        if (_this.context._layer?.group.name == "10m Wind Day4") {
             if (panelLayer10mWINDDay4_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay4_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -12612,37 +12679,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY4') {
+                if (layer_name == 'GFS Day4') {
                     clicked10mWINDDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'NCUM DAY4') {
+                if (layer_name == 'NCUM Day4') {
                     clicked10mWINDDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'NEPS DAY4') {
+                if (layer_name == 'NEPS Day4') {
                     clicked10mWINDDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'WRF DAY4') {
+                if (layer_name == 'WRF Day4') {
                     clicked10mWINDDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'GEFS DAY4') {
+                if (layer_name == 'GEFS Day4') {
                     clicked10mWINDDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY4') {
+                if (layer_name == 'ECMWF Day4') {
                     clicked10mWINDDay4Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12651,7 +12718,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
             panelLayer10mWINDDay4_lists.innerHTML = clicked10mWINDDay4Lists.join("");
         }
-        if (_this.context._layer?.group.name == "10m WIND Day 5") {
+        if (_this.context._layer?.group.name == "10m Wind Day5") {
             if (panelLayer10mWINDDay5_Title.innerHTML == '') {
                 MEDIUM.innerHTML = "MEDIUM RANGE"
                 panelLayer10mWINDDay5_Title.innerHTML = _this.context._layer?.group.name + ':'
@@ -12661,37 +12728,37 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'GFS DAY5') {
+                if (layer_name == 'GFS Day5') {
                     clicked10mWINDDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'NCUM DAY5') {
+                if (layer_name == 'NCUM Day5') {
                     clicked10mWINDDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'NEPS DAY5') {
+                if (layer_name == 'NEPS Day5') {
                     clicked10mWINDDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'WRF DAY5') {
+                if (layer_name == 'WRF Day5') {
                     clicked10mWINDDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'GEFS DAY5') {
+                if (layer_name == 'GEFS Day5') {
                     clicked10mWINDDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     mWINDDayLegendImage();
                 }
-                if (layer_name == 'ECMWF DAY5') {
+                if (layer_name == 'ECMWF Day5') {
                     clicked10mWINDDay5Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -12706,7 +12773,9 @@ $("body").on("change", "input[type=checkbox]", function() {
         // debugger;
 
         console.log("unChecked");
-        var uncheckLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer?.name : _this
+        console.log(_this, "............_this");
+        var uncheckLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer?.name :
+            _this
             .context.className;
         console.log("uncheckLayer............", uncheckLayer);
         layer_name = _this.context._layer ? _this.context._layer?.name : _this.context.className;
@@ -12715,7 +12784,8 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (_this.context._layer?.group.name == "Exposure Layers") {
             if (layer_name == 'District Boundaries' || layer_name == 'Airport' || layer_name ==
                 'Oil Refineries' || layer_name == 'Power Station' || layer_name == 'Power Plant' ||
-                layer_name == 'DEM' || layer_name == 'Hospital' || layer_name == 'Industrail' || layer_name ==
+                layer_name == 'DEM' || layer_name == 'Hospital' || layer_name == 'Industrail' ||
+                layer_name ==
                 'sports' || layer_name == 'Road Network' || layer_name ==
                 'Socio Economic Zone' || layer_name == 'Railway Network' || layer_name == 'LULC') {
                 var itemToRemove = layer_group_name + " " + layer_name;
@@ -16145,137 +16215,146 @@ $("body").on("change", "input[type=checkbox]", function() {
         //Exposure UNCHECK
         if (uncheckLayer == 'Exposure Layers District Boundaries') {
             if (_this.context._layer) {
+                console.log("if part");
                 clickedExposureLists = clickedExposureLists.filter(checkList => {
                     let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
                     return clickedLayer != uncheckLayer
+                    console.log(clickedLayer, ".......clickedLayer");
                 });
                 panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+                // map.addLayer(X144);
             } else {
-                map.removeLayer(PuneMarker);
+                console.log("else part");
+                //
+                if (map.hasLayer(X144)) {
+                    map.removeLayer(X144);
+                } else {
+                    map.addLayer(X144);
+                }
             }
         }
-        // if (uncheckLayer == 'Exposure Layers Airport') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(MumbaiMarker);
-        // }
-        // if (uncheckLayer == 'Exposure Layers Hospital') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(BidarMarker);
-        // }
-        // if (uncheckLayer == 'Exposure Layers sports') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(PuneMarker);
-        // }
-        // if (uncheckLayer === 'Power Plant') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(VijayapuraMarker);
-        // }
-        // if (uncheckLayer == 'Exposure Layers Power Station') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(SolapurMarker);
-        // }
-        // if (uncheckLayer == 'Exposure Layers Oil Refineries') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(RanchiMarker);
-        // }
-        // if (uncheckLayer == 'Exposure Layers Industrail') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(BidarMarker);
-        // }
-        // if (uncheckLayer === 'Socio Economic Zone') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(PuneMarker);
-        // }
+        if (uncheckLayer == 'Exposure Layers Airport') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(MumbaiMarker);
+        }
+        if (uncheckLayer == 'Exposure Layers Hospital') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(BidarMarker);
+        }
+        if (uncheckLayer == 'Exposure Layers sports') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(PuneMarker);
+        }
+        if (uncheckLayer === 'Power Plant') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(VijayapuraMarker);
+        }
+        if (uncheckLayer == 'Exposure Layers Power Station') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(SolapurMarker);
+        }
+        if (uncheckLayer == 'Exposure Layers Oil Refineries') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(RanchiMarker);
+        }
+        if (uncheckLayer == 'Exposure Layers Industrail') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(BidarMarker);
+        }
+        if (uncheckLayer === 'Socio Economic Zone') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(PuneMarker);
+        }
 
-        // if (uncheckLayer == 'Exposure Layers Road Network') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(PuneMarker);
-        // }
-        // if (uncheckLayer == 'Exposure Layers Railway Network') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(PuneMarker);
-        // }
-        // if (uncheckLayer == 'Exposure Layers DEM') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(BidarMarker);
-        // }
-        // if (uncheckLayer == 'Exposure Layers LULC') {
-        //     clickedExposureLists = clickedExposureLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
-        //     map.removeLayer(PuneMarker);
-        // }
+        if (uncheckLayer == 'Exposure Layers Road Network') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(PuneMarker);
+        }
+        if (uncheckLayer == 'Exposure Layers Railway Network') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(PuneMarker);
+        }
+        if (uncheckLayer == 'Exposure Layers DEM') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(BidarMarker);
+        }
+        if (uncheckLayer == 'Exposure Layers LULC') {
+            clickedExposureLists = clickedExposureLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
+            map.removeLayer(PuneMarker);
+        }
 
-        // //
-        // if (panelLayerExposureLists.innerHTML == '') {
-        //     panelLayerExposureTitle.innerHTML = '';
-        //     EXPOSURE.innerHTML = '';
-        //     ExposureRow.style.display = 'flex';
-        // }
-        // console.log(layer_name, "layer_name");
+        //
+        if (panelLayerExposureLists.innerHTML == '') {
+            panelLayerExposureTitle.innerHTML = '';
+            EXPOSURE.innerHTML = '';
+            ExposureRow.style.display = 'flex';
+        }
+        console.log(layer_name, "layer_name");
 
-        // //GroupPanelLayer-collapsible-Exposure
-        // if (panelLayerExposureLists.innerHTML != '') {
-        //     var yyy = document.querySelectorAll('.collapsible')[0].classList.add('expanded');
-        //     document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
-        //     console.log(yyy);
-        // }
+        //GroupPanelLayer-collapsible-Exposure
+        if (panelLayerExposureLists.innerHTML != '') {
+            var yyy = document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+            console.log(yyy);
+        }
 
-        // //METAR UNCHECK
-        // if (uncheckLayer == 'METAR 00UTC TEMPERATURE') {
-        //     clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
-        //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
-        //         return clickedLayer != uncheckLayer
-        //     });
-        //     panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
-        //     map.removeLayer(SuratMarker);
-        // }
+        //METAR UNCHECK
+        if (uncheckLayer == 'METAR 00UTC TEMPERATURE') {
+            clickedMetarTempLists = clickedMetarTempLists.filter(checkList => {
+                let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
+                return clickedLayer != uncheckLayer
+            });
+            panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
+            map.removeLayer(SuratMarker);
+        }
         // if (uncheckLayer == 'METAR 00UTC DEW POINT TEMPERATURE') {
         //     clickedMetarDewPointLists = clickedMetarDewPointLists.filter(checkList => {
         //         let clickedLayer = checkList.split('" checked/>')[0].split('class="')[1]
