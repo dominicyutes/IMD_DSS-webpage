@@ -3061,14 +3061,48 @@ if (polylineDrawTool) {
 // });
 
 
-map.on('draw:created', function(e) {
+map.on('draw:created', function (e) {
     const layer = e.layer;
-    console.log(layer.toGeoJSON());
+    const userText = prompt('Enter Name:');
 
-    layer.bindPopup(`<p>${JSON.stringify(layer.toGeoJSON())}</p>`);
-    drawnItems.addLayer(layer);
+    if (userText !== null) {
+        const geoJSONData = layer.toGeoJSON();
+
+        // Replace "Feature" with the tool name
+        geoJSONData.geometry.type = getToolName(layer);
+
+        // Remove unnecessary properties from GeoJSON data
+        const simplifiedGeoJSON = {
+            type: geoJSONData.geometry.type,
+            coordinates: geoJSONData.geometry.coordinates
+        };
+
+        // Create popup content with user text and simplified GeoJSON
+        const popupContent = `<p>${userText}</p><p>${JSON.stringify(simplifiedGeoJSON)}</p>`;
+
+        layer.bindPopup(popupContent);
+
+        drawnItems.addLayer(layer);
+    }
 });
 
+function getToolName(layer) {
+    if (layer instanceof L.Marker) {
+        return "Marker";
+    } else if (layer instanceof L.Circle) {
+        return "Circle";
+    } else if (layer instanceof L.Rectangle) {
+        return "Rectangle";
+    } else if (layer instanceof L.Polygon) {
+        return "Polygon";
+    } else if (layer instanceof L.Polyline) {
+        return "LineString";
+    } else if (layer instanceof L.CircleMarker) {
+        return "CircleMarker";
+    } else {
+        return "Unknown";
+    }
+}
 
 //searchControl starts here
 L.Control.geocoder({
