@@ -5265,7 +5265,7 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_00",
                 layer: met00utc_tem,
             },
             {
@@ -9589,9 +9589,9 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //Metar00UTC-Temp
-        if (_class_name == 'METAR 00UTC Temperature') {
+        if (_class_name == 'METAR 00UTC Temperature_00') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_add = mywmsIITM;
+            var _layer_to_remove_add = met00utc_tem;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
@@ -11500,7 +11500,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 00UTC[]
         if (_this.context._layer?.group.name == "METAR 00UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_00') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
@@ -13924,7 +13924,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //METAR
         if (_this.context._layer?.group.name == "METAR 00UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_00') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
             if (layer_name == 'Dew Point Temperature') {
@@ -19932,9 +19932,9 @@ $("body").on("change", "input[type=checkbox]", function() {
         // **********************************************
 
         //METAR UNCHECK 00UTC Temp
-        if (uncheckLayer == 'METAR 00UTC Temperature') {
+        if (uncheckLayer == 'METAR 00UTC Temperature_00') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_or_add = mywmsIITM;
+            var _layer_to_remove_or_add = met00utc_tem;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 00UTC DPT
