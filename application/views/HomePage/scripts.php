@@ -2353,7 +2353,7 @@ let countingElement = document.getElementById("counting");
 
 function startCountdown() {
     if (playerTextElement.innerHTML.trim() !== "") {
-        let count = 7;
+        let count = 3;
 
         let countdownInterval = setInterval(function() {
             countingElement.innerHTML = count;
@@ -2405,7 +2405,7 @@ async function playMacro(macroGroupName) {
                             resolve();
                             playerText.innerHTML = '';
                             startCountdown();
-                        }, 9000);
+                        }, 5000);
                         console.log("1-Radar Reflectivity");
 
                     });
@@ -2427,7 +2427,7 @@ async function playMacro(macroGroupName) {
                                 resolve();
                                 playerText.innerHTML = '';
                                 startCountdown();
-                            }, 9000);
+                            }, 5000);
                             console.log("2-00UTC");
                         });
                     }
@@ -2449,7 +2449,7 @@ async function playMacro(macroGroupName) {
                                 resolve();
                                 playerText.innerHTML = '';
                                 startCountdown();
-                            }, 9000);
+                            }, 5000);
                             console.log("3-TIR1");
                         });
                     }
@@ -2471,7 +2471,7 @@ async function playMacro(macroGroupName) {
                                 resolve();
                                 playerText.innerHTML = '';
                                 startCountdown();
-                            }, 9000);
+                            }, 5000);
                             console.log("4-Oil Refineries");
                         });
                     }
@@ -2494,7 +2494,7 @@ async function playMacro(macroGroupName) {
                                 resolve();
                                 playerText.innerHTML = '';
                                 startCountdown();
-                            }, 9000);
+                            }, 5000);
                             console.log("5-RI GFS DAY1");
                         });
                     }
