@@ -697,7 +697,7 @@ body {
 
 .leaflet-top.leaflet-right .leaflet-panel-layers:not(.compact) {
     margin: 7px;
-    /* height: 505px; */
+    height: 700px;
     /* top: -39px; */
 }
 
