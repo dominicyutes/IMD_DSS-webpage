@@ -2367,15 +2367,17 @@ function startCountdown() {
     }
 }
 
-
+//
 let macro_SubParameter;
 let resolveFunction;
-let DBsetT;
-let pmL_L_5_10;
-let pmL_L_10_15;
+//
+let RR_var;
+let SAB_00var;
+let SAT_TIR1;
 let OilExVar;
 let GFS_1_RI;
 
+// playMacro
 async function playMacro(macroGroupName) {
     let macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
 
@@ -2387,67 +2389,68 @@ async function playMacro(macroGroupName) {
             document.getElementById("macroDetails").style.display = "block";
 
             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                if (macro_SubParameter === "Last 00-05 min") {
+
+                if (macro_SubParameter === "Radar Reflectivity") {
                     await new Promise(resolve => {
                         resolveFunction = resolve;
-                        DBsetT = setInterval(function() {
+                        RR_var = setInterval(function() {
                             map.addLayer(mywmsIITM);
-                            playerText.innerHTML = 'Lightning Last 00-05 min';
+                            playerText.innerHTML = 'Radar Reflectivity';
                             startCountdown();
                         }, 1000);
 
                         setTimeout(function() {
                             map.removeLayer(mywmsIITM);
-                            clearInterval(DBsetT);
+                            clearInterval(RR_var);
                             resolve();
                             playerText.innerHTML = '';
                             startCountdown();
                         }, 9000);
-                        console.log("1-Last 00-05 min");
+                        console.log("1-Radar Reflectivity");
 
                     });
                 }
 
                 if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                    if (macro_SubParameter === "Last 05-10 min") {
+                    if (macro_SubParameter === "00UTC") {
                         await new Promise(resolve => {
                             resolveFunction = resolve;
-                            pmL_L_5_10 = setInterval(function() {
+                            SAB_00var = setInterval(function() {
                                 map.addLayer(mywmsNcum);
-                                playerText.innerHTML = 'Lightning Last 05-10 min';
+                                playerText.innerHTML = 'Ship and Buoy 00UTC';
                                 startCountdown();
                             }, 1000);
 
                             setTimeout(function() {
                                 map.removeLayer(mywmsNcum);
-                                clearInterval(pmL_L_5_10);
+                                clearInterval(SAB_00var);
                                 resolve();
                                 playerText.innerHTML = '';
                                 startCountdown();
                             }, 9000);
-                            console.log("2-Last 05-10 min");
+                            console.log("2-00UTC");
                         });
                     }
                 }
 
                 if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                    if (macro_SubParameter === "Last 10-15 min") {
+                    if (macro_SubParameter === "TIR1") {
                         await new Promise(resolve => {
                             resolveFunction = resolve;
-                            pmL_L_10_15 = setInterval(function() {
+                            SAT_TIR1 = setInterval(function() {
                                 map.addLayer(mywmsNowcast);
-                                playerText.innerHTML = 'Lightning Last 10-15 min';
+                                playerText.innerHTML = 'Satellite Observation TIR1';
                                 startCountdown();
                             }, 1000);
 
                             setTimeout(function() {
                                 map.removeLayer(mywmsNowcast);
-                                clearInterval(pmL_L_10_15);
+                                clearInterval(SAT_TIR1);
                                 resolve();
                                 playerText.innerHTML = '';
                                 startCountdown();
                             }, 9000);
-                            console.log("3-Last 10-15 min");
+                            console.log("3-TIR1");
                         });
                     }
                 }
@@ -2633,7 +2636,7 @@ function updateForm() {
         timeZone: "Asia/Kolkata"
     });
 
-    viewAddedAndDeletedMacro();
+    // viewAddedAndDeletedMacro();
 
     document.getElementById('mac_modelNames').value = '';
     document.getElementById('mac_parameterNames').value = '';
@@ -3530,7 +3533,7 @@ L.control.mousePosition({
 function macroRunFnX() {
     setTimeout(function() {
         map.removeLayer(mywmsIITM);
-        clearInterval(DBsetT);
+        clearInterval(RR_var);
         resolveFunction();
         playerText.innerHTML = '';
         startCountdown();
@@ -3539,7 +3542,7 @@ function macroRunFnX() {
     //
     setTimeout(function() {
         map.removeLayer(mywmsNcum);
-        clearInterval(pmL_L_5_10);
+        clearInterval(SAB_00var);
         resolveFunction();
         playerText.innerHTML = '';
         startCountdown();
@@ -3548,7 +3551,7 @@ function macroRunFnX() {
     //
     setTimeout(function() {
         map.removeLayer(mywmsNowcast);
-        clearInterval(pmL_L_10_15);
+        clearInterval(SAT_TIR1);
         resolveFunction();
         playerText.innerHTML = '';
         startCountdown();
@@ -6621,7 +6624,7 @@ var overLayers6 = [{
         layers: [{
                 active: false,
                 name: "TIR1",
-                layer: X157
+                layer: mywmsNowcast
             },
             {
                 active: false,
@@ -6682,7 +6685,7 @@ var overLayers7 = [{
         layers: [{
                 active: false,
                 name: "Radar Reflectivity",
-                layer: X248
+                layer: mywmsIITM
             },
             {
                 active: false,
@@ -7026,7 +7029,7 @@ var overLayers10 = [{
         {
             active: false,
             name: "Airport",
-            layer: Airport
+            layer: mywmsIITM
         },
         {
             active: false,
@@ -7096,7 +7099,7 @@ var overLayers11 = [{
     layers: [{
             active: false,
             name: "00UTC",
-            layer: X224
+            layer: mywmsNcum
         },
         {
             active: false,
@@ -10745,7 +10748,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         // Radar
         if (_class_name == 'Radar Products Radar Reflectivity') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_add = X248;
+            var _layer_to_remove_add = mywmsIITM;
             remove_layer_or_add_Radar(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
@@ -16437,7 +16440,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 00UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 00UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -20551,6 +20554,16 @@ $("body").on("change", "input[type=checkbox]", function() {
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
+        // METAR.innerHTML
+        if (
+            panelLayermetarTemp_lists.innerText === '' &&
+            panelLayermetarDewPoint_lists.innerText === '' &&
+            panelLayermetarVisibility_lists.innerText === '' &&
+            panelLayermetarWindSpeedAndDirection_lists.innerText === ''
+        ) {
+            METAR.innerHTML = '';
+        }
+
         // MetarTemp
         if (panelLayermetarTemp_lists.innerHTML == '') {
             panelLayermetarTemp_Title.innerHTML = '';
@@ -20579,15 +20592,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             metarWindSpeedAndDirectionLegendImage.innerHTML = '';
         }
 
-        // METAR.innerHTML
-        if (
-            panelLayermetarTemp_lists.innerText === '' &&
-            panelLayermetarDewPoint_lists.innerText === '' &&
-            panelLayermetarVisibility_lists.innerText === '' &&
-            panelLayermetarWindSpeedAndDirection_lists.innerText === ''
-        ) {
-            METAR.innerHTML = '';
-        }
+
 
 
         //UNCHECK SYNOP 00UTC Temp
@@ -21134,7 +21139,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         // Radar
         if (uncheckLayer == 'Radar Products Radar Reflectivity') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_add = X248;
+            var _layer_to_remove_add = mywmsIITM;
             remove_layer_or_add_Radar(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
