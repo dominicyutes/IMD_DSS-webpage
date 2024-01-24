@@ -2907,14 +2907,14 @@ const darkGreyCanvas = L.tileLayer(
 
 // dummy data for testing start
 //synop
-// const syn00utc_tem = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "syn00utc_tem"
-// });
+const syn00utc_tem = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:HW_Annual_Days',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "HW_Annual_Days",
+    layerName: "syn00utc_tem"
+});
 
 // const syn00utc_men = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
 //     layers: 'cite:LLWS_12hr_fcst_FL',
@@ -2935,14 +2935,14 @@ const darkGreyCanvas = L.tileLayer(
 // });
 
 //metar
-// const met00utc_tem = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "met00utc_tem"
-// });
+const met00utc_tem = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:HW_Annual_Days',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "awssample",
+    layerName: "HW_Annual_Days"
+});
 
 // const met00utc_dew = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
 //     layers: 'cite:LLWS_12hr_fcst_FL',
@@ -2982,23 +2982,23 @@ const darkGreyCanvas = L.tileLayer(
 // });
 
 //medium
-// const med_gfs1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "med_gfs1"
-// });
+const med_gfs1 = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_C7',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_C7",
+    layerName: "med_gfs1"
+});
 
-// const med_ncum1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "med_ncum1"
-// });
+const med_ncum1 = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day7_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day7_Mask",
+    layerName: "med_ncum1"
+});
 
 // const med_neps1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
 //     layers: 'aasdagrometgis:Nowcast',
@@ -3102,14 +3102,14 @@ const darkGreyCanvas = L.tileLayer(
 //     layerName: "exp_air"
 // });
 
-// const exp_oil = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "exp_oil"
-// });
+const exp_oil = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:MAJOR_TOWNS',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "MAJOR_TOWNS",
+    layerName: "exp_oil"
+});
 
 //ship and buoy
 // const ship_00utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
@@ -4881,7 +4881,7 @@ const overLayers2 = [{
         layers: [{
                 active: false,
                 name: "Temperature",
-                layer: ggg,
+                layer: syn00utc_tem,
             },
             {
                 active: false,
@@ -5269,7 +5269,7 @@ var overLayers3 = [{
         layers: [{
                 active: false,
                 name: "Temperature",
-                layer: mywmsIITM,
+                layer: met00utc_tem,
             },
             {
                 active: false,
@@ -6154,12 +6154,12 @@ var overLayers5 = [
         layers: [{
                 active: false,
                 name: "GFS Day1",
-                layer: X280
+                layer: med_gfs1,
             },
             {
                 active: false,
                 name: "NCUM Day1",
-                layer: X281
+                layer: med_ncum1,
             },
             {
                 active: false,
@@ -7034,7 +7034,7 @@ var overLayers10 = [{
         {
             active: false,
             name: "Oil Refineries",
-            layer: X169
+            layer: exp_oil ,
         },
         {
             active: false,
