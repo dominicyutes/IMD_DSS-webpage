@@ -3219,9 +3219,12 @@ var baseMaps = [{
 ];
 
 // styleEditor starts here
-map.addControl(L.control.styleEditor({
-    position: "topleft"
-}))
+var styleEditor = L.control.styleEditor({
+        position: "topleft",
+        useGrouping: false,
+        openOnLeafletDraw: true,
+    });
+    map.addControl(styleEditor);
 
 var styleEditor = document.querySelector('.leaflet-control-styleeditor-interior');
 if (styleEditor) {
@@ -3291,14 +3294,91 @@ if (polylineDrawTool) {
 // });
 
 
-map.on('draw:created', function(e) {
-    const layer = e.layer;
-    console.log(layer.toGeoJSON());
+// map.on('draw:created', function (e) {
+//     const layer = e.layer;
+//     const userText = prompt('Enter Name:');
 
-    layer.bindPopup(`<p>${JSON.stringify(layer.toGeoJSON())}</p>`);
-    drawnItems.addLayer(layer);
+//     if (userText !== null) {
+//         const geoJSONData = layer.toGeoJSON();
+
+//         // Replace "Feature" with the tool name
+//         geoJSONData.geometry.type = getToolName(layer);
+
+//         // Remove unnecessary properties from GeoJSON data
+//         const simplifiedGeoJSON = {
+//             type: geoJSONData.geometry.type,
+//             coordinates: geoJSONData.geometry.coordinates
+//         };
+
+//         // Create popup content with user text and simplified GeoJSON
+//         const popupContent = `<p>${userText}</p><p>${JSON.stringify(simplifiedGeoJSON)}</p>`;
+
+//         layer.bindPopup(popupContent);
+
+//         drawnItems.addLayer(layer);
+//     }
+// });
+
+// Assuming you have included Leaflet and Leaflet.Draggable libraries
+
+map.on('draw:created', function (e) {
+    const layer = e.layer;
+    const userText = prompt('Enter Name:');
+
+    if (userText !== null) {
+        const geoJSONData = layer.toGeoJSON();
+
+        const popupContent = `<p>${userText}</p>`;
+
+        layer.bindPopup(popupContent, { draggable: true });
+
+        // Add the layer to the drawn items
+        drawnItems.addLayer(layer);
+
+        setTimeout(function () {
+            // Open the popup
+            layer.openPopup();
+
+            // Make the popup draggable
+            const popup = layer.getPopup();
+            const popupContainer = popup._container;
+
+            L.DomUtil.addClass(popupContainer, 'leaflet-popup-draggable');
+            L.DomEvent.on(popupContainer, 'mousedown', function () {
+                L.DomUtil.addClass(popupContainer, 'leaflet-grab');
+            });
+
+            L.DomEvent.on(popupContainer, 'mouseup', function () {
+                L.DomUtil.removeClass(popupContainer, 'leaflet-grab');
+            });
+
+            const popupDraggable = new L.Draggable(popupContainer, popupContainer);
+            popupDraggable.enable();
+
+        }, 0);
+    }
 });
 
+
+
+
+// function getToolName(layer) {
+//     if (layer instanceof L.Marker) {
+//         return "Marker";
+//     } else if (layer instanceof L.Circle) {
+//         return "Circle";
+//     } else if (layer instanceof L.Rectangle) {
+//         return "Rectangle";
+//     } else if (layer instanceof L.Polygon) {
+//         return "Polygon";
+//     } else if (layer instanceof L.Polyline) {
+//         return "LineString";
+//     } else if (layer instanceof L.CircleMarker) {
+//         return "CircleMarker";
+//     } else {
+//         return "Unknown";
+//     }
+// }
 
 // Selector for the geocoding control
 var geocoderControl = document.querySelector('.leaflet-control-geocoder');
