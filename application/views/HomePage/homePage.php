@@ -473,7 +473,7 @@
         </div>
 
         <!-- MACRO Run model; display: none; -->
-        <div id="macroDetails" class="modal" style="display:none;width: 361px; left: 11%; top: 90%;">
+        <div id="macroDetails" class="modal" style="display:none;width: 500px; left: 11%; top: 90%;">
             <div class="modal-content"
                 style="z-index: 999 ; font-family: Arial, sans-serif; background-color: #ffffff; border-radius: 10px; align-items: center;">
 
@@ -491,9 +491,8 @@
                         <button class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs"
                                 style="color: #000000;"></i></button>
 
-                        <span
-                            style="font-size: 17px;font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temperature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        <span class="playBtnClasCount" id="counting">10</span>
+                        <span style="font-size: 17px;font-weight: bold; padding: 0 10px" id="playerText"></span>
+                        <span class="playBtnClasCount" id="counting"></span>
                         <span class="vertical-line"></span>
                         <span class="playBtnClasX" id="closingPlayBtn" onClick="macroRunFnX()">X</span>
                     </div>
@@ -966,32 +965,32 @@ documentTitleClass: 'print-title'
 <!-- </script> -->
 
 <script>
-function generate_report_and_save() {
-    $(".printbutton").click(function() {
-        $(this).addClass('running');
-        html2canvas($("#map"), {
-            useCORS: true,
-            allowTaint: false,
-            onrendered: function(canvas) {
-                var image = Canvas2Image.convertToPNG(canvas);
-                var image_data = $(image).attr('src');
-                var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo site_url(); ?>Welcome/saveReportImg",
-                    data: {
-                        base64: image_data,
-                        r_file_name: random_name
-                    },
-                    success: function() {
-                        generate_report('map_img_' + random_name + '.jpeg');
-                    }
-                });
-            }
-        });
+// function generate_report_and_save() {
+//     $(".printbutton").click(function() {
+//         $(this).addClass('running');
+//         html2canvas($("#map"), {
+//             useCORS: true,
+//             allowTaint: false,
+//             onrendered: function(canvas) {
+//                 var image = Canvas2Image.convertToPNG(canvas);
+//                 var image_data = $(image).attr('src');
+//                 var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
+//                 $.ajax({
+//                     type: "POST",
+//                     url: "<?php echo site_url(); ?>Welcome/saveReportImg",
+//                     data: {
+//                         base64: image_data,
+//                         r_file_name: random_name
+//                     },
+//                     success: function() {
+//                         generate_report('map_img_' + random_name + '.jpeg');
+//                     }
+//                 });
+//             }
+//         });
 
-    });
-}
+//     });
+// }
 
 // function printDiv(imageFileName) {
 //     function getCurrentDateTime() {
@@ -1019,18 +1018,18 @@ function generate_report_and_save() {
 //         "<span style='float: right;'><label>" + formattedDateTime + "</label></span></div>"
 //     );
 
-//     // win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
-//     //     '" style="page-break-before: always;"/>');
+//     win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
+//         '" style="page-break-before: always;"/>');
 
 //     var base_url = "<?php echo base_url(); ?>";
 //     win.document.write('<img src="' + base_url + 'pdf/' + imageFileName + '" style="page-break-before: always;"/>');
 
 //     win.setTimeout('win.document.print();', 200);
 
-//     // win.document.onload = function() {
-//     //     this.print();
-//     //     this.close();
-//     // };
-//     // win.document.close();
+//     win.document.onload = function() {
+//         this.print();
+//         this.close();
+//     };
+//     win.document.close();
 // }
 </script>
