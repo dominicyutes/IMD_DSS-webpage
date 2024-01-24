@@ -2043,14 +2043,14 @@ function obs_SubmitForm() {
                 document.getElementById('start_date').value = "";
                 hourSelect.innerHTML = "";
                 minuteSelect.innerHTML = "";
-            }, 6000);
+            }, 10000);
 
             let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
                 "Parameter: " + parameter_Names + "\n" +
                 "SubParameter: " + sub_parameter + "\n" +
                 "Start Date: " + fromDate + "\n" +
                 "Time: " + hour_Select + ":" + minute_Select;
-            alert(message);
+            // alert(message);
         }
     }
 
