@@ -5281,7 +5281,7 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_00",
                 layer: met00utc_tem,
             },
             {
