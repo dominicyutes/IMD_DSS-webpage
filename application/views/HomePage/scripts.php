@@ -2348,58 +2348,6 @@ function showSavedMacroList() {
     }
 }
 
-
-// function param1() {
-//     if (macro_SubParameter === "Airport") {
-
-//         let AirPsetT = setTimeout(function() {
-//             map.addLayer(Airport);
-//         }, 2000);
-
-//         setTimeout(function() {
-//             map.removeLayer(Airport);
-//             clearTimeout(AirPsetT);
-
-//         }, 6000);
-//         console.log("2-Airport");
-
-//     }
-
-// }
-
-// function param2() {
-//     if (macro_SubParameter === "Last 00-05 min") {
-
-//         let DBsetT = setTimeout(function() {
-//             map.addLayer(mywmsIITM);
-//         }, 2000);
-
-//         setInterval(function() {
-//             map.removeLayer(mywmsIITM);
-//             clearTimeout(DBsetT);
-
-//         }, 6000);
-//         console.log("1-Last 00-05 min 1");
-
-//     }
-// }
-
-// function playMacro(macroGroupName) {
-//     let macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
-//     debugger;
-//     if (macro) {
-//         macro.listOfMacro.forEach(async macroDetails => {
-//             macro_SubParameter = macroDetails.mac_sub_parameter;
-//             console.log(macro_SubParameter, "macro_SubParameter");
-//             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-//                 await param1();
-//                 await param2();
-//             }
-//         });
-//     }
-//     document.getElementById("macroDetails").style.display = "block";
-// }
-
 let playerTextElement = document.getElementById("playerText");
 let countingElement = document.getElementById("counting");
 
@@ -2419,7 +2367,12 @@ function startCountdown() {
     }
 }
 
+
 let macro_SubParameter;
+let resolveFunction;
+let DBsetT;
+let pmL_L_5_10;
+let pmL_L_10_15;
 
 async function playMacro(macroGroupName) {
     let macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
@@ -2434,7 +2387,8 @@ async function playMacro(macroGroupName) {
             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
                 if (macro_SubParameter === "Last 00-05 min") {
                     await new Promise(resolve => {
-                        let DBsetT = setInterval(function() {
+                        resolveFunction = resolve;
+                        DBsetT = setInterval(function() {
                             map.addLayer(mywmsIITM);
                             playerText.innerHTML = 'Lightning Last 00-05 min';
                             startCountdown();
@@ -2454,7 +2408,8 @@ async function playMacro(macroGroupName) {
                 if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
                     if (macro_SubParameter === "Last 05-10 min") {
                         await new Promise(resolve => {
-                            let pmL_L_5_10 = setInterval(function() {
+                            resolveFunction = resolve;
+                            pmL_L_5_10 = setInterval(function() {
                                 map.addLayer(mywmsNcum);
                                 playerText.innerHTML = 'Lightning Last 05-10 min';
                                 startCountdown();
@@ -2473,11 +2428,12 @@ async function playMacro(macroGroupName) {
                 }
 
                 if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                    if (macro_SubParameter === "Lightning Last 10-15 min") {
+                    if (macro_SubParameter === "Last 10-15 min") {
                         await new Promise(resolve => {
-                            let pmL_L_10_15 = setInterval(function() {
+                            resolveFunction = resolve;
+                            pmL_L_10_15 = setInterval(function() {
                                 map.addLayer(mywmsNowcast);
-                                playerText.innerHTML = 'Last 10-15 min';
+                                playerText.innerHTML = 'Lightning Last 10-15 min';
                                 startCountdown();
                             }, 1000);
 
@@ -2719,15 +2675,15 @@ function createMacroForm() {
     create_Macro.style.display = "block";
 }
 
-// 
-const mywmsIITM = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-    layers: 'cite:awssample',
-    format: 'image/png',
-    transparent: true,
-    version: '1.1.0',
-    attribution: "awssample",
-    layerName: "mywmsIITM"
-});
+const mywmsIITM = L.tileLayer.wms(
+    "http://103.215.208.107:8585/geoserver/cite/wms", {
+        layers: 'cite:awssample',
+        format: 'image/png',
+        transparent: true,
+        version: '1.1.0',
+        attribution: "awssample",
+        layerName: "mywmsIITM"
+    });
 
 const mywmsNcum = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
     layers: 'cite:LLWS_12hr_fcst_FL',
@@ -2765,7 +2721,9 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
 //     cursor: true
 // }).setView([22.79459, 80.06406]);
 
-//MAP
+
+
+//MAP Starts Here
 var startDate = new Date();
 
 // Your Leaflet map initialization
@@ -3220,11 +3178,11 @@ var baseMaps = [{
 
 // styleEditor starts here
 var styleEditor = L.control.styleEditor({
-        position: "topleft",
-        useGrouping: false,
-        openOnLeafletDraw: true,
-    });
-    map.addControl(styleEditor);
+    position: "topleft",
+    useGrouping: false,
+    openOnLeafletDraw: true,
+});
+map.addControl(styleEditor);
 
 var styleEditor = document.querySelector('.leaflet-control-styleeditor-interior');
 if (styleEditor) {
@@ -3321,7 +3279,7 @@ if (polylineDrawTool) {
 
 // Assuming you have included Leaflet and Leaflet.Draggable libraries
 
-map.on('draw:created', function (e) {
+map.on('draw:created', function(e) {
     const layer = e.layer;
     const userText = prompt('Enter Name:');
 
@@ -3330,12 +3288,14 @@ map.on('draw:created', function (e) {
 
         const popupContent = `<p>${userText}</p>`;
 
-        layer.bindPopup(popupContent, { draggable: true });
+        layer.bindPopup(popupContent, {
+            draggable: true
+        });
 
         // Add the layer to the drawn items
         drawnItems.addLayer(layer);
 
-        setTimeout(function () {
+        setTimeout(function() {
             // Open the popup
             layer.openPopup();
 
@@ -3344,11 +3304,11 @@ map.on('draw:created', function (e) {
             const popupContainer = popup._container;
 
             L.DomUtil.addClass(popupContainer, 'leaflet-popup-draggable');
-            L.DomEvent.on(popupContainer, 'mousedown', function () {
+            L.DomEvent.on(popupContainer, 'mousedown', function() {
                 L.DomUtil.addClass(popupContainer, 'leaflet-grab');
             });
 
-            L.DomEvent.on(popupContainer, 'mouseup', function () {
+            L.DomEvent.on(popupContainer, 'mouseup', function() {
                 L.DomUtil.removeClass(popupContainer, 'leaflet-grab');
             });
 
@@ -3590,6 +3550,33 @@ L.control.mousePosition({
 }).addTo(map);
 
 function macroRunFnX() {
+    setTimeout(function() {
+        map.removeLayer(mywmsIITM);
+        clearInterval(DBsetT);
+        resolveFunction();
+        playerText.innerHTML = '';
+        startCountdown();
+    }, 1000);
+
+    //
+    setTimeout(function() {
+        map.removeLayer(mywmsNcum);
+        clearInterval(pmL_L_5_10);
+        resolveFunction();
+        playerText.innerHTML = '';
+        startCountdown();
+    }, 1000);
+
+    //
+    setTimeout(function() {
+        map.removeLayer(mywmsNowcast);
+        clearInterval(pmL_L_10_15);
+        resolveFunction();
+        playerText.innerHTML = '';
+        startCountdown();
+    }, 1000);
+
+    //
     document.getElementById("macroDetails").style.display = "none";
 }
 
