@@ -3069,9 +3069,12 @@ var baseMaps = [{
 ];
 
 // styleEditor starts here
-map.addControl(L.control.styleEditor({
-    position: "topleft"
-}))
+var styleEditor = L.control.styleEditor({
+        position: "topleft",
+        useGrouping: false,
+        openOnLeafletDraw: true,
+    });
+    map.addControl(styleEditor);
 
 var styleEditor = document.querySelector('.leaflet-control-styleeditor-interior');
 if (styleEditor) {
