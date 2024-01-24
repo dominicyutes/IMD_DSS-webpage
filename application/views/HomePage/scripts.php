@@ -2019,7 +2019,7 @@ for (let MS = 0; MS < 60; MS++) {
 getMinSelect.innerHTML = pushMinSelect;
 
 //submitForm for observation
-function submitForm() {
+function obs_SubmitForm() {
     let model_Names = document.getElementById('modelNames').value;
     let parameter_Names = document.getElementById('parameterNames').value;
     let sub_parameter = document.getElementById('subparameter').value;
@@ -2027,12 +2027,57 @@ function submitForm() {
     let hour_Select = document.getElementById('hourSelect').value;
     let minute_Select = document.getElementById('minuteSelect').value;
 
-    let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
-        "Parameter: " + parameter_Names + "\n" +
-        "SubParameter: " + sub_parameter + "\n" +
-        "Start Date: " + fromDate + "\n" +
-        "Time: " + hour_Select + ":" + minute_Select;
-    alert(message);
+    let TimeForObs = hour_Select + ":" + minute_Select;
+
+    if (sub_parameter === "Temperature_00") {
+        if (TimeForObs === "5:30") {
+            let obstesting1 = setInterval(function() {
+                map.addLayer(met00utc_tem);
+            }, 1000);
+            setTimeout(function() {
+                map.removeLayer(met00utc_tem);
+                clearInterval(obstesting1);
+                modelNames.innerHTML = "";
+                parameterNames.innerHTML = "";
+                subparameter.innerHTML = "";
+                document.getElementById('start_date').value = "";
+                hourSelect.innerHTML = "";
+                minuteSelect.innerHTML = "";
+            }, 6000);
+
+            let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
+                "Parameter: " + parameter_Names + "\n" +
+                "SubParameter: " + sub_parameter + "\n" +
+                "Start Date: " + fromDate + "\n" +
+                "Time: " + hour_Select + ":" + minute_Select;
+            alert(message);
+        }
+    }
+
+    if (sub_parameter === "00UTC") {
+        if (TimeForObs === "5:30") {
+            let obstesting2 = setInterval(function() {
+                map.addLayer(mywmsNcum);
+            }, 1000);
+            setTimeout(function() {
+                map.removeLayer(mywmsNcum);
+                clearInterval(obstesting2);
+                modelNames.innerHTML = "";
+                parameterNames.innerHTML = "";
+                subparameter.innerHTML = "";
+                document.getElementById('start_date').value = "";
+                hourSelect.innerHTML = "";
+                minuteSelect.innerHTML = "";
+            }, 6000);
+
+            let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
+                "Parameter: " + parameter_Names + "\n" +
+                "SubParameter: " + sub_parameter + "\n" +
+                "Start Date: " + fromDate + "\n" +
+                "Time: " + hour_Select + ":" + minute_Select;
+            alert(message);
+        }
+    }
 }
 
 //MACRO toggle
