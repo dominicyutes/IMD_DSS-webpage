@@ -1426,7 +1426,7 @@ let subParametersList = [{
         category: 'EWRF Lightning'
     },
     {
-        name: 'GFS DAY1',
+        name: 'RI GFS DAY1',
         category: 'Rainfall Intensity Day1'
     },
     {
@@ -2373,6 +2373,8 @@ let resolveFunction;
 let DBsetT;
 let pmL_L_5_10;
 let pmL_L_10_15;
+let OilExVar;
+let GFS_1_RI;
 
 async function playMacro(macroGroupName) {
     let macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
@@ -2405,6 +2407,7 @@ async function playMacro(macroGroupName) {
 
                     });
                 }
+
                 if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
                     if (macro_SubParameter === "Last 05-10 min") {
                         await new Promise(resolve => {
@@ -2449,25 +2452,52 @@ async function playMacro(macroGroupName) {
                     }
                 }
 
-                if (macro_SubParameter === "Airport") {
-                    await new Promise(resolve => {
-                        let AirPsetT = setTimeout(function() {
-                            map.addLayer(Airport);
-                            playerText.innerHTML = 'Exposure Airport';
-                            startCountdown();
-                        }, 1000);
+                if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+                    if (macro_SubParameter === "Oil Refineries") {
+                        await new Promise(resolve => {
+                            resolveFunction = resolve;
+                            OilExVar = setInterval(function() {
+                                map.addLayer(exp_oil);
+                                playerText.innerHTML = 'Exposure Oil Refineries';
+                                startCountdown();
+                            }, 1000);
 
-                        setTimeout(function() {
-                            map.removeLayer(Airport);
-                            clearTimeout(AirPsetT);
-                            resolve();
-                            playerText.innerHTML = '';
-                            startCountdown();
-                        }, 9000);
-                        console.log("4-Airport");
-                    });
+                            setTimeout(function() {
+                                map.removeLayer(exp_oil);
+                                clearInterval(OilExVar);
+                                resolve();
+                                playerText.innerHTML = '';
+                                startCountdown();
+                            }, 9000);
+                            console.log("4-Oil Refineries");
+                        });
+                    }
                 }
-                console.log("play macro over");
+
+                if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+                    if (macro_SubParameter === "RI GFS DAY1") {
+                        console.log(macro_SubParameter, "macro_SubParameter");
+                        await new Promise(resolve => {
+                            resolveFunction = resolve;
+                            GFS_1_RI = setTimeout(function() {
+                                map.addLayer(med_gfs1);
+                                playerText.innerHTML = 'Rainfall Intensity Day1 - RI GFS DAY1';
+                                startCountdown();
+                            }, 1000);
+
+                            setTimeout(function() {
+                                map.removeLayer(med_gfs1);
+                                clearTimeout(GFS_1_RI);
+                                resolve();
+                                playerText.innerHTML = '';
+                                startCountdown();
+                            }, 9000);
+                            console.log("5-RI GFS DAY1");
+                        });
+                    }
+                }
+
+                //
                 startCountdown();
             }
 
@@ -2476,58 +2506,6 @@ async function playMacro(macroGroupName) {
     }
 
 }
-
-
-// playerText_fn.innerHTML = `${macro_SubParameter}`;
-
-// playerText_fn.style.fontSize = "17px";
-// playerText_fn.style.fontWeight = "bold";
-
-
-// function playMacro(macroGroupName) {
-//     let macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
-
-//     if (macro) {
-//         macro.listOfMacro.forEach(async macroDetails => {
-//             let macro_SubParameter = macroDetails.mac_sub_parameter;
-//             console.log(macro_SubParameter, "macro_SubParameter");
-
-//             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-//                 if (macro_SubParameter === "Last 00-05 min") {
-//                     await new Promise(resolve => {
-//                         let DBsetT = setInterval(function() {
-//                             map.addLayer(mywmsIITM);
-//                         }, 3000);
-
-//                         setTimeout(function() {
-//                             map.removeLayer(mywmsIITM);
-//                             clearInterval(DBsetT);
-//                             resolve();
-//                         }, 9000);
-//                         console.log("1-Last 00-05 min");
-//                     });
-//                 }
-
-//                 if (macro_SubParameter === "Airport") {
-//                     await new Promise(resolve => {
-//                         let AirPsetT = setTimeout(function() {
-//                             map.addLayer(Airport);
-//                         }, 3000);
-
-//                         setTimeout(function() {
-//                             map.removeLayer(Airport);
-//                             clearTimeout(AirPsetT);
-//                             resolve();
-//                         }, 9000);
-//                         console.log("2-Airport");
-//                     });
-//                 }
-//             }
-//         });
-//     }
-
-//     document.getElementById("macroDetails").style.display = "block";
-// }
 
 
 
@@ -3575,6 +3553,25 @@ function macroRunFnX() {
         playerText.innerHTML = '';
         startCountdown();
     }, 1000);
+
+    //
+    setTimeout(function() {
+        map.removeLayer(exp_oil);
+        clearInterval(OilExVar);
+        resolveFunction();
+        playerText.innerHTML = '';
+        startCountdown();
+    }, 1000);
+
+    //
+    setTimeout(function() {
+        map.removeLayer(med_gfs1);
+        clearInterval(GFS_1_RI);
+        resolveFunction();
+        playerText.innerHTML = '';
+        startCountdown();
+    }, 1000);
+
 
     //
     document.getElementById("macroDetails").style.display = "none";
@@ -6153,7 +6150,7 @@ var overLayers5 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "GFS Day1",
+                name: "RI GFS DAY1",
                 layer: med_gfs1,
             },
             {
@@ -7034,7 +7031,7 @@ var overLayers10 = [{
         {
             active: false,
             name: "Oil Refineries",
-            layer: exp_oil ,
+            layer: exp_oil,
         },
         {
             active: false,
@@ -11022,9 +11019,9 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // MediumRange
         //Rainfall Intensity Day1
-        if (_class_name == 'Rainfall Intensity Day1 GFS Day1') {
+        if (_class_name == 'Rainfall Intensity Day1 RI GFS DAY1') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_add = X280;
+            var _layer_to_remove_add = med_gfs1;
             remLayOrAdclickedRI_Day1(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
         if (_class_name == 'Rainfall Intensity Day1 NCUM Day1') {
@@ -13221,7 +13218,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //medium_range
         //bgClickedRainfallIntensityDay1Lists[]
         if (_this.context._layer?.group.name == "Rainfall Intensity Day1") {
-            if (layer_name == 'GFS Day1') {
+            if (layer_name == 'RI GFS DAY1') {
                 bgClickedRainfallIntensityDay1Lists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedRainfallIntensityDay1Lists, "....bgClickedRainfallIntensityDay1Lists");
@@ -15665,8 +15662,9 @@ $("body").on("change", "input[type=checkbox]", function() {
             let AlreadyExit = clickedRainfallIntensityDay1Lists.find(x => {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
+            console.log(layer_name, "layer_name RI");
             if (!AlreadyExit) {
-                if (layer_name == 'GFS Day1') {
+                if (layer_name == 'RI GFS DAY1') {
                     clickedRainfallIntensityDay1Lists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -19551,7 +19549,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //medium_range 
         if (_this.context._layer?.group.name == "Rainfall Intensity Day1") {
-            if (layer_name == 'GFS Day1' || layer_name == 'NCUM Day1' || layer_name ==
+            if (layer_name == 'RI GFS DAY1' || layer_name == 'NCUM Day1' || layer_name ==
                 'NEPS Day1' || layer_name == 'WRF Day1' || layer_name == 'GEFS Day1' || layer_name ==
                 'ECMWF Day1'
             ) {
@@ -21473,9 +21471,9 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // MediumRange
         //Rainfall Intensity Day1
-        if (uncheckLayer == 'Rainfall Intensity Day1 GFS Day1') {
+        if (uncheckLayer == 'Rainfall Intensity Day1 RI GFS DAY1') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_add = X280;
+            var _layer_to_remove_add = med_gfs1;
             remLayOrAdclickedRI_Day1(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
         if (uncheckLayer == 'Rainfall Intensity Day1 NCUM Day1') {
