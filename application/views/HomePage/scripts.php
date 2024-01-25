@@ -3096,14 +3096,14 @@ const med_ncum1 = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_D
 // });
 
 //radar
-// const rad_ref = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "rad_ref"
-// });
+const rad_ref = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:LLWS_12hr_fcst_FL',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "LLWS_12hr_fcst_FL",
+    layerName: "rad_ref"
+});
 
 // const rad_ani = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
 //     layers: 'cite:LLWS_12hr_fcst_FL',
@@ -3170,14 +3170,14 @@ const exp_oil = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Dat
 });
 
 //ship and buoy
-// const ship_00utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "ship_00utc"
-// });
+const ship_00utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
+    layers: 'cite:awssample',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "awssample",
+    layerName: "ship_00utc"
+});
 
 // const ship_01utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
 //     layers: 'cite:LLWS_12hr_fcst_FL',
@@ -3513,7 +3513,7 @@ function updateActiveLayers() {
     });
 
     // Check if side-by-side is active and more than 2 layers are active
-    // console.log(activeLayers );
+    console.log(sideBySideVisible,activeLayers );
     if (sideBySideVisible && activeLayers > 2) {
         alert("Only two layers can be active when side-by-side view is active please unselect the layer!");
         // Disable additional layers
@@ -6750,7 +6750,7 @@ var overLayers7 = [{
         layers: [{
                 active: false,
                 name: "Radar Reflectivity",
-                layer: X33
+                layer: rad_ref,
             },
             {
                 active: false,
@@ -7164,7 +7164,7 @@ var overLayers11 = [{
     layers: [{
             active: false,
             name: "00UTC",
-            layer: X35
+            layer: ship_00utc ,
         },
         {
             active: false,
