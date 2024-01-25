@@ -1979,13 +1979,17 @@ function showParameterNames(value) {
     let getparameterNames = document.getElementById("parameterNames");
     let pushparameterNames = '';
     var SecondDropdown = Parameters.filter(x => x.category == value);
-    for (let SD = 0; SD < SecondDropdown.length; SD++) {
-        if (SecondDropdown[SD].name) {
-            pushparameterNames += `<option>${SecondDropdown[SD].name}</option><br/><br/>`;
+    if (SecondDropdown.length > 0) {
+        for (let SD = 0; SD < SecondDropdown.length; SD++) {
+            if (SecondDropdown[SD].name) {
+                pushparameterNames += `<option>${SecondDropdown[SD].name}</option><br/><br/>`;
+            }
         }
+        getparameterNames.innerHTML = pushparameterNames;
+        showSubParameterNames(SecondDropdown[0].name);
+    } else {
+        showSubParameterNames('');
     }
-    getparameterNames.innerHTML = pushparameterNames;
-    showSubParameterNames(SecondDropdown[0].name);
 }
 
 //OBSERVATION thirdDropdown-SD
@@ -2019,6 +2023,7 @@ for (let MS = 0; MS < 60; MS++) {
 getMinSelect.innerHTML = pushMinSelect;
 
 let obstesting1;
+let obstesting2;
 //submitForm for observation
 function obs_SubmitForm() {
     let model_Names = document.getElementById('modelNames').value;
@@ -2034,33 +2039,24 @@ function obs_SubmitForm() {
         if (TimeForObs === "5:30") {
             obstesting1 = setInterval(function() {
                 map.addLayer(met00utc_tem);
-            }, 1000);
+            });
 
 
-            let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
-                "Parameter: " + parameter_Names + "\n" +
-                "SubParameter: " + sub_parameter + "\n" +
-                "Start Date: " + fromDate + "\n" +
-                "Time: " + hour_Select + ":" + minute_Select;
-            alert(message);
+            // let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
+            //     "Parameter: " + parameter_Names + "\n" +
+            //     "SubParameter: " + sub_parameter + "\n" +
+            //     "Start Date: " + fromDate + "\n" +
+            //     "Time: " + hour_Select + ":" + minute_Select;
+            // alert(message);
         }
     }
 
     if (sub_parameter === "00UTC") {
         if (TimeForObs === "5:30") {
-            let obstesting2 = setInterval(function() {
+            obstesting2 = setInterval(function() {
                 map.addLayer(mywmsNcum);
-            }, 1000);
-            setTimeout(function() {
-                map.removeLayer(mywmsNcum);
-                clearInterval(obstesting2);
-                modelNames.innerHTML = "";
-                parameterNames.innerHTML = "";
-                subparameter.innerHTML = "";
-                document.getElementById('start_date').value = "";
-                hourSelect.innerHTML = "";
-                minuteSelect.innerHTML = "";
-            }, 10000);
+            });
+
 
             // let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
             //     "Parameter: " + parameter_Names + "\n" +
@@ -2076,12 +2072,24 @@ function obs_Rem_() {
     setTimeout(function() {
         map.removeLayer(met00utc_tem);
         clearInterval(obstesting1);
-        modelNames.innerHTML = "";
-        parameterNames.innerHTML = "";
-        subparameter.innerHTML = "";
-        document.getElementById('start_date').value = "";
-        hourSelect.innerHTML = "";
-        minuteSelect.innerHTML = "";
+
+        document.getElementById('modelNames').value = '';
+        document.getElementById('parameterNames').value = '';
+        document.getElementById('subparameter').value = '';
+        document.getElementById('start_date').value = '';
+        document.getElementById('hourSelect').value = '';
+        document.getElementById('minuteSelect').value = '';
+    }, 1000);
+
+    setTimeout(function() {
+        map.removeLayer(mywmsNcum);
+        clearInterval(obstesting2);
+        document.getElementById('modelNames').value = '';
+        document.getElementById('parameterNames').value = '';
+        document.getElementById('subparameter').value = '';
+        document.getElementById('start_date').value = '';
+        document.getElementById('hourSelect').value = '';
+        document.getElementById('minuteSelect').value = '';
     }, 1000);
 }
 
