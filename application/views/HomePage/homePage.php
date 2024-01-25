@@ -511,7 +511,7 @@
                 <div style="width: 100%;">
                     <div style="margin-left: 12%; width: 74%;" class="col-6">
                         <label class="labelDelMac" for="userName"
-                            style="font-family: 'Times New Roman'; font-size: 18px">Your Name:</label>
+                            style="font-family: 'Times New Roman'; font-size: 18px">Employee Name:</label>
                         <div class="input-group mb-3">
                             <input style="border-color: #d5caca;" type="text" class="form-control" aria-label="Default"
                                 aria-describedby="inputGroup-sizing-default" id="userName" required>
@@ -529,7 +529,7 @@
                 <div style="display: flex; align-items: center;">
                     <button type="button" onclick="closeDeleteMacroModal()" class="btn btn-primary"
                         style="font-family: 'Times New Roman'; font-size: 18px">Cancel</button>
-                    <button type="button" onclick="submitDeleteMacro()" class="btn btn-primary"
+                    <button type="button" id="macCanBtn" onclick="submitDeleteMacro()" class="btn btn-primary"
                         style="font-family: 'Times New Roman'; font-size: 18px">Submit</button>
                 </div>
             </div>

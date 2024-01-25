@@ -2054,7 +2054,7 @@ function obs_SubmitForm() {
     if (sub_parameter === "00UTC") {
         if (TimeForObs === "5:30") {
             obstesting2 = setInterval(function() {
-                map.addLayer(mywmsNcum);
+                map.addLayer(X35);
             });
 
 
@@ -2082,7 +2082,7 @@ function obs_Rem_() {
     }, 1000);
 
     setTimeout(function() {
-        map.removeLayer(mywmsNcum);
+        map.removeLayer(X35);
         clearInterval(obstesting2);
         document.getElementById('modelNames').value = '';
         document.getElementById('parameterNames').value = '';
@@ -2200,10 +2200,7 @@ function macShowSubParameterNames(value) {
 function handleInputChange() {
     const macroInputValue = document.getElementById("macroNames").value.trim();
     const secondInputValue = document.getElementById("mac_modelNames").value.trim();
-    // const thirdInputValue = document.getElementById("mac_parameterNames").value.trim();
-    // const forthInputValue = document.getElementById("mac_subparameter").value.trim(); 
 
-    // const buttons = document.querySelectorAll(".macSubmitBtn"); 
     let macAddBtn = document.getElementById("mac_addButton");
     let macSubBtn = document.getElementById("mac_submitButton");
     let macUpdBtn = document.getElementById("mac_updateButton");
@@ -2233,6 +2230,27 @@ document.getElementById("macroNames").addEventListener("input", handleInputChang
 document.getElementById("mac_modelNames").addEventListener("input", handleInputChange);
 
 handleInputChange();
+
+//
+function MacGrpDelW() {
+    let empName = document.getElementById("userName").value.trim();
+    let delReaMac = document.getElementById("deleteReason").value.trim();
+
+    let mac_Can_Btn = document.getElementById("macCanBtn");
+
+    let macCanBtn_E_r_N = empName === "" || delReaMac === "";
+
+    if (macCanBtn_E_r_N) {
+        mac_Can_Btn.disabled = true;
+    } else {
+        mac_Can_Btn.disabled = false;
+    }
+}
+
+document.getElementById("userName").addEventListener("input", MacGrpDelW);
+document.getElementById("deleteReason").addEventListener("input", MacGrpDelW);
+MacGrpDelW();
+
 
 // AddButtonForm for MACRO
 let savedMacro = [];
@@ -2411,7 +2429,7 @@ let countingElement = document.getElementById("counting");
 
 function startCountdown() {
     if (playerTextElement.innerHTML.trim() !== "") {
-        let count = 4;
+        let count = 5;
 
         let countdownInterval = setInterval(function() {
             countingElement.innerHTML = count;
@@ -2446,19 +2464,18 @@ async function playMacro(macroGroupName) {
             document.getElementById("macroDetails").style.display = "block";
 
             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-
                 if (macro_SubParameter === "Last 00-05 min") {
                     await new Promise(resolve => {
                         resolveFunction = resolve;
-                        Light_l05_ = setInterval(function() {
+                        Light_l05_ = setTimeout(function() {
                             map.addLayer(mywmsIITM);
                             playerText.innerHTML = 'Last 00-05 min';
                             startCountdown();
-                        }, 1000);
+                        });
 
                         setTimeout(function() {
                             map.removeLayer(mywmsIITM);
-                            clearInterval(Light_l05_);
+                            clearTimeout(Light_l05_);
                             resolve();
                             playerText.innerHTML = '';
                             startCountdown();
@@ -2467,99 +2484,102 @@ async function playMacro(macroGroupName) {
 
                     });
                 }
-
-                if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                    if (macro_SubParameter === "00UTC") {
-                        await new Promise(resolve => {
-                            resolveFunction = resolve;
-                            SAB_00var = setInterval(function() {
-                                map.addLayer(mywmsNcum);
-                                playerText.innerHTML = 'Ship and Buoy 00UTC';
-                                startCountdown();
-                            }, 1000);
-
-                            setTimeout(function() {
-                                map.removeLayer(mywmsNcum);
-                                clearInterval(SAB_00var);
-                                resolve();
-                                playerText.innerHTML = '';
-                                startCountdown();
-                            }, 5000);
-                            console.log("2-00UTC");
-                        });
-                    }
-                }
-
-                if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                    if (macro_SubParameter === "TIR1") {
-                        await new Promise(resolve => {
-                            resolveFunction = resolve;
-                            SAT_TIR1 = setInterval(function() {
-                                map.addLayer(mywmsNowcast);
-                                playerText.innerHTML = 'Satellite Observation TIR1';
-                                startCountdown();
-                            }, 1000);
-
-                            setTimeout(function() {
-                                map.removeLayer(mywmsNowcast);
-                                clearInterval(SAT_TIR1);
-                                resolve();
-                                playerText.innerHTML = '';
-                                startCountdown();
-                            }, 5000);
-                            console.log("3-TIR1");
-                        });
-                    }
-                }
-
-                if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                    if (macro_SubParameter === "Oil Refineries") {
-                        await new Promise(resolve => {
-                            resolveFunction = resolve;
-                            OilExVar = setInterval(function() {
-                                map.addLayer(exp_oil);
-                                playerText.innerHTML = 'Exposure Oil Refineries';
-                                startCountdown();
-                            }, 1000);
-
-                            setTimeout(function() {
-                                map.removeLayer(exp_oil);
-                                clearInterval(OilExVar);
-                                resolve();
-                                playerText.innerHTML = '';
-                                startCountdown();
-                            }, 5000);
-                            console.log("4-Oil Refineries");
-                        });
-                    }
-                }
-
-                if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                    if (macro_SubParameter === "RI GFS DAY1") {
-                        console.log(macro_SubParameter, "macro_SubParameter");
-                        await new Promise(resolve => {
-                            resolveFunction = resolve;
-                            GFS_1_RI = setTimeout(function() {
-                                map.addLayer(med_gfs1);
-                                playerText.innerHTML = 'Rainfall Intensity Day1 - RI GFS DAY1';
-                                startCountdown();
-                            }, 1000);
-
-                            setTimeout(function() {
-                                map.removeLayer(med_gfs1);
-                                clearTimeout(GFS_1_RI);
-                                resolve();
-                                playerText.innerHTML = '';
-                                startCountdown();
-                            }, 5000);
-                            console.log("5-RI GFS DAY1");
-                        });
-                    }
-                }
-
-                //
-                startCountdown();
             }
+
+            // change
+            if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+                if (macro_SubParameter === "00UTC") {
+                    await new Promise(resolve => {
+                        resolveFunction = resolve;
+                        SAB_00var = setTimeout(function() {
+                            map.addLayer(X35);
+                            playerText.innerHTML = 'Ship and Buoy 00UTC';
+                            startCountdown();
+                        });
+
+                        setTimeout(function() {
+                            map.removeLayer(X35);
+                            clearTimeout(SAB_00var);
+                            resolve();
+                            playerText.innerHTML = '';
+                            startCountdown();
+                        }, 7000);
+                        console.log("2-00UTC");
+                    });
+                }
+            }
+
+            // change
+            if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+                if (macro_SubParameter === "TIR1") {
+                    await new Promise(resolve => {
+                        resolveFunction = resolve;
+                        SAT_TIR1 = setTimeout(function() {
+                            map.addLayer(X34);
+                            playerText.innerHTML = 'Satellite Observation TIR1';
+                            startCountdown();
+                        });
+
+                        setTimeout(function() {
+                            map.removeLayer(X34);
+                            clearTimeout(SAT_TIR1);
+                            resolve();
+                            playerText.innerHTML = '';
+                            startCountdown();
+                        }, 7000);
+                        console.log("3-TIR1");
+                    });
+                }
+            }
+
+            if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+                if (macro_SubParameter === "Oil Refineries") {
+                    await new Promise(resolve => {
+                        resolveFunction = resolve;
+                        OilExVar = setTimeout(function() {
+                            map.addLayer(exp_oil);
+                            playerText.innerHTML = 'Exposure Oil Refineries';
+                            startCountdown();
+                        });
+
+                        setTimeout(function() {
+                            map.removeLayer(exp_oil);
+                            clearTimeout(OilExVar);
+                            resolve();
+                            playerText.innerHTML = '';
+                            startCountdown();
+                        }, 7000);
+                        console.log("4-Oil Refineries");
+                    });
+                }
+            }
+
+            if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+                if (macro_SubParameter === "RI GFS DAY1") {
+                    console.log(macro_SubParameter, "macro_SubParameter");
+                    await new Promise(resolve => {
+                        resolveFunction = resolve;
+                        GFS_1_RI = setTimeout(function() {
+                            map.addLayer(med_gfs1);
+                            playerText.innerHTML = 'Rainfall Intensity Day1 - RI GFS DAY1';
+                            startCountdown();
+                        });
+
+                        setTimeout(function() {
+                            map.removeLayer(med_gfs1);
+                            clearTimeout(GFS_1_RI);
+                            resolve();
+                            playerText.innerHTML = '';
+                            startCountdown();
+                        }, 7000);
+                        console.log("5-RI GFS DAY1");
+                    });
+                }
+            }
+
+            //
+            // startCountdown();
+
 
             document.getElementById("macroDetails").style.display = "none";
         }
@@ -2630,7 +2650,7 @@ function submitDeleteMacro() {
     let getAlertMsg =
         `Macro with group name ${macroGroupNameForDelete} has been deleted by ${userName}\nReason: ${deleteReason}`
 
-    alert(getAlertMsg);
+    // alert(getAlertMsg);
     console.log(getAlertMsg, "getting alert message...");
 
     document.getElementById('macroNames').value = '';
@@ -3598,7 +3618,7 @@ function macroRunFnX() {
 
     //
     setTimeout(function() {
-        map.removeLayer(mywmsNcum);
+        map.removeLayer(X35);
         clearInterval(SAB_00var);
         resolveFunction();
         playerText.innerHTML = '';
@@ -3607,7 +3627,7 @@ function macroRunFnX() {
 
     //
     setTimeout(function() {
-        map.removeLayer(mywmsNowcast);
+        map.removeLayer(X34);
         clearInterval(SAT_TIR1);
         resolveFunction();
         playerText.innerHTML = '';
@@ -6681,7 +6701,7 @@ var overLayers6 = [{
         layers: [{
                 active: false,
                 name: "TIR1",
-                layer: mywmsNowcast
+                layer: X34
             },
             {
                 active: false,
@@ -7156,7 +7176,7 @@ var overLayers11 = [{
     layers: [{
             active: false,
             name: "00UTC",
-            layer: mywmsNcum
+            layer: X35
         },
         {
             active: false,
