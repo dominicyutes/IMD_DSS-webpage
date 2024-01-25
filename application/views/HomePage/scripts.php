@@ -2411,7 +2411,7 @@ let countingElement = document.getElementById("counting");
 
 function startCountdown() {
     if (playerTextElement.innerHTML.trim() !== "") {
-        let count = 3;
+        let count = 4;
 
         let countdownInterval = setInterval(function() {
             countingElement.innerHTML = count;
@@ -2420,6 +2420,7 @@ function startCountdown() {
                 clearInterval(countdownInterval);
             } else {
                 count--;
+                console.log(count, "count --");
             }
         }, 1000);
     }
@@ -2429,7 +2430,7 @@ function startCountdown() {
 let macro_SubParameter;
 let resolveFunction;
 //
-let RR_var;
+let Light_l05_;
 let SAB_00var;
 let SAT_TIR1;
 let OilExVar;
@@ -2442,29 +2443,27 @@ async function playMacro(macroGroupName) {
     if (macro) {
         for (let macroDetails of macro.listOfMacro) {
             macro_SubParameter = macroDetails.mac_sub_parameter;
-            console.log(macro_SubParameter, "macro_SubParameter");
-
             document.getElementById("macroDetails").style.display = "block";
 
             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
 
-                if (macro_SubParameter === "Radar Reflectivity") {
+                if (macro_SubParameter === "Last 00-05 min") {
                     await new Promise(resolve => {
                         resolveFunction = resolve;
-                        RR_var = setInterval(function() {
+                        Light_l05_ = setInterval(function() {
                             map.addLayer(mywmsIITM);
-                            playerText.innerHTML = 'Radar Reflectivity';
+                            playerText.innerHTML = 'Last 00-05 min';
                             startCountdown();
                         }, 1000);
 
                         setTimeout(function() {
                             map.removeLayer(mywmsIITM);
-                            clearInterval(RR_var);
+                            clearInterval(Light_l05_);
                             resolve();
                             playerText.innerHTML = '';
                             startCountdown();
-                        }, 5000);
-                        console.log("1-Radar Reflectivity");
+                        }, 6000);
+                        console.log("1-Last 00-05 min");
 
                     });
                 }
@@ -3591,7 +3590,7 @@ L.control.mousePosition({
 function macroRunFnX() {
     setTimeout(function() {
         map.removeLayer(mywmsIITM);
-        clearInterval(RR_var);
+        clearInterval(Light_l05_);
         resolveFunction();
         playerText.innerHTML = '';
         startCountdown();
@@ -5332,12 +5331,12 @@ var overLayers3 = [{
             {
                 active: false,
                 name: "Dew Point Temperature",
-                layer: mywmsNcum,
+                layer: X49,
             },
             {
                 active: false,
                 name: "Visibility",
-                layer: mywmsNowcast,
+                layer: X50,
             },
             {
                 active: false,
@@ -6743,7 +6742,7 @@ var overLayers7 = [{
         layers: [{
                 active: false,
                 name: "Radar Reflectivity",
-                layer: mywmsIITM
+                layer: X33
             },
             {
                 active: false,
@@ -7087,7 +7086,7 @@ var overLayers10 = [{
         {
             active: false,
             name: "Airport",
-            layer: mywmsIITM
+            layer: X121
         },
         {
             active: false,
@@ -9584,7 +9583,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         if (_class_name == 'Exposure Layers Airport') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_add = Airport;
+            var _layer_to_remove_add = X121;
             remove_layer_or_add(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
@@ -9659,14 +9658,14 @@ $("body").on("change", "input[type=checkbox]", function() {
         //Metar00UTC-DPT
         if (_class_name == 'METAR 00UTC Dew Point Temperature') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_add = mywmsNcum;
+            var _layer_to_remove_add = X49;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar00UTC-Vis
         if (_class_name == 'METAR 00UTC Visibility') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_add = mywmsNowcast;
+            var _layer_to_remove_add = X50;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
@@ -10806,7 +10805,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         // Radar
         if (_class_name == 'Radar Products Radar Reflectivity') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_add = mywmsIITM;
+            var _layer_to_remove_add = X33;
             remove_layer_or_add_Radar(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
@@ -19915,7 +19914,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'Exposure Layers Airport') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_or_add = Airport;
+            var _layer_to_remove_or_add = X121;
             remove_layer_or_add(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         if (uncheckLayer == 'Exposure Layers Oil Refineries') {
@@ -20001,13 +20000,13 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR UNCHECK 00UTC DPT
         if (uncheckLayer == 'METAR 00UTC Dew Point Temperature') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_or_add = mywmsNcum;
+            var _layer_to_remove_or_add = X49;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 00UTC Visi
         if (uncheckLayer == 'METAR 00UTC Visibility') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_or_add = mywmsNowcast;
+            var _layer_to_remove_or_add = X50;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 00UTC WSAD
@@ -21197,7 +21196,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         // Radar
         if (uncheckLayer == 'Radar Products Radar Reflectivity') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_add = mywmsIITM;
+            var _layer_to_remove_add = X33;
             remove_layer_or_add_Radar(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
@@ -21283,7 +21282,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         // Lightning
         if (uncheckLayer == 'Lightning Last 00-05 min') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_add = mywmsIITM;
+            var _layer_to_remove_add = X3;
             remove_layer_or_add_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
         if (uncheckLayer == 'Lightning Last 05-10 min') {
