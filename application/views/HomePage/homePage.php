@@ -1125,6 +1125,47 @@ var oc =
 ocean1 = L.geoJson((JSON.parse(oc)), {
     color: 'grey',
 }).addTo(map);
+function createGrid() {
+    var gridLines = [];
+
+    // Create latitude lines passing through longitude 0
+    for (var lat = -90; lat <= 90; lat += 10) {
+        var line = {
+            "type": "Feature",
+            "properties": { "Id": 0 },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [[0, lat], [180, lat]]
+            }
+        };
+        gridLines.push(line);
+    }
+
+    // Create longitude lines passing through latitude 0
+    for (var lon = -180; lon <= 180; lon += 10) {
+        var line = {
+            "type": "Feature",
+            "properties": { "Id": 0 },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [[lon, 0], [lon, 90]]
+            }
+        };
+        gridLines.push(line);
+    }
+
+    return gridLines;
+}
+
+// Create the grid with dotted lines
+var worldGrid = L.geoJson({
+    "type": "FeatureCollection",
+    "features": createGrid()
+}, {
+    color: 'white',
+    dashArray: '5, 5' 
+}).addTo(map);
+
 </script>
 
 <script>
