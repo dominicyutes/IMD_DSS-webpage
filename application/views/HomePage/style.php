@@ -201,17 +201,20 @@ body {
     font-family: 'Archivo', sans-serif;
 }
 
-.submitBtn {
-    width: 50%;
+.submitBtn,
+.obsRemCls {
+    width: 36%;
     height: auto;
     border-radius: 7px;
     background-color: #244c7e;
     color: ghostwhite;
     border-color: mediumaquamarine;
-    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px
+        /* font-size: 14px;
     font-weight: 600;
-    font-family: 'Archivo', sans-serif;
-    margin-left: 26%;
+    font-family: 'Archivo', sans-serif; */
+        /* margin-left: 26%; */
 }
 
 /*  */
@@ -748,5 +751,4 @@ body {
     font-size: 15px;
     /* right: 266px; */
 }
-
 </style>

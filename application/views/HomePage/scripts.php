@@ -2018,6 +2018,7 @@ for (let MS = 0; MS < 60; MS++) {
 }
 getMinSelect.innerHTML = pushMinSelect;
 
+let obstesting1;
 //submitForm for observation
 function obs_SubmitForm() {
     let model_Names = document.getElementById('modelNames').value;
@@ -2031,19 +2032,10 @@ function obs_SubmitForm() {
 
     if (sub_parameter === "Temperature_00") {
         if (TimeForObs === "5:30") {
-            let obstesting1 = setInterval(function() {
+            obstesting1 = setInterval(function() {
                 map.addLayer(met00utc_tem);
             }, 1000);
-            setTimeout(function() {
-                map.removeLayer(met00utc_tem);
-                clearInterval(obstesting1);
-                modelNames.innerHTML = "";
-                parameterNames.innerHTML = "";
-                subparameter.innerHTML = "";
-                document.getElementById('start_date').value = "";
-                hourSelect.innerHTML = "";
-                minuteSelect.innerHTML = "";
-            }, 6000);
+
 
             let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
                 "Parameter: " + parameter_Names + "\n" +
@@ -2068,16 +2060,29 @@ function obs_SubmitForm() {
                 document.getElementById('start_date').value = "";
                 hourSelect.innerHTML = "";
                 minuteSelect.innerHTML = "";
-            }, 6000);
+            }, 10000);
 
-            let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
-                "Parameter: " + parameter_Names + "\n" +
-                "SubParameter: " + sub_parameter + "\n" +
-                "Start Date: " + fromDate + "\n" +
-                "Time: " + hour_Select + ":" + minute_Select;
-            alert(message);
+            // let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
+            //     "Parameter: " + parameter_Names + "\n" +
+            //     "SubParameter: " + sub_parameter + "\n" +
+            //     "Start Date: " + fromDate + "\n" +
+            //     "Time: " + hour_Select + ":" + minute_Select;
+            // alert(message);
         }
     }
+}
+
+function obs_Rem_() {
+    setTimeout(function() {
+        map.removeLayer(met00utc_tem);
+        clearInterval(obstesting1);
+        modelNames.innerHTML = "";
+        parameterNames.innerHTML = "";
+        subparameter.innerHTML = "";
+        document.getElementById('start_date').value = "";
+        hourSelect.innerHTML = "";
+        minuteSelect.innerHTML = "";
+    }, 1000);
 }
 
 //MACRO toggle

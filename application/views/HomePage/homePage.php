@@ -334,9 +334,10 @@
                     </select>
                 </form>
                 <!-- Submit -->
-                <div>
-                    <button id="submitButton" onclick="obs_SubmitForm()" class="submitBtn"
-                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Submit</button>
+                <div style="display: flex;
+    justify-content: space-around;">
+                    <button id="submitButton" onclick="obs_SubmitForm()" class="submitBtn">Submit</button>
+                    <button class="obsRemCls" id="obsRemBtn" onclick="obs_Rem_()">Remove</button>
                 </div>
                 <div
                     style="position: absolute; bottom: 0; background-color: #f4fcff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 300px; font-family: 'Times New Roman', Times, serif;">
