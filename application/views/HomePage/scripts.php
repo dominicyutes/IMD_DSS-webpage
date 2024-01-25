@@ -2037,7 +2037,7 @@ function obs_SubmitForm() {
 
     if (sub_parameter === "Temperature_00") {
         if (TimeForObs === "5:30") {
-            obstesting1 = setInterval(function() {
+            let obstesting1 = setInterval(function() {
                 map.addLayer(met00utc_tem);
             });
 
@@ -2058,12 +2058,12 @@ function obs_SubmitForm() {
             });
 
 
-            // let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
-            //     "Parameter: " + parameter_Names + "\n" +
-            //     "SubParameter: " + sub_parameter + "\n" +
-            //     "Start Date: " + fromDate + "\n" +
-            //     "Time: " + hour_Select + ":" + minute_Select;
-            // alert(message);
+            let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
+                "Parameter: " + parameter_Names + "\n" +
+                "SubParameter: " + sub_parameter + "\n" +
+                "Start Date: " + fromDate + "\n" +
+                "Time: " + hour_Select + ":" + minute_Select;
+            alert(message);
         }
     }
 }
@@ -2998,8 +2998,8 @@ const met00utc_tem = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IM
     format: 'image/png',
     transparent: true,
     version: '1.1.0',
-    attribution: "awssample",
-    layerName: "HW_Annual_Days"
+    attribution: "HW_Annual_Days",
+    layerName: "met00utc_tem"
 });
 
 // const met00utc_dew = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
@@ -3477,6 +3477,11 @@ var MacroButton = L.Control.extend({
     }
 });
 
+
+
+
+
+
 //Leaflet-sideBySide
 let sideBySideControl = null;
 let sideBySideVisible = false;
@@ -3490,7 +3495,7 @@ function toggleSideBySide() {
         }
         sideBySideVisible = false;
     } else {
-        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast).addTo(map);
+        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast, syn00utc_tem, met00utc_tem,med_gfs1).addTo(map);
         sideBySideVisible = true;
     }
     // Check the number of active layers when toggling side-by-side
@@ -3508,7 +3513,7 @@ function updateActiveLayers() {
     });
 
     // Check if side-by-side is active and more than 2 layers are active
-    // console.log(sideBySideVisible,activeLayers );
+    // console.log(activeLayers );
     if (sideBySideVisible && activeLayers > 2) {
         alert("Only two layers can be active when side-by-side view is active please unselect the layer!");
         // Disable additional layers
@@ -5321,23 +5326,6 @@ const overLayers2 = [{
     },
 
 ];
-
-
-// Hook into layer changes to update activeLayers
-// overLayers.forEach(group => {
-//     group.layers.forEach(layer => {
-//         layer.layer.on('add remove', function() {
-//             layer.active = !layer.active;
-//             updateActiveLayers();
-//         });
-//     });
-// });
-
-
-// const allOverLayers = overLayers.concat(overLayers2);
-
-
-
 //METAR
 var overLayers3 = [{
 
