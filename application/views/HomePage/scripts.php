@@ -3477,6 +3477,101 @@ var MacroButton = L.Control.extend({
     }
 });
 
+//freehand
+(function() {
+    var drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
+
+    var isFreehandMode = false;
+    var isDrawing = false;
+    var polyline = null;
+
+    function startDrawing() {
+        isDrawing = true;
+        polyline = L.polyline([], {
+            weight: 4,
+            color: 'red',
+            dashArray: '5, 5'
+        }).addTo(drawnItems);
+    }
+
+    function stopDrawing() {
+        isDrawing = false;
+        polyline = null;
+    }
+
+    var freehandButton = L.control({
+        position: 'topleft'
+    });
+    freehandButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.innerHTML = '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;">Freehand</button>';
+        div.firstChild.addEventListener('click', function() {
+            if (isFreehandMode) {
+                isFreehandMode = false;
+                map.dragging.enable();
+                document.getElementById('freehandButton').style.backgroundColor = 'green';
+            } else {
+                isFreehandMode = true;
+                map.dragging.disable();
+                document.getElementById('freehandButton').style.backgroundColor = 'red';
+            }
+        });
+        return div;
+    };
+    freehandButton.addTo(map);
+
+    var clearLayersButton = L.control({
+        position: 'topleft'
+    });
+    clearLayersButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.innerHTML = '<button id="clearLayersButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;">Clear Drawing</button>';
+
+        div.firstChild.addEventListener('click', function() {
+            drawnItems.clearLayers();
+            isFreehandMode = false;
+            map.dragging.enable();
+            document.getElementById('freehandButton').style.backgroundColor = 'green';
+        });
+        return div;
+    };
+    clearLayersButton.addTo(map);
+
+    map.on('mousedown', function(event) {
+        if (isFreehandMode && event.originalEvent.button === 0) {
+            if (!isDrawing) {
+                startDrawing();
+                map.dragging.disable();
+            }
+        }
+    });
+
+    map.on('mousemove', function(event) {
+        if (isDrawing) {
+            polyline.addLatLng(event.latlng);
+        }
+    });
+
+    document.addEventListener('mouseup', function(event) {
+        if (isDrawing && event.button === 0) {
+            stopDrawing();
+            map.dragging.enable();
+        }
+    });
+
+    document.getElementById('clearLayersButton').addEventListener('click', function() {
+        // Remove all layers from the map
+        drawnItems.clearLayers();
+
+        // Reset freehand mode
+        isFreehandMode = false;
+        map.dragging.enable();
+
+        // Reset freehand button color
+        document.getElementById('freehandButton').style.backgroundColor = 'green';
+    });
+})();
 
 
 
@@ -3495,7 +3590,8 @@ function toggleSideBySide() {
         }
         sideBySideVisible = false;
     } else {
-        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast, syn00utc_tem, met00utc_tem,med_gfs1).addTo(map);
+        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast, syn00utc_tem, met00utc_tem,
+            med_gfs1).addTo(map);
         sideBySideVisible = true;
     }
     // Check the number of active layers when toggling side-by-side
@@ -3513,7 +3609,7 @@ function updateActiveLayers() {
     });
 
     // Check if side-by-side is active and more than 2 layers are active
-    console.log(sideBySideVisible,activeLayers );
+    console.log(sideBySideVisible, activeLayers);
     if (sideBySideVisible && activeLayers > 2) {
         alert("Only two layers can be active when side-by-side view is active please unselect the layer!");
         // Disable additional layers
@@ -7164,7 +7260,7 @@ var overLayers11 = [{
     layers: [{
             active: false,
             name: "00UTC",
-            layer: ship_00utc ,
+            layer: ship_00utc,
         },
         {
             active: false,
