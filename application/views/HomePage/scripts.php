@@ -3526,7 +3526,7 @@ var MacroButton = L.Control.extend({
     });
     clearLayersButton.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'leaflet-bar');
-        div.innerHTML = '<button id="clearLayersButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;">Clear Drawing</button>';
+        div.innerHTML = '<button id="clearLayersButton" style="background-color: white; border: 0px solid black;">Clear Drawing</button>';
 
         div.firstChild.addEventListener('click', function() {
             drawnItems.clearLayers();
