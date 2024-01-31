@@ -2974,14 +2974,14 @@ const syn00utc_tem = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IM
     layerName: "syn00utc_tem"
 });
 
-// const syn00utc_men = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "syn00utc_men"
-// });
+const syn00utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day1_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day1_Mask",
+    layerName: "syn00utc_rain"
+});
 
 // const syn00utc_clo = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
 //     layers: 'aasdagrometgis:Nowcast',
@@ -5099,7 +5099,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X6
+                layer: syn00utc_rain,
             },
         ]
     },
