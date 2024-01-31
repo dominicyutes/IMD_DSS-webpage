@@ -3083,6 +3083,7 @@ const med_ncum1 = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_D
     transparent: true,
     version: '1.1.0',
     attribution: "Rainfall_Day7_Mask",
+    crs: L.CRS.EPSG4326,
     layerName: "med_ncum1"
 });
 
