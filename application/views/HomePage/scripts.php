@@ -2980,10 +2980,81 @@ const syn00utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD
     transparent: true,
     version: '1.1.0',
     attribution: "Rainfall_Day1_Mask",
+    crs: L.CRS.EPSG4326,
     layerName: "syn00utc_rain"
 });
 
+const syn03utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day2_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day2_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn03utc_rain"
+});
 
+
+const syn06utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day3_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day3_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn06utc_rain"
+});
+
+const syn09utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day4_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day4_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn09utc_rain"
+});
+
+const syn12utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day5_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day5_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn12utc_rain"
+});
+
+
+const syn15utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day6_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day6_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn15utc_rain"
+});
+
+const syn18utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day7_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day7_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn18utc_rain"
+});
+
+const syn21utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day1_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day1_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn21utc_rain"
+});
 
 //metar
 const met00utc_tem = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
@@ -5006,7 +5077,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X14
+                layer: syn03utc_rain,
             },
         ]
     },
@@ -5052,7 +5123,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X22
+                layer: syn06utc_rain,
             },
         ]
     },
@@ -5098,7 +5169,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X30
+                layer: syn09utc_rain,
             },
         ]
     },
@@ -5144,7 +5215,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X38
+                layer: syn12utc_rain,
             },
         ]
     },
@@ -5190,7 +5261,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X46
+                layer: syn15utc_rain,
             },
         ]
     },
@@ -5236,7 +5307,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X54
+                layer: syn18utc_rain,
             },
         ]
     },
@@ -5282,7 +5353,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X62
+                layer: syn21utc_rain,
             },
         ]
     },
