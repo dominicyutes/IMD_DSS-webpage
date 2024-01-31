@@ -2983,14 +2983,7 @@ const syn00utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD
     layerName: "syn00utc_rain"
 });
 
-// const syn00utc_clo = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "syn00utc_clo"
-// });
+
 
 //metar
 const met00utc_tem = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
@@ -3002,42 +2995,6 @@ const met00utc_tem = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IM
     layerName: "met00utc_tem"
 });
 
-// const met00utc_dew = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "met00utc_dew"
-// });
-
-// const met00utc_vis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "met00utc_vis"
-// });
-
-//mesolscale
-// const mes_wrf_03 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "mes_wrf_03"
-// });
-
-// const mes_wrf_03_06 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "mes_wrf_03_06 "
-// });
 
 //medium
 const med_gfs1 = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
@@ -3058,42 +3015,10 @@ const med_ncum1 = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_D
     layerName: "med_ncum1"
 });
 
-// const med_neps1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "med_neps1"
-// });
 
 //satellite
-// const sat_tir1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "sat_tir1"
-// });
 
-// const sat_vis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "sat_vis"
-// });
 
-// const sat_ctbt = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "sat_ctbt"
-// });
 
 //radar
 const rad_ref = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
@@ -3105,61 +3030,13 @@ const rad_ref = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms"
     layerName: "rad_ref"
 });
 
-// const rad_ani = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "rad_ani"
-// });
+
 
 //sounding
-// const sou00utc_1000 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "sou00utc_1000"
-// });
 
-// const sou00utc_850 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "sou00utc_850"
-// });
 
-// const sou00utc_700 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "sou00utc_700"
-// });
+
 //exposure
-// const exp_dis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "exp_dis"
-// });
-
-// const exp_air = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "exp_air"
-// });
-
 const exp_oil = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
     layers: 'IMD_Data:MAJOR_TOWNS',
     format: 'image/png',
@@ -3179,23 +3056,7 @@ const ship_00utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/w
     layerName: "ship_00utc"
 });
 
-// const ship_01utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "ship_01utc"
-// });
 
-// const ship_02utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "ship_02utc"
-// });
 // dummy data for testing end
 
 //leaflet Fullscreen
