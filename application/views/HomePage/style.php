@@ -395,6 +395,7 @@ body {
 }
 
 .playBtnClasX {
+    margin-left: 15px;
     cursor: pointer;
     color: white;
     background-color: #5096b3;
