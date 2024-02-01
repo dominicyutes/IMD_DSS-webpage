@@ -476,26 +476,24 @@
         <!-- MACRO Run model; display: none; -->
         <div id="macroDetails" class="modal" style="display:none;width: 500px; left: 11%; top: 90%;">
             <div class="modal-content"
-                style="z-index: 999 ; font-family: Arial, sans-serif; background-color: #ffffff; border-radius: 10px; align-items: center;">
-
-
+                style="z-index: 999 ; font-family: Arial, sans-serif; background-color: #ffffff; border-radius: 10px;">
+                <!--  align-items: center; -->
                 <div class="playLine-container">
                     <div class="macroPlayClass">
-                        <button class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs"
+                        <!-- <button title="Stop" class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs"
+                                style="color: #000000;"></i></button> -->
+                        <!-- <button title="Play" class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs"
+                                style="color: #000000;"></i></button> -->
+                        <!-- <button title="Pause" class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs"
+                                style="color: #000000;"></i></button> -->
+                        <button title="Previous" class="leftMacBtn"><i class="fa-sharp fa-solid fa-arrow-left fa-xs"
                                 style="color: #000000;"></i></button>
-                        <button class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs"
-                                style="color: #000000;"></i></button>
-                        <button class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs"
-                                style="color: #000000;"></i></button>
-                        <button class="leftMacBtn"><i class="fa-sharp fa-solid fa-arrow-left fa-xs"
-                                style="color: #000000;"></i></button>
-                        <button class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs"
-                                style="color: #000000;"></i></button>
-
                         <span style="font-size: 17px;font-weight: bold; padding: 0 10px" id="playerText"></span>
-                        <span class="playBtnClasCount" id="counting"></span>
-                        <span class="vertical-line"></span>
-                        <span class="playBtnClasX" id="closingPlayBtn" onClick="macroRunFnX()">X</span>
+                        <button title="Next" class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs"
+                                style="color: #000000;"></i></button>
+                        <!-- <span class="playBtnClasCount" id="counting"></span>
+                        <span class="vertical-line"></span> -->
+                        <span title="Close" class="playBtnClasX" id="closingPlayBtn" onClick="macroRunFnX()">X</span>
                     </div>
                 </div>
 
@@ -1125,6 +1123,7 @@ var oc =
 ocean1 = L.geoJson((JSON.parse(oc)), {
     color: 'grey',
 }).addTo(map);
+
 function createGrid() {
     var gridLines = [];
 
@@ -1132,10 +1131,15 @@ function createGrid() {
     for (var lat = -90; lat <= 90; lat += 10) {
         var line = {
             "type": "Feature",
-            "properties": { "Id": 0 },
+            "properties": {
+                "Id": 0
+            },
             "geometry": {
                 "type": "LineString",
-                "coordinates": [[0, lat], [180, lat]]
+                "coordinates": [
+                    [0, lat],
+                    [180, lat]
+                ]
             }
         };
         gridLines.push(line);
@@ -1145,10 +1149,15 @@ function createGrid() {
     for (var lon = -180; lon <= 180; lon += 10) {
         var line = {
             "type": "Feature",
-            "properties": { "Id": 0 },
+            "properties": {
+                "Id": 0
+            },
             "geometry": {
                 "type": "LineString",
-                "coordinates": [[lon, 0], [lon, 90]]
+                "coordinates": [
+                    [lon, 0],
+                    [lon, 90]
+                ]
             }
         };
         gridLines.push(line);
@@ -1163,9 +1172,8 @@ var worldGrid = L.geoJson({
     "features": createGrid()
 }, {
     color: 'white',
-    dashArray: '5, 5' 
+    dashArray: '5, 5'
 }).addTo(map);
-
 </script>
 
 <script>
