@@ -752,4 +752,11 @@ body {
     font-size: 15px;
     /* right: 266px; */
 }
+.leaflet-tooltip {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    color: black;
+}
+
 </style>

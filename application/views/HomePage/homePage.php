@@ -72,6 +72,11 @@
     <!-- <link rel="stylesheet" href="path/to/leaflet.groupedlayercontrol.css" />
     <script src="path/to/leaflet.groupedlayercontrol.js"></script> -->
 
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 
     <!-- bootstrap -->

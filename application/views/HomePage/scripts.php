@@ -184,7 +184,7 @@ let Parameters = [{
         category: 'Mesolscale Forecast'
     },
     {
-        name: 'WRF lightning Product',
+        name: 'WRF Lightning Product',
         category: 'Mesolscale Forecast'
     },
     {
@@ -192,11 +192,11 @@ let Parameters = [{
         category: 'Mesolscale Forecast'
     },
     {
-        name: 'lightning Potential index',
+        name: 'Lightning Potential Index',
         category: 'Mesolscale Forecast'
     },
     {
-        name: 'NCUMR lightning Product',
+        name: 'NCUMR Lightning Product',
         category: 'Mesolscale Forecast'
     },
     {
@@ -1306,123 +1306,123 @@ let subParametersList = [{
         category: 'Ship and Buoy'
     },
     {
-        name: 'Next 03 Hrs',
+        name: 'WRF R Next 03 Hrs',
         category: 'WRF Reflectivity'
     },
     {
-        name: 'Next 03-06 Hrs',
+        name: 'WRF R Next 03-06 Hrs',
         category: 'WRF Reflectivity'
     },
     {
-        name: 'Next 03 Hrs',
-        category: 'WRF lightning Product'
+        name: 'WRF LP Next 03 Hrs',
+        category: 'WRF Lightning Product'
     },
     {
-        name: 'Next 03-06 Hrs',
-        category: 'WRF lightning Product'
+        name: 'WRF LP Next 03-06 Hrs',
+        category: 'WRF Lightning Product'
     },
     {
-        name: 'Next 03 Hrs',
+        name: 'WRF AR Next 03 Hrs',
         category: 'WRF Accumlated Rainfall'
     },
     {
-        name: 'Next 03-06 Hrs',
+        name: 'WRF AR Next 03-06 Hrs',
         category: 'WRF Accumlated Rainfall'
     },
     {
-        name: 'Next 01 Hrs',
-        category: 'lightning Potential index'
+        name: 'LP Next 01 Hrs',
+        category: 'Lightning Potential Index'
     },
     {
-        name: 'Next 01-02 Hrs',
-        category: 'lightning Potential index'
+        name: 'LP Next 01-02 Hrs',
+        category: 'Lightning Potential Index'
     },
     {
-        name: 'Next 02-03 Hrs',
-        category: 'lightning Potential index'
+        name: 'LP Next 02-03 Hrs',
+        category: 'Lightning Potential Index'
     },
     {
-        name: 'Next 03 Hrs',
-        category: 'NCUMR lightning Product'
+        name: 'NCUMR LP Next 03 Hrs',
+        category: 'NCUMR Lightning Product'
     },
     {
-        name: 'Next 03-06 Hrs',
-        category: 'NCUMR lightning Product'
+        name: 'NCUMR LP Next 03-06 Hrs',
+        category: 'NCUMR Lightning Product'
     },
     {
-        name: 'Next 03 Hrs',
+        name: 'NCUMR WG Next 03 Hrs',
         category: 'NCUMR Wind Gust'
     },
     {
-        name: 'Next 03-06 Hrs',
+        name: 'NCUMR WG Next 03-06 Hrs',
         category: 'NCUMR Wind Gust'
     },
     {
-        name: 'Next 03 Hrs',
+        name: 'NCUMR R Next 03 Hrs',
         category: 'NCUMR Rainfall'
     },
     {
-        name: 'Next 03-06 Hrs',
+        name: 'NCUMR R Next 03-06 Hrs',
         category: 'NCUMR Rainfall'
     },
     {
-        name: 'Next 01 Hrs',
+        name: 'HRRR SP Next 01 Hrs',
         category: 'HRRR_SP Hourly DBZ'
     },
     {
-        name: 'Next 01-02 Hrs',
+        name: 'HRRR SP Next 01-02 Hrs',
         category: 'HRRR_SP Hourly DBZ'
     },
     {
-        name: 'Next 02-03 Hrs',
+        name: 'HRRR SP Next 02-03 Hrs',
         category: 'HRRR_SP Hourly DBZ'
     },
     {
-        name: 'Next 01 Hrs',
+        name: 'HRRR NE Next 01 Hrs',
         category: 'HRRR_NE Hourly DBZ'
     },
     {
-        name: 'Next 01-02 Hrs',
+        name: 'HRRR NE Next 01-02 Hrs',
         category: 'HRRR_NE Hourly DBZ'
     },
     {
-        name: 'Next 02-03 Hrs',
+        name: 'HRRR NE Next 02-03 Hrs',
         category: 'HRRR_NE Hourly DBZ'
     },
     {
-        name: 'Next 01 Hrs',
+        name: 'HRRR NW Next 01 Hrs',
         category: 'HRRR_NW Hourly DBZ'
     },
     {
-        name: 'Next 01-02 Hrs',
+        name: 'HRRR NW Next 01-02 Hrs',
         category: 'HRRR_NW Hourly DBZ'
     },
     {
-        name: 'Next 02-03 Hrs',
+        name: 'HRRR NW Next 02-03 Hrs',
         category: 'HRRR_NW Hourly DBZ'
     },
     {
-        name: 'Next 01 Hrs',
+        name: 'EWRF M Next 01 Hrs',
         category: 'EWRF MaxZ'
     },
     {
-        name: 'Next 01-02 Hrs',
+        name: 'EWRF M Next 01-02 Hrs',
         category: 'EWRF MaxZ'
     },
     {
-        name: 'Next 02-03 Hrs',
+        name: 'EWRF M Next 02-03 Hrs',
         category: 'EWRF MaxZ'
     },
     {
-        name: 'Next 01 Hrs',
+        name: 'EWRF L Next 01 Hrs',
         category: 'EWRF Lightning'
     },
     {
-        name: 'Next 01-02 Hrs',
+        name: 'EWRF L Next 01-02 Hrs',
         category: 'EWRF Lightning'
     },
     {
-        name: 'Next 02-03 Hrs',
+        name: 'EWRF L Next 02-03 Hrs',
         category: 'EWRF Lightning'
     },
     {
@@ -2908,23 +2908,87 @@ const syn00utc_tem = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IM
     layerName: "syn00utc_tem"
 });
 
-// const syn00utc_men = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "syn00utc_men"
-// });
+const syn00utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day1_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day1_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn00utc_rain"
+});
 
-// const syn00utc_clo = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "syn00utc_clo"
-// });
+const syn03utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day2_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day2_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn03utc_rain"
+});
+
+
+const syn06utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day3_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day3_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn06utc_rain"
+});
+
+const syn09utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day4_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day4_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn09utc_rain"
+});
+
+const syn12utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day5_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day5_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn12utc_rain"
+});
+
+
+const syn15utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day6_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day6_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn15utc_rain"
+});
+
+const syn18utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day7_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day7_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn18utc_rain"
+});
+
+const syn21utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD_Data/wms", {
+    layers: 'IMD_Data:Rainfall_Day1_Mask',
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.0',
+    attribution: "Rainfall_Day1_Mask",
+    crs: L.CRS.EPSG4326,
+    layerName: "syn21utc_rain"
+});
 
 //metar
 // const met00utc_tem = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
@@ -2945,42 +3009,6 @@ const met00utc_tem = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IM
     layerName: "met00utc_tem"
 });
 
-// const met00utc_dew = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "met00utc_dew"
-// });
-
-// const met00utc_vis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "met00utc_vis"
-// });
-
-//mesolscale
-// const mes_wrf_03 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "mes_wrf_03"
-// });
-
-// const mes_wrf_03_06 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "mes_wrf_03_06 "
-// });
 
 //medium
 const med_gfs1 = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
@@ -2998,45 +3026,14 @@ const med_ncum1 = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_D
     transparent: true,
     version: '1.1.0',
     attribution: "Rainfall_Day7_Mask",
+    crs: L.CRS.EPSG4326,
     layerName: "med_ncum1"
 });
 
-// const med_neps1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "med_neps1"
-// });
 
 //satellite
-// const sat_tir1 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "sat_tir1"
-// });
 
-// const sat_vis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "sat_vis"
-// });
 
-// const sat_ctbt = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "sat_ctbt"
-// });
 
 //radar
 const rad_ref = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
@@ -3048,61 +3045,13 @@ const rad_ref = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms"
     layerName: "rad_ref"
 });
 
-// const rad_ani = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "rad_ani"
-// });
+
 
 //sounding
-// const sou00utc_1000 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "sou00utc_1000"
-// });
 
-// const sou00utc_850 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "sou00utc_850"
-// });
 
-// const sou00utc_700 = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "sou00utc_700"
-// });
+
 //exposure
-// const exp_dis = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:awssample',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "awssample",
-//     layerName: "exp_dis"
-// });
-
-// const exp_air = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "exp_air"
-// });
-
 const exp_oil = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
     layers: 'IMD_Data:MAJOR_TOWNS',
     format: 'image/png',
@@ -3122,23 +3071,7 @@ const ship_00utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/w
     layerName: "ship_00utc"
 });
 
-// const ship_01utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/wms", {
-//     layers: 'cite:LLWS_12hr_fcst_FL',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "LLWS_12hr_fcst_FL",
-//     layerName: "ship_01utc"
-// });
 
-// const ship_02utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasdagrometgis/wms", {
-//     layers: 'aasdagrometgis:Nowcast',
-//     format: 'image/png',
-//     transparent: true,
-//     version: '1.1.0',
-//     attribution: "Nowcast",
-//     layerName: "ship_02utc"
-// });
 // dummy data for testing end
 
 //leaflet Fullscreen
@@ -3229,6 +3162,12 @@ if (polylineDrawTool) {
     polylineDrawTool.style.height = '38px';
     polylineDrawTool.style.width = '38px';
 }
+var markerDrawTool = document.querySelector('.leaflet-draw-draw-marker');
+
+if (markerDrawTool) {
+    markerDrawTool.style.display = 'none';
+}
+
 var polylineDrawTool = document.querySelector('.leaflet-draw-draw-circlemarker');
 if (polylineDrawTool) {
     polylineDrawTool.style.height = '38px';
@@ -3287,38 +3226,37 @@ map.on('draw:created', function(e) {
     if (userText !== null) {
         const geoJSONData = layer.toGeoJSON();
 
-        const popupContent = `<p>${userText}</p>`;
+        const tooltipContent = `<p>${userText}</p>`;
 
-        layer.bindPopup(popupContent, {
-            draggable: true
+        layer.bindTooltip(tooltipContent, {
+            permanent: true,
+            direction: 'top',
+            opacity: 0.7
         });
 
         // Add the layer to the drawn items
         drawnItems.addLayer(layer);
 
         setTimeout(function() {
-            // Open the popup
-            layer.openPopup();
+            // Open the tooltip
+            layer.openTooltip();
 
-            // Make the popup draggable
-            const popup = layer.getPopup();
-            const popupContainer = popup._container;
+            // Make the tooltip draggable
+            const tooltip = layer.getTooltip();
+            const tooltipContainer = tooltip._container;
 
-            L.DomUtil.addClass(popupContainer, 'leaflet-popup-draggable');
-            L.DomEvent.on(popupContainer, 'mousedown', function() {
-                L.DomUtil.addClass(popupContainer, 'leaflet-grab');
+            L.DomUtil.addClass(tooltipContainer, 'leaflet-tooltip-draggable');
+            L.DomEvent.on(tooltipContainer, 'mousedown', function() {
+                L.DomUtil.addClass(tooltipContainer, 'leaflet-grab');
             });
 
-            L.DomEvent.on(popupContainer, 'mouseup', function() {
-                L.DomUtil.removeClass(popupContainer, 'leaflet-grab');
-            });
-
-            const popupDraggable = new L.Draggable(popupContainer, popupContainer);
-            popupDraggable.enable();
+            const tooltipDraggable = new L.Draggable(tooltipContainer, tooltipContainer);
+            tooltipDraggable.enable();
 
         }, 0);
     }
 });
+
 
 
 
@@ -3420,6 +3358,101 @@ var MacroButton = L.Control.extend({
     }
 });
 
+//freehand
+(function() {
+    var drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
+
+    var isFreehandMode = false;
+    var isDrawing = false;
+    var polyline = null;
+
+    function startDrawing() {
+        isDrawing = true;
+        polyline = L.polyline([], {
+            weight: 4,
+            color: 'red',
+            dashArray: '5, 5'
+        }).addTo(drawnItems);
+    }
+
+    function stopDrawing() {
+        isDrawing = false;
+        polyline = null;
+    }
+
+    var freehandButton = L.control({
+        position: 'topleft'
+    });
+    freehandButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.innerHTML = '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;">Freehand</button>';
+        div.firstChild.addEventListener('click', function() {
+            if (isFreehandMode) {
+                isFreehandMode = false;
+                map.dragging.enable();
+                document.getElementById('freehandButton').style.backgroundColor = 'green';
+            } else {
+                isFreehandMode = true;
+                map.dragging.disable();
+                document.getElementById('freehandButton').style.backgroundColor = 'red';
+            }
+        });
+        return div;
+    };
+    freehandButton.addTo(map);
+
+    var clearLayersButton = L.control({
+        position: 'topleft'
+    });
+    clearLayersButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.innerHTML = '<button id="clearLayersButton" style="background-color: white; border: 0px solid black;">Clear Drawing</button>';
+
+        div.firstChild.addEventListener('click', function() {
+            drawnItems.clearLayers();
+            isFreehandMode = false;
+            map.dragging.enable();
+            document.getElementById('freehandButton').style.backgroundColor = 'green';
+        });
+        return div;
+    };
+    clearLayersButton.addTo(map);
+
+    map.on('mousedown', function(event) {
+        if (isFreehandMode && event.originalEvent.button === 0) {
+            if (!isDrawing) {
+                startDrawing();
+                map.dragging.disable();
+            }
+        }
+    });
+
+    map.on('mousemove', function(event) {
+        if (isDrawing) {
+            polyline.addLatLng(event.latlng);
+        }
+    });
+
+    document.addEventListener('mouseup', function(event) {
+        if (isDrawing && event.button === 0) {
+            stopDrawing();
+            map.dragging.enable();
+        }
+    });
+
+    document.getElementById('clearLayersButton').addEventListener('click', function() {
+        // Remove all layers from the map
+        drawnItems.clearLayers();
+
+        // Reset freehand mode
+        isFreehandMode = false;
+        map.dragging.enable();
+
+        // Reset freehand button color
+        document.getElementById('freehandButton').style.backgroundColor = 'green';
+    });
+})();
 
 
 
@@ -3438,7 +3471,8 @@ function toggleSideBySide() {
         }
         sideBySideVisible = false;
     } else {
-        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNowcast).addTo(map);
+        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast, syn00utc_tem, met00utc_tem,
+            med_gfs1).addTo(map);
         sideBySideVisible = true;
     }
     updateActiveLayers();
@@ -3455,6 +3489,7 @@ function updateActiveLayers() {
     });
 
     // Check if side-by-side is active and more than 2 layers are active
+    console.log(sideBySideVisible, activeLayers);
     console.log(sideBySideVisible, activeLayers);
     if (sideBySideVisible && activeLayers > 2) {
         alert("Only two layers can be active when side-by-side view is active please unselect the layer!");
@@ -4812,43 +4847,43 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_00",
                 layer: syn00utc_tem,
             },
             {
                 active: false,
-                name: "Mean Sea Level Pressure",
+                name: "Mean Sea Level Pressure_00",
                 layer: HHHHHH,
             },
             {
                 active: false,
-                name: "Cloud Cover",
+                name: "Cloud Cover_00",
                 layer: X1,
             },
             {
                 active: false,
-                name: "Geopotential Height",
+                name: "Geopotential Height_00",
                 layer: X2
             },
             {
                 active: false,
-                name: "Relative Humidity",
+                name: "Relative Humidity_00",
                 layer: X3
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_00",
                 layer: X4
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_00",
                 layer: X5
             },
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X6
+                layer: syn00utc_rain,
             },
         ]
     },
@@ -4858,43 +4893,43 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_03",
                 layer: X7
             },
             {
                 active: false,
-                name: "Mean Sea Level Pressure",
+                name: "Mean Sea Level Pressure_03",
                 layer: X8
             },
             {
                 active: false,
-                name: "Cloud Cover",
+                name: "Cloud Cover_03",
                 layer: X9
             },
             {
                 active: false,
-                name: "Geopotential Height",
+                name: "Geopotential Height_03",
                 layer: X10
             },
             {
                 active: false,
-                name: "Relative Humidity",
+                name: "Relative Humidity_03",
                 layer: X11
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_03",
                 layer: X12
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_03",
                 layer: X13
             },
             {
                 active: false,
-                name: "3h Rainfall",
-                layer: X14
+                name: "3h Rainfall_03",
+                layer: syn03utc_rain,
             },
         ]
     },
@@ -4940,7 +4975,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X22
+                layer: syn06utc_rain,
             },
         ]
     },
@@ -4986,7 +5021,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X30
+                layer: syn09utc_rain,
             },
         ]
     },
@@ -5032,7 +5067,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X38
+                layer: syn12utc_rain,
             },
         ]
     },
@@ -5078,7 +5113,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X46
+                layer: syn15utc_rain,
             },
         ]
     },
@@ -5124,7 +5159,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X54
+                layer: syn18utc_rain,
             },
         ]
     },
@@ -5170,7 +5205,7 @@ const overLayers2 = [{
             {
                 active: false,
                 name: "3h Rainfall",
-                layer: X62
+                layer: syn21utc_rain,
             },
         ]
     },
@@ -5188,17 +5223,17 @@ var overLayers3 = [{
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_00",
                 layer: X49,
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_00",
                 layer: X50,
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_00",
                 layer: MeerutMarker
             },
 
@@ -5210,22 +5245,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_01",
                 layer: X63
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_01",
                 layer: X64
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_01",
                 layer: X65
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_01",
                 layer: X66
             },
 
@@ -5237,22 +5272,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_02",
                 layer: X67
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_02",
                 layer: X68
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_02",
                 layer: X69
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_02",
                 layer: X70
             },
 
@@ -5264,22 +5299,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_03",
                 layer: X71
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_03",
                 layer: X72
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_03",
                 layer: X73
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_03",
                 layer: X74
             },
 
@@ -5292,22 +5327,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_04",
                 layer: X75
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_04",
                 layer: X76
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_04",
                 layer: X77
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_04",
                 layer: X78
             },
 
@@ -5319,22 +5354,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_05",
                 layer: X79
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_05",
                 layer: X80
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_05",
                 layer: X81
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_05",
                 layer: X82
             },
 
@@ -5346,22 +5381,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_06",
                 layer: X83
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_06",
                 layer: X84
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_06",
                 layer: X85
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_06",
                 layer: X86
             },
 
@@ -5373,22 +5408,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_07",
                 layer: X87
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_07",
                 layer: X88
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_07",
                 layer: X89
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_07",
                 layer: X90
             },
 
@@ -5400,22 +5435,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_08",
                 layer: X91
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_08",
                 layer: X92
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_08",
                 layer: X93
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_08",
                 layer: X94
             },
 
@@ -5427,22 +5462,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_09",
                 layer: X95
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_09",
                 layer: X96
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_09",
                 layer: X97
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_09",
                 layer: X98
             },
 
@@ -5454,22 +5489,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_10",
                 layer: X99
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_10",
                 layer: X100
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_10",
                 layer: X101
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_10",
                 layer: X102
             },
 
@@ -5481,22 +5516,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_11",
                 layer: X103
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_11",
                 layer: X104
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_11",
                 layer: X105
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_11",
                 layer: X106
             },
 
@@ -5508,22 +5543,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_12",
                 layer: X107
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_12",
                 layer: X108
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_12",
                 layer: X109
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_12",
                 layer: X110
             },
 
@@ -5535,22 +5570,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_13",
                 layer: X111
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_13",
                 layer: X112
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_13",
                 layer: X113
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_13",
                 layer: X114
             },
 
@@ -5562,22 +5597,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_14",
                 layer: X115
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_14",
                 layer: X116
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_14",
                 layer: X117
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_14",
                 layer: X118
             },
 
@@ -5589,22 +5624,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_15",
                 layer: X119
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_15",
                 layer: X120
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_15",
                 layer: X121
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_15",
                 layer: X122
             },
 
@@ -5616,22 +5651,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_16",
                 layer: X123
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_16",
                 layer: X124
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_16",
                 layer: X125
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_16",
                 layer: X126
             },
 
@@ -5643,22 +5678,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_17",
                 layer: X127
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_17",
                 layer: X128
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_17",
                 layer: X129
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_17",
                 layer: X130
             },
 
@@ -5670,22 +5705,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_18",
                 layer: X131
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_18",
                 layer: X132
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_18",
                 layer: X133
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_18",
                 layer: X134
             },
 
@@ -5697,22 +5732,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_19",
                 layer: X135
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_19",
                 layer: X136
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_19",
                 layer: X137
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_19",
                 layer: X138
             },
 
@@ -5724,22 +5759,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_20",
                 layer: X139
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_20",
                 layer: X140
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_20",
                 layer: X141
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_20",
                 layer: X142
             },
 
@@ -5751,22 +5786,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_21",
                 layer: X143
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_21",
                 layer: X144
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_21",
                 layer: X145
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_21",
                 layer: X146
             },
 
@@ -5778,22 +5813,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_22",
                 layer: X147
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_22",
                 layer: X148
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_22",
                 layer: X149
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_22",
                 layer: X150
             },
 
@@ -5805,22 +5840,22 @@ var overLayers3 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_23",
                 layer: X151
             },
             {
                 active: false,
-                name: "Dew Point Temperature",
+                name: "Dew Point Temperature_23",
                 layer: X152
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_23",
                 layer: X153
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_23",
                 layer: X154
             },
 
@@ -5838,12 +5873,12 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 03 Hrs",
+                name: "WRF R Next 03 Hrs",
                 layer: X250
             },
             {
                 active: false,
-                name: "Next 03-06 Hrs",
+                name: "WRF R Next 03-06 Hrs",
                 layer: X251
             },
         ]
@@ -5855,12 +5890,12 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 03 Hrs",
+                name: "WRF LP Next 03 Hrs",
                 layer: X252
             },
             {
                 active: false,
-                name: "Next 03-06 Hrs",
+                name: "WRF LP Next 03-06 Hrs",
                 layer: X253
             },
         ]
@@ -5871,12 +5906,12 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 03 Hrs",
+                name: "WRF AR Next 03 Hrs",
                 layer: X254
             },
             {
                 active: false,
-                name: "Next 03-06 Hrs",
+                name: "WRF AR Next 03-06 Hrs",
                 layer: X255
             },
         ]
@@ -5888,17 +5923,17 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 01 Hrs",
+                name: "LP Next 01 Hrs",
                 layer: X256
             },
             {
                 active: false,
-                name: "Next 01-02 Hrs",
+                name: "LP Next 01-02 Hrs",
                 layer: X257
             },
             {
                 active: false,
-                name: "Next 02-03 Hrs",
+                name: "LP Next 02-03 Hrs",
                 layer: X258
             },
         ]
@@ -5910,12 +5945,12 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 03 Hrs",
+                name: "NCUMR LP Next 03 Hrs",
                 layer: X259
             },
             {
                 active: false,
-                name: "Next 03-06 Hrs",
+                name: "NCUMR LP Next 03-06 Hrs",
                 layer: X260
             },
         ]
@@ -5926,12 +5961,12 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 03 Hrs",
+                name: "NCUMR WG Next 03 Hrs",
                 layer: X261
             },
             {
                 active: false,
-                name: "Next 03-06 Hrs",
+                name: "NCUMR WG Next 03-06 Hrs",
                 layer: X262
             },
         ]
@@ -5943,12 +5978,12 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 03 Hrs",
+                name: "NCUMR R Next 03 Hrs",
                 layer: X262
             },
             {
                 active: false,
-                name: "Next 03-06 Hrs",
+                name: "NCUMR R Next 03-06 Hrs",
                 layer: X263
             },
         ]
@@ -5960,17 +5995,17 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 01 Hrs",
+                name: "HRRR SP Next 01 Hrs",
                 layer: X264
             },
             {
                 active: false,
-                name: "Next 01-02 Hrs",
+                name: "HRRR SP Next 01-02 Hrs",
                 layer: X266
             },
             {
                 active: false,
-                name: "Next 02-03 Hrs",
+                name: "HRRR SP Next 02-03 Hrs",
                 layer: X267
             },
         ]
@@ -5980,17 +6015,17 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 01 Hrs",
+                name: "HRRR NE Next 01 Hrs",
                 layer: X268
             },
             {
                 active: false,
-                name: "Next 01-02 Hrs",
+                name: "HRRR NE Next 01-02 Hrs",
                 layer: X269
             },
             {
                 active: false,
-                name: "Next 02-03 Hrs",
+                name: "HRRR NE Next 02-03 Hrs",
                 layer: X270
             },
         ]
@@ -6000,17 +6035,17 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 01 Hrs",
+                name: "HRRR NW Next 01 Hrs",
                 layer: X271
             },
             {
                 active: false,
-                name: "Next 01-02 Hrs",
+                name: "HRRR NW Next 01-02 Hrs",
                 layer: X272
             },
             {
                 active: false,
-                name: "Next 02-03 Hrs",
+                name: "HRRR NW Next 02-03 Hrs",
                 layer: X273
             },
         ]
@@ -6020,17 +6055,17 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 01 Hrs",
+                name: "EWRF M Next 01 Hrs",
                 layer: X274
             },
             {
                 active: false,
-                name: "Next 01-02 Hrs",
+                name: "EWRF M Next 01-02 Hrs",
                 layer: X275
             },
             {
                 active: false,
-                name: "Next 02-03 Hrs",
+                name: "EWRF M Next 02-03 Hrs",
                 layer: X276
             },
         ]
@@ -6040,17 +6075,17 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 01 Hrs",
+                name: "EWRF L Next 01 Hrs",
                 layer: X277
             },
             {
                 active: false,
-                name: "Next 01-02 Hrs",
+                name: "EWRF L Next 01-02 Hrs",
                 layer: X278
             },
             {
                 active: false,
-                name: "Next 02-03 Hrs",
+                name: "EWRF L Next 02-03 Hrs",
                 layer: X279
             },
 
@@ -9511,21 +9546,21 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //Metar00UTC-DPT
-        if (_class_name == 'METAR 00UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 00UTC Dew Point Temperature_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X49;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar00UTC-Vis
-        if (_class_name == 'METAR 00UTC Visibility') {
+        if (_class_name == 'METAR 00UTC Visibility_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X50;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar00UTC-Vis
-        if (_class_name == 'METAR 00UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 00UTC Wind Speed and Direction_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = MeerutMarker;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9533,28 +9568,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 01UTC-Temp
-        if (_class_name == 'METAR 01UTC Temperature') {
+        if (_class_name == 'METAR 01UTC Temperature_01') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X63;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar01UTC-DPT
-        if (_class_name == 'METAR 01UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 01UTC Dew Point Temperature_01') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X64;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar01UTC-Vis
-        if (_class_name == 'METAR 01UTC Visibility') {
+        if (_class_name == 'METAR 01UTC Visibility_01') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X65;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar01UTC-Vis
-        if (_class_name == 'METAR 01UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 01UTC Wind Speed and Direction_01') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X66;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9562,28 +9597,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 02UTC-Temp
-        if (_class_name == 'METAR 02UTC Temperature') {
+        if (_class_name == 'METAR 02UTC Temperature_02') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X67;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-02UTC-DPT
-        if (_class_name == 'METAR 02UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 02UTC Dew Point Temperature_02') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X68;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-02UTC-Vis
-        if (_class_name == 'METAR 02UTC Visibility') {
+        if (_class_name == 'METAR 02UTC Visibility_02') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X69;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-02UTC-WSAD
-        if (_class_name == 'METAR 02UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 02UTC Wind Speed and Direction_02') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X70;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9591,28 +9626,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 03UTC-Temp
-        if (_class_name == 'METAR 03UTC Temperature') {
+        if (_class_name == 'METAR 03UTC Temperature_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X71;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-03UTC-DPT
-        if (_class_name == 'METAR 03UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 03UTC Dew Point Temperature_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X72;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-03UTC-Vis
-        if (_class_name == 'METAR 03UTC Visibility') {
+        if (_class_name == 'METAR 03UTC Visibility_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X73;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-03UTC-WSAD
-        if (_class_name == 'METAR 03UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 03UTC Wind Speed and Direction_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X74;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9620,28 +9655,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 04UTC-Temp
-        if (_class_name == 'METAR 04UTC Temperature') {
+        if (_class_name == 'METAR 04UTC Temperature_04') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X75;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-04UTC-DPT
-        if (_class_name == 'METAR 04UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 04UTC Dew Point Temperature_04') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X76;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-04UTC-Vis
-        if (_class_name == 'METAR 04UTC Visibility') {
+        if (_class_name == 'METAR 04UTC Visibility_04') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X77;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-04UTC-WSAD
-        if (_class_name == 'METAR 04UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 04UTC Wind Speed and Direction_04') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X78;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9649,28 +9684,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 05UTC-Temp
-        if (_class_name == 'METAR 05UTC Temperature') {
+        if (_class_name == 'METAR 05UTC Temperature_05') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X79;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-05UTC-DPT
-        if (_class_name == 'METAR 05UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 05UTC Dew Point Temperature_05') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X80;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-05UTC-Vis
-        if (_class_name == 'METAR 05UTC Visibility') {
+        if (_class_name == 'METAR 05UTC Visibility_05') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X81;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-05UTC-WSAD
-        if (_class_name == 'METAR 05UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 05UTC Wind Speed and Direction_05') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X82;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9678,28 +9713,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 06UTC-Temp
-        if (_class_name == 'METAR 06UTC Temperature') {
+        if (_class_name == 'METAR 06UTC Temperature_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X83;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-06UTC-DPT
-        if (_class_name == 'METAR 06UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 06UTC Dew Point Temperature_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X84;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-06UTC-Vis
-        if (_class_name == 'METAR 06UTC Visibility') {
+        if (_class_name == 'METAR 06UTC Visibility_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X85;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-06UTC-WSAD
-        if (_class_name == 'METAR 06UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 06UTC Wind Speed and Direction_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X86;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9707,28 +9742,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 07UTC-Temp
-        if (_class_name == 'METAR 07UTC Temperature') {
+        if (_class_name == 'METAR 07UTC Temperature_07') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X87;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-07UTC-DPT
-        if (_class_name == 'METAR 07UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 07UTC Dew Point Temperature_07') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X88;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-07UTC-Vis
-        if (_class_name == 'METAR 07UTC Visibility') {
+        if (_class_name == 'METAR 07UTC Visibility_07') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X89;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-07UTC-WSAD
-        if (_class_name == 'METAR 07UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 07UTC Wind Speed and Direction_07') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X90;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9736,28 +9771,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 08UTC-Temp
-        if (_class_name == 'METAR 08UTC Temperature') {
+        if (_class_name == 'METAR 08UTC Temperature_08') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X91;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-08UTC-DPT
-        if (_class_name == 'METAR 08UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 08UTC Dew Point Temperature_08') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X92;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-08UTC-Vis
-        if (_class_name == 'METAR 08UTC Visibility') {
+        if (_class_name == 'METAR 08UTC Visibility_08') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X93;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-08UTC-WSAD
-        if (_class_name == 'METAR 08UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 08UTC Wind Speed and Direction_08') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X94;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9765,28 +9800,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 09UTC-Temp
-        if (_class_name == 'METAR 09UTC Temperature') {
+        if (_class_name == 'METAR 09UTC Temperature_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X95;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-09UTC-DPT
-        if (_class_name == 'METAR 09UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 09UTC Dew Point Temperature_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X96;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-09UTC-Vis
-        if (_class_name == 'METAR 09UTC Visibility') {
+        if (_class_name == 'METAR 09UTC Visibility_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X97;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-09UTC-WSAD
-        if (_class_name == 'METAR 09UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 09UTC Wind Speed and Direction_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X98;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9794,28 +9829,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 10UTC-Temp
-        if (_class_name == 'METAR 10UTC Temperature') {
+        if (_class_name == 'METAR 10UTC Temperature_10') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X99;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-10UTC-DPT
-        if (_class_name == 'METAR 10UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 10UTC Dew Point Temperature_10') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X100;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-10UTC-Vis
-        if (_class_name == 'METAR 10UTC Visibility') {
+        if (_class_name == 'METAR 10UTC Visibility_10') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X101;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-10UTC-WSAD
-        if (_class_name == 'METAR 10UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 10UTC Wind Speed and Direction_10') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X102;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9823,28 +9858,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 11UTC-Temp
-        if (_class_name == 'METAR 11UTC Temperature') {
+        if (_class_name == 'METAR 11UTC Temperature_11') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X103;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-11UTC-DPT
-        if (_class_name == 'METAR 11UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 11UTC Dew Point Temperature_11') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X104;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-11UTC-Vis
-        if (_class_name == 'METAR 11UTC Visibility') {
+        if (_class_name == 'METAR 11UTC Visibility_11') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X105;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-11UTC-WSAD
-        if (_class_name == 'METAR 11UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 11UTC Wind Speed and Direction_11') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X106;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9852,28 +9887,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 12UTC-Temp
-        if (_class_name == 'METAR 12UTC Temperature') {
+        if (_class_name == 'METAR 12UTC Temperature_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X107;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-12UTC-DPT
-        if (_class_name == 'METAR 12UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 12UTC Dew Point Temperature_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X108;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-12UTC-Vis
-        if (_class_name == 'METAR 12UTC Visibility') {
+        if (_class_name == 'METAR 12UTC Visibility_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X109;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-12UTC-WSAD
-        if (_class_name == 'METAR 12UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 12UTC Wind Speed and Direction_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X110;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9881,28 +9916,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 13UTC-Temp
-        if (_class_name == 'METAR 13UTC Temperature') {
+        if (_class_name == 'METAR 13UTC Temperature_13') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X111;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-13UTC-DPT
-        if (_class_name == 'METAR 13UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 13UTC Dew Point Temperature_13') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X112;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-13UTC-Vis
-        if (_class_name == 'METAR 13UTC Visibility') {
+        if (_class_name == 'METAR 13UTC Visibility_13') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X113;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-13UTC-WSAD
-        if (_class_name == 'METAR 13UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 13UTC Wind Speed and Direction_13') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X114;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9910,28 +9945,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 14UTC-Temp
-        if (_class_name == 'METAR 14UTC Temperature') {
+        if (_class_name == 'METAR 14UTC Temperature_14') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X115;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-14UTC-DPT
-        if (_class_name == 'METAR 14UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 14UTC Dew Point Temperature_14') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X116;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-14UTC-Vis
-        if (_class_name == 'METAR 14UTC Visibility') {
+        if (_class_name == 'METAR 14UTC Visibility_14') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X117;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-14UTC-WSAD
-        if (_class_name == 'METAR 14UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 14UTC Wind Speed and Direction_14') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X118;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9939,28 +9974,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 15UTC-Temp
-        if (_class_name == 'METAR 15UTC Temperature') {
+        if (_class_name == 'METAR 15UTC Temperature_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X119;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-15UTC-DPT
-        if (_class_name == 'METAR 15UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 15UTC Dew Point Temperature_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X120;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-15UTC-Vis
-        if (_class_name == 'METAR 15UTC Visibility') {
+        if (_class_name == 'METAR 15UTC Visibility_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X121;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-15UTC-WSAD
-        if (_class_name == 'METAR 15UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 15UTC Wind Speed and Direction_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X122;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9968,28 +10003,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 16UTC-Temp
-        if (_class_name == 'METAR 16UTC Temperature') {
+        if (_class_name == 'METAR 16UTC Temperature_16') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X123;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-16UTC-DPT
-        if (_class_name == 'METAR 16UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 16UTC Dew Point Temperature_16') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X124;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-16UTC-Vis
-        if (_class_name == 'METAR 16UTC Visibility') {
+        if (_class_name == 'METAR 16UTC Visibility_16') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X125;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-16UTC-WSAD
-        if (_class_name == 'METAR 16UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 16UTC Wind Speed and Direction_16') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X126;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -9997,28 +10032,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 17UTC-Temp
-        if (_class_name == 'METAR 17UTC Temperature') {
+        if (_class_name == 'METAR 17UTC Temperature_17') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X127;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-17UTC-DPT
-        if (_class_name == 'METAR 17UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 17UTC Dew Point Temperature_17') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X128;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-17UTC-Vis
-        if (_class_name == 'METAR 17UTC Visibility') {
+        if (_class_name == 'METAR 17UTC Visibility_17') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X129;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-17UTC-WSAD
-        if (_class_name == 'METAR 17UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 17UTC Wind Speed and Direction_17') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X130;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10026,28 +10061,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 18UTC-Temp
-        if (_class_name == 'METAR 18UTC Temperature') {
+        if (_class_name == 'METAR 18UTC Temperature_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X131;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-18UTC-DPT
-        if (_class_name == 'METAR 18UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 18UTC Dew Point Temperature_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X132;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-18UTC-Vis
-        if (_class_name == 'METAR 18UTC Visibility') {
+        if (_class_name == 'METAR 18UTC Visibility_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X133;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-18UTC-WSAD
-        if (_class_name == 'METAR 18UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 18UTC Wind Speed and Direction_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X134;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10055,28 +10090,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 19UTC-Temp
-        if (_class_name == 'METAR 19UTC Temperature') {
+        if (_class_name == 'METAR 19UTC Temperature_19') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X135;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-19UTC-DPT
-        if (_class_name == 'METAR 19UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 19UTC Dew Point Temperature_19') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X136;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-19UTC-Vis
-        if (_class_name == 'METAR 19UTC Visibility') {
+        if (_class_name == 'METAR 19UTC Visibility_19') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X137;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-19UTC-WSAD
-        if (_class_name == 'METAR 19UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 19UTC Wind Speed and Direction_19') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X138;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10084,28 +10119,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 20UTC-Temp
-        if (_class_name == 'METAR 20UTC Temperature') {
+        if (_class_name == 'METAR 20UTC Temperature_20') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X139;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-20UTC-DPT
-        if (_class_name == 'METAR 20UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 20UTC Dew Point Temperature_20') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X140;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-20UTC-Vis
-        if (_class_name == 'METAR 20UTC Visibility') {
+        if (_class_name == 'METAR 20UTC Visibility_20') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X141;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-20UTC-WSAD
-        if (_class_name == 'METAR 20UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 20UTC Wind Speed and Direction_20') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X142;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10113,28 +10148,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 21UTC-Temp
-        if (_class_name == 'METAR 21UTC Temperature') {
+        if (_class_name == 'METAR 21UTC Temperature_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X143;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-21UTC-DPT
-        if (_class_name == 'METAR 21UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 21UTC Dew Point Temperature_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X144;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-21UTC-Vis
-        if (_class_name == 'METAR 21UTC Visibility') {
+        if (_class_name == 'METAR 21UTC Visibility_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X145;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-21UTC-WSAD
-        if (_class_name == 'METAR 21UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 21UTC Wind Speed and Direction_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X146;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10142,28 +10177,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 22UTC-Temp
-        if (_class_name == 'METAR 22UTC Temperature') {
+        if (_class_name == 'METAR 22UTC Temperature_22') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X147;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-22UTC-DPT
-        if (_class_name == 'METAR 22UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 22UTC Dew Point Temperature_22') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X148;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-22UTC-Vis
-        if (_class_name == 'METAR 22UTC Visibility') {
+        if (_class_name == 'METAR 22UTC Visibility_22') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X149;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-22UTC-WSAD
-        if (_class_name == 'METAR 22UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 22UTC Wind Speed and Direction_22') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X150;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10171,28 +10206,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //
         //METAR 23UTC-Temp
-        if (_class_name == 'METAR 23UTC Temperature') {
+        if (_class_name == 'METAR 23UTC Temperature_23') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X151;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-23UTC-DPT
-        if (_class_name == 'METAR 23UTC Dew Point Temperature') {
+        if (_class_name == 'METAR 23UTC Dew Point Temperature_23') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X152;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-23UTC-Vis
-        if (_class_name == 'METAR 23UTC Visibility') {
+        if (_class_name == 'METAR 23UTC Visibility_23') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X153;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Metar-23UTC-WSAD
-        if (_class_name == 'METAR 23UTC Wind Speed and Direction') {
+        if (_class_name == 'METAR 23UTC Wind Speed and Direction_23') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X154;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10200,49 +10235,49 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // SYNOP
         //SYNOP 00UTC Temp
-        if (_class_name == 'SYNOP 00UTC Temperature') {
+        if (_class_name == 'SYNOP 00UTC Temperature_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = syn00utc_tem;
             remOrAdSynopTempLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 00UTC MSLP
-        if (_class_name == 'SYNOP 00UTC Mean Sea Level Pressure') {
+        if (_class_name == 'SYNOP 00UTC Mean Sea Level Pressure_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = HHHHHH;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 00UTC CC
-        if (_class_name == 'SYNOP 00UTC Cloud Cover') {
+        if (_class_name == 'SYNOP 00UTC Cloud Cover_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X1;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 00UTC GH
-        if (_class_name == 'SYNOP 00UTC Geopotential Height') {
+        if (_class_name == 'SYNOP 00UTC Geopotential Height_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X2;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 00UTC RH
-        if (_class_name == 'SYNOP 00UTC Relative Humidity') {
+        if (_class_name == 'SYNOP 00UTC Relative Humidity_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X3;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 00UTC V
-        if (_class_name == 'SYNOP 00UTC Visibility') {
+        if (_class_name == 'SYNOP 00UTC Visibility_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X4;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 00UTC V
-        if (_class_name == 'SYNOP 00UTC Wind Speed and Direction') {
+        if (_class_name == 'SYNOP 00UTC Wind Speed and Direction_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X5;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -11157,178 +11192,177 @@ $("body").on("change", "input[type=checkbox]", function() {
             var _layer_to_remove_add = X2;
             remove_layer_or_add_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-
         // 
         // mesolscale
         // WRF Reflectivity
-        if (_class_name == 'WRF Reflectivity Next 03 Hrs') {
+        if (_class_name == 'WRF Reflectivity WRF R Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X250;
             remLayOrAdclickedWRFRef(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'WRF Reflectivity Next 03-06 Hrs') {
+        if (_class_name == 'WRF Reflectivity WRF R Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X251;
             remLayOrAdclickedWRFRef(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
-        // WRF Reflectivity 
-        if (_class_name == 'WRF Lightning Product Next 03 Hrs') {
+        // WRF Lightining
+        if (_class_name == 'WRF Lightning Product WRF LP Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X252;
             remLayOrAdclickedWRF_lig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'WRF Lightning Product Next 03-06 Hrs') {
+        if (_class_name == 'WRF Lightning Product WRF LP Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X253;
             remLayOrAdclickedWRF_lig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //WRF Accumlated Rainfall 
-        if (_class_name == 'WRF Accumlated Rainfall Next 03 Hrs') {
+        if (_class_name == 'WRF Accumlated Rainfall WRF AR Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X254;
             remLayOrAdclickedWRF_acc_rain(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'WRF Accumlated Rainfall Next 03-06 Hrs') {
+        if (_class_name == 'WRF Accumlated Rainfall WRF AR Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X255;
             remLayOrAdclickedWRF_acc_rain(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Lightning Potential Index
-        if (_class_name == 'Lightning Potential Index Next 01 Hrs') {
+        if (_class_name == 'Lightning Potential Index LP Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X256;
             remLayOrAdclickedLig_pot(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'Lightning Potential Index Next 01-02 Hrs') {
+        if (_class_name == 'Lightning Potential Index LP Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X257;
             remLayOrAdclickedLig_pot(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'Lightning Potential Index Next 02-03 Hrs') {
+        if (_class_name == 'Lightning Potential Index LP Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X258;
             remLayOrAdclickedLig_pot(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //NCUMR Lightning Product
-        if (_class_name == 'NCUMR Lightning Product Next 03 Hrs') {
+        if (_class_name == 'NCUMR Lightning Product NCUMR LP Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X259;
             remLayOrAdclickedLig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'NCUMR Lightning Product Next 03-06 Hrs') {
+        if (_class_name == 'NCUMR Lightning Product NCUMR LP Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X260;
             remLayOrAdclickedLig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //NCUMR Lightning Product
-        if (_class_name == 'NCUMR Wind Gust Next 03 Hrs') {
+        if (_class_name == 'NCUMR Wind Gust NCUMR WG Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X261;
             remLayOrAdclickedNCUMR_WG(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'NCUMR Wind Gust Next 03-06 Hrs') {
+        if (_class_name == 'NCUMR Wind Gust NCUMR WG Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X262;
             remLayOrAdclickedNCUMR_WG(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //NCUMR Rainfall
-        if (_class_name == 'NCUMR Rainfall Next 03 Hrs forExistLayer') {
+        if (_class_name == 'NCUMR Rainfall NCUMR R Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X5;
             remLayOrAdclickedNCUMR_RF(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'NCUMR Rainfall Next 03-06 Hrs') {
+        if (_class_name == 'NCUMR Rainfall NCUMR R Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X263;
             remLayOrAdclickedNCUMR_RF(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //HRRR_SP Hourly DBZ
-        if (_class_name == 'HRRR_SP Hourly DBZ Next 01 Hrs') {
+        if (_class_name == 'HRRR_SP Hourly DBZ HRRR SP Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X264;
             remLayOrAdclickedHRRR_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'HRRR_SP Hourly DBZ Next 01-02 Hrs') {
+        if (_class_name == 'HRRR_SP Hourly DBZ HRRR SP Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X266;
             remLayOrAdclickedHRRR_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'HRRR_SP Hourly DBZ Next 02-03 Hrs') {
+        if (_class_name == 'HRRR_SP Hourly DBZ HRRR SP Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X267;
             remLayOrAdclickedHRRR_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //HRRR_SP Hourly DBZ
-        if (_class_name == 'HRRR_NE Hourly DBZ Next 01 Hrs') {
+        if (_class_name == 'HRRR_NE Hourly DBZ HRRR NE Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X268;
             remLayOrAdclickedHRRR_NE_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'HRRR_NE Hourly DBZ Next 01-02 Hrs') {
+        if (_class_name == 'HRRR_NE Hourly DBZ HRRR NE Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X269;
             remLayOrAdclickedHRRR_NE_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'HRRR_NE Hourly DBZ Next 02-03 Hrs') {
+        if (_class_name == 'HRRR_NE Hourly DBZ HRRR NE Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X270;
             remLayOrAdclickedHRRR_NE_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //HRRR_NW Hourly DBZ
-        if (_class_name == 'HRRR_NW Hourly DBZ Next 01 Hrs') {
+        if (_class_name == 'HRRR_NW Hourly DBZ HRRR NW Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X271;
             remLayOrAdclickedHRRR_NW_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'HRRR_NW Hourly DBZ Next 01-02 Hrs') {
+        if (_class_name == 'HRRR_NW Hourly DBZ HRRR NW Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X272;
             remLayOrAdclickedHRRR_NW_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'HRRR_NW Hourly DBZ Next 02-03 Hrs') {
+        if (_class_name == 'HRRR_NW Hourly DBZ HRRR NW Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X273;
             remLayOrAdclickedHRRR_NW_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //EWRF MaxZ
-        if (_class_name == 'EWRF MaxZ Next 01 Hrs') {
+        if (_class_name == 'EWRF MaxZ EWRF M Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X274;
             remLayOrAdclickedEWRF_MaxZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'EWRF MaxZ Next 01-02 Hrs') {
+        if (_class_name == 'EWRF MaxZ EWRF M Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X275;
             remLayOrAdclickedEWRF_MaxZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'EWRF MaxZ Next 02-03 Hrs') {
+        if (_class_name == 'EWRF M Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X276;
             remLayOrAdclickedEWRF_MaxZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //EWRF Lightning
-        if (_class_name == 'EWRF Lightning Next 01 Hrs') {
+        if (_class_name == 'EWRF Lightning EWRF L Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X277;
             remLayOrAdclickedEWRF_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'EWRF Lightning Next 01-02 Hrs') {
+        if (_class_name == 'EWRF Lightning EWRF L Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X278;
             remLayOrAdclickedEWRF_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'EWRF Lightning Next 02-03 Hrs') {
+        if (_class_name == 'EWRF Lightning EWRF L Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X279;
             remLayOrAdclickedEWRF_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -11822,17 +11856,17 @@ $("body").on("change", "input[type=checkbox]", function() {
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_00') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_00') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_00') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -11842,22 +11876,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 01UTC[]
         if (_this.context._layer?.group.name == "METAR 01UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_01') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_01') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_01') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_01') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -11867,22 +11901,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 02UTC[]
         if (_this.context._layer?.group.name == "METAR 02UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_02') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_02') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_02') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_02') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -11892,22 +11926,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 03UTC[]
         if (_this.context._layer?.group.name == "METAR 03UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_03') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_03') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_03') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_03') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -11917,22 +11951,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 04UTC[]
         if (_this.context._layer?.group.name == "METAR 04UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_04') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_04') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_04') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_04') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -11942,22 +11976,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 05UTC[]
         if (_this.context._layer?.group.name == "METAR 05UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_05') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_05') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_05') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_05') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -11967,22 +12001,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 06UTC[]
         if (_this.context._layer?.group.name == "METAR 06UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_06') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_06') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_06') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_06') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -11992,22 +12026,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 07UTC[]
         if (_this.context._layer?.group.name == "METAR 07UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_07') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_07') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_07') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_07') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12017,22 +12051,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 08UTC[]
         if (_this.context._layer?.group.name == "METAR 08UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_08') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_08') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_08') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_08') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12042,22 +12076,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 09UTC[]
         if (_this.context._layer?.group.name == "METAR 09UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_09') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_09') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_09') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_09') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12067,22 +12101,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 10UTC[]
         if (_this.context._layer?.group.name == "METAR 10UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_10') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_10') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_10') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_10') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12092,22 +12126,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 11UTC[]
         if (_this.context._layer?.group.name == "METAR 11UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_11') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_11') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_11') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_11') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12117,22 +12151,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 12UTC[]
         if (_this.context._layer?.group.name == "METAR 12UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_12') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_12') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_12') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_12') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12142,22 +12176,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 13UTC[]
         if (_this.context._layer?.group.name == "METAR 13UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_13') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_13') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_13') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_13') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12167,22 +12201,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 14UTC[]
         if (_this.context._layer?.group.name == "METAR 14UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_14') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_14') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_14') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_14') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12192,22 +12226,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 15UTC[]
         if (_this.context._layer?.group.name == "METAR 15UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_15') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_15') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_15') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_15') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12217,22 +12251,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 16UTC[]
         if (_this.context._layer?.group.name == "METAR 16UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_16') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_16') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_16') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_16') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12242,22 +12276,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 17UTC[]
         if (_this.context._layer?.group.name == "METAR 17UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_17') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_17') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_17') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_17') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12267,22 +12301,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 18UTC[]
         if (_this.context._layer?.group.name == "METAR 18UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_18') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_18') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_18') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_18') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12292,22 +12326,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 19UTC[]
         if (_this.context._layer?.group.name == "METAR 19UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_19') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_19') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_19') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_19') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12317,22 +12351,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 20UTC[]
         if (_this.context._layer?.group.name == "METAR 20UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_20') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_20') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_20') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_20') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12342,22 +12376,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 21UTC[]
         if (_this.context._layer?.group.name == "METAR 21UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_21') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_21') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_21') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_21') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12367,22 +12401,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 22UTC[]
         if (_this.context._layer?.group.name == "METAR 22UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_22') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_22') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_22') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_22') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12392,22 +12426,22 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 23UTC[]
         if (_this.context._layer?.group.name == "METAR 23UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_23') {
                 bgClickedMetarTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarTempLists, "....bgClickedMetarTempLists");
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_23') {
                 bgClickedMetarDewPointLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarDewPointLists, "....bgClickedMetarDewPointLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_23') {
                 bgClickedMetarVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarVisibilityLists, "....bgClickedMetarVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_23') {
                 bgClickedMetarWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedMetarWindSpeedAndDirectionLists,
@@ -12417,46 +12451,46 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_00') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_00') {
                 bgClickedSynopMeanSeaLevelLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_00') {
                 bgClickedSynopCloudCoverLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_00') {
                 bgClickedSynopGeopotentialHeightLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopGeopotentialHeightLists,
                     "....bgClickedSynopGeopotentialHeightLists");
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_00') {
                 bgClickedSynopRelativeHumidityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopRelativeHumidityLists,
                     "....bgClickedSynopRelativeHumidityLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_00') {
                 bgClickedSynopVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopVisibilityLists,
                     "....bgClickedSynopVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_00') {
                 bgClickedSynopWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopWindSpeedAndDirectionLists,
                     "....bgClickedSynopWindSpeedAndDirectionLists");
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_00') {
                 bgClickedSynop3hRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynop3hRainfallLists,
@@ -12466,46 +12500,46 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_03') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_03') {
                 bgClickedSynopMeanSeaLevelLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_03') {
                 bgClickedSynopCloudCoverLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_03') {
                 bgClickedSynopGeopotentialHeightLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopGeopotentialHeightLists,
                     "....bgClickedSynopGeopotentialHeightLists");
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_03') {
                 bgClickedSynopRelativeHumidityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopRelativeHumidityLists,
                     "....bgClickedSynopRelativeHumidityLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_03') {
                 bgClickedSynopVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopVisibilityLists,
                     "....bgClickedSynopVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_03') {
                 bgClickedSynopWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopWindSpeedAndDirectionLists,
                     "....bgClickedSynopWindSpeedAndDirectionLists");
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_03') {
                 bgClickedSynop3hRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynop3hRainfallLists,
@@ -13333,12 +13367,12 @@ $("body").on("change", "input[type=checkbox]", function() {
         //mesolscale
         //bgClickedWRFReflectivityLists[]
         if (_this.context._layer?.group.name == "WRF Reflectivity") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'WRF R Next 03 Hrs') {
                 bgClickedWRFReflectivityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedWRFReflectivityLists, "....bgClickedWRFReflectivityLists");
             }
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'WRF R Next 03-06 Hrs') {
                 bgClickedWRFReflectivityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedWRFReflectivityLists, "....bgClickedWRFReflectivityLists");
@@ -13347,12 +13381,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFlightningProductLists[]
         if (_this.context._layer?.group.name == "WRF Lightning Product") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'WRF LP Next 03 Hrs') {
                 bgClickedWRFlightningProductLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedWRFlightningProductLists, "....bgClickedWRFlightningProductLists");
             }
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'WRF LP Next 03-06 Hrs') {
                 bgClickedWRFlightningProductLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedWRFlightningProductLists, "....bgClickedWRFlightningProductLists");
@@ -13361,12 +13395,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFAccumlatedRainfallLists[]
         if (_this.context._layer?.group.name == "WRF Accumlated Rainfall") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'WRF AR Next 03 Hrs') {
                 bgClickedWRFAccumlatedRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedWRFAccumlatedRainfallLists, "....bgClickedWRFAccumlatedRainfallLists");
             }
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'WRF AR Next 03-06 Hrs') {
                 bgClickedWRFAccumlatedRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedWRFAccumlatedRainfallLists, "....bgClickedWRFAccumlatedRainfallLists");
@@ -13375,19 +13409,19 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedlightningPotentialindexLists[]
         if (_this.context._layer?.group.name == "Lightning Potential Index") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'LP Next 01 Hrs') {
                 bgClickedlightningPotentialindexLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedlightningPotentialindexLists,
                     "....bgClickedlightningPotentialindexLists");
             }
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'LP Next 01-02 Hrs') {
                 bgClickedlightningPotentialindexLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedlightningPotentialindexLists,
                     "....bgClickedlightningPotentialindexLists");
             }
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'LP Next 02-03 Hrs') {
                 bgClickedlightningPotentialindexLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedlightningPotentialindexLists,
@@ -13397,12 +13431,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedNCUMRlightningProductLists[]
         if (_this.context._layer?.group.name == "NCUMR Lightning Product") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'NCUMR LP Next 03 Hrs') {
                 bgClickedNCUMRlightningProductLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedNCUMRlightningProductLists, "....bgClickedNCUMRlightningProductLists");
             }
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'NCUMR LP Next 03-06 Hrs') {
                 bgClickedNCUMRlightningProductLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedNCUMRlightningProductLists, "....bgClickedNCUMRlightningProductLists");
@@ -13411,12 +13445,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedNCUMRWindGustLists[]
         if (_this.context._layer?.group.name == "NCUMR Wind Gust") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'NCUMR WG Next 03 Hrs') {
                 bgClickedNCUMRWindGustLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedNCUMRWindGustLists, "....bgClickedNCUMRWindGustLists");
             }
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'NCUMR WG Next 03-06 Hrs') {
                 bgClickedNCUMRWindGustLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedNCUMRWindGustLists, "....bgClickedNCUMRWindGustLists");
@@ -13425,12 +13459,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedNCUMRRainfallLists[]
         if (_this.context._layer?.group.name == "NCUMR Rainfall") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'NCUMR R Next 03 Hrs') {
                 bgClickedNCUMRRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedNCUMRRainfallLists, "....bgClickedNCUMRRainfallLists");
             }
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'NCUMR R Next 03-06 Hrs') {
                 bgClickedNCUMRRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedNCUMRRainfallLists, "....bgClickedNCUMRRainfallLists");
@@ -13439,17 +13473,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedHRRR_SPHourlyDBZLists[]
         if (_this.context._layer?.group.name == "HRRR_SP Hourly DBZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'HRRR SP Next 01 Hrs') {
                 bgClickedHRRR_SPHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_SPHourlyDBZLists, "....bgClickedHRRR_SPHourlyDBZLists");
             }
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'HRRR SP Next 01-02 Hrs') {
                 bgClickedHRRR_SPHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_SPHourlyDBZLists, "....bgClickedHRRR_SPHourlyDBZLists");
             }
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'HRRR SP Next 02-03 Hrs') {
                 bgClickedHRRR_SPHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_SPHourlyDBZLists, "....bgClickedHRRR_SPHourlyDBZLists");
@@ -13458,17 +13492,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedHRRR_NEHourlyDBZLists[]
         if (_this.context._layer?.group.name == "HRRR_NE Hourly DBZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'HRRR NE Next 01 Hrs') {
                 bgClickedHRRR_NEHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_NEHourlyDBZLists, "....bgClickedHRRR_NEHourlyDBZLists");
             }
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'HRRR NE Next 01-02 Hrs') {
                 bgClickedHRRR_NEHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_NEHourlyDBZLists, "....bgClickedHRRR_NEHourlyDBZLists");
             }
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'HRRR NE Next 02-03 Hrs') {
                 bgClickedHRRR_NEHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_NEHourlyDBZLists, "....bgClickedHRRR_NEHourlyDBZLists");
@@ -13477,17 +13511,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedHRRR_NWHourlyDBZLists[]
         if (_this.context._layer?.group.name == "HRRR_NW Hourly DBZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'HRRR NW Next 01 Hrs') {
                 bgClickedHRRR_NWHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_NWHourlyDBZLists, "....bgClickedHRRR_NWHourlyDBZLists");
             }
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'HRRR NW Next 01-02 Hrs') {
                 bgClickedHRRR_NWHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_NWHourlyDBZLists, "....bgClickedHRRR_NWHourlyDBZLists");
             }
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'HRRR NW Next 02-03 Hrs') {
                 bgClickedHRRR_NWHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_NWHourlyDBZLists, "....bgClickedHRRR_NWHourlyDBZLists");
@@ -13496,17 +13530,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedEWRFMaxZLists[]
         if (_this.context._layer?.group.name == "EWRF MaxZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'EWRF M Next 01 Hrs') {
                 bgClickedEWRFMaxZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedEWRFMaxZLists, "....bgClickedEWRFMaxZLists");
             }
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'EWRF M Next 01-02 Hrs') {
                 bgClickedEWRFMaxZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedEWRFMaxZLists, "....bgClickedEWRFMaxZLists");
             }
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'EWRF M Next 02-03 Hrs') {
                 bgClickedEWRFMaxZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedEWRFMaxZLists, "....bgClickedEWRFMaxZLists");
@@ -13515,17 +13549,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedEWRFLightningLists[]
         if (_this.context._layer?.group.name == "EWRF Lightning") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'EWRF L Next 01 Hrs') {
                 bgClickedEWRFLightningLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedEWRFLightningLists, "....bgClickedEWRFLightningLists");
             }
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'EWRF L Next 01-02 Hrs') {
                 bgClickedEWRFLightningLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedEWRFLightningLists, "....bgClickedEWRFLightningLists");
             }
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'EWRF L Next 02-03 Hrs') {
                 bgClickedEWRFLightningLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedEWRFLightningLists, "....bgClickedEWRFLightningLists");
@@ -14245,335 +14279,335 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Temperature_00') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_00') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_00') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_00') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 01UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_01') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_01') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_01') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_01') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 02UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_02') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_02') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_02') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_02') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 03UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_03') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_03') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_03') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_03') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 04UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_04') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_04') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_04') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_04') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 05UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_05') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_05') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_05') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_05') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 06UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_06') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_06') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_06') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_06') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 07UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_07') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_07') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_07') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_07') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 08UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_08') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_08') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_08') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_08') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 09UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_09') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_09') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_09') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_09') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 10UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_10') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_10') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_10') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_10') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 11UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_11') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_11') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_11') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_11') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 12UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_12') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_12') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_12') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_12') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 13UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_13') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_13') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_13') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_13') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 14UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_14') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_14') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_14') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_14') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 15UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_15') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_15') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_15') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_15') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 16UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_16') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_16') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_16') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_16') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 17UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_17') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_17') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_17') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_17') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 18UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_18') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_18') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_18') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_18') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 19UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_19') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_19') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_19') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_19') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 20UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_20') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_20') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_20') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_20') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 21UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_21') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_21') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'Visibility_21') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_21') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 22UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_22') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_22') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_22') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_22') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
         if (_this.context._layer?.group.name == "METAR 23UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_23') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_23') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_23') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_23') {
                 metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
         }
@@ -14581,54 +14615,54 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // SYNOP--
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_00') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_00') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_00') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_00') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_00') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_00') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_00') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_00') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_03') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_03') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_03') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_03') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_03') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_03') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_03') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_03') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
@@ -15641,13 +15675,13 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03 Hrs') {
+                if (layer_name == 'WRF R Next 03 Hrs') {
                     clickedWRFReflectivityLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     WRFReflectivityLegendImage();
                 }
-                if (layer_name == 'Next 03-06 Hrs') {
+                if (layer_name == 'WRF R Next 03-06 Hrs') {
                     clickedWRFReflectivityLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15666,13 +15700,13 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03 Hrs') {
+                if (layer_name == 'WRF LP Next 03 Hrs') {
                     clickedWRFlightningProductLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     WRFlightningProductLegendImage();
                 }
-                if (layer_name == 'Next 03-06 Hrs') {
+                if (layer_name == 'WRF LP Next 03-06 Hrs') {
                     clickedWRFlightningProductLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15692,13 +15726,13 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03 Hrs') {
+                if (layer_name == 'WRF AR Next 03 Hrs') {
                     clickedWRFAccumlatedRainfallLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     WRFAccumlatedRainfallLegendImage();
                 }
-                if (layer_name == 'Next 03-06 Hrs') {
+                if (layer_name == 'WRF AR Next 03-06 Hrs') {
                     clickedWRFAccumlatedRainfallLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15717,19 +15751,19 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 01 Hrs') {
+                if (layer_name == 'LP Next 01 Hrs') {
                     clickedlightningPotentialindexLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     lightningPotentialindexLegendImage();
                 }
-                if (layer_name == 'Next 01-02 Hrs') {
+                if (layer_name == 'LP Next 01-02 Hrs') {
                     clickedlightningPotentialindexLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     lightningPotentialindexLegendImage();
                 }
-                if (layer_name == 'Next 02-03 Hrs') {
+                if (layer_name == 'LP Next 02-03 Hrs') {
                     clickedlightningPotentialindexLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15749,13 +15783,13 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03 Hrs') {
+                if (layer_name == 'NCUMR LP Next 03 Hrs') {
                     clickedNCUMRlightningProductLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     NCUMRlightningProductLegendImage();
                 }
-                if (layer_name == 'Next 03-06 Hrs') {
+                if (layer_name == 'NCUMR LP Next 03-06 Hrs') {
                     clickedNCUMRlightningProductLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15774,13 +15808,13 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03 Hrs') {
+                if (layer_name == 'NCUMR WG Next 03 Hrs') {
                     clickedNCUMRWindGustLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     NCUMRWindGustLegendImage();
                 }
-                if (layer_name == 'Next 03-06 Hrs') {
+                if (layer_name == 'NCUMR WG Next 03-06 Hrs') {
                     clickedNCUMRWindGustLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15799,13 +15833,13 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03 Hrs') {
+                if (layer_name == 'NCUMR R Next 03 Hrs') {
                     clickedNCUMRRainfallLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     NCUMRRainfallLegendImage();
                 }
-                if (layer_name == 'Next 03-06 Hrs') {
+                if (layer_name == 'NCUMR R Next 03-06 Hrs') {
                     clickedNCUMRRainfallLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15824,19 +15858,19 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 01 Hrs') {
+                if (layer_name == 'HRRR SP Next 01 Hrs') {
                     clickedHRRR_SPHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     HRRR_SPHourlyDBZLegendImage();
                 }
-                if (layer_name == 'Next 01-02 Hrs') {
+                if (layer_name == 'HRRR SP Next 01-02 Hrs') {
                     clickedHRRR_SPHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     HRRR_SPHourlyDBZLegendImage();
                 }
-                if (layer_name == 'Next 02-03 Hrs') {
+                if (layer_name == 'HRRR SP Next 02-03 Hrs') {
                     clickedHRRR_SPHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15855,19 +15889,19 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 01 Hrs') {
+                if (layer_name == 'HRRR NE Next 01 Hrs') {
                     clickedHRRR_NEHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     HRRR_NEHourlyDBZLegendImage();
                 }
-                if (layer_name == 'Next 01-02 Hrs') {
+                if (layer_name == 'HRRR NE Next 01-02 Hrs') {
                     clickedHRRR_NEHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     HRRR_NEHourlyDBZLegendImage();
                 }
-                if (layer_name == 'Next 02-03 Hrs') {
+                if (layer_name == 'HRRR NE Next 02-03 Hrs') {
                     clickedHRRR_NEHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15886,19 +15920,19 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 01 Hrs') {
+                if (layer_name == 'HRRR NW Next 01 Hrs') {
                     clickedHRRR_NWHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     HRRR_NWHourlyDBZLegendImage();
                 }
-                if (layer_name == 'Next 01-02 Hrs') {
+                if (layer_name == 'HRRR NW Next 01-02 Hrs') {
                     clickedHRRR_NWHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     HRRR_NWHourlyDBZLegendImage();
                 }
-                if (layer_name == 'Next 02-03 Hrs') {
+                if (layer_name == 'HRRR NW Next 02-03 Hrs') {
                     clickedHRRR_NWHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15917,19 +15951,19 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 01 Hrs') {
+                if (layer_name == 'EWRF M Next 01 Hrs') {
                     clickedEWRFMaxZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     EWRFMaxZLegendImage();
                 }
-                if (layer_name == 'Next 01-02 Hrs') {
+                if (layer_name == 'EWRF M Next 01-02 Hrs') {
                     clickedEWRFMaxZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     EWRFMaxZLegendImage();
                 }
-                if (layer_name == 'Next 02-03 Hrs') {
+                if (layer_name == 'EWRF M Next 02-03 Hrs') {
                     clickedEWRFMaxZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15948,19 +15982,19 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 01 Hrs') {
+                if (layer_name == 'EWRF L Next 01 Hrs') {
                     clickedEWRFLightningLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     EWRFLightningLegendImage();
                 }
-                if (layer_name == 'Next 01-02 Hrs') {
+                if (layer_name == 'EWRF L Next 01-02 Hrs') {
                     clickedEWRFLightningLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     EWRFLightningLegendImage();
                 }
-                if (layer_name == 'Next 02-03 Hrs') {
+                if (layer_name == 'EWRF L Next 02-03 Hrs') {
                     clickedEWRFLightningLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -16767,7 +16801,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 00UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 00UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16779,7 +16813,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 00UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 00UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16791,7 +16825,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 00UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 00UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16805,7 +16839,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 01UTC
         //bgClicked METAR 01UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 01UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_01') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16817,7 +16851,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 01UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 01UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_01') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16829,7 +16863,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 01UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 01UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_01') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16841,7 +16875,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 01UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 01UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_01') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16855,7 +16889,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 02UTC
         //bgClicked METAR 02UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 02UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_02') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16867,7 +16901,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 02UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 02UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_02') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16879,7 +16913,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 02UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 02UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_02') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16891,7 +16925,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 02UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 02UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_02') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16905,7 +16939,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 03UTC
         //bgClicked METAR 03UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 03UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16917,7 +16951,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 03UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 03UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16929,7 +16963,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 03UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 03UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16941,7 +16975,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 03UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 03UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16955,7 +16989,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 04UTC
         //bgClicked METAR 04UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 04UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_04') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16967,7 +17001,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 04UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 04UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_04') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16979,7 +17013,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 04UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 04UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_04') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -16991,7 +17025,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 04UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 04UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_04') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17005,7 +17039,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 05UTC
         //bgClicked METAR 05UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 05UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_05') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17017,7 +17051,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 05UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 05UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_05') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17029,7 +17063,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 05UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 05UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_05') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17041,7 +17075,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 05UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 05UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_05') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17055,7 +17089,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 06UTC
         //bgClicked METAR 06UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 06UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_06') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17067,7 +17101,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 06UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 06UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_06') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17079,7 +17113,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 06UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 06UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_06') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17091,7 +17125,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 06UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 06UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_06') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17105,7 +17139,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 07UTC
         //bgClicked METAR 07UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 07UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_07') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17117,7 +17151,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 07UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 07UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_07') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17129,7 +17163,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 07UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 07UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_07') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17141,7 +17175,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 07UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 07UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_07') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17155,7 +17189,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 08UTC
         //bgClicked METAR 08UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 08UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_08') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17167,7 +17201,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 08UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 08UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_08') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17179,7 +17213,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 08UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 08UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_08') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17191,7 +17225,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 08UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 08UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_08') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17205,7 +17239,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 09UTC
         //bgClicked METAR 09UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 09UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_09') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17217,7 +17251,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 09UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 09UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_09') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17229,7 +17263,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 09UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 09UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_09') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17241,7 +17275,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 09UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 09UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_09') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17255,7 +17289,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 10UTC
         //bgClicked METAR 10UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 10UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_10') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17267,7 +17301,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 10UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 10UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_10') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17279,7 +17313,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 10UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 10UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_10') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17291,7 +17325,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 10UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 10UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_10') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17305,7 +17339,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 11UTC
         //bgClicked METAR 11UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 11UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_11') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17317,7 +17351,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 11UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 11UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_11') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17329,7 +17363,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 11UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 11UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_11') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17341,7 +17375,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 11UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 11UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_11') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17355,7 +17389,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 12UTC
         //bgClicked METAR 12UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 12UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_12') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17367,7 +17401,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 12UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 12UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_12') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17379,7 +17413,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 12UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 12UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_12') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17391,7 +17425,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 12UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 12UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_12') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17405,7 +17439,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 13UTC
         //bgClicked METAR 13UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 13UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_13') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17417,7 +17451,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 13UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 13UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_13') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17429,7 +17463,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 13UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 13UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_13') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17441,7 +17475,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 13UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 13UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_13') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17455,7 +17489,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 14UTC
         //bgClicked METAR 14UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 14UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_14') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17467,7 +17501,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 14UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 14UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_14') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17479,7 +17513,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 14UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 14UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_14') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17491,7 +17525,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 14UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 14UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_14') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17505,7 +17539,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 15UTC
         //bgClicked METAR 15UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 15UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_15') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17517,7 +17551,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 15UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 15UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_15') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17529,7 +17563,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 15UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 15UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_15') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17541,7 +17575,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 15UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 15UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_15') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17555,7 +17589,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 16UTC
         //bgClicked METAR 16UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 16UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_16') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17567,7 +17601,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 16UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 16UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_16') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17579,7 +17613,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 16UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 16UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_16') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17591,7 +17625,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 16UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 16UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_16') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17605,7 +17639,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 17UTC
         //bgClicked METAR 17UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 17UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_17') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17617,7 +17651,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 17UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 17UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_17') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17629,7 +17663,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 17UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 17UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_17') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17641,7 +17675,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 17UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 17UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_17') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17655,7 +17689,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 18UTC
         //bgClicked METAR 18UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 18UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_18') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17667,7 +17701,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 18UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 18UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_18') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17679,7 +17713,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 18UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 18UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_18') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17691,7 +17725,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 18UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 18UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_18') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17705,7 +17739,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 19UTC
         //bgClicked METAR 19UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 19UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_19') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17717,7 +17751,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 19UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 19UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_19') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17729,7 +17763,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 19UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 15UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_19') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17741,7 +17775,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 19UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 15UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_19') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17755,7 +17789,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 20UTC
         //bgClicked METAR 20UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 20UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_20') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17767,7 +17801,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 20UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 20UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_20') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17779,7 +17813,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 20UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 20UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_20') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17791,7 +17825,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 20UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 20UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_20') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17805,7 +17839,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 21UTC
         //bgClicked METAR 21UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 21UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_21') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17817,7 +17851,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 21UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 21UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_21') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17829,7 +17863,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 21UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 21UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_21') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17841,7 +17875,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 21UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 21UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_21') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17855,7 +17889,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 22UTC
         //bgClicked METAR 22UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 22UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_22') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17867,7 +17901,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 22UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 22UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_22') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17879,7 +17913,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 22UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 22UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_22') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17891,7 +17925,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 22UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 22UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_22') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17905,7 +17939,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //METAR 23UTC
         //bgClicked METAR 23UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 23UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_23') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17917,7 +17951,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 23UTC DEW POINT TEMPERATURE[]
         if (_this.context._layer?.group.name == "METAR 23UTC") {
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_23') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarDewPointLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17929,7 +17963,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 23UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "METAR 23UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_23') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17941,7 +17975,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked METAR 23UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "METAR 23UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_23') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMetarWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17954,7 +17988,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17967,7 +18001,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC MEAN SEA LEVEL PRESSURE[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17980,7 +18014,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC CLOUD COVER[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17993,7 +18027,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC GEOPOTENTIAL HEIGHT[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18006,7 +18040,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC RELATIVE HUMIDITY[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18019,7 +18053,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18032,7 +18066,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18043,7 +18077,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC 3h RAINFALL[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18056,7 +18090,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18069,7 +18103,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC MEAN SEA LEVEL PRESSURE[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18082,7 +18116,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC CLOUD COVER[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18095,7 +18129,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC GEOPOTENTIAL HEIGHT[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18108,7 +18142,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC RELATIVE HUMIDITY[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18121,7 +18155,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18134,7 +18168,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18147,7 +18181,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC 3h RAINFALL[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18790,7 +18824,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //mesolscale
         //bgClickedWRFReflectivityLists[]
         if (_this.context._layer?.group.name == "WRF Reflectivity") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'WRF R Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFReflectivityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18803,7 +18837,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFReflectivityLists[]
         if (_this.context._layer?.group.name == "WRF Reflectivity") {
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'WRF R Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFReflectivityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18816,7 +18850,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFlightningProductLists[]
         if (_this.context._layer?.group.name == "WRF Lightning Product") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'WRF LP Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFlightningProductLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18829,7 +18863,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFlightningProductLists[]
         if (_this.context._layer?.group.name == "WRF Lightning Product") {
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'WRF LP Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFlightningProductLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18842,7 +18876,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFAccumlatedRainfallLists[]
         if (_this.context._layer?.group.name == "WRF Accumlated Rainfall") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'WRF AR Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFAccumlatedRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18855,7 +18889,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFAccumlatedRainfallLists[]
         if (_this.context._layer?.group.name == "WRF Accumlated Rainfall") {
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'WRF AR Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFAccumlatedRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18868,7 +18902,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedlightningPotentialindexLists[]
         if (_this.context._layer?.group.name == "Lightning Potential Index") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'LP Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedlightningPotentialindexLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18881,7 +18915,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedlightningPotentialindexLists[]
         if (_this.context._layer?.group.name == "Lightning Potential Index") {
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'LP Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedlightningPotentialindexLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18894,7 +18928,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedlightningPotentialindexLists[]
         if (_this.context._layer?.group.name == "Lightning Potential Index") {
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'LP Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedlightningPotentialindexLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18907,7 +18941,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedNCUMRlightningProductLists
         if (_this.context._layer?.group.name == "NCUMR Lightning Product") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'NCUMR LP Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRlightningProductLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18920,7 +18954,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedNCUMRlightningProductLists
         if (_this.context._layer?.group.name == "NCUMR Lightning Product") {
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'NCUMR LP Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRlightningProductLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18933,7 +18967,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedNCUMRWindGustLists
         if (_this.context._layer?.group.name == "NCUMR Wind Gust") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'NCUMR WG Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRWindGustLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18946,7 +18980,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedNCUMRWindGustLists
         if (_this.context._layer?.group.name == "NCUMR Wind Gust") {
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'NCUMR WG Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRWindGustLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18959,7 +18993,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedNCUMRRainfallLists
         if (_this.context._layer?.group.name == "NCUMR Rainfall") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'NCUMR R Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18972,7 +19006,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedNCUMRRainfallLists
         if (_this.context._layer?.group.name == "NCUMR Rainfall") {
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'NCUMR R Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18985,7 +19019,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_SPHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_SP Hourly DBZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'HRRR SP Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_SPHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18998,7 +19032,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_SPHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_SP Hourly DBZ") {
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'HRRR SP Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_SPHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19011,7 +19045,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_SPHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_SP Hourly DBZ") {
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'HRRR SP Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_SPHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19024,7 +19058,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_NEHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_NE Hourly DBZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'HRRR NE Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NEHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19037,7 +19071,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_NEHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_NE Hourly DBZ") {
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'HRRR NE Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NEHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19050,7 +19084,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_NEHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_NE Hourly DBZ") {
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'HRRR NE Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NEHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19063,7 +19097,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_NWHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_NW Hourly DBZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'HRRR NW Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NWHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19076,7 +19110,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_NWHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_NW Hourly DBZ") {
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'HRRR NW Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NWHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19089,7 +19123,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_NWHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_NW Hourly DBZ") {
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'HRRR NW Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NWHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19102,7 +19136,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedEWRFMaxZLists
         if (_this.context._layer?.group.name == "EWRF MaxZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'EWRF M Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFMaxZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19115,7 +19149,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedEWRFMaxZLists
         if (_this.context._layer?.group.name == "EWRF MaxZ") {
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'EWRF M Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFMaxZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19128,7 +19162,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedEWRFMaxZLists
         if (_this.context._layer?.group.name == "EWRF MaxZ") {
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'EWRF M Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFMaxZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19141,7 +19175,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedEWRFMaxZLists
         if (_this.context._layer?.group.name == "EWRF Lightning") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'EWRF L Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFLightningLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19154,7 +19188,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedEWRFMaxZLists
         if (_this.context._layer?.group.name == "EWRF Lightning") {
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'EWRF L Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFLightningLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -19167,7 +19201,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedEWRFMaxZLists
         if (_this.context._layer?.group.name == "EWRF Lightning") {
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'EWRF L Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFLightningLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -20260,44 +20294,44 @@ $("body").on("change", "input[type=checkbox]", function() {
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 00UTC DPT
-        if (uncheckLayer == 'METAR 00UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 00UTC Dew Point Temperature_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X49;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 00UTC Visi
-        if (uncheckLayer == 'METAR 00UTC Visibility') {
+        if (uncheckLayer == 'METAR 00UTC Visibility_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X50;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 00UTC WSAD
-        if (uncheckLayer == 'METAR 00UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 00UTC Wind Speed and Direction_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = MeerutMarker;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //METAR UNCHECK 01UTC Temp
-        if (uncheckLayer == 'METAR 01UTC Temperature') {
+        if (uncheckLayer == 'METAR 01UTC Temperature_01') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X63;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 01UTC DPT
-        if (uncheckLayer == 'METAR 01UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 01UTC Dew Point Temperature_01') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X64;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 01UTC Visi
-        if (uncheckLayer == 'METAR 01UTC Visibility') {
+        if (uncheckLayer == 'METAR 01UTC Visibility_01') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X65;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 01UTC WSAD
-        if (uncheckLayer == 'METAR 01UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 01UTC Wind Speed and Direction_01') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X66;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20305,25 +20339,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 02UTC Temp
-        if (uncheckLayer == 'METAR 02UTC Temperature') {
+        if (uncheckLayer == 'METAR 02UTC Temperature_02') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X67;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 02UTC DPT
-        if (uncheckLayer == 'METAR 02UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 02UTC Dew Point Temperature_02') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X68;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 02UTC Visi
-        if (uncheckLayer == 'METAR 02UTC Visibility') {
+        if (uncheckLayer == 'METAR 02UTC Visibility_02') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X69;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 02UTC WSAD
-        if (uncheckLayer == 'METAR 02UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 02UTC Wind Speed and Direction_02') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X70;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20331,25 +20365,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 03UTC Temp
-        if (uncheckLayer == 'METAR 03UTC Temperature') {
+        if (uncheckLayer == 'METAR 03UTC Temperature_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X71;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 03UTC DPT
-        if (uncheckLayer == 'METAR 03UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 03UTC Dew Point Temperature_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X72;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 03UTC Visi
-        if (uncheckLayer == 'METAR 03UTC Visibility') {
+        if (uncheckLayer == 'METAR 03UTC Visibility_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X73;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 03UTC WSAD
-        if (uncheckLayer == 'METAR 03UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 03UTC Wind Speed and Direction_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X74;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20357,75 +20391,75 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 04UTC Temp
-        if (uncheckLayer == 'METAR 04UTC Temperature') {
+        if (uncheckLayer == 'METAR 04UTC Temperature_04') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X75;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 04UTC DPT
-        if (uncheckLayer == 'METAR 04UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 04UTC Dew Point Temperature_04') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X76;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 04UTC Visi
-        if (uncheckLayer == 'METAR 04UTC Visibility') {
+        if (uncheckLayer == 'METAR 04UTC Visibility_04') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X77;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 04UTC WSAD
-        if (uncheckLayer == 'METAR 04UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 04UTC Wind Speed and Direction_04') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X78;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         // 
         //METAR UNCHECK 05UTC Temp
-        if (uncheckLayer == 'METAR 05UTC Temperature') {
+        if (uncheckLayer == 'METAR 05UTC Temperature_05') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X79;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 05UTC DPT
-        if (uncheckLayer == 'METAR 05UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 05UTC Dew Point Temperature_05') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X80;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 05UTC Visi
-        if (uncheckLayer == 'METAR 05UTC Visibility') {
+        if (uncheckLayer == 'METAR 05UTC Visibility_05') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X81;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 05UTC WSAD
-        if (uncheckLayer == 'METAR 05UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 05UTC Wind Speed and Direction_05') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X82;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         // 
         //METAR UNCHECK 06UTC Temp
-        if (uncheckLayer == 'METAR 06UTC Temperature') {
+        if (uncheckLayer == 'METAR 06UTC Temperature_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X83;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 06UTC DPT
-        if (uncheckLayer == 'METAR 06UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 06UTC Dew Point Temperature_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X84;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 06UTC Visi
-        if (uncheckLayer == 'METAR 06UTC Visibility') {
+        if (uncheckLayer == 'METAR 06UTC Visibility_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X85;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 06UTC WSAD
-        if (uncheckLayer == 'METAR 06UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 06UTC Wind Speed and Direction_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X86;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20433,25 +20467,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 07UTC Temp
-        if (uncheckLayer == 'METAR 07UTC Temperature') {
+        if (uncheckLayer == 'METAR 07UTC Temperature_07') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X87;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 07UTC DPT
-        if (uncheckLayer == 'METAR 07UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 07UTC Dew Point Temperature_07') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X88;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 07UTC Visi
-        if (uncheckLayer == 'METAR 07UTC Visibility') {
+        if (uncheckLayer == 'METAR 07UTC Visibility_07') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X89;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 07UTC WSAD
-        if (uncheckLayer == 'METAR 07UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 07UTC Wind Speed and Direction_07') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X90;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20459,25 +20493,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 08UTC Temp
-        if (uncheckLayer == 'METAR 08UTC Temperature') {
+        if (uncheckLayer == 'METAR 08UTC Temperature_08') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X91;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 08UTC DPT
-        if (uncheckLayer == 'METAR 08UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 08UTC Dew Point Temperature_08') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X92;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 08UTC Visi
-        if (uncheckLayer == 'METAR 08UTC Visibility') {
+        if (uncheckLayer == 'METAR 08UTC Visibility_08') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X93;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 08UTC WSAD
-        if (uncheckLayer == 'METAR 08UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 08UTC Wind Speed and Direction_08') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X94;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20485,25 +20519,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 09UTC Temp
-        if (uncheckLayer == 'METAR 09UTC Temperature') {
+        if (uncheckLayer == 'METAR 09UTC Temperature_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X95;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 09UTC DPT
-        if (uncheckLayer == 'METAR 09UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 09UTC Dew Point Temperature_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X96;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 09UTC Visi
-        if (uncheckLayer == 'METAR 09UTC Visibility') {
+        if (uncheckLayer == 'METAR 09UTC Visibility_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X97;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 09UTC WSAD
-        if (uncheckLayer == 'METAR 09UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 09UTC Wind Speed and Direction_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X98;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20511,25 +20545,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 10UTC Temp
-        if (uncheckLayer == 'METAR 10UTC Temperature') {
+        if (uncheckLayer == 'METAR 10UTC Temperature_10') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X99;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 10UTC DPT
-        if (uncheckLayer == 'METAR 10UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 10UTC Dew Point Temperature_10') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X100;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 10UTC Visi
-        if (uncheckLayer == 'METAR 10UTC Visibility') {
+        if (uncheckLayer == 'METAR 10UTC Visibility_10') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X101;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 10UTC WSAD
-        if (uncheckLayer == 'METAR 10UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 10UTC Wind Speed and Direction_10') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X102;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20537,25 +20571,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 11UTC Temp
-        if (uncheckLayer == 'METAR 11UTC Temperature') {
+        if (uncheckLayer == 'METAR 11UTC Temperature_11') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X103;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 11UTC DPT
-        if (uncheckLayer == 'METAR 11UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 11UTC Dew Point Temperature_11') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X104;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 11UTC Visi
-        if (uncheckLayer == 'METAR 11UTC Visibility') {
+        if (uncheckLayer == 'METAR 11UTC Visibility_11') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X105;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 11UTC WSAD
-        if (uncheckLayer == 'METAR 11UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 11UTC Wind Speed and Direction_11') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X106;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20563,25 +20597,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 12UTC Temp
-        if (uncheckLayer == 'METAR 12UTC Temperature') {
+        if (uncheckLayer == 'METAR 12UTC Temperature_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X107;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 12UTC DPT
-        if (uncheckLayer == 'METAR 12UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 12UTC Dew Point Temperature_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X108;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 12UTC Visi
-        if (uncheckLayer == 'METAR 12UTC Visibility') {
+        if (uncheckLayer == 'METAR 12UTC Visibility_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X109;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 12UTC WSAD
-        if (uncheckLayer == 'METAR 12UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 12UTC Wind Speed and Direction_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X110;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20589,25 +20623,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 13UTC Temp
-        if (uncheckLayer == 'METAR 13UTC Temperature') {
+        if (uncheckLayer == 'METAR 13UTC Temperature_13') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X111;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 13UTC DPT
-        if (uncheckLayer == 'METAR 13UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 13UTC Dew Point Temperature_13') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X112;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 13UTC Visi
-        if (uncheckLayer == 'METAR 13UTC Visibility') {
+        if (uncheckLayer == 'METAR 13UTC Visibility_13') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X113;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 13UTC WSAD
-        if (uncheckLayer == 'METAR 13UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 13UTC Wind Speed and Direction_13') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X114;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20615,25 +20649,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 14UTC Temp
-        if (uncheckLayer == 'METAR 14UTC Temperature') {
+        if (uncheckLayer == 'METAR 14UTC Temperature_14') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X115;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 14UTC DPT
-        if (uncheckLayer == 'METAR 14UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 14UTC Dew Point Temperature_14') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X116;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 14UTC Visi
-        if (uncheckLayer == 'METAR 14UTC Visibility') {
+        if (uncheckLayer == 'METAR 14UTC Visibility_14') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X117;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 14UTC WSAD
-        if (uncheckLayer == 'METAR 14UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 14UTC Wind Speed and Direction_14') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X118;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20641,25 +20675,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 15UTC Temp
-        if (uncheckLayer == 'METAR 15UTC Temperature') {
+        if (uncheckLayer == 'METAR 15UTC Temperature_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X119;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 15UTC DPT
-        if (uncheckLayer == 'METAR 15UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 15UTC Dew Point Temperature_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X120;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 15UTC Visi
-        if (uncheckLayer == 'METAR 15UTC Visibility') {
+        if (uncheckLayer == 'METAR 15UTC Visibility_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X121;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 15UTC WSAD
-        if (uncheckLayer == 'METAR 15UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 15UTC Wind Speed and Direction_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X122;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20667,25 +20701,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 16UTC Temp
-        if (uncheckLayer == 'METAR 16UTC Temperature') {
+        if (uncheckLayer == 'METAR 16UTC Temperature_16') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X123;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 16UTC DPT
-        if (uncheckLayer == 'METAR 16UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 16UTC Dew Point Temperature_16') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X124;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 16UTC Visi
-        if (uncheckLayer == 'METAR 16UTC Visibility') {
+        if (uncheckLayer == 'METAR 16UTC Visibility_16') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X125;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 16UTC WSAD
-        if (uncheckLayer == 'METAR 16UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 16UTC Wind Speed and Direction_16') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X126;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20693,25 +20727,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 17UTC Temp
-        if (uncheckLayer == 'METAR 17UTC Temperature') {
+        if (uncheckLayer == 'METAR 17UTC Temperature_17') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X127;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 17UTC DPT
-        if (uncheckLayer == 'METAR 17UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 17UTC Dew Point Temperature_17') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X128;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 17UTC Visi
-        if (uncheckLayer == 'METAR 17UTC Visibility') {
+        if (uncheckLayer == 'METAR 17UTC Visibility_17') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X129;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 17UTC WSAD
-        if (uncheckLayer == 'METAR 17UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 17UTC Wind Speed and Direction_17') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X130;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20719,25 +20753,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 18UTC Temp
-        if (uncheckLayer == 'METAR 18UTC Temperature') {
+        if (uncheckLayer == 'METAR 18UTC Temperature_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X131;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 18UTC DPT
-        if (uncheckLayer == 'METAR 18UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 18UTC Dew Point Temperature_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X132;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 18UTC Visi
-        if (uncheckLayer == 'METAR 18UTC Visibility') {
+        if (uncheckLayer == 'METAR 18UTC Visibility_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X133;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 18UTC WSAD
-        if (uncheckLayer == 'METAR 18UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 18UTC Wind Speed and Direction_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X134;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20745,25 +20779,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 19UTC Temp
-        if (uncheckLayer == 'METAR 19UTC Temperature') {
+        if (uncheckLayer == 'METAR 19UTC Temperature_19') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X135;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 19UTC DPT
-        if (uncheckLayer == 'METAR 19UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 19UTC Dew Point Temperature_19') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X136;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 19UTC Visi
-        if (uncheckLayer == 'METAR 19UTC Visibility') {
+        if (uncheckLayer == 'METAR 19UTC Visibility_19') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X137;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 19UTC WSAD
-        if (uncheckLayer == 'METAR 19UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 19UTC Wind Speed and Direction_19') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X138;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20771,25 +20805,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 20UTC Temp
-        if (uncheckLayer == 'METAR 20UTC Temperature') {
+        if (uncheckLayer == 'METAR 20UTC Temperature_20') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X139;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 20UTC DPT
-        if (uncheckLayer == 'METAR 20UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 20UTC Dew Point Temperature_20') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X140;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 20UTC Visi
-        if (uncheckLayer == 'METAR 20UTC Visibility') {
+        if (uncheckLayer == 'METAR 20UTC Visibility_20') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X141;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 20UTC WSAD
-        if (uncheckLayer == 'METAR 20UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 20UTC Wind Speed and Direction_20') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X142;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20797,25 +20831,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 21UTC Temp
-        if (uncheckLayer == 'METAR 21UTC Temperature') {
+        if (uncheckLayer == 'METAR 21UTC Temperature_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X143;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 21UTC DPT
-        if (uncheckLayer == 'METAR 21UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 21UTC Dew Point Temperature_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X144;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 21UTC Visi
-        if (uncheckLayer == 'METAR 21UTC Visibility') {
+        if (uncheckLayer == 'METAR 21UTC Visibility_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X145;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 21UTC WSAD
-        if (uncheckLayer == 'METAR 21UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 21UTC Wind Speed and Direction_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X146;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20823,25 +20857,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 22UTC Temp
-        if (uncheckLayer == 'METAR 22UTC Temperature') {
+        if (uncheckLayer == 'METAR 22UTC Temperature_22') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X147;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 22UTC DPT
-        if (uncheckLayer == 'METAR 22UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 22UTC Dew Point Temperature_22') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X148;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 22UTC Visi
-        if (uncheckLayer == 'METAR 22UTC Visibility') {
+        if (uncheckLayer == 'METAR 22UTC Visibility_22') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X149;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 22UTC WSAD
-        if (uncheckLayer == 'METAR 22UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 22UTC Wind Speed and Direction_22') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X150;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20849,25 +20883,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 23UTC Temp
-        if (uncheckLayer == 'METAR 23UTC Temperature') {
+        if (uncheckLayer == 'METAR 23UTC Temperature_23') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X151;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 23UTC DPT
-        if (uncheckLayer == 'METAR 23UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 23UTC Dew Point Temperature_23') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X152;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 23UTC Visi
-        if (uncheckLayer == 'METAR 23UTC Visibility') {
+        if (uncheckLayer == 'METAR 23UTC Visibility_23') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X153;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 23UTC WSAD
-        if (uncheckLayer == 'METAR 23UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 23UTC Wind Speed and Direction_23') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X154;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20915,7 +20949,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // SYNOP
         //UNCHECK SYNOP 00UTC Temp
-        if (uncheckLayer == 'SYNOP 00UTC Temperature') {
+        if (uncheckLayer == 'SYNOP 00UTC Temperature_00') {
             console.log(uncheckLayer, "UNCHECK SYNOP 00UTC Temp");
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = syn00utc_tem;
@@ -20923,49 +20957,49 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //UNCHECK SYNOP 00UTC MSLP
-        if (uncheckLayer == 'SYNOP 00UTC Mean Sea Level Pressure') {
+        if (uncheckLayer == 'SYNOP 00UTC Mean Sea Level Pressure_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = HHHHHH;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 00UTC CC
-        if (uncheckLayer == 'SYNOP 00UTC Cloud Cover') {
+        if (uncheckLayer == 'SYNOP 00UTC Cloud Cover_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X1;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 00UTC GH
-        if (uncheckLayer == 'SYNOP 00UTC Geopotential Height') {
+        if (uncheckLayer == 'SYNOP 00UTC Geopotential Height_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X2;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 00UTC RH
-        if (uncheckLayer == 'SYNOP 00UTC Relative Humidity') {
+        if (uncheckLayer == 'SYNOP 00UTC Relative Humidity_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X3;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 00UTC V
-        if (uncheckLayer == 'SYNOP 00UTC Visibility') {
+        if (uncheckLayer == 'SYNOP 00UTC Visibility_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X4;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 00UTC V
-        if (uncheckLayer == 'SYNOP 00UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'SYNOP 00UTC Wind Speed and Direction_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X5;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 00UTC 3h
-        if (uncheckLayer == 'SYNOP 00UTC 3h Rainfall') {
+        if (uncheckLayer == 'SYNOP 00UTC 3h Rainfall_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X6;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -21996,12 +22030,12 @@ $("body").on("change", "input[type=checkbox]", function() {
         // 
         // mesolscale
         // WRF Reflectivity
-        if (uncheckLayer == 'WRF Reflectivity Next 03 Hrs') {
+        if (uncheckLayer == 'WRF Reflectivity WRF R Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X250;
             remLayOrAdclickedWRFRef(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'WRF Reflectivity Next 03-06 Hrs') {
+        if (uncheckLayer == 'WRF Reflectivity WRF R Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X251;
             remLayOrAdclickedWRFRef(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -22013,12 +22047,12 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // WRF Reflectivity
-        if (uncheckLayer == 'WRF Lightning Product Next 03 Hrs') {
+        if (uncheckLayer == 'WRF Lightning Product WRF LP Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X252;
             remLayOrAdclickedWRF_lig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'WRF Lightning Product Next 03-06 Hrs') {
+        if (uncheckLayer == 'WRF Lightning Product WRF LP Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X253;
             remLayOrAdclickedWRF_lig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -22030,12 +22064,12 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // WRF Accumlated Rainfall
-        if (uncheckLayer == 'WRF Accumlated Rainfall Next 03 Hrs') {
+        if (uncheckLayer == 'WRF Accumlated Rainfall WRF AR Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X254;
             remLayOrAdclickedWRF_acc_rain(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'WRF Accumlated Rainfall Next 03-06 Hrs') {
+        if (uncheckLayer == 'WRF Accumlated Rainfall WRF AR Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X255;
             remLayOrAdclickedWRF_acc_rain(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -22047,17 +22081,17 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //Lightning Potential Index
-        if (uncheckLayer == 'Lightning Potential Index Next 01 Hrs') {
+        if (uncheckLayer == 'Lightning Potential Index LP Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X256;
             remLayOrAdclickedLig_pot(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'Lightning Potential Index Next 01-02 Hrs') {
+        if (uncheckLayer == 'Lightning Potential Index LP Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X257;
             remLayOrAdclickedLig_pot(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'Lightning Potential Index Next 02-03 Hrs') {
+        if (uncheckLayer == 'Lightning Potential Index LP Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X258;
             remLayOrAdclickedLig_pot(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -22071,12 +22105,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         //NCUMR Lightning Product
-        if (uncheckLayer == 'NCUMR Lightning Product Next 03 Hrs') {
+        if (uncheckLayer == 'NCUMR Lightning Product NCUMR LP Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X259;
             remLayOrAdclickedLig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'NCUMR Lightning Product Next 03-06 Hrs') {
+        if (uncheckLayer == 'NCUMR Lightning Product NCUMR LP Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X260;
             remLayOrAdclickedLig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -22089,12 +22123,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         //NCUMR Wind Gust
-        if (uncheckLayer == 'NCUMR Wind Gust Next 03 Hrs') {
+        if (uncheckLayer == 'NCUMR Wind Gust NCUMR WG Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X261;
             remLayOrAdclickedNCUMR_WG(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'NCUMR Wind Gust Next 03-06 Hrs') {
+        if (uncheckLayer == 'NCUMR Wind Gust NCUMR WG Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X262;
             remLayOrAdclickedNCUMR_WG(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -22106,12 +22140,12 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //NCUMR Rainfall
-        if (uncheckLayer == 'NCUMR Rainfall Next 03 Hrs forExistLayer') {
+        if (uncheckLayer == 'NCUMR Rainfall NCUMR R Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X5;
             remLayOrAdclickedNCUMR_RF(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'NCUMR Rainfall Next 03-06 Hrs') {
+        if (uncheckLayer == 'NCUMR Rainfall NCUMR R Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X263;
             remLayOrAdclickedNCUMR_RF(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -22123,17 +22157,17 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //HRRR_SP Hourly DBZ
-        if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 01 Hrs') {
+        if (uncheckLayer == 'HRRR_SP Hourly DBZ HRRR SP Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X264;
             remLayOrAdclickedHRRR_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 01-02 Hrs') {
+        if (uncheckLayer == 'HRRR_SP Hourly DBZ HRRR SP Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X266;
             remLayOrAdclickedHRRR_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 02-03 Hrs') {
+        if (uncheckLayer == 'HRRR_SP Hourly DBZ HRRR SP Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X267;
             remLayOrAdclickedHRRR_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -22145,17 +22179,17 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //HRRR_NE Hourly DBZ
-        if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 01 Hrs') {
+        if (uncheckLayer == 'HRRR_NE Hourly DBZ HRRR NE Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X268;
             remLayOrAdclickedHRRR_NE_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 01-02 Hrs') {
+        if (uncheckLayer == 'HRRR_NE Hourly DBZ HRRR NE Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X269;
             remLayOrAdclickedHRRR_NE_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 02-03 Hrs') {
+        if (uncheckLayer == 'HRRR_NE Hourly DBZ HRRR NE Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X270;
             remLayOrAdclickedHRRR_NE_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -22165,19 +22199,19 @@ $("body").on("change", "input[type=checkbox]", function() {
             MESOLSCALE.innerHTML = '';
             HRRR_NEHourlyDBZImage.innerHTML = '';
         }
-
+//code missing here for NW dbz 
         //EWRF MaxZ
-        if (uncheckLayer == 'EWRF MaxZ Next 01 Hrs') {
+        if (uncheckLayer == 'EWRF MaxZ EWRF M Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X274;
             remLayOrAdclickedEWRF_MaxZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'EWRF MaxZ Next 01-02 Hrs') {
+        if (uncheckLayer == 'EWRF MaxZ EWRF M Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X275;
             remLayOrAdclickedEWRF_MaxZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'EWRF MaxZ Next 02-03 Hrs') {
+        if (uncheckLayer == 'EWRF MaxZ EWRF M Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X276;
             remLayOrAdclickedEWRF_MaxZ(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -22190,17 +22224,17 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //EWRF MaxZ
-        if (uncheckLayer == 'EWRF Lightning Next 01 Hrs') {
+        if (uncheckLayer == 'EWRF Lightning EWRF L Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X277;
             remLayOrAdclickedEWRF_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'EWRF Lightning Next 01-02 Hrs') {
+        if (uncheckLayer == 'EWRF Lightning EWRF L Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X278;
             remLayOrAdclickedEWRF_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'EWRF Lightning Next 02-03 Hrs') {
+        if (uncheckLayer == 'EWRF Lightning EWRF L Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X279;
             remLayOrAdclickedEWRF_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
