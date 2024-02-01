@@ -184,7 +184,7 @@ let Parameters = [{
         category: 'Mesolscale Forecast'
     },
     {
-        name: 'WRF lightning Product',
+        name: 'WRF Lightning Product',
         category: 'Mesolscale Forecast'
     },
     {
@@ -192,11 +192,11 @@ let Parameters = [{
         category: 'Mesolscale Forecast'
     },
     {
-        name: 'lightning Potential index',
+        name: 'Lightning Potential Index',
         category: 'Mesolscale Forecast'
     },
     {
-        name: 'NCUMR lightning Product',
+        name: 'NCUMR Lightning Product',
         category: 'Mesolscale Forecast'
     },
     {
@@ -1306,123 +1306,123 @@ let subParametersList = [{
         category: 'Ship and Buoy'
     },
     {
-        name: 'Next 03 Hrs',
+        name: 'WRF R Next 03 Hrs',
         category: 'WRF Reflectivity'
     },
     {
-        name: 'Next 03-06 Hrs',
+        name: 'WRF R Next 03-06 Hrs',
         category: 'WRF Reflectivity'
     },
     {
-        name: 'Next 03 Hrs',
-        category: 'WRF lightning Product'
+        name: 'WRF LP Next 03 Hrs',
+        category: 'WRF Lightning Product'
     },
     {
-        name: 'Next 03-06 Hrs',
-        category: 'WRF lightning Product'
+        name: 'WRF LP Next 03-06 Hrs',
+        category: 'WRF Lightning Product'
     },
     {
-        name: 'Next 03 Hrs',
+        name: 'WRF AR Next 03 Hrs',
         category: 'WRF Accumlated Rainfall'
     },
     {
-        name: 'Next 03-06 Hrs',
+        name: 'WRF AR Next 03-06 Hrs',
         category: 'WRF Accumlated Rainfall'
     },
     {
-        name: 'Next 01 Hrs',
-        category: 'lightning Potential index'
+        name: 'LP Next 01 Hrs',
+        category: 'Lightning Potential Index'
     },
     {
-        name: 'Next 01-02 Hrs',
-        category: 'lightning Potential index'
+        name: 'LP Next 01-02 Hrs',
+        category: 'Lightning Potential Index'
     },
     {
-        name: 'Next 02-03 Hrs',
-        category: 'lightning Potential index'
+        name: 'LP Next 02-03 Hrs',
+        category: 'Lightning Potential Index'
     },
     {
-        name: 'Next 03 Hrs',
-        category: 'NCUMR lightning Product'
+        name: 'NCUMR LP Next 03 Hrs',
+        category: 'NCUMR Lightning Product'
     },
     {
-        name: 'Next 03-06 Hrs',
-        category: 'NCUMR lightning Product'
+        name: 'NCUMR LP Next 03-06 Hrs',
+        category: 'NCUMR Lightning Product'
     },
     {
-        name: 'Next 03 Hrs',
+        name: 'NCUMR WG Next 03 Hrs',
         category: 'NCUMR Wind Gust'
     },
     {
-        name: 'Next 03-06 Hrs',
+        name: 'NCUMR WG Next 03-06 Hrs',
         category: 'NCUMR Wind Gust'
     },
     {
-        name: 'Next 03 Hrs',
+        name: 'NCUMR R Next 03 Hrs',
         category: 'NCUMR Rainfall'
     },
     {
-        name: 'Next 03-06 Hrs',
+        name: 'NCUMR R Next 03-06 Hrs',
         category: 'NCUMR Rainfall'
     },
     {
-        name: 'Next 01 Hrs',
+        name: 'HRRR SP Next 01 Hrs',
         category: 'HRRR_SP Hourly DBZ'
     },
     {
-        name: 'Next 01-02 Hrs',
+        name: 'HRRR SP Next 01-02 Hrs',
         category: 'HRRR_SP Hourly DBZ'
     },
     {
-        name: 'Next 02-03 Hrs',
+        name: 'HRRR SP Next 02-03 Hrs',
         category: 'HRRR_SP Hourly DBZ'
     },
     {
-        name: 'Next 01 Hrs',
+        name: 'HRRR NE Next 01 Hrs',
         category: 'HRRR_NE Hourly DBZ'
     },
     {
-        name: 'Next 01-02 Hrs',
+        name: 'HRRR NE Next 01-02 Hrs',
         category: 'HRRR_NE Hourly DBZ'
     },
     {
-        name: 'Next 02-03 Hrs',
+        name: 'HRRR NE Next 02-03 Hrs',
         category: 'HRRR_NE Hourly DBZ'
     },
     {
-        name: 'Next 01 Hrs',
+        name: 'HRRR NW Next 01 Hrs',
         category: 'HRRR_NW Hourly DBZ'
     },
     {
-        name: 'Next 01-02 Hrs',
+        name: 'HRRR NW Next 01-02 Hrs',
         category: 'HRRR_NW Hourly DBZ'
     },
     {
-        name: 'Next 02-03 Hrs',
+        name: 'HRRR NW Next 02-03 Hrs',
         category: 'HRRR_NW Hourly DBZ'
     },
     {
-        name: 'Next 01 Hrs',
+        name: 'EWRF M Next 01 Hrs',
         category: 'EWRF MaxZ'
     },
     {
-        name: 'Next 01-02 Hrs',
+        name: 'EWRF M Next 01-02 Hrs',
         category: 'EWRF MaxZ'
     },
     {
-        name: 'Next 02-03 Hrs',
+        name: 'EWRF M Next 02-03 Hrs',
         category: 'EWRF MaxZ'
     },
     {
-        name: 'Next 01 Hrs',
+        name: 'EWRF L Next 01 Hrs',
         category: 'EWRF Lightning'
     },
     {
-        name: 'Next 01-02 Hrs',
+        name: 'EWRF L Next 01-02 Hrs',
         category: 'EWRF Lightning'
     },
     {
-        name: 'Next 02-03 Hrs',
+        name: 'EWRF L Next 02-03 Hrs',
         category: 'EWRF Lightning'
     },
     {
@@ -4996,37 +4996,37 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_00",
                 layer: syn00utc_tem,
             },
             {
                 active: false,
-                name: "Mean Sea Level Pressure",
+                name: "Mean Sea Level Pressure_00",
                 layer: HHHHHH,
             },
             {
                 active: false,
-                name: "Cloud Cover",
+                name: "Cloud Cover_00",
                 layer: X1,
             },
             {
                 active: false,
-                name: "Geopotential Height",
+                name: "Geopotential Height_00",
                 layer: X2
             },
             {
                 active: false,
-                name: "Relative Humidity",
+                name: "Relative Humidity_00",
                 layer: X3
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_00",
                 layer: X4
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_00",
                 layer: X5
             },
             {
@@ -5042,42 +5042,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_03",
                 layer: X7
             },
             {
                 active: false,
-                name: "Mean Sea Level Pressure",
+                name: "Mean Sea Level Pressure_03",
                 layer: X8
             },
             {
                 active: false,
-                name: "Cloud Cover",
+                name: "Cloud Cover_03",
                 layer: X9
             },
             {
                 active: false,
-                name: "Geopotential Height",
+                name: "Geopotential Height_03",
                 layer: X10
             },
             {
                 active: false,
-                name: "Relative Humidity",
+                name: "Relative Humidity_03",
                 layer: X11
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_03",
                 layer: X12
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_03",
                 layer: X13
             },
             {
                 active: false,
-                name: "3h Rainfall",
+                name: "3h Rainfall_03",
                 layer: syn03utc_rain,
             },
         ]
@@ -6022,12 +6022,12 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 03 Hrs",
+                name: "WRF R Next 03 Hrs",
                 layer: X250
             },
             {
                 active: false,
-                name: "Next 03-06 Hrs",
+                name: "WRF R Next 03-06 Hrs",
                 layer: X251
             },
         ]
@@ -6039,12 +6039,12 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 03 Hrs",
+                name: "WRF LP Next 03 Hrs",
                 layer: X252
             },
             {
                 active: false,
-                name: "Next 03-06 Hrs",
+                name: "WRF LP Next 03-06 Hrs",
                 layer: X253
             },
         ]
@@ -6055,12 +6055,12 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 03 Hrs",
+                name: "WRF AR Next 03 Hrs",
                 layer: X254
             },
             {
                 active: false,
-                name: "Next 03-06 Hrs",
+                name: "WRF AR Next 03-06 Hrs",
                 layer: X255
             },
         ]
@@ -6072,17 +6072,17 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 01 Hrs",
+                name: "LP Next 01 Hrs",
                 layer: X256
             },
             {
                 active: false,
-                name: "Next 01-02 Hrs",
+                name: "LP Next 01-02 Hrs",
                 layer: X257
             },
             {
                 active: false,
-                name: "Next 02-03 Hrs",
+                name: "LP Next 02-03 Hrs",
                 layer: X258
             },
         ]
@@ -6094,12 +6094,12 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 03 Hrs",
+                name: "NCUMR LP Next 03 Hrs",
                 layer: X259
             },
             {
                 active: false,
-                name: "Next 03-06 Hrs",
+                name: "NCUMR LP Next 03-06 Hrs",
                 layer: X260
             },
         ]
@@ -6110,12 +6110,12 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 03 Hrs",
+                name: "NCUMR WG Next 03 Hrs",
                 layer: X261
             },
             {
                 active: false,
-                name: "Next 03-06 Hrs",
+                name: "NCUMR WG Next 03-06 Hrs",
                 layer: X262
             },
         ]
@@ -6127,12 +6127,12 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 03 Hrs",
+                name: "NCUMR R Next 03 Hrs",
                 layer: X262
             },
             {
                 active: false,
-                name: "Next 03-06 Hrs",
+                name: "NCUMR R Next 03-06 Hrs",
                 layer: X263
             },
         ]
@@ -6144,17 +6144,17 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 01 Hrs",
+                name: "HRRR SP Next 01 Hrs",
                 layer: X264
             },
             {
                 active: false,
-                name: "Next 01-02 Hrs",
+                name: "HRRR SP Next 01-02 Hrs",
                 layer: X266
             },
             {
                 active: false,
-                name: "Next 02-03 Hrs",
+                name: "HRRR SP Next 02-03 Hrs",
                 layer: X267
             },
         ]
@@ -6164,17 +6164,17 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 01 Hrs",
+                name: "HRRR NE Next 01 Hrs",
                 layer: X268
             },
             {
                 active: false,
-                name: "Next 01-02 Hrs",
+                name: "HRRR NE Next 01-02 Hrs",
                 layer: X269
             },
             {
                 active: false,
-                name: "Next 02-03 Hrs",
+                name: "HRRR NE Next 02-03 Hrs",
                 layer: X270
             },
         ]
@@ -6184,17 +6184,17 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 01 Hrs",
+                name: "HRRR NW Next 01 Hrs",
                 layer: X271
             },
             {
                 active: false,
-                name: "Next 01-02 Hrs",
+                name: "HRRR NW Next 01-02 Hrs",
                 layer: X272
             },
             {
                 active: false,
-                name: "Next 02-03 Hrs",
+                name: "HRRR NW Next 02-03 Hrs",
                 layer: X273
             },
         ]
@@ -6204,17 +6204,17 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 01 Hrs",
+                name: "EWRF M Next 01 Hrs",
                 layer: X274
             },
             {
                 active: false,
-                name: "Next 01-02 Hrs",
+                name: "EWRF M Next 01-02 Hrs",
                 layer: X275
             },
             {
                 active: false,
-                name: "Next 02-03 Hrs",
+                name: "EWRF M Next 02-03 Hrs",
                 layer: X276
             },
         ]
@@ -6224,17 +6224,17 @@ var overLayers4 = [
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Next 01 Hrs",
+                name: "EWRF L Next 01 Hrs",
                 layer: X277
             },
             {
                 active: false,
-                name: "Next 01-02 Hrs",
+                name: "EWRF L Next 01-02 Hrs",
                 layer: X278
             },
             {
                 active: false,
-                name: "Next 02-03 Hrs",
+                name: "EWRF L Next 02-03 Hrs",
                 layer: X279
             },
 
@@ -10387,49 +10387,49 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // SYNOP
         //SYNOP 00UTC Temp
-        if (_class_name == 'SYNOP 00UTC Temperature') {
+        if (_class_name == 'SYNOP 00UTC Temperature_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = ggg;
             remOrAdSynopTempLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 00UTC MSLP
-        if (_class_name == 'SYNOP 00UTC Mean Sea Level Pressure') {
+        if (_class_name == 'SYNOP 00UTC Mean Sea Level Pressure_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = HHHHHH;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 00UTC CC
-        if (_class_name == 'SYNOP 00UTC Cloud Cover') {
+        if (_class_name == 'SYNOP 00UTC Cloud Cover_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X1;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 00UTC GH
-        if (_class_name == 'SYNOP 00UTC Geopotential Height') {
+        if (_class_name == 'SYNOP 00UTC Geopotential Height_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X2;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 00UTC RH
-        if (_class_name == 'SYNOP 00UTC Relative Humidity') {
+        if (_class_name == 'SYNOP 00UTC Relative Humidity_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X3;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 00UTC V
-        if (_class_name == 'SYNOP 00UTC Visibility') {
+        if (_class_name == 'SYNOP 00UTC Visibility_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X4;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 00UTC V
-        if (_class_name == 'SYNOP 00UTC Wind Speed and Direction') {
+        if (_class_name == 'SYNOP 00UTC Wind Speed and Direction_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X5;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10942,178 +10942,177 @@ $("body").on("change", "input[type=checkbox]", function() {
             var _layer_to_remove_add = X2;
             remove_layer_or_add_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-
         // 
         // mesolscale
         // WRF Reflectivity
-        if (_class_name == 'WRF Reflectivity Next 03 Hrs') {
+        if (_class_name == 'WRF Reflectivity WRF R Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X250;
             remLayOrAdclickedWRFRef(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'WRF Reflectivity Next 03-06 Hrs') {
+        if (_class_name == 'WRF Reflectivity WRF R Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X251;
             remLayOrAdclickedWRFRef(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
-        // WRF Reflectivity 
-        if (_class_name == 'WRF Lightning Product Next 03 Hrs') {
+        // WRF Lightining
+        if (_class_name == 'WRF Lightning Product WRF LP Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X252;
             remLayOrAdclickedWRF_lig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'WRF Lightning Product Next 03-06 Hrs') {
+        if (_class_name == 'WRF Lightning Product WRF LP Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X253;
             remLayOrAdclickedWRF_lig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //WRF Accumlated Rainfall 
-        if (_class_name == 'WRF Accumlated Rainfall Next 03 Hrs') {
+        if (_class_name == 'WRF Accumlated Rainfall WRF AR Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X254;
             remLayOrAdclickedWRF_acc_rain(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'WRF Accumlated Rainfall Next 03-06 Hrs') {
+        if (_class_name == 'WRF Accumlated Rainfall WRF AR Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X255;
             remLayOrAdclickedWRF_acc_rain(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //Lightning Potential Index
-        if (_class_name == 'Lightning Potential Index Next 01 Hrs') {
+        if (_class_name == 'Lightning Potential Index LP Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X256;
             remLayOrAdclickedLig_pot(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'Lightning Potential Index Next 01-02 Hrs') {
+        if (_class_name == 'Lightning Potential Index LP Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X257;
             remLayOrAdclickedLig_pot(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'Lightning Potential Index Next 02-03 Hrs') {
+        if (_class_name == 'Lightning Potential Index LP Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X258;
             remLayOrAdclickedLig_pot(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //NCUMR Lightning Product
-        if (_class_name == 'NCUMR Lightning Product Next 03 Hrs') {
+        if (_class_name == 'NCUMR Lightning Product NCUMR LP Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X259;
             remLayOrAdclickedLig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'NCUMR Lightning Product Next 03-06 Hrs') {
+        if (_class_name == 'NCUMR Lightning Product NCUMR LP Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X260;
             remLayOrAdclickedLig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //NCUMR Lightning Product
-        if (_class_name == 'NCUMR Wind Gust Next 03 Hrs') {
+        if (_class_name == 'NCUMR Wind Gust NCUMR WG Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X261;
             remLayOrAdclickedNCUMR_WG(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'NCUMR Wind Gust Next 03-06 Hrs') {
+        if (_class_name == 'NCUMR Wind Gust NCUMR WG Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X262;
             remLayOrAdclickedNCUMR_WG(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //NCUMR Rainfall
-        if (_class_name == 'NCUMR Rainfall Next 03 Hrs forExistLayer') {
+        if (_class_name == 'NCUMR Rainfall NCUMR R Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X5;
             remLayOrAdclickedNCUMR_RF(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'NCUMR Rainfall Next 03-06 Hrs') {
+        if (_class_name == 'NCUMR Rainfall NCUMR R Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X263;
             remLayOrAdclickedNCUMR_RF(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //HRRR_SP Hourly DBZ
-        if (_class_name == 'HRRR_SP Hourly DBZ Next 01 Hrs') {
+        if (_class_name == 'HRRR_SP Hourly DBZ HRRR SP Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X264;
             remLayOrAdclickedHRRR_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'HRRR_SP Hourly DBZ Next 01-02 Hrs') {
+        if (_class_name == 'HRRR_SP Hourly DBZ HRRR SP Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X266;
             remLayOrAdclickedHRRR_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'HRRR_SP Hourly DBZ Next 02-03 Hrs') {
+        if (_class_name == 'HRRR_SP Hourly DBZ HRRR SP Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X267;
             remLayOrAdclickedHRRR_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //HRRR_SP Hourly DBZ
-        if (_class_name == 'HRRR_NE Hourly DBZ Next 01 Hrs') {
+        if (_class_name == 'HRRR_NE Hourly DBZ HRRR NE Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X268;
             remLayOrAdclickedHRRR_NE_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'HRRR_NE Hourly DBZ Next 01-02 Hrs') {
+        if (_class_name == 'HRRR_NE Hourly DBZ HRRR NE Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X269;
             remLayOrAdclickedHRRR_NE_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'HRRR_NE Hourly DBZ Next 02-03 Hrs') {
+        if (_class_name == 'HRRR_NE Hourly DBZ HRRR NE Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X270;
             remLayOrAdclickedHRRR_NE_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //HRRR_NW Hourly DBZ
-        if (_class_name == 'HRRR_NW Hourly DBZ Next 01 Hrs') {
+        if (_class_name == 'HRRR_NW Hourly DBZ HRRR NW Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X271;
             remLayOrAdclickedHRRR_NW_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'HRRR_NW Hourly DBZ Next 01-02 Hrs') {
+        if (_class_name == 'HRRR_NW Hourly DBZ HRRR NW Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X272;
             remLayOrAdclickedHRRR_NW_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'HRRR_NW Hourly DBZ Next 02-03 Hrs') {
+        if (_class_name == 'HRRR_NW Hourly DBZ HRRR NW Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X273;
             remLayOrAdclickedHRRR_NW_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //EWRF MaxZ
-        if (_class_name == 'EWRF MaxZ Next 01 Hrs') {
+        if (_class_name == 'EWRF MaxZ EWRF M Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X274;
             remLayOrAdclickedEWRF_MaxZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'EWRF MaxZ Next 01-02 Hrs') {
+        if (_class_name == 'EWRF MaxZ EWRF M Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X275;
             remLayOrAdclickedEWRF_MaxZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'EWRF MaxZ Next 02-03 Hrs') {
+        if (_class_name == 'EWRF M Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X276;
             remLayOrAdclickedEWRF_MaxZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //EWRF Lightning
-        if (_class_name == 'EWRF Lightning Next 01 Hrs') {
+        if (_class_name == 'EWRF Lightning EWRF L Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X277;
             remLayOrAdclickedEWRF_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'EWRF Lightning Next 01-02 Hrs') {
+        if (_class_name == 'EWRF Lightning EWRF L Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X278;
             remLayOrAdclickedEWRF_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (_class_name == 'EWRF Lightning Next 02-03 Hrs') {
+        if (_class_name == 'EWRF Lightning EWRF L Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X279;
             remLayOrAdclickedEWRF_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -12202,45 +12201,45 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_00') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_00') {
                 bgClickedSynopMeanSeaLevelLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_00') {
                 bgClickedSynopCloudCoverLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_00') {
                 bgClickedSynopGeopotentialHeightLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopGeopotentialHeightLists,
                     "....bgClickedSynopGeopotentialHeightLists");
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_00') {
                 bgClickedSynopRelativeHumidityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopRelativeHumidityLists,
                     "....bgClickedSynopRelativeHumidityLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_00') {
                 bgClickedSynopVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopVisibilityLists,
                     "....bgClickedSynopVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_00') {
                 bgClickedSynopWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopWindSpeedAndDirectionLists,
                     "....bgClickedSynopWindSpeedAndDirectionLists");
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_00') {
                 bgClickedSynop3hRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynop3hRainfallLists,
@@ -12250,46 +12249,46 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_03') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_03') {
                 bgClickedSynopMeanSeaLevelLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_03') {
                 bgClickedSynopCloudCoverLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_03') {
                 bgClickedSynopGeopotentialHeightLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopGeopotentialHeightLists,
                     "....bgClickedSynopGeopotentialHeightLists");
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_03') {
                 bgClickedSynopRelativeHumidityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopRelativeHumidityLists,
                     "....bgClickedSynopRelativeHumidityLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_03') {
                 bgClickedSynopVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopVisibilityLists,
                     "....bgClickedSynopVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_03') {
                 bgClickedSynopWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopWindSpeedAndDirectionLists,
                     "....bgClickedSynopWindSpeedAndDirectionLists");
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_03') {
                 bgClickedSynop3hRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynop3hRainfallLists,
@@ -13117,12 +13116,12 @@ $("body").on("change", "input[type=checkbox]", function() {
         //mesolscale
         //bgClickedWRFReflectivityLists[]
         if (_this.context._layer?.group.name == "WRF Reflectivity") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'WRF R Next 03 Hrs') {
                 bgClickedWRFReflectivityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedWRFReflectivityLists, "....bgClickedWRFReflectivityLists");
             }
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'WRF R Next 03-06 Hrs') {
                 bgClickedWRFReflectivityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedWRFReflectivityLists, "....bgClickedWRFReflectivityLists");
@@ -13131,12 +13130,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFlightningProductLists[]
         if (_this.context._layer?.group.name == "WRF Lightning Product") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'WRF LP Next 03 Hrs') {
                 bgClickedWRFlightningProductLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedWRFlightningProductLists, "....bgClickedWRFlightningProductLists");
             }
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'WRF LP Next 03-06 Hrs') {
                 bgClickedWRFlightningProductLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedWRFlightningProductLists, "....bgClickedWRFlightningProductLists");
@@ -13145,12 +13144,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFAccumlatedRainfallLists[]
         if (_this.context._layer?.group.name == "WRF Accumlated Rainfall") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'WRF AR Next 03 Hrs') {
                 bgClickedWRFAccumlatedRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedWRFAccumlatedRainfallLists, "....bgClickedWRFAccumlatedRainfallLists");
             }
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'WRF AR Next 03-06 Hrs') {
                 bgClickedWRFAccumlatedRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedWRFAccumlatedRainfallLists, "....bgClickedWRFAccumlatedRainfallLists");
@@ -13159,19 +13158,19 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedlightningPotentialindexLists[]
         if (_this.context._layer?.group.name == "Lightning Potential Index") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'LP Next 01 Hrs') {
                 bgClickedlightningPotentialindexLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedlightningPotentialindexLists,
                     "....bgClickedlightningPotentialindexLists");
             }
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'LP Next 01-02 Hrs') {
                 bgClickedlightningPotentialindexLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedlightningPotentialindexLists,
                     "....bgClickedlightningPotentialindexLists");
             }
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'LP Next 02-03 Hrs') {
                 bgClickedlightningPotentialindexLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedlightningPotentialindexLists,
@@ -13181,12 +13180,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedNCUMRlightningProductLists[]
         if (_this.context._layer?.group.name == "NCUMR Lightning Product") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'NCUMR LP Next 03 Hrs') {
                 bgClickedNCUMRlightningProductLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedNCUMRlightningProductLists, "....bgClickedNCUMRlightningProductLists");
             }
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'NCUMR LP Next 03-06 Hrs') {
                 bgClickedNCUMRlightningProductLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedNCUMRlightningProductLists, "....bgClickedNCUMRlightningProductLists");
@@ -13195,12 +13194,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedNCUMRWindGustLists[]
         if (_this.context._layer?.group.name == "NCUMR Wind Gust") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'NCUMR WG Next 03 Hrs') {
                 bgClickedNCUMRWindGustLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedNCUMRWindGustLists, "....bgClickedNCUMRWindGustLists");
             }
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'NCUMR WG Next 03-06 Hrs') {
                 bgClickedNCUMRWindGustLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedNCUMRWindGustLists, "....bgClickedNCUMRWindGustLists");
@@ -13209,12 +13208,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedNCUMRRainfallLists[]
         if (_this.context._layer?.group.name == "NCUMR Rainfall") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'NCUMR R Next 03 Hrs') {
                 bgClickedNCUMRRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedNCUMRRainfallLists, "....bgClickedNCUMRRainfallLists");
             }
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'NCUMR R Next 03-06 Hrs') {
                 bgClickedNCUMRRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedNCUMRRainfallLists, "....bgClickedNCUMRRainfallLists");
@@ -13223,17 +13222,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedHRRR_SPHourlyDBZLists[]
         if (_this.context._layer?.group.name == "HRRR_SP Hourly DBZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'HRRR SP Next 01 Hrs') {
                 bgClickedHRRR_SPHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_SPHourlyDBZLists, "....bgClickedHRRR_SPHourlyDBZLists");
             }
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'HRRR SP Next 01-02 Hrs') {
                 bgClickedHRRR_SPHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_SPHourlyDBZLists, "....bgClickedHRRR_SPHourlyDBZLists");
             }
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'HRRR SP Next 02-03 Hrs') {
                 bgClickedHRRR_SPHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_SPHourlyDBZLists, "....bgClickedHRRR_SPHourlyDBZLists");
@@ -13242,17 +13241,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedHRRR_NEHourlyDBZLists[]
         if (_this.context._layer?.group.name == "HRRR_NE Hourly DBZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'HRRR NE Next 01 Hrs') {
                 bgClickedHRRR_NEHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_NEHourlyDBZLists, "....bgClickedHRRR_NEHourlyDBZLists");
             }
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'HRRR NE Next 01-02 Hrs') {
                 bgClickedHRRR_NEHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_NEHourlyDBZLists, "....bgClickedHRRR_NEHourlyDBZLists");
             }
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'HRRR NE Next 02-03 Hrs') {
                 bgClickedHRRR_NEHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_NEHourlyDBZLists, "....bgClickedHRRR_NEHourlyDBZLists");
@@ -13261,17 +13260,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedHRRR_NWHourlyDBZLists[]
         if (_this.context._layer?.group.name == "HRRR_NW Hourly DBZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'HRRR NW Next 01 Hrs') {
                 bgClickedHRRR_NWHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_NWHourlyDBZLists, "....bgClickedHRRR_NWHourlyDBZLists");
             }
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'HRRR NW Next 01-02 Hrs') {
                 bgClickedHRRR_NWHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_NWHourlyDBZLists, "....bgClickedHRRR_NWHourlyDBZLists");
             }
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'HRRR NW Next 02-03 Hrs') {
                 bgClickedHRRR_NWHourlyDBZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedHRRR_NWHourlyDBZLists, "....bgClickedHRRR_NWHourlyDBZLists");
@@ -13280,17 +13279,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedEWRFMaxZLists[]
         if (_this.context._layer?.group.name == "EWRF MaxZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'EWRF M Next 01 Hrs') {
                 bgClickedEWRFMaxZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedEWRFMaxZLists, "....bgClickedEWRFMaxZLists");
             }
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'EWRF M Next 01-02 Hrs') {
                 bgClickedEWRFMaxZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedEWRFMaxZLists, "....bgClickedEWRFMaxZLists");
             }
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'EWRF M Next 02-03 Hrs') {
                 bgClickedEWRFMaxZLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedEWRFMaxZLists, "....bgClickedEWRFMaxZLists");
@@ -13299,17 +13298,17 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedEWRFLightningLists[]
         if (_this.context._layer?.group.name == "EWRF Lightning") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'EWRF L Next 01 Hrs') {
                 bgClickedEWRFLightningLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedEWRFLightningLists, "....bgClickedEWRFLightningLists");
             }
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'EWRF L Next 01-02 Hrs') {
                 bgClickedEWRFLightningLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedEWRFLightningLists, "....bgClickedEWRFLightningLists");
             }
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'EWRF L Next 02-03 Hrs') {
                 bgClickedEWRFLightningLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedEWRFLightningLists, "....bgClickedEWRFLightningLists");
@@ -14323,10 +14322,10 @@ $("body").on("change", "input[type=checkbox]", function() {
             if (layer_name == 'Temperature_21') {
                 metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'Dew Point Temperature') {
+            if (layer_name == 'Dew Point Temperature_21') {
                 metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
-            if (layer_name == 'VISIBILITY_21') {
+            if (layer_name == 'Visibility_21') {
                 metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer)
             }
             if (layer_name == 'Wind Speed and Direction_21') {
@@ -14365,54 +14364,54 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // SYNOP--
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_00') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_00') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_00') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_00') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_00') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_00') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_00') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_00') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_03') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_03') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_03') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_03') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_03') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_03') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_03') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_03') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
@@ -15425,13 +15424,13 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03 Hrs') {
+                if (layer_name == 'WRF R Next 03 Hrs') {
                     clickedWRFReflectivityLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     WRFReflectivityLegendImage();
                 }
-                if (layer_name == 'Next 03-06 Hrs') {
+                if (layer_name == 'WRF R Next 03-06 Hrs') {
                     clickedWRFReflectivityLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15450,13 +15449,13 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03 Hrs') {
+                if (layer_name == 'WRF LP Next 03 Hrs') {
                     clickedWRFlightningProductLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     WRFlightningProductLegendImage();
                 }
-                if (layer_name == 'Next 03-06 Hrs') {
+                if (layer_name == 'WRF LP Next 03-06 Hrs') {
                     clickedWRFlightningProductLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15476,13 +15475,13 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03 Hrs') {
+                if (layer_name == 'WRF AR Next 03 Hrs') {
                     clickedWRFAccumlatedRainfallLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     WRFAccumlatedRainfallLegendImage();
                 }
-                if (layer_name == 'Next 03-06 Hrs') {
+                if (layer_name == 'WRF AR Next 03-06 Hrs') {
                     clickedWRFAccumlatedRainfallLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15501,19 +15500,19 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 01 Hrs') {
+                if (layer_name == 'LP Next 01 Hrs') {
                     clickedlightningPotentialindexLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     lightningPotentialindexLegendImage();
                 }
-                if (layer_name == 'Next 01-02 Hrs') {
+                if (layer_name == 'LP Next 01-02 Hrs') {
                     clickedlightningPotentialindexLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     lightningPotentialindexLegendImage();
                 }
-                if (layer_name == 'Next 02-03 Hrs') {
+                if (layer_name == 'LP Next 02-03 Hrs') {
                     clickedlightningPotentialindexLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15533,13 +15532,13 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03 Hrs') {
+                if (layer_name == 'NCUMR LP Next 03 Hrs') {
                     clickedNCUMRlightningProductLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     NCUMRlightningProductLegendImage();
                 }
-                if (layer_name == 'Next 03-06 Hrs') {
+                if (layer_name == 'NCUMR LP Next 03-06 Hrs') {
                     clickedNCUMRlightningProductLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15558,13 +15557,13 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03 Hrs') {
+                if (layer_name == 'NCUMR WG Next 03 Hrs') {
                     clickedNCUMRWindGustLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     NCUMRWindGustLegendImage();
                 }
-                if (layer_name == 'Next 03-06 Hrs') {
+                if (layer_name == 'NCUMR WG Next 03-06 Hrs') {
                     clickedNCUMRWindGustLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15583,13 +15582,13 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 03 Hrs') {
+                if (layer_name == 'NCUMR R Next 03 Hrs') {
                     clickedNCUMRRainfallLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     NCUMRRainfallLegendImage();
                 }
-                if (layer_name == 'Next 03-06 Hrs') {
+                if (layer_name == 'NCUMR R Next 03-06 Hrs') {
                     clickedNCUMRRainfallLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15608,19 +15607,19 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 01 Hrs') {
+                if (layer_name == 'HRRR SP Next 01 Hrs') {
                     clickedHRRR_SPHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     HRRR_SPHourlyDBZLegendImage();
                 }
-                if (layer_name == 'Next 01-02 Hrs') {
+                if (layer_name == 'HRRR SP Next 01-02 Hrs') {
                     clickedHRRR_SPHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     HRRR_SPHourlyDBZLegendImage();
                 }
-                if (layer_name == 'Next 02-03 Hrs') {
+                if (layer_name == 'HRRR SP Next 02-03 Hrs') {
                     clickedHRRR_SPHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15639,19 +15638,19 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 01 Hrs') {
+                if (layer_name == 'HRRR NE Next 01 Hrs') {
                     clickedHRRR_NEHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     HRRR_NEHourlyDBZLegendImage();
                 }
-                if (layer_name == 'Next 01-02 Hrs') {
+                if (layer_name == 'HRRR NE Next 01-02 Hrs') {
                     clickedHRRR_NEHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     HRRR_NEHourlyDBZLegendImage();
                 }
-                if (layer_name == 'Next 02-03 Hrs') {
+                if (layer_name == 'HRRR NE Next 02-03 Hrs') {
                     clickedHRRR_NEHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15670,19 +15669,19 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 01 Hrs') {
+                if (layer_name == 'HRRR NW Next 01 Hrs') {
                     clickedHRRR_NWHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     HRRR_NWHourlyDBZLegendImage();
                 }
-                if (layer_name == 'Next 01-02 Hrs') {
+                if (layer_name == 'HRRR NW Next 01-02 Hrs') {
                     clickedHRRR_NWHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     HRRR_NWHourlyDBZLegendImage();
                 }
-                if (layer_name == 'Next 02-03 Hrs') {
+                if (layer_name == 'HRRR NW Next 02-03 Hrs') {
                     clickedHRRR_NWHourlyDBZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15701,19 +15700,19 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 01 Hrs') {
+                if (layer_name == 'EWRF M Next 01 Hrs') {
                     clickedEWRFMaxZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     EWRFMaxZLegendImage();
                 }
-                if (layer_name == 'Next 01-02 Hrs') {
+                if (layer_name == 'EWRF M Next 01-02 Hrs') {
                     clickedEWRFMaxZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     EWRFMaxZLegendImage();
                 }
-                if (layer_name == 'Next 02-03 Hrs') {
+                if (layer_name == 'EWRF M Next 02-03 Hrs') {
                     clickedEWRFMaxZLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -15732,19 +15731,19 @@ $("body").on("change", "input[type=checkbox]", function() {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
             if (!AlreadyExit) {
-                if (layer_name == 'Next 01 Hrs') {
+                if (layer_name == 'EWRF L Next 01 Hrs') {
                     clickedEWRFLightningLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     EWRFLightningLegendImage();
                 }
-                if (layer_name == 'Next 01-02 Hrs') {
+                if (layer_name == 'EWRF L Next 01-02 Hrs') {
                     clickedEWRFLightningLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
                     EWRFLightningLegendImage();
                 }
-                if (layer_name == 'Next 02-03 Hrs') {
+                if (layer_name == 'EWRF L Next 02-03 Hrs') {
                     clickedEWRFLightningLists.push(
                         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name} </br>`
                     );
@@ -17738,7 +17737,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17749,7 +17748,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC MEAN SEA LEVEL PRESSURE[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17762,7 +17761,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC CLOUD COVER[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17775,7 +17774,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC GEOPOTENTIAL HEIGHT[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17788,7 +17787,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC RELATIVE HUMIDITY[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17801,7 +17800,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17814,7 +17813,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17825,7 +17824,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 00UTC 3h RAINFALL[]
         if (_this.context._layer?.group.name == "SYNOP 00UTC") {
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_00') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17838,7 +17837,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17851,7 +17850,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC MEAN SEA LEVEL PRESSURE[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17864,7 +17863,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC CLOUD COVER[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17877,7 +17876,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC GEOPOTENTIAL HEIGHT[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17890,7 +17889,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC RELATIVE HUMIDITY[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17903,7 +17902,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17916,7 +17915,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -17929,7 +17928,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 03UTC 3h RAINFALL[]
         if (_this.context._layer?.group.name == "SYNOP 03UTC") {
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_03') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18572,7 +18571,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //mesolscale
         //bgClickedWRFReflectivityLists[]
         if (_this.context._layer?.group.name == "WRF Reflectivity") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'WRF R Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFReflectivityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18585,7 +18584,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFReflectivityLists[]
         if (_this.context._layer?.group.name == "WRF Reflectivity") {
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'WRF R Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFReflectivityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18598,7 +18597,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFlightningProductLists[]
         if (_this.context._layer?.group.name == "WRF Lightning Product") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'WRF LP Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFlightningProductLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18611,7 +18610,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFlightningProductLists[]
         if (_this.context._layer?.group.name == "WRF Lightning Product") {
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'WRF LP Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFlightningProductLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18624,7 +18623,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFAccumlatedRainfallLists[]
         if (_this.context._layer?.group.name == "WRF Accumlated Rainfall") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'WRF AR Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFAccumlatedRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18637,7 +18636,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedWRFAccumlatedRainfallLists[]
         if (_this.context._layer?.group.name == "WRF Accumlated Rainfall") {
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'WRF AR Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedWRFAccumlatedRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18650,7 +18649,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedlightningPotentialindexLists[]
         if (_this.context._layer?.group.name == "Lightning Potential Index") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'LP Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedlightningPotentialindexLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18663,7 +18662,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedlightningPotentialindexLists[]
         if (_this.context._layer?.group.name == "Lightning Potential Index") {
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'LP Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedlightningPotentialindexLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18676,7 +18675,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClickedlightningPotentialindexLists[]
         if (_this.context._layer?.group.name == "Lightning Potential Index") {
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'LP Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedlightningPotentialindexLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18689,7 +18688,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedNCUMRlightningProductLists
         if (_this.context._layer?.group.name == "NCUMR Lightning Product") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'NCUMR LP Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRlightningProductLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18702,7 +18701,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedNCUMRlightningProductLists
         if (_this.context._layer?.group.name == "NCUMR Lightning Product") {
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'NCUMR LP Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRlightningProductLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18715,7 +18714,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedNCUMRWindGustLists
         if (_this.context._layer?.group.name == "NCUMR Wind Gust") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'NCUMR WG Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRWindGustLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18728,7 +18727,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedNCUMRWindGustLists
         if (_this.context._layer?.group.name == "NCUMR Wind Gust") {
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'NCUMR WG Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRWindGustLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18741,7 +18740,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedNCUMRRainfallLists
         if (_this.context._layer?.group.name == "NCUMR Rainfall") {
-            if (layer_name == 'Next 03 Hrs') {
+            if (layer_name == 'NCUMR R Next 03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18754,7 +18753,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedNCUMRRainfallLists
         if (_this.context._layer?.group.name == "NCUMR Rainfall") {
-            if (layer_name == 'Next 03-06 Hrs') {
+            if (layer_name == 'NCUMR R Next 03-06 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedNCUMRRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18767,7 +18766,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_SPHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_SP Hourly DBZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'HRRR SP Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_SPHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18780,7 +18779,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_SPHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_SP Hourly DBZ") {
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'HRRR SP Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_SPHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18793,7 +18792,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_SPHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_SP Hourly DBZ") {
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'HRRR SP Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_SPHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18806,7 +18805,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_NEHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_NE Hourly DBZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'HRRR NE Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NEHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18819,7 +18818,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_NEHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_NE Hourly DBZ") {
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'HRRR NE Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NEHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18832,7 +18831,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_NEHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_NE Hourly DBZ") {
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'HRRR NE Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NEHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18845,7 +18844,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_NWHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_NW Hourly DBZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'HRRR NW Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NWHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18858,7 +18857,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_NWHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_NW Hourly DBZ") {
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'HRRR NW Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NWHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18871,7 +18870,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedHRRR_NWHourlyDBZLists
         if (_this.context._layer?.group.name == "HRRR_NW Hourly DBZ") {
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'HRRR NW Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedHRRR_NWHourlyDBZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18884,7 +18883,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedEWRFMaxZLists
         if (_this.context._layer?.group.name == "EWRF MaxZ") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'EWRF M Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFMaxZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18897,7 +18896,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedEWRFMaxZLists
         if (_this.context._layer?.group.name == "EWRF MaxZ") {
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'EWRF M Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFMaxZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18910,7 +18909,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedEWRFMaxZLists
         if (_this.context._layer?.group.name == "EWRF MaxZ") {
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'EWRF M Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFMaxZLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18923,7 +18922,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedEWRFMaxZLists
         if (_this.context._layer?.group.name == "EWRF Lightning") {
-            if (layer_name == 'Next 01 Hrs') {
+            if (layer_name == 'EWRF L Next 01 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFLightningLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18936,7 +18935,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedEWRFMaxZLists
         if (_this.context._layer?.group.name == "EWRF Lightning") {
-            if (layer_name == 'Next 01-02 Hrs') {
+            if (layer_name == 'EWRF L Next 01-02 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFLightningLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18949,7 +18948,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // bgClickedEWRFMaxZLists
         if (_this.context._layer?.group.name == "EWRF Lightning") {
-            if (layer_name == 'Next 02-03 Hrs') {
+            if (layer_name == 'EWRF L Next 02-03 Hrs') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedEWRFLightningLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -20577,25 +20576,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 21UTC Temp
-        if (uncheckLayer == 'METAR 21UTC Temperature') {
+        if (uncheckLayer == 'METAR 21UTC Temperature_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X143;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 21UTC DPT
-        if (uncheckLayer == 'METAR 21UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 21UTC Dew Point Temperature_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X144;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 21UTC Visi
-        if (uncheckLayer == 'METAR 21UTC Visibility') {
+        if (uncheckLayer == 'METAR 21UTC Visibility_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X145;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 21UTC WSAD
-        if (uncheckLayer == 'METAR 21UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 21UTC Wind Speed and Direction_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X146;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20603,25 +20602,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 22UTC Temp
-        if (uncheckLayer == 'METAR 22UTC Temperature') {
+        if (uncheckLayer == 'METAR 22UTC Temperature_22') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X147;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 22UTC DPT
-        if (uncheckLayer == 'METAR 22UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 22UTC Dew Point Temperature_22') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X148;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 22UTC Visi
-        if (uncheckLayer == 'METAR 22UTC Visibility') {
+        if (uncheckLayer == 'METAR 22UTC Visibility_22') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X149;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 22UTC WSAD
-        if (uncheckLayer == 'METAR 22UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 22UTC Wind Speed and Direction_22') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X150;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20629,25 +20628,25 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 
         //METAR UNCHECK 23UTC Temp
-        if (uncheckLayer == 'METAR 23UTC Temperature') {
+        if (uncheckLayer == 'METAR 23UTC Temperature_23') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X151;
             remove_layer_or_add_MetTemp(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 23UTC DPT
-        if (uncheckLayer == 'METAR 23UTC Dew Point Temperature') {
+        if (uncheckLayer == 'METAR 23UTC Dew Point Temperature_23') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X152;
             removeLayerOrAdd_MetarDWP(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 23UTC Visi
-        if (uncheckLayer == 'METAR 23UTC Visibility') {
+        if (uncheckLayer == 'METAR 23UTC Visibility_23') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X153;
             removeLayerOrAdd_MetarVisi(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         //METAR UNCHECK 23UTC WSAD
-        if (uncheckLayer == 'METAR 23UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'METAR 23UTC Wind Speed and Direction_23') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X154;
             removeLayerOrAdd_MetarWSD(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -20695,7 +20694,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         //UNCHECK SYNOP 00UTC Temp
-        if (uncheckLayer == 'SYNOP 00UTC Temperature') {
+        if (uncheckLayer == 'SYNOP 00UTC Temperature_00') {
             console.log(uncheckLayer, "UNCHECK SYNOP 00UTC Temp");
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = ggg;
@@ -20703,49 +20702,49 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //UNCHECK SYNOP 00UTC MSLP
-        if (uncheckLayer == 'SYNOP 00UTC Mean Sea Level Pressure') {
+        if (uncheckLayer == 'SYNOP 00UTC Mean Sea Level Pressure_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = HHHHHH;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 00UTC CC
-        if (uncheckLayer == 'SYNOP 00UTC Cloud Cover') {
+        if (uncheckLayer == 'SYNOP 00UTC Cloud Cover_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X1;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 00UTC GH
-        if (uncheckLayer == 'SYNOP 00UTC Geopotential Height') {
+        if (uncheckLayer == 'SYNOP 00UTC Geopotential Height_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X2;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 00UTC RH
-        if (uncheckLayer == 'SYNOP 00UTC Relative Humidity') {
+        if (uncheckLayer == 'SYNOP 00UTC Relative Humidity_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X3;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 00UTC V
-        if (uncheckLayer == 'SYNOP 00UTC Visibility') {
+        if (uncheckLayer == 'SYNOP 00UTC Visibility_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X4;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 00UTC V
-        if (uncheckLayer == 'SYNOP 00UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'SYNOP 00UTC Wind Speed and Direction_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X5;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 00UTC 3h
-        if (uncheckLayer == 'SYNOP 00UTC 3h Rainfall') {
+        if (uncheckLayer == 'SYNOP 00UTC 3h Rainfall_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X6;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
@@ -21357,12 +21356,12 @@ $("body").on("change", "input[type=checkbox]", function() {
         // 
         // mesolscale
         // WRF Reflectivity
-        if (uncheckLayer == 'WRF Reflectivity Next 03 Hrs') {
+        if (uncheckLayer == 'WRF Reflectivity WRF R Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X250;
             remLayOrAdclickedWRFRef(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'WRF Reflectivity Next 03-06 Hrs') {
+        if (uncheckLayer == 'WRF Reflectivity WRF R Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X251;
             remLayOrAdclickedWRFRef(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -21374,12 +21373,12 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // WRF Reflectivity
-        if (uncheckLayer == 'WRF Lightning Product Next 03 Hrs') {
+        if (uncheckLayer == 'WRF Lightning Product WRF LP Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X252;
             remLayOrAdclickedWRF_lig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'WRF Lightning Product Next 03-06 Hrs') {
+        if (uncheckLayer == 'WRF Lightning Product WRF LP Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X253;
             remLayOrAdclickedWRF_lig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -21391,12 +21390,12 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         // WRF Accumlated Rainfall
-        if (uncheckLayer == 'WRF Accumlated Rainfall Next 03 Hrs') {
+        if (uncheckLayer == 'WRF Accumlated Rainfall WRF AR Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X254;
             remLayOrAdclickedWRF_acc_rain(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'WRF Accumlated Rainfall Next 03-06 Hrs') {
+        if (uncheckLayer == 'WRF Accumlated Rainfall WRF AR Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X255;
             remLayOrAdclickedWRF_acc_rain(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -21408,17 +21407,17 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //Lightning Potential Index
-        if (uncheckLayer == 'Lightning Potential Index Next 01 Hrs') {
+        if (uncheckLayer == 'Lightning Potential Index LP Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X256;
             remLayOrAdclickedLig_pot(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'Lightning Potential Index Next 01-02 Hrs') {
+        if (uncheckLayer == 'Lightning Potential Index LP Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X257;
             remLayOrAdclickedLig_pot(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'Lightning Potential Index Next 02-03 Hrs') {
+        if (uncheckLayer == 'Lightning Potential Index LP Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X258;
             remLayOrAdclickedLig_pot(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -21432,12 +21431,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         //NCUMR Lightning Product
-        if (uncheckLayer == 'NCUMR Lightning Product Next 03 Hrs') {
+        if (uncheckLayer == 'NCUMR Lightning Product NCUMR LP Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X259;
             remLayOrAdclickedLig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'NCUMR Lightning Product Next 03-06 Hrs') {
+        if (uncheckLayer == 'NCUMR Lightning Product NCUMR LP Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X260;
             remLayOrAdclickedLig_pro(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -21450,12 +21449,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
         //NCUMR Wind Gust
-        if (uncheckLayer == 'NCUMR Wind Gust Next 03 Hrs') {
+        if (uncheckLayer == 'NCUMR Wind Gust NCUMR WG Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X261;
             remLayOrAdclickedNCUMR_WG(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'NCUMR Wind Gust Next 03-06 Hrs') {
+        if (uncheckLayer == 'NCUMR Wind Gust NCUMR WG Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X262;
             remLayOrAdclickedNCUMR_WG(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -21467,12 +21466,12 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //NCUMR Rainfall
-        if (uncheckLayer == 'NCUMR Rainfall Next 03 Hrs forExistLayer') {
+        if (uncheckLayer == 'NCUMR Rainfall NCUMR R Next 03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X5;
             remLayOrAdclickedNCUMR_RF(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'NCUMR Rainfall Next 03-06 Hrs') {
+        if (uncheckLayer == 'NCUMR Rainfall NCUMR R Next 03-06 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X263;
             remLayOrAdclickedNCUMR_RF(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -21484,17 +21483,17 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //HRRR_SP Hourly DBZ
-        if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 01 Hrs') {
+        if (uncheckLayer == 'HRRR_SP Hourly DBZ HRRR SP Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X264;
             remLayOrAdclickedHRRR_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 01-02 Hrs') {
+        if (uncheckLayer == 'HRRR_SP Hourly DBZ HRRR SP Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X266;
             remLayOrAdclickedHRRR_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'HRRR_SP Hourly DBZ Next 02-03 Hrs') {
+        if (uncheckLayer == 'HRRR_SP Hourly DBZ HRRR SP Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X267;
             remLayOrAdclickedHRRR_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -21506,17 +21505,17 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //HRRR_NE Hourly DBZ
-        if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 01 Hrs') {
+        if (uncheckLayer == 'HRRR_NE Hourly DBZ HRRR NE Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X268;
             remLayOrAdclickedHRRR_NE_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 01-02 Hrs') {
+        if (uncheckLayer == 'HRRR_NE Hourly DBZ HRRR NE Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X269;
             remLayOrAdclickedHRRR_NE_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'HRRR_NE Hourly DBZ Next 02-03 Hrs') {
+        if (uncheckLayer == 'HRRR_NE Hourly DBZ HRRR NE Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X270;
             remLayOrAdclickedHRRR_NE_DBZ(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -21526,19 +21525,19 @@ $("body").on("change", "input[type=checkbox]", function() {
             MESOLSCALE.innerHTML = '';
             HRRR_NEHourlyDBZImage.innerHTML = '';
         }
-
+//code missing here for NW dbz 
         //EWRF MaxZ
-        if (uncheckLayer == 'EWRF MaxZ Next 01 Hrs') {
+        if (uncheckLayer == 'EWRF MaxZ EWRF M Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X274;
             remLayOrAdclickedEWRF_MaxZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'EWRF MaxZ Next 01-02 Hrs') {
+        if (uncheckLayer == 'EWRF MaxZ EWRF M Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X275;
             remLayOrAdclickedEWRF_MaxZ(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'EWRF MaxZ Next 02-03 Hrs') {
+        if (uncheckLayer == 'EWRF MaxZ EWRF M Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X276;
             remLayOrAdclickedEWRF_MaxZ(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -21551,17 +21550,17 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //EWRF MaxZ
-        if (uncheckLayer == 'EWRF Lightning Next 01 Hrs') {
+        if (uncheckLayer == 'EWRF Lightning EWRF L Next 01 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X277;
             remLayOrAdclickedEWRF_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'EWRF Lightning Next 01-02 Hrs') {
+        if (uncheckLayer == 'EWRF Lightning EWRF L Next 01-02 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X278;
             remLayOrAdclickedEWRF_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
-        if (uncheckLayer == 'EWRF Lightning Next 02-03 Hrs') {
+        if (uncheckLayer == 'EWRF Lightning EWRF L Next 02-03 Hrs') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X279;
             remLayOrAdclickedEWRF_Light(_context_layer, _layer_to_remove_add, uncheckLayer);
