@@ -11,7 +11,7 @@
         ?>
     </div>
     <div>
-        <img src="<?php echo base_url();?>pdf/<?php echo $data?>" />
+        <img src="<?php echo base_url();?>pdf/<?php echo $image?>" />
         <!-- <img src="' + base_url + 'pdf/' + filename + '" style="page-break-before: always;" /> -->
     </div>
 </body>

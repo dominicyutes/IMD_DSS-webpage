@@ -2720,6 +2720,7 @@ var startDate = new Date();
 
 // Your Leaflet map initialization
 var map = L.map('map', {
+    renderer: L.canvas({padding:0}),
     zoom: 5,
     timeDimension: true,
     timeDimensionControl: false, // Initially set to false
@@ -3633,16 +3634,16 @@ var PrintButton = L.Control.extend({
         printbtn.style.fontSize = '15px';
         printbtn.style.fontFamily = 'Times New Roman';
 
-        L.DomEvent.on(printbtn, 'click', function() {
-            printFn();
-        });
+        // L.DomEvent.on(printbtn, 'click', function() {
+        //     printFn();
+        // });
 
         return printbtn;
     }
 });
 
 function printFn() {
-    console.log("print working");
+    //console.log("print working");
 };
 //print ends here
 
