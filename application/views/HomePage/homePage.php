@@ -197,7 +197,7 @@
             <img src="img/emblem.png" alt="Emblem of India" height="50"
                 style="margin-right: auto; margin-left: 30px; margin-top: 5px; margin-bottom: 5px;">
             <div style="flex: 1; text-align: center;">
-                <span class="text" style="font-family: 'Times New Roman';">WEATHER DECISION SUPPORT SYSTEM</span>
+                <span class="text" style="font-family: 'Times New Roman';">WEATHERs DECISION SUPPORT SYSTEM</span>
 
             </div>
             <img src="img/imd_logo.png" alt="IMD logo" height="50"
