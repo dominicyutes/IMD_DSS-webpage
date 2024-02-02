@@ -1177,7 +1177,7 @@ var worldGrid = L.geoJson({
     dashArray: '5, 5'
 }).addTo(map);
 </script>
-
+<!-- print code start  -->
 <script>
 //function generate_report_and_save() {
     $(".printbutton").click(function() {
@@ -1260,3 +1260,4 @@ function printDiv(imageFileName) {
     win.document.close();
 }
 </script>
+<!-- print code end  -->
