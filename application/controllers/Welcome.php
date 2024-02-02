@@ -9,7 +9,7 @@ class Welcome extends CI_Controller {
         $this->load->library('TCPdf_pdf');
         
     }
-	
+	//testinglisdljvbsahvb
 	public function index()
 	{
 		header("Access-Control-Allow-Origin: http://weather-imd-test.rimes.int");
