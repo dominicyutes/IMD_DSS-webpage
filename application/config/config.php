@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://weather-imd-test.rimes.int/';
-
+//sdc
 /*
 |--------------------------------------------------------------------------
 | Index File
