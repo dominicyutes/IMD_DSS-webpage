@@ -782,7 +782,7 @@ let subParametersList = [{
         category: 'Synop 03UTC'
     },
     {
-        name: 'Temperature_03',
+        name: 'Temperature_06',
         category: 'Synop 03UTC'
     },
     {
@@ -4882,7 +4882,7 @@ const overLayers2 = [{
             },
             {
                 active: false,
-                name: "3h Rainfall",
+                name: "3h Rainfall_00",
                 layer: syn00utc_rain,
             },
         ]
@@ -4939,42 +4939,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_06",
                 layer: X15
             },
             {
                 active: false,
-                name: "Mean Sea Level Pressure",
+                name: "Mean Sea Level Pressure_06",
                 layer: X16
             },
             {
                 active: false,
-                name: "Cloud Cover",
+                name: "Cloud Cover_06",
                 layer: X17
             },
             {
                 active: false,
-                name: "Geopotential Height",
+                name: "Geopotential Height_06",
                 layer: X18
             },
             {
                 active: false,
-                name: "Relative Humidity",
+                name: "Relative Humidity_06",
                 layer: X19
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_06",
                 layer: X20
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_06",
                 layer: X21
             },
             {
                 active: false,
-                name: "3h Rainfall",
+                name: "3h Rainfall_06",
                 layer: syn06utc_rain,
             },
         ]
@@ -4985,42 +4985,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_09",
                 layer: X23
             },
             {
                 active: false,
-                name: "Mean Sea Level Pressure",
+                name: "Mean Sea Level Pressure_09",
                 layer: X24
             },
             {
                 active: false,
-                name: "Cloud Cover",
+                name: "Cloud Cover_09",
                 layer: X25
             },
             {
                 active: false,
-                name: "Geopotential Height",
+                name: "Geopotential Height_09",
                 layer: X26
             },
             {
                 active: false,
-                name: "Relative Humidity",
+                name: "Relative Humidity_09",
                 layer: X27
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_09",
                 layer: X28
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_09",
                 layer: X29
             },
             {
                 active: false,
-                name: "3h Rainfall",
+                name: "3h Rainfall_09",
                 layer: syn09utc_rain,
             },
         ]
@@ -5031,42 +5031,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_12",
                 layer: X31
             },
             {
                 active: false,
-                name: "Mean Sea Level Pressure",
+                name: "Mean Sea Level Pressure_12",
                 layer: X32
             },
             {
                 active: false,
-                name: "Cloud Cover",
+                name: "Cloud Cover_12",
                 layer: X33
             },
             {
                 active: false,
-                name: "Geopotential Height",
+                name: "Geopotential Height_12",
                 layer: X34
             },
             {
                 active: false,
-                name: "Relative Humidity",
+                name: "Relative Humidity_12",
                 layer: X35
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_12",
                 layer: X36
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_12",
                 layer: X37
             },
             {
                 active: false,
-                name: "3h Rainfall",
+                name: "3h Rainfall_12",
                 layer: syn12utc_rain,
             },
         ]
@@ -5077,42 +5077,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_15",
                 layer: X39
             },
             {
                 active: false,
-                name: "Mean Sea Level Pressure",
+                name: "Mean Sea Level Pressure_15",
                 layer: X40
             },
             {
                 active: false,
-                name: "Cloud Cover",
+                name: "Cloud Cover_15",
                 layer: X41
             },
             {
                 active: false,
-                name: "Geopotential Height",
+                name: "Geopotential Height_15",
                 layer: X42
             },
             {
                 active: false,
-                name: "Relative Humidity",
+                name: "Relative Humidity_15",
                 layer: X43
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_15",
                 layer: X44
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_15",
                 layer: Airport
             },
             {
                 active: false,
-                name: "3h Rainfall",
+                name: "3h Rainfall_15",
                 layer: syn15utc_rain,
             },
         ]
@@ -5123,42 +5123,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_18",
                 layer: X47
             },
             {
                 active: false,
-                name: "Mean Sea Level Pressure",
+                name: "Mean Sea Level Pressure_18",
                 layer: X48
             },
             {
                 active: false,
-                name: "Cloud Cover",
+                name: "Cloud Cover_18",
                 layer: X49
             },
             {
                 active: false,
-                name: "Geopotential Height",
+                name: "Geopotential Height_18",
                 layer: X50
             },
             {
                 active: false,
-                name: "Relative Humidity",
+                name: "Relative Humidity_18",
                 layer: X51
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_18",
                 layer: X52
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_18",
                 layer: X53
             },
             {
                 active: false,
-                name: "3h Rainfall",
+                name: "3h Rainfall_18",
                 layer: syn18utc_rain,
             },
         ]
@@ -5169,42 +5169,42 @@ const overLayers2 = [{
         collapsed: true,
         layers: [{
                 active: false,
-                name: "Temperature",
+                name: "Temperature_21",
                 layer: X55
             },
             {
                 active: false,
-                name: "Mean Sea Level Pressure",
+                name: "Mean Sea Level Pressure_21",
                 layer: X56
             },
             {
                 active: false,
-                name: "Cloud Cover",
+                name: "Cloud Cover_21",
                 layer: X57
             },
             {
                 active: false,
-                name: "Geopotential Height",
+                name: "Geopotential Height_21",
                 layer: X58
             },
             {
                 active: false,
-                name: "Relative Humidity",
+                name: "Relative Humidity_21",
                 layer: X59
             },
             {
                 active: false,
-                name: "Visibility",
+                name: "Visibility_21",
                 layer: X60
             },
             {
                 active: false,
-                name: "Wind Speed and Direction",
+                name: "Wind Speed and Direction_21",
                 layer: X61
             },
             {
                 active: false,
-                name: "3h Rainfall",
+                name: "3h Rainfall_21",
                 layer: syn21utc_rain,
             },
         ]
@@ -10284,7 +10284,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //SYNOP 00UTC 3h
-        if (_class_name == 'SYNOP 00UTC 3h Rainfall') {
+        if (_class_name == 'SYNOP 00UTC 3h Rainfall_00') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X6;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10292,56 +10292,56 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 03UTC
         //SYNOP 03UTC Temp
-        if (_class_name == 'SYNOP 03UTC Temperature') {
+        if (_class_name == 'SYNOP 03UTC Temperature_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X7;
             remOrAdSynopTempLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 03UTC MSLP
-        if (_class_name == 'SYNOP 03UTC Mean Sea Level Pressure') {
+        if (_class_name == 'SYNOP 03UTC Mean Sea Level Pressure_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X8;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 03UTC CC
-        if (_class_name == 'SYNOP 03UTC Cloud Cover') {
+        if (_class_name == 'SYNOP 03UTC Cloud Cover_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X9;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 03UTC GH
-        if (_class_name == 'SYNOP 03UTC Geopotential Height') {
+        if (_class_name == 'SYNOP 03UTC Geopotential Height_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X10;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 03UTC RH
-        if (_class_name == 'SYNOP 03UTC Relative Humidity') {
+        if (_class_name == 'SYNOP 03UTC Relative Humidity_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X11;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 03UTC V
-        if (_class_name == 'SYNOP 03UTC Visibility') {
+        if (_class_name == 'SYNOP 03UTC Visibility_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X12;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 03UTC V
-        if (_class_name == 'SYNOP 03UTC Wind Speed and Direction') {
+        if (_class_name == 'SYNOP 03UTC Wind Speed and Direction_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X13;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 03UTC 3h
-        if (_class_name == 'SYNOP 03UTC 3h Rainfall') {
+        if (_class_name == 'SYNOP 03UTC 3h Rainfall_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X14;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10349,56 +10349,56 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 06UTC
         //SYNOP 06UTC Temp
-        if (_class_name == 'SYNOP 06UTC Temperature') {
+        if (_class_name == 'SYNOP 06UTC Temperature_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X15;
             remOrAdSynopTempLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 06UTC MSLP
-        if (_class_name == 'SYNOP 06UTC Mean Sea Level Pressure') {
+        if (_class_name == 'SYNOP 06UTC Mean Sea Level Pressure_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X16;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 06UTC CC
-        if (_class_name == 'SYNOP 06UTC Cloud Cover') {
+        if (_class_name == 'SYNOP 06UTC Cloud Cover_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X17;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 06UTC GH
-        if (_class_name == 'SYNOP 06UTC Geopotential Height') {
+        if (_class_name == 'SYNOP 06UTC Geopotential Height_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X18;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 06UTC RH
-        if (_class_name == 'SYNOP 06UTC Relative Humidity') {
+        if (_class_name == 'SYNOP 06UTC Relative Humidity_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X19;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 06UTC V
-        if (_class_name == 'SYNOP 06UTC Visibility') {
+        if (_class_name == 'SYNOP 06UTC Visibility_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X20;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 06UTC V
-        if (_class_name == 'SYNOP 06UTC Wind Speed and Direction') {
+        if (_class_name == 'SYNOP 06UTC Wind Speed and Direction_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X21;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 06UTC 3h
-        if (_class_name == 'SYNOP 06UTC 3h Rainfall') {
+        if (_class_name == 'SYNOP 06UTC 3h Rainfall_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X22;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10406,56 +10406,56 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 09UTC
         //SYNOP 09UTC Temp
-        if (_class_name == 'SYNOP 09UTC Temperature') {
+        if (_class_name == 'SYNOP 09UTC Temperature_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X23;
             remOrAdSynopTempLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 09UTC MSLP
-        if (_class_name == 'SYNOP 09UTC Mean Sea Level Pressure') {
+        if (_class_name == 'SYNOP 09UTC Mean Sea Level Pressure_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X24;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 09UTC CC
-        if (_class_name == 'SYNOP 09UTC Cloud Cover') {
+        if (_class_name == 'SYNOP 09UTC Cloud Cover_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X25;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 09UTC GH
-        if (_class_name == 'SYNOP 09UTC Geopotential Height') {
+        if (_class_name == 'SYNOP 09UTC Geopotential Height_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X26;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 09UTC RH
-        if (_class_name == 'SYNOP 09UTC Relative Humidity') {
+        if (_class_name == 'SYNOP 09UTC Relative Humidity_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X27;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 09UTC V
-        if (_class_name == 'SYNOP 09UTC Visibility') {
+        if (_class_name == 'SYNOP 09UTC Visibility_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X28;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 09UTC V
-        if (_class_name == 'SYNOP 09UTC Wind Speed and Direction') {
+        if (_class_name == 'SYNOP 09UTC Wind Speed and Direction_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X29;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 09UTC 3h
-        if (_class_name == 'SYNOP 09UTC 3h Rainfall') {
+        if (_class_name == 'SYNOP 09UTC 3h Rainfall_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X30;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10463,56 +10463,56 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 12UTC
         //SYNOP 12UTC Temp
-        if (_class_name == 'SYNOP 12UTC Temperature') {
+        if (_class_name == 'SYNOP 12UTC Temperature_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X31;
             remOrAdSynopTempLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 12UTC MSLP
-        if (_class_name == 'SYNOP 12UTC Mean Sea Level Pressure') {
+        if (_class_name == 'SYNOP 12UTC Mean Sea Level Pressure_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X32;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 12UTC CC
-        if (_class_name == 'SYNOP 12UTC Cloud Cover') {
+        if (_class_name == 'SYNOP 12UTC Cloud Cover_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X33;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 12UTC GH
-        if (_class_name == 'SYNOP 12UTC Geopotential Height') {
+        if (_class_name == 'SYNOP 12UTC Geopotential Height_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X34;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 12UTC RH
-        if (_class_name == 'SYNOP 12UTC Relative Humidity') {
+        if (_class_name == 'SYNOP 12UTC Relative Humidity_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X35;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 12UTC V
-        if (_class_name == 'SYNOP 12UTC Visibility') {
+        if (_class_name == 'SYNOP 12UTC Visibility_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X36;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 12UTC V
-        if (_class_name == 'SYNOP 12UTC Wind Speed and Direction') {
+        if (_class_name == 'SYNOP 12UTC Wind Speed and Direction_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X37;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 12UTC 3h
-        if (_class_name == 'SYNOP 12UTC 3h Rainfall') {
+        if (_class_name == 'SYNOP 12UTC 3h Rainfall_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X38;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10520,56 +10520,56 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 15UTC
         //SYNOP 15UTC Temp
-        if (_class_name == 'SYNOP 15UTC Temperature') {
+        if (_class_name == 'SYNOP 15UTC Temperature_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X39;
             remOrAdSynopTempLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 15UTC MSLP
-        if (_class_name == 'SYNOP 15UTC Mean Sea Level Pressure') {
+        if (_class_name == 'SYNOP 15UTC Mean Sea Level Pressure_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X40;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 15UTC CC
-        if (_class_name == 'SYNOP 15UTC Cloud Cover') {
+        if (_class_name == 'SYNOP 15UTC Cloud Cover_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X41;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 15UTC GH
-        if (_class_name == 'SYNOP 15UTC Geopotential Height') {
+        if (_class_name == 'SYNOP 15UTC Geopotential Height_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X42;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 15UTC RH
-        if (_class_name == 'SYNOP 15UTC Relative Humidity') {
+        if (_class_name == 'SYNOP 15UTC Relative Humidity_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X43;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 15UTC V
-        if (_class_name == 'SYNOP 15UTC Visibility') {
+        if (_class_name == 'SYNOP 15UTC Visibility_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X44;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 15UTC V
-        if (_class_name == 'SYNOP 15UTC Wind Speed and Direction') {
+        if (_class_name == 'SYNOP 15UTC Wind Speed and Direction_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X45;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 15UTC 3h
-        if (_class_name == 'SYNOP 15UTC 3h Rainfall') {
+        if (_class_name == 'SYNOP 15UTC 3h Rainfall_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X46;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10577,56 +10577,56 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 18UTC
         //SYNOP 18UTC Temp
-        if (_class_name == 'SYNOP 18UTC Temperature') {
+        if (_class_name == 'SYNOP 18UTC Temperature_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X47;
             remOrAdSynopTempLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 18UTC MSLP
-        if (_class_name == 'SYNOP 18UTC Mean Sea Level Pressure') {
+        if (_class_name == 'SYNOP 18UTC Mean Sea Level Pressure_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X48;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 18UTC CC
-        if (_class_name == 'SYNOP 18UTC Cloud Cover') {
+        if (_class_name == 'SYNOP 18UTC Cloud Cover_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X49;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 18UTC GH
-        if (_class_name == 'SYNOP 18UTC Geopotential Height') {
+        if (_class_name == 'SYNOP 18UTC Geopotential Height_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X50;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 18UTC RH
-        if (_class_name == 'SYNOP 18UTC Relative Humidity') {
+        if (_class_name == 'SYNOP 18UTC Relative Humidity_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X51;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 18UTC V
-        if (_class_name == 'SYNOP 18UTC Visibility') {
+        if (_class_name == 'SYNOP 18UTC Visibility_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X52;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 18UTC V
-        if (_class_name == 'SYNOP 18UTC Wind Speed and Direction') {
+        if (_class_name == 'SYNOP 18UTC Wind Speed and Direction_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X53;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 18UTC 3h
-        if (_class_name == 'SYNOP 18UTC 3h Rainfall') {
+        if (_class_name == 'SYNOP 18UTC 3h Rainfall_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X54;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -10634,56 +10634,56 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // 21UTC
         //SYNOP 21UTC Temp
-        if (_class_name == 'SYNOP 21UTC Temperature') {
+        if (_class_name == 'SYNOP 21UTC Temperature_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X55;
             remOrAdSynopTempLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 21UTC MSLP
-        if (_class_name == 'SYNOP 21UTC Mean Sea Level Pressure') {
+        if (_class_name == 'SYNOP 21UTC Mean Sea Level Pressure_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X56;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 21UTC CC
-        if (_class_name == 'SYNOP 21UTC Cloud Cover') {
+        if (_class_name == 'SYNOP 21UTC Cloud Cover_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X57;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 21UTC GH
-        if (_class_name == 'SYNOP 21UTC Geopotential Height') {
+        if (_class_name == 'SYNOP 21UTC Geopotential Height_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X58;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 21UTC RH
-        if (_class_name == 'SYNOP 21UTC Relative Humidity') {
+        if (_class_name == 'SYNOP 21UTC Relative Humidity_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X59;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 21UTC V
-        if (_class_name == 'SYNOP 21UTC Visibility') {
+        if (_class_name == 'SYNOP 21UTC Visibility_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X60;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 21UTC V
-        if (_class_name == 'SYNOP 21UTC Wind Speed and Direction') {
+        if (_class_name == 'SYNOP 21UTC Wind Speed and Direction_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X61;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
         //SYNOP 21UTC 3h
-        if (_class_name == 'SYNOP 21UTC 3h Rainfall') {
+        if (_class_name == 'SYNOP 21UTC 3h Rainfall_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_add = X62;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_add, uncheckLayer);
@@ -12549,46 +12549,46 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 06UTC[]
         if (_this.context._layer?.group.name == "SYNOP 06UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_06') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_06') {
                 bgClickedSynopMeanSeaLevelLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_06') {
                 bgClickedSynopCloudCoverLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_06') {
                 bgClickedSynopGeopotentialHeightLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopGeopotentialHeightLists,
                     "....bgClickedSynopGeopotentialHeightLists");
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_06') {
                 bgClickedSynopRelativeHumidityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopRelativeHumidityLists,
                     "....bgClickedSynopRelativeHumidityLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_06') {
                 bgClickedSynopVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopVisibilityLists,
                     "....bgClickedSynopVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_06') {
                 bgClickedSynopWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopWindSpeedAndDirectionLists,
                     "....bgClickedSynopWindSpeedAndDirectionLists");
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_06') {
                 bgClickedSynop3hRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynop3hRainfallLists,
@@ -12598,46 +12598,46 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 09UTC[]
         if (_this.context._layer?.group.name == "SYNOP 09UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_09') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_09') {
                 bgClickedSynopMeanSeaLevelLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_09') {
                 bgClickedSynopCloudCoverLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_09') {
                 bgClickedSynopGeopotentialHeightLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopGeopotentialHeightLists,
                     "....bgClickedSynopGeopotentialHeightLists");
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_09') {
                 bgClickedSynopRelativeHumidityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopRelativeHumidityLists,
                     "....bgClickedSynopRelativeHumidityLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_09') {
                 bgClickedSynopVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopVisibilityLists,
                     "....bgClickedSynopVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_09') {
                 bgClickedSynopWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopWindSpeedAndDirectionLists,
                     "....bgClickedSynopWindSpeedAndDirectionLists");
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_09') {
                 bgClickedSynop3hRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynop3hRainfallLists,
@@ -12647,46 +12647,46 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 12UTC[]
         if (_this.context._layer?.group.name == "SYNOP 12UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_12') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_12') {
                 bgClickedSynopMeanSeaLevelLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_12') {
                 bgClickedSynopCloudCoverLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_12') {
                 bgClickedSynopGeopotentialHeightLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopGeopotentialHeightLists,
                     "....bgClickedSynopGeopotentialHeightLists");
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_12') {
                 bgClickedSynopRelativeHumidityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopRelativeHumidityLists,
                     "....bgClickedSynopRelativeHumidityLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_12') {
                 bgClickedSynopVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopVisibilityLists,
                     "....bgClickedSynopVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_12') {
                 bgClickedSynopWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopWindSpeedAndDirectionLists,
                     "....bgClickedSynopWindSpeedAndDirectionLists");
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_12') {
                 bgClickedSynop3hRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynop3hRainfallLists,
@@ -12696,46 +12696,46 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 15UTC[]
         if (_this.context._layer?.group.name == "SYNOP 15UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_15') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_15') {
                 bgClickedSynopMeanSeaLevelLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_15') {
                 bgClickedSynopCloudCoverLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_15') {
                 bgClickedSynopGeopotentialHeightLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopGeopotentialHeightLists,
                     "....bgClickedSynopGeopotentialHeightLists");
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_15') {
                 bgClickedSynopRelativeHumidityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopRelativeHumidityLists,
                     "....bgClickedSynopRelativeHumidityLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_15') {
                 bgClickedSynopVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopVisibilityLists,
                     "....bgClickedSynopVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_15') {
                 bgClickedSynopWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopWindSpeedAndDirectionLists,
                     "....bgClickedSynopWindSpeedAndDirectionLists");
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_15') {
                 bgClickedSynop3hRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynop3hRainfallLists,
@@ -12745,46 +12745,46 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 18UTC[]
         if (_this.context._layer?.group.name == "SYNOP 18UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_18') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_18') {
                 bgClickedSynopMeanSeaLevelLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_18') {
                 bgClickedSynopCloudCoverLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_18') {
                 bgClickedSynopGeopotentialHeightLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopGeopotentialHeightLists,
                     "....bgClickedSynopGeopotentialHeightLists");
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_18') {
                 bgClickedSynopRelativeHumidityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopRelativeHumidityLists,
                     "....bgClickedSynopRelativeHumidityLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_18') {
                 bgClickedSynopVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopVisibilityLists,
                     "....bgClickedSynopVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_18') {
                 bgClickedSynopWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopWindSpeedAndDirectionLists,
                     "....bgClickedSynopWindSpeedAndDirectionLists");
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_18') {
                 bgClickedSynop3hRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynop3hRainfallLists,
@@ -12794,46 +12794,46 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 21UTC[]
         if (_this.context._layer?.group.name == "SYNOP 21UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_21') {
                 bgClickedSynopTempLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopTempLists, "....bgClickedSynopTempLists");
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_21') {
                 bgClickedSynopMeanSeaLevelLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopMeanSeaLevelLists, "....bgClickedSynopMeanSeaLevelLists");
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_21') {
                 bgClickedSynopCloudCoverLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopCloudCoverLists, "....bgClickedSynopCloudCoverLists");
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_21') {
                 bgClickedSynopGeopotentialHeightLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopGeopotentialHeightLists,
                     "....bgClickedSynopGeopotentialHeightLists");
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_21') {
                 bgClickedSynopRelativeHumidityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopRelativeHumidityLists,
                     "....bgClickedSynopRelativeHumidityLists");
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_21') {
                 bgClickedSynopVisibilityLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopVisibilityLists,
                     "....bgClickedSynopVisibilityLists");
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_21') {
                 bgClickedSynopWindSpeedAndDirectionLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynopWindSpeedAndDirectionLists,
                     "....bgClickedSynopWindSpeedAndDirectionLists");
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_21') {
                 bgClickedSynop3hRainfallLists.push(
                     layer_group_name + " " + layer_name);
                 console.log(bgClickedSynop3hRainfallLists,
@@ -14667,158 +14667,158 @@ $("body").on("change", "input[type=checkbox]", function() {
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 06UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_06') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_06') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_06') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_06') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_06') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_06') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_06') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_06') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 09UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_09') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_09') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_09') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_09') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_09') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_09') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_09') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_09') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 12UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_12') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_12') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_12') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_12') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_12') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_12') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_12') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_12') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 15UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_15') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_15') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'CLOUD COVER') {
+            if (layer_name == 'CLOUD COVER_15') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_15') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_15') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_15') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_15') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_15') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 18UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_18') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_18') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_18') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_18') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_18') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_18') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_18') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_18') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
         if (_this.context._layer?.group.name == "SYNOP 21UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_21') {
                 synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
             if (layer_name == 'Mean Sea Level Pressure') {
                 synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_21') {
                 synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_21') {
                 synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_21') {
                 synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_21') {
                 synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_21') {
                 synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_21') {
                 synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLayer);
             }
         }
@@ -18194,7 +18194,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 06UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "SYNOP 06UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_06') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18207,7 +18207,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 06UTC MEAN SEA LEVEL PRESSURE[]
         if (_this.context._layer?.group.name == "SYNOP 06UTC") {
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_06') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18220,7 +18220,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 06UTC CLOUD COVER[]
         if (_this.context._layer?.group.name == "SYNOP 06UTC") {
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_06') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18233,7 +18233,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 06UTC GEOPOTENTIAL HEIGHT[]
         if (_this.context._layer?.group.name == "SYNOP 06UTC") {
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_06') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18246,7 +18246,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 06UTC RELATIVE HUMIDITY[]
         if (_this.context._layer?.group.name == "SYNOP 06UTC") {
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_06') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18259,7 +18259,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 06UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "SYNOP 06UTC") {
-            if (layer_name == 'VISIBILITY') {
+            if (layer_name == 'VISIBILITY_06') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18272,7 +18272,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 06UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "SYNOP 06UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_06') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18285,7 +18285,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 06UTC 3h RAINFALL[]
         if (_this.context._layer?.group.name == "SYNOP 06UTC") {
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_06') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18299,7 +18299,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //
         //bgClicked SYNOP 09UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "SYNOP 09UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_09') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18312,7 +18312,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 09UTC MEAN SEA LEVEL PRESSURE[]
         if (_this.context._layer?.group.name == "SYNOP 09UTC") {
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_09') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18325,7 +18325,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 09UTC CLOUD COVER[]
         if (_this.context._layer?.group.name == "SYNOP 09UTC") {
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_09') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18338,7 +18338,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 09UTC GEOPOTENTIAL HEIGHT[]
         if (_this.context._layer?.group.name == "SYNOP 09UTC") {
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_09') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18351,7 +18351,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 09UTC RELATIVE HUMIDITY[]
         if (_this.context._layer?.group.name == "SYNOP 09UTC") {
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_09') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18364,7 +18364,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 09UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "SYNOP 09UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_09') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18377,7 +18377,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 09UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "SYNOP 09UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_09') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18390,7 +18390,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 09UTC 3h RAINFALL[]
         if (_this.context._layer?.group.name == "SYNOP 09UTC") {
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_09') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18404,7 +18404,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //
         //bgClicked SYNOP 12UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "SYNOP 12UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_12') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18417,7 +18417,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 12UTC MEAN SEA LEVEL PRESSURE[]
         if (_this.context._layer?.group.name == "SYNOP 12UTC") {
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_12') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18430,7 +18430,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 12UTC CLOUD COVER[]
         if (_this.context._layer?.group.name == "SYNOP 12UTC") {
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_12') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18443,7 +18443,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 12UTC GEOPOTENTIAL HEIGHT[]
         if (_this.context._layer?.group.name == "SYNOP 12UTC") {
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_12') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18456,7 +18456,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 12UTC RELATIVE HUMIDITY[]
         if (_this.context._layer?.group.name == "SYNOP 12UTC") {
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_12') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18469,7 +18469,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 12UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "SYNOP 12UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_12') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18482,7 +18482,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 12UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "SYNOP 12UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_12') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18495,7 +18495,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 12UTC 3h RAINFALL[]
         if (_this.context._layer?.group.name == "SYNOP 12UTC") {
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_12') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18509,7 +18509,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //
         //bgClicked SYNOP 15UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "SYNOP 15UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_15') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18522,7 +18522,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 15UTC MEAN SEA LEVEL PRESSURE[]
         if (_this.context._layer?.group.name == "SYNOP 15UTC") {
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_15') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18535,7 +18535,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 15UTC CLOUD COVER[]
         if (_this.context._layer?.group.name == "SYNOP 15UTC") {
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_15') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18548,7 +18548,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 15UTC GEOPOTENTIAL HEIGHT[]
         if (_this.context._layer?.group.name == "SYNOP 15UTC") {
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_15') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18561,7 +18561,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 15UTC RELATIVE HUMIDITY[]
         if (_this.context._layer?.group.name == "SYNOP 15UTC") {
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_15') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18574,7 +18574,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 15UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "SYNOP 15UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_15') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18587,7 +18587,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 15UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "SYNOP 15UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_15') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18600,7 +18600,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 15UTC 3h RAINFALL[]
         if (_this.context._layer?.group.name == "SYNOP 15UTC") {
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_15') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18614,7 +18614,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //        
         //bgClicked SYNOP 18UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "SYNOP 18UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_18') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18627,7 +18627,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 18UTC MEAN SEA LEVEL PRESSURE[]
         if (_this.context._layer?.group.name == "SYNOP 18UTC") {
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_18') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18640,7 +18640,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 18UTC CLOUD COVER[]
         if (_this.context._layer?.group.name == "SYNOP 18UTC") {
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_18') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18653,7 +18653,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 18UTC GEOPOTENTIAL HEIGHT[]
         if (_this.context._layer?.group.name == "SYNOP 18UTC") {
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_18') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18666,7 +18666,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 18UTC RELATIVE HUMIDITY[]
         if (_this.context._layer?.group.name == "SYNOP 18UTC") {
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_18') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18679,7 +18679,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 18UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "SYNOP 18UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_18') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18692,7 +18692,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 18UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "SYNOP 18UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_18') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18705,7 +18705,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 18UTC 3h RAINFALL[]
         if (_this.context._layer?.group.name == "SYNOP 18UTC") {
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_18') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18719,7 +18719,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         //
         //bgClicked SYNOP 21UTC TEMPERATURE[]
         if (_this.context._layer?.group.name == "SYNOP 21UTC") {
-            if (layer_name == 'Temperature') {
+            if (layer_name == 'Temperature_21') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopTempLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18732,7 +18732,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 21UTC MEAN SEA LEVEL PRESSURE[]
         if (_this.context._layer?.group.name == "SYNOP 21UTC") {
-            if (layer_name == 'Mean Sea Level Pressure') {
+            if (layer_name == 'Mean Sea Level Pressure_21') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopMeanSeaLevelLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18745,7 +18745,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 21UTC CLOUD COVER[]
         if (_this.context._layer?.group.name == "SYNOP 21UTC") {
-            if (layer_name == 'Cloud Cover') {
+            if (layer_name == 'Cloud Cover_21') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopCloudCoverLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18758,7 +18758,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 21UTC GEOPOTENTIAL HEIGHT[]
         if (_this.context._layer?.group.name == "SYNOP 21UTC") {
-            if (layer_name == 'Geopotential Height') {
+            if (layer_name == 'Geopotential Height_21') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopGeopotentialHeightLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18771,7 +18771,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 21UTC RELATIVE HUMIDITY[]
         if (_this.context._layer?.group.name == "SYNOP 21UTC") {
-            if (layer_name == 'Relative Humidity') {
+            if (layer_name == 'Relative Humidity_21') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopRelativeHumidityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18784,7 +18784,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 21UTC VISIBILITY[]
         if (_this.context._layer?.group.name == "SYNOP 21UTC") {
-            if (layer_name == 'Visibility') {
+            if (layer_name == 'Visibility_21') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopVisibilityLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18797,7 +18797,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 21UTC WIND SPEED AND DIRECTION[]
         if (_this.context._layer?.group.name == "SYNOP 21UTC") {
-            if (layer_name == 'Wind Speed and Direction') {
+            if (layer_name == 'Wind Speed and Direction_21') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynopWindSpeedAndDirectionLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -18810,7 +18810,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         //bgClicked SYNOP 21UTC 3h RAINFALL[]
         if (_this.context._layer?.group.name == "SYNOP 21UTC") {
-            if (layer_name == '3h Rainfall') {
+            if (layer_name == '3h Rainfall_21') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedSynop3hRainfallLists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -21006,7 +21006,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //UNCHECK SYNOP 03UTC Temp
-        if (uncheckLayer == 'SYNOP 03UTC Temperature') {
+        if (uncheckLayer == 'SYNOP 03UTC Temperature_03') {
             console.log(uncheckLayer, "UNCHECK SYNOP 03UTC Temp");
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X7;
@@ -21014,56 +21014,56 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //UNCHECK SYNOP 03UTC MSLP
-        if (uncheckLayer == 'SYNOP 03UTC Mean Sea Level Pressure') {
+        if (uncheckLayer == 'SYNOP 03UTC Mean Sea Level Pressure_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X8;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 03UTC CC
-        if (uncheckLayer == 'SYNOP 03UTC Cloud Cover') {
+        if (uncheckLayer == 'SYNOP 03UTC Cloud Cover_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X9;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 03UTC GH
-        if (uncheckLayer == 'SYNOP 03UTC Geopotential Height') {
+        if (uncheckLayer == 'SYNOP 03UTC Geopotential Height_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X10;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 03UTC RH
-        if (uncheckLayer == 'SYNOP 03UTC Relative Humidity') {
+        if (uncheckLayer == 'SYNOP 03UTC Relative Humidity_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X11;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 03UTC V
-        if (uncheckLayer == 'SYNOP 03UTC Visibility') {
+        if (uncheckLayer == 'SYNOP 03UTC Visibility_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X12;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 03UTC V
-        if (uncheckLayer == 'SYNOP 03UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'SYNOP 03UTC Wind Speed and Direction_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X13;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 03UTC 3h
-        if (uncheckLayer == 'SYNOP 03UTC 3h Rainfall') {
+        if (uncheckLayer == 'SYNOP 03UTC 3h Rainfall_03') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X14;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 06UTC Temp
-        if (uncheckLayer == 'SYNOP 06UTC Temperature') {
+        if (uncheckLayer == 'SYNOP 06UTC Temperature_06') {
             console.log(uncheckLayer, "UNCHECK SYNOP 06UTC Temp");
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X15;
@@ -21071,56 +21071,56 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //UNCHECK SYNOP 06UTC MSLP
-        if (uncheckLayer == 'SYNOP 06UTC Mean Sea Level Pressure') {
+        if (uncheckLayer == 'SYNOP 06UTC Mean Sea Level Pressure_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X16;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 06UTC CC
-        if (uncheckLayer == 'SYNOP 06UTC Cloud Cover') {
+        if (uncheckLayer == 'SYNOP 06UTC Cloud Cover_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X17;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 06UTC GH
-        if (uncheckLayer == 'SYNOP 06UTC Geopotential Height') {
+        if (uncheckLayer == 'SYNOP 06UTC Geopotential Height_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X18;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 06UTC RH
-        if (uncheckLayer == 'SYNOP 06UTC Relative Humidity') {
+        if (uncheckLayer == 'SYNOP 06UTC Relative Humidity_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X19;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 06UTC V
-        if (uncheckLayer == 'SYNOP 06UTC Visibility') {
+        if (uncheckLayer == 'SYNOP 06UTC Visibility_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X20;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 06UTC V
-        if (uncheckLayer == 'SYNOP 06UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'SYNOP 06UTC Wind Speed and Direction_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X21;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 06UTC 3h
-        if (uncheckLayer == 'SYNOP 06UTC 3h Rainfall') {
+        if (uncheckLayer == 'SYNOP 06UTC 3h Rainfall_06') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X22;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 09UTC Temp
-        if (uncheckLayer == 'SYNOP 09UTC Temperature') {
+        if (uncheckLayer == 'SYNOP 09UTC Temperature_09') {
             console.log(uncheckLayer, "UNCHECK SYNOP 09UTC Temp");
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X23;
@@ -21128,56 +21128,56 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //UNCHECK SYNOP 09UTC MSLP
-        if (uncheckLayer == 'SYNOP 09UTC Mean Sea Level Pressure') {
+        if (uncheckLayer == 'SYNOP 09UTC Mean Sea Level Pressure_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X24;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 09UTC CC
-        if (uncheckLayer == 'SYNOP 09UTC Cloud Cover') {
+        if (uncheckLayer == 'SYNOP 09UTC Cloud Cover_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X25;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 09UTC GH
-        if (uncheckLayer == 'SYNOP 09UTC Geopotential Height') {
+        if (uncheckLayer == 'SYNOP 09UTC Geopotential Height_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X26;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 09UTC RH
-        if (uncheckLayer == 'SYNOP 09UTC Relative Humidity') {
+        if (uncheckLayer == 'SYNOP 09UTC Relative Humidity_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X27;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 09UTC V
-        if (uncheckLayer == 'SYNOP 09UTC Visibility') {
+        if (uncheckLayer == 'SYNOP 09UTC Visibility_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X28;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 09UTC V
-        if (uncheckLayer == 'SYNOP 09UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'SYNOP 09UTC Wind Speed and Direction_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X29;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 09UTC 3h
-        if (uncheckLayer == 'SYNOP 09UTC 3h Rainfall') {
+        if (uncheckLayer == 'SYNOP 09UTC 3h Rainfall_09') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X30;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 12UTC Temp
-        if (uncheckLayer == 'SYNOP 12UTC Temperature') {
+        if (uncheckLayer == 'SYNOP 12UTC Temperature_12') {
             console.log(uncheckLayer, "UNCHECK SYNOP 12UTC Temp");
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X31;
@@ -21185,217 +21185,217 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
 
         //UNCHECK SYNOP 12UTC MSLP
-        if (uncheckLayer == 'SYNOP 12UTC Mean Sea Level Pressure') {
+        if (uncheckLayer == 'SYNOP 12UTC Mean Sea Level Pressure_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X32;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 12UTC CC
-        if (uncheckLayer == 'SYNOP 12UTC Cloud Cover') {
+        if (uncheckLayer == 'SYNOP 12UTC Cloud Cover_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X33;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 12UTC GH
-        if (uncheckLayer == 'SYNOP 12UTC Geopotential Height') {
+        if (uncheckLayer == 'SYNOP 12UTC Geopotential Height_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X34;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 12UTC RH
-        if (uncheckLayer == 'SYNOP 12UTC Relative Humidity') {
+        if (uncheckLayer == 'SYNOP 12UTC Relative Humidity_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X35;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 12UTC V
-        if (uncheckLayer == 'SYNOP 12UTC Visibility') {
+        if (uncheckLayer == 'SYNOP 12UTC Visibility_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X36;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 12UTC V
-        if (uncheckLayer == 'SYNOP 12UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'SYNOP 12UTC Wind Speed and Direction_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X37;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 12UTC 3h
-        if (uncheckLayer == 'SYNOP 12UTC 3h Rainfall') {
+        if (uncheckLayer == 'SYNOP 12UTC 3h Rainfall_12') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X38;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 15UTC Temp
-        if (uncheckLayer == 'SYNOP 15UTC Temperature') {
+        if (uncheckLayer == 'SYNOP 15UTC Temperature_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X39;
             remOrAdSynopTempLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 15UTC MSLP
-        if (uncheckLayer == 'SYNOP 15UTC Mean Sea Level Pressure') {
+        if (uncheckLayer == 'SYNOP 15UTC Mean Sea Level Pressure_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X40;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 15UTC CC
-        if (uncheckLayer == 'SYNOP 15UTC Cloud Cover') {
+        if (uncheckLayer == 'SYNOP 15UTC Cloud Cover_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X41;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 15UTC GH
-        if (uncheckLayer == 'SYNOP 15UTC Geopotential Height') {
+        if (uncheckLayer == 'SYNOP 15UTC Geopotential Height_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X42;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 15UTC RH
-        if (uncheckLayer == 'SYNOP 15UTC Relative Humidity') {
+        if (uncheckLayer == 'SYNOP 15UTC Relative Humidity_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X43;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 15UTC V
-        if (uncheckLayer == 'SYNOP 15UTC Visibility') {
+        if (uncheckLayer == 'SYNOP 15UTC Visibility_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X44;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 15UTC V
-        if (uncheckLayer == 'SYNOP 15UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'SYNOP 15UTC Wind Speed and Direction_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = Airport;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 15UTC 3h
-        if (uncheckLayer == 'SYNOP 15UTC 3h Rainfall') {
+        if (uncheckLayer == 'SYNOP 15UTC 3h Rainfall_15') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X46;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 18UTC Temp
-        if (uncheckLayer == 'SYNOP 18UTC Temperature') {
+        if (uncheckLayer == 'SYNOP 18UTC Temperature_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X47;
             remOrAdSynopTempLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 18UTC MSLP
-        if (uncheckLayer == 'SYNOP 18UTC Mean Sea Level Pressure') {
+        if (uncheckLayer == 'SYNOP 18UTC Mean Sea Level Pressure_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X48;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 18UTC CC
-        if (uncheckLayer == 'SYNOP 18UTC Cloud Cover') {
+        if (uncheckLayer == 'SYNOP 18UTC Cloud Cover_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X49;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 18UTC GH
-        if (uncheckLayer == 'SYNOP 18UTC Geopotential Height') {
+        if (uncheckLayer == 'SYNOP 18UTC Geopotential Height_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X50;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 18UTC RH
-        if (uncheckLayer == 'SYNOP 18UTC Relative Humidity') {
+        if (uncheckLayer == 'SYNOP 18UTC Relative Humidity_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X51;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 18UTC V
-        if (uncheckLayer == 'SYNOP 18UTC Visibility') {
+        if (uncheckLayer == 'SYNOP 18UTC Visibility_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X52;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 18UTC V
-        if (uncheckLayer == 'SYNOP 18UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'SYNOP 18UTC Wind Speed and Direction_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X53;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 18UTC 3h
-        if (uncheckLayer == 'SYNOP 18UTC 3h Rainfall') {
+        if (uncheckLayer == 'SYNOP 18UTC 3h Rainfall_18') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X54;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 21UTC Temp
-        if (uncheckLayer == 'SYNOP 21UTC Temperature') {
+        if (uncheckLayer == 'SYNOP 21UTC Temperature_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X55;
             remOrAdSynopTempLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 21UTC MSLP
-        if (uncheckLayer == 'SYNOP 21UTC Mean Sea Level Pressure') {
+        if (uncheckLayer == 'SYNOP 21UTC Mean Sea Level Pressure_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X56;
             remOrAdSynopMeanSeaLevel(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 21UTC CC
-        if (uncheckLayer == 'SYNOP 21UTC Cloud Cover') {
+        if (uncheckLayer == 'SYNOP 21UTC Cloud Cover_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X57;
             remOrAdCloudCoverLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 21UTC GH
-        if (uncheckLayer == 'SYNOP 21UTC Geopotential Height') {
+        if (uncheckLayer == 'SYNOP 21UTC Geopotential Height_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X58;
             remOrAdGeopotentialHeightLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 21UTC RH
-        if (uncheckLayer == 'SYNOP 21UTC Relative Humidity') {
+        if (uncheckLayer == 'SYNOP 21UTC Relative Humidity_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X59;
             remOrAdRelativeHumidityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 21UTC V
-        if (uncheckLayer == 'SYNOP 21UTC Visibility') {
+        if (uncheckLayer == 'SYNOP 21UTC Visibility_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X60;
             remOrAdVisibilityLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 21UTC V
-        if (uncheckLayer == 'SYNOP 21UTC Wind Speed and Direction') {
+        if (uncheckLayer == 'SYNOP 21UTC Wind Speed and Direction_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X61;
             remOrAdWindSpeedAndDirectionLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
 
         //UNCHECK SYNOP 21UTC 3h
-        if (uncheckLayer == 'SYNOP 21UTC 3h Rainfall') {
+        if (uncheckLayer == 'SYNOP 21UTC 3h Rainfall_21') {
             var _context_layer = _this.context._layer;
             var _layer_to_remove_or_add = X62;
             remOrAd3hRainfallLists(_context_layer, _layer_to_remove_or_add, uncheckLayer);
