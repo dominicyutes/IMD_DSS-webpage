@@ -72,11 +72,11 @@
     <!-- <link rel="stylesheet" href="path/to/leaflet.groupedlayercontrol.css" />
     <script src="path/to/leaflet.groupedlayercontrol.js"></script> -->
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<!-- jQuery UI -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 
     <!-- bootstrap -->
@@ -114,7 +114,13 @@
     <script src="https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layers.min.js"></script>
 
     <!-- Leaflet AJAX plugin -->
-    <script src="https://unpkg.com/leaflet-ajax@2.1.0/dist/leaflet.ajax.js"></script>
+    <!-- <script src="https://unpkg.com/leaflet-ajax@2.1.0/dist/leaflet.ajax.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
+        integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
     <!-- jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
@@ -132,7 +138,26 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.player"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.util"></script> -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dateformat@3.0.3/lib/dateformat.js"></script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.js">
+    </script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.util.js">
+    </script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.js">
+    </script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.wms.js"></script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.geojson.js"></script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.player.js"></script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script>
+
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
     <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.js">
     </script>
     <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.util.js">
@@ -140,7 +165,21 @@
     <script type="text/javascript"
         src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.player.js"></script>
     <script type="text/javascript"
-        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script>
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script> -->
+
+
+
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.js">
+    </script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.util.js">
+    </script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.player.js"></script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script> -->
+
     <!-- <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.js">
     </script> -->
     <!-- <script type="text/javascript"
@@ -485,24 +524,22 @@
                 <!--  align-items: center; -->
                 <div class="playLine-container">
                     <div class="macroPlayClass">
-                        <!-- <button title="Stop" class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs"
-                                style="color: #000000;"></i></button> -->
-                        <!-- <button title="Play" class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs"
-                                style="color: #000000;"></i></button> -->
-                        <!-- <button title="Pause" class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs"
-                                style="color: #000000;"></i></button> -->
+                        <button title="Stop" class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs"
+                                style="color: #000000;"></i></button>
+                        <button title="Play" class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs"
+                                style="color: #000000;"></i></button>
+                        <button title="Pause" class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs"
+                                style="color: #000000;"></i></button>
                         <button title="Previous" class="leftMacBtn"><i class="fa-sharp fa-solid fa-arrow-left fa-xs"
                                 style="color: #000000;"></i></button>
                         <span style="font-size: 17px;font-weight: bold; padding: 0 10px" id="playerText"></span>
                         <button title="Next" class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs"
                                 style="color: #000000;"></i></button>
-                        <!-- <span class="playBtnClasCount" id="counting"></span>
-                        <span class="vertical-line"></span> -->
+                        <span class="playBtnClasCount" id="counting"></span>
+                        <span class="vertical-line"></span>
                         <span title="Close" class="playBtnClasX" id="closingPlayBtn" onClick="macroRunFnX()">X</span>
                     </div>
                 </div>
-
-
             </div>
         </div>
 

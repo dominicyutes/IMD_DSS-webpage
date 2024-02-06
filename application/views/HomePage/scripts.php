@@ -1111,39 +1111,39 @@ let subParametersList = [{
     },
     {
         name: '50 hpa Temp_00',
-        category: 'Sounding_00 UTC Wind'
+        category: 'Sounding_00 UTC Temp'
     },
     {
         name: '1000 hpa Temp_12',
-        category: 'Sounding_12 UTC Wind'
+        category: 'Sounding_12 UTC Temp'
     },
     {
         name: '850 hpa Temp_12',
-        category: 'Sounding_12 UTC Wind'
+        category: 'Sounding_12 UTC Temp'
     },
     {
         name: '700 hpa Temp_12',
-        category: 'Sounding_12 UTC Wind'
+        category: 'Sounding_12 UTC Temp'
     },
     {
         name: '500 hpa Temp_12',
-        category: 'Sounding_12 UTC Wind'
+        category: 'Sounding_12 UTC Temp'
     },
     {
         name: '300 hpa Temp_12',
-        category: 'Sounding_12 UTC Wind'
+        category: 'Sounding_12 UTC Temp'
     },
     {
         name: '200 hpa Temp_12',
-        category: 'Sounding_12 UTC Wind'
+        category: 'Sounding_12 UTC Temp'
     },
     {
         name: '100 hpa Temp_12',
-        category: 'Sounding_12 UTC Wind'
+        category: 'Sounding_12 UTC Temp'
     },
     {
         name: '50 hpa Temp_12',
-        category: 'Sounding_12 UTC Wind'
+        category: 'Sounding_12 UTC Temp'
     },
     {
         name: '1000 hpa DewPoint_00',
@@ -2037,7 +2037,12 @@ function obs_SubmitForm() {
 
     if (sub_parameter === "Temperature_00") {
         if (TimeForObs === "5:30") {
-            let obstesting1 = setInterval(function() {
+            map.eachLayer(layer => {
+                if (layer instanceof L.TileLayer.WMS) {
+                    map.removeLayer(layer); // Remove all layers from the map
+                }
+            });
+            obstesting1 = setInterval(function() {
                 map.addLayer(met00utc_tem);
             });
 
@@ -2072,6 +2077,12 @@ function obs_Rem_() {
     setTimeout(function() {
         map.removeLayer(met00utc_tem);
         clearInterval(obstesting1);
+
+        map.eachLayer(layer => {
+            if (layer instanceof L.TileLayer.WMS) {
+                map.removeLayer(layer); // Remove all layers from the map
+            }
+        });
 
         document.getElementById('modelNames').value = '';
         document.getElementById('parameterNames').value = '';
@@ -2425,90 +2436,459 @@ function showSavedMacroList() {
 }
 
 //
-let macro_SubParameter;
-// let resolveFunction;
-// let countdownInterval;
+// let macro_SubParameter;
+// let currentMacroIndex = 0;
+
+// let playerTextElement = document.getElementById("playerText");
+
+// // playMacro
+// async function playMacro(macroGroupName) {
+//     let macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
+
+//     if (macro) {
+//         for (let macroDetails of macro.listOfMacro) {
+//             macro_SubParameter = macroDetails.mac_sub_parameter;
+//             document.getElementById("macroDetails").style.display = "block";
+
+//             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+//                 if (macro_SubParameter === "Last 00-05 min") {
+//                     map.addLayer(mywmsIITM);
+//                     playerText.innerHTML = 'Last 00-05 min';
+//                     // 
+//                     console.log("1-Last 00-05 min");
+//                 }
+//             }
+
+//             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+//                 if (macro_SubParameter === "00UTC") {
+//                     map.addLayer(ship_00utc);
+//                     playerText.innerHTML = 'Ship and Buoy 00UTC';
+//                     // 
+//                     console.log("2-00UTC");
+//                 }
+//             }
+
+//             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+//                 if (macro_SubParameter === "Radar Reflectivity") {
+//                     map.addLayer(rad_ref);
+//                     playerText.innerHTML = 'Radar Reflectivity';
+//                     // 
+//                     console.log("3-rad_ref");
+//                 }
+//             }
+
+//             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+//                 if (macro_SubParameter === "Oil Refineries") {
+//                     map.addLayer(exp_oil);
+//                     playerText.innerHTML = 'Exposure Oil Refineries';
+//                     // 
+//                     console.log("4-exp_oil");
+//                 }
+//             }
+
+//             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+//                 if (macro_SubParameter === "RI GFS DAY1") {
+//                     map.addLayer(med_gfs1);
+//                     playerText.innerHTML = 'Rainfall Intensity Day1 - RI GFS DAY1';
+//                     // 
+//                     console.log("5-RI GFS DAY1");
+//                 }
+//             }
+
+//             document.getElementById("macroDetails").style.display = "none";
+//         }
+//     }
+
+// }
+
+
+
+
+
+
+
+
 //
-// let Light_l05_;
-// let SAB_00var;
-// let SAT_TIR1;
-// let OilExVar;
-// let GFS_1_RI;
+//bg color List
+let bgClickedExposureLists = [];
+
+let bgClickedMetarTempLists = [];
+let bgClickedMetarDewPointLists = [];
+let bgClickedMetarVisibilityLists = [];
+let bgClickedMetarWindSpeedAndDirectionLists = [];
+
+let bgClickedSynopTempLists = [];
+let bgClickedSynopMeanSeaLevelLists = [];
+let bgClickedSynopCloudCoverLists = [];
+let bgClickedSynopGeopotentialHeightLists = [];
+let bgClickedSynopRelativeHumidityLists = [];
+let bgClickedSynopVisibilityLists = [];
+let bgClickedSynopWindSpeedAndDirectionLists = [];
+let bgClickedSynop3hRainfallLists = [];
+
+let bgClickedSOUNDING00UTCWINDLists = [];
+let bgClickedSOUNDING12UTCWINDLists = [];
+let bgClickedSOUNDING00UTCTEMPLists = [];
+let bgClickedSOUNDING12UTCTEMPLists = [];
+let bgClickedSOUNDING00UTCDEWPOINTLists = [];
+let bgClickedSOUNDING12UTCDEWPOINTLists = [];
+
+let bgClickedSHIPANDBUOYLists = [];
+
+let bgClickedRadarLists = [];
+
+let bgClickedLightningLists = [];
+
+let bgClickedSATELLITELists = [];
+
+let bgClickedWRFReflectivityLists = [];
+let bgClickedWRFlightningProductLists = [];
+let bgClickedWRFAccumlatedRainfallLists = [];
+let bgClickedlightningPotentialindexLists = [];
+let bgClickedNCUMRlightningProductLists = [];
+let bgClickedNCUMRWindGustLists = [];
+let bgClickedNCUMRRainfallLists = [];
+let bgClickedHRRR_SPHourlyDBZLists = [];
+let bgClickedHRRR_NEHourlyDBZLists = [];
+let bgClickedHRRR_NWHourlyDBZLists = [];
+let bgClickedEWRFMaxZLists = [];
+
+let bgClickedEWRFLightningLists = [];
+
+let bgClickedRainfallIntensityDay1Lists = [];
+let bgClickedRainfallIntensityDay2Lists = [];
+let bgClickedRainfallIntensityDay3Lists = [];
+let bgClickedRainfallIntensityDay4Lists = [];
+let bgClickedRainfallIntensityDay5Lists = [];
+let bgClickedMSLPDay1Lists = [];
+let bgClickedMSLPDay2Lists = [];
+let bgClickedMSLPDay3Lists = [];
+let bgClickedMSLPDay4Lists = [];
+let bgClickedMSLPDay5Lists = [];
+let bgClicked10mWINDDay1Lists = [];
+let bgClicked10mWINDDay2Lists = [];
+let bgClicked10mWINDDay3Lists = [];
+let bgClicked10mWINDDay4Lists = [];
+let bgClicked10mWINDDay5Lists = [];
+
+
+
+
+let bgArrayForMac = [bgClickedExposureLists, bgClickedMetarTempLists, bgClickedMetarDewPointLists,
+    bgClickedMetarVisibilityLists, bgClickedMetarWindSpeedAndDirectionLists, bgClickedSynopTempLists,
+    bgClickedSynopMeanSeaLevelLists, bgClickedSynopCloudCoverLists, bgClickedSynopGeopotentialHeightLists,
+    bgClickedSynopRelativeHumidityLists, bgClickedSynopVisibilityLists, bgClickedSynopWindSpeedAndDirectionLists,
+    bgClickedSynop3hRainfallLists, bgClickedSOUNDING00UTCWINDLists, bgClickedSOUNDING12UTCWINDLists,
+    bgClickedSOUNDING00UTCTEMPLists, bgClickedSOUNDING12UTCTEMPLists, bgClickedSOUNDING00UTCDEWPOINTLists,
+    bgClickedSOUNDING12UTCDEWPOINTLists, bgClickedSHIPANDBUOYLists, bgClickedRadarLists, bgClickedLightningLists,
+    bgClickedSATELLITELists, bgClickedWRFReflectivityLists, bgClickedWRFlightningProductLists,
+    bgClickedWRFAccumlatedRainfallLists, bgClickedlightningPotentialindexLists, bgClickedNCUMRlightningProductLists,
+    bgClickedNCUMRWindGustLists, bgClickedNCUMRRainfallLists, bgClickedHRRR_SPHourlyDBZLists,
+    bgClickedHRRR_NEHourlyDBZLists, bgClickedHRRR_NWHourlyDBZLists, bgClickedEWRFMaxZLists,
+    bgClickedEWRFLightningLists, bgClickedRainfallIntensityDay1Lists, bgClickedRainfallIntensityDay2Lists,
+    bgClickedRainfallIntensityDay3Lists, bgClickedRainfallIntensityDay4Lists, bgClickedRainfallIntensityDay5Lists,
+    bgClickedMSLPDay1Lists, bgClickedMSLPDay2Lists, bgClickedMSLPDay3Lists, bgClickedMSLPDay4Lists,
+    bgClickedMSLPDay5Lists, bgClicked10mWINDDay1Lists, bgClicked10mWINDDay2Lists, bgClicked10mWINDDay3Lists,
+    bgClicked10mWINDDay4Lists, bgClicked10mWINDDay5Lists
+];
+
+function updateBackgroundColor() {
+    //exposure bgClickedExposureLists
+    if (bgClickedExposureLists.length > 0) {
+        $("#exposure").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#exposure").css("background-color", '#eff4ff');
+    }
+
+    //metar bgClickedMetarLists
+    if (
+        bgClickedMetarTempLists.length === 0 &&
+        bgClickedMetarDewPointLists.length === 0 &&
+        bgClickedMetarVisibilityLists.length === 0 &&
+        bgClickedMetarWindSpeedAndDirectionLists.length === 0
+    ) {
+        $("#metar").css("background-color", '#eff4ff');
+    } else {
+        $("#metar").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //synop bgClickedSynopLists
+    if (
+        bgClickedSynopTempLists.length === 0 &&
+        bgClickedSynopMeanSeaLevelLists.length === 0 &&
+        bgClickedSynopCloudCoverLists.length === 0 &&
+        bgClickedSynopGeopotentialHeightLists.length === 0 &&
+        bgClickedSynopRelativeHumidityLists.length === 0 &&
+        bgClickedSynopVisibilityLists.length === 0 &&
+        bgClickedSynopWindSpeedAndDirectionLists.length === 0 &&
+        bgClickedSynop3hRainfallLists.length === 0
+    ) {
+        $("#synop").css("background-color", '#eff4ff');
+    } else {
+        $("#synop").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //SOUNDING bgClickedSoundingLists
+    if (
+        bgClickedSOUNDING00UTCWINDLists.length === 0 &&
+        bgClickedSOUNDING12UTCWINDLists.length === 0 &&
+        bgClickedSOUNDING00UTCTEMPLists.length === 0 &&
+        bgClickedSOUNDING12UTCTEMPLists.length === 0 &&
+        bgClickedSOUNDING00UTCDEWPOINTLists.length === 0 &&
+        bgClickedSOUNDING12UTCDEWPOINTLists.length === 0
+    ) {
+        $("#sounding").css("background-color", '#eff4ff');
+    } else {
+        $("#sounding").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //SHIPANDBUOY bgClickedSHIPANDBUOYLists
+    if (bgClickedSHIPANDBUOYLists.length > 0) {
+        $("#ship_and_buoy").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#ship_and_buoy").css("background-color", '#eff4ff');
+    }
+
+    //radar bgClickedRadarLists
+    if (bgClickedRadarLists.length > 0) {
+        $("#radar").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#radar").css("background-color", '#eff4ff');
+    }
+
+    //SATELLITE bgClickedSATELLITELists
+    if (bgClickedSATELLITELists.length > 0) {
+        $("#satellite").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#satellite").css("background-color", '#eff4ff');
+    }
+
+    let bgchecknum = bgClickedLightningLists.length;
+    // lightning bgClickedLightningLists
+    if (bgClickedLightningLists.length > 0) {
+        $("#lightning").css("background-color", 'rgb(180, 194, 224)');
+        console.log(bgchecknum, "bgchecknum-11");
+    } else {
+        $("#lightning").css("background-color", '#eff4ff');
+        console.log(bgchecknum, "bgchecknum-22");
+    }
+
+    //mesolscale bgClickedSynopLists
+    if (
+        bgClickedWRFReflectivityLists.length === 0 &&
+        bgClickedWRFlightningProductLists.length === 0 &&
+        bgClickedWRFAccumlatedRainfallLists.length === 0 &&
+        bgClickedlightningPotentialindexLists.length === 0 &&
+        bgClickedNCUMRlightningProductLists.length === 0 &&
+        bgClickedNCUMRWindGustLists.length === 0 &&
+        bgClickedNCUMRRainfallLists.length === 0 &&
+        bgClickedHRRR_SPHourlyDBZLists.length === 0 &&
+        bgClickedHRRR_NEHourlyDBZLists.length === 0 &&
+        bgClickedHRRR_NWHourlyDBZLists.length === 0 &&
+        bgClickedEWRFMaxZLists.length === 0 &&
+        bgClickedEWRFLightningLists.length === 0
+    ) {
+        $("#mesolscale").css("background-color", '#eff4ff');
+    } else {
+        $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //medium_range 
+    if (
+        bgClickedRainfallIntensityDay1Lists.length === 0 &&
+        bgClickedRainfallIntensityDay2Lists.length === 0 &&
+        bgClickedRainfallIntensityDay3Lists.length === 0 &&
+        bgClickedRainfallIntensityDay4Lists.length === 0 &&
+        bgClickedRainfallIntensityDay5Lists.length === 0 &&
+        bgClickedMSLPDay1Lists.length === 0 &&
+        bgClickedMSLPDay2Lists.length === 0 &&
+        bgClickedMSLPDay3Lists.length === 0 &&
+        bgClickedMSLPDay4Lists.length === 0 &&
+        bgClickedMSLPDay5Lists.length === 0 &&
+        bgClicked10mWINDDay1Lists.length === 0 &&
+        bgClicked10mWINDDay2Lists.length === 0 &&
+        bgClicked10mWINDDay3Lists.length === 0 &&
+        bgClicked10mWINDDay4Lists.length === 0 &&
+        bgClicked10mWINDDay5Lists.length === 0
+    ) {
+        $("#medium_range").css("background-color", '#eff4ff');
+    } else {
+        $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
+    }
+}
+// *************************************
+
+
+let macro_SubParameter;
+let currentMacroIndex = 0;
+let intervalId;
+let countingElement = document.getElementById("counting");
+let intervalInSeconds = 10;
+let playingMacro = false;
 
 let playerTextElement = document.getElementById("playerText");
 
-// playMacro
+
+function applyLayers(macroGroupName) {
+    const macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
+
+    if (macro && macro.listOfMacro) {
+        const macroDetails = macro.listOfMacro[currentMacroIndex];
+        const macro_SubParameter = macroDetails.mac_sub_parameter;
+
+        document.getElementById("macroDetails").style.display = "block";
+
+        map.eachLayer(layer => {
+            if (layer instanceof L.TileLayer.WMS) {
+                map.removeLayer(layer);
+            }
+        });
+
+        if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+            switch (macro_SubParameter) {
+                case "Last 00-05 min":
+                    map.addLayer(mywmsIITM);
+                    playerTextElement.innerHTML = 'Last 00-05 min';
+                    console.log("1-Last 00-05 min");
+                    break;
+                case "00UTC":
+                    map.addLayer(ship_00utc);
+                    playerTextElement.innerHTML = 'Ship and Buoy 00UTC';
+                    console.log("2-00UTC");
+                    break;
+                case "Radar Reflectivity":
+                    map.addLayer(rad_ref);
+                    playerTextElement.innerHTML = 'Radar Reflectivity';
+                    console.log("3-rad_ref");
+                    break;
+                case "Oil Refineries":
+                    map.addLayer(exp_oil);
+                    playerTextElement.innerHTML = 'Exposure Oil Refineries';
+                    console.log("4-exp_oil");
+                    break;
+                case "RI GFS DAY1":
+                    map.addLayer(med_gfs1);
+                    playerTextElement.innerHTML = 'Rainfall Intensity Day1 - RI GFS DAY1';
+                    console.log("5-RI GFS DAY1");
+                    break;
+            }
+        }
+    }
+}
+
 async function playMacro(macroGroupName) {
+    updateBackgroundColor();
+    bgArrayForMac.forEach(array => array.length = 0);
+
     let macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
 
     if (macro) {
-        for (let macroDetails of macro.listOfMacro) {
-            macro_SubParameter = macroDetails.mac_sub_parameter;
-            document.getElementById("macroDetails").style.display = "block";
+        currentMacroIndex = 0;
+        clearInterval(intervalId);
 
-            if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                if (macro_SubParameter === "Last 00-05 min") {
-                    map.addLayer(mywmsIITM);
-                    playerText.innerHTML = 'Last 00-05 min';
-                    // 
-                    console.log("1-Last 00-05 min");
-                }
-            }
-
-            if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                if (macro_SubParameter === "00UTC") {
-                    map.addLayer(ship_00utc);
-                    playerText.innerHTML = 'Ship and Buoy 00UTC';
-                    // 
-                    console.log("2-00UTC");
-                }
-            }
-
-            if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                if (macro_SubParameter === "Radar Reflectivity") {
-                    map.addLayer(rad_ref);
-                    playerText.innerHTML = 'Radar Reflectivity';
-                    // 
-                    console.log("3-rad_ref");
-                }
-            }
-
-            if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                if (macro_SubParameter === "Oil Refineries") {
-                    map.addLayer(exp_oil);
-                    playerText.innerHTML = 'Exposure Oil Refineries';
-                    // 
-                    console.log("4-exp_oil");
-                }
-            }
-
-            if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-                if (macro_SubParameter === "RI GFS DAY1") {
-                    map.addLayer(med_gfs1);
-                    playerText.innerHTML = 'Rainfall Intensity Day1 - RI GFS DAY1';
-                    // 
-                    console.log("5-RI GFS DAY1");
-                }
-            }
-
-            document.getElementById("macroDetails").style.display = "none";
-        }
+        applyLayers(macroGroupName);
+        startMacroPlayback();
     }
-
 }
 
+function startMacroPlayback() {
+    playingMacro = true;
+    let currentSecond = intervalInSeconds;
+
+    // Initial update before the first second elapses
+    countingElement.innerHTML = currentSecond;
+    applyLayers(savedMacro[0].listOfMacro[currentMacroIndex].mac_macroNames);
+
+    intervalId = setInterval(() => {
+        // Check if reached the end of the macro
+        if (currentMacroIndex >= savedMacro[0].listOfMacro.length - 1) {
+            clearInterval(intervalId);
+            playingMacro = false;
+            countingElement.innerHTML = "0";
+            return;
+        }
+
+        // Update the counting element
+        countingElement.innerHTML = currentSecond;
+
+        // Check if time has reached 0
+        if (currentSecond <= 0) {
+            // Move to the next switch case
+            currentMacroIndex++;
+            applyLayers(savedMacro[0].listOfMacro[currentMacroIndex].mac_macroNames);
+
+            // Reset counting for the next layer
+            currentSecond = intervalInSeconds;
+        }
+
+        currentSecond--;
+    }, 1000); // Update every 1 second
+}
+
+function pauseMacroPlayback() {
+    clearInterval(intervalId);
+    playingMacro = false;
+}
+
+function resumeMacroPlayback() {
+    if (!playingMacro) {
+        startMacroPlayback();
+    }
+}
+
+function goToNextMacro() {
+    if (currentMacroIndex < savedMacro[0].listOfMacro.length - 1) {
+        currentMacroIndex++;
+        applyLayers(savedMacro[0].listOfMacro[currentMacroIndex].mac_macroNames);
+        countingElement.innerHTML = intervalInSeconds; // Reset counting
+        if (playingMacro) {
+            clearInterval(intervalId);
+            startMacroPlayback();
+        }
+    }
+}
+
+function goToPreviousMacro() {
+    if (currentMacroIndex > 0) {
+        currentMacroIndex--;
+        applyLayers(savedMacro[0].listOfMacro[currentMacroIndex].mac_macroNames);
+        countingElement.innerHTML = intervalInSeconds; // Reset counting
+        if (playingMacro) {
+            clearInterval(intervalId);
+            startMacroPlayback();
+        }
+    }
+}
+
+function stopMacroPlayback() {
+    clearInterval(intervalId);
+    currentMacroIndex = 0;
+    playingMacro = false;
+    countingElement.innerHTML = "0";
+    applyLayers(savedMacro[0].listOfMacro[currentMacroIndex].mac_macroNames);
+}
+
+// Event listeners for the buttons
+document.querySelector('.playBtnClas').addEventListener('click', resumeMacroPlayback);
+document.querySelector('.pauseBtnClas').addEventListener('click', pauseMacroPlayback);
+document.querySelector('.rightMacBtn').addEventListener('click', goToNextMacro);
+document.querySelector('.leftMacBtn').addEventListener('click', goToPreviousMacro);
+document.querySelector('.stopBtnClas').addEventListener('click', stopMacroPlayback);
+
+
+
+
+
+
+// *************************************
 
 function macroRunFnX() {
-    map.removeLayer(mywmsIITM);
-    //
-    map.removeLayer(ship_00utc);
-    //
-    map.removeLayer(rad_ref);
-    //
-    map.removeLayer(exp_oil);
-    //
-    map.removeLayer(med_gfs1);
-    //
+    stopMacroPlayback(); // Stop the macro playback
+    map.eachLayer(layer => {
+        if (layer instanceof L.TileLayer.WMS) {
+            map.removeLayer(layer); // Remove all layers from the map
+        }
+    });
     document.getElementById("macroDetails").style.display = "none";
 }
 
@@ -2715,28 +3095,227 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
 
 
 
-//MAP Starts Here
-var startDate = new Date();
 
-// Your Leaflet map initialization
+
+
+L.TimeDimension.Layer.ImageOverlay = L.TimeDimension.Layer.extend({
+
+    initialize: function(layer, options) {
+        L.TimeDimension.Layer.prototype.initialize.call(this, layer, options);
+        this._layers = {};
+        this._defaultTime = 0;
+        this._timeCacheBackward = this.options.cacheBackward || this.options.cache || 0;
+        this._timeCacheForward = this.options.cacheForward || this.options.cache || 0;
+        this._getUrlFunction = this.options.getUrlFunction;
+
+        this._baseLayer.on('load', (function() {
+            this._baseLayer.setLoaded(true);
+            this.fire('timeload', {
+                time: this._defaultTime
+            });
+        }).bind(this));
+    },
+
+    eachLayer: function(method, context) {
+        for (var prop in this._layers) {
+            if (this._layers.hasOwnProperty(prop)) {
+                method.call(context, this._layers[prop]);
+            }
+        }
+        return L.TimeDimension.Layer.prototype.eachLayer.call(this, method, context);
+    },
+
+    _onNewTimeLoading: function(ev) {
+        var layer = this._getLayerForTime(ev.time);
+        if (!this._map.hasLayer(layer)) {
+            this._map.addLayer(layer);
+        }
+    },
+
+    isReady: function(time) {
+        var layer = this._getLayerForTime(time);
+        return layer.isLoaded();
+    },
+
+    _update: function() {
+        if (!this._map)
+            return;
+        var time = map.timeDimension.getCurrentTime();
+        var layer = this._getLayerForTime(time);
+        if (this._currentLayer == null) {
+            this._currentLayer = layer;
+        }
+        if (!this._map.hasLayer(layer)) {
+            this._map.addLayer(layer);
+        } else {
+            this._showLayer(layer, time);
+        }
+    },
+
+    _showLayer: function(layer, time) {
+        if (this._currentLayer && this._currentLayer !== layer) {
+            this._currentLayer.hide();
+            this._map.removeLayer(this._currentLayer);
+        }
+        layer.show();
+        if (this._currentLayer && this._currentLayer === layer) {
+            return;
+        }
+        this._currentLayer = layer;
+        // Cache management
+        var times = this._getLoadedTimes();
+        var strTime = String(time);
+        var index = times.indexOf(strTime);
+        var remove = [];
+        // remove times before current time
+        if (this._timeCacheBackward > -1) {
+            var objectsToRemove = index - this._timeCacheBackward;
+            if (objectsToRemove > 0) {
+                remove = times.splice(0, objectsToRemove);
+                this._removeLayers(remove);
+            }
+        }
+        if (this._timeCacheForward > -1) {
+            index = times.indexOf(strTime);
+            var objectsToRemove = times.length - index - this._timeCacheForward - 1;
+            if (objectsToRemove > 0) {
+                remove = times.splice(index + this._timeCacheForward + 1, objectsToRemove);
+                this._removeLayers(remove);
+            }
+        }
+    },
+
+    _getLayerForTime: function(time) {
+        if (time == 0 || time == this._defaultTime) {
+            return this._baseLayer;
+        }
+        if (this._layers.hasOwnProperty(time)) {
+            return this._layers[time];
+        }
+        var url = this._getUrlFunction(this._baseLayer.getURL(), time);
+        imageBounds = this._baseLayer._bounds;
+
+        var newLayer = L.imageOverlay(url, imageBounds, this._baseLayer.options);
+        this._layers[time] = newLayer;
+        newLayer.on('load', (function(layer, time) {
+            layer.setLoaded(true);
+            if (map.timeDimension && time == map.timeDimension.getCurrentTime() && !map
+                .timeDimension.isLoading()) {
+                this._showLayer(layer, time);
+            }
+            this.fire('timeload', {
+                time: time
+            });
+        }).bind(this, newLayer, time));
+
+        // Hack to hide the layer when added to the map.
+        // It will be shown when timeload event is fired from the map (after all layers are loaded)
+        newLayer.onAdd = (function(map) {
+            Object.getPrototypeOf(this).onAdd.call(this, map);
+            this.hide();
+        }).bind(newLayer);
+        return newLayer;
+    },
+
+    _getLoadedTimes: function() {
+        var result = [];
+        for (var prop in this._layers) {
+            if (this._layers.hasOwnProperty(prop)) {
+                result.push(prop);
+            }
+        }
+        return result.sort();
+    },
+
+    _removeLayers: function(times) {
+        for (var i = 0, l = times.length; i < l; i++) {
+            this._map.removeLayer(this._layers[times[i]]);
+            delete this._layers[times[i]];
+        }
+    },
+
+});
+
+L.timeDimension.layer.imageOverlay = function(layer, options) {
+    return new L.TimeDimension.Layer.ImageOverlay(layer, options);
+};
+
+L.ImageOverlay.include({
+    _visible: true,
+    _loaded: false,
+
+    _originalUpdate: L.imageOverlay.prototype._update,
+
+    _update: function() {
+        if (!this._visible && this._loaded) {
+            return;
+        }
+        this._originalUpdate();
+    },
+
+    setLoaded: function(loaded) {
+        this._loaded = loaded;
+    },
+
+    isLoaded: function() {
+        return this._loaded;
+    },
+
+    hide: function() {
+        this._visible = false;
+        if (this._image && this._image.style)
+            this._image.style.display = 'none';
+    },
+
+    show: function() {
+        this._visible = true;
+        if (this._image && this._image.style)
+            this._image.style.display = 'block';
+    },
+
+    getURL: function() {
+        return this._url;
+    },
+
+});
+
+function addZ(n) {
+    return n < 10 ? '0' + n : '' + n;
+}
+
+var today = new Date('2024-02-01');
+console.log(today);
+var today_month = today.getMonth() + 1;
+var date = today.getFullYear() + '-' + today_month + '-' + today.getDate();
+var time = today.getHours() + ":00:00";
+var dateTime = date + ' ' + time;
+console.log(dateTime);
+var endDate = new Date('2024-02-01');
+endDate.setDate(endDate.getDate() + 2);
+endDate.setUTCMinutes(0, 0, 0);
+
+var startDate = new Date(dateTime);
+console.log(endDate);
+
+//MAP Starts Here
 var map = L.map('map', {
     zoom: 5,
     timeDimension: true,
-    timeDimensionControl: false, // Initially set to false
+    timeDimensionControl: false,
     timeDimensionOptions: {
-        timeInterval: "2023-12-05/2023-12-06",
+        timeInterval: "P02D/" + endDate.toISOString(),
         period: "PT1H",
         validTimeRange: "00:00/23:00",
         currentTime: startDate
     },
-    timeDimensionControlOptions: {
-        autoPlay: false,
-        playerOptions: {
-            buffer: 10,
-            transitionTime: 500,
-            loop: true,
-        }
-    },
+    // timeDimensionControlOptions: {
+    //     autoPlay: false,
+    //     playerOptions: {
+    //         buffer: 10,
+    //         transitionTime: 500,
+    //         loop: true,
+    //     }
+    // },
     center: [22.79459, 80.06406],
 });
 
@@ -2745,18 +3324,31 @@ function toggleTimeDimensionControl() {
     if (!map.timeDimensionControl) {
         map.timeDimensionControl = L.control.timeDimension({
             position: 'topleft',
-            autoPlay: false, // Set your options here
+            autoPlay: false,
             playerOptions: {
                 buffer: 10,
                 transitionTime: 500,
                 loop: true,
             }
         }).addTo(map);
+        var testImageTimeLayer = L.timeDimension.layer.imageOverlay(imageLayer, {
+            getUrlFunction: getSirenaImageUrl
+        });
+        testImageTimeLayer.addTo(map);
     } else {
+        if (testImageTimeLayer) {
+            map.removeLayer(testImageTimeLayer);
+            testImageTimeLayer = null;
+            console.log("this is working");
+
+        }
+
         map.removeControl(map.timeDimensionControl);
         map.timeDimensionControl = null;
     }
 }
+
+
 // Create a custom control
 var timeDimensionControlButton = L.Control.extend({
     onAdd: function() {
@@ -2782,7 +3374,6 @@ var timeDimensionControlButton = L.Control.extend({
     }
 });
 
-
 // Add the custom control to the map
 var timeDimensionControl = new timeDimensionControlButton({
     position: 'topleft'
@@ -2790,39 +3381,52 @@ var timeDimensionControl = new timeDimensionControlButton({
 timeDimensionControl.addTo(map);
 
 
-// timeDimension
-var today = new Date();
-var today_month = today.getMonth() + 1;
-var date = today.getFullYear() + '-' + today_month + '-' + today.getDate();
-var time = today.getHours() + ":00:00";
-var time = '00:00:00';
-var dateTime = date + ' ' + time;
+var imgBegnUrl = 'https://satark.rimes.int/FC_LT_NCM/OUT/20240201/00/';
 
-var startDate = new Date(dateTime);
-// console.log("startDate::" + startDate);
 
-var endDate_TM = new Date();
-endDate_TM.setDate(endDate_TM.getDate() + 1);
-endDate_TM.setUTCMinutes(0, 0, 0);
-// console.log("endDate_TM:::" + endDate_TM);
+// Add image layer
+var imageUrl = imgBegnUrl + '00Z04FEB2024.png',
+    imageBounds = [
+        [-51, 0],
+        [51, 180]
+    ];
+// console.log(imageUrl, "imageUrl");
 
+var imageLayer = L.imageOverlay(imageUrl, imageBounds, {
+    opacity: 1
+});
 Date.prototype.format = function(mask, utc) {
     return dateFormat(this, mask, utc);
 };
+
+var getSirenaImageUrl = function(baseUrl, time) {
+    var beginUrl = imgBegnUrl;
+    var new_date_time = new Date(time);
+    new_date_time = new_date_time.setMonth(new_date_time.getMonth());
+    var new_time = new Date(new_date_time).format('HH') + 'Z' + moment(new_date_time).format("DD") + moment(
+        new_date_time).format("MMM") + moment(new_date_time).format("YYYY");
+    beginUrl = beginUrl + new_time.toUpperCase();
+    url = beginUrl + '.png';
+    console.log(url);
+    return url;
+};
+
+
+
 
 L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
     _getDisplayDateFormat: function(date) {
         return moment(date).format("LL h A");
     }
 });
-var timeDimensionControl = new L.Control.TimeDimensionCustom({
-    autoPlay: false,
-    playerOptions: {
-        buffer: 10,
-        transitionTime: 500,
-        loop: true,
-    }
-});
+// var timeDimensionControl = new L.Control.TimeDimensionCustom({
+//     autoPlay: false,
+//     playerOptions: {
+//         buffer: 10,
+//         transitionTime: 500,
+//         loop: true,
+//     }
+// });
 
 // Add the GeoJSON data to the map
 _dist_geojson = "DATA/INDIA_STATE.json";
@@ -3002,7 +3606,7 @@ const syn21utc_rain = L.tileLayer.wms("http://103.215.208.132:8080/geoserver/IMD
 
 const met00utc_tem = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
     layers: 'IMD_Data:HW_Annual_Days',
-    format: 'image/jpeg',
+    format: 'image/png',
     transparent: true,
     version: '1.1.0',
     attribution: "HW_Annual_Days",
@@ -3386,7 +3990,8 @@ var MacroButton = L.Control.extend({
     });
     freehandButton.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'leaflet-bar');
-        div.innerHTML = '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;">Freehand</button>';
+        div.innerHTML =
+            '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;">Freehand</button>';
         div.firstChild.addEventListener('click', function() {
             if (isFreehandMode) {
                 isFreehandMode = false;
@@ -3407,7 +4012,8 @@ var MacroButton = L.Control.extend({
     });
     clearLayersButton.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'leaflet-bar');
-        div.innerHTML = '<button id="clearLayersButton" style="background-color: white; border: 0px solid black;">Clear Drawing</button>';
+        div.innerHTML =
+            '<button id="clearLayersButton" style="background-color: white; border: 0px solid black;">Clear Drawing</button>';
 
         div.firstChild.addEventListener('click', function() {
             drawnItems.clearLayers();
@@ -8059,40 +8665,6 @@ document.querySelectorAll('#popup').forEach(function(openModel) {
 let clickedLightningLists = [];
 let clickedRadarLists = [];
 let clickedExposureLists = [];
-// let clickedMETAR00UTCLists = [];
-// let clickedMETAR01UTCLists = [];
-// let clickedMETAR02UTCLists = [];
-// let clickedMETAR03UTCLists = [];
-// let clickedMETAR04UTCLists = [];
-// let clickedMETAR05UTCLists = [];
-// let clickedMETAR06UTCLists = [];
-// let clickedMETAR07UTCLists = [];
-// let clickedMETAR08UTCLists = [];
-// let clickedMETAR09UTCLists = [];
-// let clickedMETAR10UTCLists = [];
-// let clickedMETAR11UTCLists = [];
-// let clickedMETAR12UTCLists = [];
-// let clickedMETAR13UTCLists = [];
-// let clickedMETAR14UTCLists = [];
-// let clickedMETAR15UTCLists = [];
-// let clickedMETAR16UTCLists = [];
-// let clickedMETAR17UTCLists = [];
-// let clickedMETAR18UTCLists = [];
-// let clickedMETAR19UTCLists = [];
-// let clickedMETAR20UTCLists = [];
-// let clickedMETAR21UTCLists = [];
-// let clickedMETAR22UTCLists = [];
-// let clickedMETAR23UTCLists = [];
-
-
-// let clickedSYNOP00UTCLists = [];
-// let clickedSYNOP03UTCLists = [];
-// let clickedSYNOP06UTCLists = [];
-// let clickedSYNOP09UTCLists = [];
-// let clickedSYNOP12UTCLists = [];
-// let clickedSYNOP15UTCLists = [];
-// let clickedSYNOP18UTCLists = [];
-// let clickedSYNOP21UTCLists = [];
 
 let clickedRADARPRODUCTSLists = [];
 
@@ -8152,213 +8724,6 @@ let clickedSynopRelativeHumidityLists = [];
 let clickedSynopVisibilityLists = [];
 let clickedSynopWindSpeedAndDirectionLists = [];
 let clickedSynop3hRainfallLists = [];
-
-
-//
-//bg color List
-let bgClickedExposureLists = [];
-
-let bgClickedMetarTempLists = [];
-let bgClickedMetarDewPointLists = [];
-let bgClickedMetarVisibilityLists = [];
-let bgClickedMetarWindSpeedAndDirectionLists = [];
-
-let bgClickedSynopTempLists = [];
-let bgClickedSynopMeanSeaLevelLists = [];
-let bgClickedSynopCloudCoverLists = [];
-let bgClickedSynopGeopotentialHeightLists = [];
-let bgClickedSynopRelativeHumidityLists = [];
-let bgClickedSynopVisibilityLists = [];
-let bgClickedSynopWindSpeedAndDirectionLists = [];
-let bgClickedSynop3hRainfallLists = [];
-
-let bgClickedSOUNDING00UTCWINDLists = [];
-let bgClickedSOUNDING12UTCWINDLists = [];
-let bgClickedSOUNDING00UTCTEMPLists = [];
-let bgClickedSOUNDING12UTCTEMPLists = [];
-let bgClickedSOUNDING00UTCDEWPOINTLists = [];
-let bgClickedSOUNDING12UTCDEWPOINTLists = [];
-
-let bgClickedSHIPANDBUOYLists = [];
-
-let bgClickedRadarLists = [];
-
-let bgClickedLightningLists = [];
-
-let bgClickedSATELLITELists = [];
-
-let bgClickedWRFReflectivityLists = [];
-let bgClickedWRFlightningProductLists = [];
-let bgClickedWRFAccumlatedRainfallLists = [];
-let bgClickedlightningPotentialindexLists = [];
-let bgClickedNCUMRlightningProductLists = [];
-let bgClickedNCUMRWindGustLists = [];
-let bgClickedNCUMRRainfallLists = [];
-let bgClickedHRRR_SPHourlyDBZLists = [];
-let bgClickedHRRR_NEHourlyDBZLists = [];
-let bgClickedHRRR_NWHourlyDBZLists = [];
-let bgClickedEWRFMaxZLists = [];
-
-let bgClickedEWRFLightningLists = [];
-
-let bgClickedRainfallIntensityDay1Lists = [];
-let bgClickedRainfallIntensityDay2Lists = [];
-let bgClickedRainfallIntensityDay3Lists = [];
-let bgClickedRainfallIntensityDay4Lists = [];
-let bgClickedRainfallIntensityDay5Lists = [];
-let bgClickedMSLPDay1Lists = [];
-let bgClickedMSLPDay2Lists = [];
-let bgClickedMSLPDay3Lists = [];
-let bgClickedMSLPDay4Lists = [];
-let bgClickedMSLPDay5Lists = [];
-let bgClicked10mWINDDay1Lists = [];
-let bgClicked10mWINDDay2Lists = [];
-let bgClicked10mWINDDay3Lists = [];
-let bgClicked10mWINDDay4Lists = [];
-let bgClicked10mWINDDay5Lists = [];
-
-//exposure bgClickedExposureLists
-if (bgClickedExposureLists.length > 0) {
-    $("#exposure").css("background-color", 'rgb(180, 194, 224)');
-} else {
-    $("#exposure").css("background-color", '#eff4ff');
-}
-
-//metar bgClickedMetarLists
-if (
-    bgClickedMetarTempLists.length === 0 &&
-    bgClickedMetarDewPointLists.length === 0 &&
-    bgClickedMetarVisibilityLists.length === 0 &&
-    bgClickedMetarWindSpeedAndDirectionLists.length === 0
-) {
-    $("#metar").css("background-color", '#eff4ff');
-} else {
-    $("#metar").css("background-color", 'rgb(180, 194, 224)');
-}
-
-//synop bgClickedSynopLists
-if (
-    bgClickedSynopTempLists.length === 0 &&
-    bgClickedSynopMeanSeaLevelLists.length === 0 &&
-    bgClickedSynopCloudCoverLists.length === 0 &&
-    bgClickedSynopGeopotentialHeightLists.length === 0 &&
-    bgClickedSynopRelativeHumidityLists.length === 0 &&
-    bgClickedSynopVisibilityLists.length === 0 &&
-    bgClickedSynopWindSpeedAndDirectionLists.length === 0 &&
-    bgClickedSynop3hRainfallLists.length === 0
-) {
-    $("#synop").css("background-color", '#eff4ff');
-} else {
-    $("#synop").css("background-color", 'rgb(180, 194, 224)');
-}
-
-//SOUNDING bgClickedSoundingLists
-if (
-    bgClickedSOUNDING00UTCWINDLists.length === 0 &&
-    bgClickedSOUNDING12UTCWINDLists.length === 0 &&
-    bgClickedSOUNDING00UTCTEMPLists.length === 0 &&
-    bgClickedSOUNDING12UTCTEMPLists.length === 0 &&
-    bgClickedSOUNDING00UTCDEWPOINTLists.length === 0 &&
-    bgClickedSOUNDING12UTCDEWPOINTLists.length === 0
-) {
-    $("#sounding").css("background-color", '#eff4ff');
-} else {
-    $("#sounding").css("background-color", 'rgb(180, 194, 224)');
-}
-
-//SHIPANDBUOY bgClickedSHIPANDBUOYLists[]
-if (bgClickedSHIPANDBUOYLists.length > 0) {
-    $("#ship_and_buoy").css("background-color", 'rgb(180, 194, 224)');
-} else {
-    $("#ship_and_buoy").css("background-color", '#eff4ff');
-}
-
-//radar bgClickedRadarLists
-if (bgClickedRadarLists.length > 0) {
-    $("#radar").css("background-color", 'rgb(180, 194, 224)');
-} else {
-    $("#radar").css("background-color", '#eff4ff');
-}
-
-//SATELLITE bgClickedSATELLITELists
-if (bgClickedSATELLITELists.length > 0) {
-    $("#satellite").css("background-color", 'rgb(180, 194, 224)');
-} else {
-    $("#satellite").css("background-color", '#eff4ff');
-}
-
-//lightning bgClickedLightningLists
-if (bgClickedLightningLists.length > 0) {
-    $("#lightning").css("background-color", 'rgb(180, 194, 224)');
-} else {
-    $("#lightning").css("background-color", '#eff4ff');
-}
-
-//mesolscale 
-if (
-    bgClickedWRFReflectivityLists.length === 0 &&
-    bgClickedWRFlightningProductLists.length === 0 &&
-    bgClickedWRFAccumlatedRainfallLists.length === 0 &&
-    bgClickedlightningPotentialindexLists.length === 0 &&
-    bgClickedNCUMRlightningProductLists.length === 0 &&
-    bgClickedNCUMRWindGustLists.length === 0 &&
-    bgClickedNCUMRRainfallLists.length === 0 &&
-    bgClickedHRRR_SPHourlyDBZLists.length === 0 &&
-    bgClickedHRRR_NEHourlyDBZLists.length === 0 &&
-    bgClickedHRRR_NWHourlyDBZLists.length === 0 &&
-    bgClickedEWRFMaxZLists.length === 0 &&
-    bgClickedEWRFLightningLists.length === 0
-) {
-    $("#mesolscale").css("background-color", '#eff4ff');
-} else {
-    $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
-}
-
-//medium_range 
-if (
-    bgClickedRainfallIntensityDay1Lists.length === 0 &&
-    bgClickedRainfallIntensityDay2Lists.length === 0 &&
-    bgClickedRainfallIntensityDay3Lists.length === 0 &&
-    bgClickedRainfallIntensityDay4Lists.length === 0 &&
-    bgClickedRainfallIntensityDay5Lists.length === 0 &&
-    bgClickedMSLPDay1Lists.length === 0 &&
-    bgClickedMSLPDay2Lists.length === 0 &&
-    bgClickedMSLPDay3Lists.length === 0 &&
-    bgClickedMSLPDay4Lists.length === 0 &&
-    bgClickedMSLPDay5Lists.length === 0 &&
-    bgClicked10mWINDDay1Lists.length === 0 &&
-    bgClicked10mWINDDay2Lists.length === 0 &&
-    bgClicked10mWINDDay3Lists.length === 0 &&
-    bgClicked10mWINDDay4Lists.length === 0 &&
-    bgClicked10mWINDDay5Lists.length === 0
-) {
-    $("#medium_range").css("background-color", '#eff4ff');
-} else {
-    $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
-}
-
-//medium_range 
-if (
-    bgClickedRainfallIntensityDay1Lists.length === 0 &&
-    bgClickedRainfallIntensityDay2Lists.length === 0 &&
-    bgClickedRainfallIntensityDay3Lists.length === 0 &&
-    bgClickedRainfallIntensityDay4Lists.length === 0 &&
-    bgClickedRainfallIntensityDay5Lists.length === 0 &&
-    bgClickedMSLPDay1Lists.length === 0 &&
-    bgClickedMSLPDay2Lists.length === 0 &&
-    bgClickedMSLPDay3Lists.length === 0 &&
-    bgClickedMSLPDay4Lists.length === 0 &&
-    bgClickedMSLPDay5Lists.length === 0 &&
-    bgClicked10mWINDDay1Lists.length === 0 &&
-    bgClicked10mWINDDay2Lists.length === 0 &&
-    bgClicked10mWINDDay3Lists.length === 0 &&
-    bgClicked10mWINDDay4Lists.length === 0 &&
-    bgClicked10mWINDDay5Lists.length === 0
-) {
-    $("#medium_range").css("background-color", '#eff4ff');
-} else {
-    $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
-}
 
 //Fn for exposure
 function remove_layer_or_add(_context_layer, _layer_to_remove_add, uncheckLayer) {
@@ -16760,7 +17125,6 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 
     } else {
-        // debugger;
 
         console.log("unChecked");
         // console.log(_this, "............_this");
@@ -21460,9 +21824,8 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayersynopWindSpeedAndDirection_lists.innerText === '' &&
             panelLayersynop3hRainfall_lists.innerText === ''
         ) {
-            debugger;
             SYNOP.innerHTML = '';
-            console.log("Hello world22")
+            console.log("Hello world22");
         }
 
 
@@ -22199,7 +22562,7 @@ $("body").on("change", "input[type=checkbox]", function() {
             MESOLSCALE.innerHTML = '';
             HRRR_NEHourlyDBZImage.innerHTML = '';
         }
-//code missing here for NW dbz 
+        //code missing here for NW dbz 
         //EWRF MaxZ
         if (uncheckLayer == 'EWRF MaxZ EWRF M Next 01 Hrs') {
             var _context_layer = _this.context._layer;
@@ -26323,148 +26686,131 @@ $("body").on("change", "input[type=checkbox]", function() {
         //     }
     }
 
-    //exposure bgClickedExposureLists[]
-    if (bgClickedExposureLists.length > 0) {
-        $("#exposure").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#exposure").css("background-color", '#eff4ff');
-    }
+    updateBackgroundColor();
 
-    //metar bgClickedMetarLists
-    if (
-        bgClickedMetarTempLists.length === 0 &&
-        bgClickedMetarDewPointLists.length === 0 &&
-        bgClickedMetarVisibilityLists.length === 0 &&
-        bgClickedMetarWindSpeedAndDirectionLists.length === 0
-    ) {
-        $("#metar").css("background-color", '#eff4ff');
-    } else {
-        $("#metar").css("background-color", 'rgb(180, 194, 224)');
-    }
+    // //exposure bgClickedExposureLists[]
+    // if (bgClickedExposureLists.length > 0) {
+    //     $("#exposure").css("background-color", 'rgb(180, 194, 224)');
+    // } else {
+    //     $("#exposure").css("background-color", '#eff4ff');
+    // }
 
-    //synop bgClickedSynopLists
-    if (
-        bgClickedSynopTempLists.length === 0 &&
-        bgClickedSynopMeanSeaLevelLists.length === 0 &&
-        bgClickedSynopCloudCoverLists.length === 0 &&
-        bgClickedSynopGeopotentialHeightLists.length === 0 &&
-        bgClickedSynopRelativeHumidityLists.length === 0 &&
-        bgClickedSynopVisibilityLists.length === 0 &&
-        bgClickedSynopWindSpeedAndDirectionLists.length === 0 &&
-        bgClickedSynop3hRainfallLists.length === 0
-    ) {
-        $("#synop").css("background-color", '#eff4ff');
-    } else {
-        $("#synop").css("background-color", 'rgb(180, 194, 224)');
-    }
+    // //metar bgClickedMetarLists
+    // if (
+    //     bgClickedMetarTempLists.length === 0 &&
+    //     bgClickedMetarDewPointLists.length === 0 &&
+    //     bgClickedMetarVisibilityLists.length === 0 &&
+    //     bgClickedMetarWindSpeedAndDirectionLists.length === 0
+    // ) {
+    //     $("#metar").css("background-color", '#eff4ff');
+    // } else {
+    //     $("#metar").css("background-color", 'rgb(180, 194, 224)');
+    // }
 
-    //SOUNDING bgClickedSoundingLists
-    if (
-        bgClickedSOUNDING00UTCWINDLists.length === 0 &&
-        bgClickedSOUNDING12UTCWINDLists.length === 0 &&
-        bgClickedSOUNDING00UTCTEMPLists.length === 0 &&
-        bgClickedSOUNDING12UTCTEMPLists.length === 0 &&
-        bgClickedSOUNDING00UTCDEWPOINTLists.length === 0 &&
-        bgClickedSOUNDING12UTCDEWPOINTLists.length === 0
-    ) {
-        $("#sounding").css("background-color", '#eff4ff');
-    } else {
-        $("#sounding").css("background-color", 'rgb(180, 194, 224)');
-    }
+    // //synop bgClickedSynopLists
+    // if (
+    //     bgClickedSynopTempLists.length === 0 &&
+    //     bgClickedSynopMeanSeaLevelLists.length === 0 &&
+    //     bgClickedSynopCloudCoverLists.length === 0 &&
+    //     bgClickedSynopGeopotentialHeightLists.length === 0 &&
+    //     bgClickedSynopRelativeHumidityLists.length === 0 &&
+    //     bgClickedSynopVisibilityLists.length === 0 &&
+    //     bgClickedSynopWindSpeedAndDirectionLists.length === 0 &&
+    //     bgClickedSynop3hRainfallLists.length === 0
+    // ) {
+    //     $("#synop").css("background-color", '#eff4ff');
+    // } else {
+    //     $("#synop").css("background-color", 'rgb(180, 194, 224)');
+    // }
 
-    //SHIPANDBUOY bgClickedSHIPANDBUOYLists[]
-    if (bgClickedSHIPANDBUOYLists.length > 0) {
-        $("#ship_and_buoy").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#ship_and_buoy").css("background-color", '#eff4ff');
-    }
+    // //SOUNDING bgClickedSoundingLists
+    // if (
+    //     bgClickedSOUNDING00UTCWINDLists.length === 0 &&
+    //     bgClickedSOUNDING12UTCWINDLists.length === 0 &&
+    //     bgClickedSOUNDING00UTCTEMPLists.length === 0 &&
+    //     bgClickedSOUNDING12UTCTEMPLists.length === 0 &&
+    //     bgClickedSOUNDING00UTCDEWPOINTLists.length === 0 &&
+    //     bgClickedSOUNDING12UTCDEWPOINTLists.length === 0
+    // ) {
+    //     $("#sounding").css("background-color", '#eff4ff');
+    // } else {
+    //     $("#sounding").css("background-color", 'rgb(180, 194, 224)');
+    // }
 
-    //radar bgClickedLightningLists
-    if (bgClickedRadarLists.length > 0) {
-        $("#radar").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#radar").css("background-color", '#eff4ff');
-    }
+    // //SHIPANDBUOY bgClickedSHIPANDBUOYLists[]
+    // if (bgClickedSHIPANDBUOYLists.length > 0) {
+    //     $("#ship_and_buoy").css("background-color", 'rgb(180, 194, 224)');
+    // } else {
+    //     $("#ship_and_buoy").css("background-color", '#eff4ff');
+    // }
 
-    //SATELLITE bgClickedSATELLITELists
-    if (bgClickedSATELLITELists.length > 0) {
-        $("#satellite").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#satellite").css("background-color", '#eff4ff');
-    }
+    // //radar bgClickedRadarLists
+    // if (bgClickedRadarLists.length > 0) {
+    //     $("#radar").css("background-color", 'rgb(180, 194, 224)');
+    // } else {
+    //     $("#radar").css("background-color", '#eff4ff');
+    // }
 
-    //lightning bgClickedLightningLists[]
-    if (bgClickedLightningLists.length > 0) {
-        $("#lightning").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#lightning").css("background-color", '#eff4ff');
-    }
+    // //SATELLITE bgClickedSATELLITELists
+    // if (bgClickedSATELLITELists.length > 0) {
+    //     $("#satellite").css("background-color", 'rgb(180, 194, 224)');
+    // } else {
+    //     $("#satellite").css("background-color", '#eff4ff');
+    // }
 
-    //mesolscale bgClickedSynopLists
-    if (
-        bgClickedWRFReflectivityLists.length === 0 &&
-        bgClickedWRFlightningProductLists.length === 0 &&
-        bgClickedWRFAccumlatedRainfallLists.length === 0 &&
-        bgClickedlightningPotentialindexLists.length === 0 &&
-        bgClickedNCUMRlightningProductLists.length === 0 &&
-        bgClickedNCUMRWindGustLists.length === 0 &&
-        bgClickedNCUMRRainfallLists.length === 0 &&
-        bgClickedHRRR_SPHourlyDBZLists.length === 0 &&
-        bgClickedHRRR_NEHourlyDBZLists.length === 0 &&
-        bgClickedHRRR_NWHourlyDBZLists.length === 0 &&
-        bgClickedEWRFMaxZLists.length === 0 &&
-        bgClickedEWRFLightningLists.length === 0
-    ) {
-        $("#mesolscale").css("background-color", '#eff4ff');
-    } else {
-        $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
-    }
+    // let bgchecknum = bgClickedLightningLists.length;
+    // // lightning bgClickedLightningLists
+    // if (bgClickedLightningLists.length > 0) {
+    //     $("#lightning").css("background-color", 'rgb(180, 194, 224)');
+    //     console.log(bgchecknum, "bgchecknum-11");
+    // } else {
+    //     $("#lightning").css("background-color", '#eff4ff');
+    //     console.log(bgchecknum, "bgchecknum-22");
+    // }
 
-    //medium_range 
-    if (
-        bgClickedRainfallIntensityDay1Lists.length === 0 &&
-        bgClickedRainfallIntensityDay2Lists.length === 0 &&
-        bgClickedRainfallIntensityDay3Lists.length === 0 &&
-        bgClickedRainfallIntensityDay4Lists.length === 0 &&
-        bgClickedRainfallIntensityDay5Lists.length === 0 &&
-        bgClickedMSLPDay1Lists.length === 0 &&
-        bgClickedMSLPDay2Lists.length === 0 &&
-        bgClickedMSLPDay3Lists.length === 0 &&
-        bgClickedMSLPDay4Lists.length === 0 &&
-        bgClickedMSLPDay5Lists.length === 0 &&
-        bgClicked10mWINDDay1Lists.length === 0 &&
-        bgClicked10mWINDDay2Lists.length === 0 &&
-        bgClicked10mWINDDay3Lists.length === 0 &&
-        bgClicked10mWINDDay4Lists.length === 0 &&
-        bgClicked10mWINDDay5Lists.length === 0
-    ) {
-        $("#medium_range").css("background-color", '#eff4ff');
-    } else {
-        $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
-    }
+    // //mesolscale bgClickedSynopLists
+    // if (
+    //     bgClickedWRFReflectivityLists.length === 0 &&
+    //     bgClickedWRFlightningProductLists.length === 0 &&
+    //     bgClickedWRFAccumlatedRainfallLists.length === 0 &&
+    //     bgClickedlightningPotentialindexLists.length === 0 &&
+    //     bgClickedNCUMRlightningProductLists.length === 0 &&
+    //     bgClickedNCUMRWindGustLists.length === 0 &&
+    //     bgClickedNCUMRRainfallLists.length === 0 &&
+    //     bgClickedHRRR_SPHourlyDBZLists.length === 0 &&
+    //     bgClickedHRRR_NEHourlyDBZLists.length === 0 &&
+    //     bgClickedHRRR_NWHourlyDBZLists.length === 0 &&
+    //     bgClickedEWRFMaxZLists.length === 0 &&
+    //     bgClickedEWRFLightningLists.length === 0
+    // ) {
+    //     $("#mesolscale").css("background-color", '#eff4ff');
+    // } else {
+    //     $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
+    // }
 
-    //medium_range 
-    if (
-        bgClickedRainfallIntensityDay1Lists.length === 0 &&
-        bgClickedRainfallIntensityDay2Lists.length === 0 &&
-        bgClickedRainfallIntensityDay3Lists.length === 0 &&
-        bgClickedRainfallIntensityDay4Lists.length === 0 &&
-        bgClickedRainfallIntensityDay5Lists.length === 0 &&
-        bgClickedMSLPDay1Lists.length === 0 &&
-        bgClickedMSLPDay2Lists.length === 0 &&
-        bgClickedMSLPDay3Lists.length === 0 &&
-        bgClickedMSLPDay4Lists.length === 0 &&
-        bgClickedMSLPDay5Lists.length === 0 &&
-        bgClicked10mWINDDay1Lists.length === 0 &&
-        bgClicked10mWINDDay2Lists.length === 0 &&
-        bgClicked10mWINDDay3Lists.length === 0 &&
-        bgClicked10mWINDDay4Lists.length === 0 &&
-        bgClicked10mWINDDay5Lists.length === 0
-    ) {
-        $("#medium_range").css("background-color", '#eff4ff');
-    } else {
-        $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
-    }
+    // //medium_range 
+    // if (
+    //     bgClickedRainfallIntensityDay1Lists.length === 0 &&
+    //     bgClickedRainfallIntensityDay2Lists.length === 0 &&
+    //     bgClickedRainfallIntensityDay3Lists.length === 0 &&
+    //     bgClickedRainfallIntensityDay4Lists.length === 0 &&
+    //     bgClickedRainfallIntensityDay5Lists.length === 0 &&
+    //     bgClickedMSLPDay1Lists.length === 0 &&
+    //     bgClickedMSLPDay2Lists.length === 0 &&
+    //     bgClickedMSLPDay3Lists.length === 0 &&
+    //     bgClickedMSLPDay4Lists.length === 0 &&
+    //     bgClickedMSLPDay5Lists.length === 0 &&
+    //     bgClicked10mWINDDay1Lists.length === 0 &&
+    //     bgClicked10mWINDDay2Lists.length === 0 &&
+    //     bgClicked10mWINDDay3Lists.length === 0 &&
+    //     bgClicked10mWINDDay4Lists.length === 0 &&
+    //     bgClicked10mWINDDay5Lists.length === 0
+    // ) {
+    //     $("#medium_range").css("background-color", '#eff4ff');
+    // } else {
+    //     $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
+    // }
+
 });
 //
 
