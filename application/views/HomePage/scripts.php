@@ -3163,11 +3163,11 @@ if (polylineDrawTool) {
     polylineDrawTool.style.height = '38px';
     polylineDrawTool.style.width = '38px';
 }
-var markerDrawTool = document.querySelector('.leaflet-draw-draw-marker');
+// var markerDrawTool = document.querySelector('.leaflet-draw-draw-marker');
 
-if (markerDrawTool) {
-    markerDrawTool.style.display = 'none';
-}
+// if (markerDrawTool) {
+//     markerDrawTool.style.display = 'none';
+// }
 
 var polylineDrawTool = document.querySelector('.leaflet-draw-draw-circlemarker');
 if (polylineDrawTool) {
