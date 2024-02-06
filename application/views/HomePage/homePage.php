@@ -6,9 +6,6 @@
     <title>IMD DSS</title>
     <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
     <!-- <link rel="shortcut icon" href="img/IMDlogo_Ipart-iris.png" type="image/png"> -->
-
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- font-awesome -->
@@ -202,10 +199,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 
-    <!-- <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/html2canvas/html2canvas.js">
+    <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/html2canvas/html2canvas.js">
     </script>
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/canvas2image/canvas2image.js">
-    </script> -->
+    </script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script> -->
 
 
@@ -1217,73 +1214,87 @@ var worldGrid = L.geoJson({
     dashArray: '5, 5'
 }).addTo(map);
 </script>
-
+<!-- print code start  -->
 <script>
-// function generate_report_and_save() {
-//     $(".printbutton").click(function() {
-//         $(this).addClass('running');
-//         html2canvas($("#map"), {
-//             useCORS: true,
-//             allowTaint: false,
-//             onrendered: function(canvas) {
-//                 var image = Canvas2Image.convertToPNG(canvas);
-//                 var image_data = $(image).attr('src');
-//                 var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
-//                 $.ajax({
-//                     type: "POST",
-//                     url: "<?php echo site_url(); ?>Welcome/saveReportImg",
-//                     data: {
-//                         base64: image_data,
-//                         r_file_name: random_name
-//                     },
-//                     success: function() {
-//                         generate_report('map_img_' + random_name + '.jpeg');
-//                     }
-//                 });
-//             }
-//         });
+//function generate_report_and_save() {
+    $(".printbutton").click(function() {
+        //console.log();
+        $(".printbutton").addClass('running');
+        html2canvas($("#map"), {
+            useCORS: true,
+            allowTaint: false,
+            onrendered: function(canvas) {
+                var image = Canvas2Image.convertToPNG(canvas);
+                var image_data = $(image).attr('src');
+                var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo site_url(); ?>Welcome/saveReportImg",
+                    data: {
+                        base64: image_data,
+                        r_file_name: random_name
+                    },
+                    success: function(_data_,status) {
+                        var _status = status;
+                        if(_status == 'success'){
+                            var win = window.open('<?php echo base_url()?>'+_data_, '_blank');
+                            if (win) {
+                                win.focus();
+                            } else {
+                                alert('Please allow popups for this website');
+                            }
+                        } else{
+                            alert("Something wrong with your please check it later");
+                        }
+                    }
+                });
+            }
+        });
 
-//     });
-// }
+    });
 
-// function printDiv(imageFileName) {
-//     function getCurrentDateTime() {
-//         const now = new Date();
+    
+//}
 
-//         const hours = now.getHours();
-//         const minutes = now.getMinutes();
-//         const ampm = hours >= 12 ? 'PM' : 'AM';
+function printDiv(imageFileName) {
+    function getCurrentDateTime() {
+        const now = new Date();
 
-//         const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')}${ampm}`;
-//         const formattedDate =
-//             `${now.getDate()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getFullYear()}`;
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
 
-//         const formattedDateTime = `${formattedTime}\n${formattedDate}`;
+        const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')}${ampm}`;
+        const formattedDate =
+            `${now.getDate()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getFullYear()}`;
 
-//         return formattedDateTime;
-//     }
-//     const formattedDateTime = getCurrentDateTime();
+        const formattedDateTime = `${formattedTime}\n${formattedDate}`;
 
-//     var win = window.open('');
+        return formattedDateTime;
+    }
+    const formattedDateTime = getCurrentDateTime();
 
-//     win.document.write(
-//         "<div style='text-align: center;'><span style='float: left;'><img src='https://mausam.imd.gov.in/responsive/img/logo/imd_logo_a.png' alt='IMD' width='50px' height='100px'></span>" +
-//         "<span style='display: inline-block;'><u><h1>WEATHER DECISION SUPPORT SYSTEM</h1></u></span>" +
-//         "<span style='float: right;'><label>" + formattedDateTime + "</label></span></div>"
-//     );
+    var win = window.open('');
 
-//     win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
-//         '" style="page-break-before: always;"/>');
+    win.document.write(
+        "<div style='text-align: center;'><span style='float: left;'><img src='https://mausam.imd.gov.in/responsive/img/logo/imd_logo_a.png' alt='IMD' width='50px' height='100px'></span>" +
+        "<span style='display: inline-block;'><u><h1>WEATHER DECISION SUPPORT SYSTEM</h1></u></span>" +
+        "<span style='float: right;'><label>" + formattedDateTime + "</label></span></div>"
+    );
 
-//     var base_url = "<?php echo base_url(); ?>";
-//     win.document.write('<img src="' + base_url + 'pdf/' + imageFileName + '" style="page-break-before: always;"/>');
+    win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
+        '" style="page-break-before: always;"/>');
 
-//     win.setTimeout('win.document.print();', 200);
+    var base_url = "<?php echo base_url(); ?>";
+    win.document.write('<img src="' + base_url + 'pdf/' + imageFileName + '" style="page-break-before: always;"/>');
 
-//     win.document.onload = function() {
-//         this.print();
-//         this.close();
-//     };
-//     win.document.close();
-// }
+    win.setTimeout('win.document.print();', 200);
+
+    win.document.onload = function() {
+        this.print();
+        this.close();
+    };
+    win.document.close();
+}
 </script>
+<!-- print code end  -->

@@ -29,12 +29,15 @@ class Welcome extends CI_Controller {
             }
             $img_path = $folder_path.'/'.$filename;
             file_put_contents($img_path, $img_data);
-           $this->generate_report($filename);
+            #echo $filename; exit;
+           $output = $this->generate_report($filename);
+           echo $output; exit;
+           
         }
     }
 
-	public function generate_report($data){
-        
+	public function generate_report($image_name){
+        //print_r($data);
 		//echo $data;
         error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         $pdf = new TCPdf_pdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
@@ -52,18 +55,15 @@ class Welcome extends CI_Controller {
         
         // set auto page breaks
         $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-       # pr($data,1);
-        
+        //print_r($data);
+        $data['image'] = $image_name;
         $html = $this->load->view('HomePage/pdfReport',$data,true);
-      # pr($html,1);
+      # print_r($html,1);
          $pdf->writeHTML($html, true, false, true, false, '');
-         $output_path = '/pdf/imd.pdf';
-        
-
-         $pdf->Output(FCPATH.$output_path, 'F');
-         
-		 return $output_path;
-         exit();
+         $_pata = '/pdf/imd'.date('d-m-Y').'_'.date('H-i-s').'.pdf';
+         $pdf->Output(FCPATH.$_pata, 'F');
+		 return $_pata;
+         exit;
     }
 	public function test(){
 		$this->load->view('HomePage/pdfReport');
