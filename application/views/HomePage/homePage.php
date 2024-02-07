@@ -375,8 +375,7 @@
                     </select>
                 </form>
                 <!-- Submit -->
-                <div style="display: flex;
-    justify-content: space-around;">
+                <div style="display: flex;justify-content: space-around;">
                     <button id="submitButton" onclick="obs_SubmitForm()" class="submitBtn">Submit</button>
                     <button class="obsRemCls" id="obsRemBtn" onclick="obs_Rem_()">Remove</button>
                 </div>
@@ -1217,43 +1216,44 @@ var worldGrid = L.geoJson({
 <!-- print code start  -->
 <script>
 //function generate_report_and_save() {
-    $(".printbutton").click(function() {
-        //console.log();
-        $(".printbutton").addClass('running');
-        html2canvas($("#map"), {
-            useCORS: true,
-            allowTaint: false,
-            onrendered: function(canvas) {
-                var image = Canvas2Image.convertToPNG(canvas);
-                var image_data = $(image).attr('src');
-                var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo site_url(); ?>Welcome/saveReportImg",
-                    data: {
-                        base64: image_data,
-                        r_file_name: random_name
-                    },
-                    success: function(_data_,status) {
-                        var _status = status;
-                        if(_status == 'success'){
-                            var win = window.open('<?php echo base_url()?>'+_data_, '_blank');
-                            if (win) {
-                                win.focus();
-                            } else {
-                                alert('Please allow popups for this website');
-                            }
-                        } else{
-                            alert("Something wrong with your please check it later");
+$(".printbutton").click(function() {
+    //console.log();
+    $(".printbutton").addClass('running');
+    html2canvas($("#map"), {
+        useCORS: true,
+        allowTaint: false,
+        onrendered: function(canvas) {
+            var image = Canvas2Image.convertToPNG(canvas);
+            var image_data = $(image).attr('src');
+            var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
+            $.ajax({
+                type: "POST",
+                url: "<?php echo site_url(); ?>Welcome/saveReportImg",
+                data: {
+                    base64: image_data,
+                    r_file_name: random_name
+                },
+                success: function(_data_, status) {
+                    var _status = status;
+                    if (_status == 'success') {
+                        var win = window.open('<?php echo base_url()?>' + _data_,
+                            '_blank');
+                        if (win) {
+                            win.focus();
+                        } else {
+                            alert('Please allow popups for this website');
                         }
+                    } else {
+                        alert("Something wrong with your please check it later");
                     }
-                });
-            }
-        });
-
+                }
+            });
+        }
     });
 
-    
+});
+
+
 //}
 
 // function printDiv(imageFileName) {
