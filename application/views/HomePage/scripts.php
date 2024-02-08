@@ -4236,7 +4236,7 @@ var PrintButton = L.Control.extend({
     onAdd: function() {
         var printbtn = L.DomUtil.create('span',
             'leaflet-bar leaflet-control leaflet-control-custom custom-btn2 printbutton');
-        printbtn.innerHTML = 'Print';
+        printbtn.innerHTML = 'Download PDF';
 
         // Set font size to 15px
         printbtn.style.fontSize = '15px';
