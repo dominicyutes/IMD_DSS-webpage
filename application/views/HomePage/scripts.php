@@ -3831,7 +3831,10 @@ map.on('draw:created', function(e) {
     if (userText !== null) {
         const geoJSONData = layer.toGeoJSON();
 
-        const tooltipContent = `<p>${userText}</p>`;
+        // Set the desired font size in pixels
+        const fontSize = '20px';
+
+        const tooltipContent = `<p style="font-size: ${fontSize};">${userText}</p>`;
 
         layer.bindTooltip(tooltipContent, {
             permanent: true,
@@ -3861,6 +3864,7 @@ map.on('draw:created', function(e) {
         }, 0);
     }
 });
+
 
 
 
@@ -3910,7 +3914,6 @@ var ObservationButton = L.Control.extend({
         var obsbtn = L.DomUtil.create('span',
             'leaflet-bar leaflet-control leaflet-control-custom custom-btn');
         obsbtn.innerHTML = 'Observation';
-
         // Set font size to 15px
         obsbtn.style.fontSize = '15px';
         obsbtn.style.fontFamily = 'Times New Roman';
@@ -4261,92 +4264,6 @@ customButtonsContainer.appendChild(new PrintButton().onAdd());
 // Add the container to the map
 map.getContainer().appendChild(customButtonsContainer);
 // ************
-
-
-
-// var CustomControls = L.Control.extend({
-//     options: {
-//         position: 'topright'
-//     },
-
-//     onAdd: function(map) {
-//         var container = L.DomUtil.create('div');
-
-//         var dropdown = L.DomUtil.create('select', 'custom-dropdown', container);
-//         dropdown.innerHTML = `
-//             <option value="pdf">PDF</option>
-//             <option value="jpg">JPEG</option>
-//             <option value="png">PNG</option>
-//         `;
-
-//         var ExportButton = L.DomUtil.create('button', 'custom-btn', container);
-//         ExportButton.innerHTML = 'Export';
-
-//         var loadingSymbol = document.createElement('div');
-//         loadingSymbol.className = 'loading-symbol';
-//         loadingSymbol.innerHTML = 'Loading...';
-//         loadingSymbol.style.display = 'none';
-
-//         dropdown.style.margin = '0';
-//         ExportButton.style.margin = '0';
-
-//         L.DomEvent.on(ExportButton, 'click', function(e) {
-//             var selectedOption = dropdown.options[dropdown.selectedIndex].value;
-//             loadingSymbol.style.display = 'inline-block';
-
-//             if (selectedOption === 'pdf') {
-//                 console.log('Downloading as PDF');
-//                 // Add logic for downloading as PDF if needed
-//             } else if (selectedOption === 'jpg') {
-//                 var currentDate = new Date().toLocaleString('en-GB', {
-//                     timeZone: 'UTC'
-//                 }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
-//                     /_/g, '');
-
-//                 htmlToImage.toJpeg(document.getElementById('map'), {
-//                         quality: 0.95
-//                     })
-//                     .then(function(dataUrl) {
-//                         var link = document.createElement('a');
-//                         link.download = 'IMD-DSS_' + currentDate + '.jpeg';
-//                         link.href = dataUrl;
-
-//                         link.click();
-//                         loadingSymbol.style.display = 'none';
-//                     })
-//                     .catch(function(error) {
-//                         console.error('Error:', error);
-//                     });
-//             } else if (selectedOption === 'png') {
-//                 var currentDate = new Date().toLocaleString('en-GB', {
-//                     timeZone: 'UTC'
-//                 }).replace(/[^\d]/g, '_').replace(/_/g, '/', 2).replace(/_/g, ':', 2).replace(
-//                     /_/g, '');
-
-//                 htmlToImage.toPng(document.getElementById('map'))
-//                     .then(function(dataUrl) {
-//                         var link = document.createElement('a');
-//                         link.download = 'IMD-DSS_' + currentDate + '.png';
-//                         link.href = dataUrl;
-
-//                         link.click();
-//                         loadingSymbol.style.display = 'none';
-//                     })
-//                     .catch(function(error) {
-//                         console.error('Error:', error);
-//                     });
-//             }
-//         });
-
-//         container.appendChild(loadingSymbol);
-
-//         return container;
-//     }
-// });
-
-
-
-
 
 
 //
