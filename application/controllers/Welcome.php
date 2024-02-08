@@ -5,6 +5,9 @@ class Welcome extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->library('TCPdf_pdf');
+        $this->load->library('session');
+
+        
     }
 	
 	public function index()
@@ -66,4 +69,17 @@ class Welcome extends CI_Controller {
 	public function test(){
 		$this->load->view('HomePage/pdfReport');
 	}
+
+    public function legends(){
+        $content = $this->input->post('content');
+        $this->session->set_userdata('div_content', $content);
+    }
+
+    // public function fetch(){
+    //     echo "<script>alert('1');script>";
+    //     $data =  $this->session->userdata('div_content');
+    //     echo "<script>alert('2');script>";
+    //     echo "<script>console.log('I am here datarand func', $data );</script>";
+    //     die();
+    // }
 }

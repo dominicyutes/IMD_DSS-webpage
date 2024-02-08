@@ -7,8 +7,9 @@
     <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
     <!-- <link rel="shortcut icon" href="img/IMDlogo_Ipart-iris.png" type="image/png"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
 
-    <!-- font-awesome -->
+  <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -600,7 +601,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div id="printlegend">
                     <!-- Exposure -->
                     <div id="ExposureRow" style="display: none; ">
                         <h4 id="EXPOSURE" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
@@ -1303,4 +1304,27 @@ $(".printbutton").click(function() {
 //     win.document.close();
 // }
 </script>
+<script>
+$(document).ready(function() {
+    $(".printbutton").on("click", function() {
+        let printlegenddata = document.getElementById('printlegend').innerHTML;
+        console.log("printasdjkhcvjks", printlegenddata);
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url('welcome/legends'); ?>",
+            data: { content: printlegenddata }, // Changed userId to content
+            success: function(response) {
+                console.log("resp", response);
+            },
+            error: function(error) {
+                console.error('error', error);
+            }
+        });
+    })
+});
+</script>
+<script src="leaflet.browser.print.min.js"></script>
+<script>
+        var browserControl = L.control.browserPrint().addTo(map);
+    </script>
 <!-- print code end  -->
