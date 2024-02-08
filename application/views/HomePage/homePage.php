@@ -7,9 +7,9 @@
     <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
     <!-- <link rel="shortcut icon" href="img/IMDlogo_Ipart-iris.png" type="image/png"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  
 
-  <!-- font-awesome -->
+
+    <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -241,7 +241,7 @@
 
             </div>
             <img src="img/imd_logo.png" alt="IMD logo" height="50"
-                style="margin-left: auto; margin-right: 30px; margin-top: 5px; margin-bottom: 5px;">
+                style="margin-left: auto; margin-right: -31px; margin-top: 5px; margin-bottom: 5px;">
         </div>
 
 
@@ -576,7 +576,22 @@
             </div>
         </div>
 
-
+        <!-- observation Layer name on Map-->
+        <!--  display: none; -->
+        <div id="obsLayerNamShw" class="modal" style="width: 500px; left: 11%; top: 90%;">
+            <div class="modal-content"
+                style="z-index: 999 ; font-family: Arial, sans-serif; background-color: #ffffff; border-radius: 10px;">
+                <!--  align-items: center; -->
+                <div class="playLine-container">
+                    <div class="macroPlayClass">
+                        <span style="color: black;font-size: 17px;font-weight: bold; padding: 0 10px"
+                            id="obsLayTxt"></span>
+                        <span title="Close" class="playBtnClasX" id="close_obsLayerNam"
+                            onClick="obsLayerNameX()">X</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- LEGEND model popup -->
         <div class="model" style="display: none; left: 253px; top: 94px; height:0;">
@@ -1312,7 +1327,9 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             url: "<?php echo base_url('welcome/legends'); ?>",
-            data: { content: printlegenddata }, // Changed userId to content
+            data: {
+                content: printlegenddata
+            }, // Changed userId to content
             success: function(response) {
                 console.log("resp", response);
             },
@@ -1325,6 +1342,6 @@ $(document).ready(function() {
 </script>
 <script src="leaflet.browser.print.min.js"></script>
 <script>
-        var browserControl = L.control.browserPrint().addTo(map);
-    </script>
+var browserControl = L.control.browserPrint().addTo(map);
+</script>
 <!-- print code end  -->

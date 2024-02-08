@@ -2044,15 +2044,10 @@ function obs_SubmitForm() {
             });
             obstesting1 = setInterval(function() {
                 map.addLayer(met00utc_tem);
+                document.getElementById('obsLayTxt').innerHTML = 'METAR 00UTC Temperature_00';
             });
 
-
-            // let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
-            //     "Parameter: " + parameter_Names + "\n" +
-            //     "SubParameter: " + sub_parameter + "\n" +
-            //     "Start Date: " + fromDate + "\n" +
-            //     "Time: " + hour_Select + ":" + minute_Select;
-            // alert(message);
+            document.getElementById("obsLayerNamShw").style.display = "block";
         }
     }
 
@@ -2080,7 +2075,7 @@ function obs_Rem_() {
 
         map.eachLayer(layer => {
             if (layer instanceof L.TileLayer.WMS) {
-                map.removeLayer(layer); // Remove all layers from the map
+                map.removeLayer(layer);
             }
         });
 
@@ -2090,6 +2085,8 @@ function obs_Rem_() {
         document.getElementById('start_date').value = '';
         document.getElementById('hourSelect').value = '';
         document.getElementById('minuteSelect').value = '';
+        document.getElementById('obsLayTxt').innerHTML = '';
+        document.getElementById("obsLayerNamShw").style.display = "none";
     }, 1000);
 
     setTimeout(function() {
@@ -2102,6 +2099,10 @@ function obs_Rem_() {
         document.getElementById('hourSelect').value = '';
         document.getElementById('minuteSelect').value = '';
     }, 1000);
+}
+
+function obsLayerNameX() {
+    document.getElementById("obsLayerNamShw").style.display = "none";
 }
 
 //MACRO toggle
