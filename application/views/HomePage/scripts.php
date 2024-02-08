@@ -3937,7 +3937,7 @@ var ObservationButton = L.Control.extend({
         return obsbtn;
     }
 });
-
+new ObservationButton().addTo(map);
 // map.addControl(new ObservationButton());
 // buttonContainer.appendChild(new ObservationButton().onAdd(map));
 
@@ -3965,7 +3965,7 @@ var MacroButton = L.Control.extend({
         return macbtn;
     }
 });
-
+new MacroButton().addTo(map);
 //freehand
 (function() {
     var drawnItems = new L.FeatureGroup();
@@ -4226,7 +4226,7 @@ var LegendButton = L.Control.extend({
         return button;
     }
 });
-
+new LegendButton().addTo(map);
 
 // Create a custom control button for MacroButton
 var PrintButton = L.Control.extend({
@@ -4254,12 +4254,12 @@ function printFn() {
     //console.log("print working");
 };
 //print ends here
+new PrintButton().addTo(map);
 
-
-customButtonsContainer.appendChild(new ObservationButton().onAdd());
-customButtonsContainer.appendChild(new MacroButton().onAdd());
-customButtonsContainer.appendChild(new LegendButton().onAdd());
-customButtonsContainer.appendChild(new PrintButton().onAdd());
+// customButtonsContainer.appendChild(new MacroButton().onAdd());
+// customButtonsContainer.appendChild(new MacroButton().onAdd());
+// customButtonsContainer.appendChild(new LegendButton().onAdd());
+// customButtonsContainer.appendChild(new PrintButton().onAdd());
 // customButtonsContainer.appendChild(new ToggleControl().onAdd());
 // Add the container to the map
 map.getContainer().appendChild(customButtonsContainer);
