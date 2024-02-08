@@ -319,7 +319,11 @@
             <!-- OBSERVATION -->
 
             <div id="ObservationContainer" class="obsClass hidden col-sm-2" style="position: relative;">
-                <h6 class="obsh4" style="font-family: 'Times New Roman', Times, serif; font-size: 20px">OBSERVATION</h6>
+                <div style="display: flex; justify-content: space-between;">
+                    <h6 class="obsh4" style="font-family: 'Times New Roman', Times, serif; font-size: 20px">OBSERVATION
+                    </h6>
+                    <span title="Close" class="playBtnClasX" onClick="obsCloseX()">X</span>
+                </div>
 
                 <!-- model -->
                 <form id="obsForm">
@@ -572,6 +576,7 @@
         </div>
 
 
+
         <!-- LEGEND model popup -->
         <div class="model" style="display: none; left: 253px; top: 94px; height:0;">
             <div class="model-body" style="position: relative;">
@@ -590,8 +595,8 @@
                         <p id="panelLayer-Lightning-lists"></p>
 
                         <!-- HomePage-Radar -->
-                        <h5 id="panelLayer-radar-Title"></h5>
-                        <p id="panelLayer-radar-lists" style="display: flex; flex-wrap: wrap;"></p>
+                        <!-- <h5 id="panelLayer-radar-Title"></h5>
+                        <p id="panelLayer-radar-lists" style="display: flex; flex-wrap: wrap;"></p> -->
                     </div>
                 </div>
 
@@ -1217,7 +1222,6 @@ var worldGrid = L.geoJson({
 <script>
 //function generate_report_and_save() {
 $(".printbutton").click(function() {
-    //console.log();
     $(".printbutton").addClass('running');
     html2canvas($("#map"), {
         useCORS: true,
@@ -1252,6 +1256,8 @@ $(".printbutton").click(function() {
     });
 
 });
+
+
 
 
 //}

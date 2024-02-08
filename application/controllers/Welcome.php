@@ -4,10 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends CI_Controller {
     function __construct() {
         parent::__construct();
-        //Hide error
-        //error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         $this->load->library('TCPdf_pdf');
-        
     }
 	
 	public function index()
@@ -16,6 +13,7 @@ class Welcome extends CI_Controller {
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 		$this->load->view('HomePage/homePage');
 	}
+    
 	public function saveReportImg(){
         if(!empty($_POST)){
             $baseFromJavascript = $_POST['base64'];
