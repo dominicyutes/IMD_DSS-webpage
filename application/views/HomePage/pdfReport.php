@@ -13,21 +13,22 @@
         <strong>Government of India</strong><br>
         <strong>Earth System Science Organization</strong><br>
         <strong>Ministry of Earth Sciences</strong><br>
-        <strong>India Meteorological Department</strong><br>
-        <strong>WEATHER DECISION SUPPORT SYSTEM (DSS)</strong><br>
-        <strong>Lightining/Last 00-05 min</strong>
+        <strong>India Meteorological Department</strong><br><br>
+        <strong style="color:darkblue; font-size: 18px;">WEATHER DECISION SUPPORT SYSTEM (DSS)</strong><br>
+        <strong style="color:red; font-size: 12px;">Lightning/Last 00-05 min <span style="color:green; font-size: 12px;">yy/mm/dd hh/mm</span></strong>
+
     </div>
 
     <?php
-date_default_timezone_set('Asia/Kolkata');
+// date_default_timezone_set('Asia/Kolkata');
 
-$date = date('d M Y');
-$time = date('h:i A');
-$year = date('Y');
+// $date = date('d M Y');
+// $time = date('h:i A');
+// $year = date('Y');
 
-echo "<div class='istTime col-2' style='margin-top: -10px;font-size: 10px;'> <!-- Adjust the margin-top value as needed -->
-        <p>Date: $date | Time: $time | Year: $year</p>
-      </div>";
+// echo "<div class='istTime col-2' style='margin-top: -10px;font-size: 10px;'> <!-- Adjust the margin-top value as needed -->
+//         <p>Date: $date | Time: $time | Year: $year</p>
+//       </div>";
 ?>
 
 
