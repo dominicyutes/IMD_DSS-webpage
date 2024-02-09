@@ -607,8 +607,8 @@
                 <div class="row" id="Light_RadarRow" style="display: none;">
                     <div>
                         <!-- HomePage-Lightning -->
-                        <!-- <h5 id="panelLayer-Lightning-Title"></h5>
-                        <p id="panelLayer-Lightning-lists"></p> -->
+                        <h5 id="panelLayer-Lightning-Title"></h5>
+                        <p id="panelLayer-Lightning-lists"></p>
 
                         <!-- HomePage-Radar -->
                         <!-- <h5 id="panelLayer-radar-Title"></h5>
@@ -616,12 +616,11 @@
                     </div>
                 </div>
 
-                <!-- id="printlegend" is for PRINT -->
                 <div id="printlegend">
-
                     <!-- Exposure -->
                     <div id="ExposureRow" style="display: none; ">
                         <h4 id="EXPOSURE" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
+                            EXPOSURE
                         </h4>
                         <h5 id="exposure-layers-Title" style="color: #000000;"></h5>
                         <p id="exposure-layers-lists" style="display: flex; flex-wrap: wrap;">
@@ -1324,7 +1323,7 @@ $(".printbutton").click(function() {
 $(document).ready(function() {
     $(".printbutton").on("click", function() {
         let printlegenddata = document.getElementById('printlegend').innerHTML;
-        console.log("printasdjkhcvjks", printlegenddata);
+        // console.log("printasdjkhcvjks", printlegenddata);
         $.ajax({
             type: "POST",
             url: "<?php echo base_url('welcome/legends'); ?>",
