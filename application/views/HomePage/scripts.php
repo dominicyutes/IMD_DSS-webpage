@@ -9979,7 +9979,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         if (_class_name == 'Exposure Layers Oil Refineries') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_add = X169;
+            var _layer_to_remove_add = exp_oil;
             remove_layer_or_add(_context_layer, _layer_to_remove_add, uncheckLayer);
         }
 
@@ -20722,7 +20722,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         }
         if (uncheckLayer == 'Exposure Layers Oil Refineries') {
             var _context_layer = _this.context._layer;
-            var _layer_to_remove_or_add = X169;
+            var _layer_to_remove_or_add = exp_oil;
             remove_layer_or_add(_context_layer, _layer_to_remove_or_add, uncheckLayer);
         }
         if (uncheckLayer == 'Exposure Layers Power Station') {
