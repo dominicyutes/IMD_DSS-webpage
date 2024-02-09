@@ -2044,15 +2044,10 @@ function obs_SubmitForm() {
             });
             obstesting1 = setInterval(function() {
                 map.addLayer(met00utc_tem);
+                document.getElementById('obsLayTxt').innerHTML = 'METAR 00UTC Temperature_00';
             });
 
-
-            // let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
-            //     "Parameter: " + parameter_Names + "\n" +
-            //     "SubParameter: " + sub_parameter + "\n" +
-            //     "Start Date: " + fromDate + "\n" +
-            //     "Time: " + hour_Select + ":" + minute_Select;
-            // alert(message);
+            document.getElementById("obsLayerNamShw").style.display = "block";
         }
     }
 
@@ -2080,7 +2075,7 @@ function obs_Rem_() {
 
         map.eachLayer(layer => {
             if (layer instanceof L.TileLayer.WMS) {
-                map.removeLayer(layer); // Remove all layers from the map
+                map.removeLayer(layer);
             }
         });
 
@@ -2090,6 +2085,8 @@ function obs_Rem_() {
         document.getElementById('start_date').value = '';
         document.getElementById('hourSelect').value = '';
         document.getElementById('minuteSelect').value = '';
+        document.getElementById('obsLayTxt').innerHTML = '';
+        document.getElementById("obsLayerNamShw").style.display = "none";
     }, 1000);
 
     setTimeout(function() {
@@ -2102,6 +2099,10 @@ function obs_Rem_() {
         document.getElementById('hourSelect').value = '';
         document.getElementById('minuteSelect').value = '';
     }, 1000);
+}
+
+function obsLayerNameX() {
+    document.getElementById("obsLayerNamShw").style.display = "none";
 }
 
 //MACRO toggle
@@ -2147,6 +2148,16 @@ function toggleObservation() {
     }
 }
 //
+
+// 
+function obsCloseX() {
+    let map = document.getElementById('map');
+    map.style.width = '100%';
+
+    toggleObservation();
+    obs_Rem_();
+}
+
 
 // MACRO
 // MACRO create popup
@@ -2207,7 +2218,7 @@ function macShowSubParameterNames(value) {
     macGetSubParameterNames.innerHTML = macPushSubParameterNames;
 }
 
-//
+//Mac_ADD_Save_Disable
 function handleInputChange() {
     const macroInputValue = document.getElementById("macroNames").value.trim();
     const secondInputValue = document.getElementById("mac_modelNames").value.trim();
@@ -2242,7 +2253,7 @@ document.getElementById("mac_modelNames").addEventListener("input", handleInputC
 
 handleInputChange();
 
-//
+//Reason for MacGrp_Del
 function MacGrpDelW() {
     let empName = document.getElementById("userName").value.trim();
     let delReaMac = document.getElementById("deleteReason").value.trim();
@@ -2378,6 +2389,7 @@ function macSubmitForm() {
         editAddMacro = addedTempMacro;
     } else {
         savedMacro.push(addedTempMacro);
+        console.log(savedMacro, "savedMacro___________savedMacro");
     }
     showSavedMacroList();
     document.getElementById('macroNames').value = '';
@@ -2434,79 +2446,7 @@ function showSavedMacroList() {
         showAllCreatedMacro.classList.remove('overflow-y-scroll');
     }
 }
-
-//
-// let macro_SubParameter;
-// let currentMacroIndex = 0;
-
-// let playerTextElement = document.getElementById("playerText");
-
-// // playMacro
-// async function playMacro(macroGroupName) {
-//     let macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
-
-//     if (macro) {
-//         for (let macroDetails of macro.listOfMacro) {
-//             macro_SubParameter = macroDetails.mac_sub_parameter;
-//             document.getElementById("macroDetails").style.display = "block";
-
-//             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-//                 if (macro_SubParameter === "Last 00-05 min") {
-//                     map.addLayer(mywmsIITM);
-//                     playerText.innerHTML = 'Last 00-05 min';
-//                     // 
-//                     console.log("1-Last 00-05 min");
-//                 }
-//             }
-
-//             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-//                 if (macro_SubParameter === "00UTC") {
-//                     map.addLayer(ship_00utc);
-//                     playerText.innerHTML = 'Ship and Buoy 00UTC';
-//                     // 
-//                     console.log("2-00UTC");
-//                 }
-//             }
-
-//             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-//                 if (macro_SubParameter === "Radar Reflectivity") {
-//                     map.addLayer(rad_ref);
-//                     playerText.innerHTML = 'Radar Reflectivity';
-//                     // 
-//                     console.log("3-rad_ref");
-//                 }
-//             }
-
-//             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-//                 if (macro_SubParameter === "Oil Refineries") {
-//                     map.addLayer(exp_oil);
-//                     playerText.innerHTML = 'Exposure Oil Refineries';
-//                     // 
-//                     console.log("4-exp_oil");
-//                 }
-//             }
-
-//             if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-//                 if (macro_SubParameter === "RI GFS DAY1") {
-//                     map.addLayer(med_gfs1);
-//                     playerText.innerHTML = 'Rainfall Intensity Day1 - RI GFS DAY1';
-//                     // 
-//                     console.log("5-RI GFS DAY1");
-//                 }
-//             }
-
-//             document.getElementById("macroDetails").style.display = "none";
-//         }
-//     }
-
-// }
-
-
-
-
-
-
-
+// 
 
 //
 //bg color List
@@ -3299,7 +3239,9 @@ console.log(endDate);
 
 //MAP Starts Here
 var map = L.map('map', {
-    renderer: L.canvas({padding:0}),
+    renderer: L.canvas({
+        padding: 0
+    }),
     zoom: 5,
     timeDimension: true,
     timeDimensionControl: false,
@@ -4036,7 +3978,29 @@ new ObservationButton().addTo(map);
 
 
 
+// Create a custom control button for MacroButton
+var MacroButton = L.Control.extend({
+    options: {
+        position: 'bottomleft'
+    },
+    onAdd: function() {
+        var macbtn = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn2');
+        macbtn.innerHTML = 'Macro';
 
+        // Set font size to 15px
+        macbtn.style.fontSize = '15px';
+        macbtn.style.fontFamily = 'Times New Roman';
+
+        // click event
+        L.DomEvent.on(macbtn, 'click', function() {
+            macToggleObservation();
+        });
+
+        return macbtn;
+    }
+});
+new MacroButton().addTo(map);
 //freehand
 (function() {
     var drawnItems = new L.FeatureGroup();
@@ -4135,14 +4099,204 @@ new ObservationButton().addTo(map);
     });
 })();
 
-
-
+// *****************************************************************
+// [mywmsIITM,mywmsNcum,mywmsNowcast,exp_oil,ship_00utc,med_gfs1,syn00utc_tem]
 
 
 //Leaflet-sideBySide
+// let sideBySideControl = null;
+// let sideBySideVisible = false;
+// let activeLayers = 0;
+
+// function createSideBySide(layer1, layer2) {
+//     const isActiveLayer1 = map.hasLayer(layer1);
+//     const isActiveLayer2 = map.hasLayer(layer2);
+
+//     if (isActiveLayer1 && isActiveLayer2) {
+//         sideBySideVisible = true;
+//         sideBySideControl = L.control.sideBySide(layer1, layer2).addTo(map);
+//     } else {
+//         console.log("nothing");
+//     }
+// }
+
+// function side1() {
+//     createSideBySide(mywmsIITM, mywmsNcum);
+// }
+
+// function side2() {
+//     createSideBySide(mywmsIITM, mywmsNowcast);
+// }
+
+// function side3() {
+//     createSideBySide(mywmsNcum, mywmsNowcast);
+// }
+// // ****
+// function side4() {
+//     createSideBySide(mywmsIITM, exp_oil);
+// }
+
+// function side5() {
+//     createSideBySide(mywmsNcum, exp_oil);
+// }
+
+// function side6() {
+//     createSideBySide(mywmsNowcast, exp_oil);
+// }
+// // ****
+// function side7() {
+//     createSideBySide(mywmsIITM, ship_00utc);
+// }
+
+// function side8() {
+//     createSideBySide(mywmsNcum, ship_00utc);
+// }
+
+// function side9() {
+//     createSideBySide(mywmsNowcast, ship_00utc);
+// }
+
+// function side10() {
+//     createSideBySide(ship_00utc, exp_oil);
+// }
+// // ****
+// function side11() {
+//     createSideBySide(mywmsIITM, med_gfs1);
+// }
+
+// function side12() {
+//     createSideBySide(mywmsNcum, med_gfs1);
+// }
+
+// function side13() {
+//     createSideBySide(mywmsNowcast, med_gfs1);
+// }
+
+// function side14() {
+//     createSideBySide(exp_oil, med_gfs1);
+// }
+
+// function side15() {
+//     createSideBySide(ship_00utc, med_gfs1);
+// }
+// // *****
+// function side16() {
+//     createSideBySide(mywmsIITM, syn00utc_tem);
+// }
+
+// function side17() {
+//     createSideBySide(mywmsNcum, syn00utc_tem);
+// }
+
+// function side18() {
+//     createSideBySide(mywmsNowcast, syn00utc_tem);
+// }
+
+// function side19() {
+//     createSideBySide(exp_oil, syn00utc_tem);
+// }
+
+// function side20() {
+//     createSideBySide(ship_00utc, syn00utc_tem);
+// }
+
+// function side21() {
+//     createSideBySide(med_gfs1, syn00utc_tem);
+// }
+// // ****
+
+
+
+// function toggleSideBySide() {
+//     if (sideBySideVisible) {
+//         if (sideBySideControl !== null) {
+//             map.removeControl(sideBySideControl);
+//             sideBySideControl = null;
+//         }
+//         sideBySideVisible = false;
+//     } else {
+//         side1();
+//         side2();
+//         side3();
+//         side4();
+//         side5();
+//         side6();
+//         side7();
+//         side8();
+//         side9();
+//         side10();
+//         side11();
+//         side12();
+//         side13();
+//         side14();
+//         side15();
+//         side16();
+//         side17();
+//         side18();
+//         side19();
+//         side20();
+//     }
+//     updateActiveLayers();
+// }
+
+
+
+// sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast, syn00utc_tem, met00utc_tem,
+//     med_gfs1).addTo(map);
+
+// ***********************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
 let sideBySideControl = null;
 let sideBySideVisible = false;
 let activeLayers = 0;
+
+const layersArray = [
+    [mywmsIITM, mywmsNcum],
+    [mywmsIITM, mywmsNowcast],
+    [mywmsNcum, mywmsNowcast],
+    [mywmsIITM, exp_oil],
+    [mywmsNcum, exp_oil],
+    [mywmsNowcast, exp_oil],
+    [mywmsIITM, ship_00utc],
+    [mywmsNcum, ship_00utc],
+    [mywmsNowcast, ship_00utc],
+    [ship_00utc, exp_oil],
+    [mywmsIITM, med_gfs1],
+    [mywmsNcum, med_gfs1],
+    [mywmsNowcast, med_gfs1],
+    [exp_oil, med_gfs1],
+    [ship_00utc, med_gfs1],
+    [mywmsIITM, syn00utc_tem],
+    [mywmsNcum, syn00utc_tem],
+    [mywmsNowcast, syn00utc_tem],
+    [exp_oil, syn00utc_tem],
+    [ship_00utc, syn00utc_tem],
+    [med_gfs1, syn00utc_tem],
+];
+
+function createSideBySide(layer1, layer2) {
+    const isActiveLayer1 = map.hasLayer(layer1);
+    const isActiveLayer2 = map.hasLayer(layer2);
+
+    if (isActiveLayer1 && isActiveLayer2) {
+        sideBySideVisible = true;
+        sideBySideControl = L.control.sideBySide(layer1, layer2).addTo(map);
+    } else {
+        console.log("nothing");
+    }
+}
 
 function toggleSideBySide() {
     if (sideBySideVisible) {
@@ -4152,12 +4306,13 @@ function toggleSideBySide() {
         }
         sideBySideVisible = false;
     } else {
-        sideBySideControl = L.control.sideBySide(mywmsIITM, mywmsNcum, mywmsNowcast, syn00utc_tem, met00utc_tem,
-            med_gfs1).addTo(map);
-        sideBySideVisible = true;
+        for (const layers of layersArray) {
+            createSideBySide(...layers);
+        }
     }
     updateActiveLayers();
 }
+
 
 function updateActiveLayers() {
     activeLayers = 0;
@@ -7113,7 +7268,7 @@ var overLayers6 = [{
         layers: [{
                 active: false,
                 name: "TIR1",
-                layer: X34
+                layer: X157
             },
             {
                 active: false,
@@ -7513,7 +7668,7 @@ var overLayers10 = [{
     layers: [{
             active: false,
             name: "District Boundaries",
-            layer: X167
+            layer: X144
         },
         {
             active: false,
@@ -7836,8 +7991,6 @@ let synopButtonState = false;
 
 function clickHandler_synop(event) {
     if (synopButtonState) {
-        // map.addControl(layerControl);
-        // map.addControl(panelLayers);
         map.removeControl(panelLayers2);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
@@ -7851,8 +8004,6 @@ function clickHandler_synop(event) {
         console.log(synopButtonState, "synopButtonState..1");
     } else {
         map.addControl(panelLayers2);
-        // map.removeControl(layerControl);
-        // map.removeControl(panelLayers);
         map.removeControl(panelLayers3);
         map.removeControl(panelLayers4);
         map.removeControl(panelLayers5);
@@ -7872,6 +8023,13 @@ function clickHandler_synop(event) {
         soundingButtonState = false;
         exposureButtonState = false;
         ship_and_buoyButtonState = false;
+
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
     }
     synopButtonState = !synopButtonState;
 }
@@ -7915,6 +8073,13 @@ function clickHandler_metar(event) {
         soundingButtonState = false;
         exposureButtonState = false;
         ship_and_buoyButtonState = false;
+        // 
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
     }
     metarButtonState = !metarButtonState;
 }
@@ -7958,6 +8123,13 @@ function clickHandler_mesolscale(event) {
         soundingButtonState = false;
         exposureButtonState = false;
         ship_and_buoyButtonState = false;
+        // 
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
     }
     mesolscaleButtonState = !mesolscaleButtonState;
 }
@@ -8001,6 +8173,13 @@ function clickHandler_medium(event) {
         soundingButtonState = false;
         exposureButtonState = false;
         ship_and_buoyButtonState = false;
+        // 
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
     }
     medium_rangeButtonState = !medium_rangeButtonState;
 }
@@ -8044,6 +8223,13 @@ function clickHandler_satellite(event) {
         soundingButtonState = false;
         exposureButtonState = false;
         ship_and_buoyButtonState = false;
+        // 
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
     }
     satelliteButtonState = !satelliteButtonState;
 }
@@ -8087,6 +8273,13 @@ function clickHandler_radar(event) {
         soundingButtonState = false;
         exposureButtonState = false;
         ship_and_buoyButtonState = false;
+        // 
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
     }
     radarButtonState = !radarButtonState;
 }
@@ -8130,6 +8323,13 @@ function clickHandler_lightning(event) {
         soundingButtonState = false;
         exposureButtonState = false;
         ship_and_buoyButtonState = false;
+        // 
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
     }
     lightningButtonState = !lightningButtonState;
 }
@@ -8173,6 +8373,13 @@ function clickHandler_sounding(event) {
         lightningButtonState = false;
         exposureButtonState = false;
         ship_and_buoyButtonState = false;
+        // 
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
     }
     soundingButtonState = !soundingButtonState;
 }
@@ -8216,6 +8423,13 @@ function clickHandler_expo(event) {
         lightningButtonState = false;
         soundingButtonState = false;
         ship_and_buoyButtonState = false;
+        // 
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
     }
     exposureButtonState = !exposureButtonState;
 }
@@ -8259,6 +8473,13 @@ function clickHandler_ship(event) {
         lightningButtonState = false;
         soundingButtonState = false;
         exposureButtonState = false;
+        // 
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
     }
     ship_and_buoyButtonState = !ship_and_buoyButtonState;
 }
@@ -9727,6 +9948,22 @@ function remLayOrAdclicked_10W_Day5(_context_layer, _layer_to_remove_add, unchec
     }
 }
 
+var getRadarTit = [];
+
+// checking for print
+// document.body.addEventListener('change', function(e) {
+//     if (e.target.type === 'checkbox') {
+//         if (panelLayerRADARPRODUCTS_Title.innerHTML !== '') {
+//             getRadarTit.push(panelLayerRADARPRODUCTS_Title.innerHTML);
+//             console.log(getRadarTit, "getRadarTit");
+//             // 
+//             console.log("nothing here");
+//         } else {
+//             console.log("something here");
+//         }
+//     }
+// });
+
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
@@ -9734,20 +9971,9 @@ $("body").on("change", "input[type=checkbox]", function() {
     var isChecked = _this.prop('checked');
     var layer_group_name = _this.context._layer ? _this.context._layer.group.name : '';
     console.log(layer_group_name, "layer_group_name");
-
     var layer_name;
-    //
-    // console.log(isChecked, "isChecked,isChecked");
+    // 
     if (isChecked) { // True
-        // allOverLayers.forEach(group => {
-        //     group.layers.forEach(layer => {
-        //         // layer.layer.on('add remove', function() {
-        //         layer.active = !layer.active;
-        //         updateActiveLayers();
-        //         // console.log(layer, "ppppppp")
-        //         // });
-        //     });
-        // });
         console.log("Checked");
 
         layer_name = _this.context._layer ? _this.context._layer.name : _this.context.className;
@@ -15125,7 +15351,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         // RADAR--
         if (_this.context._layer?.group.name == "Radar Products") {
             if (panelLayerRADARPRODUCTS_Title.innerHTML == '') {
-                // RADARPRODUCTS.innerHTML = "RADAR"
+                RADARPRODUCTS.innerHTML = "RADAR"
                 panelLayerRADARPRODUCTS_Title.innerHTML = _this.context._layer?.group.name + ':'
                 RADAR_Row.style.display = 'block';
             }
@@ -20279,7 +20505,8 @@ $("body").on("change", "input[type=checkbox]", function() {
         //bgClickedMSLPDay1Lists[]
         if (_this.context._layer?.group.name == "MSLP Day1") {
             if (layer_name == 'MSLP GFS Day1' || layer_name == 'MSLP NCUM Day1' || layer_name ==
-                'MSLP NEPS Day1' || layer_name == 'MSLP WRF Day1' || layer_name == 'MSLP GEFS Day1' || layer_name ==
+                'MSLP NEPS Day1' || layer_name == 'MSLP WRF Day1' || layer_name == 'MSLP GEFS Day1' ||
+                layer_name ==
                 'MSLP ECMWF Day1') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMSLPDay1Lists.indexOf(itemToRemove);
@@ -20294,7 +20521,8 @@ $("body").on("change", "input[type=checkbox]", function() {
         //bgClickedMSLPDay2Lists[]
         if (_this.context._layer?.group.name == "MSLP Day2") {
             if (layer_name == 'MSLP GFS Day2' || layer_name == 'MSLP NCUM Day2' || layer_name ==
-                'MSLP NEPS Day2' || layer_name == 'MSLP WRF Day2' || layer_name == 'MSLP GEFS Day2' || layer_name ==
+                'MSLP NEPS Day2' || layer_name == 'MSLP WRF Day2' || layer_name == 'MSLP GEFS Day2' ||
+                layer_name ==
                 'MSLP ECMWF Day2') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMSLPDay2Lists.indexOf(itemToRemove);
@@ -20309,7 +20537,8 @@ $("body").on("change", "input[type=checkbox]", function() {
         //bgClickedMSLPDay3Lists[]
         if (_this.context._layer?.group.name == "MSLP Day3") {
             if (layer_name == 'MSLP GFS Day3' || layer_name == 'MSLP NCUM Day3' || layer_name ==
-                'MSLP NEPS Day3' || layer_name == 'MSLP WRF Day3' || layer_name == 'MSLP GEFS Day3' || layer_name ==
+                'MSLP NEPS Day3' || layer_name == 'MSLP WRF Day3' || layer_name == 'MSLP GEFS Day3' ||
+                layer_name ==
                 'MSLP ECMWF Day3') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMSLPDay3Lists.indexOf(itemToRemove);
@@ -20324,7 +20553,8 @@ $("body").on("change", "input[type=checkbox]", function() {
         //bgClickedMSLPDay4Lists[]
         if (_this.context._layer?.group.name == "MSLP Day4") {
             if (layer_name == 'MSLP GFS Day4' || layer_name == 'MSLP NCUM Day4' || layer_name ==
-                'MSLP NEPS Day4' || layer_name == 'MSLP WRF Day4' || layer_name == 'MSLP GEFS Day4' || layer_name ==
+                'MSLP NEPS Day4' || layer_name == 'MSLP WRF Day4' || layer_name == 'MSLP GEFS Day4' ||
+                layer_name ==
                 'MSLP ECMWF Day4') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMSLPDay4Lists.indexOf(itemToRemove);
@@ -20339,7 +20569,8 @@ $("body").on("change", "input[type=checkbox]", function() {
         //bgClickedMSLPDay5Lists[]
         if (_this.context._layer?.group.name == "MSLP Day5") {
             if (layer_name == 'MSLP FS Day5' || layer_name == 'MSLP NCUM Day5' || layer_name ==
-                'MSLP NEPS Day5' || layer_name == 'MSLP WRF Day5' || layer_name == 'MSLP GEFS Day5' || layer_name ==
+                'MSLP NEPS Day5' || layer_name == 'MSLP WRF Day5' || layer_name == 'MSLP GEFS Day5' ||
+                layer_name ==
                 'MSLP ECMWF Day5') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClickedMSLPDay5Lists.indexOf(itemToRemove);
@@ -20354,7 +20585,8 @@ $("body").on("change", "input[type=checkbox]", function() {
         //bgClicked10mWINDDay1Lists[]
         if (_this.context._layer?.group.name == "10m Wind Day1") {
             if (layer_name == '10m WIND GFS Day1' || layer_name == '10m WIND NCUM Day1' || layer_name ==
-                '10m WIND NEPS Day1' || layer_name == '10m WIND WRF Day1' || layer_name == '10m WIND GEFS Day1' || layer_name ==
+                '10m WIND NEPS Day1' || layer_name == '10m WIND WRF Day1' || layer_name ==
+                '10m WIND GEFS Day1' || layer_name ==
                 '10m WIND ECMWF Day1') {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClicked10mWINDDay1Lists.indexOf(itemToRemove);
@@ -20369,7 +20601,8 @@ $("body").on("change", "input[type=checkbox]", function() {
         //bgClicked10mWINDDay2Lists[]
         if (_this.context._layer?.group.name == "10m WIND Day2") {
             if (layer_name == '10m WIND GFS Day2' || layer_name == '10m WIND NCUM Day2' || layer_name ==
-                '10m WIND NEPS Day2' || layer_name == '10m WIND WRF Day2' || layer_name == '10m WIND GEFS Day2') {
+                '10m WIND NEPS Day2' || layer_name == '10m WIND WRF Day2' || layer_name == '10m WIND GEFS Day2'
+            ) {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClicked10mWINDDay2Lists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -20383,7 +20616,8 @@ $("body").on("change", "input[type=checkbox]", function() {
         //bgClicked10mWINDDay3Lists[]
         if (_this.context._layer?.group.name == "10m WIND Day3") {
             if (layer_name == '10m WIND GFS Day3' || layer_name == '10m WIND NCUM Day3' || layer_name ==
-                '10m WIND NEPS Day3' || layer_name == '10m WIND WRF Day3' || layer_name == '10m WIND GEFS Day3') {
+                '10m WIND NEPS Day3' || layer_name == '10m WIND WRF Day3' || layer_name == '10m WIND GEFS Day3'
+            ) {
                 var itemToRemove = layer_group_name + " " + layer_name;
                 var index = bgClicked10mWINDDay3Lists.indexOf(itemToRemove);
                 if (index !== -1) {
@@ -22219,7 +22453,7 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         if (panelLayerRADARPRODUCTS_lists.innerHTML == '') {
             panelLayerRADARPRODUCTS_Title.innerHTML = '';
-            // RADARPRODUCTS.innerHTML = '';
+            RADARPRODUCTS.innerHTML = '';
             RADARImage.innerHTML = '';
         }
 
@@ -26620,129 +26854,6 @@ $("body").on("change", "input[type=checkbox]", function() {
     }
 
     updateBackgroundColor();
-
-    // //exposure bgClickedExposureLists[]
-    // if (bgClickedExposureLists.length > 0) {
-    //     $("#exposure").css("background-color", 'rgb(180, 194, 224)');
-    // } else {
-    //     $("#exposure").css("background-color", '#eff4ff');
-    // }
-
-    // //metar bgClickedMetarLists
-    // if (
-    //     bgClickedMetarTempLists.length === 0 &&
-    //     bgClickedMetarDewPointLists.length === 0 &&
-    //     bgClickedMetarVisibilityLists.length === 0 &&
-    //     bgClickedMetarWindSpeedAndDirectionLists.length === 0
-    // ) {
-    //     $("#metar").css("background-color", '#eff4ff');
-    // } else {
-    //     $("#metar").css("background-color", 'rgb(180, 194, 224)');
-    // }
-
-    // //synop bgClickedSynopLists
-    // if (
-    //     bgClickedSynopTempLists.length === 0 &&
-    //     bgClickedSynopMeanSeaLevelLists.length === 0 &&
-    //     bgClickedSynopCloudCoverLists.length === 0 &&
-    //     bgClickedSynopGeopotentialHeightLists.length === 0 &&
-    //     bgClickedSynopRelativeHumidityLists.length === 0 &&
-    //     bgClickedSynopVisibilityLists.length === 0 &&
-    //     bgClickedSynopWindSpeedAndDirectionLists.length === 0 &&
-    //     bgClickedSynop3hRainfallLists.length === 0
-    // ) {
-    //     $("#synop").css("background-color", '#eff4ff');
-    // } else {
-    //     $("#synop").css("background-color", 'rgb(180, 194, 224)');
-    // }
-
-    // //SOUNDING bgClickedSoundingLists
-    // if (
-    //     bgClickedSOUNDING00UTCWINDLists.length === 0 &&
-    //     bgClickedSOUNDING12UTCWINDLists.length === 0 &&
-    //     bgClickedSOUNDING00UTCTEMPLists.length === 0 &&
-    //     bgClickedSOUNDING12UTCTEMPLists.length === 0 &&
-    //     bgClickedSOUNDING00UTCDEWPOINTLists.length === 0 &&
-    //     bgClickedSOUNDING12UTCDEWPOINTLists.length === 0
-    // ) {
-    //     $("#sounding").css("background-color", '#eff4ff');
-    // } else {
-    //     $("#sounding").css("background-color", 'rgb(180, 194, 224)');
-    // }
-
-    // //SHIPANDBUOY bgClickedSHIPANDBUOYLists[]
-    // if (bgClickedSHIPANDBUOYLists.length > 0) {
-    //     $("#ship_and_buoy").css("background-color", 'rgb(180, 194, 224)');
-    // } else {
-    //     $("#ship_and_buoy").css("background-color", '#eff4ff');
-    // }
-
-    // //radar bgClickedRadarLists
-    // if (bgClickedRadarLists.length > 0) {
-    //     $("#radar").css("background-color", 'rgb(180, 194, 224)');
-    // } else {
-    //     $("#radar").css("background-color", '#eff4ff');
-    // }
-
-    // //SATELLITE bgClickedSATELLITELists
-    // if (bgClickedSATELLITELists.length > 0) {
-    //     $("#satellite").css("background-color", 'rgb(180, 194, 224)');
-    // } else {
-    //     $("#satellite").css("background-color", '#eff4ff');
-    // }
-
-    // let bgchecknum = bgClickedLightningLists.length;
-    // // lightning bgClickedLightningLists
-    // if (bgClickedLightningLists.length > 0) {
-    //     $("#lightning").css("background-color", 'rgb(180, 194, 224)');
-    //     console.log(bgchecknum, "bgchecknum-11");
-    // } else {
-    //     $("#lightning").css("background-color", '#eff4ff');
-    //     console.log(bgchecknum, "bgchecknum-22");
-    // }
-
-    // //mesolscale bgClickedSynopLists
-    // if (
-    //     bgClickedWRFReflectivityLists.length === 0 &&
-    //     bgClickedWRFlightningProductLists.length === 0 &&
-    //     bgClickedWRFAccumlatedRainfallLists.length === 0 &&
-    //     bgClickedlightningPotentialindexLists.length === 0 &&
-    //     bgClickedNCUMRlightningProductLists.length === 0 &&
-    //     bgClickedNCUMRWindGustLists.length === 0 &&
-    //     bgClickedNCUMRRainfallLists.length === 0 &&
-    //     bgClickedHRRR_SPHourlyDBZLists.length === 0 &&
-    //     bgClickedHRRR_NEHourlyDBZLists.length === 0 &&
-    //     bgClickedHRRR_NWHourlyDBZLists.length === 0 &&
-    //     bgClickedEWRFMaxZLists.length === 0 &&
-    //     bgClickedEWRFLightningLists.length === 0
-    // ) {
-    //     $("#mesolscale").css("background-color", '#eff4ff');
-    // } else {
-    //     $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
-    // }
-
-    // //medium_range 
-    // if (
-    //     bgClickedRainfallIntensityDay1Lists.length === 0 &&
-    //     bgClickedRainfallIntensityDay2Lists.length === 0 &&
-    //     bgClickedRainfallIntensityDay3Lists.length === 0 &&
-    //     bgClickedRainfallIntensityDay4Lists.length === 0 &&
-    //     bgClickedRainfallIntensityDay5Lists.length === 0 &&
-    //     bgClickedMSLPDay1Lists.length === 0 &&
-    //     bgClickedMSLPDay2Lists.length === 0 &&
-    //     bgClickedMSLPDay3Lists.length === 0 &&
-    //     bgClickedMSLPDay4Lists.length === 0 &&
-    //     bgClickedMSLPDay5Lists.length === 0 &&
-    //     bgClicked10mWINDDay1Lists.length === 0 &&
-    //     bgClicked10mWINDDay2Lists.length === 0 &&
-    //     bgClicked10mWINDDay3Lists.length === 0 &&
-    //     bgClicked10mWINDDay4Lists.length === 0 &&
-    //     bgClicked10mWINDDay5Lists.length === 0
-    // ) {
-    //     $("#medium_range").css("background-color", '#eff4ff');
-    // } else {
-    //     $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
-    // }
 
 });
 //
