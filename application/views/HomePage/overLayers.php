@@ -1,57 +1,92 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leaflet TimeDimension with METAR Data</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-timedimension/dist/leaflet.timedimension.control.min.css" />
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet-timedimension/dist/leaflet.timedimension.min.js"></script>
-</head>
-<body>
-
-<div id="map" style="height: 500px;"></div>
-
 <script>
-  var map = L.map('map').setView([10.92, 79.72], 6);
+let macro_SubParameter;
+let resolveFunction;
+let pauseFlag = false;
+let countdownInterval;
 
-  // Add a base map layer (you can change this to any other tile provider)
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(map);
+let Light_l05_;
 
-  // Create a TimeDimension layer
-  var timeDimensionLayer = L.timeDimension.layer.wms({
-    updateTimeDimension: true,
-    requestTimeFromCapabilities: true,
-    updateTimeDimensionMode: 'replace',
-    updateTimeDimensionMode: 'replace',
-    wmsVersion: '1.3.0',
-    getCapabilitiesUrl: 'METAR_CAPABILITIES_URL', // Replace with the URL of your METAR WMS server capabilities
-    getCapabilitiesParams: { 'SERVICE': 'WMS', 'VERSION': '1.3.0', 'REQUEST': 'GetCapabilities' },
-    layer: 'METAR_LAYER_NAME', // Replace with the name of your METAR layer
-    name: 'METAR Data',
-  });
+let playerTextElement = document.getElementById("playerText");
+let countingElement = document.getElementById("counting");
 
-  // Add the TimeDimension layer to the map
-  var player = new L.TimeDimension.Player({
-    loop: false,
-    startOver: true,
-  }, timeDimensionLayer);
+function startCountdown() {
+    if (playerTextElement.innerHTML.trim() !== "") {
+        let count = 5;
 
-  // Add TimeDimension controls to the map
-  var timeDimensionControl = new L.Control.TimeDimension({
-    player: player,
-    position: 'bottomleft',
-    autoPlay: true,
-    timeSteps: 23, // Number of METAR intervals (METAR 001 UTC to METAR 023 UTC)
-  });
-  map.addControl(timeDimensionControl);
+        countdownInterval = setInterval(function() {
+            if (!pauseFlag) {
+                countingElement.innerHTML = count;
 
-  // Add a timeDimensionControl to the map
-  map.timeDimension = player;
-  map.addLayer(timeDimensionLayer);
+                if (count === 0) {
+                    clearInterval(countdownInterval);
+                    console.log("count = 0;");
+                } else {
+                    count--;
+                    console.log(count, "count --");
+                }
+            }
+        }, 1000);
+    }
+}
+
+function pauseCountdown() {
+    pauseFlag = true;
+}
+
+function resumeCountdown() {
+    pauseFlag = false;
+}
+async function playMacro(macroGroupName) {
+    let macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
+
+    if (macro) {
+        clearInterval(countdownInterval);
+        for (let macroDetails of macro.listOfMacro) {
+            macro_SubParameter = macroDetails.mac_sub_parameter;
+            document.getElementById("macroDetails").style.display = "block";
+
+            if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+                if (macro_SubParameter === "Last 00-05 min") {
+                    await new Promise(resolve => {
+                        resolveFunction = resolve;
+                        Light_l05_ = setTimeout(function() {
+                            if (!pauseFlag) {
+                                map.addLayer(mywmsIITM);
+                                playerText.innerHTML = 'Last 00-05 min';
+                                startCountdown();
+                            }
+                        });
+
+                        setTimeout(function() {
+                            if (!pauseFlag) {
+                                map.removeLayer(mywmsIITM);
+                                clearTimeout(Light_l05_);
+                                resolve();
+                                playerText.innerHTML = '';
+                                startCountdown();
+                            }
+                            console.log("1-Last 00-05 min");
+                        }, 6000);
+                    });
+                }
+            }
+
+            document.getElementById("macroDetails").style.display = "none";
+
+        }
+    }
+
+}
+
+
+document.querySelector('.playBtnClas').addEventListener('click', () => {
+    resumeCountdown();
+});
+
+document.querySelector('.pauseBtnClas').addEventListener('click', () => {
+    pauseCountdown();
+});
+when pauseCountdown();
+is triggered setTimeout is paused and when resumeCountdown();
+is triggered setTimeout is not working properly
 </script>
-
-</body>
-</html>
