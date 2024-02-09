@@ -6,8 +6,6 @@ class Welcome extends CI_Controller {
         parent::__construct();
         $this->load->library('TCPdf_pdf');
         $this->load->library('session');
-
-        
     }
 	
 	public function index()
