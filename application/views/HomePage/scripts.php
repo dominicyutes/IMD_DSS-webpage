@@ -3048,6 +3048,8 @@ var SampleLayerBtn = L.Control.extend({
 
         button.style.fontSize = '15px';
         button.style.fontFamily = 'Times New Roman';
+        button.style.top = '-583px';
+        button.style.right = '-1600px';
 
         // click event listener
         L.DomEvent.on(button, 'click', function() {
