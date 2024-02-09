@@ -3904,7 +3904,98 @@ if (geocoderControl) {
 // L.control.scale().addTo(map);
 
 var customButtonsContainer = L.DomUtil.create('div', 'leaflet-bar leaflet-control customClass');
+map.getContainer().appendChild(customButtonsContainer);
 
+// Add L.control.mousePosition to the container
+L.control.mousePosition({
+    position: 'bottomleft'
+}).addTo(map);
+
+// Create a custom control button for MacroButton
+var PrintButton = L.Control.extend({
+    options: {
+        position: 'bottomleft'
+    },
+    onAdd: function() {
+        var printbtn = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn2 printbutton');
+        printbtn.innerHTML = 'Download PDF';
+
+        // Set font size to 15px
+        printbtn.style.fontSize = '15px';
+        printbtn.style.fontFamily = 'Times New Roman';
+        printbtn.style.top = '-658px';
+        printbtn.style.left = '54px';
+
+        // L.DomEvent.on(printbtn, 'click', function() {
+        //     printFn();
+        // });
+
+        return printbtn;
+    }
+});
+
+function printFn() {
+    //console.log("print working");
+};
+//print ends here
+new PrintButton().addTo(map);
+
+
+// Create a custom control button for model popup
+var LegendButton = L.Control.extend({
+    options: {
+        position: 'bottomleft'
+    },
+    onAdd: function() {
+        // Create a button element
+        var button = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn3');
+        button.innerHTML = 'Legend';
+        button.id = 'popup';
+
+        // Set font size to 15px
+        button.style.fontSize = '15px';
+        button.style.fontFamily = 'Times New Roman';
+        button.style.top = '-650px';
+        button.style.left = '54px';
+
+        // click event listener
+        L.DomEvent.on(button, 'click', function() {
+            // Your click event handling code goes here
+        });
+
+        return button;
+    }
+});
+new LegendButton().addTo(map);
+
+
+// Create a custom control button for MacroButton
+var MacroButton = L.Control.extend({
+    options: {
+        position: 'bottomleft'
+    },
+    onAdd: function() {
+        var macbtn = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn2');
+        macbtn.innerHTML = 'Macro';
+
+        // Set font size to 15px
+        macbtn.style.fontSize = '15px';
+        macbtn.style.fontFamily = 'Times New Roman';
+        macbtn.style.top = '-642px';
+        macbtn.style.left = '54px';
+
+        // click event
+        L.DomEvent.on(macbtn, 'click', function() {
+            macToggleObservation();
+        });
+
+        return macbtn;
+    }
+});
+new MacroButton().addTo(map);
 // Create a custom control button for ObservationButton
 var ObservationButton = L.Control.extend({
     options: {
@@ -3917,7 +4008,9 @@ var ObservationButton = L.Control.extend({
         // Set font size to 15px
         obsbtn.style.fontSize = '15px';
         obsbtn.style.fontFamily = 'Times New Roman';
-
+        obsbtn.style.top = '-633px';
+        obsbtn.style.left = '54px';
+   
         // click event
         L.DomEvent.on(obsbtn, 'click', function() {
             toggleObservation();
@@ -3943,29 +4036,7 @@ new ObservationButton().addTo(map);
 
 
 
-// Create a custom control button for MacroButton
-var MacroButton = L.Control.extend({
-    options: {
-        position: 'bottomleft'
-    },
-    onAdd: function() {
-        var macbtn = L.DomUtil.create('span',
-            'leaflet-bar leaflet-control leaflet-control-custom custom-btn2');
-        macbtn.innerHTML = 'Macro';
 
-        // Set font size to 15px
-        macbtn.style.fontSize = '15px';
-        macbtn.style.fontFamily = 'Times New Roman';
-
-        // click event
-        L.DomEvent.on(macbtn, 'click', function() {
-            macToggleObservation();
-        });
-
-        return macbtn;
-    }
-});
-new MacroButton().addTo(map);
 //freehand
 (function() {
     var drawnItems = new L.FeatureGroup();
@@ -4196,65 +4267,11 @@ document.querySelector('.leaflet-control-geocoder').title = 'Location Search';
 
 var controlsContainer = L.DomUtil.create('div', 'controls-container');
 
-// Add L.control.mousePosition to the container
-L.control.mousePosition({
-    position: 'bottomleft'
-}).addTo(map);
 
 
-// Create a custom control button for model popup
-var LegendButton = L.Control.extend({
-    options: {
-        position: 'bottomleft'
-    },
-    onAdd: function() {
-        // Create a button element
-        var button = L.DomUtil.create('span',
-            'leaflet-bar leaflet-control leaflet-control-custom custom-btn3');
-        button.innerHTML = 'Legend';
-        button.id = 'popup';
 
-        // Set font size to 15px
-        button.style.fontSize = '15px';
-        button.style.fontFamily = 'Times New Roman';
 
-        // click event listener
-        L.DomEvent.on(button, 'click', function() {
-            // Your click event handling code goes here
-        });
 
-        return button;
-    }
-});
-new LegendButton().addTo(map);
-
-// Create a custom control button for MacroButton
-var PrintButton = L.Control.extend({
-    options: {
-        position: 'bottomleft'
-    },
-    onAdd: function() {
-        var printbtn = L.DomUtil.create('span',
-            'leaflet-bar leaflet-control leaflet-control-custom custom-btn2 printbutton');
-        printbtn.innerHTML = 'Download PDF';
-
-        // Set font size to 15px
-        printbtn.style.fontSize = '15px';
-        printbtn.style.fontFamily = 'Times New Roman';
-
-        // L.DomEvent.on(printbtn, 'click', function() {
-        //     printFn();
-        // });
-
-        return printbtn;
-    }
-});
-
-function printFn() {
-    //console.log("print working");
-};
-//print ends here
-new PrintButton().addTo(map);
 
 // customButtonsContainer.appendChild(new MacroButton().onAdd());
 // customButtonsContainer.appendChild(new MacroButton().onAdd());
@@ -4262,7 +4279,6 @@ new PrintButton().addTo(map);
 // customButtonsContainer.appendChild(new PrintButton().onAdd());
 // customButtonsContainer.appendChild(new ToggleControl().onAdd());
 // Add the container to the map
-map.getContainer().appendChild(customButtonsContainer);
 // ************
 
 
