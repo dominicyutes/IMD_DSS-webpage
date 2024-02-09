@@ -1990,6 +1990,12 @@ function showParameterNames(value) {
     } else {
         showSubParameterNames('');
     }
+    if (value === "Satellite") {
+        DatRem();
+    } else {
+        document.getElementById("satNon").style.display = "contents";
+    }
+
 }
 
 //OBSERVATION thirdDropdown-SD
@@ -2036,10 +2042,10 @@ function obs_SubmitForm() {
     let TimeForObs = hour_Select + ":" + minute_Select;
 
     if (sub_parameter === "Temperature_00") {
-        if (TimeForObs === "5:30") {
+        if (parameter_Names === "Metar 00UTC") {
             map.eachLayer(layer => {
                 if (layer instanceof L.TileLayer.WMS) {
-                    map.removeLayer(layer); // Remove all layers from the map
+                    map.removeLayer(layer);
                 }
             });
             obstesting1 = setInterval(function() {
@@ -2056,7 +2062,6 @@ function obs_SubmitForm() {
             obstesting2 = setInterval(function() {
                 map.addLayer(ship_00utc);
             });
-
 
             // let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
             //     "Parameter: " + parameter_Names + "\n" +
@@ -2104,6 +2109,20 @@ function obs_Rem_() {
 function obsLayerNameX() {
     document.getElementById("obsLayerNamShw").style.display = "none";
 }
+
+// 
+function DatRem() {
+    console.log("x123 Satellite");
+
+    var satNonElement = document.getElementById("satNon");
+    console.log(satNonElement, "Satellite");
+
+    if (satNonElement) {
+        satNonElement.style.display = "none";
+        console.log("Element hidden Satellite");
+    }
+}
+
 
 //MACRO toggle
 function macToggleObservation() {
@@ -23074,16 +23093,28 @@ $("body").on("change", "input[type=checkbox]", function() {
 
     let printExposure = document.getElementById("EXPOSURE").innerHTML;
     let printExposureTit = document.getElementById("exposure-layers-Title").innerHTML;
-    let printExposureList = document.getElementById("exposure-layers-lists").innerHTML;
 
-    let spanInnerHTML = $(printExposureList).find("span").html();
-    console.log(spanInnerHTML, "innerHTML of span tag");
+    // in printExposureList, im getting whole element
+    // let printExposureList = document.getElementById("exposure-layers-lists").innerHTML;
+    //
+    let checkbox = this;
+    console.log(checkbox, "1,checkbox,printExpo");
+    //
+    let nextSibling = checkbox.nextSibling;
+    console.log(nextSibling, "2,nextSibling,printExpo");
+    // Extract the text content from the next sibling
+    let name = nextSibling.textContent.trim();
+    console.log(name, "3,name,printExpo");
 
     console.log(printExposure, "printExposure");
     console.log(printExposureTit, "printExposureTit");
-    console.log(printExposureList, "printExposureList");
-    console.log(spanInnerHTML, "printExposureListspan");
+    console.log(name, "printExposure,name");
 
+    if (printExposure.trim() === "EXPOSURE") {
+        EXPOSURE_M.innerHTML = printExposure;
+        let xxyy = EXPOSURE_M.innerHTML;
+        console.log(xxyy, "xxyy,printExposure checking");
+    }
 
 });
 

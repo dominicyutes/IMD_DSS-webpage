@@ -367,7 +367,7 @@
                 </div> -->
                     <!-- <span>&nbsp;</span> -->
                     <div>
-                        <span style="display: contents;">
+                        <span id="satNon" style="display: contents;">
                             <label name="hourSelect" class="TimeLabel"
                                 style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Time:</label>
                             <select id="hourSelect" class="TimeHR">
@@ -513,15 +513,9 @@
                 </div>
 
             </div>
-            <!--  -->
-            <div style="height: 38px;width: 100%; background-color: white; font-family: 'Times New Roman';">
-                <div id="ExposureRow_M" style="display: none;font-size: 17px;">
-                    <h4 id="EXPOSURE_M" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
-                    </h4>
-                    <h5 id="exposure-layers-Title_M" style="color: #000000;"></h5>
-                    <p id="exposure-layers-lists_M" style="display: flex; flex-wrap: wrap;">
-                </div>
-            </div>
+            <!-- Layer_Name_bottom -->
+            <div style="height: 38px;width: 100%; background-color: white; font-family: 'Times New Roman';">Model's Time
+                Update</div>
         </div>
 
         <!-- MACRO Run model; display: none; -->
