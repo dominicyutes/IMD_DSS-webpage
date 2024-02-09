@@ -8,6 +8,7 @@
     <!-- <link rel="shortcut icon" href="img/IMDlogo_Ipart-iris.png" type="image/png"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -69,11 +70,11 @@
     <!-- <link rel="stylesheet" href="path/to/leaflet.groupedlayercontrol.css" />
     <script src="path/to/leaflet.groupedlayercontrol.js"></script> -->
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<!-- jQuery UI -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 
     <!-- bootstrap -->
@@ -111,7 +112,13 @@
     <script src="https://cdn.jsdelivr.net/npm/leaflet-panel-layers@1.3.1/dist/leaflet-panel-layers.min.js"></script>
 
     <!-- Leaflet AJAX plugin -->
-    <script src="https://unpkg.com/leaflet-ajax@2.1.0/dist/leaflet.ajax.js"></script>
+    <!-- <script src="https://unpkg.com/leaflet-ajax@2.1.0/dist/leaflet.ajax.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
+        integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
     <!-- jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
@@ -129,7 +136,26 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.player"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.util"></script> -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dateformat@3.0.3/lib/dateformat.js"></script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.js">
+    </script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.util.js">
+    </script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.js">
+    </script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.wms.js"></script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.geojson.js"></script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.player.js"></script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script>
+
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
     <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.js">
     </script>
     <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.util.js">
@@ -137,7 +163,21 @@
     <script type="text/javascript"
         src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.player.js"></script>
     <script type="text/javascript"
-        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script>
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script> -->
+
+
+
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.js">
+    </script>
+    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.util.js">
+    </script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.player.js"></script>
+    <script type="text/javascript"
+        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script> -->
+
     <!-- <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.js">
     </script> -->
     <!-- <script type="text/javascript"
@@ -197,11 +237,11 @@
             <img src="img/emblem.png" alt="Emblem of India" height="50"
                 style="margin-right: auto; margin-left: 30px; margin-top: 5px; margin-bottom: 5px;">
             <div style="flex: 1; text-align: center;">
-                <span class="text" style="font-family: 'Times New Roman';">WEATHER DECISION SUPPORT SYSTEM</span>
+                <span class="text" style="font-family: 'Times New Roman';">WEAR DEON SUPPORT SYSTEM</span>
 
             </div>
             <img src="img/imd_logo.png" alt="IMD logo" height="50"
-                style="margin-left: auto; margin-right: 30px; margin-top: 5px; margin-bottom: 5px;">
+                style="margin-left: auto; margin-right: -31px; margin-top: 5px; margin-bottom: 5px;">
         </div>
 
 
@@ -280,7 +320,11 @@
             <!-- OBSERVATION -->
 
             <div id="ObservationContainer" class="obsClass hidden col-sm-2" style="position: relative;">
-                <h6 class="obsh4" style="font-family: 'Times New Roman', Times, serif; font-size: 20px">OBSERVATION</h6>
+                <div style="display: flex; justify-content: space-between;">
+                    <h6 class="obsh4" style="font-family: 'Times New Roman', Times, serif; font-size: 20px">OBSERVATION
+                    </h6>
+                    <span title="Close" class="playBtnClasX" onClick="obsCloseX()">X</span>
+                </div>
 
                 <!-- model -->
                 <form id="obsForm">
@@ -336,8 +380,7 @@
                     </select>
                 </form>
                 <!-- Submit -->
-                <div style="display: flex;
-    justify-content: space-around;">
+                <div style="display: flex;justify-content: space-around;">
                     <button id="submitButton" onclick="obs_SubmitForm()" class="submitBtn">Submit</button>
                     <button class="obsRemCls" id="obsRemBtn" onclick="obs_Rem_()">Remove</button>
                 </div>
@@ -471,8 +514,14 @@
 
             </div>
             <!--  -->
-            <div style="height: 36px;width: 100%; background-color: white; font-family: 'Times New Roman';">Model's Time
-                Update</div>
+            <div style="height: 38px;width: 100%; background-color: white; font-family: 'Times New Roman';">
+                <div id="ExposureRow_M" style="display: none;font-size: 17px;">
+                    <h4 id="EXPOSURE_M" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
+                    </h4>
+                    <h5 id="exposure-layers-Title_M" style="color: #000000;"></h5>
+                    <p id="exposure-layers-lists_M" style="display: flex; flex-wrap: wrap;">
+                </div>
+            </div>
         </div>
 
         <!-- MACRO Run model; display: none; -->
@@ -482,24 +531,22 @@
                 <!--  align-items: center; -->
                 <div class="playLine-container">
                     <div class="macroPlayClass">
-                        <!-- <button title="Stop" class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs"
-                                style="color: #000000;"></i></button> -->
-                        <!-- <button title="Play" class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs"
-                                style="color: #000000;"></i></button> -->
-                        <!-- <button title="Pause" class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs"
-                                style="color: #000000;"></i></button> -->
+                        <button title="Stop" class="stopBtnClas"><i class="fa-sharp fa-solid fa-stop fa-xs"
+                                style="color: #000000;"></i></button>
+                        <button title="Play" class="playBtnClas"><i class="fa-sharp fa-solid fa-play fa-xs"
+                                style="color: #000000;"></i></button>
+                        <button title="Pause" class="pauseBtnClas"><i class="fa-sharp fa-solid fa-pause fa-xs"
+                                style="color: #000000;"></i></button>
                         <button title="Previous" class="leftMacBtn"><i class="fa-sharp fa-solid fa-arrow-left fa-xs"
                                 style="color: #000000;"></i></button>
                         <span style="font-size: 17px;font-weight: bold; padding: 0 10px" id="playerText"></span>
                         <button title="Next" class="rightMacBtn"><i class="fa-sharp fa-solid fa-arrow-right fa-xs"
                                 style="color: #000000;"></i></button>
-                        <!-- <span class="playBtnClasCount" id="counting"></span>
-                        <span class="vertical-line"></span> -->
+                        <span class="playBtnClasCount" id="counting"></span>
+                        <span class="vertical-line"></span>
                         <span title="Close" class="playBtnClasX" id="closingPlayBtn" onClick="macroRunFnX()">X</span>
                     </div>
                 </div>
-
-
             </div>
         </div>
 
@@ -535,6 +582,22 @@
             </div>
         </div>
 
+        <!-- observation Layer name on Map-->
+        <!--  display: none; -->
+        <div id="obsLayerNamShw" class="modal" style="width: 500px; left: 11%; top: 90%;">
+            <div class="modal-content"
+                style="z-index: 999 ; font-family: Arial, sans-serif; background-color: #ffffff; border-radius: 10px;">
+                <!--  align-items: center; -->
+                <div class="playLine-container">
+                    <div class="macroPlayClass">
+                        <span style="color: black;font-size: 17px;font-weight: bold; padding: 0 10px"
+                            id="obsLayTxt"></span>
+                        <span title="Close" class="playBtnClasX" id="close_obsLayerNam"
+                            onClick="obsLayerNameX()">X</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- LEGEND model popup -->
         <div class="model" style="display: none; left: 253px; top: 94px; height:0;">
@@ -550,20 +613,21 @@
                 <div class="row" id="Light_RadarRow" style="display: none;">
                     <div>
                         <!-- HomePage-Lightning -->
-                        <h5 id="panelLayer-Lightning-Title"></h5>
-                        <p id="panelLayer-Lightning-lists"></p>
+                        <!-- <h5 id="panelLayer-Lightning-Title"></h5>
+                        <p id="panelLayer-Lightning-lists"></p> -->
 
                         <!-- HomePage-Radar -->
-                        <h5 id="panelLayer-radar-Title"></h5>
-                        <p id="panelLayer-radar-lists" style="display: flex; flex-wrap: wrap;"></p>
+                        <!-- <h5 id="panelLayer-radar-Title"></h5>
+                        <p id="panelLayer-radar-lists" style="display: flex; flex-wrap: wrap;"></p> -->
                     </div>
                 </div>
 
-                <div>
+                <!-- id="printlegend" is for PRINT -->
+                <div id="printlegend">
+
                     <!-- Exposure -->
                     <div id="ExposureRow" style="display: none; ">
                         <h4 id="EXPOSURE" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
-                            EXPOSURE
                         </h4>
                         <h5 id="exposure-layers-Title" style="color: #000000;"></h5>
                         <p id="exposure-layers-lists" style="display: flex; flex-wrap: wrap;">
@@ -1180,84 +1244,111 @@ var worldGrid = L.geoJson({
 <!-- print code start  -->
 <script>
 //function generate_report_and_save() {
-    $(".printbutton").click(function() {
-        //console.log();
-        $(".printbutton").addClass('running');
-        html2canvas($("#map"), {
-            useCORS: true,
-            allowTaint: false,
-            onrendered: function(canvas) {
-                var image = Canvas2Image.convertToPNG(canvas);
-                var image_data = $(image).attr('src');
-                var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo site_url(); ?>Welcome/saveReportImg",
-                    data: {
-                        base64: image_data,
-                        r_file_name: random_name
-                    },
-                    success: function(_data_,status) {
-                        var _status = status;
-                        if(_status == 'success'){
-                            var win = window.open('<?php echo base_url()?>'+_data_, '_blank');
-                            if (win) {
-                                win.focus();
-                            } else {
-                                alert('Please allow popups for this website');
-                            }
-                        } else{
-                            alert("Something wrong with your please check it later");
+$(".printbutton").click(function() {
+    $(".printbutton").addClass('running');
+    html2canvas($("#map"), {
+        useCORS: true,
+        allowTaint: false,
+        onrendered: function(canvas) {
+            var image = Canvas2Image.convertToPNG(canvas);
+            var image_data = $(image).attr('src');
+            var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
+            $.ajax({
+                type: "POST",
+                url: "<?php echo site_url(); ?>Welcome/saveReportImg",
+                data: {
+                    base64: image_data,
+                    r_file_name: random_name
+                },
+                success: function(_data_, status) {
+                    var _status = status;
+                    if (_status == 'success') {
+                        var win = window.open('<?php echo base_url()?>' + _data_,
+                            '_blank');
+                        if (win) {
+                            win.focus();
+                        } else {
+                            alert('Please allow popups for this website');
                         }
+                    } else {
+                        alert("Something wrong with your please check it later");
                     }
-                });
-            }
-        });
-
+                }
+            });
+        }
     });
 
-    
+});
+
+
+
+
 //}
 
-function printDiv(imageFileName) {
-    function getCurrentDateTime() {
-        const now = new Date();
+// function printDiv(imageFileName) {
+//     function getCurrentDateTime() {
+//         const now = new Date();
 
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-        const ampm = hours >= 12 ? 'PM' : 'AM';
+//         const hours = now.getHours();
+//         const minutes = now.getMinutes();
+//         const ampm = hours >= 12 ? 'PM' : 'AM';
 
-        const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')}${ampm}`;
-        const formattedDate =
-            `${now.getDate()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getFullYear()}`;
+//         const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')}${ampm}`;
+//         const formattedDate =
+//             `${now.getDate()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getFullYear()}`;
 
-        const formattedDateTime = `${formattedTime}\n${formattedDate}`;
+//         const formattedDateTime = `${formattedTime}\n${formattedDate}`;
 
-        return formattedDateTime;
-    }
-    const formattedDateTime = getCurrentDateTime();
+//         return formattedDateTime;
+//     }
+//     const formattedDateTime = getCurrentDateTime();
 
-    var win = window.open('');
+//     var win = window.open('');
 
-    win.document.write(
-        "<div style='text-align: center;'><span style='float: left;'><img src='https://mausam.imd.gov.in/responsive/img/logo/imd_logo_a.png' alt='IMD' width='50px' height='100px'></span>" +
-        "<span style='display: inline-block;'><u><h1>WEATHER DECISION SUPPORT SYSTEM</h1></u></span>" +
-        "<span style='float: right;'><label>" + formattedDateTime + "</label></span></div>"
-    );
+//     win.document.write(
+//         "<div style='text-align: center;'><span style='float: left;'><img src='https://mausam.imd.gov.in/responsive/img/logo/imd_logo_a.png' alt='IMD' width='50px' height='100px'></span>" +
+//         "<span style='display: inline-block;'><u><h1>WEATHER DECISION SUPPORT SYSTEM</h1></u></span>" +
+//         "<span style='float: right;'><label>" + formattedDateTime + "</label></span></div>"
+//     );
 
-    win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
-        '" style="page-break-before: always;"/>');
+//     win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
+//         '" style="page-break-before: always;"/>');
 
-    var base_url = "<?php echo base_url(); ?>";
-    win.document.write('<img src="' + base_url + 'pdf/' + imageFileName + '" style="page-break-before: always;"/>');
+//     var base_url = "<?php echo base_url(); ?>";
+//     win.document.write('<img src="' + base_url + 'pdf/' + imageFileName + '" style="page-break-before: always;"/>');
 
-    win.setTimeout('win.document.print();', 200);
+//     win.setTimeout('win.document.print();', 200);
 
-    win.document.onload = function() {
-        this.print();
-        this.close();
-    };
-    win.document.close();
-}
+//     win.document.onload = function() {
+//         this.print();
+//         this.close();
+//     };
+//     win.document.close();
+// }
+</script>
+<script>
+$(document).ready(function() {
+    $(".printbutton").on("click", function() {
+        let printlegenddata = document.getElementById('printlegend').innerHTML;
+        console.log("printasdjkhcvjks", printlegenddata);
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url('welcome/legends'); ?>",
+            data: {
+                content: printlegenddata
+            }, // Changed userId to content
+            success: function(response) {
+                console.log("resp", response);
+            },
+            error: function(error) {
+                console.error('error', error);
+            }
+        });
+    })
+});
+</script>
+<script src="leaflet.browser.print.min.js"></script>
+<script>
+var browserControl = L.control.browserPrint().addTo(map);
 </script>
 <!-- print code end  -->
