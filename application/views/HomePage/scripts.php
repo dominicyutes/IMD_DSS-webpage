@@ -26901,11 +26901,23 @@ $("body").on("change", "input[type=checkbox]", function() {
 $("body").on("change", "input[type=checkbox]", function() {
     let printlegenddata = document.getElementById("printlegend").innerHTML;
     console.log(printlegenddata, "printlegenddata");
+
+    let printExposure = document.getElementById("EXPOSURE").innerHTML;
+    let printExposureTit = document.getElementById("exposure-layers-Title").innerHTML;
+    let printExposureList = document.getElementById("exposure-layers-lists").innerHTML;
+
+    let spanInnerHTML = $(printExposureList).find("span").html();
+    console.log(spanInnerHTML, "innerHTML of span tag");
+
+    console.log(printExposure, "printExposure");
+    console.log(printExposureTit, "printExposureTit");
+    console.log(printExposureList, "printExposureList");
+    console.log(spanInnerHTML, "printExposureListspan");
+
+
 });
 
 
-
-console.log(getLayer_name, "222222getLayer_namegetLayer_name");
 
 function metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     METAR.innerHTML = "METAR"
