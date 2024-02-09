@@ -1323,7 +1323,7 @@ $(".printbutton").click(function() {
 $(document).ready(function() {
     $(".printbutton").on("click", function() {
         let printlegenddata = document.getElementById('printlegend').innerHTML;
-        console.log("printasdjkhcvjks", printlegenddata);
+        // console.log("printasdjkhcvjks", printlegenddata);
         $.ajax({
             type: "POST",
             url: "<?php echo base_url('welcome/legends'); ?>",
