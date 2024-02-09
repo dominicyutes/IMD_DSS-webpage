@@ -3977,30 +3977,6 @@ new ObservationButton().addTo(map);
 // buttonContainer.appendChild(new ObservationButton().onAdd(map));
 
 
-
-// Create a custom control button for MacroButton
-var MacroButton = L.Control.extend({
-    options: {
-        position: 'bottomleft'
-    },
-    onAdd: function() {
-        var macbtn = L.DomUtil.create('span',
-            'leaflet-bar leaflet-control leaflet-control-custom custom-btn2');
-        macbtn.innerHTML = 'Macro';
-
-        // Set font size to 15px
-        macbtn.style.fontSize = '15px';
-        macbtn.style.fontFamily = 'Times New Roman';
-
-        // click event
-        L.DomEvent.on(macbtn, 'click', function() {
-            macToggleObservation();
-        });
-
-        return macbtn;
-    }
-});
-new MacroButton().addTo(map);
 //freehand
 (function() {
     var drawnItems = new L.FeatureGroup();
