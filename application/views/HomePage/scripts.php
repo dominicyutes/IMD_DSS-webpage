@@ -3251,18 +3251,12 @@ var map = L.map('map', {
         validTimeRange: "00:00/23:00",
         currentTime: startDate
     },
-    // timeDimensionControlOptions: {
-    //     autoPlay: false,
-    //     playerOptions: {
-    //         buffer: 10,
-    //         transitionTime: 500,
-    //         loop: true,
-    //     }
-    // },
     center: [22.79459, 80.06406],
 });
 
 // Function to toggle timeDimensionControl
+var testImageTimeLayer;
+
 function toggleTimeDimensionControl() {
     if (!map.timeDimensionControl) {
         map.timeDimensionControl = L.control.timeDimension({
@@ -3274,7 +3268,8 @@ function toggleTimeDimensionControl() {
                 loop: true,
             }
         }).addTo(map);
-        var testImageTimeLayer = L.timeDimension.layer.imageOverlay(imageLayer, {
+
+        testImageTimeLayer = L.timeDimension.layer.imageOverlay(imageLayer, {
             getUrlFunction: getSirenaImageUrl
         });
         testImageTimeLayer.addTo(map);
@@ -3282,14 +3277,19 @@ function toggleTimeDimensionControl() {
         if (testImageTimeLayer) {
             map.removeLayer(testImageTimeLayer);
             testImageTimeLayer = null;
-            console.log("this is working");
-
+            console.log("Layer removed");
         }
 
         map.removeControl(map.timeDimensionControl);
         map.timeDimensionControl = null;
     }
+    map.on('timeload', function(event) {
+        if (event.time && testImageTimeLayer) {
+            testImageTimeLayer.addTo(map);
+        }
+    });
 }
+
 
 
 // Create a custom control
@@ -3302,9 +3302,6 @@ var timeDimensionControlButton = L.Control.extend({
         button.style.border = '0 solid black';
         button.style.padding = '7px';
         button.title = 'Time Dimension';
-        // button.style.margin - left = '12px';
-        // button.style.cursor = 'pointer';
-
         button.onclick = function() {
             toggleTimeDimensionControl();
         };
@@ -3323,9 +3320,7 @@ var timeDimensionControl = new timeDimensionControlButton({
 });
 timeDimensionControl.addTo(map);
 
-
 var imgBegnUrl = 'https://satark.rimes.int/FC_LT_NCM/OUT/20240201/00/';
-
 
 // Add image layer
 var imageUrl = imgBegnUrl + '00Z04FEB2024.png',
@@ -3333,7 +3328,6 @@ var imageUrl = imgBegnUrl + '00Z04FEB2024.png',
         [-51, 0],
         [51, 180]
     ];
-// console.log(imageUrl, "imageUrl");
 
 var imageLayer = L.imageOverlay(imageUrl, imageBounds, {
     opacity: 1
@@ -3354,22 +3348,13 @@ var getSirenaImageUrl = function(baseUrl, time) {
     return url;
 };
 
-
-
-
 L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
     _getDisplayDateFormat: function(date) {
         return moment(date).format("LL h A");
     }
 });
-// var timeDimensionControl = new L.Control.TimeDimensionCustom({
-//     autoPlay: false,
-//     playerOptions: {
-//         buffer: 10,
-//         transitionTime: 500,
-//         loop: true,
-//     }
-// });
+
+// 
 
 // Add the GeoJSON data to the map
 _dist_geojson = "DATA/INDIA_STATE.json";
@@ -3384,8 +3369,6 @@ var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
         };
     }
 });
-
-
 
 geojson.on('data:loaded', function() {
     geojson.addTo(map);
@@ -8512,6 +8495,9 @@ let panelLayerRadarlists = document.querySelector('#panelLayer-radar-lists')
 //EXPOSURE
 let panelLayerExposureTitle = document.querySelector('#exposure-layers-Title')
 let panelLayerExposureLists = document.querySelector('#exposure-layers-lists')
+// 
+let panelLayerExposureTitle_M = document.querySelector('#exposure-layers-Title_M')
+let panelLayerExposureLists_M = document.querySelector('#exposure-layers-lists_M')
 
 // metarTemp
 let panelLayermetarTemp_Title = document.querySelector('#metarTemp-Title')
@@ -8852,6 +8838,55 @@ let clickedSynopVisibilityLists = [];
 let clickedSynopWindSpeedAndDirectionLists = [];
 let clickedSynop3hRainfallLists = [];
 
+// let clickedExposureLists_M = [];
+
+// $("body").on("change", "input[type=checkbox]", function() {
+//     let _this = $(this);
+//     console.log(_this, '_this for M');
+//     let isChecked = _this.prop('checked');
+//     let layer_group_name = _this.context._layer ? _this.context._layer.group.name : '';
+//     console.log(layer_group_name, "layer_group_name for M");
+//     let layer_name_M = _this.context._layer ? _this.context._layer.name : _this.context.className;
+//     console.log(layer_name_M, "layer_name_M for M");
+
+//     // 
+//     if (isChecked) {
+//         if (_this.context._layer?.group.name == "Exposure Layers") {
+//             if (panelLayerExposureTitle.innerHTML == '') {
+//                 EXPOSURE_M.innerHTML = "EXPOSURE";
+//                 panelLayerExposureTitle_M.innerHTML = _this.context._layer?.group.name;
+//                 ExposureRow_M.style.display = 'flex';
+//                 // 
+//             }
+
+//             let ExposureLayersExit = clickedExposureLists_M.find(x => {
+//                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
+//             })
+//             console.log(ExposureLayersExit, "ExposureLayersExit");
+
+//             if (!ExposureLayersExit) {
+
+//                 if (layer_name == 'District Boundaries') {
+//                     clickedExposureLists_M.push(
+//                         '<span style="margin-left: 8px;flex-direction: row;">' + layer_name + ';</span>'
+//                     );
+//                 }
+
+//             }
+//         }
+
+//         panelLayerExposureLists_M.innerHTML = clickedExposureLists_M.join("");
+
+//     } else {
+//         console.log("else for _M");
+//     }
+
+
+
+//     // $("body") 
+// });
+// ends here ****
+
 //Fn for exposure
 function remove_layer_or_add(_context_layer, _layer_to_remove_add, uncheckLayer) {
 
@@ -8862,6 +8897,7 @@ function remove_layer_or_add(_context_layer, _layer_to_remove_add, uncheckLayer)
             return clickedLayer != uncheckLayer
             console.log(clickedLayer, ".......clickedLayer");
         });
+
         panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
         map.removeLayer(_layer_to_remove_add);
     } else {
@@ -9937,6 +9973,7 @@ var getRadarTit = [];
 //     }
 // });
 
+var getLayer_name;
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
@@ -14638,13 +14675,16 @@ $("body").on("change", "input[type=checkbox]", function() {
                 EXPOSURE.innerHTML = "EXPOSURE"
                 panelLayerExposureTitle.innerHTML = _this.context._layer?.group.name + ':'
                 ExposureRow.style.display = 'block';
+                // 
             }
 
             let ExposureLayersExit = clickedExposureLists.find(x => {
                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
             })
+            console.log(ExposureLayersExit, "ExposureLayersExit");
 
             if (!ExposureLayersExit) {
+
                 if (layer_name == 'District Boundaries') {
                     clickedExposureLists.push(
                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
@@ -14664,6 +14704,7 @@ $("body").on("change", "input[type=checkbox]", function() {
                         `</span>`
                     );
                 }
+
                 if (layer_name == 'Hospital') {
                     clickedExposureLists.push(
                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
@@ -14757,15 +14798,6 @@ $("body").on("change", "input[type=checkbox]", function() {
                     );
                 }
             }
-
-            // if (layer_name == 'LULC') {
-            //     clickedExposureLists.push(
-            //         `<span style="display: flex; flex-direction: column; align-items: center;">` +
-            //         `<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_name}` +
-            //         `<img src="img/LULC.jpeg" style="width: 175px; height: 250px; margin-top: 5px;">` +
-            //         `</span>`
-            //     );
-            // }
 
 
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
@@ -17263,7 +17295,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         var uncheckLayer = _this.context._layer ? layer_group_name + ' ' + _this.context._layer?.name :
             _this
             .context.className;
-        // console.log("uncheckLayer............", uncheckLayer);
+        console.log("uncheckLayer............", uncheckLayer);
         layer_name = _this.context._layer ? _this.context._layer?.name : _this.context.className;
 
         //bgClickedExposureLists[]
@@ -21441,13 +21473,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         // METAR.innerHTML
         if (
-            panelLayermetarTemp_lists.innerText === '' &&
-            panelLayermetarDewPoint_lists.innerText === '' &&
-            panelLayermetarVisibility_lists.innerText === '' &&
-            panelLayermetarWindSpeedAndDirection_lists.innerText === ''
+            panelLayermetarTemp_lists.innerText.trim() === '' &&
+            panelLayermetarDewPoint_lists.innerText.trim() === '' &&
+            panelLayermetarVisibility_lists.innerText.trim() === '' &&
+            panelLayermetarWindSpeedAndDirection_lists.innerText.trim() === ''
         ) {
             METAR.innerHTML = '';
-            console.log("Hello world")
         }
 
 
@@ -26826,11 +26857,22 @@ $("body").on("change", "input[type=checkbox]", function() {
         //     }
     }
 
+    getLayer_name = layer_name;
+    console.log(getLayer_name, "getLayer_name");
+
     updateBackgroundColor();
 
 });
 //
 
+$("body").on("change", "input[type=checkbox]", function() {
+    let printlegenddata = document.getElementById("printlegend").innerHTML;
+    console.log(printlegenddata, "printlegenddata");
+});
+
+
+
+console.log(getLayer_name, "222222getLayer_namegetLayer_name");
 
 function metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     METAR.innerHTML = "METAR"
@@ -26847,6 +26889,9 @@ function metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
 		</span>`
         );
     }
+
+
+
 
     panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
 

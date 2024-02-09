@@ -514,8 +514,14 @@
 
             </div>
             <!--  -->
-            <div style="height: 36px;width: 100%; background-color: white; font-family: 'Times New Roman';">Model's Time
-                Update</div>
+            <div style="height: 38px;width: 100%; background-color: white; font-family: 'Times New Roman';">
+                <div id="ExposureRow_M" style="display: none;font-size: 17px;">
+                    <h4 id="EXPOSURE_M" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
+                    </h4>
+                    <h5 id="exposure-layers-Title_M" style="color: #000000;"></h5>
+                    <p id="exposure-layers-lists_M" style="display: flex; flex-wrap: wrap;">
+                </div>
+            </div>
         </div>
 
         <!-- MACRO Run model; display: none; -->
@@ -607,8 +613,8 @@
                 <div class="row" id="Light_RadarRow" style="display: none;">
                     <div>
                         <!-- HomePage-Lightning -->
-                        <h5 id="panelLayer-Lightning-Title"></h5>
-                        <p id="panelLayer-Lightning-lists"></p>
+                        <!-- <h5 id="panelLayer-Lightning-Title"></h5>
+                        <p id="panelLayer-Lightning-lists"></p> -->
 
                         <!-- HomePage-Radar -->
                         <!-- <h5 id="panelLayer-radar-Title"></h5>
@@ -616,11 +622,12 @@
                     </div>
                 </div>
 
+                <!-- id="printlegend" is for PRINT -->
                 <div id="printlegend">
+
                     <!-- Exposure -->
                     <div id="ExposureRow" style="display: none; ">
                         <h4 id="EXPOSURE" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
-                            EXPOSURE
                         </h4>
                         <h5 id="exposure-layers-Title" style="color: #000000;"></h5>
                         <p id="exposure-layers-lists" style="display: flex; flex-wrap: wrap;">
