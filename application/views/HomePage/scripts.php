@@ -3034,7 +3034,33 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
 // }).setView([22.79459, 80.06406]);
 
 
+let sampleLayerBtn;
+// Create a custom control button for model popup
+var SampleLayerBtn = L.Control.extend({
+    options: {
+        position: 'bottomleft'
+    },
+    onAdd: function() {
+        // Create a button element
+        var button = L.DomUtil.create('span',
+            'leaflet-bar leaflet-control leaflet-control-custom custom-btn4');
+        button.innerHTML = 'Sample Layer';
 
+        button.style.fontSize = '15px';
+        button.style.fontFamily = 'Times New Roman';
+
+        // click event listener
+        L.DomEvent.on(button, 'click', function() {
+            testImageTimeLayer = L.timeDimension.layer.imageOverlay(imageLayer, {
+                getUrlFunction: getSirenaImageUrl
+            });
+            testImageTimeLayer.addTo(map);
+            console.log("welcome");
+        });
+
+        return button;
+    }
+});
 
 
 
@@ -3268,20 +3294,22 @@ function toggleTimeDimensionControl() {
                 loop: true,
             }
         }).addTo(map);
+        sampleLayerBtn = new SampleLayerBtn().addTo(map);
 
-        testImageTimeLayer = L.timeDimension.layer.imageOverlay(imageLayer, {
-            getUrlFunction: getSirenaImageUrl
-        });
-        testImageTimeLayer.addTo(map);
+
     } else {
         if (testImageTimeLayer) {
             map.removeLayer(testImageTimeLayer);
             testImageTimeLayer = null;
             console.log("Layer removed");
         }
-
         map.removeControl(map.timeDimensionControl);
         map.timeDimensionControl = null;
+        // 
+        if (sampleLayerBtn) {
+            map.removeControl(sampleLayerBtn);
+            sampleLayerBtn = null;
+        }
     }
     map.on('timeload', function(event) {
         if (event.time && testImageTimeLayer) {
@@ -3353,6 +3381,8 @@ L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
         return moment(date).format("LL h A");
     }
 });
+
+// 
 
 // 
 
@@ -3935,7 +3965,7 @@ var ObservationButton = L.Control.extend({
         obsbtn.style.fontFamily = 'Times New Roman';
         obsbtn.style.top = '-633px';
         obsbtn.style.left = '54px';
-   
+
         // click event
         L.DomEvent.on(obsbtn, 'click', function() {
             toggleObservation();
