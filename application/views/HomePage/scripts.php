@@ -3879,32 +3879,7 @@ if (geocoderControl) {
 }
 
 
-// Create a custom control button for model popup
-// var dummy = L.Control.extend({
-//     options: {
-//         // position: 'bottomleft'
-//     },
-//     onAdd: function() {
-//         // Create a button element
-//         var dummy = L.DomUtil.create('span',
-//             'leaflet-bar leaflet-control leaflet-control-custom custom-btn5');
-//             dummy.innerHTML = 'dummy';
 
-//         // Set font size to 15px
-//         dummy.style.fontSize = '15px';
-//         dummy.style.fontFamily = 'Times New Roman';
-//         // dummy.style.top = '-658px';
-//         // dummy.style.left = '54px';
-
-//         // click event listener
-//         L.DomEvent.on(dummy, 'click', function() {
-//             // Your click event handling code goes here
-//         });
-
-//         return dummy;
-//     }
-// });
-// new dummy().addTo(map);
 
 
 
@@ -4036,8 +4011,51 @@ var ObservationButton = L.Control.extend({
     }
 });
 new ObservationButton().addTo(map);
-// map.addControl(new ObservationButton());
-// buttonContainer.appendChild(new ObservationButton().onAdd(map));
+
+// Weather Inference 
+var WeatherInferenceControl = L.Control.extend({
+    options: {
+        position: 'topleft'
+    },
+    onAdd: function() {
+        // Create a container div for the controls
+        var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+
+
+          // Apply custom CSS to the container
+          container.style.top = '-536px'; 
+        container.style.left = '54px'; 
+
+        // Create the Weather Inference button
+        var weatherInferenceControl = L.DomUtil.create('span', 'custom-btn5', container);
+        weatherInferenceControl.innerHTML = 'Weather Inference';
+        weatherInferenceControl.style.fontSize = '15px';
+        weatherInferenceControl.style.fontFamily = 'Times New Roman';
+        // weatherInferenceControl.style.top = '-536px';
+        // weatherInferenceControl.style.left = '54px';
+
+        // Create the download icon
+        var downloadIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
+        downloadIcon.innerHTML = '<i class="fa fa-download"></i>';
+        downloadIcon.style.fontSize = '15px'; // Adjust the size as needed
+        downloadIcon.style.marginLeft = '5px'; // Adjust the spacing as needed
+
+        // Create the calendar icon
+        var calendarIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
+        calendarIcon.innerHTML = '<i class="fa fa-calendar"></i>';
+        calendarIcon.style.fontSize = '15px'; // Adjust the size as needed
+        calendarIcon.style.marginLeft = '5px'; // Adjust the spacing as needed
+
+        // click event listener for the Weather Inference button
+        L.DomEvent.on(weatherInferenceControl, 'click', function() {
+            // Your click event handling code for Weather Inference button goes here
+        });
+
+        return container;
+    }
+});
+
+new WeatherInferenceControl().addTo(map);
 
 
 (function() {
@@ -4068,7 +4086,7 @@ new ObservationButton().addTo(map);
     freehandButton.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'leaflet-bar');
         div.innerHTML =
-            '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;position: absolute; top: -134px;">Freehand</button>';
+            '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;position: absolute; top: -172px;">Freehand</button>';
         div.firstChild.addEventListener('click', function() {
             if (isFreehandMode) {
                 isFreehandMode = false;
@@ -4090,7 +4108,7 @@ new ObservationButton().addTo(map);
     eraseButton.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'leaflet-bar');
         div.innerHTML =
-            '<button id="eraseButton" style="background-color: white; border: 0px solid black; position: absolute; top: -114px;">Erase</button>';
+            '<button id="eraseButton" style="background-color: white; border: 0px solid black; position: absolute; top: -152px;">Erase</button>';
 
         div.firstChild.addEventListener('click', function() {
             // Remove the last layer from the map
@@ -4109,7 +4127,7 @@ new ObservationButton().addTo(map);
     clearLayersButton.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'leaflet-bar');
         div.innerHTML =
-        '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -94px; white-space: nowrap;">Clear All</button>';
+        '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -131px; white-space: nowrap;">Clear All</button>';
 
         div.firstChild.addEventListener('click', function() {
             // Remove all layers from the map
@@ -4315,6 +4333,10 @@ L.Control.geocoder({
     position: "topleft",
     title: "Location Search"
 }).addTo(map);
+var geocoderControl = document.querySelector('.leaflet-control-geocoder');
+if (geocoderControl) {
+    geocoderControl.style.top = '-73px';
+}
 // L.Control.geocoder({
 //     position: "topleft",
 // }).on('markgeocode', function(e) {
@@ -4324,8 +4346,6 @@ document.querySelector('.leaflet-control-geocoder').title = 'Location Search';
 //searchControl ends here
 
 var controlsContainer = L.DomUtil.create('div', 'controls-container');
-
-
 
 
 
