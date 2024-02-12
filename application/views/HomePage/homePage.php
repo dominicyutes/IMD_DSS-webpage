@@ -672,7 +672,31 @@
                     </div>
                 </div>
 
+
                 <div id="printlegend">
+
+                    <!-- lehends for observation -->
+                    <div id="METAR_mm" style="display: none;">
+                        <h5 id="metarTemp-Title_mm" style="color: #000000;">METAR 00UTC:</h5>
+                        <p id="metarTemp-lists_mm" style="flex-wrap: wrap;">Temperature_00</p>
+                        <div id="metarTempImage_mm" style="margin-left: 40px; flex-wrap: wrap;">
+                            <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+                                <span
+                                    style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+                                <span
+                                    style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+                                <span
+                                    style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+                                <span
+                                    style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+                                <span
+                                    style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+                            </span>
+                        </div>
+                    </div>
+                    <!--  -->
+
+
                     <!-- Exposure -->
                     <div id="ExposureRow" style="display: none; ">
                         <h4 id="EXPOSURE" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
@@ -706,6 +730,8 @@
                             style="margin-left: 40px; display: flex; flex-wrap: wrap;"></div>
                         <p id="metarWindSpeedAndDirection-lists" style="display: flex; display: none; flex-wrap: wrap;">
                         </p>
+
+
                     </div>
 
                     <!-- SYNOP -->
@@ -1185,13 +1211,13 @@ function createGrid() {
 }
 
 // Create the grid with dotted lines
-var worldGrid = L.geoJson({
-    "type": "FeatureCollection",
-    "features": createGrid()
-}, {
-    color: 'white',
-    dashArray: '5, 5'
-}).addTo(map);
+// var worldGrid = L.geoJson({
+//     "type": "FeatureCollection",
+//     "features": createGrid()
+// }, {
+//     color: 'white',
+//     dashArray: '5, 5'
+// }).addTo(map);
 </script>
 <!-- print code start  -->
 <script>
@@ -1231,58 +1257,12 @@ $(".printbutton").click(function() {
     });
 
 });
-
-
-
-
-//}
-
-// function printDiv(imageFileName) {
-//     function getCurrentDateTime() {
-//         const now = new Date();
-
-//         const hours = now.getHours();
-//         const minutes = now.getMinutes();
-//         const ampm = hours >= 12 ? 'PM' : 'AM';
-
-//         const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')}${ampm}`;
-//         const formattedDate =
-//             `${now.getDate()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getFullYear()}`;
-
-//         const formattedDateTime = `${formattedTime}\n${formattedDate}`;
-
-//         return formattedDateTime;
-//     }
-//     const formattedDateTime = getCurrentDateTime();
-
-//     var win = window.open('');
-
-//     win.document.write(
-//         "<div style='text-align: center;'><span style='float: left;'><img src='https://mausam.imd.gov.in/responsive/img/logo/imd_logo_a.png' alt='IMD' width='50px' height='100px'></span>" +
-//         "<span style='display: inline-block;'><u><h1>WEATHER DECISION SUPPORT SYSTEM</h1></u></span>" +
-//         "<span style='float: right;'><label>" + formattedDateTime + "</label></span></div>"
-//     );
-
-//     win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
-//         '" style="page-break-before: always;"/>');
-
-//     var base_url = "<?php echo base_url(); ?>";
-//     win.document.write('<img src="' + base_url + 'pdf/' + imageFileName + '" style="page-break-before: always;"/>');
-
-//     win.setTimeout('win.document.print();', 200);
-
-//     win.document.onload = function() {
-//         this.print();
-//         this.close();
-//     };
-//     win.document.close();
-// }
 </script>
 <script>
 $(document).ready(function() {
     $(".printbutton").on("click", function() {
         let printlegenddata = document.getElementById('printlegend').innerHTML;
-        // console.log("printasdjkhcvjks", printlegenddata);
+        console.log("printasdjkhcvjks", printlegenddata);
         $.ajax({
             type: "POST",
             url: "<?php echo base_url('welcome/legends'); ?>",
@@ -1302,5 +1282,8 @@ $(document).ready(function() {
 <script src="leaflet.browser.print.min.js"></script>
 <script>
 var browserControl = L.control.browserPrint().addTo(map);
+
+// css
+browserControl.getContainer().style.top = '-76px';
 </script>
 <!-- print code end  -->
