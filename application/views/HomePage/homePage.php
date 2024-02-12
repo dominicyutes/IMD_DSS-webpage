@@ -616,7 +616,31 @@
                     </div>
                 </div>
 
+
                 <div id="printlegend">
+
+                    <!-- lehends for observation -->
+                    <div id="METAR_mm" style="display: none;">
+                        <h5 id="metarTemp-Title_mm" style="color: #000000;">METAR 00UTC</h5>
+                        <p id="metarTemp-lists_mm" style="flex-wrap: wrap;">Temperature_00</p>
+                        <div id="metarTempImage_mm" style="margin-left: 40px; flex-wrap: wrap;">
+                            <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+                                <span
+                                    style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+                                <span
+                                    style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+                                <span
+                                    style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+                                <span
+                                    style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+                                <span
+                                    style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+                            </span>
+                        </div>
+                    </div>
+                    <!--  -->
+
+                    
                     <!-- Exposure -->
                     <div id="ExposureRow" style="display: none; ">
                         <h4 id="EXPOSURE" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
@@ -651,77 +675,6 @@
                         <p id="metarWindSpeedAndDirection-lists" style="display: flex; display: none; flex-wrap: wrap;">
                         </p>
 
-                        <!-- <h5 id="METAR00UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR00UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR01UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR01UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR02UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR02UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR03UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR03UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR04UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR04UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR05UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR05UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR06UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR06UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR07UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR07UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR08UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR08UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR09UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR09UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR10UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR10UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR11UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR11UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR12UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR12UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR13UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR13UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR14UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR14UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR15UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR15UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR16UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR16UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR17UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR17UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR18UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR18UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR19UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR19UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR20UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR20UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR21UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR21UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR22UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR22UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR23UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR23UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p> -->
 
                     </div>
 
@@ -1323,7 +1276,7 @@ $(".printbutton").click(function() {
 $(document).ready(function() {
     $(".printbutton").on("click", function() {
         let printlegenddata = document.getElementById('printlegend').innerHTML;
-        // console.log("printasdjkhcvjks", printlegenddata);
+        console.log("printasdjkhcvjks", printlegenddata);
         $.ajax({
             type: "POST",
             url: "<?php echo base_url('welcome/legends'); ?>",

@@ -2042,10 +2042,16 @@ function obs_SubmitForm() {
                     map.removeLayer(layer); // Remove all layers from the map
                 }
             });
+
+            let obstesting1;
+            let obstesting1Ready = false;
+
             obstesting1 = setInterval(function() {
                 map.addLayer(met00utc_tem);
                 document.getElementById('obsLayTxt').innerHTML = 'METAR 00UTC Temperature_00';
+                document.getElementById("METAR_mm").style.display = "block";
             });
+
 
             document.getElementById("obsLayerNamShw").style.display = "block";
         }
@@ -2087,6 +2093,7 @@ function obs_Rem_() {
         document.getElementById('minuteSelect').value = '';
         document.getElementById('obsLayTxt').innerHTML = '';
         document.getElementById("obsLayerNamShw").style.display = "none";
+        document.getElementById("METAR_mm").style.display = "none";
     }, 1000);
 
     setTimeout(function() {
@@ -9778,7 +9785,7 @@ var getLayer_name;
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
-    console.log(_this, '_this');
+    console.log(_this, '_thiscgdghbg');
     var isChecked = _this.prop('checked');
     var layer_group_name = _this.context._layer ? _this.context._layer.group.name : '';
     console.log(layer_group_name, "layer_group_name");
@@ -23061,7 +23068,7 @@ $("body").on("change", "input[type=checkbox]", function() {
     }
 
     getLayer_name = layer_name;
-    console.log(getLayer_name, "getLayer_name");
+    // console.log(getLayer_name, "getLayer_name");
 
     updateBackgroundColor();
 
@@ -23070,12 +23077,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 $("body").on("change", "input[type=checkbox]", function() {
     let printlegenddata = document.getElementById("printlegend").innerHTML;
-    console.log(printlegenddata, "printlegenddata");
+    // console.log(printlegenddata, "printlegenddata");
 });
 
 
 
-console.log(getLayer_name, "222222getLayer_namegetLayer_name");
+// console.log(getLayer_name, "222222getLayer_namegetLayer_name");
 
 function metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     METAR.innerHTML = "METAR"
