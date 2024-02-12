@@ -418,6 +418,12 @@ body {
     position: relative;
 }
 
+/*  */
+/* .hide {
+    display: none;
+    visibility: hidden;
+} */
+
 .customClass {
     float: none;
 }
@@ -752,12 +758,14 @@ body {
     font-size: 15px;
     /* right: 266px; */
 }
+
 .leaflet-tooltip {
     background-color: white;
     border: 1px solid white;
     border-radius: 3px;
     color: black;
 }
+
 /* .leaflet-bottom .leaflet-left{
     top: 0;
     left: 55px;

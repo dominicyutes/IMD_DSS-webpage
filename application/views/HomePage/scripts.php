@@ -1990,6 +1990,12 @@ function showParameterNames(value) {
     } else {
         showSubParameterNames('');
     }
+    if (value === "Satellite") {
+        document.getElementById("TimNon").style.display = "contents";
+    } else {
+        DatRem();
+    }
+
 }
 
 //OBSERVATION thirdDropdown-SD
@@ -2036,10 +2042,10 @@ function obs_SubmitForm() {
     let TimeForObs = hour_Select + ":" + minute_Select;
 
     if (sub_parameter === "Temperature_00") {
-        if (TimeForObs === "5:30") {
+        if (parameter_Names === "Metar 00UTC") {
             map.eachLayer(layer => {
                 if (layer instanceof L.TileLayer.WMS) {
-                    map.removeLayer(layer); // Remove all layers from the map
+                    map.removeLayer(layer);
                 }
             });
 
@@ -2062,7 +2068,6 @@ function obs_SubmitForm() {
             obstesting2 = setInterval(function() {
                 map.addLayer(ship_00utc);
             });
-
 
             // let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
             //     "Parameter: " + parameter_Names + "\n" +
@@ -2111,6 +2116,20 @@ function obs_Rem_() {
 function obsLayerNameX() {
     document.getElementById("obsLayerNamShw").style.display = "none";
 }
+
+// 
+function DatRem() {
+    console.log("x123 Satellite");
+
+    var TimNonElement = document.getElementById("TimNon");
+    console.log(TimNonElement, "Satellite");
+
+    if (TimNonElement) {
+        TimNonElement.style.display = "none";
+        console.log("Element hidden Satellite");
+    }
+}
+
 
 //MACRO toggle
 function macToggleObservation() {
@@ -8400,9 +8419,6 @@ let panelLayerRadarlists = document.querySelector('#panelLayer-radar-lists')
 //EXPOSURE
 let panelLayerExposureTitle = document.querySelector('#exposure-layers-Title')
 let panelLayerExposureLists = document.querySelector('#exposure-layers-lists')
-// 
-let panelLayerExposureTitle_M = document.querySelector('#exposure-layers-Title_M')
-let panelLayerExposureLists_M = document.querySelector('#exposure-layers-lists_M')
 
 // metarTemp
 let panelLayermetarTemp_Title = document.querySelector('#metarTemp-Title')
@@ -8646,54 +8662,7 @@ let clickedSynopVisibilityLists = [];
 let clickedSynopWindSpeedAndDirectionLists = [];
 let clickedSynop3hRainfallLists = [];
 
-// let clickedExposureLists_M = [];
 
-// $("body").on("change", "input[type=checkbox]", function() {
-//     let _this = $(this);
-//     console.log(_this, '_this for M');
-//     let isChecked = _this.prop('checked');
-//     let layer_group_name = _this.context._layer ? _this.context._layer.group.name : '';
-//     console.log(layer_group_name, "layer_group_name for M");
-//     let layer_name_M = _this.context._layer ? _this.context._layer.name : _this.context.className;
-//     console.log(layer_name_M, "layer_name_M for M");
-
-//     // 
-//     if (isChecked) {
-//         if (_this.context._layer?.group.name == "Exposure Layers") {
-//             if (panelLayerExposureTitle.innerHTML == '') {
-//                 EXPOSURE_M.innerHTML = "EXPOSURE";
-//                 panelLayerExposureTitle_M.innerHTML = _this.context._layer?.group.name;
-//                 ExposureRow_M.style.display = 'flex';
-//                 // 
-//             }
-
-//             let ExposureLayersExit = clickedExposureLists_M.find(x => {
-//                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
-//             })
-//             console.log(ExposureLayersExit, "ExposureLayersExit");
-
-//             if (!ExposureLayersExit) {
-
-//                 if (layer_name == 'District Boundaries') {
-//                     clickedExposureLists_M.push(
-//                         '<span style="margin-left: 8px;flex-direction: row;">' + layer_name + ';</span>'
-//                     );
-//                 }
-
-//             }
-//         }
-
-//         panelLayerExposureLists_M.innerHTML = clickedExposureLists_M.join("");
-
-//     } else {
-//         console.log("else for _M");
-//     }
-
-
-
-//     // $("body") 
-// });
-// ends here ****
 
 //Fn for exposure
 function remove_layer_or_add(_context_layer, _layer_to_remove_add, uncheckLayer) {
@@ -14503,7 +14472,6 @@ $("body").on("change", "input[type=checkbox]", function() {
                         `</span>`
                     );
                 }
-
                 if (layer_name == 'Airport') {
                     clickedExposureLists.push(
                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
@@ -14512,7 +14480,6 @@ $("body").on("change", "input[type=checkbox]", function() {
                         `</span>`
                     );
                 }
-
                 if (layer_name == 'Hospital') {
                     clickedExposureLists.push(
                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
@@ -14538,8 +14505,6 @@ $("body").on("change", "input[type=checkbox]", function() {
                         `</span>`
                     );
                 }
-
-
                 if (layer_name == 'Power Station') {
                     clickedExposureLists.push(
                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
@@ -14572,7 +14537,6 @@ $("body").on("change", "input[type=checkbox]", function() {
                         `</span>`
                     );
                 }
-
                 if (layer_name == 'Road Network') {
                     clickedExposureLists.push(
                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
@@ -14606,8 +14570,6 @@ $("body").on("change", "input[type=checkbox]", function() {
                     );
                 }
             }
-
-
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
         }
 
@@ -23074,16 +23036,438 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 });
 //
+//EXPOSURE
+let panelLayerExposureTitle_M = document.querySelector('#exposure_layers_Title_M');
+let panelLayerExposureLists_M = document.querySelector('#exposure_layers_lists_M');
+
+//RADARPRODUCTS
+let panelLayerRadarTitle_M = document.querySelector('#RADARPRODUCTS_Title_M');
+let panelLayerRadarLists_M = document.querySelector('#RADARPRODUCTS_lists_M');
+
+//SATELLITE
+let panelLayerSatelliteTitle_M = document.querySelector('#SATELLITE_Title_M');
+let panelLayerSatelliteLists_M = document.querySelector('#SATELLITE_lists_M');
+
+//LIGHTINING
+let panelLayerLightningTitle_M = document.querySelector('#LIGHTNING_Title_M');
+let panelLayerLightningLists_M = document.querySelector('#LIGHTNING_lists_M');
+
+//SHIPANDBUOY
+let panelLayerShipNBuoyTitle_M = document.querySelector('#SHIPANDBUOY_Title_M');
+let panelLayerShipNBuoyLists_M = document.querySelector('#SHIPANDBUOY_lists_M');
+
+// metarTemp
+let panelLayermetarTemp_Title_M = document.querySelector('#metarTemp_Title_M')
+let panelLayermetarTemp_lists_M = document.querySelector('#metarTemp_lists_M')
+
+// metarDewPoint
+let panelLayermetarDewPoint_Title_M = document.querySelector('#metarDewPoint_Title_M')
+let panelLayermetarDewPoint_lists_M = document.querySelector('#metarDewPointLists_M')
+
+// metarVisibility
+let panelLayermetarVisibility_Title_M = document.querySelector('#metarVisibility_Title_M')
+let panelLayermetarVisibility_lists_M = document.querySelector('#metarVisibility_lists_M')
+
+// metarWindSpeedAndDirection
+let panelLayermetarWindSpeedAndDirection_Title_M = document.querySelector('#metarWindSpeedAndDirection_Title_M')
+let panelLayermetarWindSpeedAndDirection_lists_M = document.querySelector('#metarWindSpeedAndDirection_Lists_M')
+
+let clickedExposureLists_M = [];
+let clickedRADARPRODUCTSLists_M = [];
+let clickedSatelliteLists_M = [];
+let clickedLightningLists_M = [];
+let clickedShipNBuoyLists_M = [];
+
+let clickedMetarTempLists_M = [];
+let clickedMetarDewPointLists_M = [];
+let clickedMetarVisibilityLists_M = [];
+let clickedMetarWindSpeedAndDirectionLists_M = [];
+
+let metarLayersChecked = false;
 
 $("body").on("change", "input[type=checkbox]", function() {
-    let printlegenddata = document.getElementById("printlegend").innerHTML;
-    // console.log(printlegenddata, "printlegenddata");
+    var _this = $(this);
+    console.log(_this, '_this');
+    let isChecked = _this.prop('checked');
+
+    // layer_group_name = ExposureLayer
+    let layer_group_name = _this.context._layer.group.name;
+
+    // layer_name = Airport or Hospital
+    let layer_name = _this.context._layer.name
+    // 
+    if (isChecked) {
+
+        // Exposure
+        if (layer_group_name === "Exposure Layers") {
+            if (panelLayerExposureTitle_M.innerHTML == '') {
+                EXPOSURE_M.innerHTML = "EXPOSURE"
+                panelLayerExposureTitle_M.innerHTML = layer_group_name
+                ExposureRow_M.style.display = 'flex';
+            }
+            let layerExists = clickedExposureLists_M.includes(layer_name);
+            if (!layerExists) {
+                if (
+                    layer_name == 'District Boundaries' ||
+                    layer_name == 'Airport' ||
+                    layer_name == 'Hospital' ||
+                    layer_name == 'Sports' ||
+                    layer_name == 'Power Plant' ||
+                    layer_name == 'Power Station' ||
+                    layer_name == 'Oil Refineries' ||
+                    layer_name == 'Industrial' ||
+                    layer_name == 'Socio Economic Zone' ||
+                    layer_name == 'Road Network' ||
+                    layer_name == 'Railway Network' ||
+                    layer_name == 'DEM' ||
+                    layer_name == 'LULC'
+                ) {
+                    clickedExposureLists_M.push(layer_name);
+                }
+            }
+
+            panelLayerExposureLists_M.innerHTML = clickedExposureLists_M.map(item => `<p>${item}</p>`).join("");
+        }
+
+        // Radar
+        if (layer_group_name === "Radar Products") {
+            if (panelLayerRadarTitle_M.innerHTML == '') {
+                RADARPRODUCTS_M.innerHTML = "Radar Products"
+                panelLayerRadarTitle_M.innerHTML = layer_group_name
+                RADAR_Row_M.style.display = 'flex';
+            }
+            let layerExists = clickedRADARPRODUCTSLists_M.includes(layer_name);
+            if (!layerExists) {
+                if (
+                    layer_name == 'Radar Reflectivity' ||
+                    layer_name == 'Radar Animation'
+                ) {
+                    clickedRADARPRODUCTSLists_M.push(layer_name);
+                }
+            }
+
+            panelLayerRadarLists_M.innerHTML = clickedRADARPRODUCTSLists_M.join("");
+        }
+
+        // SATELLITE
+        if (layer_group_name === "Satellite Observation") {
+            if (SATELLITE_Title_M.innerHTML == '') {
+                SATELLITE_M.innerHTML = "Satellite"
+                SATELLITE_Title_M.innerHTML = layer_group_name
+                SATELLITE_Row_M.style.display = 'flex';
+            }
+            let layerExists = clickedSatelliteLists_M.includes(layer_name);
+            if (!layerExists) {
+                if (
+                    layer_name == 'TIR1' ||
+                    layer_name == 'VIS' ||
+                    layer_name == 'CTBT' ||
+                    layer_name == 'Low Level Convergence' ||
+                    layer_name == 'Upper Level Divergence' ||
+                    layer_name == 'Mid Level Shear' ||
+                    layer_name == 'Vorticity at 200hPa' ||
+                    layer_name == 'Vorticity at 500hPa' ||
+                    layer_name == 'Vorticity at 700hPa' ||
+                    layer_name == 'Vorticity at 850hPa'
+                ) {
+                    clickedSatelliteLists_M.push(layer_name);
+                }
+            }
+
+            panelLayerSatelliteLists_M.innerHTML = clickedSatelliteLists_M.join("");
+        }
+
+        // Lightning
+        if (layer_group_name === "Lightning") {
+            if (panelLayerLightningTitle_M.innerHTML == '') {
+                LIGHTNING_M.innerHTML = "Lightning"
+                panelLayerLightningTitle_M.innerHTML = layer_group_name
+                LIGHTNING_Row_M.style.display = 'flex';
+            }
+            let layerExists = clickedLightningLists_M.includes(layer_name);
+            if (!layerExists) {
+                if (
+                    layer_name == 'Last 00-05 min' ||
+                    layer_name == 'Last 05-10 min' ||
+                    layer_name == 'Last 10-15 min' ||
+                    layer_name == 'ILDN Last 05 min' ||
+                    layer_name == 'Nowcast Alerts'
+                ) {
+                    clickedLightningLists_M.push(layer_name);
+                }
+            }
+
+            panelLayerLightningLists_M.innerHTML = clickedLightningLists_M.join("");
+        }
+
+        // SHIPANDBUOY
+        if (layer_group_name === "Ship and Buoy Observation") {
+            if (panelLayerShipNBuoyTitle_M.innerHTML == '') {
+                SHIPANDBUOY_M.innerHTML = "Ship and Buoy Observation"
+                panelLayerShipNBuoyTitle_M.innerHTML = layer_group_name
+                SHIPANDBUOY_Row_M.style.display = 'flex';
+            }
+            let layerExists = clickedShipNBuoyLists_M.includes(layer_name);
+            if (!layerExists) {
+                if (
+                    layer_name == '00UTC' ||
+                    layer_name == '01UTC' ||
+                    layer_name == '02UTC' ||
+                    layer_name == '03UTC' ||
+                    layer_name == '04UTC' ||
+                    layer_name == '05UTC' ||
+                    layer_name == '06UTC' ||
+                    layer_name == '07UTC' ||
+                    layer_name == '08UTC' ||
+                    layer_name == '09UTC' ||
+                    layer_name == '10UTC' ||
+                    layer_name == '11UTC' ||
+                    layer_name == '12UTC' ||
+                    layer_name == '13UTC' ||
+                    layer_name == '14UTC' ||
+                    layer_name == '15UTC' ||
+                    layer_name == '16UTC' ||
+                    layer_name == '17UTC' ||
+                    layer_name == '18UTC' ||
+                    layer_name == '19UTC' ||
+                    layer_name == '20UTC' ||
+                    layer_name == '21UTC' ||
+                    layer_name == '22UTC' ||
+                    layer_name == '23UTC'
+                ) {
+                    clickedShipNBuoyLists_M.push(layer_name);
+                }
+            }
+
+            panelLayerShipNBuoyLists_M.innerHTML = clickedShipNBuoyLists_M.join("");
+        }
+
+        // METAR
+        if (layer_group_name === "METAR 00UTC") {
+            if (panelLayermetarTemp_Title_M.innerHTML == '') {
+                METAR_M.innerHTML = "METAR"
+                panelLayermetarTemp_Title_M.innerHTML = layer_group_name
+                METAR_Row_M.style.display = 'flex';
+                metarLayersChecked = true;
+            }
+            let layerExists1 = clickedMetarTempLists_M.includes(layer_name);
+            let layerExists2 = clickedMetarDewPointLists_M.includes(layer_name);
+            let layerExists3 = clickedMetarVisibilityLists_M.includes(layer_name);
+            let layerExists4 = clickedMetarWindSpeedAndDirectionLists_M.includes(layer_name);
+
+            if (!layerExists1) {
+                if (layer_name == 'Temperature_00') {
+                    clickedMetarTempLists_M.push(layer_name);
+                    panelLayermetarTemp_lists_M.style.display = 'flex';
+                }
+            }
+            // 
+            if (!layerExists2) {
+                if (layer_name == 'Dew Point Temperature_00') {
+                    clickedMetarDewPointLists_M.push(layer_name);
+                    panelLayermetarDewPoint_lists_M.style.display = 'flex';
+                }
+            }
+            // 
+            if (!layerExists3) {
+                if (layer_name == 'Visibility_00') {
+                    clickedMetarVisibilityLists_M.push(layer_name);
+                    panelLayermetarVisibility_lists_M.style.display = 'flex';
+                }
+            }
+            // 
+            if (!layerExists4) {
+                if (layer_name == 'Wind Speed and Direction_00') {
+                    clickedMetarWindSpeedAndDirectionLists_M.push(layer_name);
+                    panelLayermetarWindSpeedAndDirection_lists_M.style.display = 'flex';
+                }
+            }
+
+            panelLayermetarTemp_lists_M.innerHTML = clickedMetarTempLists_M.join("");
+
+            panelLayermetarDewPoint_lists_M.innerHTML = clickedMetarDewPointLists_M.join("");
+
+            panelLayermetarVisibility_lists_M.innerHTML = clickedMetarVisibilityLists_M.join("");
+
+            panelLayermetarWindSpeedAndDirection_lists_M.innerHTML = clickedMetarWindSpeedAndDirectionLists_M
+                .join("");
+        }
+
+    } else {
+        console.log(layer_name, 123);
+        let uncheckLayer = layer_group_name + ' ' + layer_name
+
+        // exposure
+        let exposureToRem = clickedExposureLists_M.indexOf(layer_name);
+        //
+        if (exposureToRem !== -1) {
+            clickedExposureLists_M.splice(exposureToRem, 1);
+        }
+        // 
+        panelLayerExposureLists_M.innerHTML = clickedExposureLists_M.join("");
+        // exposure end here
+
+
+        // radar
+        let radarToRem = clickedRADARPRODUCTSLists_M.indexOf(layer_name);
+        //
+        if (radarToRem !== -1) {
+            clickedRADARPRODUCTSLists_M.splice(radarToRem, 1);
+        }
+        // 
+        panelLayerRadarLists_M.innerHTML = clickedRADARPRODUCTSLists_M.join("");
+        // radar end here
+
+        // Satellite
+        let satelliteToRem = clickedSatelliteLists_M.indexOf(layer_name);
+        //
+        if (satelliteToRem !== -1) {
+            clickedSatelliteLists_M.splice(satelliteToRem, 1);
+        }
+        // 
+        panelLayerSatelliteLists_M.innerHTML = clickedSatelliteLists_M.join("");
+        // Satellite end here
+
+        // Lightning
+        let LightningToRem = clickedLightningLists_M.indexOf(layer_name);
+        //
+        if (LightningToRem !== -1) {
+            clickedLightningLists_M.splice(LightningToRem, 1);
+        }
+        // 
+        panelLayerLightningLists_M.innerHTML = clickedLightningLists_M.join("");
+        // Lightning end here
+
+        // SHIPANDBUOY
+        let ShipNBuoyToRem = clickedShipNBuoyLists_M.indexOf(layer_name);
+        //
+        if (ShipNBuoyToRem !== -1) {
+            clickedShipNBuoyLists_M.splice(ShipNBuoyToRem, 1);
+        }
+        // 
+        panelLayerShipNBuoyLists_M.innerHTML = clickedShipNBuoyLists_M.join("");
+        // SHIPANDBUOY end here
+
+        // METAR Temp
+        let metarTempToRem = clickedMetarTempLists_M.indexOf(layer_name);
+        //
+        if (metarTempToRem !== -1) {
+            clickedMetarTempLists_M.splice(metarTempToRem, 1);
+        }
+        // 
+        panelLayermetarTemp_lists_M.innerHTML = clickedMetarTempLists_M.join("");
+        // METAR end here
+
+        // METAR DewPoint
+        let metarDewPointToRem = clickedMetarDewPointLists_M.indexOf(layer_name);
+        //
+        if (metarDewPointToRem !== -1) {
+            clickedMetarDewPointLists_M.splice(metarDewPointToRem, 1);
+        }
+        // 
+        panelLayermetarDewPoint_lists_M.innerHTML = clickedMetarDewPointLists_M.join("");
+        // DewPoint
+
+        // METAR Visibility
+        let metarVisibilityToRem = clickedMetarVisibilityLists_M.indexOf(layer_name);
+        //
+        if (metarVisibilityToRem !== -1) {
+            clickedMetarVisibilityLists_M.splice(metarVisibilityToRem, 1);
+        }
+        // 
+        panelLayermetarVisibility_lists_M.innerHTML = clickedMetarVisibilityLists_M.join("");
+        // Visibility
+
+        // METAR WSaD
+        let metarWSaDToRem = clickedMetarWindSpeedAndDirectionLists_M.indexOf(layer_name);
+        //
+        if (metarWSaDToRem !== -1) {
+            clickedMetarWindSpeedAndDirectionLists_M.splice(metarWSaDToRem, 1);
+        }
+        // 
+        panelLayermetarWindSpeedAndDirection_lists_M.innerHTML = clickedMetarWindSpeedAndDirectionLists_M.join(
+            "");
+        // WSaD
+
+        metarLayersChecked = false;
+
+    }
+    // else overs here
+
+    // 
+    if (clickedExposureLists_M.length === 0) {
+        EXPOSURE_M.innerHTML = "";
+        panelLayerExposureTitle_M.innerHTML = "";
+        document.getElementById("ExposureRow_M").style.display = "none";
+    }
+    // 
+    if (clickedRADARPRODUCTSLists_M.length === 0) {
+        RADARPRODUCTS_M.innerHTML = "";
+        panelLayerRadarTitle_M.innerHTML = "";
+        document.getElementById("RADAR_Row_M").style.display = "none";
+    } else {
+        document.getElementById("RADAR_Row_M").style.display = "flex";
+    }
+    // 
+    if (clickedSatelliteLists_M.length === 0) {
+        SATELLITE_M.innerHTML = "";
+        panelLayerSatelliteTitle_M.innerHTML = "";
+        document.getElementById("SATELLITE_Row_M").style.display = "none";
+    }
+    // 
+    if (clickedLightningLists_M.length === 0) {
+        LIGHTNING_M.innerHTML = "";
+        panelLayerLightningTitle_M.innerHTML = "";
+        document.getElementById("LIGHTNING_Row_M").style.display = "none";
+    }
+    // 
+    if (clickedShipNBuoyLists_M.length === 0) {
+        SHIPANDBUOY_M.innerHTML = "";
+        panelLayerShipNBuoyTitle_M.innerHTML = "";
+        document.getElementById("SHIPANDBUOY_Row_M").style.display = "none";
+    }
+
+    // Metar Temp
+    if (clickedMetarTempLists_M.length === 0) {
+        panelLayermetarTemp_lists_M.innerHTML = "";
+        panelLayermetarTemp_lists_M.style.display = 'none';
+    }
+
+    // Metar DewPoint
+    if (clickedMetarDewPointLists_M.length === 0) {
+        panelLayermetarDewPoint_lists_M.innerHTML = "";
+        panelLayermetarDewPoint_lists_M.style.display = 'none';
+    }
+
+    // Metar Visibility
+    if (clickedMetarVisibilityLists_M.length === 0) {
+        panelLayermetarVisibility_lists_M.innerHTML = "";
+        panelLayermetarVisibility_lists_M.style.display = 'none';
+    }
+
+    // Metar WSaD
+    if (clickedMetarWindSpeedAndDirectionLists_M.length === 0) {
+        panelLayermetarWindSpeedAndDirection_lists_M.innerHTML = "";
+        panelLayermetarWindSpeedAndDirection_lists_M.style.display = 'none';
+    }
+
+    // Metar-ALL
+    if (clickedMetarTempLists_M.length === 0 && clickedMetarDewPointLists_M.length === 0 &&
+        clickedMetarVisibilityLists_M.length === 0 && clickedMetarWindSpeedAndDirectionLists_M.length === 0 && !
+        metarLayersChecked) {
+        METAR_M.innerHTML = "";
+        panelLayermetarWindSpeedAndDirection_Title_M.innerHTML = "";
+        panelLayermetarTemp_Title_M.innerHTML = "";
+        panelLayermetarVisibility_Title_M.innerHTML = "";
+        panelLayermetarWindSpeedAndDirection_Title_M.innerHTML = "";
+    } else {
+        document.getElementById("METAR_Row_M").style.display = "flex";
+    }
+
+
 });
 
-
-
-// console.log(getLayer_name, "222222getLayer_namegetLayer_name");
-
+// ***********************************************************************
 function metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     METAR.innerHTML = "METAR"
     panelLayermetarTemp_lists.style.display = 'flex';
