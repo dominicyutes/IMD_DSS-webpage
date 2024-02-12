@@ -4011,6 +4011,29 @@ var ObservationButton = L.Control.extend({
     }
 });
 new ObservationButton().addTo(map);
+// 
+
+// 
+function timeUpdateBoxTog() {
+    var modelBody = document.querySelector('.model-body_MM');
+    var arrowIcon = document.querySelector('.fa-solid.fa-arrow-down');
+    var modelMM = document.querySelector('.model_MM');
+
+    if (modelBody.style.height === '50px') {
+        modelBody.style.height = '300px';
+        arrowIcon.classList.remove('fa-rotate-180');
+        modelMM.style.top = '43%';
+    } else {
+        modelBody.style.height = '50px';
+        arrowIcon.classList.add('fa-rotate-180');
+        modelMM.style.top = '59%';
+    }
+}
+
+
+
+
+// 
 
 // Weather Inference 
 var WeatherInferenceControl = L.Control.extend({

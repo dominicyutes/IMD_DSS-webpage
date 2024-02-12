@@ -648,16 +648,6 @@
         </div>
 
         <!-- MOdels time update BOX -->
-        <!-- <div class="model_MM" style="display: block; left: 81%; top: 43%; height:0;">
-            <div class="model-body_MM" style="position: relative;">
-                <div
-                    style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px;">
-                    <h4 style="color: #f5f5f5; margin: 0 auto; font-size: 20px">Data Updation</h4>
-                    <i class="fa-solid fa-arrow-down" style="color: #f5f5f5;"></i>
-                </div>
-            </div>
-        </div> -->
-
         <div class="model_MM" style="display: block;">
             <div class="model-body_MM" style="position: relative;">
                 <div
@@ -668,6 +658,7 @@
                 </div>
             </div>
         </div>
+        <!--  -->
 
 
         <!-- LEGEND model popup -->
