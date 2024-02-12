@@ -4039,7 +4039,28 @@ new ObservationButton().addTo(map);
 // map.addControl(new ObservationButton());
 // buttonContainer.appendChild(new ObservationButton().onAdd(map));
 
+// 
+function timeUpdateBoxTog() {
+    var modelBody = document.querySelector('.model-body_MM');
+    var arrowIcon = document.querySelector('.fa-solid.fa-arrow-down');
+    var modelMM = document.querySelector('.model_MM');
 
+    if (modelBody.style.height === '50px') {
+        modelBody.style.height = '300px';
+        arrowIcon.classList.remove('fa-rotate-180');
+        modelMM.style.top = '43%';
+        // Additional styling here if needed
+    } else {
+        modelBody.style.height = '50px';
+        arrowIcon.classList.add('fa-rotate-180');
+        modelMM.style.top = '59%';
+        // Additional styling here if needed
+    }
+}
+
+
+
+// 
 (function() {
     var drawnItems = new L.FeatureGroup();
     map.addLayer(drawnItems);
@@ -4109,7 +4130,7 @@ new ObservationButton().addTo(map);
     clearLayersButton.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'leaflet-bar');
         div.innerHTML =
-        '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -94px; white-space: nowrap;">Clear All</button>';
+            '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -94px; white-space: nowrap;">Clear All</button>';
 
         div.firstChild.addEventListener('click', function() {
             // Remove all layers from the map
