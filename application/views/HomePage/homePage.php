@@ -677,7 +677,7 @@
 
                     <!-- lehends for observation -->
                     <div id="METAR_mm" style="display: none;">
-                        <h5 id="metarTemp-Title_mm" style="color: #000000;">METAR 00UTC</h5>
+                        <h5 id="metarTemp-Title_mm" style="color: #000000;">METAR 00UTC:</h5>
                         <p id="metarTemp-lists_mm" style="flex-wrap: wrap;">Temperature_00</p>
                         <div id="metarTempImage_mm" style="margin-left: 40px; flex-wrap: wrap;">
                             <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
@@ -696,7 +696,7 @@
                     </div>
                     <!--  -->
 
-                    
+
                     <!-- Exposure -->
                     <div id="ExposureRow" style="display: none; ">
                         <h4 id="EXPOSURE" style=" border-radius: 2px; background-color: #00719c;  text-align: center;">
@@ -1235,13 +1235,13 @@ function createGrid() {
 }
 
 // Create the grid with dotted lines
-var worldGrid = L.geoJson({
-    "type": "FeatureCollection",
-    "features": createGrid()
-}, {
-    color: 'white',
-    dashArray: '5, 5'
-}).addTo(map);
+// var worldGrid = L.geoJson({
+//     "type": "FeatureCollection",
+//     "features": createGrid()
+// }, {
+//     color: 'white',
+//     dashArray: '5, 5'
+// }).addTo(map);
 </script>
 <!-- print code start  -->
 <script>
