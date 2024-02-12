@@ -3878,13 +3878,35 @@ if (geocoderControl) {
     geocoderControl.style.width = '41px';
 }
 
-//add mousePosition
-// L.control.mousePosition({
-//     position: "bottomleft"
-// }).addTo(map);
 
-//add map scale
-// L.control.scale().addTo(map);
+// Create a custom control button for model popup
+// var dummy = L.Control.extend({
+//     options: {
+//         // position: 'bottomleft'
+//     },
+//     onAdd: function() {
+//         // Create a button element
+//         var dummy = L.DomUtil.create('span',
+//             'leaflet-bar leaflet-control leaflet-control-custom custom-btn5');
+//             dummy.innerHTML = 'dummy';
+
+//         // Set font size to 15px
+//         dummy.style.fontSize = '15px';
+//         dummy.style.fontFamily = 'Times New Roman';
+//         // dummy.style.top = '-658px';
+//         // dummy.style.left = '54px';
+
+//         // click event listener
+//         L.DomEvent.on(dummy, 'click', function() {
+//             // Your click event handling code goes here
+//         });
+
+//         return dummy;
+//     }
+// });
+// new dummy().addTo(map);
+
+
 
 var customButtonsContainer = L.DomUtil.create('div', 'leaflet-bar leaflet-control customClass');
 map.getContainer().appendChild(customButtonsContainer);
@@ -3897,7 +3919,7 @@ L.control.mousePosition({
 // Create a custom control button for MacroButton
 var PrintButton = L.Control.extend({
     options: {
-        position: 'bottomleft'
+        position: 'topleft'
     },
     onAdd: function() {
         var printbtn = L.DomUtil.create('span',
@@ -3907,7 +3929,7 @@ var PrintButton = L.Control.extend({
         // Set font size to 15px
         printbtn.style.fontSize = '15px';
         printbtn.style.fontFamily = 'Times New Roman';
-        printbtn.style.top = '-658px';
+        printbtn.style.top = '-431px';
         printbtn.style.left = '54px';
 
         // L.DomEvent.on(printbtn, 'click', function() {
@@ -3928,7 +3950,7 @@ new PrintButton().addTo(map);
 // Create a custom control button for model popup
 var LegendButton = L.Control.extend({
     options: {
-        position: 'bottomleft'
+        position: 'topleft'
     },
     onAdd: function() {
         // Create a button element
@@ -3940,7 +3962,7 @@ var LegendButton = L.Control.extend({
         // Set font size to 15px
         button.style.fontSize = '15px';
         button.style.fontFamily = 'Times New Roman';
-        button.style.top = '-650px';
+        button.style.top = '-498px';
         button.style.left = '54px';
 
         // click event listener
@@ -3958,7 +3980,7 @@ new LegendButton().addTo(map);
 // Create a custom control button for MacroButton
 var MacroButton = L.Control.extend({
     options: {
-        position: 'bottomleft'
+        position: 'topleft'
     },
     onAdd: function() {
         var macbtn = L.DomUtil.create('span',
@@ -3969,7 +3991,7 @@ var MacroButton = L.Control.extend({
         macbtn.style.fontSize = '15px';
         macbtn.style.fontFamily = 'Times New Roman';
         macbtn.style.display = 'block';
-        macbtn.style.top = '-642px';
+        macbtn.style.top = '-563px';
         macbtn.style.left = '54px';
         // click event
         L.DomEvent.on(macbtn, 'click', function() {
@@ -3983,7 +4005,7 @@ new MacroButton().addTo(map);
 // Create a custom control button for ObservationButton
 var ObservationButton = L.Control.extend({
     options: {
-        position: 'bottomleft'
+        position: 'topleft'
     },
     onAdd: function() {
         var obsbtn = L.DomUtil.create('span',
@@ -3992,9 +4014,8 @@ var ObservationButton = L.Control.extend({
         // Set font size to 15px
         obsbtn.style.fontSize = '15px';
         obsbtn.style.fontFamily = 'Times New Roman';
-        obsbtn.style.top = '-633px';
-        obsbtn.style.left = '54px';
-
+        obsbtn.style.top = '-629px';
+        obsbtn.style.left = '50px';
         // click event
         L.DomEvent.on(obsbtn, 'click', function() {
             toggleObservation();
@@ -4047,7 +4068,7 @@ new ObservationButton().addTo(map);
     freehandButton.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'leaflet-bar');
         div.innerHTML =
-            '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;">Freehand</button>';
+            '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;position: absolute; top: -134px;">Freehand</button>';
         div.firstChild.addEventListener('click', function() {
             if (isFreehandMode) {
                 isFreehandMode = false;
@@ -4069,7 +4090,7 @@ new ObservationButton().addTo(map);
     eraseButton.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'leaflet-bar');
         div.innerHTML =
-            '<button id="eraseButton" style="background-color: white; border: 0px solid black;">Erase</button>';
+            '<button id="eraseButton" style="background-color: white; border: 0px solid black; position: absolute; top: -114px;">Erase</button>';
 
         div.firstChild.addEventListener('click', function() {
             // Remove the last layer from the map
@@ -4088,7 +4109,7 @@ new ObservationButton().addTo(map);
     clearLayersButton.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'leaflet-bar');
         div.innerHTML =
-            '<button id="clearLayersButton" style="background-color: white; border: 0px solid black;">Clear All</button>';
+        '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -94px; white-space: nowrap;">Clear All</button>';
 
         div.firstChild.addEventListener('click', function() {
             // Remove all layers from the map
@@ -4257,7 +4278,9 @@ const ToggleControl = L.Control.extend({
         button.style.backgroundColor = 'white';
         button.style.border = '3px solid #c2c1ae';
         button.title = 'Split Screen';
-
+        button.style.position = 'absolute';
+        button.style.top = '624px';
+        button.style.left = '1px';
         // Appending the hand symbol and curved arrow SVG to the toggle button
         button.appendChild(handArrowSVG);
 

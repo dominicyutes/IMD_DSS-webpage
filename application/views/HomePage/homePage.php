@@ -1285,48 +1285,7 @@ $(".printbutton").click(function() {
 
 
 
-//}
 
-// function printDiv(imageFileName) {
-//     function getCurrentDateTime() {
-//         const now = new Date();
-
-//         const hours = now.getHours();
-//         const minutes = now.getMinutes();
-//         const ampm = hours >= 12 ? 'PM' : 'AM';
-
-//         const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')}${ampm}`;
-//         const formattedDate =
-//             `${now.getDate()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getFullYear()}`;
-
-//         const formattedDateTime = `${formattedTime}\n${formattedDate}`;
-
-//         return formattedDateTime;
-//     }
-//     const formattedDateTime = getCurrentDateTime();
-
-//     var win = window.open('');
-
-//     win.document.write(
-//         "<div style='text-align: center;'><span style='float: left;'><img src='https://mausam.imd.gov.in/responsive/img/logo/imd_logo_a.png' alt='IMD' width='50px' height='100px'></span>" +
-//         "<span style='display: inline-block;'><u><h1>WEATHER DECISION SUPPORT SYSTEM</h1></u></span>" +
-//         "<span style='float: right;'><label>" + formattedDateTime + "</label></span></div>"
-//     );
-
-//     win.document.write('<img src="<?php echo base_url()?>D:/pdf/' + imageFileName +
-//         '" style="page-break-before: always;"/>');
-
-//     var base_url = "<?php echo base_url(); ?>";
-//     win.document.write('<img src="' + base_url + 'pdf/' + imageFileName + '" style="page-break-before: always;"/>');
-
-//     win.setTimeout('win.document.print();', 200);
-
-//     win.document.onload = function() {
-//         this.print();
-//         this.close();
-//     };
-//     win.document.close();
-// }
 </script>
 <script>
 $(document).ready(function() {
@@ -1352,5 +1311,9 @@ $(document).ready(function() {
 <script src="leaflet.browser.print.min.js"></script>
 <script>
 var browserControl = L.control.browserPrint().addTo(map);
+
+// css
+browserControl.getContainer().style.top = '-76px';
+
 </script>
 <!-- print code end  -->
