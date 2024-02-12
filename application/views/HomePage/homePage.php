@@ -706,79 +706,6 @@
                             style="margin-left: 40px; display: flex; flex-wrap: wrap;"></div>
                         <p id="metarWindSpeedAndDirection-lists" style="display: flex; display: none; flex-wrap: wrap;">
                         </p>
-
-                        <!-- <h5 id="METAR00UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR00UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR01UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR01UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR02UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR02UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR03UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR03UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR04UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR04UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR05UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR05UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR06UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR06UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR07UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR07UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR08UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR08UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR09UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR09UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR10UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR10UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR11UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR11UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR12UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR12UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR13UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR13UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR14UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR14UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR15UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR15UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR16UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR16UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR17UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR17UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR18UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR18UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR19UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR19UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR20UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR20UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR21UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR21UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR22UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR22UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                    <h5 id="METAR23UTC-Title" style="color: #000000;"></h5>
-                    <p id="METAR23UTC-lists" style="display: flex; display: none; flex-wrap: wrap;"></p> -->
-
                     </div>
 
                     <!-- SYNOP -->
@@ -835,30 +762,6 @@
                         <div id="synop3hRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
                         </div>
                         <p id="synop3hRainfall-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
-
-                        <!-- <h5 id="SYNOP00UTC-Title" style="color: #000000;"></h5>
-                    <p id="SYNOP00UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
-
-                    <h5 id="SYNOP03UTC-Title" style="color: #000000;"></h5>
-                    <p id="SYNOP03UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
-
-                    <h5 id="SYNOP06UTC-Title" style="color: #000000;"></h5>
-                    <p id="SYNOP06UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
-
-                    <h5 id="SYNOP09UTC-Title" style="color: #000000;"></h5>
-                    <p id="SYNOP09UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
-
-                    <h5 id="SYNOP12UTC-Title" style="color: #000000;"></h5>
-                    <p id="SYNOP12UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
-
-                    <h5 id="SYNOP15UTC-Title" style="color: #000000;"></h5>
-                    <p id="SYNOP15UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
-
-                    <h5 id="SYNOP18UTC-Title" style="color: #000000;"></h5>
-                    <p id="SYNOP18UTC-lists" style="display: flex; flex-wrap: wrap;"></p>
-
-                    <h5 id="SYNOP21UTC-Title" style="color: #000000;"></h5>
-                    <p id="SYNOP21UTC-lists" style="display: flex; flex-wrap: wrap;"></p> -->
                     </div>
 
                     <!-- Radar -->
