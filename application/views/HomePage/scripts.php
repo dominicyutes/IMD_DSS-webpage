@@ -4013,20 +4013,21 @@ new ObservationButton().addTo(map);
 // MOdels time update BOX
 function timeUpdateBoxTog() {
     var modelBody = document.querySelector('.model-body_MM');
-    var arrowIcon = document.querySelector('.fa-solid fa-arrow-up');
+    var arrowIcon = document.querySelector('.fa-solid.fa-arrow-up');
     var modelMM = document.querySelector('.model_MM');
 
-    if (modelBody.style.height === '50px') {
+    if (modelBody.style.height === '50px' || modelBody.style.height === '') {
         modelBody.style.height = '300px';
         modelMM.style.top = '43%';
         arrowIcon.classList.add('fa-rotate-180');
-
     } else {
         modelBody.style.height = '50px';
         modelMM.style.top = '56%';
         arrowIcon.classList.remove('fa-rotate-180');
     }
 }
+
+
 
 
 
@@ -4046,7 +4047,7 @@ var WeatherInferenceControl = L.Control.extend({
         // Apply custom CSS to the container
         container.style.top = '-536px';
         container.style.left = '54px';
-         container.style.display = 'flex'; 
+        container.style.display = 'flex';
 
         // Create the Weather Inference button
         var weatherInferenceControl = L.DomUtil.create('span', 'custom-btn5', container);
@@ -4055,13 +4056,13 @@ var WeatherInferenceControl = L.Control.extend({
         weatherInferenceControl.style.fontFamily = 'Times New Roman';
         // weatherInferenceControl.style.top = '-536px';
         // weatherInferenceControl.style.left = '54px';
-    // Create the print icon
-    var printIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
+        // Create the print icon
+        var printIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
         printIcon.innerHTML = '<i class="fa fa-print"></i>';
         printIcon.style.fontSize = '15px';
         printIcon.style.marginLeft = '5px';
 
-        
+
         // Create the download icon
         var downloadIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
         downloadIcon.innerHTML = '<i class="fa fa-download"></i>';
@@ -8033,6 +8034,8 @@ const legendModelExpo = document.getElementById('legendModelExposure');
 const legendModelMet = document.getElementById('legendModelMetar');
 
 let Model_Time = document.getElementById("model_Tim");
+let Model_Time_Title = document.getElementById("Model_Tim_Tit");
+let Model_Time_List = document.getElementById("Model_Tim_lis");
 
 // synop
 let synopButtonState = false;
@@ -8049,7 +8052,8 @@ function clickHandler_synop(event) {
         map.removeControl(panelLayers9);
         map.removeControl(panelLayers10);
         map.removeControl(panelLayers11);
-        console.log(synopButtonState, "synopButtonState..1");
+        // 
+        Model_Time.style.display = "none";
     } else {
         map.addControl(panelLayers2);
         map.removeControl(panelLayers3);
@@ -8078,6 +8082,10 @@ function clickHandler_synop(event) {
         macroContainerFn.classList.add('hidden');
         observationContainerFn.classList.add('hidden');
         mapVar.style.width = '100%';
+        // 
+        Model_Time.style.display = "block";
+        Model_Time_Title.innerHTML = "Synop";
+        Model_Time_List.innerHTML = "Synop's Time Updated";
     }
     synopButtonState = !synopButtonState;
 }
@@ -8099,6 +8107,8 @@ function clickHandler_metar(event) {
         map.removeControl(panelLayers9);
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
+        // 
+        Model_Time.style.display = "none";
     } else {
         // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
@@ -8128,6 +8138,10 @@ function clickHandler_metar(event) {
         macroContainerFn.classList.add('hidden');
         observationContainerFn.classList.add('hidden');
         mapVar.style.width = '100%';
+        // 
+        Model_Time.style.display = "block";
+        Model_Time_Title.innerHTML = "Metar";
+        Model_Time_List.innerHTML = "Metar's Time Updated";
     }
     metarButtonState = !metarButtonState;
 }
@@ -8149,6 +8163,8 @@ function clickHandler_mesolscale(event) {
         map.removeControl(panelLayers9);
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
+        // 
+        Model_Time.style.display = "none";
     } else {
         // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
@@ -8178,6 +8194,10 @@ function clickHandler_mesolscale(event) {
         macroContainerFn.classList.add('hidden');
         observationContainerFn.classList.add('hidden');
         mapVar.style.width = '100%';
+        // 
+        Model_Time.style.display = "block";
+        Model_Time_Title.innerHTML = "Mesolscale";
+        Model_Time_List.innerHTML = "Mesolscale's Time Updated";
     }
     mesolscaleButtonState = !mesolscaleButtonState;
 }
@@ -8199,6 +8219,8 @@ function clickHandler_medium(event) {
         map.removeControl(panelLayers9);
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
+        // 
+        Model_Time.style.display = "none";
     } else {
         // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
@@ -8228,6 +8250,10 @@ function clickHandler_medium(event) {
         macroContainerFn.classList.add('hidden');
         observationContainerFn.classList.add('hidden');
         mapVar.style.width = '100%';
+        // 
+        Model_Time.style.display = "block";
+        Model_Time_Title.innerHTML = "Medium Range";
+        Model_Time_List.innerHTML = "Medium Range's Time Updated";
     }
     medium_rangeButtonState = !medium_rangeButtonState;
 }
@@ -8249,6 +8275,8 @@ function clickHandler_satellite(event) {
         map.removeControl(panelLayers9);
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
+        // 
+        Model_Time.style.display = "none";
     } else {
         // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
@@ -8278,6 +8306,10 @@ function clickHandler_satellite(event) {
         macroContainerFn.classList.add('hidden');
         observationContainerFn.classList.add('hidden');
         mapVar.style.width = '100%';
+        // 
+        Model_Time.style.display = "block";
+        Model_Time_Title.innerHTML = "Satellite";
+        Model_Time_List.innerHTML = "Satellite's Time Updated";
     }
     satelliteButtonState = !satelliteButtonState;
 }
@@ -8299,6 +8331,8 @@ function clickHandler_radar(event) {
         map.removeControl(panelLayers9);
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
+        // 
+        Model_Time.style.display = "none";
     } else {
         // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
@@ -8328,6 +8362,10 @@ function clickHandler_radar(event) {
         macroContainerFn.classList.add('hidden');
         observationContainerFn.classList.add('hidden');
         mapVar.style.width = '100%';
+        // 
+        Model_Time.style.display = "block";
+        Model_Time_Title.innerHTML = "Radar";
+        Model_Time_List.innerHTML = "Radar's Time Updated";
     }
     radarButtonState = !radarButtonState;
 }
@@ -8349,6 +8387,8 @@ function clickHandler_lightning(event) {
         map.removeControl(panelLayers9);
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
+        // 
+        Model_Time.style.display = "none";
     } else {
         // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
@@ -8378,6 +8418,10 @@ function clickHandler_lightning(event) {
         macroContainerFn.classList.add('hidden');
         observationContainerFn.classList.add('hidden');
         mapVar.style.width = '100%';
+        // 
+        Model_Time.style.display = "block";
+        Model_Time_Title.innerHTML = "Lightning";
+        Model_Time_List.innerHTML = "Lightning's Time Updated";
     }
     lightningButtonState = !lightningButtonState;
 }
@@ -8399,6 +8443,8 @@ function clickHandler_sounding(event) {
         map.removeControl(panelLayers9);
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
+        // 
+        Model_Time.style.display = "none";
     } else {
         // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
@@ -8428,6 +8474,10 @@ function clickHandler_sounding(event) {
         macroContainerFn.classList.add('hidden');
         observationContainerFn.classList.add('hidden');
         mapVar.style.width = '100%';
+        // 
+        Model_Time.style.display = "block";
+        Model_Time_Title.innerHTML = "Sounding";
+        Model_Time_List.innerHTML = "Sounding's Time Updated";
     }
     soundingButtonState = !soundingButtonState;
 }
@@ -8449,6 +8499,8 @@ function clickHandler_expo(event) {
         map.removeControl(panelLayers9);
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
+        // 
+        Model_Time.style.display = "none";
     } else {
         // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
@@ -8472,12 +8524,17 @@ function clickHandler_expo(event) {
         soundingButtonState = false;
         ship_and_buoyButtonState = false;
         // 
+        debugger;
         let macroContainerFn = document.getElementById("macroContainer");
         let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
+        let mapVar = document.getElementById('map')
         macroContainerFn.classList.add('hidden');
         observationContainerFn.classList.add('hidden');
         mapVar.style.width = '100%';
+        // 
+        Model_Time.style.display = "block";
+        Model_Time_Title.innerHTML = "Exposure";
+        Model_Time_List.innerHTML = "Exposure's Time Updated";
     }
     exposureButtonState = !exposureButtonState;
 }
@@ -8526,12 +8583,14 @@ function clickHandler_ship(event) {
         // 
         let macroContainerFn = document.getElementById("macroContainer");
         let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
+        let mapVar = document.getElementById('map')
         macroContainerFn.classList.add('hidden');
         observationContainerFn.classList.add('hidden');
         mapVar.style.width = '100%';
         // 
         Model_Time.style.display = "block";
+        Model_Time_Title.innerHTML = "Ship and Buoy";
+        Model_Time_List.innerHTML = "Ship and Buoy's Time Updated";
     }
     ship_and_buoyButtonState = !ship_and_buoyButtonState;
 }

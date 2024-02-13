@@ -419,10 +419,6 @@ body {
 }
 
 /*  */
-/* .hide {
-    display: none;
-    visibility: hidden;
-} */
 
 .customClass {
     float: none;

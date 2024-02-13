@@ -8,7 +8,7 @@
     <!-- <link rel="shortcut icon" href="img/IMDlogo_Ipart-iris.png" type="image/png"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -630,12 +630,15 @@
 
         <!-- MOdels time update BOX -->
         <div id="model_Tim" class="model_MM" style="display: none;">
-            <div class="model-body_MM" style="position: relative;">
+            <div class="model-body_MM" style="position: relative;overflow: hidden;">
                 <div
                     style="z-index: 999; display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px;">
-                    <h4 style="color: #f5f5f5; margin: 0 auto; font-size: 20px">Data Updation</h4>
+                    <h4 id="Model_Tim_Tit" style="color: #f5f5f5; margin: 0 auto; font-size: 20px"></h4>
                     <i class="fa-solid fa-arrow-up" style="color: #f5f5f5; cursor: pointer;"
                         onclick="timeUpdateBoxTog()"></i>
+                </div>
+                <div>
+                    <p id="Model_Tim_lis" ;></p>
                 </div>
             </div>
         </div>
