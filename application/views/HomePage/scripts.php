@@ -4046,6 +4046,7 @@ var WeatherInferenceControl = L.Control.extend({
         // Apply custom CSS to the container
         container.style.top = '-536px';
         container.style.left = '54px';
+         container.style.display = 'flex'; 
 
         // Create the Weather Inference button
         var weatherInferenceControl = L.DomUtil.create('span', 'custom-btn5', container);
@@ -4054,18 +4055,121 @@ var WeatherInferenceControl = L.Control.extend({
         weatherInferenceControl.style.fontFamily = 'Times New Roman';
         // weatherInferenceControl.style.top = '-536px';
         // weatherInferenceControl.style.left = '54px';
+    // Create the print icon
+    var printIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
+        printIcon.innerHTML = '<i class="fa fa-print"></i>';
+        printIcon.style.fontSize = '15px';
+        printIcon.style.marginLeft = '5px';
 
+        
         // Create the download icon
         var downloadIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
         downloadIcon.innerHTML = '<i class="fa fa-download"></i>';
-        downloadIcon.style.fontSize = '15px'; // Adjust the size as needed
-        downloadIcon.style.marginLeft = '5px'; // Adjust the spacing as needed
+        downloadIcon.style.fontSize = '15px';
+        downloadIcon.style.marginLeft = '5px';
+
+        // Counter and date variables
+        var entryCount = 0;
+        var firstEntryDate = null;
+        var savedData = []; // Array to store saved data
+
+        // Add event listener to the download icon
+        downloadIcon.addEventListener('click', function() {
+            // Get the current date and time
+            var currentDate = new Date();
+            var formattedDate = currentDate.toLocaleDateString();
+
+            // Show a prompt to enter a name
+            var name = prompt('Please enter a name:');
+
+            // Check if it's the first entry of the day
+            if (firstEntryDate !== formattedDate) {
+                entryCount = 1;
+                firstEntryDate = formattedDate;
+            } else {
+                entryCount++;
+            }
+
+            // Save the entered data
+            savedData.push({
+                name: name,
+                entryCount: entryCount,
+                date: formattedDate
+            });
+
+            // Show an alert with the entered name, entry count, and current date
+            if (name !== null) {
+                var alertMessage = 'Name entered: ' + name + '\nDate ' + formattedDate +
+                    '\nCount:' +
+                    entryCount + '\n\nDo you want to see all saved data click OK?';
+
+                if (confirm(alertMessage)) {
+                    showSavedData();
+                }
+            }
+        });
+
+        // Function to display all saved data
+        function showSavedData() {
+            var dataMessage = 'All saved data:\n\n';
+            savedData.forEach(function(entry) {
+                dataMessage += 'Name: ' + entry.name + ', Entry Count: ' + entry.entryCount +
+                    ', Date: ' + entry.date + '\n';
+            });
+
+            alert(dataMessage);
+        }
 
         // Create the calendar icon
         var calendarIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
         calendarIcon.innerHTML = '<i class="fa fa-calendar"></i>';
-        calendarIcon.style.fontSize = '15px'; // Adjust the size as needed
-        calendarIcon.style.marginLeft = '5px'; // Adjust the spacing as needed
+        calendarIcon.style.fontSize = '15px';
+        calendarIcon.style.marginLeft = '5px';
+
+        // Create input box for date
+        var dateInput = L.DomUtil.create('input', 'date-input', container);
+        dateInput.type = 'text';
+        dateInput.style.display = 'none'; // initially hide the input box
+
+        // Create a container for displaying saved data
+        var savedDataContainer = L.DomUtil.create('div', 'saved-data-container', container);
+
+        // Initialize flatpickr for date input
+        flatpickr(dateInput, {
+            dateFormat: 'Y-m-d',
+            onClose: function(selectedDates, dateStr) {
+                // Handle the selected date as needed
+                console.log('Selected date:', dateStr);
+                // Update the saved data container with data for the selected date
+                updateSavedDataContainer(dateStr);
+            }
+        });
+
+        // Event listener for calendar icon click
+        calendarIcon.addEventListener('click', function() {
+            // Toggle the visibility of the input box
+            dateInput.style.display = (dateInput.style.display === 'none') ? 'block' : 'none';
+            // Clear the saved data container when the calendar icon is clicked
+            savedDataContainer.innerHTML = '';
+        });
+
+        // Function to display saved data for the selected date
+        function updateSavedDataContainer(selectedDate) {
+            var dataMessage = 'Saved data for ' + selectedDate + ':\n\n';
+            var dataFound = false;
+
+            savedData.forEach(function(entry) {
+                if (entry.date === selectedDate) {
+                    dataMessage += 'Name: ' + entry.name + ', Entry Count: ' + entry.entryCount +
+                        ', Date: ' + entry.date + '\n';
+                    dataFound = true;
+                }
+            });
+
+            // Display the data in the container or show a message if no data is found
+            savedDataContainer.innerHTML = dataFound ? dataMessage : 'No data found for ' + selectedDate;
+        }
+
 
         // click event listener for the Weather Inference button
         L.DomEvent.on(weatherInferenceControl, 'click', function() {
