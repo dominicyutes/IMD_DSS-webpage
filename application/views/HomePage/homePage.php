@@ -514,62 +514,43 @@
                 </div>
 
             </div>
+
             <!-- Layer_Name_bottom  display: none; -->
             <div
-                style="height: 38px; width: 100%; background-color: white; font-family: 'Times New Roman'; display: flex;">
-                <!-- EXPO -->
-                <div id="ExposureRow_M" style="flex-grow: 1; display: none; flex-wrap: wrap;">
-                    <h4 id="EXPOSURE_M" style="border-radius: 2px;"></h4>
-                    <h5 id="exposure_layers_Title_M" style="color: #000000;"></h5>
-                    <p id="exposure_layers_lists_M" style="display: flex; flex-wrap: wrap;"></p>
+                style="display: flex; height: 38px; width: 100%; background-color: #2e578647; font-family: 'Times New Roman'; justify-content: center;">
+                <div
+                    style="width: 50%; display: flex; justify-content: space-between; align-items: center; border-radius: 7px; background-color: #f4fcff;">
+                    <span style="height: 24px;width: 37px;background-color: #99d9f2;margin-left: 10px;">
+                        <i class="fa-solid fa-arrow-left fa-lg"></i>
+                    </span>
+                    <span>
+                        <h3>Layers Selected None</h3>
+                    </span>
+                    <span
+                        style="height: 24px;width: 37px;background-color: #99d9f2;display: flex;justify-content: flex-end;align-items: center;margin-right: 10px;"><i
+                            class="fa-solid fa-arrow-right fa-lg"></i></span>
                 </div>
-                <!-- RADARPRODUCTS -->
-                <div id="RADAR_Row_M" style="flex-grow: 1; display: none;">
-                    <h4 id="RADARPRODUCTS_M" style="border-radius: 8px; background-color: #00719c;"></h4>
-                    <h5 id="RADARPRODUCTS_Title_M" style="color: #000000;"></h5>
-                    <p id="RADARPRODUCTS_lists_M" style="flex-wrap: wrap;"></p>
+                <div id="second_div"
+                    style="background-color: #f4fcff; margin-left: 15px; border-radius: 7px; display: flex; align-items: center; justify-content: center;">
+                    <h5 style="border-radius: 7px; width: 22px; display: flex; justify-content: center;">0</h5>
                 </div>
-                <!-- SATELLITE -->
-                <div id="SATELLITE_Row_M" style="flex-grow: 1; display: none;">
-                    <h4 id="SATELLITE_M" style="border-radius: 8px; background-color: #00719c;"></h4>
-                    <h5 id="SATELLITE_Title_M" style="color: #000000;"></h5>
-                    <p id="SATELLITE_lists_M" style="flex-wrap: wrap;"></p>
-                </div>
-                <!-- LIGHTNING -->
-                <div id="LIGHTNING_Row_M" style="flex-grow: 1; display: none;">
-                    <h4 id="LIGHTNING_M" style="border-radius: 8px; background-color: #00719c;"></h4>
-                    <h5 id="LIGHTNING_Title_M" style="color: #000000;"></h5>
-                    <p id="LIGHTNING_lists_M" style="flex-wrap: wrap;"></p>
-                </div>
-                <!-- SHIPANDBUOY -->
-                <div id="SHIPANDBUOY_Row_M" style="flex-grow: 1; display: none;">
-                    <h4 id="SHIPANDBUOY_M" style=" border-radius: 8px; background-color: #00719c;">
-                    </h4>
-                    <h5 id="SHIPANDBUOY_Title_M" style="color: #000000;"></h5>
-                    <p id="SHIPANDBUOY_lists_M" style="flex-wrap: wrap;"></p>
-                </div>
-                <!-- METAR -->
-                <div id="METAR_Row_M">
-                    <h4 id="METAR_M" style=" border-radius: 8px; background-color: #00719c;"></h4>
-                    <!-- METARTEMP -->
-                    <h5 id="metarTemp_Title_M" style="color: #000000;"></h5>
-                    <p id="metarTemp_lists_M" style="display: none; flex-wrap: wrap;"></p>
-
-                    <!-- METARDewPoint -->
-                    <h5 id="metarDewPoint_Title_M" style="color: #000000;"></h5>
-                    <p id="metarDewPointLists_M" style="display: none; flex-wrap: wrap;"></p>
-
-                    <!-- METARVisibility -->
-                    <h5 id="metarVisibility_Title_M" style="color: #000000;"></h5>
-                    <p id="metarVisibility_lists_M" style="display: none; flex-wrap: wrap;"></p>
-
-                    <!-- METARWindSpeedAndDirection -->
-                    <h5 id="metarWindSpeedAndDirection_Title_M" style="color: #000000;"></h5>
-                    <p id="metarWindSpeedAndDirection_Lists_M" style="display: flex; display: none; flex-wrap: wrap;">
-                    </p>
-                </div>
-                <!--  -->
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- row map class ends here  -->
         </div>
 
@@ -648,12 +629,12 @@
         </div>
 
         <!-- MOdels time update BOX -->
-        <div class="model_MM" style="display: block;">
+        <div id="model_Tim" class="model_MM" style="display: none;">
             <div class="model-body_MM" style="position: relative;">
                 <div
                     style="z-index: 999; display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px;">
                     <h4 style="color: #f5f5f5; margin: 0 auto; font-size: 20px">Data Updation</h4>
-                    <i class="fa-solid fa-arrow-down" style="color: #f5f5f5; cursor: pointer;"
+                    <i class="fa-solid fa-arrow-up" style="color: #f5f5f5; cursor: pointer;"
                         onclick="timeUpdateBoxTog()"></i>
                 </div>
             </div>

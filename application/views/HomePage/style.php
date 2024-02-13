@@ -617,7 +617,7 @@ body {
 
 .model_MM {
     left: 81%;
-    top: 43%;
+    top: 56%;
     height: 0;
     width: 35%;
     position: fixed;
@@ -627,7 +627,7 @@ body {
 .model-body_MM {
     position: absolute;
     width: 52%;
-    height: 300px;
+    height: 50px;
     margin: 315px 0 0 100px;
     transform: translate(-50%, -50%);
     background-color: #f3fbfe;
@@ -638,6 +638,67 @@ body {
     position: relative;
 }
 
+/*  */
+.container {
+    display: flex;
+    height: 38px;
+    width: 100%;
+    background-color: #4b8bae;
+    font-family: 'Times New Roman';
+    justify-content: center;
+    position: relative;
+}
+
+.arrow-container {
+    width: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 7px;
+    background-color: white;
+    margin-right: 9px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.dropdown-container {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 7px;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: calc(-100% - 5px);
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 7px;
+    display: none;
+    z-index: 3;
+}
+
+.dropdown-content.active {
+    display: block;
+}
+
+#LayerCount {
+    background-color: #fff;
+    margin-left: 15px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+
+/*  */
 
 /* Draggable Model PopUp for Legend */
 .model {

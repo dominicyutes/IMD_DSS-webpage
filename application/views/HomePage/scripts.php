@@ -1990,7 +1990,7 @@ function showParameterNames(value) {
     } else {
         showSubParameterNames('');
     }
-    if (value === "Satellite") {
+    if (value === "Satellite" || value === "Radar") {
         document.getElementById("TimNon").style.display = "contents";
     } else {
         DatRem();
@@ -2119,10 +2119,7 @@ function obsLayerNameX() {
 
 // 
 function DatRem() {
-    console.log("x123 Satellite");
-
     var TimNonElement = document.getElementById("TimNon");
-    console.log(TimNonElement, "Satellite");
 
     if (TimNonElement) {
         TimNonElement.style.display = "none";
@@ -4013,20 +4010,21 @@ var ObservationButton = L.Control.extend({
 new ObservationButton().addTo(map);
 // 
 
-// 
+// MOdels time update BOX
 function timeUpdateBoxTog() {
     var modelBody = document.querySelector('.model-body_MM');
-    var arrowIcon = document.querySelector('.fa-solid.fa-arrow-down');
+    var arrowIcon = document.querySelector('.fa-solid fa-arrow-up');
     var modelMM = document.querySelector('.model_MM');
 
     if (modelBody.style.height === '50px') {
         modelBody.style.height = '300px';
-        arrowIcon.classList.remove('fa-rotate-180');
         modelMM.style.top = '43%';
+        arrowIcon.classList.add('fa-rotate-180');
+
     } else {
         modelBody.style.height = '50px';
-        arrowIcon.classList.add('fa-rotate-180');
-        modelMM.style.top = '59%';
+        modelMM.style.top = '56%';
+        arrowIcon.classList.remove('fa-rotate-180');
     }
 }
 
@@ -7930,7 +7928,7 @@ const legendImage2 = document.getElementById('legendModel2');
 const legendModelExpo = document.getElementById('legendModelExposure');
 const legendModelMet = document.getElementById('legendModelMetar');
 
-
+let Model_Time = document.getElementById("model_Tim");
 
 // synop
 let synopButtonState = false;
@@ -8397,6 +8395,8 @@ function clickHandler_ship(event) {
         map.removeControl(panelLayers9);
         map.removeControl(panelLayers11);
         map.removeControl(panelLayers10);
+
+        Model_Time.style.display = "none";
     } else {
         // map.removeControl(panelLayers);
         map.removeControl(panelLayers2);
@@ -8426,6 +8426,8 @@ function clickHandler_ship(event) {
         macroContainerFn.classList.add('hidden');
         observationContainerFn.classList.add('hidden');
         mapVar.style.width = '100%';
+        // 
+        Model_Time.style.display = "block";
     }
     ship_and_buoyButtonState = !ship_and_buoyButtonState;
 }
