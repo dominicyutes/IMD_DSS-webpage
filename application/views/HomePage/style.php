@@ -615,6 +615,30 @@ body {
 
 /* Macro View Btn ends here */
 
+.model_MM {
+    left: 81%;
+    top: 43%;
+    height: 0;
+    width: 35%;
+    position: fixed;
+    z-index: 999;
+}
+
+.model-body_MM {
+    position: absolute;
+    width: 52%;
+    height: 300px;
+    margin: 315px 0 0 100px;
+    transform: translate(-50%, -50%);
+    background-color: #f3fbfe;
+    box-shadow: inset -1px 2px 10px 0 rgba(0, 0, 0, 0.404);
+    border-radius: 6px;
+    user-select: none;
+    overflow: auto;
+    position: relative;
+}
+
+
 /* Draggable Model PopUp for Legend */
 .model {
     width: 35%;
@@ -623,8 +647,7 @@ body {
     top: 238px;
     left: 70px;
     display: none;
-    z-index: 99999;
-    /* background-color: red; */
+    z-index: 999;
 }
 
 .model-body {

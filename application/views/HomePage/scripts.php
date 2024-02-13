@@ -4011,6 +4011,29 @@ var ObservationButton = L.Control.extend({
     }
 });
 new ObservationButton().addTo(map);
+// 
+
+// 
+function timeUpdateBoxTog() {
+    var modelBody = document.querySelector('.model-body_MM');
+    var arrowIcon = document.querySelector('.fa-solid.fa-arrow-down');
+    var modelMM = document.querySelector('.model_MM');
+
+    if (modelBody.style.height === '50px') {
+        modelBody.style.height = '300px';
+        arrowIcon.classList.remove('fa-rotate-180');
+        modelMM.style.top = '43%';
+    } else {
+        modelBody.style.height = '50px';
+        arrowIcon.classList.add('fa-rotate-180');
+        modelMM.style.top = '59%';
+    }
+}
+
+
+
+
+// 
 
 // Weather Inference 
 var WeatherInferenceControl = L.Control.extend({
@@ -24473,4 +24496,30 @@ document.addEventListener('mouseup', () => {
     viewCreateMacroBody.removeEventListener('mousemove', onDragViewMacro);
 })
 // model popup- viewMacro endsHere
+
+// MOdels time update BOX starts here
+let model_MM = document.querySelector('.model_MM');
+let modelBody_MM = document.querySelector('.model-body_MM');
+
+function onDragModelTimeUP({
+    movementX,
+    movementY
+}) {
+    let getStyle_MM = window.getComputedStyle(model_MM);
+    let leftValue_MM = parseInt(getStyle_MM.left);
+    let topValue_MM = parseInt(getStyle_MM.top);
+    model_MM.style.left = `${leftValue_MM + movementX}px`;
+    model_MM.style.top = `${topValue_MM + movementY}px`;
+}
+//
+document.addEventListener('mousedown', () => {
+    modelBody_MM.style.cursor = 'all-scroll';
+    modelBody_MM.addEventListener('mousemove', onDragModelTimeUP);
+})
+//
+document.addEventListener('mouseup', () => {
+    modelBody_MM.style.cursor = 'default';
+    modelBody_MM.removeEventListener('mousemove', onDragModelTimeUP);
+})
+// MOdels time update BOX endsHere
 </script>

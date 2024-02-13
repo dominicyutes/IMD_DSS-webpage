@@ -514,7 +514,7 @@
                 </div>
 
             </div>
-            <!-- Layer_Name_bottom -->
+            <!-- Layer_Name_bottom  display: none; -->
             <div
                 style="height: 38px; width: 100%; background-color: white; font-family: 'Times New Roman'; display: flex;">
                 <!-- EXPO -->
@@ -570,8 +570,6 @@
                 </div>
                 <!--  -->
             </div>
-
-
             <!-- row map class ends here  -->
         </div>
 
@@ -634,7 +632,6 @@
         </div>
 
         <!-- observation Layer name on Map-->
-        <!--  display: none; -->
         <div id="obsLayerNamShw" class="modal" style="width: 500px; left: 11%; top: 90%;">
             <div class="modal-content"
                 style="z-index: 999 ; font-family: Arial, sans-serif; background-color: #ffffff; border-radius: 10px;">
@@ -649,6 +646,20 @@
                 </div>
             </div>
         </div>
+
+        <!-- MOdels time update BOX -->
+        <div class="model_MM" style="display: block;">
+            <div class="model-body_MM" style="position: relative;">
+                <div
+                    style="z-index: 999; display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px;">
+                    <h4 style="color: #f5f5f5; margin: 0 auto; font-size: 20px">Data Updation</h4>
+                    <i class="fa-solid fa-arrow-down" style="color: #f5f5f5; cursor: pointer;"
+                        onclick="timeUpdateBoxTog()"></i>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+
 
         <!-- LEGEND model popup -->
         <div class="model" style="display: none; left: 253px; top: 94px; height:0;">
@@ -731,8 +742,6 @@
                             style="margin-left: 40px; display: flex; flex-wrap: wrap;"></div>
                         <p id="metarWindSpeedAndDirection-lists" style="display: flex; display: none; flex-wrap: wrap;">
                         </p>
-
-
                     </div>
 
                     <!-- SYNOP -->
@@ -983,8 +992,7 @@
 
                 </div>
             </div>
-
-
+        </div>
 </body>
 <!-- adding JS -->
 <?php $this->load->view('HomePage/scripts'); ?>
