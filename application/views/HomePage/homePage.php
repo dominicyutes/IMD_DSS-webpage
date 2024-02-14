@@ -524,7 +524,7 @@
                         <i class="fa-solid fa-arrow-left fa-lg"></i>
                     </span>
                     <span>
-                        <h3>Lightning/Last 5-10 min</h3>
+                        <h3>NO LAYERS SELECTED</h3>
                     </span>
                     <span
                         style="height: 24px;width: 37px;background-color: #99d9f2;display: flex;justify-content: flex-end;align-items: center;margin-right: 10px;"><i
@@ -532,7 +532,7 @@
                 </div>
                 <div id="second_div"
                     style="background-color: #f4fcff; margin-left: 15px; border-radius: 7px; display: flex; align-items: center; justify-content: center;">
-                    <h5 style="border-radius: 7px; width: 22px; display: flex; justify-content: center;">2</h5>
+                    <h5 style="border-radius: 7px; width: 22px; display: flex; justify-content: center;">0</h5>
                 </div>
             </div>
 
