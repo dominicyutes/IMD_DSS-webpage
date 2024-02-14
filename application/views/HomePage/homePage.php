@@ -532,7 +532,7 @@
                 </div>
                 <div id="second_div"
                     style="background-color: #f4fcff; margin-left: 15px; border-radius: 7px; display: flex; align-items: center; justify-content: center;">
-                    <h5 style="border-radius: 7px; width: 22px; display: flex; justify-content: center;">1</h5>
+                    <h5 style="border-radius: 7px; width: 22px; display: flex; justify-content: center;">2</h5>
                 </div>
             </div>
 
