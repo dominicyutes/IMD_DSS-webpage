@@ -3061,7 +3061,7 @@ let sampleLayerBtn;
 // Create a custom control button for model popup
 var SampleLayerBtn = L.Control.extend({
     options: {
-        position: 'bottomleft'
+        position: 'topright'
     },
     onAdd: function() {
         // Create a button element
@@ -3071,8 +3071,8 @@ var SampleLayerBtn = L.Control.extend({
 
         button.style.fontSize = '15px';
         button.style.fontFamily = 'Times New Roman';
-        button.style.top = '-583px';
-        button.style.right = '-1600px';
+        button.style.top = '-40px';
+        button.style.left = '-46px';
 
         // click event listener
         L.DomEvent.on(button, 'click', function() {
@@ -3311,7 +3311,7 @@ var testImageTimeLayer;
 function toggleTimeDimensionControl() {
     if (!map.timeDimensionControl) {
         map.timeDimensionControl = L.control.timeDimension({
-            position: 'topleft',
+            // position: 'topleft',
             autoPlay: false,
             playerOptions: {
                 buffer: 10,
