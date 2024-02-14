@@ -3968,12 +3968,24 @@ var MacroButton = L.Control.extend({
         // click event
         L.DomEvent.on(macbtn, 'click', function() {
             macToggleObservation();
+            map.removeControl(panelLayers2);
+            map.removeControl(panelLayers3);
+            map.removeControl(panelLayers4);
+            map.removeControl(panelLayers5);
+            map.removeControl(panelLayers6);
+            map.removeControl(panelLayers7);
+            map.removeControl(panelLayers8);
+            map.removeControl(panelLayers9);
+            map.removeControl(panelLayers10);
+            map.removeControl(panelLayers11);
+            Model_Time.style.display = "none";
         });
 
         return macbtn;
     }
 });
 new MacroButton().addTo(map);
+
 // Create a custom control button for ObservationButton
 var ObservationButton = L.Control.extend({
     options: {
@@ -4002,6 +4014,7 @@ var ObservationButton = L.Control.extend({
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
+            Model_Time.style.display = "none";
         });
 
         return obsbtn;
@@ -8524,7 +8537,6 @@ function clickHandler_expo(event) {
         soundingButtonState = false;
         ship_and_buoyButtonState = false;
         // 
-        debugger;
         let macroContainerFn = document.getElementById("macroContainer");
         let observationContainerFn = document.getElementById("ObservationContainer");
         let mapVar = document.getElementById('map')
