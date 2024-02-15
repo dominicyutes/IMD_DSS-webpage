@@ -8156,7 +8156,7 @@ function clickHandler_synop(event) {
         // 
         Model_Time.style.display = "block";
         Model_Time_Title.innerHTML = "Synop";
-        Model_Time_List.innerHTML = "Synop's Time Updated";
+        Model_Time_List.innerHTML = "Synop's Data Update Time";
     }
     synopButtonState = !synopButtonState;
 }
@@ -8212,7 +8212,7 @@ function clickHandler_metar(event) {
         // 
         Model_Time.style.display = "block";
         Model_Time_Title.innerHTML = "Metar";
-        Model_Time_List.innerHTML = "Metar's Time Updated";
+        Model_Time_List.innerHTML = "Metar's Data Update Time";
     }
     metarButtonState = !metarButtonState;
 }
@@ -8267,8 +8267,8 @@ function clickHandler_mesolscale(event) {
         mapVar.style.width = '100%';
         // 
         Model_Time.style.display = "block";
-        Model_Time_Title.innerHTML = "Mesolscale";
-        Model_Time_List.innerHTML = "Mesolscale's Time Updated";
+        Model_Time_Title.innerHTML = "Mesoscale";
+        Model_Time_List.innerHTML = "Mesoscale's Data Update Time";
     }
     mesolscaleButtonState = !mesolscaleButtonState;
 }
@@ -8324,7 +8324,7 @@ function clickHandler_medium(event) {
         // 
         Model_Time.style.display = "block";
         Model_Time_Title.innerHTML = "Medium Range";
-        Model_Time_List.innerHTML = "Medium Range's Time Updated";
+        Model_Time_List.innerHTML = "Medium Range's Data Update Time";
     }
     medium_rangeButtonState = !medium_rangeButtonState;
 }
@@ -8380,7 +8380,7 @@ function clickHandler_satellite(event) {
         // 
         Model_Time.style.display = "block";
         Model_Time_Title.innerHTML = "Satellite";
-        Model_Time_List.innerHTML = "Satellite's Time Updated";
+        Model_Time_List.innerHTML = "Satellite's Data Update Time";
     }
     satelliteButtonState = !satelliteButtonState;
 }
@@ -8436,7 +8436,7 @@ function clickHandler_radar(event) {
         // 
         Model_Time.style.display = "block";
         Model_Time_Title.innerHTML = "Radar";
-        Model_Time_List.innerHTML = "Radar's Time Updated";
+        Model_Time_List.innerHTML = "Radar's Data Update Time";
     }
     radarButtonState = !radarButtonState;
 }
@@ -8492,7 +8492,7 @@ function clickHandler_lightning(event) {
         // 
         Model_Time.style.display = "block";
         Model_Time_Title.innerHTML = "Lightning";
-        Model_Time_List.innerHTML = "Lightning's Time Updated";
+        Model_Time_List.innerHTML = "Lightning's Data Update Time";
     }
     lightningButtonState = !lightningButtonState;
 }
@@ -8548,7 +8548,7 @@ function clickHandler_sounding(event) {
         // 
         Model_Time.style.display = "block";
         Model_Time_Title.innerHTML = "Sounding";
-        Model_Time_List.innerHTML = "Sounding's Time Updated";
+        Model_Time_List.innerHTML = "Sounding's Data Update Time";
     }
     soundingButtonState = !soundingButtonState;
 }
@@ -8604,7 +8604,7 @@ function clickHandler_expo(event) {
         // 
         Model_Time.style.display = "block";
         Model_Time_Title.innerHTML = "Exposure";
-        Model_Time_List.innerHTML = "Exposure's Time Updated";
+        Model_Time_List.innerHTML = "Exposure's Data Update Time";
     }
     exposureButtonState = !exposureButtonState;
 }
@@ -8660,7 +8660,7 @@ function clickHandler_ship(event) {
         // 
         Model_Time.style.display = "block";
         Model_Time_Title.innerHTML = "Ship and Buoy";
-        Model_Time_List.innerHTML = "Ship and Buoy's Time Updated";
+        Model_Time_List.innerHTML = "Ship and Buoy's Data Update Time";
     }
     ship_and_buoyButtonState = !ship_and_buoyButtonState;
 }

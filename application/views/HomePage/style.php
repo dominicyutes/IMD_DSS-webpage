@@ -617,7 +617,7 @@ body {
 /* Macro View Btn ends here */
 
 .model_MM {
-    left: 81%;
+    left: 86%;
     top: 56%;
     height: 0;
     width: 35%;
@@ -627,7 +627,7 @@ body {
 
 .model-body_MM {
     position: absolute;
-    width: 52%;
+    width: 41%;
     height: 50px;
     margin: 315px 0 0 100px;
     transform: translate(-50%, -50%);
@@ -850,7 +850,4 @@ body {
     border-radius: 3px;
     color: black;
 }
-
-
-
 </style>
