@@ -123,19 +123,6 @@
     <!-- jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
-    <!-- leaflet time dimensions -->
-    <!-- <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.control.css">
-    </script> -->
-    <!-- <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.control.js">
-    </script> -->
-    <!-- <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.layer.geojson">
-    </script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.layer"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.layer.wms">
-    </script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.player"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>TimeDimension/leaflet.timedimension.util"></script> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
@@ -154,43 +141,6 @@
         src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.player.js"></script>
     <script type="text/javascript"
         src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script>
-
-
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
-    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.js">
-    </script>
-    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.util.js">
-    </script>
-    <script type="text/javascript"
-        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.player.js"></script>
-    <script type="text/javascript"
-        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script> -->
-
-
-
-
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
-    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.js">
-    </script>
-    <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.util.js">
-    </script>
-    <script type="text/javascript"
-        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.player.js"></script>
-    <script type="text/javascript"
-        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.control.js"></script> -->
-
-    <!-- <script type="text/javascript" src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.js">
-    </script> -->
-    <!-- <script type="text/javascript"
-        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.wms.js"></script> -->
-    <!-- <script type="text/javascript"
-        src="https://apps.socib.es/Leaflet.TimeDimension/src/leaflet.timedimension.layer.geojson.js"></script> -->
-    <!-- <script type="text/javascript"
-        src="https://apps.socib.es/Leaflet.TimeDimension/examples/js/extras/leaflet.timedimension.circlelabelmarker.js">
-    </script> -->
-    <!-- <script type="text/javascript"
-        src="https://apps.socib.es/Leaflet.TimeDimension/examples/js/extras/leaflet.timedimension.layer.wms.timeseries.js">
-    </script> -->
 
     <!-- leaflet-side-by-side -->
     <script src="https://lab.digital-democracy.org/leaflet-side-by-side/leaflet-side-by-side.js"></script>

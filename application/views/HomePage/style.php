@@ -851,8 +851,6 @@ body {
     color: black;
 }
 
-/* .leaflet-bottom .leaflet-left{
-    top: 0;
-    left: 55px;
-} */
+
+
 </style>
