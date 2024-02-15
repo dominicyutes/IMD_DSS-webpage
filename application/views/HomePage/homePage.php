@@ -649,7 +649,7 @@
 
                 <div id="printlegend">
 
-                    <!-- legends for observation -->
+                    <!-- legends for observation METAR obs-->
                     <div id="METAR_mm" style="display: none;">
                         <h5 id="metarTemp-Title_mm" style="color: #000000;">METAR 00UTC:</h5>
                         <p id="metarTemp-lists_mm" style="flex-wrap: wrap;">Temperature_00</p>
@@ -983,11 +983,7 @@ window.onload = function() {
     var element = document.querySelector('.leaflet-panel-layers-list.leaflet-control-layers-scrollbar');
 
     if (element) {
-        console.log("X");
-        // Set inline style to null to make it inactive
         element.style = null;
-
-        // Set overflow to hidden
         element.style.overflow = 'hidden';
     }
 };

@@ -2039,6 +2039,8 @@ function obs_SubmitForm() {
     let hour_Select = document.getElementById('hourSelect').value;
     let minute_Select = document.getElementById('minuteSelect').value;
 
+    console.log(parameter_Names, "parameter_Names");
+
     let TimeForObs = hour_Select + ":" + minute_Select;
 
     if (sub_parameter === "Temperature_00") {
@@ -2049,7 +2051,7 @@ function obs_SubmitForm() {
                 }
             });
 
-            let obstesting1;
+            obstesting1;
             let obstesting1Ready = false;
 
             obstesting1 = setInterval(function() {
@@ -2063,20 +2065,33 @@ function obs_SubmitForm() {
         }
     }
 
-    if (sub_parameter === "00UTC") {
-        if (TimeForObs === "5:30") {
-            obstesting2 = setInterval(function() {
-                map.addLayer(ship_00utc);
-            });
+    // if (sub_parameter === "00UTC") {
+    //     if (parameter_Names === "Ship and Buoy") {
+    //         map.eachLayer(layer => {
+    //             if (layer instanceof L.TileLayer.WMS) {
+    //                 map.removeLayer(layer);
+    //             }
+    //         });
 
-            // let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
-            //     "Parameter: " + parameter_Names + "\n" +
-            //     "SubParameter: " + sub_parameter + "\n" +
-            //     "Start Date: " + fromDate + "\n" +
-            //     "Time: " + hour_Select + ":" + minute_Select;
-            // alert(message);
-        }
-    }
+    //         obstesting2;
+    //         let obstesting2Ready = false;
+
+    //         obstesting2 = setInterval(function() {
+    //             map.addLayer(ship_00utc);
+    //             document.getElementById('obsLayTxt').innerHTML = 'Ship & Buoy Observation - 00UTC';
+    //             document.getElementById("SHIPANDBUOY_mm").style.display = "block";
+    //         });
+
+
+
+    //         // let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
+    //         //     "Parameter: " + parameter_Names + "\n" +
+    //         //     "SubParameter: " + sub_parameter + "\n" +
+    //         //     "Start Date: " + fromDate + "\n" +
+    //         //     "Time: " + hour_Select + ":" + minute_Select;
+    //         // alert(message);
+    //     }
+    // }
 }
 
 function obs_Rem_() {
@@ -2110,6 +2125,7 @@ function obs_Rem_() {
         document.getElementById('start_date').value = '';
         document.getElementById('hourSelect').value = '';
         document.getElementById('minuteSelect').value = '';
+        document.getElementById("SHIPANDBUOY_mm").style.display = "none";
     }, 1000);
 }
 
@@ -2412,7 +2428,6 @@ function macSubmitForm() {
         editAddMacro = addedTempMacro;
     } else {
         savedMacro.push(addedTempMacro);
-        console.log(savedMacro, "savedMacro___________savedMacro");
     }
     showSavedMacroList();
     document.getElementById('macroNames').value = '';
