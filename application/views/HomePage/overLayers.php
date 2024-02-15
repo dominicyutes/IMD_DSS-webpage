@@ -1,54 +1,136 @@
-<div style="height: 38px; width: 100%; background-color: white; font-family: 'Times New Roman'; display: flex;">
-    <!-- EXPO -->
-    <div id="ExposureRow_M" style="flex-grow: 1; display: none; flex-wrap: wrap;">
-        <h4 id="EXPOSURE_M" style="border-radius: 2px;"></h4>
-        <h5 id="exposure_layers_Title_M" style="color: #000000;"></h5>
-        <p id="exposure_layers_lists_M" style="display: flex; flex-wrap: wrap;"></p>
-    </div>
-    <!-- RADARPRODUCTS -->
-    <div id="RADAR_Row_M" style="flex-grow: 1; display: none;">
-        <h4 id="RADARPRODUCTS_M" style="border-radius: 8px; background-color: #00719c;"></h4>
-        <h5 id="RADARPRODUCTS_Title_M" style="color: #000000;"></h5>
-        <p id="RADARPRODUCTS_lists_M" style="flex-wrap: wrap;"></p>
-    </div>
-    <!-- SATELLITE -->
-    <div id="SATELLITE_Row_M" style="flex-grow: 1; display: none;">
-        <h4 id="SATELLITE_M" style="border-radius: 8px; background-color: #00719c;"></h4>
-        <h5 id="SATELLITE_Title_M" style="color: #000000;"></h5>
-        <p id="SATELLITE_lists_M" style="flex-wrap: wrap;"></p>
-    </div>
-    <!-- LIGHTNING -->
-    <div id="LIGHTNING_Row_M" style="flex-grow: 1; display: none;">
-        <h4 id="LIGHTNING_M" style="border-radius: 8px; background-color: #00719c;"></h4>
-        <h5 id="LIGHTNING_Title_M" style="color: #000000;"></h5>
-        <p id="LIGHTNING_lists_M" style="flex-wrap: wrap;"></p>
-    </div>
-    <!-- SHIPANDBUOY -->
-    <div id="SHIPANDBUOY_Row_M" style="flex-grow: 1; display: none;">
-        <h4 id="SHIPANDBUOY_M" style=" border-radius: 8px; background-color: #00719c;">
-        </h4>
-        <h5 id="SHIPANDBUOY_Title_M" style="color: #000000;"></h5>
-        <p id="SHIPANDBUOY_lists_M" style="flex-wrap: wrap;"></p>
-    </div>
-    <!-- METAR -->
-    <div id="METAR_Row_M">
-        <h4 id="METAR_M" style=" border-radius: 8px; background-color: #00719c;"></h4>
-        <!-- METARTEMP -->
-        <h5 id="metarTemp_Title_M" style="color: #000000;"></h5>
-        <p id="metarTemp_lists_M" style="display: none; flex-wrap: wrap;"></p>
+<script>
+$("body").on("change", "input[type=checkbox]", function() {
+    var _this = $(this);
+    console.log(_this, '_this');
+    let isChecked = _this.prop('checked');
 
-        <!-- METARDewPoint -->
-        <h5 id="metarDewPoint_Title_M" style="color: #000000;"></h5>
-        <p id="metarDewPointLists_M" style="display: none; flex-wrap: wrap;"></p>
+    // layer_group_name = ExposureLayer
+    let layer_group_name = _this.context._layer.group.name;
 
-        <!-- METARVisibility -->
-        <h5 id="metarVisibility_Title_M" style="color: #000000;"></h5>
-        <p id="metarVisibility_lists_M" style="display: none; flex-wrap: wrap;"></p>
+    // layer_name = Airport or Hospital
+    let layer_name = _this.context._layer.name
+    // 
+    if (isChecked) {
 
-        <!-- METARWindSpeedAndDirection -->
-        <h5 id="metarWindSpeedAndDirection_Title_M" style="color: #000000;"></h5>
-        <p id="metarWindSpeedAndDirection_Lists_M" style="display: flex; display: none; flex-wrap: wrap;">
-        </p>
-    </div>
-    <!--  -->
-</div>
+        // Exposure
+        if (layer_group_name === "Exposure Layers") {
+            if (panelLayerExposureTitle_M.innerHTML == '') {
+                EXPOSURE_M.innerHTML = "EXPOSURE"
+                panelLayerExposureTitle_M.innerHTML = layer_group_name
+                ExposureRow_M.style.display = 'flex';
+            }
+            let layerExists = clickedExposureLists_M.includes(layer_name);
+            if (!layerExists) {
+                if (
+                    layer_name == 'District Boundaries' ||
+                    layer_name == 'Airport' ||
+                    layer_name == 'Hospital' ||
+                    layer_name == 'sports' ||
+                    layer_name == 'Power Plant' ||
+                    layer_name == 'Power Station' ||
+                    layer_name == 'Oil Refineries' ||
+                    layer_name == 'Industrail' ||
+                    layer_name == 'Socio Economic Zone' ||
+                    layer_name == 'Road Network' ||
+                    layer_name == 'Railway Network' ||
+                    layer_name == 'DEM' ||
+                    layer_name == 'LULC'
+                ) {
+                    clickedExposureLists_M.push(layer_name);
+                }
+            }
+
+            panelLayerExposureLists_M.innerHTML =
+                `<p>${clickedExposureLists_M[clickedExposureLists_M.length - 1]}</p>`;
+        }
+
+        // Radar
+        if (layer_group_name === "Radar Products") {
+            if (panelLayerRadarTitle_M.innerHTML == '') {
+                RADARPRODUCTS_M.innerHTML = "Radar Products"
+                panelLayerRadarTitle_M.innerHTML = layer_group_name
+                RADAR_Row_M.style.display = 'flex';
+            }
+            let layerExists = clickedRADARPRODUCTSLists_M.includes(layer_name);
+            if (!layerExists) {
+                if (
+                    layer_name == 'Radar Reflectivity' ||
+                    layer_name == 'Radar Animation'
+                ) {
+                    clickedRADARPRODUCTSLists_M.push(layer_name);
+                }
+            }
+
+            panelLayerRadarLists_M.innerHTML =
+                `<p>${clickedRADARPRODUCTSLists_M[clickedRADARPRODUCTSLists_M.length - 1]}</p>`;
+        }
+
+    } else {
+        let uncheckLayer = layer_group_name + ' ' + layer_name;
+
+        // exposure 
+        let exposureToRem = clickedExposureLists_M.indexOf(layer_name);
+
+        if (exposureToRem !== -1) {
+            clickedExposureLists_M = clickedExposureLists_M.filter(x => {
+                return x != layer_name
+            });
+
+            panelLayerExposureLists_M.innerHTML =
+                `<p>${clickedExposureLists_M[clickedExposureLists_M.length - 1]}</p>`;
+        }
+        // exposure end here
+
+
+        // // radar
+        let radarToRem = clickedRADARPRODUCTSLists_M.indexOf(layer_name);
+        //
+        if (radarToRem !== -1) {
+            clickedRADARPRODUCTSLists_M = clickedRADARPRODUCTSLists_M.filter(x => {
+                return x != layer_name
+            });
+            // 
+            panelLayerRadarLists_M.innerHTML = clickedRADARPRODUCTSLists_M.join("");
+        }
+        // // radar end here
+
+    }
+    // else overs here
+
+    // 
+    if (clickedExposureLists_M.length === 0) {
+        EXPOSURE_M.innerHTML = "";
+        panelLayerExposureTitle_M.innerHTML = "";
+        document.getElementById("ExposureRow_M").style.display = "none";
+    }
+    // 
+    if (clickedRADARPRODUCTSLists_M.length === 0) {
+        RADARPRODUCTS_M.innerHTML = "";
+        panelLayerRadarTitle_M.innerHTML = "";
+        document.getElementById("RADAR_Row_M").style.display = "none";
+    } else {
+        document.getElementById("RADAR_Row_M").style.display = "flex";
+    }
+    // 
+    if (clickedSatelliteLists_M.length === 0) {
+        SATELLITE_M.innerHTML = "";
+        panelLayerSatelliteTitle_M.innerHTML = "";
+        document.getElementById("SATELLITE_Row_M").style.display = "none";
+    }
+    // 
+
+
+    // 
+    let expoLayLength = clickedExposureLists_M.length;
+    // document.getElementById("layerName_count").innerHTML = expoLayLength;
+
+    let radLayLength = clickedRADARPRODUCTSLists_M.length;
+    // document.getElementById("layerName_count").innerHTML = radLayLength;
+
+    let satLayLength = clickedSatelliteLists_M.length;
+    // document.getElementById("layerName_count").innerHTML = satLayLength;
+
+    let layerName_count_length = expoLayLength + radLayLength + satLayLength;
+    document.getElementById("layerName_count").innerHTML = layerName_count_length;
+    // 
+});

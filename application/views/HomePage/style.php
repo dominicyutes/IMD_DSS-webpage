@@ -441,6 +441,11 @@ body {
     cursor: pointer;
 }
 
+.leaflet-panel-layers-list.leaflet-control-layers-scrollbar {
+    overflow: hidden;
+}
+
+
 /* split css */
 .leaflet-sbs-range {
     position: absolute;
