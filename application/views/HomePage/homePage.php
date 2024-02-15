@@ -631,7 +631,7 @@
             <div class="model-body" style="position: relative;">
                 <div
                     style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px; align-items: center;">
-                    <legend
+                    <legend title="Close"
                         style="cursor: pointer;color: #83ffee;text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;">
                         X</legend>
                     <h4 style="margin: 0 auto; font-size: 20px">Selected Parameters</h4>

@@ -3371,6 +3371,26 @@ function toggleTimeDimensionControl() {
         }).addTo(map);
         sampleLayerBtn = new SampleLayerBtn().addTo(map);
 
+        // observation and Macro below X
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
+
+        // 
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
+        Model_Time.style.display = "none";
 
     } else {
         if (testImageTimeLayer) {
@@ -3385,6 +3405,8 @@ function toggleTimeDimensionControl() {
             map.removeControl(sampleLayerBtn);
             sampleLayerBtn = null;
         }
+        // 
+
     }
     map.on('timeload', function(event) {
         if (event.time && testImageTimeLayer) {
@@ -3458,6 +3480,23 @@ L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
 });
 
 // 
+
+function toggleTimeDimensionControlObs_Mac() {
+    if (map.timeDimensionControl) {
+        if (testImageTimeLayer) {
+            map.removeLayer(testImageTimeLayer);
+            testImageTimeLayer = null;
+            console.log("Layer removed");
+        }
+        map.removeControl(map.timeDimensionControl);
+        map.timeDimensionControl = null;
+        // 
+        if (sampleLayerBtn) {
+            map.removeControl(sampleLayerBtn);
+            sampleLayerBtn = null;
+        }
+    }
+}
 
 // 
 
@@ -4029,6 +4068,8 @@ var MacroButton = L.Control.extend({
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             Model_Time.style.display = "none";
+            // 
+            toggleTimeDimensionControlObs_Mac();
         });
 
         return macbtn;
@@ -4065,6 +4106,8 @@ var ObservationButton = L.Control.extend({
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             Model_Time.style.display = "none";
+            // 
+            toggleTimeDimensionControlObs_Mac();
         });
 
         return obsbtn;
@@ -4365,7 +4408,7 @@ new WeatherInferenceControl().addTo(map);
 
 
 
-
+// sideByside splitFunctioin
 let sideBySideControl = null;
 let sideBySideVisible = false;
 let activeLayers = 0;
