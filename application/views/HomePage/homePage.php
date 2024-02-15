@@ -470,47 +470,19 @@
                 style="display: flex; height: 38px; width: 100%; background-color: #2e578647; font-family: 'Times New Roman'; justify-content: center;">
                 <div
                     style="width: 50%; display: flex; justify-content: space-between; align-items: center; border-radius: 7px; background-color: #f4fcff;">
-                    <span id="prevLayer" style="height: 24px;width: 37px;background-color: #99d9f2;margin-left: 10px;">
+                    <span style="height: 24px;width: 37px;background-color: #99d9f2;margin-left: 10px;">
                         <i class="fa-solid fa-arrow-left fa-lg"></i>
                     </span>
                     <span>
-                        <!-- <h3>Layers Selected None</h3> -->
-                        <div
-                            style="height: 38px; width: 100%; background-color: white; font-family: 'Times New Roman'; display: flex;">
-                            <!-- EXPO -->
-                            <div id="ExposureRow_M" style="flex-grow: 1; display: none; flex-wrap: wrap;">
-                                <h4 id="EXPOSURE_M" style="border-radius: 2px;margin-right: 10px;"></h4>
-                                <h5 id="exposure_layers_Title_M"
-                                    style="color: #000000;margin-right: 10px;margin-right: 10px;"></h5>
-                                <h5 id="exposure_layers_lists_M" style="display: flex; flex-wrap: wrap;"></h5>
-                            </div>
-                            <!--  -->
-                            <!-- RADARPRODUCTS -->
-                            <div id="RADAR_Row_M" style="flex-grow: 1; display: none;">
-                                <h4 id="RADARPRODUCTS_M"
-                                    style="border-radius: 8px; background-color: #00719c; margin-right: 10px;"></h4>
-                                <h5 id="RADARPRODUCTS_Title_M" style="color: #000000;margin-right: 10px;"></h5>
-                                <h5 id="RADARPRODUCTS_lists_M" style="display: flex;flex-wrap: wrap;"></h5>
-                            </div>
-                            <!--  -->
-                            <!-- SATELLITE -->
-                            <div id="SATELLITE_Row_M" style="flex-grow: 1; display: none;">
-                                <h4 id="SATELLITE_M"
-                                    style="border-radius: 8px; background-color: #00719c;margin-right: 10px;"></h4>
-                                <h5 id="SATELLITE_Title_M" style="color: #000000;margin-right: 10px;"></h5>
-                                <h5 id="SATELLITE_lists_M" style="display: flex;flex-wrap: wrap;"></h5>
-                            </div>
-                            <!--  -->
-                        </div>
+                        <h3>NO LAYERS SELECTED</h3>
                     </span>
                     <span
-                        style="height: 24px;width: 37px;background-color: #99d9f2;display: flex;justify-content: flex-end;align-items: center;margin-right: 10px;"
-                        onClick="nextLayer"><i class="fa-solid fa-arrow-right fa-lg"></i></span>
+                        style="height: 24px;width: 37px;background-color: #99d9f2;display: flex;justify-content: flex-end;align-items: center;margin-right: 10px;"><i
+                            class="fa-solid fa-arrow-right fa-lg"></i></span>
                 </div>
                 <div id="second_div"
                     style="background-color: #f4fcff; margin-left: 15px; border-radius: 7px; display: flex; align-items: center; justify-content: center;">
-                    <h5 id="layerName_count"
-                        style="border-radius: 7px; width: 22px; display: flex; justify-content: center;">0</h5>
+                    <h5 style="border-radius: 7px; width: 22px; display: flex; justify-content: center;">0</h5>
                 </div>
             </div>
 
@@ -649,7 +621,7 @@
 
                 <div id="printlegend">
 
-                    <!-- legends for observation METAR obs-->
+                    <!-- lehends for observation -->
                     <div id="METAR_mm" style="display: none;">
                         <h5 id="metarTemp-Title_mm" style="color: #000000;">METAR 00UTC:</h5>
                         <p id="metarTemp-lists_mm" style="flex-wrap: wrap;">Temperature_00</p>
