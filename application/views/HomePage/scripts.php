@@ -23794,6 +23794,14 @@ $("body").on("change", "input[type=checkbox]", function() {
     let layerName_count_length = expoLayLength + radLayLength + satLayLength;
     document.getElementById("layerName_count").innerHTML = layerName_count_length;
     // 
+
+    if (layerName_count_length > 0) {
+        document.getElementById("layerNone").style.display = "none"
+        document.getElementById("ExposureRow_M").style.display = "flex"
+    } else {
+        document.getElementById("layerNone").style.display = "flex"
+        document.getElementById("ExposureRow_M").style.display = "none"
+    }
 });
 
 

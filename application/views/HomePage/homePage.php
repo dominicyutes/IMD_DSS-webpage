@@ -474,9 +474,12 @@
                         <i class="fa-solid fa-arrow-left fa-lg"></i>
                     </span>
                     <span>
-                        <!-- <h3>Layers Selected None</h3> -->
+
                         <div
                             style="height: 38px; width: 100%; background-color: white; font-family: 'Times New Roman'; display: flex;">
+                            <div id="layerNone" style="display: flex;">
+                                <h4>Layers Selected None</h4>
+                            </div>
                             <!-- EXPO -->
                             <div id="ExposureRow_M" style="flex-grow: 1; display: none; flex-wrap: wrap;">
                                 <h4 id="EXPOSURE_M" style="border-radius: 2px;margin-right: 10px;"></h4>
