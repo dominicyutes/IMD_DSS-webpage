@@ -467,14 +467,16 @@
 
             <!-- Layer_Name_bottom  display: none; -->
             <div
-                style="display: flex; height: 38px; width: 100%; background-color: #2e578647; font-family: 'Times New Roman'; justify-content: center;">
+                style="display: flex; height: 38px; width: 100%; background-color: #2e578647; font-family: 'Times New Roman'; justify-content: center;align-items: center; border-radius: 6px">
                 <div
                     style="width: 50%; display: flex; justify-content: space-between; align-items: center; border-radius: 7px; background-color: #f4fcff;">
-                    <span id="prevLayer" style="height: 24px;width: 37px;background-color: #99d9f2;margin-left: 10px;">
-                        <i class="fa-solid fa-arrow-left fa-lg"></i>
+                    <span id="prevLayer"
+                        style="height: 31px;width: 37px;background-color: #156e9d;display: flex;justify-content: flex-end;align-items: center;margin-left: 10px;cursor: pointer;border-radius: 6px"
+                        title="previous">
+                        <i class="fa-solid fa-arrow-left fa-beat-fade fa-lg"
+                            style="margin-right: 11px;color: #c7d6dc;"></i>
                     </span>
                     <span>
-
                         <div
                             style="height: 38px; width: 100%; background-color: white; font-family: 'Times New Roman'; display: flex;">
                             <div id="layerNone" style="display: flex;">
@@ -507,8 +509,9 @@
                         </div>
                     </span>
                     <span
-                        style="height: 24px;width: 37px;background-color: #99d9f2;display: flex;justify-content: flex-end;align-items: center;margin-right: 10px;"
-                        onClick="nextLayer"><i class="fa-solid fa-arrow-right fa-lg"></i></span>
+                        style="height: 31px;width: 37px;background-color: #156e9d;display: flex;justify-content: flex-end;align-items: center;margin-right: 10px;cursor: pointer; border-radius: 6px"
+                        title="Next" onClick="nextLayer"><i class="fa-solid fa-arrow-right fa-beat-fade fa-lg"
+                            style="margin-right: 11px;color: #c7d6dc;"></i></span>
                 </div>
                 <div id="second_div"
                     style="background-color: #f4fcff; margin-left: 15px; border-radius: 7px; display: flex; align-items: center; justify-content: center;">
@@ -615,7 +618,7 @@
                 <div
                     style="z-index: 999; display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px;">
                     <h4 id="Model_Tim_Tit" style="color: #f5f5f5; margin: 0 auto; font-size: 20px"></h4>
-                    <i class="fa-solid fa-arrow-up" style="color: #f5f5f5; cursor: pointer;"
+                    <i class="fa-solid fa-arrow-up fa-bounce" style="color: #f5f5f5; cursor: pointer;"
                         onclick="timeUpdateBoxTog()"></i>
                 </div>
                 <div>
@@ -631,7 +634,7 @@
             <div class="model-body" style="position: relative;">
                 <div
                     style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px; align-items: center;">
-                    <legend
+                    <legend title="Close"
                         style="cursor: pointer;color: #83ffee;text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;">
                         X</legend>
                     <h4 style="margin: 0 auto; font-size: 20px">Selected Parameters</h4>

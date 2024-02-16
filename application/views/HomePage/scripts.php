@@ -3371,6 +3371,26 @@ function toggleTimeDimensionControl() {
         }).addTo(map);
         sampleLayerBtn = new SampleLayerBtn().addTo(map);
 
+        // observation and Macro below X
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
+
+        // 
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
+        Model_Time.style.display = "none";
 
     } else {
         if (testImageTimeLayer) {
@@ -3385,6 +3405,8 @@ function toggleTimeDimensionControl() {
             map.removeControl(sampleLayerBtn);
             sampleLayerBtn = null;
         }
+        // 
+
     }
     map.on('timeload', function(event) {
         if (event.time && testImageTimeLayer) {
@@ -3458,6 +3480,23 @@ L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
 });
 
 // 
+
+function toggleTimeDimensionControlObs_Mac() {
+    if (map.timeDimensionControl) {
+        if (testImageTimeLayer) {
+            map.removeLayer(testImageTimeLayer);
+            testImageTimeLayer = null;
+            console.log("Layer removed");
+        }
+        map.removeControl(map.timeDimensionControl);
+        map.timeDimensionControl = null;
+        // 
+        if (sampleLayerBtn) {
+            map.removeControl(sampleLayerBtn);
+            sampleLayerBtn = null;
+        }
+    }
+}
 
 // 
 
@@ -4029,6 +4068,8 @@ var MacroButton = L.Control.extend({
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             Model_Time.style.display = "none";
+            // 
+            toggleTimeDimensionControlObs_Mac();
         });
 
         return macbtn;
@@ -4065,6 +4106,8 @@ var ObservationButton = L.Control.extend({
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
             Model_Time.style.display = "none";
+            // 
+            toggleTimeDimensionControlObs_Mac();
         });
 
         return obsbtn;
@@ -4076,19 +4119,36 @@ new ObservationButton().addTo(map);
 // MOdels time update BOX
 function timeUpdateBoxTog() {
     var modelBody = document.querySelector('.model-body_MM');
-    var arrowIcon = document.querySelector('.fa-solid.fa-arrow-up');
+    var arrowIcon = document.querySelector('.fa-bounce');
     var modelMM = document.querySelector('.model_MM');
 
-    if (modelBody.style.height === '50px' || modelBody.style.height === '') {
-        modelBody.style.height = '300px';
-        modelMM.style.top = '43%';
-        arrowIcon.classList.add('fa-rotate-180');
-    } else {
-        modelBody.style.height = '50px';
-        modelMM.style.top = '56%';
-        arrowIcon.classList.remove('fa-rotate-180');
+    if (modelBody && arrowIcon && modelMM) {
+        if (modelBody.style.height === '50px' || modelBody.style.height === '') {
+            modelBody.style.height = '300px';
+            modelMM.style.top = '43%';
+
+            arrowIcon.classList.remove('fa-arrow-up');
+            arrowIcon.classList.add('fa-arrow-down');
+            arrowIcon.style.color = '#f5f5f5';
+            arrowIcon.style.cursor = 'pointer';
+        } else {
+            modelBody.style.height = '50px';
+            modelMM.style.top = '56%';
+
+            arrowIcon.classList.remove('fa-arrow-down');
+            arrowIcon.classList.add('fa-arrow-up');
+            arrowIcon.style.color = '#f5f5f5';
+            arrowIcon.style.cursor = 'pointer';
+        }
     }
 }
+
+
+
+
+
+
+
 
 
 
@@ -4365,7 +4425,7 @@ new WeatherInferenceControl().addTo(map);
 
 
 
-
+// sideByside splitFunctioin
 let sideBySideControl = null;
 let sideBySideVisible = false;
 let activeLayers = 0;

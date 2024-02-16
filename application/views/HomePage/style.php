@@ -714,7 +714,7 @@ body {
 
 .model-body {
     position: absolute;
-    width: 250px;
+    width: 286px;
     height: 300px;
     margin: 315px 0 0 100px;
     transform: translate(-50%, -50%);
@@ -751,7 +751,7 @@ body {
     font-size: 21px;
     font-weight: bold;
     position: absolute;
-    top: 5px;
+    top: 8px;
     right: 0px;
     width: 30px;
     height: 30px;
