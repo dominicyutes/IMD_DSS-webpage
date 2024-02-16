@@ -2988,7 +2988,7 @@ function closeDeleteMacroModal() {
 
 function deleteMacroLayer(value) {
     addedTempMacro.listOfMacro = addedTempMacro.listOfMacro.filter(x => x.ulId != value);
-    viewAddedAndDeletedMacro();
+    // viewAddedAndDeletedMacro();
 
     // document.getElementById('macroNames').value = '';
     document.getElementById('mac_modelNames').value = '';
@@ -3012,7 +3012,7 @@ function editMacroLayer(value) {
     document.getElementById("mac_submitButton").style.display = "none";
     document.getElementById("mac_updateButton").style.display = "block";
 
-    // viewMacro();
+    viewMacro();
 }
 
 function updateForm() {
