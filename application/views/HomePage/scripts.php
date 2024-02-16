@@ -4119,19 +4119,36 @@ new ObservationButton().addTo(map);
 // MOdels time update BOX
 function timeUpdateBoxTog() {
     var modelBody = document.querySelector('.model-body_MM');
-    var arrowIcon = document.querySelector('.fa-solid.fa-arrow-up');
+    var arrowIcon = document.querySelector('.fa-bounce');
     var modelMM = document.querySelector('.model_MM');
 
-    if (modelBody.style.height === '50px' || modelBody.style.height === '') {
-        modelBody.style.height = '300px';
-        modelMM.style.top = '43%';
-        arrowIcon.classList.add('fa-rotate-180');
-    } else {
-        modelBody.style.height = '50px';
-        modelMM.style.top = '56%';
-        arrowIcon.classList.remove('fa-rotate-180');
+    if (modelBody && arrowIcon && modelMM) {
+        if (modelBody.style.height === '50px' || modelBody.style.height === '') {
+            modelBody.style.height = '300px';
+            modelMM.style.top = '43%';
+
+            arrowIcon.classList.remove('fa-arrow-up');
+            arrowIcon.classList.add('fa-arrow-down');
+            arrowIcon.style.color = '#f5f5f5';
+            arrowIcon.style.cursor = 'pointer';
+        } else {
+            modelBody.style.height = '50px';
+            modelMM.style.top = '56%';
+
+            arrowIcon.classList.remove('fa-arrow-down');
+            arrowIcon.classList.add('fa-arrow-up');
+            arrowIcon.style.color = '#f5f5f5';
+            arrowIcon.style.cursor = 'pointer';
+        }
     }
 }
+
+
+
+
+
+
+
 
 
 
