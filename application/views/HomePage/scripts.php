@@ -2142,50 +2142,60 @@ function DatRem() {
         console.log("Element hidden Satellite");
     }
 }
+// Weather Inference Toggle
+function weatherinference() {
+    let observationContainerFn = document.getElementById("ObservationContainer");
+    let isHiddenObser = observationContainerFn.classList.contains('hidden');
+    let macroContainerFn = document.getElementById("macroContainer");
+    let isHiddenMacro = macroContainerFn.classList.contains('hidden');
 
+    // Deactivate other sections
+    observationContainerFn.classList.add('hidden');
+    macroContainerFn.classList.add('hidden');
 
-//MACRO toggle
+    let weatherinferencecont = document.getElementById("weatherinferencecontainer");
+    let map = document.getElementById('map');
+    let isHidden = weatherinferencecont.classList.contains('hidden');
+    weatherinferencecont.classList.toggle('hidden');
+    map.style.width = isHidden ? '83%' : '100%';
+}
+
+// MACRO Toggle
 function macToggleObservation() {
     let observationContainerFn = document.getElementById("ObservationContainer");
     let isHiddenObser = observationContainerFn.classList.contains('hidden');
-    let test;
-    if (isHiddenObser) {
-        test = true;
+    let weatherinferenceFn = document.getElementById("weatherinferencecontainer");
+    let isHiddeninference = weatherinferenceFn.classList.contains('hidden');
 
-    } else {
-        observationContainerFn.classList.toggle('hidden');
-        test = true;
-    }
-    if (test) {
-        let macroContainerFn = document.getElementById("macroContainer");
-        let map = document.getElementById('map');
-        let isHidden = macroContainerFn.classList.contains('hidden');
-        macroContainerFn.classList.toggle('hidden');
-        map.style.width = isHidden ? '83%' : '100%';
-    }
+    // Deactivate other sections
+    observationContainerFn.classList.add('hidden');
+    weatherinferenceFn.classList.add('hidden');
+
+    let macroContainerFn = document.getElementById("macroContainer");
+    let map = document.getElementById('map');
+    let isHidden = macroContainerFn.classList.contains('hidden');
+    macroContainerFn.classList.toggle('hidden');
+    map.style.width = isHidden ? '83%' : '100%';
 }
 
-//Observation-toggleObservation
+// Observation Toggle
 function toggleObservation() {
     let macroContainerFn = document.getElementById("macroContainer");
     let isHiddenMacro = macroContainerFn.classList.contains('hidden');
-    let test
+    let weatherinferenceFn = document.getElementById("weatherinferencecontainer");
+    let isHiddeninference = weatherinferenceFn.classList.contains('hidden');
 
-    if (isHiddenMacro) {
-        test = true;
+    // Deactivate other sections
+    macroContainerFn.classList.add('hidden');
+    weatherinferenceFn.classList.add('hidden');
 
-    } else {
-        macroContainerFn.classList.toggle('hidden');
-        test = true;
-    }
-    if (test) {
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let map = document.getElementById('map');
-        let isHidden = observationContainerFn.classList.contains('hidden');
-        observationContainerFn.classList.toggle('hidden');
-        map.style.width = isHidden ? '83%' : '100%';
-    }
+    let observationContainerFn = document.getElementById("ObservationContainer");
+    let map = document.getElementById('map');
+    let isHidden = observationContainerFn.classList.contains('hidden');
+    observationContainerFn.classList.toggle('hidden');
+    map.style.width = isHidden ? '83%' : '100%';
 }
+
 //
 
 // 
@@ -2195,6 +2205,14 @@ function obsCloseX() {
 
     toggleObservation();
     obs_Rem_();
+    weatherinference();
+}
+
+function inferenceCloseX() {
+    let map = document.getElementById('map');
+    map.style.width = '100%';
+
+    weatherinference();
 }
 
 
@@ -4180,10 +4198,10 @@ var WeatherInferenceControl = L.Control.extend({
         // weatherInferenceControl.style.top = '-536px';
         // weatherInferenceControl.style.left = '54px';
         // Create the print icon
-        var printIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
-        printIcon.innerHTML = '<i class="fa fa-print"></i>';
-        printIcon.style.fontSize = '15px';
-        printIcon.style.marginLeft = '5px';
+        // var printIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
+        // printIcon.innerHTML = '<i class="fa fa-print"></i>';
+        // printIcon.style.fontSize = '15px';
+        // printIcon.style.marginLeft = '5px';
 
 
         // Create the download icon
@@ -4244,59 +4262,60 @@ var WeatherInferenceControl = L.Control.extend({
             alert(dataMessage);
         }
 
-        // Create the calendar icon
-        var calendarIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
-        calendarIcon.innerHTML = '<i class="fa fa-calendar"></i>';
-        calendarIcon.style.fontSize = '15px';
-        calendarIcon.style.marginLeft = '5px';
+        // // Create the calendar icon
+        // var calendarIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
+        // calendarIcon.innerHTML = '<i class="fa fa-calendar"></i>';
+        // calendarIcon.style.fontSize = '15px';
+        // calendarIcon.style.marginLeft = '5px';
 
-        // Create input box for date
-        var dateInput = L.DomUtil.create('input', 'date-input', container);
-        dateInput.type = 'text';
-        dateInput.style.display = 'none'; // initially hide the input box
+        // // Create input box for date
+        // var dateInput = L.DomUtil.create('input', 'date-input', container);
+        // dateInput.type = 'text';
+        // dateInput.style.display = 'none'; // initially hide the input box
 
-        // Create a container for displaying saved data
-        var savedDataContainer = L.DomUtil.create('div', 'saved-data-container', container);
+        // // Create a container for displaying saved data
+        // var savedDataContainer = L.DomUtil.create('div', 'saved-data-container', container);
 
-        // Initialize flatpickr for date input
-        flatpickr(dateInput, {
-            dateFormat: 'Y-m-d',
-            onClose: function(selectedDates, dateStr) {
-                // Handle the selected date as needed
-                console.log('Selected date:', dateStr);
-                // Update the saved data container with data for the selected date
-                updateSavedDataContainer(dateStr);
-            }
-        });
+        // // Initialize flatpickr for date input
+        // flatpickr(dateInput, {
+        //     dateFormat: 'Y-m-d',
+        //     onClose: function(selectedDates, dateStr) {
+        //         // Handle the selected date as needed
+        //         console.log('Selected date:', dateStr);
+        //         // Update the saved data container with data for the selected date
+        //         updateSavedDataContainer(dateStr);
+        //     }
+        // });
 
-        // Event listener for calendar icon click
-        calendarIcon.addEventListener('click', function() {
-            // Toggle the visibility of the input box
-            dateInput.style.display = (dateInput.style.display === 'none') ? 'block' : 'none';
-            // Clear the saved data container when the calendar icon is clicked
-            savedDataContainer.innerHTML = '';
-        });
+        // // Event listener for calendar icon click
+        // calendarIcon.addEventListener('click', function() {
+        //     // Toggle the visibility of the input box
+        //     dateInput.style.display = (dateInput.style.display === 'none') ? 'block' : 'none';
+        //     // Clear the saved data container when the calendar icon is clicked
+        //     savedDataContainer.innerHTML = '';
+        // });
 
-        // Function to display saved data for the selected date
-        function updateSavedDataContainer(selectedDate) {
-            var dataMessage = 'Saved data for ' + selectedDate + ':\n\n';
-            var dataFound = false;
+        // // Function to display saved data for the selected date
+        // function updateSavedDataContainer(selectedDate) {
+        //     var dataMessage = 'Saved data for ' + selectedDate + ':\n\n';
+        //     var dataFound = false;
 
-            savedData.forEach(function(entry) {
-                if (entry.date === selectedDate) {
-                    dataMessage += 'Name: ' + entry.name + ', Entry Count: ' + entry.entryCount +
-                        ', Date: ' + entry.date + '\n';
-                    dataFound = true;
-                }
-            });
+        //     savedData.forEach(function(entry) {
+        //         if (entry.date === selectedDate) {
+        //             dataMessage += 'Name: ' + entry.name + ', Entry Count: ' + entry.entryCount +
+        //                 ', Date: ' + entry.date + '\n';
+        //             dataFound = true;
+        //         }
+        //     });
 
-            // Display the data in the container or show a message if no data is found
-            savedDataContainer.innerHTML = dataFound ? dataMessage : 'No data found for ' + selectedDate;
-        }
+        //     // Display the data in the container or show a message if no data is found
+        //     savedDataContainer.innerHTML = dataFound ? dataMessage : 'No data found for ' + selectedDate;
+        // }
 
-
+      
         // click event listener for the Weather Inference button
         L.DomEvent.on(weatherInferenceControl, 'click', function() {
+            weatherinference();
             // Your click event handling code for Weather Inference button goes here
         });
 
@@ -4392,6 +4411,39 @@ new WeatherInferenceControl().addTo(map);
         return div;
     };
     clearLayersButton.addTo(map);
+
+    
+    //drawing co-ordinates start
+    var getCoordinatesButton = L.control({
+        position: 'topleft'
+    });
+    getCoordinatesButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.innerHTML =
+            '<button id="getCoordinatesButton" style="background-color: white; border: 0px solid black; position: absolute; top: -195px; right: -95px;"><i class="fas fa-map-marked-alt"></button>';
+
+        div.firstChild.addEventListener('click', function() {
+            var allCoordinates = [];
+            drawnItems.eachLayer(function(layer) {
+                if (layer instanceof L.Polyline) {
+                    var coordinates = layer.getLatLngs().map(function(latlng) {
+                        return [latlng.lat, latlng.lng];
+                    });
+                    allCoordinates.push(coordinates);
+                }
+            });
+
+            if (allCoordinates.length > 0) {
+                alert('Coordinates: ' + JSON.stringify(allCoordinates));
+            } else {
+                alert('No coordinates available. Draw a polyline first.');
+            }
+        });
+        return div;
+    };
+    getCoordinatesButton.addTo(map);
+ //drawing co-ordinates end
+
 
     map.on('mousedown', function(event) {
         if (isFreehandMode && event.originalEvent.button === 0) {
