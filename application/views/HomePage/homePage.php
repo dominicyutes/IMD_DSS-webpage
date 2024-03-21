@@ -268,6 +268,47 @@
             <!-- MAP -->
             <div id="map" class="col-lg-10"></div>
 
+          <!-- weather inference -->
+            <div id="weatherinferencecontainer" class="obsClass hidden col-sm-2" style="position: relative;">
+                <div style="display: flex; justify-content: space-between;">
+                    <h6 class="obsh4" style="font-family: 'Times New Roman', Times, serif; font-size: 20px">WEATHER INFERENCE
+                    </h6>
+                    <span title="Close" class="playBtnClasX" onClick="inferenceCloseX()">X</span>
+                </div>
+
+                    <div>
+                        <label name="start_dates" class="dateDDLabel"
+                            style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Date:</label>
+                        <input type="date" id="start_dates" class="dateDD">
+                    </div>
+                    <div>
+                        <label name="subparameter" class="thirdDDLabel"
+                            style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Drawings</label>
+                        <select class="thirdDD" id="subparameter" &nbsp;>
+                        </select>
+                        <div id="checkboxListContainer"></div>
+                    </div>
+                </form>
+                <!-- Submit -->
+                <div style="display: flex;justify-content: space-around;">
+                    <button id="submitButton" onclick="obs_SubmitForm()" class="submitBtn">Submit</button>
+                    <button class="obsRemCls" id="printinference" >Print</button>
+                </div>
+                <div
+                    style="position: absolute; bottom: 0; background-color: #f4fcff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 300px; font-family: 'Times New Roman', Times, serif;">
+                    <h4
+                        style="background-color: #d4e6ff; padding: 10px; margin-top: 0; border-top-left-radius: 8px; border-top-right-radius: 8px; text-align: center;">
+                        Note</h4>
+                    <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; text-align: justify;">
+                        <span style="font-size: 15px; line-height: 1.6; color: #333;">
+                            This option aims to present a comprehensive summary of the waether inference data for drawings. Please ensure that all fields are filled in to access the information.
+                        </span>
+                    </ul>
+
+                </div>
+            </div>
+
+
             <!-- OBSERVATION -->
 
             <div id="ObservationContainer" class="obsClass hidden col-sm-2" style="position: relative;">
