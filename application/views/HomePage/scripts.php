@@ -4194,125 +4194,32 @@ var WeatherInferenceControl = L.Control.extend({
         var weatherInferenceControl = L.DomUtil.create('span', 'custom-btn5', container);
         weatherInferenceControl.innerHTML = 'Weather Inference';
         weatherInferenceControl.style.fontSize = '15px';
-        weatherInferenceControl.style.fontFamily = 'Times New Roman';
-        // weatherInferenceControl.style.top = '-536px';
-        // weatherInferenceControl.style.left = '54px';
-        // Create the print icon
-        // var printIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
-        // printIcon.innerHTML = '<i class="fa fa-print"></i>';
-        // printIcon.style.fontSize = '15px';
-        // printIcon.style.marginLeft = '5px';
+        weatherInferenceControl.style.fontFamily = 'Times New Roman'
 
-
-        // Create the download icon
-        var downloadIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
-        downloadIcon.innerHTML = '<i class="fa fa-download"></i>';
-        downloadIcon.style.fontSize = '15px';
-        downloadIcon.style.marginLeft = '5px';
+        // // Create the download icon
+        // var downloadIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
+        // downloadIcon.innerHTML = '<i class="fa fa-download"></i>';
+        // downloadIcon.style.fontSize = '15px';
+        // downloadIcon.style.marginLeft = '5px';
 
         // Counter and date variables
         var entryCount = 0;
         var firstEntryDate = null;
         var savedData = []; // Array to store saved data
 
-        // Add event listener to the download icon
-        downloadIcon.addEventListener('click', function() {
-            // Get the current date and time
-            var currentDate = new Date();
-            var formattedDate = currentDate.toLocaleDateString();
+        // // Add event listener to the download icon
+        // downloadIcon.addEventListener('click', function() {
+        //     // Get the current date and time
+        //     var currentDate = new Date();
+        //     var formattedDate = currentDate.toLocaleDateString();
 
-            // Show a prompt to enter a name
-            var name = prompt('Please enter a name:');
+        //     // Show a prompt to enter a name
+        //     var name = prompt('Please enter a name:');
 
-            // Check if it's the first entry of the day
-            if (firstEntryDate !== formattedDate) {
-                entryCount = 1;
-                firstEntryDate = formattedDate;
-            } else {
-                entryCount++;
-            }
-
-            // Save the entered data
-            savedData.push({
-                name: name,
-                entryCount: entryCount,
-                date: formattedDate
-            });
-
-            // Show an alert with the entered name, entry count, and current date
-            if (name !== null) {
-                var alertMessage = 'Name entered: ' + name + '\nDate ' + formattedDate +
-                    '\nCount:' +
-                    entryCount + '\n\nDo you want to see all saved data click OK?';
-
-                if (confirm(alertMessage)) {
-                    showSavedData();
-                }
-            }
-        });
-
-        // Function to display all saved data
-        function showSavedData() {
-            var dataMessage = 'All saved data:\n\n';
-            savedData.forEach(function(entry) {
-                dataMessage += 'Name: ' + entry.name + ', Entry Count: ' + entry.entryCount +
-                    ', Date: ' + entry.date + '\n';
-            });
-
-            alert(dataMessage);
-        }
-
-        // // Create the calendar icon
-        // var calendarIcon = L.DomUtil.create('span', 'custom-btn-icon', container);
-        // calendarIcon.innerHTML = '<i class="fa fa-calendar"></i>';
-        // calendarIcon.style.fontSize = '15px';
-        // calendarIcon.style.marginLeft = '5px';
-
-        // // Create input box for date
-        // var dateInput = L.DomUtil.create('input', 'date-input', container);
-        // dateInput.type = 'text';
-        // dateInput.style.display = 'none'; // initially hide the input box
-
-        // // Create a container for displaying saved data
-        // var savedDataContainer = L.DomUtil.create('div', 'saved-data-container', container);
-
-        // // Initialize flatpickr for date input
-        // flatpickr(dateInput, {
-        //     dateFormat: 'Y-m-d',
-        //     onClose: function(selectedDates, dateStr) {
-        //         // Handle the selected date as needed
-        //         console.log('Selected date:', dateStr);
-        //         // Update the saved data container with data for the selected date
-        //         updateSavedDataContainer(dateStr);
-        //     }
         // });
 
-        // // Event listener for calendar icon click
-        // calendarIcon.addEventListener('click', function() {
-        //     // Toggle the visibility of the input box
-        //     dateInput.style.display = (dateInput.style.display === 'none') ? 'block' : 'none';
-        //     // Clear the saved data container when the calendar icon is clicked
-        //     savedDataContainer.innerHTML = '';
-        // });
 
-        // // Function to display saved data for the selected date
-        // function updateSavedDataContainer(selectedDate) {
-        //     var dataMessage = 'Saved data for ' + selectedDate + ':\n\n';
-        //     var dataFound = false;
 
-        //     savedData.forEach(function(entry) {
-        //         if (entry.date === selectedDate) {
-        //             dataMessage += 'Name: ' + entry.name + ', Entry Count: ' + entry.entryCount +
-        //                 ', Date: ' + entry.date + '\n';
-        //             dataFound = true;
-        //         }
-        //     });
-
-        //     // Display the data in the container or show a message if no data is found
-        //     savedDataContainer.innerHTML = dataFound ? dataMessage : 'No data found for ' + selectedDate;
-        // }
-
-      
         // click event listener for the Weather Inference button
         L.DomEvent.on(weatherInferenceControl, 'click', function() {
             weatherinference();
@@ -4327,145 +4234,198 @@ new WeatherInferenceControl().addTo(map);
 
 
 (function() {
-    var drawnItems = new L.FeatureGroup();
-    map.addLayer(drawnItems);
+        var drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
 
-    var isFreehandMode = false;
-    var isDrawing = false;
-    var polyline = null;
+        var isFreehandMode = false;
+        var isDrawing = false;
+        var polyline = null;
+        var eraseMode = false;
 
-    function startDrawing() {
-        isDrawing = true;
-        polyline = L.polyline([], {
-            weight: 4,
-            color: 'red',
-            dashArray: '5, 5'
-        }).addTo(drawnItems);
-    }
+        function startDrawing() {
+            isDrawing = true;
+            polyline = L.polyline([], {
+                weight: 4,
+                color: eraseMode ? 'transparent' : 'red', // Set color to transparent if erase mode is active
+                dashArray: '5, 5'
+            }).addTo(drawnItems);
+        }
 
-    function stopDrawing() {
-        isDrawing = false;
-        polyline = null;
-    }
+        function stopDrawing() {
+            isDrawing = false;
+            polyline = null;
+        }
 
-    var freehandButton = L.control({
-        position: 'topleft'
-    });
-    freehandButton.onAdd = function(map) {
-        var div = L.DomUtil.create('div', 'leaflet-bar');
-        div.innerHTML =
-            '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;position: absolute; top: -172px;">Freehand</button>';
-        div.firstChild.addEventListener('click', function() {
-            if (isFreehandMode) {
-                isFreehandMode = false;
-                map.dragging.enable();
-                document.getElementById('freehandButton').style.backgroundColor = 'green';
-            } else {
-                isFreehandMode = true;
-                map.dragging.disable();
-                document.getElementById('freehandButton').style.backgroundColor = 'red';
-            }
+        var freehandButton = L.control({
+            position: 'topleft'
         });
-        return div;
-    };
-    freehandButton.addTo(map);
-
-    var eraseButton = L.control({
-        position: 'topleft'
-    });
-    eraseButton.onAdd = function(map) {
-        var div = L.DomUtil.create('div', 'leaflet-bar');
-        div.innerHTML =
-            '<button id="eraseButton" style="background-color: white; border: 0px solid black; position: absolute; top: -152px;">Erase</button>';
-
-        div.firstChild.addEventListener('click', function() {
-            // Remove the last layer from the map
-            var layers = drawnItems.getLayers();
-            if (layers.length > 0) {
-                drawnItems.removeLayer(layers[layers.length - 1]);
-            }
-        });
-        return div;
-    };
-    eraseButton.addTo(map);
-
-    var clearLayersButton = L.control({
-        position: 'topleft'
-    });
-    clearLayersButton.onAdd = function(map) {
-        var div = L.DomUtil.create('div', 'leaflet-bar');
-        div.innerHTML =
-            '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -131px; white-space: nowrap;">Clear All</button>';
-
-        div.firstChild.addEventListener('click', function() {
-            // Remove all layers from the map
-            drawnItems.clearLayers();
-
-            // Reset freehand mode
-            isFreehandMode = false;
-            map.dragging.enable();
-
-            // Reset freehand button color
-            document.getElementById('freehandButton').style.backgroundColor = 'green';
-        });
-        return div;
-    };
-    clearLayersButton.addTo(map);
-
-    
-    //drawing co-ordinates start
-    var getCoordinatesButton = L.control({
-        position: 'topleft'
-    });
-    getCoordinatesButton.onAdd = function(map) {
-        var div = L.DomUtil.create('div', 'leaflet-bar');
-        div.innerHTML =
-            '<button id="getCoordinatesButton" style="background-color: white; border: 0px solid black; position: absolute; top: -195px; right: -95px;"><i class="fas fa-map-marked-alt"></button>';
-
-        div.firstChild.addEventListener('click', function() {
-            var allCoordinates = [];
-            drawnItems.eachLayer(function(layer) {
-                if (layer instanceof L.Polyline) {
-                    var coordinates = layer.getLatLngs().map(function(latlng) {
-                        return [latlng.lat, latlng.lng];
-                    });
-                    allCoordinates.push(coordinates);
+        freehandButton.onAdd = function(map) {
+            var div = L.DomUtil.create('div', 'leaflet-bar');
+            div.innerHTML =
+                '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;position: absolute; top: -172px;">Freehand</button>';
+            div.firstChild.addEventListener('click', function() {
+                if (isFreehandMode) {
+                    isFreehandMode = false;
+                    map.dragging.enable();
+                    document.getElementById('freehandButton').style.backgroundColor = 'red';
+                } else {
+                    isFreehandMode = true;
+                    map.dragging.disable();
+                    document.getElementById('freehandButton').style.backgroundColor = 'green';
                 }
             });
+            return div;
+        };
+        freehandButton.addTo(map);
 
-            if (allCoordinates.length > 0) {
-                alert('Coordinates: ' + JSON.stringify(allCoordinates));
-            } else {
-                alert('No coordinates available. Draw a polyline first.');
+        var eraseButton = L.control({
+            position: 'topleft'
+        });
+        eraseButton.onAdd = function(map) {
+            var div = L.DomUtil.create('div', 'leaflet-bar');
+            div.innerHTML =
+                '<button id="eraseButton" style="background-color: white; border: 0px solid black; position: absolute; top: -152px;">Erase</button>';
+
+            div.firstChild.addEventListener('click', function() {
+                eraseMode = !eraseMode;
+                if (eraseMode) {
+                    document.getElementById('eraseButton').style.backgroundColor = 'green';
+                } else {
+                    document.getElementById('eraseButton').style.backgroundColor = 'red';
+                }
+            });
+            return div;
+        };
+        eraseButton.addTo(map);
+
+        var clearLayersButton = L.control({
+            position: 'topleft'
+        });
+        clearLayersButton.onAdd = function(map) {
+            var div = L.DomUtil.create('div', 'leaflet-bar');
+            div.innerHTML =
+                '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -131px; white-space: nowrap;">Clear All</button>';
+
+            div.firstChild.addEventListener('click', function() {
+                // Remove all layers from the map
+                drawnItems.clearLayers();
+
+                // Reset freehand mode
+                isFreehandMode = false;
+                map.dragging.enable();
+
+                // Reset freehand button color
+                document.getElementById('freehandButton').style.backgroundColor = 'green';
+            });
+            return div;
+        };
+        clearLayersButton.addTo(map);
+
+
+        //drawing co-ordinates start
+        var getCoordinatesButton = L.control({
+            position: 'topleft'
+        });
+        getCoordinatesButton.onAdd = function(map) {
+            var div = L.DomUtil.create('div', 'leaflet-bar');
+            div.innerHTML =
+                '<button id="getCoordinatesButton" style="background-color: white; border: 0px solid black; position: absolute; top: -195px; right: -95px;"><i class="fa fa-download"></button>';
+
+            div.firstChild.addEventListener('click', function() {
+                    var name = prompt('Enter a name for the coordinates:');
+                    if (name !== null && name.trim() !== '') {
+                        var allCoordinates = [];
+                        drawnItems.eachLayer(function(layer) {
+                            if (layer instanceof L.Polyline) {
+                                var coordinates = layer.getLatLngs().map(function(latlng) {
+                                    return [latlng.lat, latlng.lng];
+                                });
+                                allCoordinates = allCoordinates.concat(
+                                    coordinates); // Concatenate arrays instead of pushing
+                            }
+                        });
+
+                        if (allCoordinates.length > 0) {
+                            var currentDate = new Date().toISOString().split('T')[0]; // Extract date part only
+                            var data = {
+                                name: name,
+                                coordinates: allCoordinates,
+                                date: currentDate
+                            };
+
+                            var jsonData = JSON.stringify(data);
+                            // console.log(jsonData );
+                            // Send data to server-side endpoint using AJAX
+                            $.ajax({
+                                type: 'POST',
+                                url: "<?php echo base_url('Drawings/Drawing/save_coordinates'); ?>",
+                                data: jsonData,
+                                success: function(response) {
+                                    console.log(response);
+                                },
+                                error: function(xhr, status, error) {
+                                    console.error('error', error);
+                                }
+
+                        });
+                } 
+                else {
+                    alert('No coordinates available. Draw a polyline first.');
+                }
+
             }
         });
-        return div;
-    };
-    getCoordinatesButton.addTo(map);
- //drawing co-ordinates end
+    return div;
+};
+getCoordinatesButton.addTo(map);
+//drawing co-ordinates end
 
 
-    map.on('mousedown', function(event) {
-        if (isFreehandMode && event.originalEvent.button === 0) {
-            if (!isDrawing) {
-                startDrawing();
-                map.dragging.disable();
+map.on('mousedown', function(event) {
+    if (isFreehandMode && event.originalEvent.button === 0) {
+        if (!isDrawing) {
+            startDrawing();
+            map.dragging.disable();
+        }
+    }
+});
+
+map.on('mousemove', function(event) {
+    if (isDrawing) {
+        polyline.addLatLng(event.latlng);
+    }
+});
+
+document.addEventListener('mouseup', function(event) {
+    if (isDrawing && event.button === 0) {
+        stopDrawing();
+        map.dragging.enable();
+    }
+});
+
+map.on('click', function(event) {
+if (eraseMode) {
+    var layers = drawnItems.getLayers();
+    var lastLayerIndex = layers.length - 1;
+
+    if (lastLayerIndex >= 0) {
+        var lastLayer = layers[lastLayerIndex];
+        if (lastLayer instanceof L.Polyline) {
+            var latlngs = lastLayer.getLatLngs();
+            if (latlngs.length > 0) {
+                latlngs.pop(); // Remove the last point from the polyline
+                lastLayer.setLatLngs(latlngs);
+            } else {
+                // If no points are left, remove the entire layer
+                drawnItems.removeLayer(lastLayer);
             }
         }
-    });
+    }
+}
+});
 
-    map.on('mousemove', function(event) {
-        if (isDrawing) {
-            polyline.addLatLng(event.latlng);
-        }
-    });
 
-    document.addEventListener('mouseup', function(event) {
-        if (isDrawing && event.button === 0) {
-            stopDrawing();
-            map.dragging.enable();
-        }
-    });
+
 })();
 
 
