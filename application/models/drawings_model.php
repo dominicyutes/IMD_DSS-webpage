@@ -1,31 +1,51 @@
 <?php
-class drawings_model extends CI_Model {
+class Drawings_model extends CI_Model
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->load->database();
     }
-    public function insert_coordinates($data) {
+    public function insert_coordinates($data)
+    {
         // Log received data
-        echo "<pre>";
-        echo "Data received in model:\n";
-        var_dump($data);
-        echo "</pre>";
-    
-        // Construct the SQL INSERT statement
-        $sql = "INSERT INTO drawings (name, coordinates, date) VALUES (?, ?, ?)";
-    
+        // echo "<pre>";
+        // echo "Data received in model:\n";
+        // var_dump($data);
+        // echo "</pre>";
+
         // Extract data from $data array
         $name = $data['name'];
-        $coordinates = json_encode($data['coordinates']); // Convert coordinates to JSON string
+        $latitudes = $data['latitudes'];
+        $longitudes = $data['longitudes'];
         $date = $data['date'];
 
-        // var_dump($coordinates);
-        // echo "dfvsfgsdaghfhnadghdgth";
-    
-        // Execute the query with data bindings to prevent SQL injection
-        $query_result = $this->db->query($sql, array($name, $coordinates, $date));
-    
+
+        // echo "z,jkhbvfkhvdzjsljhvfjs";
+
+        // Construct the data array for insertion
+        $insert_data = array(
+            'name' => $name,
+            'latitudes' => '{' . implode(',', $latitudes) . '}',
+            'longitudes' => '{' . implode(',', $longitudes) . '}',
+            'date' => $date
+        );
+        //  var_dump($insert_data);
+
+        // table query 
+        // CREATE TABLE weather_inference_drawings (
+        //     id SERIAL PRIMARY KEY,
+        //     name VARCHAR(100),
+        //     date DATE,
+        //     latitudes DOUBLE PRECISION[],
+        //     longitudes DOUBLE PRECISION[]
+
+        // );
+
+        // Assuming $this->db->insert() is the method to insert data into the database
+        $query_result = $this->db->insert('weather_inference_drawings', $insert_data);
+
         // Check if the query was successful
         if ($query_result) {
             echo "Data successfully inserted into the 'drawings' table.";
@@ -35,7 +55,4 @@ class drawings_model extends CI_Model {
             return false;
         }
     }
-    
-    
-    
 }
