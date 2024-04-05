@@ -161,9 +161,9 @@
                     <div>
                         <label name="subparameter" class="thirdDDLabel"
                             style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Parameter</label>
-                        <select class="thirdDD" id="subparameter" &nbsp;>
+                        <select class="thirdDD" id="subparameterpp" &nbsp;>
                         </select>
-                        <div id="checkboxListContainer"></div>
+                        <!-- <div id="checkboxListContainer"></div> -->
                     </div>
                     <!-- <span>&nbsp;</span> -->
 
@@ -223,6 +223,8 @@
                             <span
                                 style="color: #2c5383;font-family: 'Archivo', sans-serif;font-size: 20px;font-weight: bold;margin-left: 6%;margin-top: 1%; font-size: 20px">Create
                                 Macro</span>
+                            <i style="padding: 16px 0 0 20px;" class="fa-regular fa-trash-can fa-lg"></i>
+                            <i style="padding: 16px 0 0 8px;" class="fa-regular fa-user fa-lg"></i>
                         </div>
 
                         <div style="overflow: auto;" id="showCreatedMacro"></div>
