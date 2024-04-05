@@ -4893,7 +4893,7 @@ new WeatherInferenceControl().addTo(map);
         isDrawing = true;
         polyline = L.polyline([], {
             weight: 4,
-            color: eraseMode ? 'transparent' : 'red', // Set color to transparent if erase mode is active
+            color: eraseMode ? 'transparent' : 'red',
             dashArray: '5, 5'
         }).addTo(drawnItems);
     }
@@ -4956,13 +4956,6 @@ new WeatherInferenceControl().addTo(map);
         div.firstChild.addEventListener('click', function() {
             // Remove all layers from the map
             drawnItems.clearLayers();
-
-            // Reset freehand mode
-            isFreehandMode = false;
-            map.dragging.enable();
-
-            // Reset freehand button color
-            document.getElementById('freehandButton').style.backgroundColor = 'green';
         });
         return div;
     };
@@ -4981,28 +4974,30 @@ new WeatherInferenceControl().addTo(map);
         div.firstChild.addEventListener('click', function() {
             var name = prompt('Enter a name for the coordinates:');
             if (name !== null && name.trim() !== '') {
-                var allCoordinates = [];
+                var allCoordinates = {
+                    latitudes: [],
+                    longitudes: []
+                };
                 drawnItems.eachLayer(function(layer) {
                     if (layer instanceof L.Polyline) {
-                        var coordinates = layer.getLatLngs().map(function(latlng) {
-                            return [latlng.lat, latlng.lng];
+                        var coordinates = layer.getLatLngs();
+                        coordinates.forEach(function(latlng) {
+                            allCoordinates.latitudes.push(latlng.lat);
+                            allCoordinates.longitudes.push(latlng.lng);
                         });
-                        allCoordinates = allCoordinates.concat(
-                            coordinates); // Concatenate arrays instead of pushing
                     }
                 });
 
-                if (allCoordinates.length > 0) {
-                    var currentDate = new Date().toISOString().split('T')[0]; // Extract date part only
+                if (allCoordinates.latitudes.length > 0 && allCoordinates.longitudes.length > 0) {
+                    var currentDate = new Date().toISOString().split('T')[0];
                     var data = {
                         name: name,
-                        coordinates: allCoordinates,
+                        latitudes: allCoordinates.latitudes,
+                        longitudes: allCoordinates.longitudes,
                         date: currentDate
                     };
 
                     var jsonData = JSON.stringify(data);
-                    // console.log(jsonData );
-                    // Send data to server-side endpoint using AJAX
                     $.ajax({
                         type: 'POST',
                         url: "<?php echo base_url('Drawings/Drawing/save_coordinates'); ?>",
@@ -5013,14 +5008,13 @@ new WeatherInferenceControl().addTo(map);
                         error: function(xhr, status, error) {
                             console.error('error', error);
                         }
-
                     });
                 } else {
                     alert('No coordinates available. Draw a polyline first.');
                 }
-
             }
         });
+
         return div;
     };
     getCoordinatesButton.addTo(map);
