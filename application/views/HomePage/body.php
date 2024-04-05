@@ -88,7 +88,6 @@
             <!-- MAP -->
             <div id="map" class="col-lg-10"></div>
 
-            <!-- weather inference -->
             <div id="weatherinferencecontainer" class="obsClass hidden col-sm-2" style="position: relative;">
                 <div style="display: flex; justify-content: space-between;">
                     <h6 class="obsh4" style="font-family: 'Times New Roman', Times, serif; font-size: 20px">WEATHER
@@ -100,7 +99,7 @@
                 <div>
                     <label name="start_dates" class="dateDDLabel"
                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Date:</label>
-                    <input type="date" id="start_dates" class="dateDD">
+                    <input type="date" id="start_dates" class="dateDD" onchange="fetchNames()">
                 </div>
                 <div>
                     <label name="subparameter" class="thirdDDLabel"
@@ -112,8 +111,12 @@
                 </form>
                 <!-- Submit -->
                 <div style="display: flex;justify-content: space-around;">
-                    <button id="submitButton" onclick="obs_SubmitForm()" class="submitBtn">Submit</button>
-                    <button class="obsRemCls" id="printinference">Print</button>
+                    <button id="submitButton" onclick="SubmitForm()" class="submitBtn">Submit</button>
+                    <button class="submitBtn" onclick="confirmDelete()" id="deleteDrawing">Delete</button>
+                    <button class="submitBtn" onclick="toggleDrawing()" class="multipleBtn">Active Multiple</button>
+                    <button class="submitBtn" onclick="eraseDrawing()" id="eraseDrawing">Erase</button>
+                    <!-- <button class="submitBtn" id="printinference">Print</button> -->
+
                 </div>
                 <div
                     style="position: absolute; bottom: 0; background-color: #f4fcff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 300px; font-family: 'Times New Roman', Times, serif;">
@@ -332,8 +335,17 @@
             </div>
 
             <!-- Layer_Name_bottom  display: none; -->
-            <div class="body_bottom">
-                <span><button>Inference</button></span>
+            <div
+                style="display: flex; height: 38px; width: 100%; background-color: #2e578647; font-family: 'Times New Roman'; justify-content: center;align-items: center; border-radius: 6px">
+
+                <a  href="<?php echo base_url('application/views/DataValidation_list.php/DataValidationList.php'); ?>"
+                    style="position: absolute; left: 100px; width: 150px; height: 50px; display: block; text-decoration: none; color: black;">
+                    <div
+                        style="width: 100%; height: 100%; background-color: #ccc; text-align: center; line-height: 50px;">
+                        Data Validation
+                    </div>
+                </a>
+
 
                 <div
                     style="width: 50%; display: flex; justify-content: space-between; align-items: center; border-radius: 7px; background-color: #f4fcff;">
