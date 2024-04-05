@@ -226,7 +226,6 @@ $config['allow_get_array'] = TRUE;
 |
 */
 $config['log_threshold'] = 0;
-
 /*
 |--------------------------------------------------------------------------
 | Error Logging Directory Path

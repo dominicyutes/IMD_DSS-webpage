@@ -115,7 +115,7 @@ body {
     }
 }
 
-/* observationToggle */
+/* observationToggle - tempMacroToggle */
 .hidden {
     display: none;
 }
@@ -297,13 +297,9 @@ body {
 }
 
 .listContainerMacro {
-    display: none;
     font-size: 11px;
 }
 
-.macroListCSS {
-    color: black;
-}
 
 .button-container {
     display: flex;
@@ -491,7 +487,8 @@ body {
     align-items: center;
 }
 
-.macroLegend {
+.macroLegend,
+.createMacroX {
     cursor: pointer;
     color: #83ffee;
     text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;
@@ -782,6 +779,67 @@ body {
     font-style: inherit;
     font-size: 18px;
     color: #02275fd6;
+}
+
+/* layer bottom Name */
+.body_bottom {
+    display: flex;
+    height: 38px;
+    width: 100%;
+    background-color: #2e578647;
+    font-family: 'Times New Roman';
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.Layer_count {
+    background-color: #f4fcff;
+    margin-left: 15px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Layer_rightArrow {
+    height: 31px;
+    width: 37px;
+    background-color: #156e9d;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 6px
+}
+
+.Layer_leftArrow {
+    height: 31px;
+    width: 37px;
+    background-color: #156e9d;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 6px
+}
+
+.username {
+    color: black;
+    background-color: #f0f0f0;
+    padding: 6px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.logOut_btn {
+    color: black;
+    background-color: #f0f0f0;
+    padding: 6px;
+    /* font-style: italic; */
+    font-weight: bolder;
 }
 
 /* Draggable Model PopUp for Legend Ends here */

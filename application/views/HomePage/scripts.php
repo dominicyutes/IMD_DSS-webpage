@@ -1,4 +1,209 @@
 <script>
+//bg color List
+let bgClickedExposureLists = [];
+
+let bgClickedMetarTempLists = [];
+let bgClickedMetarDewPointLists = [];
+let bgClickedMetarVisibilityLists = [];
+let bgClickedMetarWindSpeedAndDirectionLists = [];
+
+let bgClickedSynopTempLists = [];
+let bgClickedSynopMeanSeaLevelLists = [];
+let bgClickedSynopCloudCoverLists = [];
+let bgClickedSynopGeopotentialHeightLists = [];
+let bgClickedSynopRelativeHumidityLists = [];
+let bgClickedSynopVisibilityLists = [];
+let bgClickedSynopWindSpeedAndDirectionLists = [];
+let bgClickedSynop3hRainfallLists = [];
+
+let bgClickedSOUNDING00UTCWINDLists = [];
+let bgClickedSOUNDING12UTCWINDLists = [];
+let bgClickedSOUNDING00UTCTEMPLists = [];
+let bgClickedSOUNDING12UTCTEMPLists = [];
+let bgClickedSOUNDING00UTCDEWPOINTLists = [];
+let bgClickedSOUNDING12UTCDEWPOINTLists = [];
+
+let bgClickedSHIPANDBUOYLists = [];
+
+let bgClickedRadarLists = [];
+
+let bgClickedLightningLists = [];
+
+let bgClickedSATELLITELists = [];
+
+let bgClickedWRFReflectivityLists = [];
+let bgClickedWRFlightningProductLists = [];
+let bgClickedWRFAccumlatedRainfallLists = [];
+let bgClickedlightningPotentialindexLists = [];
+let bgClickedNCUMRlightningProductLists = [];
+let bgClickedNCUMRWindGustLists = [];
+let bgClickedNCUMRRainfallLists = [];
+let bgClickedHRRR_SPHourlyDBZLists = [];
+let bgClickedHRRR_NEHourlyDBZLists = [];
+let bgClickedHRRR_NWHourlyDBZLists = [];
+let bgClickedEWRFMaxZLists = [];
+
+let bgClickedEWRFLightningLists = [];
+
+let bgClickedRainfallIntensityDay1Lists = [];
+let bgClickedRainfallIntensityDay2Lists = [];
+let bgClickedRainfallIntensityDay3Lists = [];
+let bgClickedRainfallIntensityDay4Lists = [];
+let bgClickedRainfallIntensityDay5Lists = [];
+let bgClickedMSLPDay1Lists = [];
+let bgClickedMSLPDay2Lists = [];
+let bgClickedMSLPDay3Lists = [];
+let bgClickedMSLPDay4Lists = [];
+let bgClickedMSLPDay5Lists = [];
+let bgClicked10mWINDDay1Lists = [];
+let bgClicked10mWINDDay2Lists = [];
+let bgClicked10mWINDDay3Lists = [];
+let bgClicked10mWINDDay4Lists = [];
+let bgClicked10mWINDDay5Lists = [];
+
+let bgArrayForMac = [bgClickedExposureLists, bgClickedMetarTempLists, bgClickedMetarDewPointLists,
+    bgClickedMetarVisibilityLists, bgClickedMetarWindSpeedAndDirectionLists, bgClickedSynopTempLists,
+    bgClickedSynopMeanSeaLevelLists, bgClickedSynopCloudCoverLists, bgClickedSynopGeopotentialHeightLists,
+    bgClickedSynopRelativeHumidityLists, bgClickedSynopVisibilityLists, bgClickedSynopWindSpeedAndDirectionLists,
+    bgClickedSynop3hRainfallLists, bgClickedSOUNDING00UTCWINDLists, bgClickedSOUNDING12UTCWINDLists,
+    bgClickedSOUNDING00UTCTEMPLists, bgClickedSOUNDING12UTCTEMPLists, bgClickedSOUNDING00UTCDEWPOINTLists,
+    bgClickedSOUNDING12UTCDEWPOINTLists, bgClickedSHIPANDBUOYLists, bgClickedRadarLists, bgClickedLightningLists,
+    bgClickedSATELLITELists, bgClickedWRFReflectivityLists, bgClickedWRFlightningProductLists,
+    bgClickedWRFAccumlatedRainfallLists, bgClickedlightningPotentialindexLists, bgClickedNCUMRlightningProductLists,
+    bgClickedNCUMRWindGustLists, bgClickedNCUMRRainfallLists, bgClickedHRRR_SPHourlyDBZLists,
+    bgClickedHRRR_NEHourlyDBZLists, bgClickedHRRR_NWHourlyDBZLists, bgClickedEWRFMaxZLists,
+    bgClickedEWRFLightningLists, bgClickedRainfallIntensityDay1Lists, bgClickedRainfallIntensityDay2Lists,
+    bgClickedRainfallIntensityDay3Lists, bgClickedRainfallIntensityDay4Lists, bgClickedRainfallIntensityDay5Lists,
+    bgClickedMSLPDay1Lists, bgClickedMSLPDay2Lists, bgClickedMSLPDay3Lists, bgClickedMSLPDay4Lists,
+    bgClickedMSLPDay5Lists, bgClicked10mWINDDay1Lists, bgClicked10mWINDDay2Lists, bgClicked10mWINDDay3Lists,
+    bgClicked10mWINDDay4Lists, bgClicked10mWINDDay5Lists
+];
+
+function updateBackgroundColor() {
+    //exposure bgClickedExposureLists
+    if (bgClickedExposureLists.length > 0) {
+        $("#exposure").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#exposure").css("background-color", '#eff4ff');
+    }
+
+    //metar bgClickedMetarLists
+    if (
+        bgClickedMetarTempLists.length === 0 &&
+        bgClickedMetarDewPointLists.length === 0 &&
+        bgClickedMetarVisibilityLists.length === 0 &&
+        bgClickedMetarWindSpeedAndDirectionLists.length === 0
+    ) {
+        $("#metar").css("background-color", '#eff4ff');
+    } else {
+        $("#metar").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //synop bgClickedSynopLists
+    if (
+        bgClickedSynopTempLists.length === 0 &&
+        bgClickedSynopMeanSeaLevelLists.length === 0 &&
+        bgClickedSynopCloudCoverLists.length === 0 &&
+        bgClickedSynopGeopotentialHeightLists.length === 0 &&
+        bgClickedSynopRelativeHumidityLists.length === 0 &&
+        bgClickedSynopVisibilityLists.length === 0 &&
+        bgClickedSynopWindSpeedAndDirectionLists.length === 0 &&
+        bgClickedSynop3hRainfallLists.length === 0
+    ) {
+        $("#synop").css("background-color", '#eff4ff');
+    } else {
+        $("#synop").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //SOUNDING bgClickedSoundingLists
+    if (
+        bgClickedSOUNDING00UTCWINDLists.length === 0 &&
+        bgClickedSOUNDING12UTCWINDLists.length === 0 &&
+        bgClickedSOUNDING00UTCTEMPLists.length === 0 &&
+        bgClickedSOUNDING12UTCTEMPLists.length === 0 &&
+        bgClickedSOUNDING00UTCDEWPOINTLists.length === 0 &&
+        bgClickedSOUNDING12UTCDEWPOINTLists.length === 0
+    ) {
+        $("#sounding").css("background-color", '#eff4ff');
+    } else {
+        $("#sounding").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //SHIPANDBUOY bgClickedSHIPANDBUOYLists
+    if (bgClickedSHIPANDBUOYLists.length > 0) {
+        $("#ship_and_buoy").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#ship_and_buoy").css("background-color", '#eff4ff');
+    }
+
+    //radar bgClickedRadarLists
+    if (bgClickedRadarLists.length > 0) {
+        $("#radar").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#radar").css("background-color", '#eff4ff');
+    }
+
+    //SATELLITE bgClickedSATELLITELists
+    if (bgClickedSATELLITELists.length > 0) {
+        $("#satellite").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#satellite").css("background-color", '#eff4ff');
+    }
+
+    let bgchecknum = bgClickedLightningLists.length;
+    // lightning bgClickedLightningLists
+    if (bgClickedLightningLists.length > 0) {
+        $("#lightning").css("background-color", 'rgb(180, 194, 224)');
+        // console.log(bgchecknum, "bgchecknum-11");
+    } else {
+        $("#lightning").css("background-color", '#eff4ff');
+        // console.log(bgchecknum, "bgchecknum-22");
+    }
+
+    //mesolscale bgClickedSynopLists
+    if (
+        bgClickedWRFReflectivityLists.length === 0 &&
+        bgClickedWRFlightningProductLists.length === 0 &&
+        bgClickedWRFAccumlatedRainfallLists.length === 0 &&
+        bgClickedlightningPotentialindexLists.length === 0 &&
+        bgClickedNCUMRlightningProductLists.length === 0 &&
+        bgClickedNCUMRWindGustLists.length === 0 &&
+        bgClickedNCUMRRainfallLists.length === 0 &&
+        bgClickedHRRR_SPHourlyDBZLists.length === 0 &&
+        bgClickedHRRR_NEHourlyDBZLists.length === 0 &&
+        bgClickedHRRR_NWHourlyDBZLists.length === 0 &&
+        bgClickedEWRFMaxZLists.length === 0 &&
+        bgClickedEWRFLightningLists.length === 0
+    ) {
+        $("#mesolscale").css("background-color", '#eff4ff');
+    } else {
+        $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //medium_range 
+    if (
+        bgClickedRainfallIntensityDay1Lists.length === 0 &&
+        bgClickedRainfallIntensityDay2Lists.length === 0 &&
+        bgClickedRainfallIntensityDay3Lists.length === 0 &&
+        bgClickedRainfallIntensityDay4Lists.length === 0 &&
+        bgClickedRainfallIntensityDay5Lists.length === 0 &&
+        bgClickedMSLPDay1Lists.length === 0 &&
+        bgClickedMSLPDay2Lists.length === 0 &&
+        bgClickedMSLPDay3Lists.length === 0 &&
+        bgClickedMSLPDay4Lists.length === 0 &&
+        bgClickedMSLPDay5Lists.length === 0 &&
+        bgClicked10mWINDDay1Lists.length === 0 &&
+        bgClicked10mWINDDay2Lists.length === 0 &&
+        bgClicked10mWINDDay3Lists.length === 0 &&
+        bgClicked10mWINDDay4Lists.length === 0 &&
+        bgClicked10mWINDDay5Lists.length === 0
+    ) {
+        $("#medium_range").css("background-color", '#eff4ff');
+    } else {
+        $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
+    }
+}
+
 let modelNamesArr = ["", 'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship and Buoy'];
 
 // "Exposure","Mesolscale Forecast", "Medium Range"
@@ -2219,14 +2424,22 @@ function inferenceCloseX() {
 // MACRO
 // MACRO create popup
 let create_Macro = document.querySelector('.create_Macro');
-let create_Macro_body = document.querySelector('.create_Macro_body');
-let create_Macro_close = document.querySelector('.create_Macro_body .macroLegend');
-//
+let create_Macro_body = document.querySelector('.create_Macro_body_div');
+// let create_Macro_close = document.querySelector('.macroLegend');
 
-//create-Macro-close
-create_Macro_close.onclick = () => {
-    create_Macro.style.display = 'none';
+function closCreatMac() {
+    console.log("close");
+    addedInfoContainer.innerHTML = '';
+    macroAddArr = [];
+    showSavedMacroList();
+    document.getElementById('macroNames').value = '';
+    document.getElementById('mac_modelNames').value = '';
+    document.getElementById('mac_parameterNames').value = '';
+    document.getElementById('mac_subparameter').value = '';
 }
+
+
+
 
 //View MACRO
 let view_Create_Macro = document.querySelector('.view_Create_Macro');
@@ -2234,16 +2447,11 @@ let view_Create_Macro_body = document.querySelector('.view_Create_Macro_body');
 let view_Create_Macro_body_close = document.querySelector('.view_Create_Macro_body .viewMacroLegend');
 //
 
-// View - create - Macro - close
-view_Create_Macro_body_close.onclick = () => {
-    view_Create_Macro.style.display = 'none';
-}
-
 //macro ModelNames-Dropdown    MA-ModelsArray
 let getMacModelNames = document.getElementById("mac_modelNames");
 let pushMacModelNames = '';
 for (let MA = 0; MA < modelNamesArrMAC.length; MA++) {
-    pushMacModelNames += `<option class="test">${modelNamesArrMAC[MA]}</option><br/><br/>`;
+    pushMacModelNames += `<option>${modelNamesArrMAC[MA]}</option>`;
 }
 getMacModelNames.innerHTML = pushMacModelNames;
 
@@ -2275,790 +2483,1229 @@ function macShowSubParameterNames(value) {
     macGetSubParameterNames.innerHTML = macPushSubParameterNames;
 }
 
-//Mac_ADD_Save_Disable
-function handleInputChange() {
-    const macroInputValue = document.getElementById("macroNames").value.trim();
-    const secondInputValue = document.getElementById("mac_modelNames").value.trim();
+let user_id = "<?php echo $user_id; ?>";
+// console.log("User ID:", user_id);
 
-    let macAddBtn = document.getElementById("mac_addButton");
-    let macSubBtn = document.getElementById("mac_submitButton");
-    let macUpdBtn = document.getElementById("mac_updateButton");
-
-    let isEitherInputEmpty = macroInputValue === "" || secondInputValue === "";
-
-    if (isEitherInputEmpty) {
-        macAddBtn.disabled = true;
-    } else {
-        macAddBtn.disabled = false;
-    }
-
-    if (macroInputValue === "") {
-        macSubBtn.disabled = true;
-    } else {
-        macSubBtn.disabled = false;
-    }
-
-    if (macroInputValue === "") {
-        macUpdBtn.disabled = true;
-    } else {
-        macUpdBtn.disabled = false;
-    }
-}
-
-document.getElementById("macroNames").addEventListener("input", handleInputChange);
-document.getElementById("mac_modelNames").addEventListener("input", handleInputChange);
-
-handleInputChange();
-
-//Reason for MacGrp_Del
-function MacGrpDelW() {
-    let empName = document.getElementById("userName").value.trim();
-    let delReaMac = document.getElementById("deleteReason").value.trim();
-
-    let mac_Can_Btn = document.getElementById("macCanBtn");
-
-    let macCanBtn_E_r_N = empName === "" || delReaMac === "";
-
-    if (macCanBtn_E_r_N) {
-        mac_Can_Btn.disabled = true;
-    } else {
-        mac_Can_Btn.disabled = false;
-    }
-}
-
-document.getElementById("userName").addEventListener("input", MacGrpDelW);
-document.getElementById("deleteReason").addEventListener("input", MacGrpDelW);
-MacGrpDelW();
+let login_in_User = "<?php echo $name; ?>";
+// console.log("$name:", login_in_User);
 
 
-// AddButtonForm for MACRO
-let savedMacro = [];
-let addedTempMacro = {};
-let listOfMacro = [];
 let counter = 0;
-let editId;
-let editMacroGroupName;
+let macroAddArr = [];
+let editingMacroId = null;
 
-let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
-
+//add btn
 function macAddForm() {
-    event.preventDefault();
-    let mac_macroNames = document.getElementById('macroNames').value;
-    let mac_model_Names = document.getElementById('mac_modelNames').value;
-    let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
-    let mac_sub_parameter = document.getElementById('mac_subparameter').value;
-    let ulId = "listContainerMacro_" + counter++;
+    let macroName = document.getElementById("macroNames").value;
+    let modelName = document.getElementById("mac_modelNames").value;
+    let parameterName = document.getElementById("mac_parameterNames").value;
+    let subParameterName = document.getElementById("mac_subparameter").value;
 
-    const currentISTTime = new Date().toLocaleString("en-US", {
-        timeZone: "Asia/Kolkata"
-    });
-    let Fixed_ist_time = new Date().toLocaleString("en-US", {
-        timeZone: "Asia/Kolkata"
-    });
-
-    if (addedTempMacro && editMacroGroupName) {
-
-        addedTempMacro.listOfMacro.push({
-            ulId: ulId,
-            mac_macroNames: mac_macroNames,
-            mac_model_Names: mac_model_Names,
-            mac_parameter_Names: mac_parameter_Names,
-            mac_sub_parameter: mac_sub_parameter,
-            ist_time: currentISTTime // Add IST
-        })
+    if (editingMacroId !== null) {
+        let editedMacroIndex = macroAddArr.findIndex(macro => macro.ulId === editingMacroId);
+        if (editedMacroIndex !== -1) {
+            macroAddArr[editedMacroIndex].macroName = macroName;
+            macroAddArr[editedMacroIndex].modelName = modelName;
+            macroAddArr[editedMacroIndex].parameterName = parameterName;
+            macroAddArr[editedMacroIndex].subParameterName = subParameterName;
+            renderMacroItems(macroAddArr);
+        }
     } else {
-        listOfMacro.push({
-            ulId: ulId,
-            mac_macroNames: mac_macroNames,
-            mac_model_Names: mac_model_Names,
-            mac_parameter_Names: mac_parameter_Names,
-            mac_sub_parameter: mac_sub_parameter,
-            ist_time: currentISTTime, // Add IST
-            Fixed_ist_time: Fixed_ist_time // Add IST
-        })
-        addedTempMacro = {
-            macroGroupName: mac_macroNames,
-            listOfMacro: listOfMacro
+        let macroObject = {
+            ulId: counter++,
+            macroName: macroName,
+            modelName: modelName,
+            parameterName: parameterName,
+            subParameterName: subParameterName,
+            user_id: user_id
         };
+        macroAddArr.push(macroObject);
     }
-    console.log("listOfMacro:", listOfMacro);
-    console.log("addedTempMacro:", addedTempMacro);
 
-    // document.getElementById('macroNames').value = '';
+    console.log("Updated Macro Array:", macroAddArr);
+
     document.getElementById('mac_modelNames').value = '';
     document.getElementById('mac_parameterNames').value = '';
     document.getElementById('mac_subparameter').value = '';
 
-    viewAddedAndDeletedMacro();
-    handleInputChange();
+    renderMacroItems(macroAddArr);
 }
 
-function viewAddedAndDeletedMacro() {
-    let showAddedTempMacro = [];
-    addedTempMacro.listOfMacro.forEach(macro => {
-        let addedInfoDiv = `<div style="color: #1d334e;" class="macroListCSS" id="toggleDiv">
-        <div style="color: #1d334e;">
-        <span onclick="MacroPlusToggle('${macro.ulId}adddelete')">
-        <div><i class="fa-solid fa-plus fa-xs"></i> ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>&nbsp;&nbsp;</div>
-		<span title="Edit" onclick="editMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i></span>
-        <span title="Delete" onclick="deleteMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-trash fa-xs"></i></span>
-        
-        </div>
-        <ul id="${macro.ulId}adddelete" class="listContainerMacro">
-            <li>${macro.mac_model_Names}</li>
-            <li>${macro.mac_parameter_Names}</li>
-            <li>${macro.mac_sub_parameter}</li>
-        </ul>
-		
-    </div>`;
-        showAddedTempMacro.push(addedInfoDiv);
-    })
+//below add-submit btn content
+function renderMacroItems(macros) {
+    console.log("Received Macros:", macros);
 
-    addedInfoContainerDiv.innerHTML = showAddedTempMacro.join("");
+    addedInfoContainer.innerHTML = "";
+
+    macros.forEach(macro => {
+        if (macro &&
+            typeof macro === 'object' &&
+            macro.hasOwnProperty('macroName') &&
+            macro.hasOwnProperty('modelName') &&
+            macro.hasOwnProperty('parameterName') &&
+            macro.hasOwnProperty('subParameterName')) {
+            console.log("Current Macro:", macro);
+            let macroName = macro.macroName ? macro.macroName.trim() : '';
+            let modelName = macro.modelName ? macro.modelName.trim() : '';
+            let parameterName = macro.parameterName ? macro.parameterName.trim() : '';
+            let subParameterName = macro.subParameterName ? macro.subParameterName.trim() : '';
+            // let ulId = macro.ulId || '';
+            let ulId;
+            if (typeof macro.ulId !== 'undefined') {
+                ulId = macro.ulId;
+            }
+            // console.log(macroName, modelName, parameterName, subParameterName, ulId, "XXXXXX");
+            // 
+            if (macro) {
+                let addedInfoDiv = `<div style="color: #1d334e;" id="toggleDiv">
+                    <div style="color: #1d334e;">
+                        <span onclick="editMacroLayer(${ulId})">
+                            <i class="fa-solid fa-plus fa-xs"></i> ${macroName}: ${modelName}
+                        </span>&nbsp;&nbsp;
+                        <span title="Edit" onclick="editMacroLayer(${ulId})">
+                        <i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i></span>
+                        <span title="Delete" onclick="deleteMacroLayer(${ulId})">
+                            <i class="fa-sharp fa-solid fa-trash fa-xs"></i>
+                        </span>
+                    </div>
+
+                    <ul id="${ulId}" class="listContainerMacro">
+                        <li>${modelName}</li>
+                        <li>${parameterName}</li>
+                        <li>${subParameterName}</li>
+                    </ul>
+                    <input type="hidden" class="macroName" value="${macroName}">
+                    <input type="hidden" class="modelName" value="${modelName}">
+                    <input type="hidden" class="parameterName" value="${parameterName}">
+                    <input type="hidden" class="subParameterName" value="${subParameterName}">
+                </div>`;
+                console.log("Rendering Macro Item:", ulId, macroName, modelName);
+                addedInfoContainer.innerHTML += addedInfoDiv;
+            } else {
+                console.error("Missing or invalid properties in macro object:", macro);
+            }
+        }
+    });
 }
 
-//MacroGroupList Toggle 
-function MacroPlusToggle(ulId) {
-    let macListContainer = document.getElementById(ulId);
-    if (macListContainer.style.display === "none" || macListContainer.style.display === "") {
-        macListContainer.style.display = "block";
-    } else {
-        macListContainer.style.display = "none";
+//add-btn below content edit without DB
+function editMacroLayer(param) {
+    if (typeof param === 'number') {
+        let ulId = param;
+        editingMacroId = ulId;
+        let macroIndex = macroAddArr.findIndex(macro => macro.ulId === ulId);
+        if (macroIndex !== -1) {
+            let macro = macroAddArr[macroIndex];
+            console.log("Editing Macro Object:", macro);
+            document.getElementById('macroNames').value = macro.macroName;
+            document.getElementById('mac_modelNames').value = macro.modelName;
+            document.getElementById('mac_parameterNames').value = macro.parameterName;
+            document.getElementById('mac_subparameter').value = macro.subParameterName;
+        }
     }
 }
 
-// submitForm for MACRO
-function createActionButton(action, buttonClass, buttonId) {
-    let button = document.createElement("button");
-    button.innerText = action;
-    button.className = buttonClass;
-    button.id = buttonId;
-    console.log("action:" + action, "buttonClass:" + buttonClass, "buttonId:" + buttonId);
-    return button;
+let UpdateMAcListID; // this variable is for sending the id from fn editMacroLayerDB to fn updateForm
+
+// edit MacroGroup from DB
+function editMacroLayerDB(id, modelname, parametername, subparametername) {
+    handleFormBtn();
+    UpdateMAcListID = id;
+    console.log("ID_for UpdateBtn:", id);
+    console.log("Model Name:", modelname);
+    console.log("Parameter Name:", parametername);
+    console.log("Subparameter Name:", subparametername);
+
+    let modelDropdown = document.getElementById("mac_modelNames");
+    for (let i = 0; i < modelDropdown.options.length; i++) {
+        if (modelDropdown.options[i].value === modelname) {
+            modelDropdown.selectedIndex = i;
+            break;
+        }
+    }
+
+    let parameterDropdown = document.getElementById("mac_parameterNames");
+    for (let i = 0; i < parameterDropdown.options.length; i++) {
+        if (parameterDropdown.options[i].value === parametername) {
+            parameterDropdown.selectedIndex = i;
+            break;
+        }
+    }
+
+    let subparameterDropdown = document.getElementById("mac_subparameter");
+    for (let i = 0; i < subparameterDropdown.options.length; i++) {
+        if (subparameterDropdown.options[i].value === subparametername) {
+            subparameterDropdown.selectedIndex = i;
+            break;
+        }
+    }
+
 }
 
-function macSubmitForm() {
-    event.preventDefault();
-    let creatMacroVar = document.getElementById("creatRedit");
-    creatMacroVar.innerHTML = "Create Macro";
-    if (editMacroGroupName) {
-        let editAddMacro = savedMacro.find(x => x.macroGroupName == editMacroGroupName);
-        editAddMacro = addedTempMacro;
-    } else {
-        savedMacro.push(addedTempMacro);
-    }
-    showSavedMacroList();
-    document.getElementById('macroNames').value = '';
-    document.getElementById('mac_modelNames').value = '';
-    document.getElementById('mac_parameterNames').value = '';
-    document.getElementById('mac_subparameter').value = '';
-    addedTempMacro = {};
-    listOfMacro = [];
-    editMacroGroupName = '';
-    addedInfoContainerDiv.innerHTML = ' '
-    if (view_Create_Macro.style.display == 'block') {
-        viewMacro(editMacroGroupName);
-    }
-    document.getElementById("mac_updateButton").style.display = "none";
-};
+// update btn - DB
+function updateForm() {
+    let macroName = document.getElementById("macroNames").value;
+    let modelName = document.getElementById("mac_modelNames").value;
+    let parameterName = document.getElementById("mac_parameterNames").value;
+    let subParameterName = document.getElementById("mac_subparameter").value;
 
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "<?php echo base_url('HomePage/updateMacro'); ?>", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
 
+    let data = {
+        id: UpdateMAcListID,
+        macroName: macroName,
+        modelName: modelName,
+        parameterName: parameterName,
+        subParameterName: subParameterName,
+        user_id: user_id
+    };
+    console.log(data, "data");
+
+    xhr.send(JSON.stringify(data));
+
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            console.log("Values updated successfully-200 from script.");
+        } else {
+            console.error("Error occurred while updating values. Status code: " + xhr.status);
+        }
+    };
+}
+
+// add save update cancel btn view logic
+function handleFormBtn() {
+    document.getElementById("addBtn").style.display = 'none';
+    document.getElementById("subBtn").style.display = 'none';
+    document.getElementById("updBtn").style.display = 'block';
+    document.getElementById("canBtn").style.display = 'block';
+}
+
+//cancel btn
+function cancelForm() {
+    document.getElementById("addBtn").style.display = 'block';
+    document.getElementById("subBtn").style.display = 'block';
+    document.getElementById("updBtn").style.display = 'none';
+    document.getElementById("canBtn").style.display = 'none';
+    closCreatMac();
+}
+
+function deleteMacroLayer(ulId) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "<?php echo base_url('HomePage/delete_macro_by_id'); ?>", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    let data = {
+        macroId: ulId
+    };
+
+    xhr.send(JSON.stringify(data));
+    console.log(ulId, "ulId");
+
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            console.log(xhr.responseText, "2");
+
+            showSavedMacroList();
+
+            closCreatMac();
+        }
+    };
+}
+
+//save btn- storing in DB
+function submitForm() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "<?php echo base_url('HomePage/submitForm'); ?>", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    let data = {
+        macroAddArr: macroAddArr
+    };
+    console.log(data, "submit-btn DATA");
+
+    xhr.send(JSON.stringify(data));
+
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            let addedInfoContainer = document.getElementById('addedInfoContainer');
+            console.log("Added Info Container:", addedInfoContainer);
+
+            if (addedInfoContainer) {
+                addedInfoContainer.innerHTML = '';
+            }
+
+            document.getElementById('macroNames').value = '';
+
+            showSavedMacroList();
+            console.log("Form submitted successfully.");
+        } else {
+            console.error("Error occurred while submitting the form.");
+        }
+    };
+}
+
+// showing MacroGroup-Name
 function showSavedMacroList() {
     let showAllCreatedMacro = document.getElementById("showCreatedMacro");
-    let showSavedMacro = [];
-    savedMacro.forEach(macro => {
-        if (macro) {
-            showInfoDiv = `<div class="createMacro">
-                <div><i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;""></i>&nbsp;
-                <span style="font-family: 'Times New Roman, sans-serif;font-size: 15px;font-weight: 600;color: #1d334e;"> ${macro.macroGroupName}</span>
-                </div>
+    showAllCreatedMacro.innerHTML = "";
 
-                <div class="saveMacroView">
-                <button title="Play" class="play-button" onclick="playMacro('${macro.macroGroupName}')">
-                <i class="fa-solid fa-play fa-xs"></i></button>
+    let xhr = new XMLHttpRequest();
 
-                <button title="View" class="view-button" onclick="viewMacro('${macro.macroGroupName}')">
-                <i class="fa-solid fa-eye fa-xs"></i></button>
+    if (user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9") {
+        xhr.open("GET", "<?php echo base_url('HomePage/getAllMacros'); ?>", true); // superAdmin MACROGROUP-Name view
+    } else {
+        xhr.open("GET", "<?php echo base_url('HomePage/getUserMacros?user_id=') ?>" + user_id,
+            true); // userPrespective MACROGROUP-Name view
+    }
 
-                <button title="Edit" class="edit-button" onclick="editMacro('${macro.macroGroupName}')">
-                <i class="fa-solid fa-pen-to-square fa-xs"></i></button>
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            let macros = JSON.parse(xhr.responseText);
 
-                <button title="Delete" class="delete-button" onclick="deleteMacro('${macro.macroGroupName}')">
-                <i class="fa-solid fa-trash fa-xs"></i></button>
-                </div>
-                <div><h6 style="font-family: 'Times New Roman'; font-size: 15px;">${macro.listOfMacro[0].Fixed_ist_time}</h6>
-                </div></div>
-                `;
-            showSavedMacro.push(showInfoDiv);
+            let uniqueMacroNames = new Set();
+
+            macros.forEach(macro => {
+                // console.log(macro, "macro");
+                if (!uniqueMacroNames.has(macro.macroname)) {
+                    let showInfoDiv = `<div class="createMacro">
+                        <div>
+                            <i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;"></i>&nbsp;
+                            <span style="font-family: 'Times New Roman, sans-serif;font-size: 15px;font-weight: 600;color: #1d334e;">
+                                ${macro.macroname}
+                            </span>
+                        </div>
+
+                        <div class="saveMacroView">
+                            <button title="Play" class="play-button" onclick="playMacro('${macro.macroname}')">
+                                <i class="fa-solid fa-play fa-xs"></i>
+                            </button>
+
+                            <button title="View" class="view-button" onclick="viewMacro('${macro.macroname}')">
+                                <i class="fa-solid fa-eye fa-xs"></i>
+                            </button>
+
+                            <button title="Edit" class="edit-button" onclick="editMacro('${macro.macroname}')">
+                                <i class="fa-solid fa-pen-to-square fa-xs"></i>
+                            </button>
+
+                            <button title="Delete" class="delete-button" onclick="alertDeleteMacro('${macro.macroname}')">
+                                <i class="fa-solid fa-trash fa-xs"></i>
+                            </button> 
+                        </div>
+                    </div>`;
+                    showAllCreatedMacro.innerHTML += showInfoDiv;
+                    uniqueMacroNames.add(macro.macroname); // Add the macro name to the set
+                }
+            });
         } else {
-            console.log('Details not found for:', newButton.id);
+            console.error("Error occurred while fetching saved macros.");
         }
-    })
-    showAllCreatedMacro.innerHTML = showSavedMacro.join('');
+    };
 
-    if (showSavedMacro.length > 6) {
-        showAllCreatedMacro.classList.add('overflow-y-scroll');
+    xhr.send();
+}
+showSavedMacroList();
+
+
+
+// + MAIN play btn
+function playMacro(macroname) {
+    updateBackgroundColor();
+    bgArrayForMac.forEach(array => array.length = 0);
+    console.log(macroname, "macroname");
+
+    macPlayerPlay(macroname);
+
+    if (macroname) {
+        document.getElementById("macroDetails").style.display = "block";
+        // 
+        document.querySelector('.stopBtnClas').onclick = function() {
+            macPlayerStop(macroname);
+            console.log("stop Btn");
+        };
+        document.querySelector('.playBtnClas').onclick = function() {
+            macPlayerPlay(macroname);
+            console.log("play Btn");
+        };
+        document.querySelector('.pauseBtnClas').onclick = function() {
+            macPlayerPause(macroname);
+            console.log("pause Btn");
+        };
+        document.querySelector('.leftMacBtn').onclick = function() {
+            macPlayerLeft(macroname);
+            console.log("left Btn");
+        };
+        document.querySelector('.rightMacBtn').onclick = function() {
+            macPlayerRight(macroname);
+            console.log("right Btn");
+        };
+        document.querySelector('.playBtnClasX').onclick = function() {
+            macroRunFnX(macroname);
+            console.log("right Btn");
+        };
     } else {
-        showAllCreatedMacro.classList.remove('overflow-y-scroll');
+        console.error("Macro not found for macroname:", macroname);
     }
 }
-// 
 
-//
-//bg color List
-let bgClickedExposureLists = [];
-
-let bgClickedMetarTempLists = [];
-let bgClickedMetarDewPointLists = [];
-let bgClickedMetarVisibilityLists = [];
-let bgClickedMetarWindSpeedAndDirectionLists = [];
-
-let bgClickedSynopTempLists = [];
-let bgClickedSynopMeanSeaLevelLists = [];
-let bgClickedSynopCloudCoverLists = [];
-let bgClickedSynopGeopotentialHeightLists = [];
-let bgClickedSynopRelativeHumidityLists = [];
-let bgClickedSynopVisibilityLists = [];
-let bgClickedSynopWindSpeedAndDirectionLists = [];
-let bgClickedSynop3hRainfallLists = [];
-
-let bgClickedSOUNDING00UTCWINDLists = [];
-let bgClickedSOUNDING12UTCWINDLists = [];
-let bgClickedSOUNDING00UTCTEMPLists = [];
-let bgClickedSOUNDING12UTCTEMPLists = [];
-let bgClickedSOUNDING00UTCDEWPOINTLists = [];
-let bgClickedSOUNDING12UTCDEWPOINTLists = [];
-
-let bgClickedSHIPANDBUOYLists = [];
-
-let bgClickedRadarLists = [];
-
-let bgClickedLightningLists = [];
-
-let bgClickedSATELLITELists = [];
-
-let bgClickedWRFReflectivityLists = [];
-let bgClickedWRFlightningProductLists = [];
-let bgClickedWRFAccumlatedRainfallLists = [];
-let bgClickedlightningPotentialindexLists = [];
-let bgClickedNCUMRlightningProductLists = [];
-let bgClickedNCUMRWindGustLists = [];
-let bgClickedNCUMRRainfallLists = [];
-let bgClickedHRRR_SPHourlyDBZLists = [];
-let bgClickedHRRR_NEHourlyDBZLists = [];
-let bgClickedHRRR_NWHourlyDBZLists = [];
-let bgClickedEWRFMaxZLists = [];
-
-let bgClickedEWRFLightningLists = [];
-
-let bgClickedRainfallIntensityDay1Lists = [];
-let bgClickedRainfallIntensityDay2Lists = [];
-let bgClickedRainfallIntensityDay3Lists = [];
-let bgClickedRainfallIntensityDay4Lists = [];
-let bgClickedRainfallIntensityDay5Lists = [];
-let bgClickedMSLPDay1Lists = [];
-let bgClickedMSLPDay2Lists = [];
-let bgClickedMSLPDay3Lists = [];
-let bgClickedMSLPDay4Lists = [];
-let bgClickedMSLPDay5Lists = [];
-let bgClicked10mWINDDay1Lists = [];
-let bgClicked10mWINDDay2Lists = [];
-let bgClicked10mWINDDay3Lists = [];
-let bgClicked10mWINDDay4Lists = [];
-let bgClicked10mWINDDay5Lists = [];
-
-
-
-
-let bgArrayForMac = [bgClickedExposureLists, bgClickedMetarTempLists, bgClickedMetarDewPointLists,
-    bgClickedMetarVisibilityLists, bgClickedMetarWindSpeedAndDirectionLists, bgClickedSynopTempLists,
-    bgClickedSynopMeanSeaLevelLists, bgClickedSynopCloudCoverLists, bgClickedSynopGeopotentialHeightLists,
-    bgClickedSynopRelativeHumidityLists, bgClickedSynopVisibilityLists, bgClickedSynopWindSpeedAndDirectionLists,
-    bgClickedSynop3hRainfallLists, bgClickedSOUNDING00UTCWINDLists, bgClickedSOUNDING12UTCWINDLists,
-    bgClickedSOUNDING00UTCTEMPLists, bgClickedSOUNDING12UTCTEMPLists, bgClickedSOUNDING00UTCDEWPOINTLists,
-    bgClickedSOUNDING12UTCDEWPOINTLists, bgClickedSHIPANDBUOYLists, bgClickedRadarLists, bgClickedLightningLists,
-    bgClickedSATELLITELists, bgClickedWRFReflectivityLists, bgClickedWRFlightningProductLists,
-    bgClickedWRFAccumlatedRainfallLists, bgClickedlightningPotentialindexLists, bgClickedNCUMRlightningProductLists,
-    bgClickedNCUMRWindGustLists, bgClickedNCUMRRainfallLists, bgClickedHRRR_SPHourlyDBZLists,
-    bgClickedHRRR_NEHourlyDBZLists, bgClickedHRRR_NWHourlyDBZLists, bgClickedEWRFMaxZLists,
-    bgClickedEWRFLightningLists, bgClickedRainfallIntensityDay1Lists, bgClickedRainfallIntensityDay2Lists,
-    bgClickedRainfallIntensityDay3Lists, bgClickedRainfallIntensityDay4Lists, bgClickedRainfallIntensityDay5Lists,
-    bgClickedMSLPDay1Lists, bgClickedMSLPDay2Lists, bgClickedMSLPDay3Lists, bgClickedMSLPDay4Lists,
-    bgClickedMSLPDay5Lists, bgClicked10mWINDDay1Lists, bgClicked10mWINDDay2Lists, bgClicked10mWINDDay3Lists,
-    bgClicked10mWINDDay4Lists, bgClicked10mWINDDay5Lists
-];
-
-function updateBackgroundColor() {
-    //exposure bgClickedExposureLists
-    if (bgClickedExposureLists.length > 0) {
-        $("#exposure").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#exposure").css("background-color", '#eff4ff');
-    }
-
-    //metar bgClickedMetarLists
-    if (
-        bgClickedMetarTempLists.length === 0 &&
-        bgClickedMetarDewPointLists.length === 0 &&
-        bgClickedMetarVisibilityLists.length === 0 &&
-        bgClickedMetarWindSpeedAndDirectionLists.length === 0
-    ) {
-        $("#metar").css("background-color", '#eff4ff');
-    } else {
-        $("#metar").css("background-color", 'rgb(180, 194, 224)');
-    }
-
-    //synop bgClickedSynopLists
-    if (
-        bgClickedSynopTempLists.length === 0 &&
-        bgClickedSynopMeanSeaLevelLists.length === 0 &&
-        bgClickedSynopCloudCoverLists.length === 0 &&
-        bgClickedSynopGeopotentialHeightLists.length === 0 &&
-        bgClickedSynopRelativeHumidityLists.length === 0 &&
-        bgClickedSynopVisibilityLists.length === 0 &&
-        bgClickedSynopWindSpeedAndDirectionLists.length === 0 &&
-        bgClickedSynop3hRainfallLists.length === 0
-    ) {
-        $("#synop").css("background-color", '#eff4ff');
-    } else {
-        $("#synop").css("background-color", 'rgb(180, 194, 224)');
-    }
-
-    //SOUNDING bgClickedSoundingLists
-    if (
-        bgClickedSOUNDING00UTCWINDLists.length === 0 &&
-        bgClickedSOUNDING12UTCWINDLists.length === 0 &&
-        bgClickedSOUNDING00UTCTEMPLists.length === 0 &&
-        bgClickedSOUNDING12UTCTEMPLists.length === 0 &&
-        bgClickedSOUNDING00UTCDEWPOINTLists.length === 0 &&
-        bgClickedSOUNDING12UTCDEWPOINTLists.length === 0
-    ) {
-        $("#sounding").css("background-color", '#eff4ff');
-    } else {
-        $("#sounding").css("background-color", 'rgb(180, 194, 224)');
-    }
-
-    //SHIPANDBUOY bgClickedSHIPANDBUOYLists
-    if (bgClickedSHIPANDBUOYLists.length > 0) {
-        $("#ship_and_buoy").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#ship_and_buoy").css("background-color", '#eff4ff');
-    }
-
-    //radar bgClickedRadarLists
-    if (bgClickedRadarLists.length > 0) {
-        $("#radar").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#radar").css("background-color", '#eff4ff');
-    }
-
-    //SATELLITE bgClickedSATELLITELists
-    if (bgClickedSATELLITELists.length > 0) {
-        $("#satellite").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#satellite").css("background-color", '#eff4ff');
-    }
-
-    let bgchecknum = bgClickedLightningLists.length;
-    // lightning bgClickedLightningLists
-    if (bgClickedLightningLists.length > 0) {
-        $("#lightning").css("background-color", 'rgb(180, 194, 224)');
-        console.log(bgchecknum, "bgchecknum-11");
-    } else {
-        $("#lightning").css("background-color", '#eff4ff');
-        console.log(bgchecknum, "bgchecknum-22");
-    }
-
-    //mesolscale bgClickedSynopLists
-    if (
-        bgClickedWRFReflectivityLists.length === 0 &&
-        bgClickedWRFlightningProductLists.length === 0 &&
-        bgClickedWRFAccumlatedRainfallLists.length === 0 &&
-        bgClickedlightningPotentialindexLists.length === 0 &&
-        bgClickedNCUMRlightningProductLists.length === 0 &&
-        bgClickedNCUMRWindGustLists.length === 0 &&
-        bgClickedNCUMRRainfallLists.length === 0 &&
-        bgClickedHRRR_SPHourlyDBZLists.length === 0 &&
-        bgClickedHRRR_NEHourlyDBZLists.length === 0 &&
-        bgClickedHRRR_NWHourlyDBZLists.length === 0 &&
-        bgClickedEWRFMaxZLists.length === 0 &&
-        bgClickedEWRFLightningLists.length === 0
-    ) {
-        $("#mesolscale").css("background-color", '#eff4ff');
-    } else {
-        $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
-    }
-
-    //medium_range 
-    if (
-        bgClickedRainfallIntensityDay1Lists.length === 0 &&
-        bgClickedRainfallIntensityDay2Lists.length === 0 &&
-        bgClickedRainfallIntensityDay3Lists.length === 0 &&
-        bgClickedRainfallIntensityDay4Lists.length === 0 &&
-        bgClickedRainfallIntensityDay5Lists.length === 0 &&
-        bgClickedMSLPDay1Lists.length === 0 &&
-        bgClickedMSLPDay2Lists.length === 0 &&
-        bgClickedMSLPDay3Lists.length === 0 &&
-        bgClickedMSLPDay4Lists.length === 0 &&
-        bgClickedMSLPDay5Lists.length === 0 &&
-        bgClicked10mWINDDay1Lists.length === 0 &&
-        bgClicked10mWINDDay2Lists.length === 0 &&
-        bgClicked10mWINDDay3Lists.length === 0 &&
-        bgClicked10mWINDDay4Lists.length === 0 &&
-        bgClicked10mWINDDay5Lists.length === 0
-    ) {
-        $("#medium_range").css("background-color", '#eff4ff');
-    } else {
-        $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
-    }
-}
-// *************************************
-
-let macro_SubParameter;
-let currentMacroIndex = 0;
-let intervalId;
 let countingElement = document.getElementById("counting");
-let intervalInSeconds = 10;
-let playingMacro = false;
-let currentMacroGroupName;
 let playerTextElement = document.getElementById("playerText");
+let currentIndex = 0;
+let interval;
+let isPaused = false;
+let pausedIndex;
 
+function playNextCase() {
+    if (currentIndex < response.length && !isPaused) {
+        let item = response[currentIndex];
+        console.log(item, "item");
+        let subParameterName = item.subparametername;
+        console.log("Subparameter Name:", subParameterName);
 
-function applyLayers(macro) {
-    if (!macro || !macro.listOfMacro || macro.currentMacroIndex >= macro.listOfMacro.length) {
-        console.error("Invalid macro object or listOfMacro is empty.");
-        return;
+        map.eachLayer(layer => {
+            if (layer instanceof L.TileLayer.WMS) {
+                map.removeLayer(layer);
+            }
+        });
+
+        switch (subParameterName) {
+            case "Last 00-05 min":
+                map.addLayer(mywmsIITM);
+                break;
+            case "00UTC":
+                map.addLayer(ship_00utc);
+                break;
+            case "Radar Reflectivity":
+                map.addLayer(rad_ref);
+                break;
+            case "Oil Refineries":
+                map.addLayer(exp_oil);
+                break;
+            case "RI GFS DAY1":
+                map.addLayer(med_gfs1);
+                break;
+            default:
+                console.log("Unknown subparameter:", subParameterName);
+                break;
+        }
+
+        playerTextElement.innerHTML = item.subparametername;
+
+        startCountdown(10, function() {
+            map.eachLayer(layer => {
+                if (layer instanceof L.TileLayer.WMS) {
+                    map.removeLayer(layer);
+                }
+            });
+            currentIndex++;
+            playNextCase();
+        });
+    } else {
+        console.log("All cases played or paused.");
     }
+}
 
-    const macroDetails = macro.listOfMacro[macro.currentMacroIndex];
-    const macro_SubParameter = macroDetails.mac_sub_parameter;
+function startCountdown(seconds, callback) {
+    clearInterval(interval);
+    interval = setInterval(function() {
+        if (!isPaused) {
+            seconds--;
+            countingElement.innerHTML = seconds;
+            if (seconds <= 0) {
+                clearInterval(interval);
+                if (callback) {
+                    callback();
+                }
+            }
+        }
+    }, 1000);
+}
 
-    document.getElementById("macroDetails").style.display = "block";
+// player play btn
+function macPlayerPlay(macroname) {
+    currentIndex = pausedIndex || 0;
+    pausedIndex = null;
+    let xhr = new XMLHttpRequest();
 
+    let url = "<?php echo base_url('HomePage/getMacroByMacroname'); ?>?macroname=" + encodeURIComponent(macroname);
+    console.log("Request URL:", url);
+
+    xhr.open("GET", url, true);
+
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            response = JSON.parse(xhr.responseText);
+            if (response && response.length > 0) {
+                isPaused = false;
+                playNextCase();
+            } else {
+                console.log("No data found for the given macroname.");
+            }
+        } else {
+            console.error("Error occurred while fetching data. Status:", xhr.status);
+        }
+    };
+
+    xhr.send();
+}
+
+function macPlayerResume(macroname) {
+    isPaused = false;
+    playNextCase();
+}
+
+// player Pause btn
+function macPlayerPause(macroname) {
+    isPaused = true;
+    pausedIndex = currentIndex;
+    console.log("Pausing macro:", macroname);
+    clearInterval(interval);
+}
+
+//player Stops btn
+function macPlayerStop(macroname) {
+    console.log("Stopping macro:", macroname);
+    currentIndex = 0;
+    countingElement.innerHTML = 0;
+    clearInterval(interval);
     map.eachLayer(layer => {
         if (layer instanceof L.TileLayer.WMS) {
             map.removeLayer(layer);
         }
     });
-
-    if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-        switch (macro_SubParameter) {
-            case "Last 00-05 min":
-                map.addLayer(mywmsIITM);
-                playerTextElement.innerHTML = 'Last 00-05 min';
-                console.log("1-Last 00-05 min");
-                break;
-            case "00UTC":
-                map.addLayer(ship_00utc);
-                playerTextElement.innerHTML = 'Ship and Buoy 00UTC';
-                console.log("2-00UTC");
-                break;
-            case "Radar Reflectivity":
-                map.addLayer(rad_ref);
-                playerTextElement.innerHTML = 'Radar Reflectivity';
-                console.log("3-rad_ref");
-                break;
-            case "Oil Refineries":
-                map.addLayer(exp_oil);
-                playerTextElement.innerHTML = 'Exposure Oil Refineries';
-                console.log("4-exp_oil");
-                break;
-            case "RI GFS DAY1":
-                map.addLayer(med_gfs1);
-                playerTextElement.innerHTML = 'Rainfall Intensity Day1 - RI GFS DAY1';
-                console.log("5-RI GFS DAY1");
-                break;
-        }
-    }
 }
 
-function playMacro(macroGroupName) {
-    updateBackgroundColor();
-    bgArrayForMac.forEach(array => array.length = 0);
-
-    let macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
-
-    if (macro) {
-        currentMacroGroupName = macroGroupName; // Update the current macro group
-        macro.currentMacroIndex = 0;
-        clearInterval(macro.intervalId);
-
-        applyLayers(macro);
-        startMacroPlayback(macro);
+// player left btn
+function macPlayerLeft(macroname) {
+    map.eachLayer(layer => {
+        if (layer instanceof L.TileLayer.WMS) {
+            map.removeLayer(layer);
+        }
+    });
+    if (currentIndex > 0) {
+        currentIndex--;
+        playNextCase();
+        console.log("Going left in macro:", macroname);
     } else {
-        console.error("Macro not found for macroGroupName:", macroGroupName);
+        console.log("Already at the beginning of the macro:", macroname);
     }
 }
 
-function startMacroPlayback(macro) {
-    playingMacro = true;
-    let currentSecond = intervalInSeconds;
-
-    macro.intervalId = setInterval(() => {
-        // Check if reached the end of the macro
-        if (macro.currentMacroIndex >= macro.listOfMacro.length - 1) {
-            clearInterval(macro.intervalId);
-            playingMacro = false;
-            countingElement.innerHTML = "0";
-            return;
+// player right btn
+function macPlayerRight(macroname) {
+    map.eachLayer(layer => {
+        if (layer instanceof L.TileLayer.WMS) {
+            map.removeLayer(layer);
         }
+    });
+    if (currentIndex < response.length - 1) {
+        currentIndex++;
+        playNextCase();
+        console.log("Going right in macro:", macroname);
+    } else {
+        console.log("Already at the end of the macro:", macroname);
+    }
+}
 
-        // Update the counting element with the countdown
-        countingElement.innerHTML = currentSecond;
 
-        // Check if time has reached 0
-        if (currentSecond <= 0) {
-            // Move to the next switch case
-            macro.currentMacroIndex++;
-            applyLayers(macro);
-
-            // Reset counting for the next layer
-            currentSecond = intervalInSeconds;
+// player close X btn
+function macroRunFnX(macroname) {
+    macPlayerStop(macroname);
+    map.eachLayer(layer => {
+        if (layer instanceof L.TileLayer.WMS) {
+            map.removeLayer(layer);
         }
-
-        currentSecond--;
-    }, 1000);
+    });
+    playerTextElement.innerHTML = "";
+    document.getElementById("macroDetails").style.display = "none";
 }
 
-function pauseMacroPlayback(macro) {
-    clearInterval(macro.intervalId);
-    playingMacro = false;
-}
+//player ends here
 
-function resumeMacroPlayback() {
-    let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
 
-    if (macro && !playingMacro) {
-        startMacroPlayback(macro);
-    }
-}
+// + MAIN view btn DB
+function viewMacro(macroname) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "<?php echo base_url('HomePage/getMacroByMacroname?macroname='); ?>" + encodeURIComponent(
+        macroname), true);
 
-function goToNextMacro(macro) {
-    if (macro.currentMacroIndex < macro.listOfMacro.length - 1) {
-        macro.currentMacroIndex++;
-        applyLayers(macro);
-        countingElement.innerHTML = intervalInSeconds; // Reset counting
-
-        if (playingMacro) {
-            pauseMacroPlayback(macro);
-            startMacroPlayback(macro);
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            let macro = JSON.parse(xhr.responseText);
+            console.log("Parsed macro object:", macro);
+            if (Array.isArray(macro) && macro.length > 0) {
+                view_Create_Macro.style.display = 'block';
+                let viewMacroDetails = document.getElementById("viewMacroDetails");
+                let viewMacroTitleVar = document.getElementById("viewMacroTitle");
+                viewMacroTitleVar.innerHTML = macro[0].macroname;
+                let viewTempMacro = macro.map(macroItem => {
+                    console.log("Macro Item:", macroItem);
+                    let modelName = macroItem.modelname.trim();
+                    let parameterName = macroItem.parametername.trim();
+                    let subParameterName = macroItem.subparametername.trim();
+                    if (modelName && parameterName && subParameterName) {
+                        console.log("Model Name:", modelName);
+                        console.log("Parameter Name:", parameterName);
+                        console.log("Subparameter Name:", subParameterName);
+                        // 
+                        return `<div style="font-family: 'Times New Roman'; font-size: 15px; color: #1d334e;" class="macroListCSS" id="toggleDiv">
+                            <span onclick="MacroPlusToggle('${macroItem.ulId}view')">+ ${macroItem.macroname}: ${subParameterName}</span>
+                            <ul id="${macroItem.ulId}view" class="listContainerMacro" style="font-family: 'Times New Roman'; font-size: 13px;">
+                                <li>${modelName}</li>
+                                <li>${parameterName}</li>
+                                <li>${subParameterName}</li>
+                            </ul>
+                        </div>`;
+                    } else {
+                        console.error("Missing properties in macroItem:", macroItem);
+                        return '';
+                    }
+                });
+                viewMacroDetails.innerHTML = viewTempMacro.join("");
+            } else {
+                console.error("No macro found with the given macroname or empty response:", macroname);
+            }
+        } else {
+            console.error("Error occurred while fetching macro details. Status:", xhr.status);
         }
-    }
+    };
+
+    xhr.send();
 }
 
-function goToPreviousMacro(macro) {
-    if (macro.currentMacroIndex > 0) {
-        macro.currentMacroIndex--;
-        applyLayers(macro);
-        countingElement.innerHTML = intervalInSeconds; // Reset counting
+// + MAIN edit btn DB
+function editMacro(macroname) {
+    console.log(macroname, "macroname");
+    let xhr = new XMLHttpRequest();
+    // let url = "<?php echo base_url('HomePage/getMacroByMacroname?macroname='); ?>" + encodeURIComponent(macroname);
+    // console.log("Request URL:", url);
 
-        if (playingMacro) {
-            pauseMacroPlayback(macro);
-            startMacroPlayback(macro);
+    xhr.open("GET", "<?php echo base_url('HomePage/getMacroByMacroname?macroname='); ?>" + encodeURIComponent(
+        macroname), true);
+
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            let macro = JSON.parse(xhr.responseText);
+            console.log(macro, "macro");
+            macro.forEach(item => {
+                console.log("Fetched macroname1:", item.id);
+                console.log("Fetched macroname1:", item.macroname);
+                console.log("Fetched macroname1:", item.modelname);
+                console.log("Fetched macroname1:", item.parametername);
+                console.log("Fetched macroname1:", item.subparametername);
+
+                // Update UI with fetched macro details
+                document.getElementById('macroNames').value = item.macroname;
+
+                // In editMacro function, modify the onclick event for editMacroLayerDB to pass all required parameters
+                let addedInfoDiv = `<div style="color: #1d334e;" id="toggleDiv">
+                     <div style="color: #1d334e;">
+                         <span>
+                             <i class="fa-solid fa-plus fa-xs"></i> ${item.macroname}: ${item.modelname}
+                         </span>&nbsp;&nbsp;
+
+                         <span title="Edit" onclick="editMacroLayerDB(${item.id}, '${item.modelname}', '${item.parametername}', '${item.subparametername}')">
+                            <i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i>
+                        </span>
+                         <span title="Delete" onclick="deleteMacroLayer(${item.id})">
+                             <i class="fa-sharp fa-solid fa-trash fa-xs"></i>
+                         </span>
+                     </div>
+
+                     <ul id="${item.id}" class="listContainerMacro">
+                         <li>${item.modelname}</li>
+                         <li>${item.parametername}</li>
+                         <li>${item.subparametername}</li>
+                     </ul>
+                     <input type="hidden" class="macroName" value="${item.macroname}">
+                     <input type="hidden" class="modelName" value="${item.modelname}">
+                     <input type="hidden" class="parameterName" value="${item.parametername}">
+                     <input type="hidden" class="subParameterName" value="${item.subparametername}">
+                 </div>`;
+
+
+                addedInfoContainer.innerHTML += addedInfoDiv;
+            });
+            createMacroForm();
+
+        } else {
+            console.error("Error occurred while fetching macro details. Status code: " + xhr.status);
         }
+    };
+
+    xhr.send();
+}
+
+
+// whole macro name delete  
+function deleteMacro(macroName, userName, deleteReason) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "<?php echo base_url('HomePage/delete_macro'); ?>", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    let data = {
+        macroname: macroName,
+        userName: userName,
+        deleteReason: deleteReason
+    };
+
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            view_Create_Macro.style.display = 'none';
+            showSavedMacroList();
+            closeDeleteMacroModal();
+            console.log("Macro(s) deleted successfully.");
+            console.log("UserName:", userName);
+            console.log("DeleteReason:", deleteReason);
+        } else {
+            console.error("Error occurred while deleting macro(s).");
+        }
+    };
+
+    xhr.send(JSON.stringify(data));
+}
+
+// conformation for delete
+function alertDeleteMacro(macroname) {
+    document.getElementById('deleteMacroModal').style.display = 'block';
+
+    document.getElementById('macCanBtn').onclick = function() {
+        let userName = document.getElementById('userName').value;
+        let deleteReason = document.getElementById('deleteReason').value;
+        deleteMacro(macroname, userName, deleteReason); // Pass all three parameters
+    };
+
+    document.getElementById('userName').value = "";
+    document.getElementById('deleteReason').value = "";
+}
+
+//cancel btn for delete conformation
+function closeDeleteMacroModal() {
+    document.getElementById('deleteMacroModal').style.display = 'none';
+}
+
+
+
+
+
+
+function MacroPlusToggle(ulId) {
+    ulId = parseInt(ulId);
+    console.log("Received ulId:", ulId);
+    console.log("Contents of macroAddArr:", macroAddArr);
+
+    let macroObject = macroAddArr.find(obj => obj.ulId === ulId);
+
+    if (macroObject) {
+        console.log("Corresponding macroObject:", macroObject);
+    } else {
+        console.log("Macro object not found for ulId:", ulId);
     }
 }
 
-function stopMacroPlayback() {
-    let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
 
-    if (macro) {
-        clearInterval(macro.intervalId);
-        macro.currentMacroIndex = 0;
-        playingMacro = false;
-        countingElement.innerHTML = "0";
-        applyLayers(macro);
-    }
-}
+
+
+// AddButtonForm for MACRO
+// let savedMacro = [];
+// let addedTempMacro = {};
+// let listOfMacro = [];
+// let counter = 0;
+// let editId;
+// let editMacroGroupName;
+
+// let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
+
+// function macAddForm() {
+//     event.preventDefault();
+//     let ulId = "listContainerMacro_" + counter++;
+//     let mac_macroNames = document.getElementById('macroNames').value;
+//     let mac_model_Names = document.getElementById('mac_modelNames').value;
+//     let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
+//     let mac_sub_parameter = document.getElementById('mac_subparameter').value;
+
+//     const currentISTTime = new Date().toLocaleString("en-US", {
+//         timeZone: "Asia/Kolkata"
+//     });
+
+//     // Fixed_ist_time is for macroBtn
+//     let Fixed_ist_time = new Date().toLocaleString("en-US", {
+//         timeZone: "Asia/Kolkata"
+//     });
+
+//     listOfMacro.push({
+//         ulId: ulId,
+//         mac_macroNames: mac_macroNames,
+//         mac_model_Names: mac_model_Names,
+//         mac_parameter_Names: mac_parameter_Names,
+//         mac_sub_parameter: mac_sub_parameter,
+//         ist_time: currentISTTime, // Add IST
+//         Fixed_ist_time: Fixed_ist_time // Add IST
+//     })
+//     addedTempMacro = {
+//         macroGroupName: mac_macroNames,
+//         listOfMacro: listOfMacro
+//     };
+//     console.log("listOfMacro:", listOfMacro);
+//     console.log("addedTempMacro:", addedTempMacro);
+
+//     // document.getElementById('macroNames').value = '';
+//     document.getElementById('mac_modelNames').value = '';
+//     document.getElementById('mac_parameterNames').value = '';
+//     document.getElementById('mac_subparameter').value = '';
+
+//     // viewAddedAndDeletedMacro();
+// }
+
+// function viewAddedAndDeletedMacro() {
+//     let showAddedTempMacro = [];
+//     addedTempMacro.listOfMacro.forEach(macro => {
+//         let addedInfoDiv = `<div style="color: #1d334e;" class="macroListCSS" id="toggleDiv">
+//                                 <div style="color: #1d334e;">
+//                                     <span onclick="MacroPlusToggle('${macro.ulId}adddelete')">
+//                                         <div>
+//                                             <i class="fa-solid fa-plus fa-xs"></i> ${macro.mac_macroNames}:
+//                                             ${macro.mac_sub_parameter}
+//                                         </div>
+//                                     </span>&nbsp;&nbsp;
+
+//                                     <span title="Edit" onclick="editMacroLayer('${macro.ulId}')"><i
+//                                             class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i></span>
+//                                     <span title="Delete" onclick="deleteMacroLayer('${macro.ulId}')"><i
+//                                             class="fa-sharp fa-solid fa-trash fa-xs"></i></span>
+//                                 </div>
+//                                 <ul id="${macro.ulId}adddelete" class="listContainerMacro">
+//                                     <li>${macro.mac_model_Names}</li>
+//                                     <li>${macro.mac_parameter_Names}</li>
+//                                     <li>${macro.mac_sub_parameter}</li>
+//                                 </ul>
+//                             </div>`;
+//         showAddedTempMacro.push(addedInfoDiv);
+//     })
+
+//     addedInfoContainerDiv.innerHTML = showAddedTempMacro.join("");
+// }
+
+
+
+
+// function macSubmitForm() {
+//     event.preventDefault();
+//     let creatMacroVar = document.getElementById("creatRedit");
+//     creatMacroVar.innerHTML = "Create Macro";
+//     if (editMacroGroupName) {
+//         let editAddMacro = savedMacro.find(x => x.macroGroupName == editMacroGroupName);
+//         editAddMacro = addedTempMacro;
+//     } else {
+//         savedMacro.push(addedTempMacro);
+//     }
+//     showSavedMacroList();
+//     document.getElementById('macroNames').value = '';
+//     document.getElementById('mac_modelNames').value = '';
+//     document.getElementById('mac_parameterNames').value = '';
+//     document.getElementById('mac_subparameter').value = '';
+//     addedTempMacro = {};
+//     listOfMacro = [];
+//     editMacroGroupName = '';
+//     addedInfoContainerDiv.innerHTML = ' '
+//     if (view_Create_Macro.style.display == 'block') {
+//         viewMacro(editMacroGroupName);
+//     }
+//     document.getElementById("mac_updateButton").style.display = "none";
+// };
+
+
+// function showSavedMacroList() {
+//     let showAllCreatedMacro = document.getElementById("showCreatedMacro");
+//     let showSavedMacro = [];
+//     savedMacro.forEach(macro => {
+//         if (macro) {
+//             showInfoDiv = `<div class="createMacro">
+//                 <div><i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;""></i>&nbsp;
+//                 <span style="font-family: 'Times New Roman, sans-serif;font-size: 15px;font-weight: 600;color: #1d334e;"> ${macro.macroGroupName}</span>
+//                 </div>
+
+//                 <div class="saveMacroView">
+//                 <button title="Play" class="play-button" onclick="playMacro('${macro.macroGroupName}')">
+//                 <i class="fa-solid fa-play fa-xs"></i></button>
+
+//                 <button title="View" class="view-button" onclick="viewMacro('${macro.macroGroupName}')">
+//                 <i class="fa-solid fa-eye fa-xs"></i></button>
+
+//                 <button title="Edit" class="edit-button" onclick="editMacro('${macro.macroGroupName}')">
+//                 <i class="fa-solid fa-pen-to-square fa-xs"></i></button>
+
+//                 <button title="Delete" class="delete-button" onclick="deleteMacro('${macro.macroGroupName}')">
+//                 <i class="fa-solid fa-trash fa-xs"></i></button>
+//                 </div>
+//                 <div><h6 style="font-family: 'Times New Roman'; font-size: 15px;">${macro.listOfMacro[0].Fixed_ist_time}</h6>
+//                 </div></div>
+//                 `;
+//             showSavedMacro.push(showInfoDiv);
+//         } else {
+//             console.log('Details not found for:', newButton.id);
+//         }
+//     })
+//     showAllCreatedMacro.innerHTML = showSavedMacro.join('');
+
+//     if (showSavedMacro.length > 6) {
+//         showAllCreatedMacro.classList.add('overflow-y-scroll');
+//     } else {
+//         showAllCreatedMacro.classList.remove('overflow-y-scroll');
+//     }
+// }
+// 
+
+
+// *************************************
+
+// let macro_SubParameter;
+// let currentMacroIndex = 0;
+// let intervalId;
+// let countingElement = document.getElementById("counting");
+// let intervalInSeconds = 10;
+// let playingMacro = false;
+// let currentMacroGroupName;
+// let playerTextElement = document.getElementById("playerText");
+
+
+// function applyLayers(macro) {
+//     if (!macro || !macro.listOfMacro || macro.currentMacroIndex >= macro.listOfMacro.length) {
+//         console.error("Invalid macro object or listOfMacro is empty.");
+//         return;
+//     }
+
+//     const macroDetails = macro.listOfMacro[macro.currentMacroIndex];
+//     const macro_SubParameter = macroDetails.mac_sub_parameter;
+
+//     document.getElementById("macroDetails").style.display = "block";
+
+//     map.eachLayer(layer => {
+//         if (layer instanceof L.TileLayer.WMS) {
+//             map.removeLayer(layer);
+//         }
+//     });
+
+//     if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
+// switch (macro_SubParameter) {
+//     case "Last 00-05 min":
+//         map.addLayer(mywmsIITM);
+//         playerTextElement.innerHTML = 'Last 00-05 min';
+//         console.log("1-Last 00-05 min");
+//         break;
+//     case "00UTC":
+//         map.addLayer(ship_00utc);
+//         playerTextElement.innerHTML = 'Ship and Buoy 00UTC';
+//         console.log("2-00UTC");
+//         break;
+//     case "Radar Reflectivity":
+//         map.addLayer(rad_ref);
+//         playerTextElement.innerHTML = 'Radar Reflectivity';
+//         console.log("3-rad_ref");
+//         break;
+//     case "Oil Refineries":
+//         map.addLayer(exp_oil);
+//         playerTextElement.innerHTML = 'Exposure Oil Refineries';
+//         console.log("4-exp_oil");
+//         break;
+//     case "RI GFS DAY1":
+//         map.addLayer(med_gfs1);
+//         playerTextElement.innerHTML = 'Rainfall Intensity Day1 - RI GFS DAY1';
+//         console.log("5-RI GFS DAY1");
+//         break;
+// }
+//     }
+// }
+
+// function playMacro(macroGroupName) {
+//     updateBackgroundColor();
+//     bgArrayForMac.forEach(array => array.length = 0);
+
+//     let macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
+
+//     if (macro) {
+//         currentMacroGroupName = macroGroupName; // Update the current macro group
+//         macro.currentMacroIndex = 0;
+//         clearInterval(macro.intervalId);
+
+//         applyLayers(macro);
+//         startMacroPlayback(macro);
+//     } else {
+//         console.error("Macro not found for macroGroupName:", macroGroupName);
+//     }
+// }
+
+// function startMacroPlayback(macro) {
+//     playingMacro = true;
+//     let currentSecond = intervalInSeconds;
+
+//     macro.intervalId = setInterval(() => {
+//         // Check if reached the end of the macro
+//         if (macro.currentMacroIndex >= macro.listOfMacro.length - 1) {
+//             clearInterval(macro.intervalId);
+//             playingMacro = false;
+//             countingElement.innerHTML = "0";
+//             return;
+//         }
+
+//         // Update the counting element with the countdown
+//         countingElement.innerHTML = currentSecond;
+
+//         // Check if time has reached 0
+//         if (currentSecond <= 0) {
+//             // Move to the next switch case
+//             macro.currentMacroIndex++;
+//             applyLayers(macro);
+
+//             // Reset counting for the next layer
+//             currentSecond = intervalInSeconds;
+//         }
+
+//         currentSecond--;
+//     }, 1000);
+// }
+
+// function pauseMacroPlayback(macro) {
+//     clearInterval(macro.intervalId);
+//     playingMacro = false;
+// }
+
+// function resumeMacroPlayback() {
+//     let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
+
+//     if (macro && !playingMacro) {
+//         startMacroPlayback(macro);
+//     }
+// }
+
+// function goToNextMacro(macro) {
+//     if (macro.currentMacroIndex < macro.listOfMacro.length - 1) {
+//         macro.currentMacroIndex++;
+//         applyLayers(macro);
+//         countingElement.innerHTML = intervalInSeconds; // Reset counting
+
+//         if (playingMacro) {
+//             pauseMacroPlayback(macro);
+//             startMacroPlayback(macro);
+//         }
+//     }
+// }
+
+// function goToPreviousMacro(macro) {
+//     if (macro.currentMacroIndex > 0) {
+//         macro.currentMacroIndex--;
+//         applyLayers(macro);
+//         countingElement.innerHTML = intervalInSeconds; // Reset counting
+
+//         if (playingMacro) {
+//             pauseMacroPlayback(macro);
+//             startMacroPlayback(macro);
+//         }
+//     }
+// }
+
+// function stopMacroPlayback() {
+//     let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
+
+//     if (macro) {
+//         clearInterval(macro.intervalId);
+//         macro.currentMacroIndex = 0;
+//         playingMacro = false;
+//         countingElement.innerHTML = "0";
+//         applyLayers(macro);
+//     }
+// }
 
 // Event listeners for the buttons
-document.querySelector('.playBtnClas').addEventListener('click', () => {
-    let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
-    if (macro) {
-        stopMacroPlayback();
-        startMacroPlayback(macro);
-    }
-});
+// document.querySelector('.playBtnClas').addEventListener('click', () => {
+//     let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
+//     if (macro) {
+//         stopMacroPlayback();
+//         startMacroPlayback(macro);
+//     }
+// });
 
-document.querySelector('.pauseBtnClas').addEventListener('click', () => {
-    let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
-    if (macro) {
-        pauseMacroPlayback(macro);
-    }
-});
+// document.querySelector('.pauseBtnClas').addEventListener('click', () => {
+//     let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
+//     if (macro) {
+//         pauseMacroPlayback(macro);
+//     }
+// });
 
-document.querySelector('.rightMacBtn').addEventListener('click', () => {
-    let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
-    if (macro) {
-        goToNextMacro(macro);
-    }
-});
+// document.querySelector('.rightMacBtn').addEventListener('click', () => {
+//     let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
+//     if (macro) {
+//         goToNextMacro(macro);
+//     }
+// });
 
-document.querySelector('.leftMacBtn').addEventListener('click', () => {
-    let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
-    if (macro) {
-        goToPreviousMacro(macro);
-    }
-});
+// document.querySelector('.leftMacBtn').addEventListener('click', () => {
+//     let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
+//     if (macro) {
+//         goToPreviousMacro(macro);
+//     }
+// });
 
-document.querySelector('.stopBtnClas').addEventListener('click', () => {
-    let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
-    if (macro) {
-        stopMacroPlayback(macro);
-    }
-});
+// document.querySelector('.stopBtnClas').addEventListener('click', () => {
+//     let macro = savedMacro.find(x => x.macroGroupName === currentMacroGroupName);
+//     if (macro) {
+//         stopMacroPlayback(macro);
+//     }
+// });
 
 
 
 
 // *************************************
 
-function macroRunFnX() {
-    stopMacroPlayback(); // Stop the macro playback
-    map.eachLayer(layer => {
-        if (layer instanceof L.TileLayer.WMS) {
-            map.removeLayer(layer); // Remove all layers from the map
-        }
-    });
-    document.getElementById("macroDetails").style.display = "none";
-}
+// function macroRunFnX() {
+//     stopMacroPlayback(); // Stop the macro playback
+//     map.eachLayer(layer => {
+//         if (layer instanceof L.TileLayer.WMS) {
+//             map.removeLayer(layer); // Remove all layers from the map
+//         }
+//     });
+//     document.getElementById("macroDetails").style.display = "none";
+// }
 
 
-function viewMacro(macroGroupName) {
-    let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
-    view_Create_Macro.style.display = 'block';
-    let viewMacroDetails = document.getElementById("viewMacroDetails");
-    let viewMacroTitleVar = document.getElementById("viewMacroTitle");
-    let viewTempMacro = [];
-    macro.listOfMacro.forEach(macro => {
-        viewMacroTitleVar.innerHTML = macro.mac_macroNames;
-        let addedInfoDiv = `<div style="font-family: 'Times New Roman'; font-size: 15px; color: #1d334e;"class="macroListCSS" id="toggleDiv">
-        <span onclick="MacroPlusToggle('${macro.ulId}view')">+ ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>
-        <ul id="${macro.ulId}view" class="listContainerMacro" style="font-family: 'Times New Roman'; font-size: 13px;">
-            <li>${macro.mac_model_Names}</li>
-            <li>${macro.mac_parameter_Names}</li>
-            <li>${macro.mac_sub_parameter}</li>
-        </ul>
-        <h6 style="font-family: 'Times New Roman'; font-size: 15px;">${macro.ist_time}</h6>
-    </div>`;
-        viewTempMacro.push(addedInfoDiv);
-    })
-    viewMacroDetails.innerHTML = viewTempMacro.join("");
-}
+// function viewMacro(macroGroupName) {
+//     let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
+//     view_Create_Macro.style.display = 'block';
+//     let viewMacroDetails = document.getElementById("viewMacroDetails");
+//     let viewMacroTitleVar = document.getElementById("viewMacroTitle");
+//     let viewTempMacro = [];
+//     macro.listOfMacro.forEach(macro => {
+//         viewMacroTitleVar.innerHTML = macro.mac_macroNames;
+//         let addedInfoDiv = `<div style="font-family: 'Times New Roman'; font-size: 15px; color: #1d334e;"class="macroListCSS" id="toggleDiv">
+//         <span onclick="MacroPlusToggle('${macro.ulId}view')">+ ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>
+//         <ul id="${macro.ulId}view" class="listContainerMacro" style="font-family: 'Times New Roman'; font-size: 13px;">
+//             <li>${macro.mac_model_Names}</li>
+//             <li>${macro.mac_parameter_Names}</li>
+//             <li>${macro.mac_sub_parameter}</li>
+//         </ul>
+//         <h6 style="font-family: 'Times New Roman'; font-size: 15px;">${macro.ist_time}</h6>
+//     </div>`;
+//         viewTempMacro.push(addedInfoDiv);
+//     })
+//     viewMacroDetails.innerHTML = viewTempMacro.join("");
+// }
 
-function editMacro(macroGroupName) {
-    let creatReditVar = document.getElementById("creatRedit");
-    create_Macro.style.display = 'block';
-    let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
-    editMacroGroupName = macro.macroGroupName;
-    console.log("Found EDIT UPDATE macro:", macro);
-    addedTempMacro = macro;
-    viewAddedAndDeletedMacro();
+// function editMacro(macroGroupName) {
+//     let creatReditVar = document.getElementById("creatRedit");
+//     create_Macro.style.display = 'block';
+//     let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
+//     editMacroGroupName = macro.macroGroupName;
+//     console.log("Found EDIT UPDATE macro:", macro);
+//     addedTempMacro = macro;
+//     viewAddedAndDeletedMacro();
 
-    creatReditVar.innerHTML = "Edit Macro";
+//     creatReditVar.innerHTML = "Edit Macro";
 
-    document.getElementById('macroNames').value = macro.macroGroupName;
+//     document.getElementById('macroNames').value = macro.macroGroupName;
 
-    document.getElementById("mac_addButton").style.display = "block";
-    document.getElementById("mac_submitButton").style.display = "block";
-    document.getElementById("mac_updateButton").style.display = "none";
+//     document.getElementById("mac_addButton").style.display = "block";
+//     document.getElementById("mac_submitButton").style.display = "block";
+//     document.getElementById("mac_updateButton").style.display = "none";
 
-}
+// }
 
-var macroGroupNameForDelete;
+// var macroGroupNameForDelete;
 
-function deleteMacro(macroGroupName) {
-    macroGroupNameForDelete = macroGroupName;
+// function deleteMacro(macroGroupName) {
+//     macroGroupNameForDelete = macroGroupName;
 
-    document.getElementById('deleteMacroModal').style.display = 'block';
-}
+//     document.getElementById('deleteMacroModal').style.display = 'block';
+// }
 
-function submitDeleteMacro() {
-    // Get user input
-    const userName = document.getElementById('userName').value;
-    const deleteReason = document.getElementById('deleteReason').value;
+// function submitDeleteMacro() {
+//     // Get user input
+//     const userName = document.getElementById('userName').value;
+//     const deleteReason = document.getElementById('deleteReason').value;
 
-    savedMacro = savedMacro.filter(x => x.macroGroupName != macroGroupNameForDelete);
-    showSavedMacroList();
+//     savedMacro = savedMacro.filter(x => x.macroGroupName != macroGroupNameForDelete);
+//     showSavedMacroList();
 
-    let getAlertMsg =
-        `Macro with group name ${macroGroupNameForDelete} has been deleted by ${userName}\nReason: ${deleteReason}`
+//     let getAlertMsg =
+//         `Macro with group name ${macroGroupNameForDelete} has been deleted by ${userName}\nReason: ${deleteReason}`
 
-    // alert(getAlertMsg);
-    console.log(getAlertMsg, "getting alert message...");
+//     // alert(getAlertMsg);
+//     console.log(getAlertMsg, "getting alert message...");
 
-    document.getElementById('macroNames').value = '';
-    document.getElementById('mac_modelNames').value = '';
-    document.getElementById('mac_parameterNames').value = '';
-    document.getElementById('mac_subparameter').value = '';
+//     document.getElementById('macroNames').value = '';
+//     document.getElementById('mac_modelNames').value = '';
+//     document.getElementById('mac_parameterNames').value = '';
+//     document.getElementById('mac_subparameter').value = '';
 
-    document.getElementById('userName').value = "";
-    document.getElementById('deleteReason').value = "";
+//     document.getElementById('userName').value = "";
+//     document.getElementById('deleteReason').value = "";
 
-    // Close the modal
-    closeDeleteMacroModal();
-}
+//     // Close the modal
+//     closeDeleteMacroModal();
+// }
 
 // Hide the deleteMacroModal
-function closeDeleteMacroModal() {
-    document.getElementById('deleteMacroModal').style.display = 'none';
-}
+// function closeDeleteMacroModal() {
+//     document.getElementById('deleteMacroModal').style.display = 'none';
+// }
 
-function deleteMacroLayer(value) {
-    addedTempMacro.listOfMacro = addedTempMacro.listOfMacro.filter(x => x.ulId != value);
-    // viewAddedAndDeletedMacro();
+// function deleteMacroLayer(value) {
+//     addedTempMacro.listOfMacro = addedTempMacro.listOfMacro.filter(x => x.ulId != value);
+//     // viewAddedAndDeletedMacro();
 
-    // document.getElementById('macroNames').value = '';
-    document.getElementById('mac_modelNames').value = '';
-    document.getElementById('mac_parameterNames').value = '';
-    document.getElementById('mac_subparameter').value = '';
+//     // document.getElementById('macroNames').value = '';
+//     document.getElementById('mac_modelNames').value = '';
+//     document.getElementById('mac_parameterNames').value = '';
+//     document.getElementById('mac_subparameter').value = '';
 
-    viewMacro();
-}
+//     viewMacro();
+// }
 
 
-function editMacroLayer(value) {
-    editId = value;
-    let layer = addedTempMacro.listOfMacro.find(x => x.ulId == value);
-    macShowParameterNames(layer.mac_model_Names);
-    document.getElementById('macroNames').value = addedTempMacro.macroGroupName;
-    document.getElementById('mac_modelNames').value = layer.mac_model_Names;
-    document.getElementById('mac_parameterNames').value = layer.mac_parameter_Names;
-    document.getElementById('mac_subparameter').value = layer.mac_sub_parameter;
+// function editMacroLayer(value) {
+//     editId = value;
+//     let layer = addedTempMacro.listOfMacro.find(x => x.ulId == value);
+//     macShowParameterNames(layer.mac_model_Names);
+//     document.getElementById('macroNames').value = addedTempMacro.macroGroupName;
+//     document.getElementById('mac_modelNames').value = layer.mac_model_Names;
+//     document.getElementById('mac_parameterNames').value = layer.mac_parameter_Names;
+//     document.getElementById('mac_subparameter').value = layer.mac_sub_parameter;
 
-    document.getElementById("mac_addButton").style.display = "none";
-    document.getElementById("mac_submitButton").style.display = "none";
-    document.getElementById("mac_updateButton").style.display = "block";
+//     document.getElementById("mac_addButton").style.display = "none";
+//     document.getElementById("mac_submitButton").style.display = "none";
+//     document.getElementById("mac_updateButton").style.display = "block";
 
-    viewMacro();
-}
+//     viewMacro();
+// }
 
-function updateForm() {
-    let creatMacroFromEdit = document.getElementById("creatRedit");
-    creatMacroFromEdit.innerHTML = "Edit Macro";
+// function updateForm() {
+//     let creatMacroFromEdit = document.getElementById("creatRedit");
+//     creatMacroFromEdit.innerHTML = "Edit Macro";
 
-    let layer = addedTempMacro.listOfMacro.find(x => x.ulId == editId);
-    layer.macroGroupName = document.getElementById('macroNames').value;
-    layer.mac_model_Names = document.getElementById('mac_modelNames').value;
-    layer.mac_parameter_Names = document.getElementById('mac_parameterNames').value;
-    layer.mac_sub_parameter = document.getElementById('mac_subparameter').value;
-    // Update the ist_time property
-    layer.ist_time = new Date().toLocaleString("en-US", {
-        timeZone: "Asia/Kolkata"
-    });
+//     let layer = addedTempMacro.listOfMacro.find(x => x.ulId == editId);
+//     layer.macroGroupName = document.getElementById('macroNames').value;
+//     layer.mac_model_Names = document.getElementById('mac_modelNames').value;
+//     layer.mac_parameter_Names = document.getElementById('mac_parameterNames').value;
+//     layer.mac_sub_parameter = document.getElementById('mac_subparameter').value;
+//     // Update the ist_time property
+//     layer.ist_time = new Date().toLocaleString("en-US", {
+//         timeZone: "Asia/Kolkata"
+//     });
 
-    // viewAddedAndDeletedMacro();
+//     // viewAddedAndDeletedMacro();
 
-    document.getElementById('mac_modelNames').value = '';
-    document.getElementById('mac_parameterNames').value = '';
-    document.getElementById('mac_subparameter').value = '';
+//     document.getElementById('mac_modelNames').value = '';
+//     document.getElementById('mac_parameterNames').value = '';
+//     document.getElementById('mac_subparameter').value = '';
 
-    document.getElementById("mac_addButton").style.display = "block";
-    document.getElementById("mac_submitButton").style.display = "block";
-    document.getElementById("mac_updateButton").style.display = "none";
+//     document.getElementById("mac_addButton").style.display = "block";
+//     document.getElementById("mac_submitButton").style.display = "block";
+//     document.getElementById("mac_updateButton").style.display = "none";
 
-    viewMacro(layer.macroGroupName);
-}
+//     viewMacro(layer.macroGroupName);
+// }
 
 
 //*********** */
@@ -3343,18 +3990,18 @@ function addZ(n) {
 }
 
 var today = new Date('2024-02-01');
-console.log(today);
+// console.log(today);
 var today_month = today.getMonth() + 1;
 var date = today.getFullYear() + '-' + today_month + '-' + today.getDate();
 var time = today.getHours() + ":00:00";
 var dateTime = date + ' ' + time;
-console.log(dateTime);
+// console.log(dateTime);
 var endDate = new Date('2024-02-01');
 endDate.setDate(endDate.getDate() + 2);
 endDate.setUTCMinutes(0, 0, 0);
 
 var startDate = new Date(dateTime);
-console.log(endDate);
+// console.log(endDate);
 
 //MAP Starts Here
 var map = L.map('map', {
@@ -4234,195 +4881,194 @@ new WeatherInferenceControl().addTo(map);
 
 
 (function() {
-        var drawnItems = new L.FeatureGroup();
-        map.addLayer(drawnItems);
+    var drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
 
-        var isFreehandMode = false;
-        var isDrawing = false;
-        var polyline = null;
-        var eraseMode = false;
+    var isFreehandMode = false;
+    var isDrawing = false;
+    var polyline = null;
+    var eraseMode = false;
 
-        function startDrawing() {
-            isDrawing = true;
-            polyline = L.polyline([], {
-                weight: 4,
-                color: eraseMode ? 'transparent' : 'red', // Set color to transparent if erase mode is active
-                dashArray: '5, 5'
-            }).addTo(drawnItems);
-        }
+    function startDrawing() {
+        isDrawing = true;
+        polyline = L.polyline([], {
+            weight: 4,
+            color: eraseMode ? 'transparent' : 'red', // Set color to transparent if erase mode is active
+            dashArray: '5, 5'
+        }).addTo(drawnItems);
+    }
 
-        function stopDrawing() {
-            isDrawing = false;
-            polyline = null;
-        }
+    function stopDrawing() {
+        isDrawing = false;
+        polyline = null;
+    }
 
-        var freehandButton = L.control({
-            position: 'topleft'
-        });
-        freehandButton.onAdd = function(map) {
-            var div = L.DomUtil.create('div', 'leaflet-bar');
-            div.innerHTML =
-                '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;position: absolute; top: -172px;">Freehand</button>';
-            div.firstChild.addEventListener('click', function() {
-                if (isFreehandMode) {
-                    isFreehandMode = false;
-                    map.dragging.enable();
-                    document.getElementById('freehandButton').style.backgroundColor = 'red';
-                } else {
-                    isFreehandMode = true;
-                    map.dragging.disable();
-                    document.getElementById('freehandButton').style.backgroundColor = 'green';
-                }
-            });
-            return div;
-        };
-        freehandButton.addTo(map);
-
-        var eraseButton = L.control({
-            position: 'topleft'
-        });
-        eraseButton.onAdd = function(map) {
-            var div = L.DomUtil.create('div', 'leaflet-bar');
-            div.innerHTML =
-                '<button id="eraseButton" style="background-color: white; border: 0px solid black; position: absolute; top: -152px;">Erase</button>';
-
-            div.firstChild.addEventListener('click', function() {
-                eraseMode = !eraseMode;
-                if (eraseMode) {
-                    document.getElementById('eraseButton').style.backgroundColor = 'green';
-                } else {
-                    document.getElementById('eraseButton').style.backgroundColor = 'red';
-                }
-            });
-            return div;
-        };
-        eraseButton.addTo(map);
-
-        var clearLayersButton = L.control({
-            position: 'topleft'
-        });
-        clearLayersButton.onAdd = function(map) {
-            var div = L.DomUtil.create('div', 'leaflet-bar');
-            div.innerHTML =
-                '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -131px; white-space: nowrap;">Clear All</button>';
-
-            div.firstChild.addEventListener('click', function() {
-                // Remove all layers from the map
-                drawnItems.clearLayers();
-
-                // Reset freehand mode
+    var freehandButton = L.control({
+        position: 'topleft'
+    });
+    freehandButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.innerHTML =
+            '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;position: absolute; top: -172px;">Freehand</button>';
+        div.firstChild.addEventListener('click', function() {
+            if (isFreehandMode) {
                 isFreehandMode = false;
                 map.dragging.enable();
-
-                // Reset freehand button color
+                document.getElementById('freehandButton').style.backgroundColor = 'red';
+            } else {
+                isFreehandMode = true;
+                map.dragging.disable();
                 document.getElementById('freehandButton').style.backgroundColor = 'green';
-            });
-            return div;
-        };
-        clearLayersButton.addTo(map);
-
-
-        //drawing co-ordinates start
-        var getCoordinatesButton = L.control({
-            position: 'topleft'
+            }
         });
-        getCoordinatesButton.onAdd = function(map) {
-            var div = L.DomUtil.create('div', 'leaflet-bar');
-            div.innerHTML =
-                '<button id="getCoordinatesButton" style="background-color: white; border: 0px solid black; position: absolute; top: -195px; right: -95px;"><i class="fa fa-download"></button>';
+        return div;
+    };
+    freehandButton.addTo(map);
 
-            div.firstChild.addEventListener('click', function() {
-                    var name = prompt('Enter a name for the coordinates:');
-                    if (name !== null && name.trim() !== '') {
-                        var allCoordinates = [];
-                        drawnItems.eachLayer(function(layer) {
-                            if (layer instanceof L.Polyline) {
-                                var coordinates = layer.getLatLngs().map(function(latlng) {
-                                    return [latlng.lat, latlng.lng];
-                                });
-                                allCoordinates = allCoordinates.concat(
-                                    coordinates); // Concatenate arrays instead of pushing
-                            }
+    var eraseButton = L.control({
+        position: 'topleft'
+    });
+    eraseButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.innerHTML =
+            '<button id="eraseButton" style="background-color: white; border: 0px solid black; position: absolute; top: -152px;">Erase</button>';
+
+        div.firstChild.addEventListener('click', function() {
+            eraseMode = !eraseMode;
+            if (eraseMode) {
+                document.getElementById('eraseButton').style.backgroundColor = 'green';
+            } else {
+                document.getElementById('eraseButton').style.backgroundColor = 'red';
+            }
+        });
+        return div;
+    };
+    eraseButton.addTo(map);
+
+    var clearLayersButton = L.control({
+        position: 'topleft'
+    });
+    clearLayersButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.innerHTML =
+            '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -131px; white-space: nowrap;">Clear All</button>';
+
+        div.firstChild.addEventListener('click', function() {
+            // Remove all layers from the map
+            drawnItems.clearLayers();
+
+            // Reset freehand mode
+            isFreehandMode = false;
+            map.dragging.enable();
+
+            // Reset freehand button color
+            document.getElementById('freehandButton').style.backgroundColor = 'green';
+        });
+        return div;
+    };
+    clearLayersButton.addTo(map);
+
+
+    //drawing co-ordinates start
+    var getCoordinatesButton = L.control({
+        position: 'topleft'
+    });
+    getCoordinatesButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.innerHTML =
+            '<button id="getCoordinatesButton" style="background-color: white; border: 0px solid black; position: absolute; top: -195px; right: -95px;"><i class="fa fa-download"></button>';
+
+        div.firstChild.addEventListener('click', function() {
+            var name = prompt('Enter a name for the coordinates:');
+            if (name !== null && name.trim() !== '') {
+                var allCoordinates = [];
+                drawnItems.eachLayer(function(layer) {
+                    if (layer instanceof L.Polyline) {
+                        var coordinates = layer.getLatLngs().map(function(latlng) {
+                            return [latlng.lat, latlng.lng];
                         });
+                        allCoordinates = allCoordinates.concat(
+                            coordinates); // Concatenate arrays instead of pushing
+                    }
+                });
 
-                        if (allCoordinates.length > 0) {
-                            var currentDate = new Date().toISOString().split('T')[0]; // Extract date part only
-                            var data = {
-                                name: name,
-                                coordinates: allCoordinates,
-                                date: currentDate
-                            };
+                if (allCoordinates.length > 0) {
+                    var currentDate = new Date().toISOString().split('T')[0]; // Extract date part only
+                    var data = {
+                        name: name,
+                        coordinates: allCoordinates,
+                        date: currentDate
+                    };
 
-                            var jsonData = JSON.stringify(data);
-                            // console.log(jsonData );
-                            // Send data to server-side endpoint using AJAX
-                            $.ajax({
-                                type: 'POST',
-                                url: "<?php echo base_url('Drawings/Drawing/save_coordinates'); ?>",
-                                data: jsonData,
-                                success: function(response) {
-                                    console.log(response);
-                                },
-                                error: function(xhr, status, error) {
-                                    console.error('error', error);
-                                }
+                    var jsonData = JSON.stringify(data);
+                    // console.log(jsonData );
+                    // Send data to server-side endpoint using AJAX
+                    $.ajax({
+                        type: 'POST',
+                        url: "<?php echo base_url('Drawings/Drawing/save_coordinates'); ?>",
+                        data: jsonData,
+                        success: function(response) {
+                            console.log(response);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('error', error);
+                        }
 
-                        });
-                } 
-                else {
+                    });
+                } else {
                     alert('No coordinates available. Draw a polyline first.');
                 }
 
             }
         });
-    return div;
-};
-getCoordinatesButton.addTo(map);
-//drawing co-ordinates end
+        return div;
+    };
+    getCoordinatesButton.addTo(map);
+    //drawing co-ordinates end
 
 
-map.on('mousedown', function(event) {
-    if (isFreehandMode && event.originalEvent.button === 0) {
-        if (!isDrawing) {
-            startDrawing();
-            map.dragging.disable();
-        }
-    }
-});
-
-map.on('mousemove', function(event) {
-    if (isDrawing) {
-        polyline.addLatLng(event.latlng);
-    }
-});
-
-document.addEventListener('mouseup', function(event) {
-    if (isDrawing && event.button === 0) {
-        stopDrawing();
-        map.dragging.enable();
-    }
-});
-
-map.on('click', function(event) {
-if (eraseMode) {
-    var layers = drawnItems.getLayers();
-    var lastLayerIndex = layers.length - 1;
-
-    if (lastLayerIndex >= 0) {
-        var lastLayer = layers[lastLayerIndex];
-        if (lastLayer instanceof L.Polyline) {
-            var latlngs = lastLayer.getLatLngs();
-            if (latlngs.length > 0) {
-                latlngs.pop(); // Remove the last point from the polyline
-                lastLayer.setLatLngs(latlngs);
-            } else {
-                // If no points are left, remove the entire layer
-                drawnItems.removeLayer(lastLayer);
+    map.on('mousedown', function(event) {
+        if (isFreehandMode && event.originalEvent.button === 0) {
+            if (!isDrawing) {
+                startDrawing();
+                map.dragging.disable();
             }
         }
-    }
-}
-});
+    });
+
+    map.on('mousemove', function(event) {
+        if (isDrawing) {
+            polyline.addLatLng(event.latlng);
+        }
+    });
+
+    document.addEventListener('mouseup', function(event) {
+        if (isDrawing && event.button === 0) {
+            stopDrawing();
+            map.dragging.enable();
+        }
+    });
+
+    map.on('click', function(event) {
+        if (eraseMode) {
+            var layers = drawnItems.getLayers();
+            var lastLayerIndex = layers.length - 1;
+
+            if (lastLayerIndex >= 0) {
+                var lastLayer = layers[lastLayerIndex];
+                if (lastLayer instanceof L.Polyline) {
+                    var latlngs = lastLayer.getLatLngs();
+                    if (latlngs.length > 0) {
+                        latlngs.pop(); // Remove the last point from the polyline
+                        lastLayer.setLatLngs(latlngs);
+                    } else {
+                        // If no points are left, remove the entire layer
+                        drawnItems.removeLayer(lastLayer);
+                    }
+                }
+            }
+        }
+    });
 
 
 
@@ -24680,6 +25326,7 @@ let closeModelCreateMac = document.querySelector('.create_Macro_body .macroLegen
 //closeModel createMacro
 closeModelCreateMac.onclick = () => {
     createMacroDrag.style.display = 'none';
+    closCreatMac();
 }
 
 function onDragCreateMacro({

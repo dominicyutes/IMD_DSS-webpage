@@ -7,13 +7,8 @@ class TestingDB_model extends CI_Model {
     }
 
     public function get_dummy(){
-         $query = $this->db->get("dummy"); 
-         //select * from employee 
+         $query = $this->db->get("attendance");
          return $query->result();
 }
 }
 ?>
-
-
-
-I
