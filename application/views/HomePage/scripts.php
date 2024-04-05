@@ -4246,7 +4246,7 @@ new WeatherInferenceControl().addTo(map);
         isDrawing = true;
         polyline = L.polyline([], {
             weight: 4,
-            color: eraseMode ? 'transparent' : 'red', // Set color to transparent if erase mode is active
+            color: eraseMode ? 'transparent' : 'red', 
             dashArray: '5, 5'
         }).addTo(drawnItems);
     }
@@ -4309,13 +4309,6 @@ new WeatherInferenceControl().addTo(map);
         div.firstChild.addEventListener('click', function() {
             // Remove all layers from the map
             drawnItems.clearLayers();
-
-            // Reset freehand mode
-            isFreehandMode = false;
-            map.dragging.enable();
-
-            // Reset freehand button color
-            document.getElementById('freehandButton').style.backgroundColor = 'green';
         });
         return div;
     };
