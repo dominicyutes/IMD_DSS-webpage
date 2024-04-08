@@ -52,7 +52,6 @@ body {font-family: "Lato", sans-serif;}
 </head>
 <body>
 
-<?php include '../Default_sidebar.php'; ?>
 
 <div class="main">
   <h1>landing page matter</h1>
