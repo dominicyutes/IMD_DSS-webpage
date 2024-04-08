@@ -194,4 +194,8 @@ class HomePage extends CI_Controller {
         $names = $this->MacrosModel->getUserNames();
         echo json_encode($names);
     }
+
+    public function footerMenu(){
+        $this->load->view('Menu/Landing_page');
+    }
 }
