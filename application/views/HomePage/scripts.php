@@ -2339,6 +2339,7 @@ function obs_Rem_() {
 }
 
 function obsLayerNameX() {
+    obs_Rem_();
     document.getElementById("obsLayerNamShw").style.display = "none";
     map.eachLayer(layer => {
         if (layer instanceof L.TileLayer.WMS) {

@@ -182,5 +182,6 @@ class HomePage extends CI_Controller {
 
     echo "Macro deleted and logged successfully.";
     }
+
     
 }
