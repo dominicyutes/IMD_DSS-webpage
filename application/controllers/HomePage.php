@@ -180,6 +180,7 @@ class HomePage extends CI_Controller {
     $this->MacrosModel->logDeletedMacro($macroname, $userName, $deleteReason);
     echo "Macro deleted and logged successfully.";
     }
+
     
 
     // Deleted MacroGroupName view by [SuperAdmin]

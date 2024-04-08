@@ -365,11 +365,11 @@
             <div
                 style="display: flex; height: 38px; width: 100%; background-color: #2e578647; font-family: 'Times New Roman'; justify-content: center;align-items: center; border-radius: 6px">
 
-                <a href="<?php echo base_url('application/views/DataValidation_list.php/DataValidationList.php'); ?>"
+                <a href="<?php echo base_url('application/views/Menu/Landing_page.php'); ?>"
                     style="position: absolute; left: 100px; width: 150px; height: 50px; display: block; text-decoration: none; color: black;">
                     <div
                         style="width: 100%; height: 100%; background-color: #ccc; text-align: center; line-height: 50px;">
-                        Data Validation
+                        Menu
                     </div>
                 </a>
 
