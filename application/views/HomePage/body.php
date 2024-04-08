@@ -226,8 +226,32 @@
                             <span
                                 style="color: #2c5383;font-family: 'Archivo', sans-serif;font-size: 20px;font-weight: bold;margin-left: 6%;margin-top: 1%; font-size: 20px">Create
                                 Macro</span>
-                            <i style="padding: 16px 0 0 20px;" class="fa-regular fa-trash-can fa-lg"></i>
-                            <i style="padding: 16px 0 0 8px;" class="fa-regular fa-user fa-lg"></i>
+                            <?php if ($user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9"): ?>
+                            <a href="<?php echo base_url();?>HomePage/fetch_names" id="userFilterLink">
+                                <i title="User Filter" style="margin: 16px 15px 0 27px;"
+                                    class="fa-regular fa-user fa-lg"></i>
+                            </a>
+                            <!--  -->
+                            <a href="<?php echo base_url();?>HomePage/displayDeletedMacros">
+                                <i title="Deleted MacroGroup" style="margin: 16px 22px 0 15px;"
+                                    class="fa-regular fa-trash-can fa-lg"></i>
+                            </a>
+                            <?php endif; ?>
+                        </div>
+
+                        <!-- macroGroup User list dialog box -->
+                        <div class="modelForMacroGroup1" style="display: block; left: 1298px; top: 390px; height:0;">
+                            <div class="modelForMacroGroup2" style="position: relative;">
+                                <div
+                                    style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px; align-items: center;">
+
+                                    <h4 style="color: white; margin: 0 auto; font-size: 20px">MacroGroup Users</h4>
+                                    <legend title="Close"
+                                        style="cursor: pointer;color: #83ffee;text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;">
+                                        X</legend>
+                                </div>
+                                <h3>Welcome</h3>
+                            </div>
                         </div>
 
                         <div style="overflow: auto;" id="showCreatedMacro"></div>
@@ -253,6 +277,8 @@
                     </div>
 
                 </div>
+                <!--  -->
+
                 <!--  -->
                 <div class="create_Macro">
                     <div class="create_Macro_body" style="position: relative;">
@@ -334,11 +360,12 @@
 
             </div>
 
+
             <!-- Layer_Name_bottom  display: none; -->
             <div
                 style="display: flex; height: 38px; width: 100%; background-color: #2e578647; font-family: 'Times New Roman'; justify-content: center;align-items: center; border-radius: 6px">
 
-                <a  href="<?php echo base_url('application/views/Menu/Landing_page.php'); ?>"
+                <a href="<?php echo base_url('HomePage/footerMenu'); ?>"
                     style="position: absolute; left: 100px; width: 150px; height: 50px; display: block; text-decoration: none; color: black;">
                     <div
                         style="width: 100%; height: 100%; background-color: #ccc; text-align: center; line-height: 50px;">
@@ -507,6 +534,7 @@
             </div>
         </div>
         <!--  -->
+
 
 
         <!-- LEGEND model popup -->
