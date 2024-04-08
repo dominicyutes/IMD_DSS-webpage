@@ -2340,6 +2340,7 @@ function obs_Rem_() {
 
 function obsLayerNameX() {
     document.getElementById("obsLayerNamShw").style.display = "none";
+    obs_Rem_();
     map.eachLayer(layer => {
         if (layer instanceof L.TileLayer.WMS) {
             map.removeLayer(layer);
@@ -2497,6 +2498,40 @@ let user_id = "<?php echo $user_id; ?>";
 
 let login_in_User = "<?php echo $name; ?>";
 // console.log("$name:", login_in_User);
+
+$(document).ready(function() {
+    $('#userFilterLink').click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr('href'),
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                // console.log(response);
+                if (Array.isArray(response)) {
+                    let names = response.map(function(item) {
+                        return item.name;
+                    });
+                    console.log(names, "names");
+                } else {
+                    console.error("Response is not in the expected format.");
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+
+});
+
+// macroGroup username dialog box
+$(document).ready(function() {
+    $('#userFilterLink').click(function(e) {
+        e.preventDefault();
+        $('.modelForMacroGroup').toggle();
+    });
+});
 
 
 let counter = 0;
@@ -25297,6 +25332,10 @@ let closeModel = document.querySelector('.model-body legend');
 //closeModel
 closeModel.onclick = () => {
     model.style.display = 'none';
+}
+
+function MacroGroupUsers_close() {
+    modelForMacroGroup.style.display = 'none';
 }
 
 function onDrag({

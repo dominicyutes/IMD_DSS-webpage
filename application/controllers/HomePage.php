@@ -176,11 +176,21 @@ class HomePage extends CI_Controller {
 
     // Delete the macro
     $this->MacrosModel->deleteMacroByMacroname($macroname);
-
     // Log the deletion in the deleted macros table
     $this->MacrosModel->logDeletedMacro($macroname, $userName, $deleteReason);
-
     echo "Macro deleted and logged successfully.";
     }
     
+
+    // Deleted MacroGroupName view by [SuperAdmin]
+    public function displayDeletedMacros() {
+        $data['result'] = $this->MacrosModel->getDeletedMacros();
+        $this->load->view('HomePage/DeletedMacrosTable', $data);
+    }
+
+     // SuperAdmin User MacroGroup Filteration
+    public function fetch_names() {
+        $names = $this->MacrosModel->getUserNames();
+        echo json_encode($names);
+    }
 }
