@@ -804,7 +804,32 @@ body {
     z-index: 999;
 }
 
+.modelForMacroGroup1 {
+    width: 35%;
+    height: 55vh;
+    position: fixed;
+    top: 238px;
+    left: 70px;
+    display: none;
+    z-index: 999;
+}
+
 .model-body {
+    position: absolute;
+    width: 286px;
+    height: 300px;
+    margin: 315px 0 0 100px;
+    transform: translate(-50%, -50%);
+    background-color: #f3fbfe;
+    box-shadow: inset -1px 2px 10px 0 rgba(0, 0, 0, 0.404);
+    border-radius: 6px;
+    user-select: none;
+    overflow: auto;
+    position: relative;
+    resize: both;
+}
+
+.modelForMacroGroup2 {
     position: absolute;
     width: 286px;
     height: 300px;
