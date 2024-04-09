@@ -2500,41 +2500,6 @@ let user_id = "<?php echo $user_id; ?>";
 let login_in_User = "<?php echo $name; ?>";
 // console.log("$name:", login_in_User);/
 
-$(document).ready(function() {
-    $('#userFilterLink').click(function(e) {
-        e.preventDefault();
-        $.ajax({
-            url: $(this).attr('href'),
-            type: 'GET',
-            dataType: 'json',
-            success: function(response) {
-                if (Array.isArray(response)) {
-                    let names = response.map(function(item) {
-                        return item.name.toUpperCase();;
-                    });
-                    $('#showMacroGrpUsers').html("");
-                    names.forEach(function(name) {
-                        $('#showMacroGrpUsers').append(
-                            '<span style="margin-left: 20px;" class="macroGrpUserSA">' +
-                            name +
-                            '</span><br>'
-                        );
-                    });
-                } else {
-                    console.error("Response is not in the expected format.");
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-            }
-        });
-    });
-
-    // 
-    $('#showMacroGrpUsers').on('click', '.macroGrpUserSA', function() {
-        console.log($(this).text());
-    });
-});
 
 
 // macroGroup username dialog box
@@ -2552,40 +2517,6 @@ $(document).ready(function() {
     });
 });
 // macroGroup username dialog box ENDS HERE
-
-$(document).ready(function() {
-    $('#userFilterLink').click(function(e) {
-        e.preventDefault();
-        $.ajax({
-            url: $(this).attr('href'),
-            type: 'GET',
-            dataType: 'json',
-            success: function(response) {
-                // console.log(response);
-                if (Array.isArray(response)) {
-                    let names = response.map(function(item) {
-                        return item.name;
-                    });
-                    console.log(names, "names");
-                } else {
-                    console.error("Response is not in the expected format.");
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-            }
-        });
-    });
-
-});
-
-// macroGroup username dialog box
-$(document).ready(function() {
-    $('#userFilterLink').click(function(e) {
-        e.preventDefault();
-        $('.modelForMacroGroup').toggle();
-    });
-});
 
 
 let counter = 0;
@@ -25578,6 +25509,8 @@ let modelForMacroGroupClose = document.querySelector('.modelForMacroGroup2 .mode
 //closeModel viewMacro
 modelForMacroGroupClose.onclick = () => {
     modelForMacroGroup1.style.display = 'none';
+    selectedUserId = "";
+    showSavedMacroList();
 }
 
 function onDragUserFilterMacro({
