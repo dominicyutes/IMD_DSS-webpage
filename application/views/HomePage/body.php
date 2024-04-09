@@ -223,9 +223,34 @@
                             <span
                                 style="color: #2c5383;font-family: 'Archivo', sans-serif;font-size: 20px;font-weight: bold;margin-left: 6%;margin-top: 1%; font-size: 20px">Create
                                 Macro</span>
+                            <?php if ($user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9"): ?>
+                            <a href="<?php echo base_url();?>HomePage/fetch_names" id="userFilterLink">
+                                <i title="User Filter" style="margin: 16px 15px 0 27px;"
+                                    class="fa-regular fa-user fa-lg"></i>
+                            </a>
+                            <!--  -->
+                            <a href="<?php echo base_url();?>HomePage/displayDeletedMacros">
+                                <i title="Deleted MacroGroup" style="margin: 16px 22px 0 15px;"
+                                    class="fa-regular fa-trash-can fa-lg"></i>
+                            </a>
+                            <?php endif; ?>
                         </div>
-
                         <div style="overflow: auto;" id="showCreatedMacro"></div>
+                        <!--  -->
+                        <!-- SUPERADMIN macroGroup User list dialog box- Dragable -->
+                        <div class="modelForMacroGroup1" style="display: none; left: 1298px; top: 390px; height:0;">
+                            <div class="modelForMacroGroup2" style="position: relative;">
+                                <div
+                                    style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px; align-items: center;">
+
+                                    <h4 style="color: white; margin: 0 auto; font-size: 20px">MacroGroup Users</h4>
+                                    <span title="Close" class="modelForMacroGroupLegend">
+                                        X</span>
+                                </div>
+                                <p id="showMacroGrpUsers"></p>
+                            </div>
+                        </div>
+                        <!-- SUPERADMIN macroGroup User list dialog box -->
                     </div>
 
                     <!-- MacroNote -->
@@ -236,11 +261,13 @@
                             Note</h4>
                         <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; text-align: justify;">
                             <span style="font-size: 15px; line-height: 1.6; color: #333;">
-                                The Macro feature will facilitate the user/forecaster in streamlining daily operations
+                                The Macro feature will facilitate the user/forecaster in streamlining daily
+                                operations
                                 by
                                 storing selected layers/information in a group, therefore simplifying the process of
                                 viewing
-                                them. Click on the "+" symbol to generate a new macro and follow the instructions given
+                                them. Click on the "+" symbol to generate a new macro and follow the instructions
+                                given
                                 to
                                 save, edit, run, and delete options.
                             </span>
@@ -248,6 +275,8 @@
                     </div>
 
                 </div>
+                <!--  -->
+
                 <!--  -->
                 <div class="create_Macro">
                     <div class="create_Macro_body" style="position: relative;">

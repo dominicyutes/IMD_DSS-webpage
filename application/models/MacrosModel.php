@@ -42,16 +42,34 @@ class MacrosModel extends CI_Model {
     }
 
 
+    // public function getMacroDetailsByMacroname($macroname) {
+    // $this->db->where('macroname', $macroname);
+    // $query = $this->db->get('macros');
+
+    // if ($query->num_rows() > 0) {
+    //     return $query->result_array();
+    // } else {
+    //     return null;
+    // }
+    // }
+
     public function getMacroDetailsByMacroname($macroname) {
     $this->db->where('macroname', $macroname);
     $query = $this->db->get('macros');
 
     if ($query->num_rows() > 0) {
-        return $query->result_array();
+        $macros = $query->result_array();
+        foreach ($macros as &$macro) {
+            $userName = $macro['userName'];
+            $userDetails = $this->db->get_where('users', array('name' => $userName))->row_array();
+            $macro['userDetails'] = $userDetails;
+        }
+        return $macros;
     } else {
         return null;
     }
     }
+
 
 
     public function updateMacroValues($id, $macroName, $modelName, $parameterName, $subParameterName) {
@@ -98,6 +116,27 @@ class MacrosModel extends CI_Model {
 
     $this->db->insert('deleted_macros', $data);
     }
+
+
+    // Showing the deleted MacroGroup reason to superadmin
+    public function getDeletedMacros() {
+    $this->db->select('macroname, deleted_by, delete_reason, deleted_at AS deleted_At');
+    $query = $this->db->get('deleted_macros');
+    return $query->result_array(); 
+    }
+
+    // SuperAdmin User Filteration
+    public function getUserNames() {
+    $query = $this->db->select('name')->get('users');
+    return $query->result_array();
+    }
+
+    public function getMacronamesByUserId($userId) {
+    $this->db->where('user_id', $userId);
+    $query = $this->db->select('macroname')->get('macros');
+    return $query->result_array();
+    }
+
 
 
 }

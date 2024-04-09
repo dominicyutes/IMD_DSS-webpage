@@ -450,6 +450,59 @@ body {
     z-index: 999;
 }
 
+/*  */
+.UserName_Filter_Macro {
+    width: 35%;
+    position: fixed;
+    z-index: 1000;
+    display: none;
+    right: -201px;
+    top: 62px;
+    height: 0;
+}
+
+.UserName_Filter_Macro_body {
+    width: 264px;
+    height: 317px;
+    margin: 545px 0 0 0;
+    transform: translate(-50%, -50%);
+    background-color: #f3fbfe;
+    box-shadow: inset -1px 2px 10px 0 rgb(0 183 239 / 40%);
+    border: outset;
+    border-radius: 6px;
+    overflow: auto;
+}
+
+.UserName_Filter_Macro_body_div {
+    z-index: 999;
+    display: flex;
+    position: sticky;
+    top: 0;
+    font-family: Arial, sans-serif;
+    background-color: #00415a;
+    padding: 10px;
+    border-radius: 6px;
+    align-items: center;
+}
+
+.UserNameMacroLegend {
+    cursor: pointer;
+    color: #83ffee;
+    text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;
+    font-size: 17px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Archivo', sans-serif;
+}
+
+/*  */
+
 /* MACRO CSS starts here */
 .create_Macro {
     width: 35%;
@@ -695,6 +748,48 @@ body {
     z-index: 2;
 }
 
+
+/*  */
+.modelForMacroGroup1 {
+    width: 35%;
+    height: 55vh;
+    position: fixed;
+    top: 238px;
+    left: 70px;
+    display: none;
+    z-index: 999;
+}
+
+.modelForMacroGroup2 {
+    position: absolute;
+    width: 286px;
+    height: 300px;
+    margin: 315px 0 0 100px;
+    transform: translate(-50%, -50%);
+    background-color: #f3fbfe;
+    box-shadow: inset -1px 2px 10px 0 rgba(0, 0, 0, 0.404);
+    border-radius: 6px;
+    user-select: none;
+    overflow: auto;
+    position: relative;
+    resize: both;
+}
+
+.modelForMacroGroupLegend {
+    cursor: pointer;
+    color: #83ffee;
+    text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;
+    font-size: 17px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Archivo', sans-serif
+}
 
 /*  */
 

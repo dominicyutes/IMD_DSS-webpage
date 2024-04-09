@@ -2205,15 +2205,18 @@ function showParameterNames(value) {
 
 //OBSERVATION thirdDropdown-SD
 function showSubParameterNames(value) {
-    let getsubparameterNames = document.getElementById("subparameter");
+    console.log(value, "value");
+    let getsubparameterNames = document.getElementById("subparameterpp");
     let pushsubparameterNames = '';
     var SecondDropdown = subParametersList.filter(x => x.category == value);
+    console.log(SecondDropdown, "SecondDropdown");
     for (let SD = 0; SD < SecondDropdown.length; SD++) {
         if (SecondDropdown[SD].name) {
             pushsubparameterNames += `<option>${SecondDropdown[SD].name}</option><br/><br/>`;
         }
     }
     getsubparameterNames.innerHTML = pushsubparameterNames;
+    console.log(getsubparameterNames, "jjjjjj")
 }
 
 //time UTC
@@ -2239,7 +2242,7 @@ let obstesting2;
 function obs_SubmitForm() {
     let model_Names = document.getElementById('modelNames').value;
     let parameter_Names = document.getElementById('parameterNames').value;
-    let sub_parameter = document.getElementById('subparameter').value;
+    let sub_parameter = document.getElementById('subparameterpp').value;
     let fromDate = document.getElementById('start_date').value;
     let hour_Select = document.getElementById('hourSelect').value;
     let minute_Select = document.getElementById('minuteSelect').value;
@@ -2247,6 +2250,7 @@ function obs_SubmitForm() {
     console.log(parameter_Names, "parameter_Names");
 
     let TimeForObs = hour_Select + ":" + minute_Select;
+    console.log(sub_parameter, "sub_parameter");
 
     if (sub_parameter === "Temperature_00") {
         if (parameter_Names === "Metar 00UTC") {
@@ -2335,7 +2339,14 @@ function obs_Rem_() {
 }
 
 function obsLayerNameX() {
+    obs_Rem_();
     document.getElementById("obsLayerNamShw").style.display = "none";
+    obs_Rem_();
+    map.eachLayer(layer => {
+        if (layer instanceof L.TileLayer.WMS) {
+            map.removeLayer(layer);
+        }
+    });
 }
 
 // 
@@ -2487,7 +2498,25 @@ let user_id = "<?php echo $user_id; ?>";
 // console.log("User ID:", user_id);
 
 let login_in_User = "<?php echo $name; ?>";
-// console.log("$name:", login_in_User);
+// console.log("$name:", login_in_User);/
+
+
+
+// macroGroup username dialog box
+$(document).ready(function() {
+    //
+    $('.modelForMacroGroup1').hide();
+
+    $('#userFilterLink').click(function(e) {
+        e.preventDefault();
+        $('.modelForMacroGroup1').toggle();
+    });
+
+    $('.modelForMacroGroupLegend').click(function() {
+        $('.modelForMacroGroup1').hide();
+    });
+});
+// macroGroup username dialog box ENDS HERE
 
 
 let counter = 0;
@@ -2745,7 +2774,7 @@ function submitForm() {
         }
     };
 }
-
+let selectedUserId;
 // showing MacroGroup-Name
 function showSavedMacroList() {
     let showAllCreatedMacro = document.getElementById("showCreatedMacro");
@@ -2760,11 +2789,15 @@ function showSavedMacroList() {
             true); // userPrespective MACROGROUP-Name view
     }
 
+
     xhr.onload = function() {
         if (xhr.status == 200) {
             let macros = JSON.parse(xhr.responseText);
 
             let uniqueMacroNames = new Set();
+            if (selectedUserId) {
+                macros = macros.filter(x => x.user_id == selectedUserId);
+            }
 
             macros.forEach(macro => {
                 // console.log(macro, "macro");
@@ -2807,6 +2840,87 @@ function showSavedMacroList() {
     xhr.send();
 }
 showSavedMacroList();
+
+$(document).ready(function() {
+    $('#userFilterLink').click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr('href'),
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (Array.isArray(response)) {
+                    let names = response.map(function(item) {
+                        return item.name.trim(); //.toUpperCase()
+                        console.log(item.name, "item.name");
+                    });
+                    $('#showMacroGrpUsers').html("");
+                    names.forEach(function(name) {
+                        $('#showMacroGrpUsers').append(
+                            '<span style="margin-left: 20px;" class="macroGrpUserSA">' +
+                            name +
+                            '</span><br>'
+                        );
+                    });
+                } else {
+                    console.error("Response is not in the expected format.");
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+
+
+    $('#showMacroGrpUsers').on('click', '.macroGrpUserSA', function() {
+        let userName = $(this).text();
+        $.ajax({
+            url: '<?php echo base_url();?>HomePage/fetch_user_details/' + encodeURIComponent(
+                userName),
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (response.error) {
+                    console.error(response.error);
+                } else {
+                    console.log(response.name, "users name");
+                    let user_id_users = response.user_id;
+                    selectedUserId = user_id_users;
+                    console.log(user_id_users, "user_id_users");
+                    showSavedMacroList();
+                    // 
+                    $.ajax({
+                        url: '<?php echo base_url();?>HomePage/fetchMacrosByUserId/' +
+                            encodeURIComponent(user_id_users),
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(macrosResponse) {
+                            console.log(macrosResponse, "macrosResponse");
+
+                            macrosResponse.forEach(function(macro_table_data) {
+                                console.log(macro_table_data.macroname,
+                                    "macro_table_data");
+                            });
+
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                        }
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+
+});
+
+
+
+
 
 
 
@@ -25290,6 +25404,10 @@ closeModel.onclick = () => {
     model.style.display = 'none';
 }
 
+function MacroGroupUsers_close() {
+    modelForMacroGroup.style.display = 'none';
+}
+
 function onDrag({
     movementX,
     movementY
@@ -25311,6 +25429,8 @@ document.addEventListener('mouseup', () => {
     modelBody.removeEventListener('mousemove', onDrag);
 })
 // model popup for legend endsHere
+
+
 
 // model popup- createMacro startsHere
 let createMacroDrag = document.querySelector('.create_Macro');
@@ -25346,6 +25466,8 @@ document.addEventListener('mouseup', () => {
 // model popup- createMacro endsHere
 
 
+
+
 // model popup- viewMacro startsHere
 let viewCreateMacrodrag = document.querySelector('.view_Create_Macro');
 let viewCreateMacroBody = document.querySelector('.view_Create_Macro_body');
@@ -25377,6 +25499,43 @@ document.addEventListener('mouseup', () => {
     viewCreateMacroBody.removeEventListener('mousemove', onDragViewMacro);
 })
 // model popup- viewMacro endsHere
+
+
+// model popup- UserFilterMacro startsHere
+let modelForMacroGroup1 = document.querySelector('.modelForMacroGroup1');
+let modelForMacroGroup2 = document.querySelector('.modelForMacroGroup2');
+let modelForMacroGroupClose = document.querySelector('.modelForMacroGroup2 .modelForMacroGroupLegend');
+
+//closeModel viewMacro
+modelForMacroGroupClose.onclick = () => {
+    modelForMacroGroup1.style.display = 'none';
+    selectedUserId = "";
+    showSavedMacroList();
+}
+
+function onDragUserFilterMacro({
+    movementX,
+    movementY
+}) {
+    let getStyle = window.getComputedStyle(modelForMacroGroup1);
+    let leftValue = parseInt(getStyle.left);
+    let topValue = parseInt(getStyle.top);
+    modelForMacroGroup1.style.left = `${leftValue + movementX}px`;
+    modelForMacroGroup1.style.top = `${topValue + movementY}px`;
+}
+//
+document.addEventListener('mousedown', () => {
+    modelForMacroGroup2.style.cursor = 'all-scroll';
+    modelForMacroGroup2.addEventListener('mousemove', onDragUserFilterMacro);
+})
+//
+document.addEventListener('mouseup', () => {
+    modelForMacroGroup2.style.cursor = 'default';
+    modelForMacroGroup2.removeEventListener('mousemove', onDragUserFilterMacro);
+})
+
+// model popup- UserFilterMacro endsHere
+
 
 // MOdels time update BOX starts here
 let model_MM = document.querySelector('.model_MM');

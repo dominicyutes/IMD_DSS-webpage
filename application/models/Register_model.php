@@ -22,4 +22,14 @@ class Register_model extends CI_Model {
     return ($this->db->affected_rows()) ? TRUE : FALSE;
     }
 
+    public function get_user_by_name($userName) {
+        $query = $this->db->get_where('users', array('name' => $userName));
+        if ($query->num_rows() > 0) {
+            return $query->row_array();
+        } else {
+            return false; 
+        }
+    }
+
+
 }
