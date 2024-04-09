@@ -100,5 +100,19 @@ class MacrosModel extends CI_Model {
     }
 
 
+    // Showing the deleted MacroGroup reason to superadmin
+    public function getDeletedMacros() {
+    $this->db->select('macroname, deleted_by, delete_reason, deleted_at AS deleted_At');
+    $query = $this->db->get('deleted_macros');
+    return $query->result_array(); 
+    }
+
+    // SuperAdmin User Filteration
+    public function getUserNames() {
+        $query = $this->db->select('name')->get('users');
+
+        return $query->result_array();
+    }
+
 }
 ?>

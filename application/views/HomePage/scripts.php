@@ -2205,15 +2205,18 @@ function showParameterNames(value) {
 
 //OBSERVATION thirdDropdown-SD
 function showSubParameterNames(value) {
-    let getsubparameterNames = document.getElementById("subparameter");
+    console.log(value, "value");
+    let getsubparameterNames = document.getElementById("subparameterpp");
     let pushsubparameterNames = '';
     var SecondDropdown = subParametersList.filter(x => x.category == value);
+    console.log(SecondDropdown, "SecondDropdown");
     for (let SD = 0; SD < SecondDropdown.length; SD++) {
         if (SecondDropdown[SD].name) {
             pushsubparameterNames += `<option>${SecondDropdown[SD].name}</option><br/><br/>`;
         }
     }
     getsubparameterNames.innerHTML = pushsubparameterNames;
+    console.log(getsubparameterNames, "jjjjjj")
 }
 
 //time UTC
@@ -2239,7 +2242,7 @@ let obstesting2;
 function obs_SubmitForm() {
     let model_Names = document.getElementById('modelNames').value;
     let parameter_Names = document.getElementById('parameterNames').value;
-    let sub_parameter = document.getElementById('subparameter').value;
+    let sub_parameter = document.getElementById('subparameterpp').value;
     let fromDate = document.getElementById('start_date').value;
     let hour_Select = document.getElementById('hourSelect').value;
     let minute_Select = document.getElementById('minuteSelect').value;
@@ -2247,6 +2250,7 @@ function obs_SubmitForm() {
     console.log(parameter_Names, "parameter_Names");
 
     let TimeForObs = hour_Select + ":" + minute_Select;
+    console.log(sub_parameter, "sub_parameter");
 
     if (sub_parameter === "Temperature_00") {
         if (parameter_Names === "Metar 00UTC") {
@@ -2335,7 +2339,14 @@ function obs_Rem_() {
 }
 
 function obsLayerNameX() {
+    obs_Rem_();
     document.getElementById("obsLayerNamShw").style.display = "none";
+    obs_Rem_();
+    map.eachLayer(layer => {
+        if (layer instanceof L.TileLayer.WMS) {
+            map.removeLayer(layer);
+        }
+    });
 }
 
 // 
@@ -2488,6 +2499,40 @@ let user_id = "<?php echo $user_id; ?>";
 
 let login_in_User = "<?php echo $name; ?>";
 // console.log("$name:", login_in_User);
+
+$(document).ready(function() {
+    $('#userFilterLink').click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr('href'),
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                // console.log(response);
+                if (Array.isArray(response)) {
+                    let names = response.map(function(item) {
+                        return item.name;
+                    });
+                    console.log(names, "names");
+                } else {
+                    console.error("Response is not in the expected format.");
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+
+});
+
+// macroGroup username dialog box
+$(document).ready(function() {
+    $('#userFilterLink').click(function(e) {
+        e.preventDefault();
+        $('.modelForMacroGroup').toggle();
+    });
+});
 
 
 let counter = 0;
@@ -25288,6 +25333,10 @@ let closeModel = document.querySelector('.model-body legend');
 //closeModel
 closeModel.onclick = () => {
     model.style.display = 'none';
+}
+
+function MacroGroupUsers_close() {
+    modelForMacroGroup.style.display = 'none';
 }
 
 function onDrag({
