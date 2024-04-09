@@ -195,7 +195,11 @@ class HomePage extends CI_Controller {
         echo json_encode($names);
     }
 
-    public function footerMenu(){
+    public function Menu(){
         $this->load->view('Menu/Landing_page');
+    }
+
+    public function Rainfall_Val(){
+        $this->load->view('Menu/Rainfall_Validation.php');
     }
 }
