@@ -2498,7 +2498,60 @@ let user_id = "<?php echo $user_id; ?>";
 // console.log("User ID:", user_id);
 
 let login_in_User = "<?php echo $name; ?>";
-// console.log("$name:", login_in_User);
+// console.log("$name:", login_in_User);/
+
+$(document).ready(function() {
+    $('#userFilterLink').click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr('href'),
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (Array.isArray(response)) {
+                    let names = response.map(function(item) {
+                        return item.name.toUpperCase();;
+                    });
+                    $('#showMacroGrpUsers').html("");
+                    names.forEach(function(name) {
+                        $('#showMacroGrpUsers').append(
+                            '<span style="margin-left: 20px;" class="macroGrpUserSA">' +
+                            name +
+                            '</span><br>'
+                        );
+                    });
+                } else {
+                    console.error("Response is not in the expected format.");
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+
+    // 
+    $('#showMacroGrpUsers').on('click', '.macroGrpUserSA', function() {
+        console.log($(this).text());
+    });
+});
+
+
+// macroGroup username dialog box
+$(document).ready(function() {
+    //
+    $('.modelForMacroGroup1').hide();
+
+    $('#userFilterLink').click(function(e) {
+        e.preventDefault();
+        $('.modelForMacroGroup1').toggle();
+    });
+
+    $('.modelForMacroGroupLegend').click(function() {
+        $('.modelForMacroGroup1').hide();
+    });
+});
+// macroGroup username dialog box ENDS HERE
 
 $(document).ready(function() {
     $('#userFilterLink').click(function(e) {
@@ -2804,6 +2857,7 @@ function showSavedMacroList() {
         xhr.open("GET", "<?php echo base_url('HomePage/getUserMacros?user_id=') ?>" + user_id,
             true); // userPrespective MACROGROUP-Name view
     }
+
 
     xhr.onload = function() {
         if (xhr.status == 200) {
@@ -25361,6 +25415,8 @@ document.addEventListener('mouseup', () => {
 })
 // model popup for legend endsHere
 
+
+
 // model popup- createMacro startsHere
 let createMacroDrag = document.querySelector('.create_Macro');
 let createMacroBody = document.querySelector('.create_Macro_body');
@@ -25395,6 +25451,8 @@ document.addEventListener('mouseup', () => {
 // model popup- createMacro endsHere
 
 
+
+
 // model popup- viewMacro startsHere
 let viewCreateMacrodrag = document.querySelector('.view_Create_Macro');
 let viewCreateMacroBody = document.querySelector('.view_Create_Macro_body');
@@ -25426,6 +25484,41 @@ document.addEventListener('mouseup', () => {
     viewCreateMacroBody.removeEventListener('mousemove', onDragViewMacro);
 })
 // model popup- viewMacro endsHere
+
+
+// model popup- UserFilterMacro startsHere
+let modelForMacroGroup1 = document.querySelector('.modelForMacroGroup1');
+let modelForMacroGroup2 = document.querySelector('.modelForMacroGroup2');
+let modelForMacroGroupClose = document.querySelector('.modelForMacroGroup2 .modelForMacroGroupLegend');
+
+//closeModel viewMacro
+modelForMacroGroupClose.onclick = () => {
+    modelForMacroGroup1.style.display = 'none';
+}
+
+function onDragUserFilterMacro({
+    movementX,
+    movementY
+}) {
+    let getStyle = window.getComputedStyle(modelForMacroGroup1);
+    let leftValue = parseInt(getStyle.left);
+    let topValue = parseInt(getStyle.top);
+    modelForMacroGroup1.style.left = `${leftValue + movementX}px`;
+    modelForMacroGroup1.style.top = `${topValue + movementY}px`;
+}
+//
+document.addEventListener('mousedown', () => {
+    modelForMacroGroup2.style.cursor = 'all-scroll';
+    modelForMacroGroup2.addEventListener('mousemove', onDragUserFilterMacro);
+})
+//
+document.addEventListener('mouseup', () => {
+    modelForMacroGroup2.style.cursor = 'default';
+    modelForMacroGroup2.removeEventListener('mousemove', onDragUserFilterMacro);
+})
+
+// model popup- UserFilterMacro endsHere
+
 
 // MOdels time update BOX starts here
 let model_MM = document.querySelector('.model_MM');
