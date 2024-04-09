@@ -204,6 +204,7 @@ class HomePage extends CI_Controller {
     echo json_encode($names);
     }
 
+<<<<<<< HEAD
     // public function getMacronameByUserId() {
     // $userId = $this->input->get('user_id');
     // $macronames = $this->MacrosModel->getMacronamesByUserId($userId);
@@ -223,6 +224,13 @@ class HomePage extends CI_Controller {
     
     // Footer left button
     public function footerMenu(){
+=======
+    public function Menu(){
+>>>>>>> 8087d324edde27800f12b1ea15f07ee7a4ea9b4a
         $this->load->view('Menu/Landing_page');
+    }
+
+    public function Rainfall_Val(){
+        $this->load->view('Menu/Rainfall_Validation.php');
     }
 }
