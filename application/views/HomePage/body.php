@@ -238,23 +238,22 @@
                             </a>
                             <?php endif; ?>
                         </div>
-
-                        <!-- macroGroup User list dialog box -->
-                        <div class="modelForMacroGroup1" style="display: block; left: 1298px; top: 390px; height:0;">
+                        <div style="overflow: auto;" id="showCreatedMacro"></div>
+                        <!--  -->
+                        <!-- SUPERADMIN macroGroup User list dialog box -->
+                        <div class="modelForMacroGroup1" style="display: none; left: 1298px; top: 390px; height:0;">
                             <div class="modelForMacroGroup2" style="position: relative;">
                                 <div
                                     style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px; align-items: center;">
 
                                     <h4 style="color: white; margin: 0 auto; font-size: 20px">MacroGroup Users</h4>
-                                    <legend title="Close"
-                                        style="cursor: pointer;color: #83ffee;text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;">
-                                        X</legend>
+                                    <span title="Close" class="modelForMacroGroupLegend">
+                                        X</span>
                                 </div>
-                                <h3>Welcome</h3>
+                                <p id="showMacroGrpUsers"></p>
                             </div>
                         </div>
-
-                        <div style="overflow: auto;" id="showCreatedMacro"></div>
+                        <!-- SUPERADMIN macroGroup User list dialog box -->
                     </div>
 
                     <!-- MacroNote -->
@@ -265,11 +264,13 @@
                             Note</h4>
                         <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; text-align: justify;">
                             <span style="font-size: 15px; line-height: 1.6; color: #333;">
-                                The Macro feature will facilitate the user/forecaster in streamlining daily operations
+                                The Macro feature will facilitate the user/forecaster in streamlining daily
+                                operations
                                 by
                                 storing selected layers/information in a group, therefore simplifying the process of
                                 viewing
-                                them. Click on the "+" symbol to generate a new macro and follow the instructions given
+                                them. Click on the "+" symbol to generate a new macro and follow the instructions
+                                given
                                 to
                                 save, edit, run, and delete options.
                             </span>
@@ -596,7 +597,8 @@
 
                     <!-- METAR -->
                     <div id="METAR_Row">
-                        <h4 id="METAR" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
+                        <h4 id="METAR" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
+                        </h4>
                         <!-- METARTEMP -->
                         <h5 id="metarTemp-Title" style="color: #000000;"></h5>
                         <div id="metarTempImage" style="margin-left: 40px; flex-wrap: wrap;"></div>
@@ -622,7 +624,8 @@
 
                     <!-- SYNOP -->
                     <div class="row" id="SYNOP_Row" style="display: none;">
-                        <h4 id="SYNOP" style=" border-radius: 8px; background-color: #00719c; text-align: center;"></h4>
+                        <h4 id="SYNOP" style=" border-radius: 8px; background-color: #00719c; text-align: center;">
+                        </h4>
 
                         <!-- synopTEMP -->
                         <h5 id="synopTemp-Title" style="color: #000000;"></h5>
@@ -637,7 +640,8 @@
 
                         <!-- synopCloudCover -->
                         <h5 id="synopCloudCover-Title" style="color: #000000;"></h5>
-                        <div id="synopCloudCoverImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <div id="synopCloudCoverImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
                         <p id="synopCloudCover-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
 
 
@@ -653,7 +657,8 @@
                         <h5 id="synopRelativeHumidity-Title" style="color: #000000;"></h5>
                         <div id="synopRelativeHumidityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
                         </div>
-                        <p id="synopRelativeHumidity-lists" style="display: flex; display: none; flex-wrap: wrap;"></p>
+                        <p id="synopRelativeHumidity-lists" style="display: flex; display: none; flex-wrap: wrap;">
+                        </p>
 
                         <!-- synopVisibility -->
                         <h5 id="synopVisibility-Title" style="color: #000000;"></h5>
@@ -754,7 +759,8 @@
                         </h4>
 
                         <h5 id="WRFReflectivity-Title" style="color: #000000;"></h5>
-                        <div id="WRFReflectivityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <div id="WRFReflectivityImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
                         <p id="WRFReflectivity-lists" style="flex-wrap: wrap;"></p>
 
                         <h5 id="WRFlightningProduct-Title" style="color: #000000;"></h5>
@@ -779,11 +785,13 @@
                         <p id="NCUMRlightningProduct-lists" style="flex-wrap: wrap;"></p>
 
                         <h5 id="NCUMRWindGust-Title" style="color: #000000;"></h5>
-                        <div id="NCUMRWindGustImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <div id="NCUMRWindGustImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
                         <p id="NCUMRWindGust-lists" style="flex-wrap: wrap;"></p>
 
                         <h5 id="NCUMRRainfall-Title" style="color: #000000;"></h5>
-                        <div id="NCUMRRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <div id="NCUMRRainfallImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
                         <p id="NCUMRRainfall-lists" style="flex-wrap: wrap;"></p>
 
                         <h5 id="HRRR_SPHourlyDBZ-Title" style="color: #000000;"></h5>
@@ -806,7 +814,8 @@
                         <p id="EWRFMaxZ-lists" style="flex-wrap: wrap;"></p>
 
                         <h5 id="EWRFLightning-Title" style="color: #000000;"></h5>
-                        <div id="EWRFLightningImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;"></div>
+                        <div id="EWRFLightningImage" style="margin-left: 10px; display: flex; flex-wrap: wrap;">
+                        </div>
                         <p id="EWRFLightning-lists" style="flex-wrap: wrap;"></p>
 
                     </div>

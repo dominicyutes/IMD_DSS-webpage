@@ -109,10 +109,17 @@ class MacrosModel extends CI_Model {
 
     // SuperAdmin User Filteration
     public function getUserNames() {
-        $query = $this->db->select('name')->get('users');
-
-        return $query->result_array();
+    $query = $this->db->select('name')->get('users');
+    return $query->result_array();
     }
+
+    public function getMacronamesByUserId($userId) {
+    $this->db->where('user_id', $userId);
+    $query = $this->db->select('macroname')->get('macros');
+    return $query->result_array();
+    }
+
+
 
 }
 ?>

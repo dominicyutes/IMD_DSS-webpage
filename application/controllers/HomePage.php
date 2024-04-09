@@ -190,11 +190,38 @@ class HomePage extends CI_Controller {
     }
 
      // SuperAdmin User MacroGroup Filteration
+
+    public function getUserIdByName() {
+    $name = $this->input->get('name');
+    $response = array(
+        'user_id' => 'User ID fetched for ' . $name
+    );
+    echo json_encode($response);
+    }
+    
     public function fetch_names() {
-        $names = $this->MacrosModel->getUserNames();
-        echo json_encode($names);
+    $names = $this->MacrosModel->getUserNames();
+    echo json_encode($names);
     }
 
+    // public function getMacronameByUserId() {
+    // $userId = $this->input->get('user_id');
+    // $macronames = $this->MacrosModel->getMacronamesByUserId($userId);
+    // echo json_encode($macronames);
+    // }
+
+
+
+
+
+
+
+
+
+
+
+    
+    // Footer left button
     public function footerMenu(){
         $this->load->view('Menu/Landing_page');
     }
