@@ -2774,7 +2774,10 @@ function submitForm() {
         }
     };
 }
-let selectedUserId;
+
+let selectedUserId = null; //Storing the user_id here from userFilteration
+let allMacros = null;
+
 // showing MacroGroup-Name
 function showSavedMacroList() {
     let showAllCreatedMacro = document.getElementById("showCreatedMacro");
@@ -2795,20 +2798,35 @@ function showSavedMacroList() {
             let macros = JSON.parse(xhr.responseText);
 
             let uniqueMacroNames = new Set();
-            if (selectedUserId) {
-                macros = macros.filter(x => x.user_id == selectedUserId);
+
+            if (allMacros) {
+                macros = macros
+            } else {
+                if (selectedUserId) {
+                    macros = macros.filter(x => x.user_id == selectedUserId);
+                    console.log("1");
+                } else {
+                    macros = macros.filter(x => x.user_id == user_id);
+                    console.log("2");
+                }
             }
 
             macros.forEach(macro => {
                 // console.log(macro, "macro");
                 if (!uniqueMacroNames.has(macro.macroname)) {
                     let showInfoDiv = `<div class="createMacro">
-                        <div>
-                            <i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;"></i>&nbsp;
-                            <span style="font-family: 'Times New Roman, sans-serif;font-size: 15px;font-weight: 600;color: #1d334e;">
-                                ${macro.macroname}
-                            </span>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;"></i>&nbsp;
+                                <span style="font-family: 'Times New Roman, sans-serif;font-size: 15px;font-weight: 600;color: #1d334e;">
+                                    ${macro.macroname}
+                                </span>
+                            </div>
+                            <div>
+                                <span style="padding-right: 10px;" onclick="tempCloseGrp(this)">X</span>
+                            </div>
                         </div>
+
 
                         <div class="saveMacroView">
                             <button title="Play" class="play-button" onclick="playMacro('${macro.macroname}')">
@@ -2841,6 +2859,12 @@ function showSavedMacroList() {
 }
 showSavedMacroList();
 
+function tempCloseGrp(element) {
+    let macroElement = element.closest('.createMacro');
+    macroElement.remove();
+}
+
+
 $(document).ready(function() {
     $('#userFilterLink').click(function(e) {
         e.preventDefault();
@@ -2857,7 +2881,7 @@ $(document).ready(function() {
                     $('#showMacroGrpUsers').html("");
                     names.forEach(function(name) {
                         $('#showMacroGrpUsers').append(
-                            '<span style="margin-left: 20px;" class="macroGrpUserSA">' +
+                            '<span style="margin-left: 20px;" class="macroGrpUserWise">' +
                             name +
                             '</span><br>'
                         );
@@ -2873,7 +2897,7 @@ $(document).ready(function() {
     });
 
 
-    $('#showMacroGrpUsers').on('click', '.macroGrpUserSA', function() {
+    $('#showMacroGrpUsers').on('click', '.macroGrpUserWise', function() {
         let userName = $(this).text();
         $.ajax({
             url: '<?php echo base_url();?>HomePage/fetch_user_details/' + encodeURIComponent(
@@ -2887,7 +2911,8 @@ $(document).ready(function() {
                     console.log(response.name, "users name");
                     let user_id_users = response.user_id;
                     selectedUserId = user_id_users;
-                    console.log(user_id_users, "user_id_users");
+                    console.log(selectedUserId, "selectedUserId");
+                    // console.log(user_id_users, "user_id_users");
                     showSavedMacroList();
                     // 
                     $.ajax({
@@ -2916,6 +2941,18 @@ $(document).ready(function() {
         });
     });
 
+});
+
+$('#showMacroGrpUsersALL').on('click', '.macroGrpUserSA', function() {
+    console.log("All macros");
+});
+
+// 
+let allMacrosClickEvent = document.getElementById("showMacroGrpUsersALL");
+allMacrosClickEvent.addEventListener("click", function() {
+    allMacros = true;
+    showSavedMacroList();
+    console.log("allMacrosClickEvent Element clicked!");
 });
 
 

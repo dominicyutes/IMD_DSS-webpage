@@ -247,7 +247,11 @@
                                     <span title="Close" class="modelForMacroGroupLegend">
                                         X</span>
                                 </div>
-                                <p id="showMacroGrpUsers"></p>
+                                <div>
+                                    <p id="showMacroGrpUsers"></p>
+                                    <p style="margin-left: 20px;" id="showMacroGrpUsersALL" class="macroGrpUserSA">All
+                                        MAcros</p>
+                                </div>
                             </div>
                         </div>
                         <!-- SUPERADMIN macroGroup User list dialog box -->
