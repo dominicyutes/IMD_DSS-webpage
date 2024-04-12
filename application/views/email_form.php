@@ -23,19 +23,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
     <div>
+        <br>
+        <br>
         <h2>Email_form</h2>
         <div>
             <form method="POST" action="<?=base_url('email/send_email')?>">
-                <lable>Name</lable>
-                <input type="text" id="name" name="name" />
+                <!-- <lable>Name</lable> -->
+                <!-- <input type="text" id="name" name="name" /> -->
                 <br>
-                <lable>Subject</lable>
-                <input type="text" id="subject" name="subject" />
+                <!-- <lable>Subject</lable> -->
+                <!-- <input type="text" id="subject" name="subject" /> -->
                 <br>
-                <lable>Message</lable>
-                <input type="text" id="message" name="message" />
+                <!-- <lable>Message</lable> -->
+                <!-- <input type="text" id="message" name="message" /> -->
                 <br>
-                <button type="submit" class="btn btn-primary">Back</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
         </div>
