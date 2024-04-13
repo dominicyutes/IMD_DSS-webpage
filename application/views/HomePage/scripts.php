@@ -8965,13 +8965,14 @@ var panelLayersArray = [panelLayers, panelLayers2, panelLayers3, panelLayers4, p
 
 
 
-//
-
+// Models Time Updation code 
 let Model_Time = document.getElementById("model_Tim");
 let Model_Time_Title = document.getElementById("Model_Tim_Tit");
 let Model_Time_List = document.getElementById("Model_Tim_lis");
 // *******
 
+
+//PanelLayers and Models Time button click starts here
 const buttons = [{
         id: "synop",
         panel: panelLayers2,
@@ -9038,7 +9039,18 @@ let activeButtonId = null;
 
 function handleClick(event) {
     const buttonId = event.target.id;
-    if (buttonId === activeButtonId) return;
+    console.log(buttonId, "buttonId");
+
+    if (buttonId === activeButtonId) {
+        const button = buttons.find(btn => btn.id === buttonId);
+        if (!button) return;
+
+        map.removeControl(button.panel);
+        Model_Time.style.display = "none";
+        activeButtonId = null;
+
+        return;
+    }
 
     const button = buttons.find(btn => btn.id === buttonId);
     if (!button) return;
@@ -9065,10 +9077,11 @@ function handleClick(event) {
     Model_Time_List.innerHTML = button.updateTime;
 }
 
+
 buttons.forEach(btn => {
     document.getElementById(btn.id).addEventListener("click", handleClick);
 });
-
+// PanelLayers and Models Time button click ends here
 
 
 // *******

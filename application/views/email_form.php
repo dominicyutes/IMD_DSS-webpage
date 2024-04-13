@@ -1,3 +1,5 @@
+<?php if($this->session->userdata('is_loggedin') == TRUE){  ?>
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
@@ -7,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
     <meta charset="utf-8">
     <title>IMD DSS</title>
+    <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
@@ -26,26 +29,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <br>
         <br>
         <h2>Email_form</h2>
+
+        <br><br>
+        <label for="toggleButton">Toggle Button</label>
+        <input type="checkbox" id="toggleButton">
         <div>
-            <form method="POST" action="<?=base_url('email/send_email')?>">
+            <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>">
                 <!-- <lable>Name</lable> -->
                 <!-- <input type="text" id="name" name="name" /> -->
-                <br>
+                <!-- <br> -->
                 <!-- <lable>Subject</lable> -->
                 <!-- <input type="text" id="subject" name="subject" /> -->
-                <br>
+                <!-- <br> -->
                 <!-- <lable>Message</lable> -->
                 <!-- <input type="text" id="message" name="message" /> -->
                 <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="submitButton" class="btn btn-primary" disabled>Submit</button>
             </form>
-
         </div>
-
+        <p id="mailTime"></p>
     </div>
 
     <script src="<?php echo base_url('assets/js/jquery.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+    <script>
+    $(document).ready(function() {
+        $('#toggleButton').change(function() {
+            if ($(this).is(':checked')) {
+                $('#submitButton').prop('disabled', false);
+            } else {
+                $('#submitButton').prop('disabled', true);
+            }
+        });
+
+        $('#emailForm').submit(function(event) {
+            var maildate = new Date();
+            var time = maildate.toLocaleTimeString();
+            $('#mailTime').text('Mail sent at: ' + time);
+        });
+    });
+    </script>
 </body>
 
 </html>
+
+<?php } ?>
