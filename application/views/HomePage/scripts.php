@@ -2500,41 +2500,6 @@ let user_id = "<?php echo $user_id; ?>";
 let login_in_User = "<?php echo $name; ?>";
 // console.log("$name:", login_in_User);/
 
-$(document).ready(function() {
-    $('#userFilterLink').click(function(e) {
-        e.preventDefault();
-        $.ajax({
-            url: $(this).attr('href'),
-            type: 'GET',
-            dataType: 'json',
-            success: function(response) {
-                if (Array.isArray(response)) {
-                    let names = response.map(function(item) {
-                        return item.name.toUpperCase();;
-                    });
-                    $('#showMacroGrpUsers').html("");
-                    names.forEach(function(name) {
-                        $('#showMacroGrpUsers').append(
-                            '<span style="margin-left: 20px;" class="macroGrpUserSA">' +
-                            name +
-                            '</span><br>'
-                        );
-                    });
-                } else {
-                    console.error("Response is not in the expected format.");
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-            }
-        });
-    });
-
-    // 
-    $('#showMacroGrpUsers').on('click', '.macroGrpUserSA', function() {
-        console.log($(this).text());
-    });
-});
 
 
 // macroGroup username dialog box
@@ -2552,40 +2517,6 @@ $(document).ready(function() {
     });
 });
 // macroGroup username dialog box ENDS HERE
-
-$(document).ready(function() {
-    $('#userFilterLink').click(function(e) {
-        e.preventDefault();
-        $.ajax({
-            url: $(this).attr('href'),
-            type: 'GET',
-            dataType: 'json',
-            success: function(response) {
-                // console.log(response);
-                if (Array.isArray(response)) {
-                    let names = response.map(function(item) {
-                        return item.name;
-                    });
-                    console.log(names, "names");
-                } else {
-                    console.error("Response is not in the expected format.");
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-            }
-        });
-    });
-
-});
-
-// macroGroup username dialog box
-$(document).ready(function() {
-    $('#userFilterLink').click(function(e) {
-        e.preventDefault();
-        $('.modelForMacroGroup').toggle();
-    });
-});
 
 
 let counter = 0;
@@ -2844,6 +2775,9 @@ function submitForm() {
     };
 }
 
+let selectedUserId = null; //Storing the user_id here from userFilteration
+let allMacros = null;
+
 // showing MacroGroup-Name
 function showSavedMacroList() {
     let showAllCreatedMacro = document.getElementById("showCreatedMacro");
@@ -2865,16 +2799,38 @@ function showSavedMacroList() {
 
             let uniqueMacroNames = new Set();
 
+            if (allMacros) {
+                macros = macros
+            } else {
+                if (selectedUserId) {
+                    macros = macros.filter(x => x.user_id == selectedUserId);
+                    // console.log("1");
+                } else {
+                    macros = macros.filter(x => x.user_id == user_id);
+                    // console.log("2");
+                }
+            }
+
             macros.forEach(macro => {
                 // console.log(macro, "macro");
                 if (!uniqueMacroNames.has(macro.macroname)) {
                     let showInfoDiv = `<div class="createMacro">
-                        <div>
-                            <i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;"></i>&nbsp;
-                            <span style="font-family: 'Times New Roman, sans-serif;font-size: 15px;font-weight: 600;color: #1d334e;">
-                                ${macro.macroname}
-                            </span>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;"></i>&nbsp;
+                                <span style="font-family: 'Times New Roman, sans-serif;font-size: 15px;font-weight: 600;color: #1d334e;">
+                                    ${macro.macroname}
+                                </span>
+                            </div>
+
+                            <?php if ($user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9"): ?>
+                            <div>
+                                <span style="padding-right: 10px;" onclick="tempCloseGrp(this)">X</span>
+                            </div>
+                            <?php endif; ?>
+                            
                         </div>
+
 
                         <div class="saveMacroView">
                             <button title="Play" class="play-button" onclick="playMacro('${macro.macroname}')">
@@ -2906,6 +2862,106 @@ function showSavedMacroList() {
     xhr.send();
 }
 showSavedMacroList();
+
+function tempCloseGrp(element) {
+    let macroElement = element.closest('.createMacro');
+    macroElement.remove();
+}
+
+
+$(document).ready(function() {
+    $('#userFilterLink').click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr('href'),
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (Array.isArray(response)) {
+                    let names = response.map(function(item) {
+                        return item.name.trim(); //.toUpperCase()
+                        console.log(item.name, "item.name");
+                    });
+                    $('#showMacroGrpUsers').html("");
+                    names.forEach(function(name) {
+                        $('#showMacroGrpUsers').append(
+                            '<span style="margin-left: 20px;" class="macroGrpUserWise">' +
+                            name +
+                            '</span><br>'
+                        );
+                    });
+                } else {
+                    console.error("Response is not in the expected format.");
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+
+
+    $('#showMacroGrpUsers').on('click', '.macroGrpUserWise', function() {
+        let userName = $(this).text();
+        $.ajax({
+            url: '<?php echo base_url();?>HomePage/fetch_user_details/' + encodeURIComponent(
+                userName),
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (response.error) {
+                    console.error(response.error);
+                } else {
+                    console.log(response.name, "users name");
+                    let user_id_users = response.user_id;
+                    selectedUserId = user_id_users;
+                    console.log(selectedUserId, "selectedUserId");
+                    // console.log(user_id_users, "user_id_users");
+                    showSavedMacroList();
+                    // 
+                    $.ajax({
+                        url: '<?php echo base_url();?>HomePage/fetchMacrosByUserId/' +
+                            encodeURIComponent(user_id_users),
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(macrosResponse) {
+                            console.log(macrosResponse, "macrosResponse");
+
+                            macrosResponse.forEach(function(macro_table_data) {
+                                console.log(macro_table_data.macroname,
+                                    "macro_table_data");
+                            });
+
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                        }
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+
+});
+
+$('#showMacroGrpUsersALL').on('click', '.macroGrpUserSA', function() {
+    console.log("All macros");
+});
+
+// 
+let allMacrosClickEvent = document.getElementById("showMacroGrpUsersALL");
+allMacrosClickEvent.addEventListener("click", function() {
+    allMacros = true;
+    showSavedMacroList();
+    console.log("allMacrosClickEvent Element clicked!");
+});
+
+
+
+
 
 
 
@@ -8909,576 +8965,126 @@ var panelLayersArray = [panelLayers, panelLayers2, panelLayers3, panelLayers4, p
 
 
 
-//
-const legendImage1 = document.getElementById('legendModel1');
-const legendImage2 = document.getElementById('legendModel2');
-const legendModelExpo = document.getElementById('legendModelExposure');
-const legendModelMet = document.getElementById('legendModelMetar');
-
+// Models Time Updation code 
 let Model_Time = document.getElementById("model_Tim");
 let Model_Time_Title = document.getElementById("Model_Tim_Tit");
 let Model_Time_List = document.getElementById("Model_Tim_lis");
+// *******
 
-// synop
-let synopButtonState = false;
 
-function clickHandler_synop(event) {
-    if (synopButtonState) {
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        // 
-        Model_Time.style.display = "none";
-    } else {
-        map.addControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        // 
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-        // 
-        Model_Time.style.display = "block";
-        Model_Time_Title.innerHTML = "Synop";
-        Model_Time_List.innerHTML = "Synop's Data Update Time";
+//PanelLayers and Models Time button click starts here
+const buttons = [{
+        id: "synop",
+        panel: panelLayers2,
+        title: "Synop",
+        updateTime: "Synop's Data Update Time"
+    },
+    {
+        id: "metar",
+        panel: panelLayers3,
+        title: "Metar",
+        updateTime: "Metar's Data Update Time"
+    },
+    {
+        id: "mesolscale",
+        panel: panelLayers4,
+        title: "Mesoscale",
+        updateTime: "Mesoscale's Data Update Time"
+    },
+    {
+        id: "medium_range",
+        panel: panelLayers5,
+        title: "Medium Range",
+        updateTime: "Medium Range's Data Update Time"
+    },
+    {
+        id: "satellite",
+        panel: panelLayers6,
+        title: "Satellite",
+        updateTime: "Satellite's Data Update Time"
+    },
+    {
+        id: "radar",
+        panel: panelLayers7,
+        title: "Radar",
+        updateTime: "Radar's Data Update Time"
+    },
+    {
+        id: "lightning",
+        panel: panelLayers8,
+        title: "Lightning",
+        updateTime: "Lightning's Data Update Time"
+    },
+    {
+        id: "sounding",
+        panel: panelLayers9,
+        title: "Sounding",
+        updateTime: "Sounding's Data Update Time"
+    },
+    {
+        id: "exposure",
+        panel: panelLayers10,
+        title: "Exposure",
+        updateTime: "Exposure's Data Update Time"
+    },
+    {
+        id: "ship_and_buoy",
+        panel: panelLayers11,
+        title: "Ship and Buoy",
+        updateTime: "Ship and Buoy's Data Update Time"
     }
-    synopButtonState = !synopButtonState;
-}
-document.getElementById("synop").addEventListener("click", clickHandler_synop);
+];
 
-//metar
-let metarButtonState = false;
+let activeButtonId = null;
 
-function clickHandler_metar(event) {
-    if (metarButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-        // 
+function handleClick(event) {
+    const buttonId = event.target.id;
+    console.log(buttonId, "buttonId");
+
+    if (buttonId === activeButtonId) {
+        const button = buttons.find(btn => btn.id === buttonId);
+        if (!button) return;
+
+        map.removeControl(button.panel);
         Model_Time.style.display = "none";
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers3);
-        // 
-        synopButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-        // 
-        Model_Time.style.display = "block";
-        Model_Time_Title.innerHTML = "Metar";
-        Model_Time_List.innerHTML = "Metar's Data Update Time";
+        activeButtonId = null;
+
+        return;
     }
-    metarButtonState = !metarButtonState;
-}
-document.getElementById("metar").addEventListener("click", clickHandler_metar);
 
-//mesolscale
-let mesolscaleButtonState = false;
+    const button = buttons.find(btn => btn.id === buttonId);
+    if (!button) return;
 
-function clickHandler_mesolscale(event) {
-    if (mesolscaleButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-        // 
-        Model_Time.style.display = "none";
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers4);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-        // 
-        Model_Time.style.display = "block";
-        Model_Time_Title.innerHTML = "Mesoscale";
-        Model_Time_List.innerHTML = "Mesoscale's Data Update Time";
-    }
-    mesolscaleButtonState = !mesolscaleButtonState;
-}
-document.getElementById("mesolscale").addEventListener("click", clickHandler_mesolscale);
+    buttons.forEach(btn => {
+        if (btn.id === buttonId) {
+            map.addControl(btn.panel);
+        } else {
+            map.removeControl(btn.panel);
+        }
+    });
 
-//medium_range
-let medium_rangeButtonState = false;
+    activeButtonId = buttonId;
 
-function clickHandler_medium(event) {
-    if (medium_rangeButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-        // 
-        Model_Time.style.display = "none";
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers5);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-        // 
-        Model_Time.style.display = "block";
-        Model_Time_Title.innerHTML = "Medium Range";
-        Model_Time_List.innerHTML = "Medium Range's Data Update Time";
-    }
-    medium_rangeButtonState = !medium_rangeButtonState;
-}
-document.getElementById("medium_range").addEventListener("click", clickHandler_medium);
+    let macroContainerFn = document.getElementById("macroContainer");
+    let observationContainerFn = document.getElementById("ObservationContainer");
+    let mapVar = document.getElementById('map');
+    macroContainerFn.classList.add('hidden');
+    observationContainerFn.classList.add('hidden');
+    mapVar.style.width = '100%';
 
-//satellite
-let satelliteButtonState = false;
-
-function clickHandler_satellite(event) {
-    if (satelliteButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-        // 
-        Model_Time.style.display = "none";
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers6);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-        // 
-        Model_Time.style.display = "block";
-        Model_Time_Title.innerHTML = "Satellite";
-        Model_Time_List.innerHTML = "Satellite's Data Update Time";
-    }
-    satelliteButtonState = !satelliteButtonState;
-}
-document.getElementById("satellite").addEventListener("click", clickHandler_satellite);
-
-// radar
-let radarButtonState = false;
-
-function clickHandler_radar(event) {
-    if (radarButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-        // 
-        Model_Time.style.display = "none";
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers7);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-        // 
-        Model_Time.style.display = "block";
-        Model_Time_Title.innerHTML = "Radar";
-        Model_Time_List.innerHTML = "Radar's Data Update Time";
-    }
-    radarButtonState = !radarButtonState;
-}
-document.getElementById("radar").addEventListener("click", clickHandler_radar);
-
-//lightning
-let lightningButtonState = false;
-
-function clickHandler_lightning(event) {
-    if (lightningButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-        // 
-        Model_Time.style.display = "none";
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers8);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-        // 
-        Model_Time.style.display = "block";
-        Model_Time_Title.innerHTML = "Lightning";
-        Model_Time_List.innerHTML = "Lightning's Data Update Time";
-    }
-    lightningButtonState = !lightningButtonState;
-}
-document.getElementById("lightning").addEventListener("click", clickHandler_lightning);
-
-//sounding
-let soundingButtonState = false;
-
-function clickHandler_sounding(event) {
-    if (soundingButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-        // 
-        Model_Time.style.display = "none";
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers9);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-        // 
-        Model_Time.style.display = "block";
-        Model_Time_Title.innerHTML = "Sounding";
-        Model_Time_List.innerHTML = "Sounding's Data Update Time";
-    }
-    soundingButtonState = !soundingButtonState;
-}
-document.getElementById("sounding").addEventListener("click", clickHandler_sounding);
-
-// exposure
-let exposureButtonState = false;
-
-function clickHandler_expo(event) {
-    if (exposureButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-        // 
-        Model_Time.style.display = "none";
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers10);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map')
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-        // 
-        Model_Time.style.display = "block";
-        Model_Time_Title.innerHTML = "Exposure";
-        Model_Time_List.innerHTML = "Exposure's Data Update Time";
-    }
-    exposureButtonState = !exposureButtonState;
-}
-document.getElementById("exposure").addEventListener("click", clickHandler_expo);
-
-//ship_and_buoy
-let ship_and_buoyButtonState = false;
-
-function clickHandler_ship(event) {
-    if (ship_and_buoyButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-
-        Model_Time.style.display = "none";
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.addControl(panelLayers11);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map')
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-        // 
-        Model_Time.style.display = "block";
-        Model_Time_Title.innerHTML = "Ship and Buoy";
-        Model_Time_List.innerHTML = "Ship and Buoy's Data Update Time";
-    }
-    ship_and_buoyButtonState = !ship_and_buoyButtonState;
+    Model_Time.style.display = "block";
+    Model_Time_Title.innerHTML = button.title;
+    Model_Time_List.innerHTML = button.updateTime;
 }
 
-document.getElementById("ship_and_buoy").addEventListener("click", clickHandler_ship);
+
+buttons.forEach(btn => {
+    document.getElementById(btn.id).addEventListener("click", handleClick);
+});
+// PanelLayers and Models Time button click ends here
 
 
+// *******
 // Image
 let metarTempLegendImage = document.querySelector('#metarTempImage');
 let metarDewPointLegendImage = document.querySelector('#metarDewPointImage');
@@ -9516,10 +9122,6 @@ let RainfallIntensityImage = document.querySelector('#RainfallIntensityImage');
 let MSLPDayImage = document.querySelector('#MSLPDayImage');
 let mWINDDayImage = document.querySelector('#mWINDDayImage');
 
-// model popup
-// let model = document.querySelector('.model');
-// let modelBody = document.querySelector('.model-body');
-// let closeModel = document.querySelector('.model-body legend');
 //
 let panelLayerLightningTitle = document.querySelector('#panelLayer-Lightning-Title')
 let panelLayerLightninglists = document.querySelector('#panelLayer-Lightning-lists')
@@ -24602,17 +24204,17 @@ $("body").on("change", "input[type=checkbox]", function() {
     let satLayLength = clickedSatelliteLists_M.length;
     // document.getElementById("layerName_count").innerHTML = satLayLength;
 
-    let layerName_count_length = expoLayLength + radLayLength + satLayLength;
-    document.getElementById("layerName_count").innerHTML = layerName_count_length;
+    // let layerName_count_length = expoLayLength + radLayLength + satLayLength;
+    // document.getElementById("layerName_count").innerHTML = layerName_count_length;
     // 
 
-    if (layerName_count_length > 0) {
-        document.getElementById("layerNone").style.display = "none"
-        document.getElementById("ExposureRow_M").style.display = "flex"
-    } else {
-        document.getElementById("layerNone").style.display = "flex"
-        document.getElementById("ExposureRow_M").style.display = "none"
-    }
+    // if (layerName_count_length > 0) {
+    //     document.getElementById("layerNone").style.display = "none"
+    //     document.getElementById("ExposureRow_M").style.display = "flex"
+    // } else {
+    //     document.getElementById("layerNone").style.display = "flex"
+    //     document.getElementById("ExposureRow_M").style.display = "none"
+    // }
 });
 
 
@@ -25494,6 +25096,8 @@ let modelForMacroGroupClose = document.querySelector('.modelForMacroGroup2 .mode
 //closeModel viewMacro
 modelForMacroGroupClose.onclick = () => {
     modelForMacroGroup1.style.display = 'none';
+    selectedUserId = "";
+    showSavedMacroList();
 }
 
 function onDragUserFilterMacro({

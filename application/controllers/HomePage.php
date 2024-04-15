@@ -7,6 +7,7 @@ class HomePage extends CI_Controller {
 
         $this->load->library('TCPdf_pdf');
         $this->load->model('MacrosModel');
+        $this->load->model('Register_model');
         
         if ($this->session->is_loggedin == FALSE) {
             $this->session->set_flashdata('message','<div class="alert alert-danger"><strong>Please Login to continue!!</strong><a href="#" class="close" data-dismiss= "alert" aria-label="close" title="close">X</a></div>');
@@ -180,6 +181,7 @@ class HomePage extends CI_Controller {
     $this->MacrosModel->logDeletedMacro($macroname, $userName, $deleteReason);
     echo "Macro deleted and logged successfully.";
     }
+
     
 
     // Deleted MacroGroupName view by [SuperAdmin]
@@ -189,11 +191,47 @@ class HomePage extends CI_Controller {
     }
 
      // SuperAdmin User MacroGroup Filteration
-    public function fetch_names() {
-        $names = $this->MacrosModel->getUserNames();
-        echo json_encode($names);
+    public function getUserIdByName() {
+    $name = $this->input->get('name');
+    $response = array(
+        'user_id' => 'User ID fetched for ' . $name
+    );
+    echo json_encode($response);
     }
-   
+
+    // usernames showing in dialog box
+    public function fetch_names() {
+    $names = $this->MacrosModel->getUserNames();
+    echo json_encode($names);
+    }
+    
+    public function fetch_user_details($userName) {
+        $userDetails = $this->Register_model->get_user_by_name($userName);
+        if ($userDetails) {
+            echo json_encode($userDetails);
+        } else {
+            echo json_encode(array('error' => 'User not found'));
+        }
+    }
+
+    public function fetchMacrosByUserId($user_id_users) {
+    $macros = $this->MacrosModel->getMacrosByUserId($user_id_users);
+    
+    // Check if any macros were found
+    if ($macros) {
+        // Return the macros as JSON response
+        echo json_encode($macros);
+    } else {
+        // Return an empty array if no macros were found
+        echo json_encode([]);
+    }
+    }
+
+
+
+
+    
+
     public function Menu(){
         $this->load->view('Menu/Landing_page');
     }
@@ -201,5 +239,4 @@ class HomePage extends CI_Controller {
     public function Rainfall_Val(){
         $this->load->view('Menu/Rainfall_Validation.php');
     }
-    
 }
