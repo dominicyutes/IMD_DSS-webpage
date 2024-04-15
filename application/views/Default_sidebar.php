@@ -6,7 +6,7 @@
     <div class="dropdown">
         <a href="#"><i class="fa fa-bar-chart"></i> Data Validation <i class="fa fa-caret-down"></i></a>
         <div class="dropdown-content">
-            <a href="<?php echo base_url('HomePage/Rainfall_Val');?>">Rainfall</a>
+            <a href="<?php echo base_url('Rainfall_Validation_controller');?>">Rainfall</a>
             <a href="#service2">Heat</a>
             <a href="#service3">Cold</a>
         </div>

@@ -193,7 +193,7 @@ class HomePage extends CI_Controller {
         $names = $this->MacrosModel->getUserNames();
         echo json_encode($names);
     }
-
+   
     public function Menu(){
         $this->load->view('Menu/Landing_page');
     }
@@ -201,4 +201,5 @@ class HomePage extends CI_Controller {
     public function Rainfall_Val(){
         $this->load->view('Menu/Rainfall_Validation.php');
     }
+    
 }
