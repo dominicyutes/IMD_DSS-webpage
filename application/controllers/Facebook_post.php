@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require "vendor/autoload.php";
-// require_once APPPATH . 'vendor/autoload.php';
 
 
 use Facebook\Facebook;
@@ -11,8 +10,6 @@ class Facebook_post extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        // Load Facebook SDK
-        // require_once(APPPATH . 'vendor/Facebook/autoload.php');
     }
 
     public function index() {
@@ -23,13 +20,13 @@ class Facebook_post extends CI_Controller {
         ]);
 
         $linkData = [
-            // 'link' => 'http://www.example.com',
-            'message' => 'FACEBOOK 1234 Post It ',
-            'source' => $fb->fileToUpload(APPPATH . 'controllers/Facebook-logo.png')
+            'link' => 'http://weather-imd-test.rimes.int/',
+            'message' => 'FACEBOOK RIMES URL Post It Trying 3nd time',
+            // 'source' => $fb->fileToUpload(APPPATH . 'controllers/Facebook-logo.png')
         ];
 
         try {
-            $response = $fb->post('/me/feed', $linkData, 'EAAmVATn34xIBO82K0rdF7wZCMdJFPq69rzo0U5FUCFssMUx0aZAAzIHjSqoeUnpjtcqQkD8uijAllDNv8ZCcm8Jtwh1xhEwI7u3uWCbxu8jdbAwhIZATpFqcjcAwa47qECkwCHICxd3JmXBukZBUZBQE89AhVVt3N4wKj9JnVbc72XNYGRqJDQCmqwvzh8ld1czsMGCwnbZAhyrDMCXbNuNwHZBU1KvnS5JV');
+            $response = $fb->post('/me/feed', $linkData, 'EAAmVATn34xIBOZCEFq6ZAS9xkKGqAI7jhbZCwd8G65kdBtBMXrmDtsZCRNTELht0WDvpPt9knGt9a8LcZA9XwZBQ6RTr6xaH899Pl4GZA1zxl4vsvZA2LZBvMBfMMCUndVqoKCsYFLqJMZAn3ZBTJu4NTbFFIn028V6Un7TrZCz7BEudLba9I3vyyBpQZCboIy2NFgA6cT0G8dEAxa60RqO6a4kLcIgWqE3yTFzkZD');
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
             echo 'Graph returned an error: ' . $e->getMessage();
             exit;
