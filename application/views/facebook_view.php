@@ -4,28 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post to Facebook</title>
+    <title>IMD DSS</title>
+    <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
 </head>
 
 <body>
     <h2>Post to Facebook</h2>
-    <!-- Your HTML markup -->
-    <button id="postToFacebookBtn">Post Image to Facebook</button>
+    <button id="postToFacebookBtn">Facebook</button>
 
     <script>
-    // JavaScript to handle button click event
     document.getElementById('postToFacebookBtn').addEventListener('click', function() {
-        // Send AJAX request to post image to Facebook
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '<?php echo base_url('Facebook_post/post_image'); ?>', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.open('POST', '<?php echo base_url('Facebook_post/post_info'); ?>', true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
         xhr.onload = function() {
             if (xhr.status === 200) {
-                //
                 alert('Image posted to Facebook successfully!');
             } else {
-                //
-                alert('Error posting image to Facebook: ' + xhr.responseText);
+                // alert('Error posting image to Facebook: ' + xhr.responseText);
                 console.log(xhr.responseText, "xhr.responseText");
             }
         };
