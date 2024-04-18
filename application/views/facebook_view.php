@@ -13,6 +13,8 @@
     <button id="postToFacebookBtn">Facebook</button>
 
     <script>
+    // let img = 'http://localhost/IMD_DSS-webpage/assets/images/Facebook-logo.png';
+
     document.getElementById('postToFacebookBtn').addEventListener('click', function() {
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '<?php echo base_url('Facebook_post/post_info'); ?>', true);
@@ -27,6 +29,9 @@
             }
         };
         xhr.send();
+        // xhr.send(JSON.stringify({
+        //     img: img
+        // }));
     });
     </script>
 
