@@ -12,7 +12,7 @@ class Facebook_post extends CI_Controller {
     }
 
     public function index() {
-        $this->load->view('facebook_view');
+        $this->load->view('Social_media/facebook_view');
     }
 
     public function post_info(){
@@ -44,7 +44,7 @@ class Facebook_post extends CI_Controller {
         try {
             $response = $fb->post('/me/feed', $linkData, 'EAAaAq6N66YIBO1uIZCR4KCfkqRTUXnR9xekVZA49bepGo2mHC2u3ZAVHCmlDsyy0MmaR0c11CACPzSFWmhEoZAYkYUZBFsUDO8V0CZB8SWDhBml7zoCXRZAZAPKcx2u9BDLypIjNGIvcPjwZCwiA7MWyJljbv1eeWVkJDjQrS43An2ZAUgsUxILSjffFkje4LJjoLNiGkamZChPYgeiclB0x5Q2UxcFhuIzGdkc');
 
-            $this->load->view('facebook_view');
+            $this->load->view('Social_media/facebook_view');
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
             $error_code = $e->getCode();
             if ($error_code == 190) { 

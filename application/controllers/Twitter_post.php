@@ -8,6 +8,6 @@ class Twitter_post extends CI_Controller {
     }
 
     public function index() {
-       $this->load->view('twitter_view');
+       $this->load->view('Social_media/twitter_view');
     }
 }

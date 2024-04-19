@@ -102,7 +102,8 @@
 
             <!-- editing content starts here -->
             <div class="col-9" style="width: 88%">
-
+                <h2>Post to Twitter</h2>
+                <button id="postToFacebookBtn">Twitter</button>
             </div>
             <!-- editing content ends here -->
 
@@ -110,23 +111,26 @@
     </div>
 
     <script>
-    $(document).ready(function() {
-        $('#toggleButton').change(function() {
-            if ($(this).is(':checked')) {
-                $('#submitButton').prop('disabled', false);
-            } else {
-                $('#submitButton').prop('disabled', true);
-            }
-        });
-    });
+    // let img = 'http://localhost/IMD_DSS-webpage/assets/images/Facebook-logo.png';
 
-    $(document).ready(function() {
-        $("#toggleEmailLogTable").click(function() {
-            event.preventDefault();
-            $("#emailLogTable").toggle();
+    // document.getElementById('postToFacebookBtn').addEventListener('click', function() {
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.open('POST', '<?php echo base_url('Facebook_post/post_info'); ?>', true);
+    //     xhr.setRequestHeader("Content-Type", "application/json");
 
-        });
-    });
+    //     xhr.onload = function() {
+    //         if (xhr.status === 200) {
+    //             alert('Image posted to Facebook successfully!');
+    //         } else {
+    //             // alert('Error posting image to Facebook: ' + xhr.responseText);
+    //             console.log(xhr.responseText, "xhr.responseText");
+    //         }
+    //     };
+    //     xhr.send();
+    // xhr.send(JSON.stringify({
+    //     img: img
+    // }));
+    // });
     </script>
 </body>
 
