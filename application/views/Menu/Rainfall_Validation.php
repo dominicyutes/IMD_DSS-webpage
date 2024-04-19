@@ -6,29 +6,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
-        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/adminlte.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/system_custom.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-loading/2.2.0/loading-btn.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-loading/2.2.0/loading.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.css">
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> -->
-
-
     <style>
         body {
             font-family: "Lato", sans-serif;
@@ -59,7 +36,9 @@
         }
 
         .main {
-            margin-left: 160px;
+            margin-right: 10px;
+            margin-left: 180px;
+            margin-bottom: -300px;
             padding: 0px 10px;
         }
 
@@ -70,6 +49,11 @@
 
         .dropdown:hover .dropdown-content {
             display: block;
+        }
+
+        .daterangepicker.ltr.show-ranges.opensright {
+            margin-top: 400px;
+            /* Adjust the margin as needed */
         }
 
         @media screen and (max-height: 450px) {
@@ -128,58 +112,14 @@
 
 
     </div>
-    <!-- JavaScript for map initialization -->
-    <!-- <script>
-        // Initialize map centered on India
-        var map = L.map('map_canvas').setView([20.5937, 78.9629], 5); // Centered at India's coordinates, with zoom level 5
 
-        // Add a tile layer for streets
-        const streets = L.tileLayer(
-            'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-            maxZoom: 40,
-            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-        }
-        );
-        streets.addTo(map);
 
-        // Add the GeoJSON data to the map
-        var states = "../DATA/INDIA_COUNTRY.json";
-        var geojson = new L.GeoJSON.AJAX(states, {
-            style: function (feature) {
-                return {
-                    color: 'black',
-                    fillColor: 'transparent',
-                    opacity: 0.5,
-                    fillOpacity: 0.0,
-                    weight: 2
-                };
-            }
-        });
 
-        geojson.on('data:loaded', function () {
-            geojson.addTo(map);
-        });
-
-        
-
-    </script> -->
-    
-    
     <script src="<?php echo base_url(); ?>stylesheet/jQuery/jQuery-2.2.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>stylesheet/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" >
-    
+    <link rel="stylesheet" type="text/css"
+        href="<?php echo base_url(); ?>stylesheet/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
 
-
- 
-   
-
-    <!-- OpenLayers CSS -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@6.9.0/dist/ol.css" type="text/css"> -->
-    <!-- OpenLayers LayerSwitcher CSS -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/ol-layerswitcher@3.0.0/src/ol-layerswitcher.css" /> -->
-    <!-- OpenLayers JavaScript -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/ol@6.9.0/dist/ol.js"></script> -->
 
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/new_js/highcharts.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/new_js/exporting.js"></script>
@@ -187,13 +127,17 @@
 
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/js/daterangepicker.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>stylesheet/air-datepicker/css/datepicker.min.css">
-    
+
     <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>stylesheet/ol4/ol-layerswitcher.css" type="text/css"> -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>stylesheet/ol4/ol.css" type="text/css">
     <script src="<?php echo base_url(); ?>stylesheet/ol4/ol.js"></script>
+
+    <!-- OpenLayers LayerSwitcher CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ol-layerswitcher@3.0.0/src/ol-layerswitcher.css" />
+    <script src="https://unpkg.com/ol-layerswitcher@3.0.0"></script>
     <script type="text/javascript">
         function showPieChart(data, name, id) {
-            console.log(data);
+            // console.log(data);
             $('#temp_graph_extension_chart').html('');
             $('#temp_graph_extension_chart').highcharts({
                 chart: {
@@ -244,7 +188,7 @@
                 },
                 series: [
                     {
-                        name: 'IMD - GFS',
+                        name: 'Model-1',
                         data: data.imd,
                         color: '#009b0c',
                         tooltip: {
@@ -252,19 +196,11 @@
                         },
                     },
                     {
-                        name: 'ECMWF',
+                        name: 'Model-2',
                         data: data.ecmwf,
                         tooltip: { valueSuffix: ' (mm)' }
                     },
 
-                    // {
-                    // name: 'WRF',
-                    // data: data.wrf, 
-                    // color:'#FF0000',
-                    // tooltip: {
-                    //     valueSuffix: ' (mm)'
-                    //     },
-                    // },
 
                     {
                         name: 'Observed',
@@ -332,14 +268,14 @@
             }),
             stroke: new ol.style.Stroke({
                 color: '#319FD3',
-                width: 1
+                width: 4
             })
         });
 
         var odisha_boundary = new ol.layer.Vector({
             renderMode: 'image',
             title: "Odisha",
-            visible: true,
+            visible: false,
             baseLayer: false,
             source: new ol.source.Vector({
                 url: '<?= base_url('/DATA/Odisha_Dist_line.geojson') ?>',
@@ -347,33 +283,66 @@
             }),
             style: indiastyle
         });
+
+        var india_boundary = new ol.layer.Vector({
+            renderMode: 'image',
+            title: "India",
+            visible: false, 
+            baseLayer: false,
+            source: new ol.source.Vector({
+                url: '<?= base_url('/DATA/INDIA_COUNTRY.json') ?>',
+                format: new ol.format.GeoJSON()
+            }),
+            style: indiastyle
+        });
+
         var layers = [
             new ol.layer.Group({
                 layers: [osm]
-            }), odisha_boundary
-        ]
-
+            }), odisha_boundary, india_boundary
+        ];
 
         map = new ol.Map({
             layers: layers,
             target: 'map_canvas',
             view: new ol.View({
-                center: ol.proj.transform([84.4510, 20.1992], 'EPSG:4326', 'EPSG:3857'),
-                zoom: 7
+                center: ol.proj.transform([78.9629, 20.5937], 'EPSG:4326', 'EPSG:3857'), 
+                zoom: 5 
             })
         });
 
-
-        var lat = 20.1992;
-        var lng = 84.4510;
-        var mapDefaultZoom = 7;
+        var lat = 20.5937;
+        var lng = 78.9629;
+        var indiaZoom = 5;
+        var odishaZoom = 7;
         var feats = [];
         stations.forEach(function (s) {
             feats.push(new ol.Feature({
                 geometry: new ol.geom.Point(ol.proj.transform([parseFloat(s.lng), parseFloat(s.lat)], 'EPSG:4326', 'EPSG:3857')),
                 station: s
             }))
-        })
+        });
+
+        odisha_boundary.on('change:visible', function () {
+            if (odisha_boundary.getVisible()) {
+                india_boundary.setVisible(false); 
+                lat = 20.1992;
+                lng = 84.4510;
+                map.getView().setCenter(ol.proj.transform([lng, lat], 'EPSG:4326', 'EPSG:3857'));
+                map.getView().setZoom(odishaZoom); 
+            }
+        });
+
+        india_boundary.on('change:visible', function () {
+            if (india_boundary.getVisible()) {
+                odisha_boundary.setVisible(false); 
+                lat = 20.5937;
+                lng = 78.9629;
+                map.getView().setCenter(ol.proj.transform([lng, lat], 'EPSG:4326', 'EPSG:3857'));
+                map.getView().setZoom(indiaZoom); 
+            }
+        });
+
 
         var vectorLayer = new ol.layer.Vector({
             source: new ol.source.Vector({
@@ -416,7 +385,7 @@
                     url: '<?php echo base_url('Rainfall_Validation_controller/get_station_data'); ?>',
                     success: function (res) {
                         var result = JSON.parse(res);
-                        console.log(res, "hfbvujgv")
+                        // console.log(res, "hfbvujgv")
                         if (result.xss_error) {
                             alert('Invalid Input');
                         } else {
@@ -443,13 +412,16 @@
             })
         });
         map.addLayer(labels);
-        // var ls=new ol.control.LayerSwitcher({tipLabel: 'Legend'});
-        // map.addControl(ls);
+        var ls = new ol.control.LayerSwitcher({ tipLabel: 'Legend' });
+        map.addControl(ls);
 
         //date picker 
         $(function () {
-            var start = moment().subtract(29, 'days');
-            var end = moment();
+            // var start = moment().subtract(29, 'days');
+            // var end = moment();
+            var start = moment('2024-04-01');
+            var end = moment('2024-04-15');
+
             function cb(start, end) {
                 $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
             }
