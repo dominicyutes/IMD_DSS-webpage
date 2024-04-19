@@ -363,16 +363,12 @@
             </div>
 
             <!-- Layer_Name_bottom  display: none; -->
-            <div
-                style="display: flex; height: 38px; width: 100%; background-color: #2e578647; font-family: 'Times New Roman'; justify-content: center;align-items: center; border-radius: 6px">
-
-                <a href="<?php echo base_url('HomePage/Menu'); ?>"
-                    style="position: absolute; left: 100px; width: 150px; height: 50px; display: block; text-decoration: none; color: black;">
-                    <div
-                        style="width: 100%; height: 100%; background-color: #ccc; text-align: center; line-height: 50px;">
-                        Menu
-                    </div>
+            <div class="body_bottom">
+                <a href="<?php echo base_url('HomePage/Menu'); ?>">
+                    <span><button>MENU</button></span>
                 </a>
+
+
 
                 <div
                     style="width: 50%; display: flex; justify-content: space-between; align-items: center; border-radius: 7px; background-color: #f4fcff;">
@@ -438,6 +434,8 @@
                     </span>
                 </span>
             </div>
+
+
 
 
 

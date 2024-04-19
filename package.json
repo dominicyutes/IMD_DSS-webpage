@@ -2,6 +2,7 @@
   "dependencies": {
     "html-to-image": "^1.11.11",
     "html2canvas": "^1.4.1",
-    "leaflet-easyprint": "^2.1.9"
+    "leaflet-easyprint": "^2.1.9",
+    "twitter-api-v2": "^1.16.1"
   }
 }
