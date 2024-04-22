@@ -241,4 +241,9 @@ class Rainfall_Validation_Model extends CI_Model
 
         return $ret_;
     }
+
+    public function get_station_ids() {
+        $query = $this->db->select('id')->get('obs_stations');
+        return $query->result_array();
+    }
 }

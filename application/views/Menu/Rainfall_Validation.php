@@ -11,16 +11,23 @@
             font-family: "Lato", sans-serif;
         }
 
+        .fixedHead {
+            background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            width: 100%;
+            position: relative;
+            margin-top: -6px;
+            margin-left: -8px;
+        }
+
         .sidebar {
-            height: 100%;
-            width: 160px;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: grey;
-            overflow-x: hidden;
-            padding-top: 16px;
+            height: 54rem;
+            width: 11%;
+            background-color: #2c5383;
+            margin-left: -8px;
         }
 
         .sidebar a {
@@ -29,17 +36,11 @@
             font-size: 13px;
             color: white;
             display: block;
+            width: max-content;
         }
 
         .sidebar a:hover {
-            color: green;
-        }
-
-        .main {
-            margin-right: 10px;
-            margin-left: 180px;
-            margin-bottom: -300px;
-            padding: 0px 10px;
+            color: white;
         }
 
         .dropdown-content {
@@ -51,10 +52,16 @@
             display: block;
         }
 
-        .daterangepicker.ltr.show-ranges.opensright {
-            margin-top: 400px;
-            /* Adjust the margin as needed */
+        .main {
+            margin-right: 10px;
+            margin-left: 180px;
+            margin-bottom: -300px;
+            padding: 0px 10px;
+            margin-top: -856px;
         }
+
+        .daterangepicker .ltr .show-ranges .opensright {}
+
 
         @media screen and (max-height: 450px) {
             .sidebar {
@@ -75,45 +82,74 @@
 
 <body>
 
-    <?php $this->load->view('Default_sidebar.php'); ?>
+    <div style="height: 100%;">
 
-    <div class="main">
-        <h1>Rainfall Validation</h1>
-        <div class="content-wrapper">
-            <section class="content">
-                <div class="box box-info">
-                    <div class="box-header with-border">
-                        Click on the station to view the comparison plot. You can even use the date and parameter
-                        filters.
-                    </div>
-                    <div id="reportrange"
-                        style="position: absolute; top: 12%; left:260px;  padding: 5px 10px; background: #fff; cursor: pointer; border: 1px solid #ccc; z-index: 9699;">
-                        <i class="fa fa-calendar"></i>&nbsp;
-                        <span></span> <i class="fa fa-caret-down"></i>
-                    </div>
-                    <div class="box-body">
-                        <div class="active tab-pane" id="showmap">
-                            <div class="post">
-                                <div id="dialog_temp_graph_extension_chart" style="display: none;">
-                                    <div id="temp_graph_extension_chart" class="dialog"></div>
-                                </div>
-                                <div class="box-body">
-                                    <div style="border:#333 1px ridge; overflow: hidden;">
-                                        <div id="map_canvas" style="width:100%; height: 721px; float: left;z-index: 0;"
-                                            align="center"></div>
+        <div class="fixedHead">
+            <?php $this->load->view('Menu/Landing_page_top'); ?>
+        </div>
+        <?php $this->load->view('Menu/Landing_page_side.php'); ?>
+
+        <div class="main">
+            <h1 style="margin-top: 20px; margin-left: 400px;">Rainfall Validation</h1>
+
+            <div style="display: flex; align-items: center; margin-left: 650px;">
+
+
+                <div style="margin-right: 10px;">
+                    <label for="station-id">Station ID:</label>
+                    <input type="text" id="station-id" list="station-id-list" style="width: 100px;">
+                    <datalist id="station-id-list">
+                        <?php foreach ($stationIds as $station): ?>
+                            <option value="<?php echo $station['id']; ?>"></option>
+                        <?php endforeach; ?>
+                    </datalist>
+                    <button type="submit" style="padding: 5px 10px;">Submit</button>
+                </div>
+
+
+                <div style="margin-right: 10px;">
+                    <label for="station-name">Station Name:</label>
+                    <input type="text" id="station-name" style="width: 100px;">
+                </div>
+
+                <button type="submit" style="padding: 5px 10px;">Submit</button>
+            </div>
+            <div class="content-wrapper">
+                <section class="content">
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                            Click on the station to view the comparison plot. You can even use the date and parameter
+                            filters.
+                        </div>
+                        <div id="reportrange"
+                            style="position: absolute; top: 29%; left:260px;  padding: 5px 10px; background: #fff; cursor: pointer; border: 1px solid #ccc; z-index: 9699;">
+                            <i class="fa fa-calendar"></i>&nbsp;
+                            <span></span> <i class="fa fa-caret-down"></i>
+                        </div>
+                        <div class="box-body">
+                            <div class="active tab-pane" id="showmap">
+                                <div class="post">
+                                    <div id="dialog_temp_graph_extension_chart" style="display: none;">
+                                        <div id="temp_graph_extension_chart" class="dialog"></div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div style="border:#333 1px ridge; overflow: hidden;">
+                                            <div id="map_canvas"
+                                                style="width:100%; height: 721px; float: left;z-index: 0;"
+                                                align="center"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
+
+
         </div>
 
-
     </div>
-
-
 
     <script src="<?php echo base_url(); ?>stylesheet/jQuery/jQuery-2.2.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -287,7 +323,7 @@
         var india_boundary = new ol.layer.Vector({
             renderMode: 'image',
             title: "India",
-            visible: false, 
+            visible: false,
             baseLayer: false,
             source: new ol.source.Vector({
                 url: '<?= base_url('/DATA/INDIA_COUNTRY.json') ?>',
@@ -306,8 +342,8 @@
             layers: layers,
             target: 'map_canvas',
             view: new ol.View({
-                center: ol.proj.transform([78.9629, 20.5937], 'EPSG:4326', 'EPSG:3857'), 
-                zoom: 5 
+                center: ol.proj.transform([78.9629, 20.5937], 'EPSG:4326', 'EPSG:3857'),
+                zoom: 5
             })
         });
 
@@ -325,21 +361,21 @@
 
         odisha_boundary.on('change:visible', function () {
             if (odisha_boundary.getVisible()) {
-                india_boundary.setVisible(false); 
+                india_boundary.setVisible(false);
                 lat = 20.1992;
                 lng = 84.4510;
                 map.getView().setCenter(ol.proj.transform([lng, lat], 'EPSG:4326', 'EPSG:3857'));
-                map.getView().setZoom(odishaZoom); 
+                map.getView().setZoom(odishaZoom);
             }
         });
 
         india_boundary.on('change:visible', function () {
             if (india_boundary.getVisible()) {
-                odisha_boundary.setVisible(false); 
+                odisha_boundary.setVisible(false);
                 lat = 20.5937;
                 lng = 78.9629;
                 map.getView().setCenter(ol.proj.transform([lng, lat], 'EPSG:4326', 'EPSG:3857'));
-                map.getView().setZoom(indiaZoom); 
+                map.getView().setZoom(indiaZoom);
             }
         });
 
@@ -430,14 +466,16 @@
                 endDate: end,
                 minDate: '02/24/2019',
                 maxDate: moment(),
-                ranges: {
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'Last 2 Months': [moment().subtract(2, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                }
+            //     ranges: {
+            //         'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            //         'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            //         'Last 2 Months': [moment().subtract(2, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            //     }
             }, cb);
             cb(start, end);
         });
+
+
     </script>
 
 

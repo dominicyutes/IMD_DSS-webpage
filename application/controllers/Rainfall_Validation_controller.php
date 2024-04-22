@@ -74,4 +74,12 @@ $this->load->library('form_validation');
             return TRUE;
         }
     }
+
+    public function stations() {
+    $data['stationIds'] = $this->Rainfall_Validation_Model->get_station_ids();
+    // Output the data to the console
+    echo "<script>console.log(" . json_encode($data['stationIds']) . ");</script>";
+}
+
+
 }
