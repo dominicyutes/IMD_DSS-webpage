@@ -242,8 +242,71 @@ class Rainfall_Validation_Model extends CI_Model
         return $ret_;
     }
 
-    public function get_station_ids() {
-        $query = $this->db->select('id')->get('obs_stations');
-        return $query->result_array();
+
+
+    public function get_station_name() {
+        $query = $this->db->select('name')
+                          ->from('obs_stations')
+                          ->get();
+        
+        // var_dump($query->result_array());
+    
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        } else {
+            return array(); 
+        }
     }
+
+    public function get_station_coordinates_name($station_name)
+    {
+        $this->db->select('lat, lng');
+        $this->db->where('name', $station_name);
+        $query = $this->db->get('obs_stations');
+
+        if ($query->num_rows() > 0) {
+            return $query->row_array(); 
+        } else {
+            return false;
+        }
+    }
+
+  
+  
+
+    public function get_station_coordinates_id($station_id)
+    {
+        $this->db->select('lat, lng');
+        $this->db->where('id', $station_id);
+        $query = $this->db->get('obs_stations');
+
+        if ($query->num_rows() > 0) {
+            return $query->row_array(); 
+        } else {
+            return false;
+        }
+    }
+
+    public function get_station_id() {
+        $query = $this->db->select('id')
+                          ->from('obs_stations')
+                          ->get();
+        
+        // var_dump($query->result_array());
+    
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        } else {
+            return array(); 
+        }
+    }
+
+    public function getStationIdByName($stationName) {
+        $query = $this->db->get_where('obs_stations', array('name' => $stationName));
+        $result = $query->row_array();
+        
+        return $result['id'];
+    }
+    
+    
 }
