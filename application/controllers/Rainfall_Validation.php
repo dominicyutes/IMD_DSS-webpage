@@ -16,15 +16,15 @@ class Rainfall_Validation extends CI_Controller
     public function index()
     {
 
-        
+
         $data['stations'] = $this->ofm->get_stations();
-       
+
         $data['stationNames'] = $this->ofm->get_station_name();
-         $data['stationIds'] = $this->ofm->get_station_id();
+        $data['stationIds'] = $this->ofm->get_station_id();
 
         $this->load->view('Menu/Rainfall_Validation', $data);
-  
-    // var_dump($data['stationIds']);
+
+        // var_dump($data['stationIds']);
     }
 
     public function get_station_data()
@@ -88,8 +88,8 @@ class Rainfall_Validation extends CI_Controller
             return TRUE;
         }
     }
-   
-   
+
+
 
     public function getStationCoordinates_name()
     {
@@ -98,11 +98,12 @@ class Rainfall_Validation extends CI_Controller
         echo json_encode($coordinates);
     }
 
-    
-    public function getStationId($stationName) {
-        
+
+    public function getStationId($stationName)
+    {
+
         $stationId = $this->ofm->getStationIdByName($stationName);
-        
+
         echo $stationId;
     }
     public function getStationCoordinates_id()

@@ -7,7 +7,7 @@
             <div class="dropdown-content">
                 <a href="<?php echo base_url('Rainfall_Validation');?>">Rainfall Validation</a>
                 <a href="<?php echo base_url('Rainfall_Validation_INDIA');?>">Rainfall Validation INDIA</a>
-                <a href="#service3">Cold</a>
+                <!-- <a href="#service3">Cold</a> -->
             </div>
         </div>
         <div class="dropdown">
