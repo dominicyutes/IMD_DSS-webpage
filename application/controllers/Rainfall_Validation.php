@@ -20,7 +20,7 @@ class Rainfall_Validation extends CI_Controller
         $data['stations'] = $this->ofm->get_stations();
 
         $data['stationNames'] = $this->ofm->get_station_name();
-        $data['stationIds'] = $this->ofm->get_station_id();
+        // $data['stationIds'] = $this->ofm->get_station_id();
 
         $this->load->view('Menu/Rainfall_Validation', $data);
 

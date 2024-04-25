@@ -7,60 +7,12 @@
 
 
     <style>
-        body {
-            font-family: "latitudeo", sans-serif;
-        }
-
-        .fixedHead {
-            background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 60px;
-            width: 100%;
-            position: relatitudeive;
-            margin-top: -6px;
-            margin-left: -8px;
-        }
-
-        .sidebar {
-            height: 54rem;
-            width: 13%;
-            background-color: #2c5383;
-            margin-left: -8px;
-        }
-
-        .sidebar a {
-            padding: 6px 8px 6px 16px;
-            text-decoration: none;
-            font-size: 13px;
-            color: white;
-            display: block;
-            width: max-content;
-        }
-
-        .sidebar a:hover {
-            color: white;
-        }
-
-        .dropdown-content {
-            display: none;
-            padding-left: 20px;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
         .main {
             margin-right: 10px;
             margin-left: 180px;
-            margin-bottom: -300px;
             padding: 0px 10px;
             margin-top: -856px;
         }
-
-        .daterangepicker .ltr .show-ranges .opensright {}
 
 
         @media screen and (max-height: 450px) {
@@ -91,10 +43,6 @@
 
         <div class="main">
             <h1 style="margin-top: 20px; margin-left: 400px;">Rainfall Validation INDIA</h1>
-
-
-
-
             <div class="content-wrapper">
                 <section class="content">
                     <div class="box box-info">

@@ -7,51 +7,6 @@
 
 
     <style>
-        body {
-            font-family: "Lato", sans-serif;
-        }
-
-        .fixedHead {
-            background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 60px;
-            width: 100%;
-            position: relative;
-            margin-top: -6px;
-            margin-left: -8px;
-        }
-
-        .sidebar {
-            height: 54rem;
-            width: 13%;
-            background-color: #2c5383;
-            margin-left: -8px;
-        }
-
-        .sidebar a {
-            padding: 6px 8px 6px 16px;
-            text-decoration: none;
-            font-size: 13px;
-            color: white;
-            display: block;
-            width: max-content;
-        }
-
-        .sidebar a:hover {
-            color: white;
-        }
-
-        .dropdown-content {
-            display: none;
-            padding-left: 20px;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
         .main {
             margin-right: 10px;
             margin-left: 180px;
@@ -167,8 +122,7 @@
 
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/js/daterangepicker.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>stylesheet/air-datepicker/css/datepicker.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="<?php echo base_url(); ?>stylesheet/dist/css/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>stylesheet/dist/css/daterangepicker.css">
 
 
     <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>stylesheet/ol4/ol-layerswitcher.css" type="text/css"> -->
@@ -202,17 +156,17 @@
             });
         });
 
-       document.getElementById('submit-name').addEventListener('click', function () {
-    var stationName = document.getElementById('station-name').value;
-    fetch('<?php echo base_url('Rainfall_Validation/getStationId'); ?>/' + encodeURIComponent(stationName))
-        .then(response => response.text())
-        .then(stationId => {
-            document.getElementById('station-id').value = stationId;
-        })
-        .catch(error => {
-            console.error('Error:', error);
+        document.getElementById('submit-name').addEventListener('click', function () {
+            var stationName = document.getElementById('station-name').value;
+            fetch('<?php echo base_url('Rainfall_Validation/getStationId'); ?>/' + encodeURIComponent(stationName))
+                .then(response => response.text())
+                .then(stationId => {
+                    document.getElementById('station-id').value = stationId;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
         });
-});
 
 
 
@@ -234,7 +188,7 @@
             });
         });
 
-    </script> 
+    </script>
 
 
     <script type="text/javascript">
@@ -246,10 +200,11 @@
                     type: 'spline'
                 },
                 title: {
-                    text: $("#param option:selected").text() + ' Comparison for <b>' + name + '</b> station.'
+                    text: $("#param option:selected").text() + ' Comparison for <b>' + name + '</b> station.'+ '<br>' +
+                  startDateText + ' to ' + endDateText
                 },
                 subtitle: {
-                    text: document.ontouchstart === undefined ? 'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
+                    text: (document.ontouchstart === undefined ? 'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in') 
                 },
                 legend: {
                     enabled: false
@@ -520,6 +475,11 @@
         map.addControl(ls);
 
         //date picker 
+
+
+        var startDateText; 
+        var endDateText;
+
         $(function () {
             // var start = moment().subtract(29, 'days');
             // var end = moment();
@@ -528,19 +488,24 @@
 
             function cb(start, end) {
                 $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-            }
+                startDateText = start.format('MMMM D, YYYY'); 
+                endDateText = end.format('MMMM D, YYYY'); 
+            
+            console.log(start.format('MMMM D, YYYY'));
+            console.log(end.format('MMMM D, YYYY'));
+        }
             $('#reportrange').daterangepicker({
-                startDate: start,
-                endDate: end,
-                minDate: '02/24/2019',
-                maxDate: moment(),
-                ranges: {
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'Last 2 Months': [moment().subtract(2, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                }
-            }, cb);
-            cb(start, end);
+            startDate: start,
+            endDate: end,
+            minDate: '02/24/2019',
+            maxDate: moment(),
+            ranges: {
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'Last 2 Months': [moment().subtract(2, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);
+        cb(start, end);
         });
 
 
