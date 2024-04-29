@@ -7,7 +7,7 @@ class TestingDB_model extends CI_Model {
     }
 
     public function get_dummy(){
-         $query = $this->db->get("daily_obs_temp");
+         $query = $this->db->get("attendance");
          return $query->result();
 }
 }

@@ -63,7 +63,6 @@ class Facebook_post extends CI_Controller {
             // 'link' => 'http://www.example.com',
             'message' => 'FACEBOOK 1234 Post It ',
             'source' => $fb->fileToUpload("https://buffer.com/library/content/images/2023/10/free-images.jpg")
-            // $source = base_url() . 'assets/images/Facebook-logo.png';
             // 'source' => $fb->fileToUpload(APPPATH . 'controllers/Facebook-logo.png')
         ];
 

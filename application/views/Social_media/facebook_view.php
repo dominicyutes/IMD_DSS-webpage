@@ -127,9 +127,6 @@
                 <h2>Post to Facebook</h2>
                 <button class="btn btn-primary" id="getPic">Get Picture</button>
                 <button class="btn btn-primary" id="postToFacebookBtn">Facebook</button>
-                <!-- <a href="http://www.facebook.com/sharer.php?u=[EncodedURL-URl you want to share]"
-                    target="_blank">share</a> -->
-
             </div>
             <!-- editing content ends here -->
 
