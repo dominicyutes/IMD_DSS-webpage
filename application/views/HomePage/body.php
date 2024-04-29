@@ -112,10 +112,8 @@
                 </form>
                 <!-- Submit -->
                 <div style="display: flex;justify-content: space-around;">
-                <button id="submitButton" onclick="SubmitForm()" class="submitBtn">Submit</button>
-                    <button class="submitBtn" onclick="confirmDelete()" id="deleteDrawing">Delete</button>
-                    <button class="submitBtn" onclick="toggleDrawing()" class="multipleBtn">Active Multiple</button>
-                    <button class="submitBtn" onclick="eraseDrawing()" id="eraseDrawing">Erase</button>
+                    <button id="submitButton" onclick="obs_SubmitForm()" class="submitBtn">Submit</button>
+                    <button class="obsRemCls" id="printinference">Print</button>
                 </div>
                 <div>
                 <button class="submitBtn" onclick="window.location.href='<?php echo base_url('Rainfall_Validation_INDIA'); ?>'" style="margin-top: 40px; width: 270px;">HQ ALL MC'S</button>
@@ -532,7 +530,7 @@
                         onclick="timeUpdateBoxTog()"></i>
                 </div>
                 <div>
-                    <p id="Model_Tim_lis" ;></p>
+                    <p id="Model_Tim_lis"></p>
                 </div>
             </div>
         </div>
