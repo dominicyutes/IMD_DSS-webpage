@@ -117,6 +117,9 @@
                     <button class="submitBtn" onclick="toggleDrawing()" class="multipleBtn">Active Multiple</button>
                     <button class="submitBtn" onclick="eraseDrawing()" id="eraseDrawing">Erase</button>
                 </div>
+                <div>
+                <button class="submitBtn" onclick="window.location.href='<?php echo base_url('Rainfall_Validation_INDIA'); ?>'" style="margin-top: 40px; width: 270px;">HQ ALL MC'S</button>
+                </div>
                 <div
                     style="position: absolute; bottom: 0; background-color: #f4fcff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 300px; font-family: 'Times New Roman', Times, serif;">
                     <h4

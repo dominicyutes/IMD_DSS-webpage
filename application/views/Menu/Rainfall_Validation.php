@@ -46,11 +46,22 @@
         <div class="main">
             <h1 style="margin-top: 20px; margin-left: 400px;">Rainfall Validation</h1>
 
-            <div style="display: flex; align-items: center; margin-left: 650px;">
+            <div style="display: flex; align-items: center;">
+
+            <div style="margin-right: 10px;">
+                    <label for="state-name">State Name:</label>
+                    <input type="text" id="state-name" list="state-name-list" style="width: 100px;" placeholder="State Name">
+                    <datalist id="state-name-list">
+                        <?php foreach ($stateNames as $state): ?>
+                            <option value="<?php echo $state['name']; ?>"></option>
+                        <?php endforeach; ?>
+                    </datalist>
+                    <button type="button" id="submit-names" style="padding: 5px 10px;">Submit</button>
+                </div>
 
                 <div style="margin-right: 10px;">
                     <label for="station-name">Station Name:</label>
-                    <input type="text" id="station-name" list="station-name-list" style="width: 100px;">
+                    <input type="text" id="station-name" list="station-name-list" style="width: 100px;" placeholder="Station Name">
                     <datalist id="station-name-list">
                         <?php foreach ($stationNames as $station): ?>
                             <option value="<?php echo $station['name']; ?>"></option>
@@ -60,7 +71,7 @@
                 </div>
                 <div style="margin-right: 10px;">
                     <label for="station-id">Station ID:</label>
-                    <input type="text" id="station-id" list="station-id-list" style="width: 100px;">
+                    <input type="text" id="station-id" list="station-id-list" style="width: 100px;" placeholder="12345678">
                     <datalist id="station-id-list">
                         <?php foreach ($stationIds as $station): ?>
                             <option value="<?php echo $station['id']; ?>"></option>

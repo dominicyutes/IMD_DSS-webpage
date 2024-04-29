@@ -46,53 +46,77 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
-
-     
-
-
     </style>
 </head>
+
 <body>
-    
 
-<div class="sidebar">
-    <div class="col-3">
-        <a href="<?php echo base_url('HomePage'); ?>"><i class="fa fa-fw fa-home"></i> Home</a>
 
-        <div class="dropdown">
-            <a href=""><i class="fa fa-bar-chart"></i> Data Validation <i class="fa fa-caret-down"></i></a>
-            <div class="dropdown-content">
-            
-                <a href="<?php echo base_url('Rainfall_Validation'); ?>">Rainfall Validation</a>
-                <a href="<?php echo base_url('Rainfall_Validation_INDIA'); ?>">Rainfall Validation INDIA</a>
-                <?php
-                $user_email = "rimesodisha@gmail.com";
+    <div class="sidebar">
+        <div class="col-3">
+            <a href="<?php echo base_url('HomePage'); ?>"><i class="fa fa-fw fa-home"></i> Home</a>
 
-                $rimes_email = "rimesodisha@gmail.com";
-                $imd_email = "imd@gmail.com";
+            <div class="dropdown">
+                <a href=""><i class="fa fa-bar-chart"></i> Data Validation <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
 
-                $show_button = false;
-                if ($user_email === $imd_email) {
-                    $show_button = true;
-                }
+                    <a href="<?php echo base_url('Rainfall_Validation'); ?>">Rainfall Validation</a>
+                    <a href="<?php echo base_url('Rainfall_Validation_INDIA'); ?>">Rainfall Validation INDIA</a>
 
-                ?>
 
-                <a href="<?php echo base_url(''); ?>" <?php if (!$show_button) {echo 'style="display: none;"';} ?>>
-                    Rainfall Validation ODISHA
-                </a>
+                    <div>
+                        <?php
+                        // Retrieve email from session
+                        $user_email = $this->session->userdata('user_email');
+                        if (!empty($user_email)) {
+                            echo "Email: " . $user_email;
+                            ?>
+                            <script>
+                                console.log("Email retrieval successful.");
+                            </script>
+                            <?php
+                        } else {
+                            ?>
+                            <script>
+                                console.log("Email retrieval failed.");
+                            </script>
+                            <?php
+                        }
+                        ?>
+                    </div>
 
+
+
+                    <?php
+                    // $user_email = "rimesodisha@gmail.com";
+                    
+                    // $rimes_email = "rimesodisha@gmail.com";
+                    // $imd_email = "imd@gmail.com";
+                    
+                    // $show_button = false;
+                    // if ($user_email === $imd_email) {
+                    //     $show_button = true;
+                    // }
+                    
+                    ?>
+
+                    <!-- <a href="<?php echo base_url(''); ?>" <?php if (!$show_button) {
+                           echo 'style="display: none;"';
+                       } ?>>
+                        Rainfall Validation ODISHA
+                    </a> -->
+
+                </div>
             </div>
-        </div>
-        <div class="dropdown">
-            <a href="#"><i class="fa fa-bar-chart"></i> Social Media <i class="fa fa-caret-down"></i></a>
-            <div class="dropdown-content">
-                <a href="<?php echo base_url('Email'); ?>">Email</a>
-                <a href="<?php echo base_url('Facebook_post'); ?>">Facebook FB</a>
-                <a href="<?php echo base_url('Twitter_post'); ?>">Twitter</a>
+            <div class="dropdown">
+                <a href="#"><i class="fa fa-bar-chart"></i> Social Media <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="<?php echo base_url('Email'); ?>">Email</a>
+                    <a href="<?php echo base_url('Facebook_post'); ?>">Facebook FB</a>
+                    <a href="<?php echo base_url('Twitter_post'); ?>">Twitter</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 </body>
