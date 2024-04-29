@@ -55,8 +55,12 @@ class Whatsapp_controller extends CI_Controller {
     }
 
     public function Whatsapp_post() {
-        $sid    = "AC8f6475ae067278db527777cab784cac0";
-        $token  = "77df6b842dad209aa3fc5b0f373cdfc3";
+
+        $this->load->config('twilio_whatsapp');
+        $sid = $this->config->item('sid');
+        $token = $this->config->item('token');
+        $twilio_client = new Client($sid,$token);
+        $phone = $this->config->item('phone');
         
         $twilio = new Client($sid, $token);
         echo $this->folder_path;
