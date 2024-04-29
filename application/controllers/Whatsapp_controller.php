@@ -9,6 +9,7 @@ class Whatsapp_controller extends CI_Controller {
     private $folder_path;
     private $filename;
     private $img_path;
+    
 
     public function __construct() {
         parent::__construct();
@@ -59,8 +60,6 @@ class Whatsapp_controller extends CI_Controller {
         $this->load->config('twilio_whatsapp');
         $sid = $this->config->item('sid');
         $token = $this->config->item('token');
-        $twilio_client = new Client($sid,$token);
-        $phone = $this->config->item('phone');
         
         $twilio = new Client($sid, $token);
         echo $this->folder_path;
