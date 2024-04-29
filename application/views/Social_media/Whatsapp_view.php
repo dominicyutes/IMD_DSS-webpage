@@ -10,8 +10,10 @@
     <!-- Bootstrap starts here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <!-- jQuery CDN link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <!-- Bootstrap JavaScript files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
@@ -21,7 +23,6 @@
     </script>
     <!-- Bootstrap ends here -->
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -123,13 +124,11 @@
 
             <!-- editing content starts here -->
             <div class="col-9" style="width: 88%">
-                <div id="map" class="map-canvas"></div>
-                <h2>Post to Facebook</h2>
-                <button class="btn btn-primary" id="getPic">Get Picture</button>
-                <button class="btn btn-primary" id="postToFacebookBtn">Facebook</button>
-                <!-- <a href="http://www.facebook.com/sharer.php?u=[EncodedURL-URl you want to share]"
-                    target="_blank">share</a> -->
-
+                <div id="map"></div>
+                <h2>Post to Whatsapp</h2>
+                <button type="submit" class="btn btn-primary" id="waCaptureBtn">Get Picture</button>
+                <button type="submit" class="btn btn-primary" id="waSendBtn">Send Message</button>
+                <button type="submit" class="btn btn-primary" id="test">Test</button>
             </div>
             <!-- editing content ends here -->
 
@@ -150,7 +149,7 @@
             return {
                 color: 'black',
                 fillColor: 'transparent',
-                opacity: 0.5,
+                opacity: 1,
                 fillOpacity: 0.0,
                 weight: 2
             };
@@ -161,57 +160,7 @@
         geojson.addTo(map);
     });
     // 
-
-    var red_icon = L.icon({
-        iconUrl: '<?= base_url('assets/lightning/images/map-marker-red.png')?>',
-        iconSize: [20, 20], // size of the icon
-        iconAnchor: [10, 20], // point of the icon which will correspond to marker's location
-        popupAnchor: [0, -20] // point from which the popup should open relative to the iconAnchor
-    });
-    var yellow_icon = L.icon({
-        iconUrl: '<?= base_url('assets/lightning/images/map-marker-yellow.png')?>',
-        iconSize: [20, 20], // size of the icon
-        iconAnchor: [10, 20], // point of the icon which will correspond to marker's location
-        popupAnchor: [0, -20] // point from which the popup should open relative to the iconAnchor
-    });
-    var green_icon = L.icon({
-        iconUrl: '<?= base_url('assets/lightning/images/map-marker-green.png')?>',
-        iconSize: [20, 20], // size of the icon
-        iconAnchor: [10, 20], // point of the icon which will correspond to marker's location
-        popupAnchor: [0, -20] // point from which the popup should open relative to the iconAnchor
-    });
-    var orange_icon = L.icon({
-        iconUrl: '<?= base_url('assets/lightning/images/map-marker-orange.png')?>',
-        iconSize: [20, 20], // size of the icon
-        iconAnchor: [10, 20], // point of the icon which will correspond to marker's location
-        popupAnchor: [0, -20] // point from which the popup should open relative to the iconAnchor
-    });
-
-    var _legend = L.control({
-        position: 'bottomright'
-    });
-    _legend.onAdd = function(mymap) {
-        var div = L.DomUtil.create('div', 'info legend'),
-            labels = [];
-        labels.push(
-            '<img src="<?= base_url('assets/fb_legends/map-marker-red.png')?>" width="25px" height="25px" >' +
-            " Warning" + '<br>');
-        labels.push(
-            '<img src="<?= base_url('assets/fb_legends/map-marker-orange.png')?>" width="25px" height="25px" >' +
-            " Alert" + '<br>');
-        labels.push(
-            '<img src="<?= base_url('assets/fb_legends/map-marker-yellow.png')?>" width="25px" height="25px" >' +
-            " Watch" + '<br>');
-        labels.push(
-            '<img src="<?= base_url('assets/fb_legends/map-marker-green.png')?>" width="25px" height="25px">' +
-            " No Warning" + '<br>');
-        div.innerHTML = labels.join('<br>');
-        return div;
-    };
-    _legend.addTo(map);
-
-    //
-    document.getElementById('getPic').addEventListener('click', function() {
+    document.getElementById('waCaptureBtn').addEventListener('click', function() {
         html2canvas($("#map"), {
             useCORS: true,
             allowTaint: false,
@@ -219,32 +168,54 @@
                 var image = Canvas2Image.convertToPNG(canvas);
                 var image_data = $(image).attr('src');
                 var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
-                var filename = "map_img_" + random_name + ".jpeg";
-
                 $.ajax({
                     type: "POST",
-                    url: "<?php echo site_url(); ?>Facebook_post/getPic",
+                    url: "<?php echo site_url(); ?>Whatsapp_controller/Whatsapp_map",
                     data: {
                         base64: image_data,
                         r_file_name: random_name
                     },
-                    success: function(response) {
-                        var data = JSON.parse(response);
-                        console.log(data.status, "data.status");
+                    success: function(data) {
+                        console.log("Response from server:", data);
+                        data = JSON.parse(data);
                         if (data.status === 'success') {
-                            console.log("Post button");
+                            console.log("Image stored successfully in folder:", data
+                                .img_path);
                         } else {
-                            alert("Something went wrong, please check it later");
+                            alert(
+                                "Error: Something went wrong. Please check again later."
+                            );
                         }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("AJAX Error:", status, error);
+                        alert(
+                            "Error: Something went wrong with the request. Please try again later."
+                        );
                     }
                 });
             }
         });
     });
 
-    document.getElementById('postToFacebookBtn').addEventListener('click', function() {
+
+    document.getElementById('waSendBtn').addEventListener('click', function() {
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '<?php echo base_url("Facebook_post/post_info"); ?>', true);
+        xhr.open('POST', '<?php echo base_url("Whatsapp_controller/Whatsapp_post"); ?>', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            } else {
+                console.error('Request failed. Error: ' + xhr.status);
+            }
+        };
+        xhr.send();
+    });
+
+    document.getElementById('test').addEventListener('click', function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '<?php echo base_url("Whatsapp_controller/test"); ?>', true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
             if (xhr.status === 200) {
@@ -257,6 +228,5 @@
     });
     </script>
 </body>
-
 
 </html>

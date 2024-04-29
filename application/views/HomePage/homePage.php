@@ -460,6 +460,7 @@ $(".printbutton").click(function() {
 
 });
 </script>
+
 <script>
 $(document).ready(function() {
     $(".printbutton").on("click", function() {
@@ -481,6 +482,7 @@ $(document).ready(function() {
     })
 });
 </script>
+
 <script src="leaflet.browser.print.min.js"></script>
 <script>
 var browserControl = L.control.browserPrint().addTo(map);

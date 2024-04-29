@@ -27,6 +27,21 @@
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- leaflet Js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Leaflet AJAX Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+    <!-- html2canvas / canvas2image -->
+    <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/html2canvas/html2canvas.js">
+    </script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/canvas2image/canvas2image.js">
+    </script>
+
     <style>
     body {
         width: 100%;
@@ -84,6 +99,13 @@
     .dropdown:hover .dropdown-content {
         display: block;
     }
+
+    #map {
+        margin-top: 1%;
+        height: 100vh;
+        width: 100%;
+        border: 1px solid black;
+    }
     </style>
 </head>
 
@@ -102,8 +124,9 @@
 
             <!-- editing content starts here -->
             <div class="col-9" style="width: 88%">
+                <div id="map"></div>
                 <h2>Post to Twitter</h2>
-                <button id="postToFacebookBtn">Twitter</button>
+                <button class="btn btn-primary" id="postToFacebookBtn">Twitter</button>
             </div>
             <!-- editing content ends here -->
 
@@ -111,26 +134,61 @@
     </div>
 
     <script>
-    // let img = 'http://localhost/IMD_DSS-webpage/assets/images/Facebook-logo.png';
+    var map = L.map('map').setView([22.79459, 80.06406], 5);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
 
-    // document.getElementById('postToFacebookBtn').addEventListener('click', function() {
-    //     var xhr = new XMLHttpRequest();
-    //     xhr.open('POST', '<?php echo base_url('Facebook_post/post_info'); ?>', true);
-    //     xhr.setRequestHeader("Content-Type", "application/json");
+    // Add the GeoJSON data to the map
+    _dist_geojson = "DATA/INDIA_STATE.json";
+    var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
+        style: function(feature) {
+            return {
+                color: 'black',
+                fillColor: 'transparent',
+                opacity: 0.5,
+                fillOpacity: 0.0,
+                weight: 2
+            };
+        }
+    });
 
-    //     xhr.onload = function() {
-    //         if (xhr.status === 200) {
-    //             alert('Image posted to Facebook successfully!');
-    //         } else {
-    //             // alert('Error posting image to Facebook: ' + xhr.responseText);
-    //             console.log(xhr.responseText, "xhr.responseText");
-    //         }
-    //     };
-    //     xhr.send();
-    // xhr.send(JSON.stringify({
-    //     img: img
-    // }));
-    // });
+    geojson.on('data:loaded', function() {
+        geojson.addTo(map);
+    });
+    // 
+
+    document.getElementById('postToFacebookBtn').addEventListener('click', function() {
+        html2canvas($("#map"), {
+            useCORS: true,
+            allowTaint: false,
+            onrendered: function(canvas) {
+                var image = Canvas2Image.convertToPNG(canvas);
+                var image_data = $(image).attr('src');
+                var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
+
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo site_url(); ?>Twitter_post/post_info",
+                    data: {
+                        base64: image_data,
+                        r_file_name: random_name
+                    },
+                    success: function(response) {
+                        var data = JSON.parse(response);
+                        console.log(data.status, "data.status");
+                        if (data.status === 'success') {
+                            console.log("Post button");
+                        } else {
+                            alert("Something went wrong, please check it later");
+                        }
+                    }
+                });
+            }
+        });
+
+    });
     </script>
 </body>
 

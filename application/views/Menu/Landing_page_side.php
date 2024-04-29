@@ -13,7 +13,9 @@
         <div class="dropdown">
             <a href="#"><i class="fa fa-bar-chart"></i> Social Media <i class="fa fa-caret-down"></i></a>
             <div class="dropdown-content">
+                <a href="<?php echo base_url('SMS_controller'); ?>">SMS</a>
                 <a href="<?php echo base_url('Email'); ?>">Email</a>
+                <a href="<?php echo base_url('Whatsapp_controller'); ?>">Whatsapp</a>
                 <a href="<?php echo base_url('Facebook_post'); ?>">Facebook FB</a>
                 <a href="<?php echo base_url('Twitter_post'); ?>">Twitter</a>
             </div>

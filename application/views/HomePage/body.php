@@ -527,7 +527,7 @@
                         onclick="timeUpdateBoxTog()"></i>
                 </div>
                 <div>
-                    <p id="Model_Tim_lis" ;></p>
+                    <p id="Model_Tim_lis"></p>
                 </div>
             </div>
         </div>
