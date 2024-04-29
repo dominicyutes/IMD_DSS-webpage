@@ -10,11 +10,9 @@
         .main {
             margin-right: 10px;
             margin-left: 180px;
-            margin-bottom: -300px;
             padding: 0px 10px;
             margin-top: -856px;
         }
-
 
 
         @media screen and (max-height: 450px) {
@@ -44,47 +42,10 @@
         <?php $this->load->view('Menu/Landing_page_side.php'); ?>
 
         <div class="main">
-            <h1 style="margin-top: 20px; margin-left: 400px;">Rainfall Validation</h1>
-
-            <div style="display: flex; align-items: center; margin-left: 650px;">
-
-                <div style="margin-right: 10px;">
-                    <label for="station-name">Station Name:</label>
-                    <input type="text" id="station-name" list="station-name-list" style="width: 100px;">
-                    <datalist id="station-name-list">
-                        <?php foreach ($stationNames as $station): ?>
-                            <option value="<?php echo $station['name']; ?>"></option>
-                        <?php endforeach; ?>
-                    </datalist>
-                    <button type="button" id="submit-name" style="padding: 5px 10px;">Submit</button>
-                </div>
-                <div style="margin-right: 10px;">
-                    <label for="station-id">Station ID:</label>
-                    <input type="text" id="station-id" list="station-id-list" style="width: 100px;">
-                    <datalist id="station-id-list">
-                        <?php foreach ($stationIds as $station): ?>
-                            <option value="<?php echo $station['id']; ?>"></option>
-                        <?php endforeach; ?>
-                    </datalist>
-                    <button type="button" id="submit-id" style="padding: 5px 10px;">Submit</button>
-                </div>
-
-            </div>
-
-
-
+            <h1 style="margin-top: 20px; margin-left: 400px;">Rainfall Validation INDIA</h1>
             <div class="content-wrapper">
                 <section class="content">
                     <div class="box box-info">
-                        <div class="box-header with-border">
-                            Click on the station to view the comparison plot. You can even use the date and parameter
-                            filters.
-                        </div>
-                        <div id="reportrange"
-                            style="position: absolute; top: 26%; left:260px;  padding: 5px 10px; background: #fff; cursor: pointer; border: 1px solid #ccc; z-index: 9699;">
-                            <i class="fa fa-calendar"></i>&nbsp;
-                            <span></span> <i class="fa fa-caret-down"></i>
-                        </div>
                         <div class="box-body">
                             <div class="active tab-pane" id="showmap">
                                 <div class="post">
@@ -122,8 +83,6 @@
 
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/js/daterangepicker.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>stylesheet/air-datepicker/css/datepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>stylesheet/dist/css/daterangepicker.css">
-
 
     <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>stylesheet/ol4/ol-layerswitcher.css" type="text/css"> -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>stylesheet/ol4/ol.css" type="text/css">
@@ -134,39 +93,39 @@
     <script src="https://unpkg.com/ol-layerswitcher@3.0.0"></script>
 
 
-    <script>
+    <!-- <script>
 
 
         $(document).ready(function () {
             $('#submit-name').click(function () {
                 var station_name = $('#station-name').val();
                 $.ajax({
-                    url: "<?php echo site_url('Rainfall_Validation/getStationCoordinates_name'); ?>",
+                    url: "<?php echo site_url('Rainfall_Validation_INDIA/getStationCoordinates_name'); ?>",
                     type: 'POST',
                     data: { station_name: station_name },
                     dataType: 'json',
                     success: function (response) {
                         console.log(response);
-                        var lat = parseFloat(response.lat);
-                        var lng = parseFloat(response.lng);
-                        map.getView().setCenter(ol.proj.fromLonLat([lng, lat]));
+                        var latitude = parseFloat(response.latitude);
+                        var longitude = parseFloat(response.longitude);
+                        map.getView().setCenter(ol.proj.fromLonlatitude([longitude, latitude]));
                         map.getView().setZoom(15);
                     }
                 });
             });
         });
 
-        document.getElementById('submit-name').addEventListener('click', function () {
-            var stationName = document.getElementById('station-name').value;
-            fetch('<?php echo base_url('Rainfall_Validation/getStationId'); ?>/' + encodeURIComponent(stationName))
-                .then(response => response.text())
-                .then(stationId => {
-                    document.getElementById('station-id').value = stationId;
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
+       document.getElementById('submit-name').addEventListener('click', function () {
+    var stationName = document.getElementById('station-name').value;
+    fetch('<?php echo base_url('Rainfall_Validation_INDIA/getStationId'); ?>/' + encodeURIComponent(stationName))
+        .then(response => response.text())
+        .then(stationId => {
+            document.getElementById('station-id').value = stationId;
+        })
+        .catch(error => {
+            console.error('Error:', error);
         });
+});
 
 
 
@@ -174,21 +133,21 @@
             $('#submit-id').click(function () {
                 var station_id = $('#station-id').val();
                 $.ajax({
-                    url: "<?php echo site_url('Rainfall_Validation/getStationCoordinates_id'); ?>",
+                    url: "<?php echo site_url('Rainfall_Validation_INDIA/getStationCoordinates_id'); ?>",
                     type: 'POST',
                     data: { station_id: station_id },
                     dataType: 'json',
                     success: function (response) {
-                        var lat = parseFloat(response.lat);
-                        var lng = parseFloat(response.lng);
-                        map.getView().setCenter(ol.proj.fromLonLat([lng, lat]));
+                        var latitude = parseFloat(response.latitude);
+                        var longitude = parseFloat(response.longitude);
+                        map.getView().setCenter(ol.proj.fromLonlatitude([longitude, latitude]));
                         map.getView().setZoom(15);
                     }
                 });
             });
         });
 
-    </script>
+    </script> -->
 
 
     <script type="text/javascript">
@@ -200,11 +159,10 @@
                     type: 'spline'
                 },
                 title: {
-                    text: $("#param option:selected").text() + ' Comparison for <b>' + name + '</b> station.'+ '<br>' +
-                  startDateText + ' to ' + endDateText
+                    text: $("#param option:selected").text() + ' Comparison for <b>' + name + '</b> station.'
                 },
                 subtitle: {
-                    text: (document.ontouchstart === undefined ? 'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in') 
+                    text: document.ontouchstart === undefined ? 'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
                 },
                 legend: {
                     enabled: false
@@ -294,6 +252,8 @@
         }
         var stations = <?php echo json_encode($stations, JSON_NUMERIC_CHECK); ?>;
 
+        console.log(stations);
+
         var osm = new ol.layer.Tile({
             source: new ol.source.OSM(),
             title: 'OSM',
@@ -368,8 +328,8 @@
             })
         });
 
-        // var lat = 25.096100;
-        // var lng = 85.313100;
+        // var latitude = 25.096100;
+        // var longitude = 85.313100;
 
 
         var indiaZoom = 5;
@@ -377,7 +337,7 @@
         var feats = [];
         stations.forEach(function (s) {
             feats.push(new ol.Feature({
-                geometry: new ol.geom.Point(ol.proj.transform([parseFloat(s.lng), parseFloat(s.lat)], 'EPSG:4326', 'EPSG:3857')),
+                geometry: new ol.geom.Point(ol.proj.transform([parseFloat(s.longitude), parseFloat(s.latitude)], 'EPSG:4326', 'EPSG:3857')),
                 station: s
             }))
         });
@@ -385,9 +345,9 @@
         odisha_boundary.on('change:visible', function () {
             if (odisha_boundary.getVisible()) {
                 india_boundary.setVisible(false);
-                lat = 20.1992;
-                lng = 84.4510;
-                map.getView().setCenter(ol.proj.transform([lng, lat], 'EPSG:4326', 'EPSG:3857'));
+                latitude = 20.1992;
+                longitude = 84.4510;
+                map.getView().setCenter(ol.proj.transform([longitude, latitude], 'EPSG:4326', 'EPSG:3857'));
                 map.getView().setZoom(odishaZoom);
             }
         });
@@ -395,9 +355,9 @@
         india_boundary.on('change:visible', function () {
             if (india_boundary.getVisible()) {
                 odisha_boundary.setVisible(false);
-                lat = 20.5937;
-                lng = 78.9629;
-                map.getView().setCenter(ol.proj.transform([lng, lat], 'EPSG:4326', 'EPSG:3857'));
+                latitude = 20.5937;
+                longitude = 78.9629;
+                map.getView().setCenter(ol.proj.transform([longitude, latitude], 'EPSG:4326', 'EPSG:3857'));
                 map.getView().setZoom(indiaZoom);
             }
         });
@@ -441,7 +401,7 @@
                 $.ajax({
                     type: 'POST',
                     data: post_data,
-                    url: '<?php echo base_url('Rainfall_Validation/get_station_data'); ?>',
+                    url: '<?php echo base_url('Rainfall_Validation_INDIA/get_station_data'); ?>',
                     success: function (res) {
                         var result = JSON.parse(res);
                         // console.log(res, "hfbvujgv")
@@ -474,39 +434,29 @@
         var ls = new ol.control.LayerSwitcher({ tipLabel: 'Legend' });
         map.addControl(ls);
 
-        //date picker 
+        // //date picker 
+        // $(function () {
+        //     // var start = moment().subtract(29, 'days');
+        //     // var end = moment();
+        //     var start = moment('2024-04-01');
+        //     var end = moment('2024-04-15');
 
-
-        var startDateText; 
-        var endDateText;
-
-        $(function () {
-            // var start = moment().subtract(29, 'days');
-            // var end = moment();
-            var start = moment('2024-04-01');
-            var end = moment('2024-04-15');
-
-            function cb(start, end) {
-                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                startDateText = start.format('MMMM D, YYYY'); 
-                endDateText = end.format('MMMM D, YYYY'); 
-            
-            console.log(start.format('MMMM D, YYYY'));
-            console.log(end.format('MMMM D, YYYY'));
-        }
-            $('#reportrange').daterangepicker({
-            startDate: start,
-            endDate: end,
-            minDate: '02/24/2019',
-            maxDate: moment(),
-            ranges: {
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'Last 2 Months': [moment().subtract(2, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-            }
-        }, cb);
-        cb(start, end);
-        });
+        //     function cb(start, end) {
+        //         $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        //     }
+        //     $('#reportrange').daterangepicker({
+        //         startDate: start,
+        //         endDate: end,
+        //         minDate: '02/24/2019',
+        //         maxDate: moment(),
+        //         ranges: {
+        //             'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+        //             'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+        //             'Last 2 Months': [moment().subtract(2, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        //         }
+        //     }, cb);
+        //     cb(start, end);
+        // });
 
 
     </script>
