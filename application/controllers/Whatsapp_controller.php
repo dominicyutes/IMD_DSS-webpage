@@ -69,7 +69,10 @@ class Whatsapp_controller extends CI_Controller {
         try {
             $message = $twilio->messages->create('whatsapp:+918939535307', [
                 // "mediaUrl" => [$this->img_path], 
-                "mediaUrl" => ["https://buffer.com/library/content/images/2023/10/free-images.jpg"],
+                // "mediaUrl" => ["https://buffer.com/library/content/images/2023/10/free-images.jpg"],
+                
+                "mediaUrl" => ["http://localhost/IMD_DSS-webpage/assets/Whatsapp_img/map_img_2024_04_29_08_35_08.jpeg"],
+                // "mediaUrl" => [base_url('assets/Whatsapp_img/map_img_2024_04_29_08_35_08.jpeg')],
                 'from' => "whatsapp:+14155238886",
                 "body" => "IMD Weather Updates for May 10, 2024. Details: http://weather-imd-test.rimes.int/"
             ]);
@@ -81,7 +84,7 @@ class Whatsapp_controller extends CI_Controller {
     }
 
     public function test(){
-        $x = base_url(assests/Whatsapp_img/map_img_2024_04_27_17_54_43.jpeg);
+        $x = base_url('assets/Whatsapp_img/map_img_2024_04_29_08_35_08.jpeg');
         echo $x;
     }
 
