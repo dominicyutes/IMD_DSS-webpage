@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,68 +13,68 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-    body {
-        background-image: url('<?php echo base_url("assets/images/loginPage.jpg"); ?>');
-        background-size: cover;
-        background-position: center;
-    }
+        body {
+            background-image: url('<?php echo base_url("assets/images/loginPage.jpg"); ?>');
+            background-size: cover;
+            background-position: center;
+        }
 
-    .container {
-        margin-top: 10%;
-    }
+        .container {
+            margin-top: 10%;
+        }
 
-    .row {
-        margin-right: -3%;
-        margin-left: 32%;
-    }
+        .row {
+            margin-right: -3%;
+            margin-left: 32%;
+        }
 
-    .login-box {
-        background-color: #ddedfa;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
+        .login-box {
+            background-color: #ddedfa;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
 
-    .form-horizontal h2 {
-        margin-bottom: 20px;
-    }
+        .form-horizontal h2 {
+            margin-bottom: 20px;
+        }
 
-    .form-group {
-        margin-bottom: 20px;
-    }
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-    .form-group h2 label {
-        font-weight: bold;
-    }
+        .form-group h2 label {
+            font-weight: bold;
+        }
 
-    .form-group input[type="email"],
-    .form-group input[type="password"] {
-        width: 100%;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
 
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-    }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
 
-    .btn-primary:hover {
-        background-color: #0056b3;
-        border-color: #0056b3;
-    }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
 
-    .btn-danger {
-        background-color: #dc3545;
-        border-color: #dc3545;
-    }
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
 
-    .btn-danger:hover {
-        background-color: #c82333;
-        border-color: #bd2130;
-    }
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
     </style>
 </head>
 
@@ -85,13 +85,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-md-6">
                     <div class="login-box">
                         <form class="form-horizontal" action="<?php echo base_url('Login'); ?>" method="post">
-                            <?php 
-                        if (!empty($this->session->flashdata('message'))) {
-                            echo $this->session->flashdata('message');
-                        } elseif (!empty($this->session->flashdata('message1'))) {
-                            echo $this->session->flashdata('message1');
-                        }
-                        ?>
+                            <?php
+                            if (!empty($this->session->flashdata('message'))) {
+                                echo $this->session->flashdata('message');
+                            } elseif (!empty($this->session->flashdata('message1'))) {
+                                echo $this->session->flashdata('message1');
+                            }
+                            ?>
                             <div class="form-group">
                                 <h2>LOGIN PAGE</h2>
                             </div>
@@ -101,6 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     value="<?php set_value('email') ?>" />
                                 <?php echo form_error('email') ?>
                             </div>
+                            <a href="<?php echo base_url('Menu/Landing_page.php') ?>?email=<?php echo set_value('email') ?>"></a>
 
                             <div class="form-group">
                                 <label for="password">Password</label>
@@ -112,7 +113,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <input type="submit" value="Login" class="btn btn-primary" />
                                 <input type="reset" value="Cancel" class="btn btn-danger" />
                             </div>
-                            <p>Don't have an account? <a href="<?php echo base_url();?>Register">Register Here</a></p>
+                            <p>Don't have an account? <a href="<?php echo base_url(); ?>Register">Register Here</a></p>
                         </form>
                     </div>
                 </div>
