@@ -110,6 +110,7 @@
                     <div id="checkboxListContainer"></div>
                 </div>
                 </form>
+                <!-- Submit -->
                 <div style="display: flex;justify-content: space-around;">
                     <button id="submitButton" onclick="SubmitForm()" class="submitBtn">Submit</button>
                     <button class="submitBtn" onclick="confirmDelete()" id="deleteDrawing">Delete</button>
