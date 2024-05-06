@@ -3,14 +3,6 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
-        integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!--  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
@@ -25,10 +17,10 @@
     <!-- Bootstrap JavaScript files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+        </script>
     <!-- Bootstrap ends here -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
@@ -36,62 +28,68 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-    body {
-        width: 100%;
-        height: 100vh;
-        zoom: 80%;
-        overflow: hidden;
-        font-family: "Lato", sans-serif;
-    }
+        body {
+            font-family: "Lato", sans-serif;
+        }
 
-    .text {
-        font-family: 'Archivo', sans-serif;
-        font-size: 2em;
-        font-weight: 600;
-        color: white;
-        letter-spacing: 3px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+        .text {
+            font-family: 'Archivo', sans-serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .fixedHead {
-        background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 60px;
-        width: 100%;
-        position: relative;
-    }
+        .fixedHead {
+            background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            width: 100%;
+            position: relative;
+            margin-top: -6px;
+            margin-left: -8px;
+        }
 
-    .sidebar {
-        height: 54rem;
-        width: 11%;
-        background-color: #2c5383;
-    }
+        .sidebar {
+            height: 54rem;
+            width: 13%;
+            background-color: #2c5383;
+            margin-left: -8px;
+        }
 
-    .sidebar a {
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 13px;
-        color: white;
-        display: block;
-        width: max-content;
-    }
+        .sidebar a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 13px;
+            color: white;
+            display: block;
+            width: max-content;
+        }
 
-    .sidebar a:hover {
-        color: white;
-    }
+        .sidebar a:hover {
+            color: white;
+        }
 
-    .dropdown-content {
-        display: none;
-        padding-left: 20px;
-    }
+        .dropdown-content {
+            display: none;
+            padding-left: 20px;
+        }
 
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .main {
+            margin-right: 10px;
+            margin-left: 180px;
+            padding: 0px 10px;
+            margin-top: -856px;
+        }
     </style>
 </head>
 
@@ -101,41 +99,42 @@
             <!-- Landing_page title logo> -->
             <?php $this->load->view('Menu/Landing_page_top'); ?>
         </div>
-        <!-- <p>User ID: <?php echo $user_id; ?></p> -->
 
 
         <div class="row">
-
             <!-- Landing_page sidebar> -->
             <?php $this->load->view('Menu/Landing_page_side'); ?>
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 88%">
+            <div class="main" style="width: 88%">
+                <img src="" alt="">
+                <img src="<?php echo base_url('img/weather_img.png'); ?>"height="" style="width: 1252px;height: 851px;">
 
             </div>
             <!-- editing content ends here -->
+
         </div>
     </div>
 
     <script>
-    $(document).ready(function() {
-        $('#toggleButton').change(function() {
-            if ($(this).is(':checked')) {
-                $('#submitButton').prop('disabled', false);
-            } else {
-                $('#submitButton').prop('disabled', true);
-            }
+        $(document).ready(function () {
+            $('#toggleButton').change(function () {
+                if ($(this).is(':checked')) {
+                    $('#submitButton').prop('disabled', false);
+                } else {
+                    $('#submitButton').prop('disabled', true);
+                }
+            });
         });
-    });
 
-    $(document).ready(function() {
-        $("#toggleEmailLogTable").click(function() {
-            event.preventDefault();
-            $("#emailLogTable").toggle();
+        $(document).ready(function () {
+            $("#toggleEmailLogTable").click(function () {
+                event.preventDefault();
+                $("#emailLogTable").toggle();
 
+            });
         });
-    });
     </script>
 </body>
 
