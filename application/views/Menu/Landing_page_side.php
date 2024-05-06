@@ -117,11 +117,6 @@
                 </div>
             </div>
         </div>
-        <?php endif; ?>
-
-
-
-
     </div>
 
 </body>
