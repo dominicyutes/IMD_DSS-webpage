@@ -15,14 +15,14 @@
     background-color: #2c5383;
 }
 
-.sidebar a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 13px;
-    color: white;
-    display: block;
-    width: max-content;
-}
+        .sidebar a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 13px;
+            color: white;
+            display: block;
+            width: max-content;
+        }
 
 .sidebar a:hover {
     color: white;
