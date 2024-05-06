@@ -5,10 +5,16 @@ class Twitter_post extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        // $this->load->library('curl');
     }
 
     public function index() {
-       $this->load->view('Social_media/twitter_view');
+        $name = '';
+       if ($this->session->has_userdata('name')) {
+           $name = $this->session->userdata('name');
+       }
+       $data['name'] = $name;
+       $this->load->view('Social_media/twitter_view',$data);
     }
 
     public function post_info() {
@@ -36,4 +42,8 @@ class Twitter_post extends CI_Controller {
         exit;
     }
     }
+
+    
+
+
 }

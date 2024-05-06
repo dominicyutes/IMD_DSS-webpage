@@ -7,13 +7,18 @@ require "vendor/autoload.php";
 use Facebook\Facebook;
 
 class Facebook_post extends CI_Controller {
-
+    
     public function __construct() {
         parent::__construct();
     }
 
     public function index() {
-        $this->load->view('Social_media/facebook_view');
+        $name = '';
+       if ($this->session->has_userdata('name')) {
+           $name = $this->session->userdata('name');
+       }
+       $data['name'] = $name;
+        $this->load->view('Social_media/facebook_view',$data);
     }
 
     function getDate(){
@@ -49,38 +54,47 @@ class Facebook_post extends CI_Controller {
         } else {
             echo json_encode(["status" => "error"]);
         }
-    }
+      }
     }
 
     public function post_info() {
-    $fb = new Facebook([
-            'app_id' => '1830324530768258',
-            'app_secret' => 'c2114ccbb50dd2ed5a2b31dc509ce878',
-            'default_graph_version' => 'v2.10',
-        ]);
+        $filename = $_POST['filename']; 
+        echo $filename;
+        $getImage = base_url('assets/Fb_img/' . $filename);
+        echo $getImage;
+        
+           $fb = new Facebook([
+                  'app_id' => '1830324530768258',
+                  'app_secret' => 'c2114ccbb50dd2ed5a2b31dc509ce878',
+                  'default_graph_version' => 'v2.10',
+              ]);
+              
+      
+              $linkData = [
+                  'message' => 'IMD-RIMES Testing fb post with rainfall-data;',
+                  'link' => 'http://weather-imd-test.rimes.int/',
+                  'source' => $fb->fileToUpload($getImage)
+              ];
 
-        $linkData = [
-            // 'link' => 'http://www.example.com',
-            'message' => 'FACEBOOK 1234 Post It ',
-            'source' => $fb->fileToUpload("https://buffer.com/library/content/images/2023/10/free-images.jpg")
-            // 'source' => $fb->fileToUpload(APPPATH . 'controllers/Facebook-logo.png')
-        ];
+              try {
+                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBO7TTvtRX6YhvhjflPUsaf5fIcTqLZCnZAAG80ZAWnR1DXEVDGzf9vNKZAO4zRBa4GZAB00ZAvPIoZB6Nnlpnrc0ZCIeSlpY8LwXvz22wGSM0bZB8ZAPQnrDMOTLZCjjJK23CNQM7WAmFXdJs3cWM3MOpZBRskWdK67eqXaXZARE8ezHkyBZAe5hTvhbkxqJZCfQXKkp5lUMBJjh5v5zyVbW2m3WKvQZD');
+              } catch(Facebook\Exceptions\FacebookResponseException $e) {
+                  echo 'Graph returned an error: ' . $e->getMessage();
+                  exit;
+              } catch(Facebook\Exceptions\FacebookSDKException $e) {
+                  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+                  exit;
+              }
+      
+              $graphNode = $response->getGraphNode();
+      
+              echo 'Posted with id: ' . $graphNode['id'];
+              
+              // Prepare the response data
+              $responseData = ['id' => $graphNode['id']];
 
-        try {
-            $response = $fb->post('/me/feed', $linkData, 'EAAaAq6N66YIBO6Ju3CwMV1zHsURFI97ZC0JJRaDibgWJTfHvUOPEf2YVZBjNRVPFRNGxk8lB3TmZBpUeZBcPO6bYcS2UOHooDC3WfnqxL4dvNH68lrcPDawZAZA1awCpjjT3wmMzHPL22YbhztpzxH3IAE8AhOaUlZAsVJj6HysgjCY1dMkkoo0hD9ZARlbJUP7Dxusve5u6KGdrrpnjZAlIG9GZAT3gne6voZD');
-        } catch(Facebook\Exceptions\FacebookResponseException $e) {
-            echo 'Graph returned an error: ' . $e->getMessage();
-            exit;
-        } catch(Facebook\Exceptions\FacebookSDKException $e) {
-            echo 'Facebook SDK returned an error: ' . $e->getMessage();
-            exit;
-        }
-
-        $graphNode = $response->getGraphNode();
-
-        echo 'Posted with id: ' . $graphNode['id'];
+              // Send the response as JSON
+              echo json_encode($responseData);
     }
-
-
 
 }
