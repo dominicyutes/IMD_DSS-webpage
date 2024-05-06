@@ -27,6 +27,20 @@
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- html2canvas / canvas2image -->
+    <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/html2canvas/html2canvas.js">
+    </script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/canvas2image/canvas2image.js">
+    </script>
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+        integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -36,18 +50,19 @@
     <!-- Leaflet AJAX Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
 
-    <!-- html2canvas / canvas2image -->
-    <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/html2canvas/html2canvas.js">
-    </script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/canvas2image/canvas2image.js">
-    </script>
+    <!-- Leaflet.draw CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+    <!-- Leaflet.draw JavaScript -->
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+
+
 
     <style>
     body {
         width: 100%;
         height: 100vh;
-        zoom: 80%;
-        overflow: hidden;
+        /* zoom: 80%; */
+        overflow-x: hidden;
         font-family: "Lato", sans-serif;
     }
 
@@ -101,11 +116,16 @@
     }
 
     #map {
+        /* zoom: 100%; */
         margin-top: 1%;
         height: 100vh;
         width: 100%;
         border: 1px solid black;
     }
+
+    /* .leaflet-draw-toolbar {
+        zoom: 80%;
+    } */
     </style>
 </head>
 
@@ -125,10 +145,6 @@
             <!-- editing content starts here -->
             <div class="col-9" style="width: 88%">
                 <div id="map"></div>
-                <h2>Post to Whatsapp</h2>
-                <button type="submit" class="btn btn-primary" id="waCaptureBtn">Get Picture</button>
-                <button type="submit" class="btn btn-primary" id="waSendBtn">Send Message</button>
-                <!-- <button type="submit" class="btn btn-primary" id="test">Test</button> -->
             </div>
             <!-- editing content ends here -->
 
@@ -137,6 +153,7 @@
 
     <script>
     var map = L.map('map').setView([22.79459, 80.06406], 5);
+
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -148,9 +165,9 @@
         style: function(feature) {
             return {
                 color: 'black',
-                fillColor: 'transparent',
+                fillColor: '#399fe3',
                 opacity: 1,
-                fillOpacity: 0.0,
+                fillOpacity: 0.5,
                 weight: 2
             };
         }
@@ -160,72 +177,69 @@
         geojson.addTo(map);
     });
     // 
-    document.getElementById('waCaptureBtn').addEventListener('click', function() {
-        html2canvas($("#map"), {
-            useCORS: true,
-            allowTaint: false,
-            onrendered: function(canvas) {
-                var image = Canvas2Image.convertToPNG(canvas);
-                var image_data = $(image).attr('src');
-                var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo site_url(); ?>Whatsapp_controller/Whatsapp_map",
-                    data: {
-                        base64: image_data,
-                        r_file_name: random_name
-                    },
-                    success: function(data) {
-                        console.log("Response from server:", data);
-                        data = JSON.parse(data);
-                        if (data.status === 'success') {
-                            console.log("Image stored successfully in folder:", data
-                                .img_path);
-                        } else {
-                            alert(
-                                "Error: Something went wrong. Please check again later."
-                            );
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error("AJAX Error:", status, error);
-                        alert(
-                            "Error: Something went wrong with the request. Please try again later."
-                        );
-                    }
-                });
+
+
+    // drawControl starts here
+    const drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
+
+    const drawControl = new L.Control.Draw({
+        draw: {
+            polygon: true,
+            polyline: true,
+            circle: true,
+            marker: true,
+            circlemarker: true
+        },
+        edit: {
+            featureGroup: drawnItems
+        },
+        position: 'topright', // Change position of the toolbar if needed
+        draw: {
+            toolbarOptions: {
+                style: {
+                    zoom: '80%' // Adjust the size of the toolbar
+                }
             }
-        });
+        }
+    });
+    map.addControl(drawControl);
+
+    map.on('draw:created', function(e) {
+        console.log(e, "eeeeeeeeee");
+        const layer = e.layer;
+        console.log(layer, "layer");
+        drawnItems.addLayer(layer);
     });
 
+    // DRAW
+    // var drawnItems = new L.FeatureGroup();
+    // map.addLayer(drawnItems);
 
-    document.getElementById('waSendBtn').addEventListener('click', function() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '<?php echo base_url("Whatsapp_controller/Whatsapp_post"); ?>', true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                console.log(xhr.responseText);
-            } else {
-                console.error('Request failed. Error: ' + xhr.status);
-            }
-        };
-        xhr.send();
-    });
-
-    // document.getElementById('test').addEventListener('click', function() {
-    //     var xhr = new XMLHttpRequest();
-    //     xhr.open('POST', '<?php echo base_url("Whatsapp_controller/test"); ?>', true);
-    //     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    //     xhr.onload = function() {
-    //         if (xhr.status === 200) {
-    //             console.log(xhr.responseText);
-    //         } else {
-    //             console.error('Request failed. Error: ' + xhr.status);
-    //         }
-    //     };
-    //     xhr.send();
+    // var drawControl = new L.Control.Draw({
+    //     draw: {
+    //         polygon: true,
+    //         polyline: false,
+    //         circle: false,
+    //         marker: false,
+    //         circlemarker: false,
+    //         rectangle: false
+    //     },
+    //     edit: {
+    //         featureGroup: drawnItems
+    //     }
     // });
+    // map.addControl(drawControl);
+
+    // map.on('draw:created', function(e) {
+    //     var type = e.layerType,
+    //         layer = e.layer;
+
+    //     if (type === 'polygon') {
+    //         drawnItems.addLayer(layer);
+    //     }
+    // });
+    // 
     </script>
 </body>
 

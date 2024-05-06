@@ -35,7 +35,16 @@ class HomePage extends CI_Controller {
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
     }
 
+    // 
+    public function Menu(){
+       $name = '';
+       if ($this->session->has_userdata('name')) {
+           $name = $this->session->userdata('name');
+       }
+       $data['name'] = $name;
 
+       $this->load->view('Menu/Landing_page', $data);
+    }
 
     public function submitForm() {
     $data = json_decode(file_get_contents("php://input"), true);
@@ -227,14 +236,7 @@ class HomePage extends CI_Controller {
     }
     }
 
-
-
-
     
-
-    public function Menu(){
-        $this->load->view('Menu/Landing_page');
-    }
 
     public function Rainfall_Val(){
         $this->load->view('Menu/Rainfall_Validation.php');

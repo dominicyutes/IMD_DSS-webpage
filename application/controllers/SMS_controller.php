@@ -11,7 +11,12 @@ class SMS_controller extends CI_Controller {
     }
 
     public function index() {
-       $this->load->view('Social_media/SMS_view');
+         $name = '';
+       if ($this->session->has_userdata('name')) {
+           $name = $this->session->userdata('name');
+       }
+       $data['name'] = $name;
+       $this->load->view('Social_media/SMS_view',$data);
     }
 
     public function SMS_post() {
@@ -24,8 +29,9 @@ class SMS_controller extends CI_Controller {
        $twilio_client = new Client($sid,$token);
        $phone = $this->config->item('phone');
 
-       $phoneNumbers = array('+916369086095','+918939535307');
-       
+    //    $phoneNumbers = array('+916369086095','+918939535307');
+    
+        $phoneNumbers = '+918939535307';
        try {
            foreach ($phoneNumbers as $phoneNumber) {
                $twilio_client->messages->create($phoneNumber, [

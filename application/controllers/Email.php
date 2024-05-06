@@ -14,6 +14,12 @@ class Email extends CI_Controller {
     }
 
     public function index(){
+        $name = '';
+       if ($this->session->has_userdata('name')) {
+           $name = $this->session->userdata('name');
+       }
+       $data['name'] = $name;
+       
         $data['result'] = $this->db->select('email_from, email_to, sent, sent_time')->get('email_log')->result_array();
         $this->load->view('Social_media/email_form', $data);
         // $this->load->view('Landing_page', $data);

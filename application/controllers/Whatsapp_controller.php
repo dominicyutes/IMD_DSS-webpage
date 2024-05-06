@@ -22,7 +22,12 @@ class Whatsapp_controller extends CI_Controller {
     }
 
     public function index() {
-       $this->load->view('Social_media/Whatsapp_view');
+        $name = '';
+       if ($this->session->has_userdata('name')) {
+           $name = $this->session->userdata('name');
+       }
+       $data['name'] = $name;
+       $this->load->view('Social_media/Whatsapp_view',$data);
     }
 
     public function Whatsapp_map() {
@@ -56,22 +61,31 @@ class Whatsapp_controller extends CI_Controller {
     }
 
     public function Whatsapp_post() {
-
         $this->load->config('twilio_whatsapp');
         $sid = $this->config->item('sid');
         $token = $this->config->item('token');
+
+        // $imagePath = base_url('assets/Whatsapp_img/map_img_2024_04_29_08_35_08.jpeg');
+        // echo $imagePath;
+
+         // Read image file into a string
+        //  $imageData = file_get_contents($imagePath);
+
+         // Convert image data to base64
+        //  $base64Image = base64_encode($imageData);
+        //  echo $base64Image;
         
         $twilio = new Client($sid, $token);
-        echo $this->folder_path;
+        // echo $this->folder_path;
         // echo $this->img_path;
         // echo "Message SID: " . $message->sid . "<br>";
 
         try {
             $message = $twilio->messages->create('whatsapp:+918939535307', [
                 // "mediaUrl" => [$this->img_path], 
-                // "mediaUrl" => ["https://buffer.com/library/content/images/2023/10/free-images.jpg"],
-                
-                "mediaUrl" => ["http://localhost/IMD_DSS-webpage/assets/Whatsapp_img/map_img_2024_04_29_08_35_08.jpeg"],
+                "mediaUrl" => ["https://i.pinimg.com/564x/af/20/d1/af20d15ea56036468b74f83aaf157b03.jpg"],
+                // "mediaUrl" => [$base64Image], 
+                // "mediaUrl" => ["http://iru-data.rimes.int/DSS/facebookAPI/src/map_img.jpeg"],
                 // "mediaUrl" => [base_url('assets/Whatsapp_img/map_img_2024_04_29_08_35_08.jpeg')],
                 'from' => "whatsapp:+14155238886",
                 "body" => "IMD Weather Updates for May 10, 2024. Details: http://weather-imd-test.rimes.int/"
@@ -83,10 +97,11 @@ class Whatsapp_controller extends CI_Controller {
         }
     }
 
-    public function test(){
-        $x = base_url('assets/Whatsapp_img/map_img_2024_04_29_08_35_08.jpeg');
-        echo $x;
-    }
+
+    // public function test(){
+    //     $x = base_url('assets/Whatsapp_img/map_img_2024_04_29_08_35_08.jpeg');
+    //     echo $x;
+    // }
 
 }
 ?>
