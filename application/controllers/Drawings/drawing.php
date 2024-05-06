@@ -1,44 +1,32 @@
 <?php
 
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') or exit ('No direct script access allowed');
 
 
 
-class Drawing extends CI_Controller
-{
+class Drawing extends CI_Controller{
 
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
         // Load your model
         $this->load->model('Drawings_model');
     }
 
-    public function index()
-    {
+    public function index() {
         $this->load->view('homePage');
     }
 
-    public function fetch_names()
-    {
+    public function fetch_names() {
+        // Retrieve the date parameter from the AJAX request
         $selectedDate = $this->input->get('date');
 
+        // Load the model
         $this->load->model('Drawings_model');
 
+        // Call the model method to get names for the selected date
         $names = $this->Drawings_model->get_names($selectedDate);
 
-        header('Content-Type: application/json');
-        echo json_encode($names);
-    }
-
-    public function fetch_names_odisha()
-    {
-        $selectedDate = $this->input->get('date');
-
-        $this->load->model('Drawings_model');
-
-        $names = $this->Drawings_model->get_names_odisha_mc($selectedDate);
-
+        // Send JSON response
         header('Content-Type: application/json');
         echo json_encode($names);
     }
@@ -70,37 +58,8 @@ class Drawing extends CI_Controller
         }
     }
 
-    public function save_coordinates_odisha()
-    {
-        // Get POST data
-        $json_data = file_get_contents('php://input');
 
-        // Decode JSON data
-        $data = json_decode($json_data, true);
-
-        // Debugging: Echo the received data
-        // echo "<pre>";
-        // echo "Received data from view page:\n";
-        // var_dump($data);f10
-        // echo "</pre>";
-
-        // Load model
-        // $this->load->model('Drawings_model');
-
-        // Call model method to insert data into PostgreSQL table
-        $result = $this->Drawings_model->insert_coordinates_odisha($data);
-
-        // Check if data insertion was successful
-        if ($result) {
-            echo "Coordinates saved successfully";
-        } else {
-            echo "Error saving coordinates";
-        }
-    }
-
-
-    public function get_lat_long()
-    {
+    public function get_lat_long() {
         // Get data from AJAX request
         $date = $this->input->post('date');
         $name = $this->input->post('name');
@@ -112,22 +71,8 @@ class Drawing extends CI_Controller
         echo json_encode($result);
     }
 
-    public function get_lat_long_odisha()
-    {
-        // Get data from AJAX request
-        $date = $this->input->post('date');
-        $name = $this->input->post('name');
 
-        // Call model function to get latitude and longitude
-        $result = $this->Drawings_model->get_lat_long_from_database_odisha($date, $name);
-
-        // Return JSON response
-        echo json_encode($result);
-    }
-
-
-    public function delete_row()
-    {
+    public function delete_row() {
 
         // Get parameters from the AJAX request
         $date = $this->input->post('date');
@@ -142,40 +87,6 @@ class Drawing extends CI_Controller
             echo "No matching row found";
         }
     }
-
-
-
-    public function fetch_name_odisha()
-    {
-        $selectedDate = $this->input->get('date');
-
-
-        $names = $this->Drawings_model->get_names_odisha($selectedDate);
-
-        header('Content-Type: application/json');
-
-        if ($names !== false) {
-            echo json_encode($names);
-        } else {
-            http_response_code(500);
-            echo json_encode(array('error' => 'Error fetching names for the selected date'));
-        }
-    }
-
-    public function get_names_odisha($date)
-    {
-        $query = $this->db->select('name, latitude, longitude')
-            ->from('weather_inference_drawings_mc_odisha')
-            ->where('date', $date)
-            ->get();
-
-        if ($query->num_rows() > 0) {
-            return $query->result_array();
-        } else {
-            return false;
-        }
-    }
-
-
+    
 
 }

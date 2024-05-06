@@ -42,28 +42,13 @@
     </script>
 
     <style>
-    .main_class {
+    body {
         width: 100%;
         height: 100vh;
         zoom: 80%;
         overflow: hidden;
         font-family: "Lato", sans-serif;
     }
-
-    /* .main_class {
-        margin-right: 10px;
-        margin-left: 180px;
-        padding: 0px 10px;
-        margin-top: -856px;
-    } */
-
-    .main {
-        margin-right: 10px;
-        margin-left: 180px;
-        padding: 0px 10px;
-        margin-top: -856px;
-    }
-
 
     #map {
         margin-top: 1%;
@@ -75,177 +60,153 @@
 </head>
 
 <body>
-    <div class="fixedHead">
-        <!-- Landing_page title logo> -->
-        <?php $this->load->view('Menu/Landing_page_top'); ?>
-    </div>
+    <div style="height: 100%;">
+        <div class="fixedHead">
+            <!-- Landing_page title logo> -->
+            <?php $this->load->view('Menu/Landing_page_top'); ?>
+        </div>
 
 
-    <div class="row">
-        <!-- Landing_page sidebar> -->
-        <?php $this->load->view('Menu/Landing_page_side'); ?>
-        <div style="height: 100%;">
+        <div class="row">
+            <!-- Landing_page sidebar> -->
+            <?php $this->load->view('Menu/Landing_page_side'); ?>
 
-            <div class="main">
-                <h1 style="margin-top: 20px; margin-left: 400px;">Rainfall Validation INDIA</h1>
-                <div class="content-wrapper">
-                    <section class="content">
-                        <div class="box box-info">
-                            <div class="box-body">
-                                <div class="active tab-pane" id="showmap">
-                                    <div class="post">
-                                        <div id="dialog_temp_graph_extension_chart" style="display: none;">
-                                            <div id="temp_graph_extension_chart" class="dialog"></div>
-                                        </div>
-                                        <div class="box-body">
-                                            <div style="border:#333 1px ridge; overflow: hidden;">
-                                                <div id="map_canvas"
-                                                    style="width:100%; height: 721px; float: left;z-index: 0;"
-                                                    align="center"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
 
-                <!-- editing content starts here -->
-                <!-- <div class="main_class" style="width: 88%">
+            <!-- editing content starts here -->
+            <div class="col-9" style="width: 88%">
                 <div id="map" class="map-canvas"></div>
-                <div>
-                    <div>
+                <div class="row">
+                    <div class="col-8">
                         <h2 style="font-style: italic;">Post to Facebook</h2>
                     </div>
-                    <div>
+                    <div class="col-4">
                         <h5 style="font-style: italic;">Note: 1. Click Get Picture and 2. Click POST</h5>
                     </div>
                 </div>
-                <div>
-                    <div>
+                <div class="row">
+                    <div class="col">
                         <button class="btn btn-primary" id="getPic">Get Picture</button>
                         <button class="btn btn-primary" id="postToFacebookBtn">POST</button>
                     </div>
                 </div>
                 </span>
-            </div> -->
-                <!-- editing content ends here -->
-
             </div>
+            <!-- editing content ends here -->
+
         </div>
+    </div>
 
-        <script>
-        // let map = L.map('map').setView([22.79459, 80.06406], 5);
+    <script>
+    // let map = L.map('map').setView([22.79459, 80.06406], 5);
 
-        let map = L.map('map', {
-            renderer: L.canvas({
-                padding: 0
-            }),
-            zoom: 5,
-            center: [22.79459, 80.06406],
-        });
+    let map = L.map('map', {
+        renderer: L.canvas({
+            padding: 0
+        }),
+        zoom: 5,
+        center: [22.79459, 80.06406],
+    });
 
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
 
-        // Add the GeoJSON data to the map
-        _dist_geojson = "DATA/INDIA_STATE.json";
-        var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
-            style: function(feature) {
-                return {
-                    color: 'black',
-                    // fillColor: 'transparent',
-                    opacity: 0.5,
-                    fillOpacity: 0.0,
-                    weight: 2,
-                };
-            }
-        });
-
-
-        geojson.on('data:loaded', function() {
-            geojson.addTo(map);
-        });
-        // 
-        function generateColorFromString(str) {
-            var hash = 0;
-            for (var i = 0; i < str.length; i++) {
-                hash = str.charCodeAt(i) + ((hash << 5) - hash);
-            }
-            var color = '#';
-            for (var j = 0; j < 3; j++) {
-                var value = (hash >> (j * 8)) & 0xFF;
-                color += ('00' + value.toString(16)).substr(-2);
-            }
-            return color;
-        }
-
-        // getin image name from contoler
-        let get_filename;
-        if (get_filename) {
-            console.log(get_filename, "get_filename");
-        }
-
-        //
-        document.getElementById('getPic').addEventListener('click', function() {
-            html2canvas($("#map"), {
-                useCORS: true,
-                allowTaint: false,
-                onrendered: function(canvas) {
-                    var image = Canvas2Image.convertToPNG(canvas);
-                    var image_data = $(image).attr('src');
-                    var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
-                    var filename = "map_img_" + random_name + ".jpeg";
-                    get_filename = filename;
-                    console.log(get_filename, "get_filename");
-
-                    $.ajax({
-                        type: "POST",
-                        url: "<?php echo site_url(); ?>Facebook_post/getPic",
-                        data: {
-                            base64: image_data,
-                            r_file_name: random_name,
-                            filename: filename
-                        },
-                        success: function(response) {
-                            var data = JSON.parse(response);
-                            console.log(data.status, "data.status");
-                            if (data.status === 'success') {
-                                console.log("Post button");
-                            } else {
-                                alert("Something went wrong, please check it later");
-                            }
-                        }
-                    });
-                }
-            });
-        });
-
-        document.getElementById('postToFacebookBtn').addEventListener('click', function() {
-            var filename = get_filename;
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', '<?php echo base_url("Facebook_post/post_info"); ?>', true);
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    console.log("Response from server:", xhr.responseText);
-                    var regex = /"id":"(\d+)"/;
-                    var match = xhr.responseText.match(regex);
-                    var idPart = match ? match[0] : "No ID found";
-                    if (idPart !== "No ID found") {
-                        alert("Successfully posted in FB with ID: " + idPart);
-                    }
-                } else {
-                    console.error('Request failed. Error: ' + xhr.status);
-                }
+    // Add the GeoJSON data to the map
+    _dist_geojson = "DATA/INDIA_STATE.json";
+    var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
+        style: function(feature) {
+            return {
+                color: 'black',
+                // fillColor: 'transparent',
+                opacity: 0.5,
+                fillOpacity: 0.0,
+                weight: 2,
             };
+        }
+    });
 
-            xhr.send('filename=' + filename);
+
+    geojson.on('data:loaded', function() {
+        geojson.addTo(map);
+    });
+    // 
+    function generateColorFromString(str) {
+        var hash = 0;
+        for (var i = 0; i < str.length; i++) {
+            hash = str.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        var color = '#';
+        for (var j = 0; j < 3; j++) {
+            var value = (hash >> (j * 8)) & 0xFF;
+            color += ('00' + value.toString(16)).substr(-2);
+        }
+        return color;
+    }
+
+    // getin image name from contoler
+    let get_filename;
+    if (get_filename) {
+        console.log(get_filename, "get_filename");
+    }
+
+    //
+    document.getElementById('getPic').addEventListener('click', function() {
+        html2canvas($("#map"), {
+            useCORS: true,
+            allowTaint: false,
+            onrendered: function(canvas) {
+                var image = Canvas2Image.convertToPNG(canvas);
+                var image_data = $(image).attr('src');
+                var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
+                var filename = "map_img_" + random_name + ".jpeg";
+                get_filename = filename;
+                console.log(get_filename, "get_filename");
+
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo site_url(); ?>Facebook_post/getPic",
+                    data: {
+                        base64: image_data,
+                        r_file_name: random_name,
+                        filename: filename
+                    },
+                    success: function(response) {
+                        var data = JSON.parse(response);
+                        console.log(data.status, "data.status");
+                        if (data.status === 'success') {
+                            console.log("Post button");
+                        } else {
+                            alert("Something went wrong, please check it later");
+                        }
+                    }
+                });
+            }
         });
-        </script>
+    });
+
+    document.getElementById('postToFacebookBtn').addEventListener('click', function() {
+        var filename = get_filename;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '<?php echo base_url("Facebook_post/post_info"); ?>', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                console.log("Response from server:", xhr.responseText);
+                var regex = /"id":"(\d+)"/;
+                var match = xhr.responseText.match(regex);
+                var idPart = match ? match[0] : "No ID found";
+                if (idPart !== "No ID found") {
+                    alert("Successfully posted in FB with ID: " + idPart);
+                }
+            } else {
+                console.error('Request failed. Error: ' + xhr.status);
+            }
+        };
+
+        xhr.send('filename=' + filename);
+    });
+    </script>
 </body>
 
 
