@@ -39,15 +39,15 @@ class HomePage extends CI_Controller
     }
 
     // 
-    public function Menu(){
-       $name = '';
-       if ($this->session->has_userdata('name')) {
-           $name = $this->session->userdata('name');
-       }
-       $data['name'] = $name;
+    // public function Menu(){
+    //    $name = '';
+    //    if ($this->session->has_userdata('name')) {
+    //        $name = $this->session->userdata('name');
+    //    }
+    //    $data['name'] = $name;
 
-       $this->load->view('Menu/Landing_page', $data);
-    }
+    //    $this->load->view('Menu/Landing_page', $data);
+    // }
 
     public function submitForm()
     {
@@ -259,8 +259,15 @@ class HomePage extends CI_Controller
 
     
 
+    // 
     public function Menu(){
-        $this->load->view('Menu/Landing_page');
+       $name = '';
+       if ($this->session->has_userdata('name')) {
+           $name = $this->session->userdata('name');
+       }
+       $data['name'] = $name;
+
+       $this->load->view('Menu/Landing_page', $data);
     }
 
     public function login_name()
