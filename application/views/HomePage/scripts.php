@@ -5119,60 +5119,79 @@ new WeatherInferenceControl().addTo(map);
 
     //drawing co-ordinates start
     var getCoordinatesButton = L.control({
-        position: 'topleft'
-    });
-    getCoordinatesButton.onAdd = function(map) {
-        var div = L.DomUtil.create('div', 'leaflet-bar');
-        div.innerHTML =
-            '<button id="getCoordinatesButton" style="background-color: white; border: 0px solid black; position: absolute; top: -195px; right: -95px;"><i class="fa fa-download"></button>';
+    position: 'topleft'
+});
 
-        div.firstChild.addEventListener('click', function() {
-            var name = prompt('Enter a name for the coordinates:');
-            if (name !== null && name.trim() !== '') {
-                var allCoordinates = {
-                    latitudes: [],
-                    longitudes: []
+getCoordinatesButton.onAdd = function(map) {
+    var div = L.DomUtil.create('div', 'leaflet-bar');
+    div.innerHTML =
+        '<button id="getCoordinatesButton" style="background-color: white; border: 0px solid black; position: absolute; top: -195px; right: -95px;"><i class="fa fa-download"></i></button>';
+
+    div.firstChild.addEventListener('click', function() {
+        var name = prompt('Enter a name for the coordinates:');
+        if (name !== null && name.trim() !== '') {
+            var allCoordinates = {
+                latitudes: [],
+                longitudes: []
+            };
+            drawnItems.eachLayer(function(layer) {
+                if (layer instanceof L.Polyline) {
+                    var coordinates = layer.getLatLngs();
+                    coordinates.forEach(function(latlng) {
+                        allCoordinates.latitudes.push(latlng.lat);
+                        allCoordinates.longitudes.push(latlng.lng);
+                    });
+                }
+            });
+
+            if (allCoordinates.latitudes.length > 0 && allCoordinates.longitudes.length > 0) {
+                var currentDate = new Date().toISOString().split('T')[0];
+                var data = {
+                    name: name,
+                    latitudes: allCoordinates.latitudes,
+                    longitudes: allCoordinates.longitudes,
+                    date: currentDate
                 };
-                drawnItems.eachLayer(function(layer) {
-                    if (layer instanceof L.Polyline) {
-                        var coordinates = layer.getLatLngs();
-                        coordinates.forEach(function(latlng) {
-                            allCoordinates.latitudes.push(latlng.lat);
-                            allCoordinates.longitudes.push(latlng.lng);
-                        });
+
+                var jsonData = JSON.stringify(data);
+
+                // Determine the AJAX URL based on the entered name
+                var ajaxUrl;
+                <?php if (isset($name)): ?>
+                    if ('<?php echo $name; ?>' === "Super Admin HQ") {
+                        ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates'); ?>";
+                    } else if ('<?php echo $name; ?>' === "MC ODISHA") {
+                        ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates_odisha'); ?>";
                     }
-                });
+                <?php endif; ?>
 
-                if (allCoordinates.latitudes.length > 0 && allCoordinates.longitudes.length > 0) {
-                    var currentDate = new Date().toISOString().split('T')[0];
-                    var data = {
-                        name: name,
-                        latitudes: allCoordinates.latitudes,
-                        longitudes: allCoordinates.longitudes,
-                        date: currentDate
-                    };
-
-                    var jsonData = JSON.stringify(data);
+                if (ajaxUrl) {
+                    // Make the AJAX POST request
                     $.ajax({
                         type: 'POST',
-                        url: "<?php echo base_url('Drawings/Drawing/save_coordinates'); ?>",
+                        url: ajaxUrl,
                         data: jsonData,
                         success: function(response) {
                             console.log(response);
                         },
                         error: function(xhr, status, error) {
-                            console.error('error', error);
+                            console.error('Error:', error);
                         }
                     });
                 } else {
-                    alert('No coordinates available. Draw a polyline first.');
+                    console.error('Invalid name or AJAX URL not determined.');
                 }
+            } else {
+                alert('No coordinates available. Draw a polyline first.');
             }
-        });
+        }
+    });
 
-        return div;
-    };
-    getCoordinatesButton.addTo(map);
+    return div;
+};
+
+getCoordinatesButton.addTo(map);
+
     //drawing co-ordinates end
 
 

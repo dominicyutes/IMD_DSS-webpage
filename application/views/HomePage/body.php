@@ -111,26 +111,120 @@
                 </div>
                 </form>
                 <div style="display: flex;justify-content: space-around;">
-                <button id="submitButton" onclick="SubmitForm()" class="submitBtn">Submit</button>
+                    <button id="submitButton" onclick="SubmitForm()" class="submitBtn">Submit</button>
                     <button class="submitBtn" onclick="confirmDelete()" id="deleteDrawing">Delete</button>
                     <button class="submitBtn" onclick="toggleDrawing()" class="multipleBtn">Active Multiple</button>
                     <button class="submitBtn" onclick="eraseDrawing()" id="eraseDrawing">Erase</button>
                 </div>
                 <div>
-                <button class="submitBtn" onclick="window.location.href='<?php echo base_url('Rainfall_Validation_INDIA'); ?>'" style="margin-top: 40px; width: 270px;">HQ ALL MC'S</button>
+                    <?php
+                    if (isset($name)) {
+                        if ($name === "Super Admin HQ") {
+                            echo '<button id="login_button" class="submitBtn" onclick="toggleVisibility()" style="margin-top: 30px; width: 270px;">VIEW ALL MC\'S</button>';
+                        } else if ($name === "MC ODISHA") {
+                            echo '<style>#login_button { display: none; }</style>';
+                            echo '<button id="login_button_odisha" class="submitBtn" onclick="toggleVisibility_odisha()" style="margin-top: 30px; width: 270px;">MC HEAD</button>';
+                        }
+                    }
+                    ?>
                 </div>
-                <div
-                    style="position: absolute; bottom: 0; background-color: #f4fcff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 300px; font-family: 'Times New Roman', Times, serif;">
-                    <h4
-                        style="background-color: #d4e6ff; padding: 10px; margin-top: 0; border-top-left-radius: 8px; border-top-right-radius: 8px; text-align: center;">
-                        Note</h4>
-                    <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; text-align: justify;">
-                        <span style="font-size: 15px; line-height: 1.6; color: #333;">
-                            This option aims to present a comprehensive summary of the waether inference data
-                            for drawings. Please ensure that all fields are filled in to access the information.
-                        </span>
-                    </ul>
+                <br>
+                <div id="contentDiv"
+                    style="width: 290px; height: 518px; border: 3px solid #244c7e; overflow: auto; padding: 10px; display: none;">
+                    <div
+                        style="width: 268px; padding: 20px; border: 2px solid #ccc; border-radius: 5px; display: flex; justify-content: space-between; align-items: center;">
+                        <label for="dropdown" style="margin-right: 10px;">Select an MC:</label>
+                        <select id="dropdown" style="flex: 1; padding: 8px;" onchange="showSelectedSection()">
+                            <option value="all">ALL MC's</option>
+                            <option value="mc-odisha">MC Odisha</option>
+                            <option value="mc-delhi">MC Delhi</option>
+                            <option value="mc-andhra">MC Andhra</option>
+                        </select>
+                    </div>
 
+                    <div
+                        style="width: 268px; height: 50px; border: 1px solid #4c3248; overflow: auto; padding: 10px; display: flex; justify-content: space-between; align-items: center;">
+                        <i style="font-size: 30px;" class="fa-solid fa-backward" onclick="startBackward()"></i>
+                        <i id="playButton" class="fa fa-play"
+                            style="font-size: 30px; margin-left: 10px; cursor: pointer;" onclick="startPlay()"></i>
+                        <i id="pauseButton" class="fa-solid fa-pause"
+                            style="font-size: 30px; display: none; cursor: pointer;" onclick="startPause()"></i>
+
+                        <i style="font-size: 30px;" class="fa-solid fa-forward" onclick="startForward()"></i>
+
+                    </div>
+
+
+                    <div id="all">
+                        <div id="mc-odisha"
+                            style="width: 268px; height: 250px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
+                            <div style="color: #333; font-family: Arial, sans-serif;">
+                                <div style="display: flex; justify-content: center;">MC ODISHA</div>
+                                <div>
+                                    <label for="start_date_odisha" class="dateDDLabel"
+                                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
+                                    <input type="date" id="start_date_odisha" class="dateDD"
+                                        onchange="fetchOdishaNames()">
+                                </div>
+                            </div>
+                            <div id="drawings_data_odisha"></div>
+                        </div>
+                        <div id="mc-odisha"
+                            style="width: 268px; height: 250px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
+                            <div style="color: #333; font-family: Arial, sans-serif;">
+                                <div style="display: flex; justify-content: center;">MC ODISHA</div>
+                                <div>
+                                    <label for="start_date_odisha" class="dateDDLabel"
+                                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
+                                    <input type="date" id="start_date_odisha" class="dateDD"
+                                        onchange="fetchOdishaNames()">
+                                </div>
+                            </div>
+                            <div id="drawings_data_odisha"></div>
+                        </div>
+
+
+                        <div id="mc-delhi"
+                            style="width: 268px; height: 250px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
+                            <div style="color: #333; font-family: Arial, sans-serif;">
+                                <div style="display: flex; justify-content: center;">MC DELHI</div>
+                                <div>
+                                    <label name="start_dates" class="dateDDLabel"
+                                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
+                                    <input type="date" id="start_dates" class="dateDD">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="mc-andhra"
+                            style="width: 268px; height: 250px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
+                            <div style="color: #333; font-family: Arial, sans-serif;">
+                                <div style="display: flex; justify-content: center;">MC ANDHRA</div>
+                                <div>
+                                    <label name="start_dates" class="dateDDLabel"
+                                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
+                                    <input type="date" id="start_dates" class="dateDD">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="contentDiv_odisha"
+                    style="width: 290px; height: 480px; border: 3px solid #244c7e; overflow: auto; padding: 10px; display: none;">
+
+                    <div id="mc-odisha"
+                        style="width: 268px; height: 250px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
+                        <div style="color: #333; font-family: Arial, sans-serif;">
+                            <div style="display: flex; justify-content: center;">MC ODISHA</div>
+                            <div>
+                                <label for="start_date_odisha" class="dateDDLabel"
+                                    style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
+                                <input type="date" id="start_date_odisha" class="dateDD" onchange="fetchOdishaNames()">
+                            </div>
+                        </div>
+                        <div id="drawings_data_odisha"></div>
+                    </div>
                 </div>
             </div>
 
@@ -228,15 +322,15 @@
                                 style="color: #2c5383;font-family: 'Archivo', sans-serif;font-size: 20px;font-weight: bold;margin-left: 6%;margin-top: 1%; font-size: 20px">Create
                                 Macro</span>
                             <?php if ($user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9"): ?>
-                            <a href="<?php echo base_url();?>HomePage/fetch_names" id="userFilterLink">
-                                <i title="User Filter" style="margin: 16px 15px 0 27px;"
-                                    class="fa-regular fa-user fa-lg"></i>
-                            </a>
-                            <!--  -->
-                            <a href="<?php echo base_url();?>HomePage/displayDeletedMacros">
-                                <i title="Deleted MacroGroup" style="margin: 16px 22px 0 15px;"
-                                    class="fa-regular fa-trash-can fa-lg"></i>
-                            </a>
+                                <a href="<?php echo base_url(); ?>HomePage/fetch_names" id="userFilterLink">
+                                    <i title="User Filter" style="margin: 16px 15px 0 27px;"
+                                        class="fa-regular fa-user fa-lg"></i>
+                                </a>
+                                <!--  -->
+                                <a href="<?php echo base_url(); ?>HomePage/displayDeletedMacros">
+                                    <i title="Deleted MacroGroup" style="margin: 16px 22px 0 15px;"
+                                        class="fa-regular fa-trash-can fa-lg"></i>
+                                </a>
                             <?php endif; ?>
                         </div>
                         <div style="overflow: auto;" id="showCreatedMacro"></div>
@@ -334,11 +428,11 @@
                                         id="subBtn" onclick="submitForm()" />
 
                                     <?php if (isset($id)): ?>
-                                    <input type="button" value="Update" style="display: none; font-size: 18px"
-                                        class="macSubmitBtn" id="updBtn" onclick="updateForm(<?php echo $id; ?>)" />
+                                        <input type="button" value="Update" style="display: none; font-size: 18px"
+                                            class="macSubmitBtn" id="updBtn" onclick="updateForm(<?php echo $id; ?>)" />
                                     <?php else: ?>
-                                    <input type="button" value="Update" style="display: none; font-size: 18px"
-                                        class="macSubmitBtn" id="updBtn" onclick="updateForm()" />
+                                        <input type="button" value="Update" style="display: none; font-size: 18px"
+                                            class="macSubmitBtn" id="updBtn" onclick="updateForm()" />
                                     <?php endif; ?>
 
                                     <input type="button" value="Cancel" style="display: none; font-size: 18px"
@@ -426,14 +520,14 @@
                     <!-- USERNAME -->
                     <span>
                         <?php if (!empty($name)): ?>
-                        <strong class="username" style="color: black;">&nbsp;&nbsp;&nbsp;USER:
-                            <?= ucfirst($name) ?>!!</strong>
+                            <strong class="username" style="color: black;">&nbsp;&nbsp;&nbsp;USER:
+                                <?= ucfirst($name) ?>!!</strong>
                         <?php endif; ?>
                     </span>
 
                     <!-- LOGOUT -->
                     <span>&nbsp;&nbsp;&nbsp;
-                        <span class="logOut_btn"><a href="<?php echo base_url();?>Login/logout">LogOut</a>
+                        <span class="logOut_btn"><a href="<?php echo base_url(); ?>Login/logout">LogOut</a>
                         </span>
                     </span>
                 </span>
@@ -871,3 +965,274 @@
             </div>
         </div>
 </body>
+
+<script>
+
+    var today = new Date().toISOString().slice(0, 10);
+    document.getElementById('start_date_odisha').value = today;
+
+
+    function toggleVisibility() {
+        var contentDiv = document.getElementById("contentDiv");
+        if (contentDiv.style.display === "none") {
+            contentDiv.style.display = "block";
+        } else {
+            contentDiv.style.display = "none";
+        }
+    }
+
+
+    function showSelectedSection() {
+        var dropdown = document.getElementById("dropdown");
+        var selectedValue = dropdown.value;
+
+        var sections = document.querySelectorAll('[id^="mc-"]');
+
+        sections.forEach(function (section) {
+            if (selectedValue === "all") {
+                section.style.display = "block";
+            } else {
+                if (section.id === selectedValue) {
+                    section.style.display = "block";
+                } else {
+                    section.style.display = "none";
+                }
+            }
+        });
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var today = new Date().toISOString().slice(0, 10);
+        document.getElementById('start_date_odisha').value = today;
+
+        fetchOdishaNames();
+    });
+
+
+
+    var isPlaying = false;
+    var index = 0;
+    var timeouts = [];
+
+    function startPlay() {
+        document.getElementById('playButton').style.display = 'none';
+        document.getElementById('pauseButton').style.display = 'inline';
+        if (!isPlaying) {
+            isPlaying = true;
+            triggerNextCheckbox();
+        }
+    }
+
+    function startPause() {
+        document.getElementById('pauseButton').style.display = 'none';
+        document.getElementById('playButton').style.display = 'inline';
+        if (isPlaying) {
+            isPlaying = false;
+            clearTimeouts();
+        }
+    }
+
+    function startForward() {
+        if (!isPlaying) {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            // Uncheck the currently active checkbox
+            if (index >= 0 && index < checkboxes.length) {
+                checkboxes[index].checked = false;
+                checkboxes[index].dispatchEvent(new Event('change'));
+
+            }
+            // Move one step forward
+            index++;
+            if (index < checkboxes.length) {
+                checkboxes[index].checked = true;
+                checkboxes[index].dispatchEvent(new Event('change'));
+            } else {
+                // Reset index if out of bounds
+                index = checkboxes.length - 1;
+            }
+        }
+    }
+
+    function startBackward() {
+        if (!isPlaying) {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            // Uncheck the currently active checkbox
+            if (index >= 0 && index < checkboxes.length) {
+                checkboxes[index].checked = false;
+                checkboxes[index].dispatchEvent(new Event('change'));
+            }
+            // Move one step backward
+            index--;
+            if (index >= 0) {
+                checkboxes[index].checked = true;
+                checkboxes[index].dispatchEvent(new Event('change'));
+            } else {
+                // Reset index if out of bounds
+                index = 0;
+            }
+        }
+    }
+
+    function triggerNextCheckbox() {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        if (index < checkboxes.length && isPlaying) {
+            checkboxes[index].checked = true;
+            checkboxes[index].dispatchEvent(new Event('change'));
+
+            var timeoutId = setTimeout(function () {
+                checkboxes[index].checked = false;
+                checkboxes[index].dispatchEvent(new Event('change'));
+                index++;
+                triggerNextCheckbox();
+            }, 3000);
+
+            timeouts.push(timeoutId);
+        } else {
+            isPlaying = false;
+            index = 0;
+            timeouts = [];
+        }
+    }
+
+    function clearTimeouts() {
+        timeouts.forEach(function (timeoutId) {
+            clearTimeout(timeoutId);
+        });
+        timeouts = [];
+    }
+
+
+
+
+
+
+
+
+    // Array to store references to drawn polylines
+    var drawnPolylines = [];
+
+    // Function to fetch and display names with checkboxes
+    function fetchOdishaNames() {
+        var selectedDate = document.getElementById("start_date_odisha").value;
+
+        $.ajax({
+            url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha'); ?>",
+            type: "GET",
+            data: {
+                date: selectedDate
+            },
+            success: function (data) {
+                var weatherDataDiv = document.getElementById("drawings_data_odisha");
+                weatherDataDiv.innerHTML = "";
+
+                if (data && data.length > 0) {
+                    var checkboxContainer = document.createElement("div");
+
+                    data.forEach(function (item, index) {
+                        if (item && item.name && item.latitudes && item.longitudes) {
+                            var checkbox = document.createElement("input");
+                            checkbox.type = "checkbox";
+                            checkbox.id = "checkbox_" + index;
+                            checkbox.value = item.name;
+
+                            var label = document.createElement("label");
+                            label.textContent = item.name;
+                            label.setAttribute("for", "checkbox_" + index);
+
+                            checkboxContainer.appendChild(checkbox);
+                            checkboxContainer.appendChild(label);
+                            checkboxContainer.appendChild(document.createElement("br"));
+
+                            // Attach event listener to checkbox
+                            checkbox.addEventListener("change", function () {
+                                if (checkbox.checked) {
+                                    var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
+                                    var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
+
+                                    // Draw polyline when checkbox is checked
+                                    drawPolylines(latitudes, longitudes, item.name);
+                                } else {
+                                    // Remove polyline when checkbox is unchecked
+                                    clearPolyline(item.name);
+                                }
+                            });
+                        }
+                    });
+
+                    weatherDataDiv.appendChild(checkboxContainer);
+                } else {
+                    weatherDataDiv.textContent = "No drawings found for the selected date.";
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching names:", error);
+                var weatherDataDiv = document.getElementById("drawings_data_odisha");
+                weatherDataDiv.textContent = "Error fetching names. Please try again later.";
+            }
+        });
+    }
+
+    // Function to draw a polyline on the map
+    function drawPolylines(latitudes, longitudes, name) {
+        // Check if a polyline with the same name already exists
+        var existingPolyline = drawnPolylines.find(function (polyline) {
+            return polyline.options.name === name;
+        });
+
+        if (existingPolyline) {
+            // If the polyline already exists, simply show it
+            existingPolyline.addTo(map);
+        } else {
+            // Create a new polyline
+            var polylineCoords = [];
+            for (var i = 0; i < latitudes.length; i++) {
+                polylineCoords.push([parseFloat(latitudes[i]), parseFloat(longitudes[i])]);
+            }
+
+            var polyline = L.polyline(polylineCoords, {
+                color: getRandomColor(),
+                weight: 3,
+                opacity: 0.7,
+                name: name // Assign a name to the polyline for identification
+            });
+
+            drawnPolylines.push(polyline); // Store the polyline reference
+            polyline.addTo(map); // Add the polyline to the map
+        }
+    }
+
+    // Function to clear a specific polyline from the map
+    function clearPolyline(name) {
+        var polylineToRemoveIndex = drawnPolylines.findIndex(function (polyline) {
+            return polyline.options.name === name;
+        });
+
+        if (polylineToRemoveIndex !== -1) {
+            var polylineToRemove = drawnPolylines[polylineToRemoveIndex];
+            map.removeLayer(polylineToRemove); // Remove the polyline from the map
+            drawnPolylines.splice(polylineToRemoveIndex, 1); // Remove the polyline from the array
+        }
+    }
+
+    // Function to generate a random color
+    function getRandomColor() {
+        var r = Math.floor(Math.random() * 128);
+        var g = Math.floor(Math.random() * 128);
+        var b = Math.floor(Math.random() * 128);
+        return 'rgb(' + r + ',' + g + ',' + b + ')';
+    }
+
+
+
+    function toggleVisibility_odisha() {
+        var contentDiv = document.getElementById("contentDiv_odisha");
+        if (contentDiv.style.display === "none") {
+            contentDiv.style.display = "block";
+        } else {
+            contentDiv.style.display = "none";
+        }
+    }
+
+
+</script>

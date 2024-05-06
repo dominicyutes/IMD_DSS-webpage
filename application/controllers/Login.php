@@ -74,7 +74,7 @@ class Login extends CI_Controller
         </script>
         <?php
 
-        redirect('Menu/Landing_page_side');
+        redirect('body');
     }
 
 

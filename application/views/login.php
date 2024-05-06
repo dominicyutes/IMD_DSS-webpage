@@ -101,7 +101,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     value="<?php set_value('email') ?>" />
                                 <?php echo form_error('email') ?>
                             </div>
-                            <a href="<?php echo base_url('Menu/Landing_page.php') ?>?email=<?php echo set_value('email') ?>"></a>
+                            <a href="<?php echo base_url('body.php') ?>?email=<?php echo set_value('email') ?>"></a>
 
                             <div class="form-group">
                                 <label for="password">Password</label>
