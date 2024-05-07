@@ -170,19 +170,6 @@
                             </div>
                             <div id="drawings_data_odisha"></div>
                         </div>
-                        <div id="mc-odisha"
-                            style="width: 268px; height: 250px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
-                            <div style="color: #333; font-family: Arial, sans-serif;">
-                                <div style="display: flex; justify-content: center;">MC ODISHA</div>
-                                <div>
-                                    <label for="start_date_odisha" class="dateDDLabel"
-                                        style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                    <input type="date" id="start_date_odisha" class="dateDD"
-                                        onchange="fetchOdishaNames()">
-                                </div>
-                            </div>
-                            <div id="drawings_data_odisha"></div>
-                        </div>
 
 
                         <div id="mc-delhi"
@@ -215,16 +202,16 @@
                     style="width: 290px; height: 480px; border: 3px solid #244c7e; overflow: auto; padding: 10px; display: none;">
 
                     <div id="mc-odisha"
-                        style="width: 268px; height: 250px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
+                        style="width: 268px; height: 450px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
                         <div style="color: #333; font-family: Arial, sans-serif;">
                             <div style="display: flex; justify-content: center;">MC ODISHA</div>
                             <div>
-                                <label for="start_date_odisha" class="dateDDLabel"
+                                <label for="start_date_odisha_o" class="dateDDLabel"
                                     style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                <input type="date" id="start_date_odisha" class="dateDD" onchange="fetchOdishaNames()">
+                                <input type="date" id="start_date_odisha_o" class="dateDD" onchange="fetchOdishaNames()">
                             </div>
                         </div>
-                        <div id="drawings_data_odisha"></div>
+                        <div id="drawings_data_odisha_o"></div>
                     </div>
                 </div>
             </div>
@@ -970,7 +957,14 @@
 <script>
 
     var today = new Date().toISOString().slice(0, 10);
-    document.getElementById('start_date_odisha').value = today;
+    <?php if (isset($name)): ?>
+        if ('<?php echo $name; ?>' === "Super Admin HQ") {
+            document.getElementById('start_date_odisha').value = today;
+        } else if ('<?php echo $name; ?>' === "MC ODISHA") {
+            document.getElementById('start_date_odisha_o').value = today;
+        }
+    <?php endif; ?>
+    // document.getElementById('start_date_odisha').value = today;
 
 
     function toggleVisibility() {
@@ -1005,7 +999,14 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         var today = new Date().toISOString().slice(0, 10);
-        document.getElementById('start_date_odisha').value = today;
+        <?php if (isset($name)): ?>
+            if ('<?php echo $name; ?>' === "Super Admin HQ") {
+                document.getElementById('start_date_odisha').value = today;
+            } else if ('<?php echo $name; ?>' === "MC ODISHA") {
+                document.getElementById('start_date_odisha_o').value = today;
+            }
+        <?php endif; ?>
+        // document.getElementById('start_date_odisha').value = today;
 
         fetchOdishaNames();
     });
@@ -1115,64 +1116,78 @@
 
     // Function to fetch and display names with checkboxes
     function fetchOdishaNames() {
-        var selectedDate = document.getElementById("start_date_odisha").value;
+    <?php if (isset($name)): ?>
+        var startDateId;
+        var weatherDataDivs;
+        if ('<?php echo $name; ?>' === "Super Admin HQ") {
+            startDateId = "start_date_odisha";
+            weatherDataDivs = document.getElementById("drawings_data_odisha");
+        } else if ('<?php echo $name; ?>' === "MC ODISHA") {
+            startDateId = "start_date_odisha_o";
+            weatherDataDivs = document.getElementById("drawings_data_odisha_o");
+        }
+    <?php endif; ?>
 
-        $.ajax({
-            url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha'); ?>",
-            type: "GET",
-            data: {
-                date: selectedDate
-            },
-            success: function (data) {
-                var weatherDataDiv = document.getElementById("drawings_data_odisha");
-                weatherDataDiv.innerHTML = "";
+    var selectedDate = document.getElementById(startDateId).value;
 
-                if (data && data.length > 0) {
-                    var checkboxContainer = document.createElement("div");
+    $.ajax({
+        url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha'); ?>",
+        type: "GET",
+        data: {
+            date: selectedDate
+        },
+        success: function (data) {
+            var weatherDataDiv = weatherDataDivs;
+            weatherDataDiv.innerHTML = "";
 
-                    data.forEach(function (item, index) {
-                        if (item && item.name && item.latitudes && item.longitudes) {
-                            var checkbox = document.createElement("input");
-                            checkbox.type = "checkbox";
-                            checkbox.id = "checkbox_" + index;
-                            checkbox.value = item.name;
+            if (data && data.length > 0) {
+                var checkboxContainer = document.createElement("div");
 
-                            var label = document.createElement("label");
-                            label.textContent = item.name;
-                            label.setAttribute("for", "checkbox_" + index);
+                data.forEach(function (item, index) {
+                    if (item && item.name && item.latitudes && item.longitudes) {
+                        var checkbox = document.createElement("input");
+                        checkbox.type = "checkbox";
+                        checkbox.id = "checkbox_" + index;
+                        checkbox.value = item.name;
 
-                            checkboxContainer.appendChild(checkbox);
-                            checkboxContainer.appendChild(label);
-                            checkboxContainer.appendChild(document.createElement("br"));
+                        var label = document.createElement("label");
+                        label.textContent = item.name;
+                        label.setAttribute("for", "checkbox_" + index);
 
-                            // Attach event listener to checkbox
-                            checkbox.addEventListener("change", function () {
-                                if (checkbox.checked) {
-                                    var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
-                                    var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
+                        checkboxContainer.appendChild(checkbox);
+                        checkboxContainer.appendChild(label);
+                        checkboxContainer.appendChild(document.createElement("br"));
 
-                                    // Draw polyline when checkbox is checked
-                                    drawPolylines(latitudes, longitudes, item.name);
-                                } else {
-                                    // Remove polyline when checkbox is unchecked
-                                    clearPolyline(item.name);
-                                }
-                            });
-                        }
-                    });
+                        // Attach event listener to checkbox
+                        checkbox.addEventListener("change", function () {
+                            if (checkbox.checked) {
+                                var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
+                                var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
 
-                    weatherDataDiv.appendChild(checkboxContainer);
-                } else {
-                    weatherDataDiv.textContent = "No drawings found for the selected date.";
-                }
-            },
-            error: function (xhr, status, error) {
-                console.error("Error fetching names:", error);
-                var weatherDataDiv = document.getElementById("drawings_data_odisha");
-                weatherDataDiv.textContent = "Error fetching names. Please try again later.";
+                                // Draw polyline when checkbox is checked
+                                drawPolyline(latitudes, longitudes, item.name);
+                            } else {
+                                // Remove polyline when checkbox is unchecked
+                                clearPolyline(item.name);
+                            }
+                        });
+                    }
+                });
+
+                weatherDataDiv.appendChild(checkboxContainer);
+            } else {
+                weatherDataDiv.textContent = "No drawings found for the selected date.";
             }
-        });
-    }
+        },
+        error: function (xhr, status, error) {
+            console.error("Error fetching names:", error);
+            var weatherDataDiv = weatherDataDivs;
+            weatherDataDiv.textContent = "Error fetching names. Please try again later.";
+        }
+    });
+}
+
+
 
     // Function to draw a polyline on the map
     function drawPolylines(latitudes, longitudes, name) {
