@@ -51,55 +51,6 @@
         font-family: "Lato", sans-serif;
     }
 
-    .text {
-        font-family: 'Archivo', sans-serif;
-        font-size: 2em;
-        font-weight: 600;
-        color: white;
-        letter-spacing: 3px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .fixedHead {
-        background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 60px;
-        width: 100%;
-        position: relative;
-    }
-
-    .sidebar {
-        height: 54rem;
-        width: 11%;
-        background-color: #2c5383;
-    }
-
-    .sidebar a {
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 13px;
-        color: white;
-        display: block;
-        width: max-content;
-    }
-
-    .sidebar a:hover {
-        color: white;
-    }
-
-    .dropdown-content {
-        display: none;
-        padding-left: 20px;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
     #map {
         margin-top: 1%;
         height: 100vh;
@@ -128,7 +79,6 @@
                 <h2>Post to Whatsapp</h2>
                 <button type="submit" class="btn btn-primary" id="waCaptureBtn">Get Picture</button>
                 <button type="submit" class="btn btn-primary" id="waSendBtn">Send Message</button>
-                <!-- <button type="submit" class="btn btn-primary" id="test">Test</button> -->
             </div>
             <!-- editing content ends here -->
 
@@ -212,20 +162,6 @@
         };
         xhr.send();
     });
-
-    // document.getElementById('test').addEventListener('click', function() {
-    //     var xhr = new XMLHttpRequest();
-    //     xhr.open('POST', '<?php echo base_url("Whatsapp_controller/test"); ?>', true);
-    //     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    //     xhr.onload = function() {
-    //         if (xhr.status === 200) {
-    //             console.log(xhr.responseText);
-    //         } else {
-    //             console.error('Request failed. Error: ' + xhr.status);
-    //         }
-    //     };
-    //     xhr.send();
-    // });
     </script>
 </body>
 

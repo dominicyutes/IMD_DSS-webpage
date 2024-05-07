@@ -51,8 +51,6 @@
         font-family: "Lato", sans-serif;
     }
 
-
-
     #map {
         margin-top: 1%;
         height: 100vh;
