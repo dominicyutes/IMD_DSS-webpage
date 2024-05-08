@@ -208,7 +208,8 @@
                             <div>
                                 <label for="start_date_odisha_o" class="dateDDLabel"
                                     style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                <input type="date" id="start_date_odisha_o" class="dateDD" onchange="fetchOdishaNames()">
+                                <input type="date" id="start_date_odisha_o" class="dateDD"
+                                    onchange="fetchOdishaNames()">
                             </div>
                         </div>
                         <div id="drawings_data_odisha_o"></div>
@@ -451,7 +452,8 @@
             <!-- Layer_Name_bottom  display: none; -->
             <div class="body_bottom">
                 <a href="<?php echo base_url('HomePage/Menu'); ?>">
-                    <span><button>MENU</button></span>
+                    <span><button
+                            style="  color: black; font-size: 15px; padding: 16px 30px; border-radius: 5px;text-align: center;">MENU</button></span>
                 </a>
 
 
@@ -1116,76 +1118,76 @@
 
     // Function to fetch and display names with checkboxes
     function fetchOdishaNames() {
-    <?php if (isset($name)): ?>
-        var startDateId;
-        var weatherDataDivs;
-        if ('<?php echo $name; ?>' === "Super Admin HQ") {
-            startDateId = "start_date_odisha";
-            weatherDataDivs = document.getElementById("drawings_data_odisha");
-        } else if ('<?php echo $name; ?>' === "MC ODISHA") {
-            startDateId = "start_date_odisha_o";
-            weatherDataDivs = document.getElementById("drawings_data_odisha_o");
-        }
-    <?php endif; ?>
-
-    var selectedDate = document.getElementById(startDateId).value;
-
-    $.ajax({
-        url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha'); ?>",
-        type: "GET",
-        data: {
-            date: selectedDate
-        },
-        success: function (data) {
-            var weatherDataDiv = weatherDataDivs;
-            weatherDataDiv.innerHTML = "";
-
-            if (data && data.length > 0) {
-                var checkboxContainer = document.createElement("div");
-
-                data.forEach(function (item, index) {
-                    if (item && item.name && item.latitudes && item.longitudes) {
-                        var checkbox = document.createElement("input");
-                        checkbox.type = "checkbox";
-                        checkbox.id = "checkbox_" + index;
-                        checkbox.value = item.name;
-
-                        var label = document.createElement("label");
-                        label.textContent = item.name;
-                        label.setAttribute("for", "checkbox_" + index);
-
-                        checkboxContainer.appendChild(checkbox);
-                        checkboxContainer.appendChild(label);
-                        checkboxContainer.appendChild(document.createElement("br"));
-
-                        // Attach event listener to checkbox
-                        checkbox.addEventListener("change", function () {
-                            if (checkbox.checked) {
-                                var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
-                                var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
-
-                                // Draw polyline when checkbox is checked
-                                drawPolyline(latitudes, longitudes, item.name);
-                            } else {
-                                // Remove polyline when checkbox is unchecked
-                                clearPolyline(item.name);
-                            }
-                        });
-                    }
-                });
-
-                weatherDataDiv.appendChild(checkboxContainer);
-            } else {
-                weatherDataDiv.textContent = "No drawings found for the selected date.";
+        <?php if (isset($name)): ?>
+            var startDateId;
+            var weatherDataDivs;
+            if ('<?php echo $name; ?>' === "Super Admin HQ") {
+                startDateId = "start_date_odisha";
+                weatherDataDivs = document.getElementById("drawings_data_odisha");
+            } else if ('<?php echo $name; ?>' === "MC ODISHA") {
+                startDateId = "start_date_odisha_o";
+                weatherDataDivs = document.getElementById("drawings_data_odisha_o");
             }
-        },
-        error: function (xhr, status, error) {
-            console.error("Error fetching names:", error);
-            var weatherDataDiv = weatherDataDivs;
-            weatherDataDiv.textContent = "Error fetching names. Please try again later.";
-        }
-    });
-}
+        <?php endif; ?>
+
+        var selectedDate = document.getElementById(startDateId).value;
+
+        $.ajax({
+            url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha'); ?>",
+            type: "GET",
+            data: {
+                date: selectedDate
+            },
+            success: function (data) {
+                var weatherDataDiv = weatherDataDivs;
+                weatherDataDiv.innerHTML = "";
+
+                if (data && data.length > 0) {
+                    var checkboxContainer = document.createElement("div");
+
+                    data.forEach(function (item, index) {
+                        if (item && item.name && item.latitudes && item.longitudes) {
+                            var checkbox = document.createElement("input");
+                            checkbox.type = "checkbox";
+                            checkbox.id = "checkbox_" + index;
+                            checkbox.value = item.name;
+
+                            var label = document.createElement("label");
+                            label.textContent = item.name;
+                            label.setAttribute("for", "checkbox_" + index);
+
+                            checkboxContainer.appendChild(checkbox);
+                            checkboxContainer.appendChild(label);
+                            checkboxContainer.appendChild(document.createElement("br"));
+
+                            // Attach event listener to checkbox
+                            checkbox.addEventListener("change", function () {
+                                if (checkbox.checked) {
+                                    var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
+                                    var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
+
+                                    // Draw polyline when checkbox is checked
+                                    drawPolyline(latitudes, longitudes, item.name);
+                                } else {
+                                    // Remove polyline when checkbox is unchecked
+                                    clearPolyline(item.name);
+                                }
+                            });
+                        }
+                    });
+
+                    weatherDataDiv.appendChild(checkboxContainer);
+                } else {
+                    weatherDataDiv.textContent = "No drawings found for the selected date.";
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching names:", error);
+                var weatherDataDiv = weatherDataDivs;
+                weatherDataDiv.textContent = "Error fetching names. Please try again later.";
+            }
+        });
+    }
 
 
 

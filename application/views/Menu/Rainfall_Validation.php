@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  
+
 
     <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
 
@@ -37,6 +37,20 @@
             margin-top: -856px;
         }
 
+        .btn {
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #f1f1f1;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: black;
+            color: white;
+        }
 
 
         @media screen and (max-height: 450px) {
@@ -56,7 +70,7 @@
     </style>
 </head>
 
-<body style= "zoom:80%;">
+<body style="zoom:80%;">
 
     <div style="height: 100%;">
 
@@ -70,36 +84,41 @@
 
             <div style="display: flex; align-items: center;">
 
-            <div style="margin-right: 10px;">
+                <div style="margin-right: 10px;">
                     <label for="state-name">State Name:</label>
-                    <input type="text" id="state-name" list="state-name-list" style="width: 100px;" placeholder="State Name">
+                    <input type="text" id="state-name" list="state-name-list" style="width: 150px;"
+                        placeholder="State Name">
                     <datalist id="state-name-list">
                         <?php foreach ($stateNames as $state): ?>
                             <option value="<?php echo $state['name']; ?>"></option>
                         <?php endforeach; ?>
                     </datalist>
-                    <button type="button" id="submit-names" style="padding: 5px 10px;">Submit</button>
+                    <button type="button" id="submit-names"
+                        style="padding: 5px 10px; margin-left: 40px; margin-bottom: -30px;" class="btn">Submit</button>
                 </div>
 
                 <div style="margin-right: 10px;">
                     <label for="station-name">Station Name:</label>
-                    <input type="text" id="station-name" list="station-name-list" style="width: 100px;" placeholder="Station Name">
+                    <input type="text" id="station-name" list="station-name-list" style="width: 150px;"
+                        placeholder="Station Name">
                     <datalist id="station-name-list">
                         <?php foreach ($stationNames as $station): ?>
                             <option value="<?php echo $station['name']; ?>"></option>
                         <?php endforeach; ?>
                     </datalist>
-                    <button type="button" id="submit-name" style="padding: 5px 10px;">Submit</button>
+                    <button type="button" id="submit-name" style="padding: 5px 10px; margin-left: 40px; margin-bottom: -30px;" class="btn">Submit</button>
                 </div>
                 <div style="margin-right: 10px;">
                     <label for="station-id">Station ID:</label>
-                    <input type="text" id="station-id" list="station-id-list" style="width: 100px;" placeholder="12345678">
+                    <input type="text" id="station-id" list="station-id-list" style="width: 150px;"
+                        placeholder="12345678">
                     <datalist id="station-id-list">
                         <?php foreach ($stationIds as $station): ?>
                             <option value="<?php echo $station['id']; ?>"></option>
                         <?php endforeach; ?>
                     </datalist>
-                    <button type="button" id="submit-id" style="padding: 5px 10px;">Submit</button>
+                    <button type="button" id="submit-id" style="padding: 5px 10px; margin-left: 40px; margin-bottom: -30px;"
+                        class="btn">Submit</button>
                 </div>
 
             </div>
@@ -233,11 +252,11 @@
                     type: 'spline'
                 },
                 title: {
-                    text: $("#param option:selected").text() + ' Comparison for <b>' + name + '</b> station.'+ '<br>' +
-                  startDateText + ' to ' + endDateText
+                    text: $("#param option:selected").text() + ' Comparison for <b>' + name + '</b> station.' + '<br>' +
+                        startDateText + ' to ' + endDateText
                 },
                 subtitle: {
-                    text: (document.ontouchstart === undefined ? 'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in') 
+                    text: (document.ontouchstart === undefined ? 'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in')
                 },
                 legend: {
                     enabled: false
@@ -510,7 +529,7 @@
         //date picker 
 
 
-        var startDateText; 
+        var startDateText;
         var endDateText;
 
         $(function () {
@@ -521,24 +540,24 @@
 
             function cb(start, end) {
                 $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                startDateText = start.format('MMMM D, YYYY'); 
-                endDateText = end.format('MMMM D, YYYY'); 
-            
-            console.log(start.format('MMMM D, YYYY'));
-            console.log(end.format('MMMM D, YYYY'));
-        }
-            $('#reportrange').daterangepicker({
-            startDate: start,
-            endDate: end,
-            minDate: '02/24/2019',
-            maxDate: moment(),
-            ranges: {
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'Last 2 Months': [moment().subtract(2, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                startDateText = start.format('MMMM D, YYYY');
+                endDateText = end.format('MMMM D, YYYY');
+
+                console.log(start.format('MMMM D, YYYY'));
+                console.log(end.format('MMMM D, YYYY'));
             }
-        }, cb);
-        cb(start, end);
+            $('#reportrange').daterangepicker({
+                startDate: start,
+                endDate: end,
+                minDate: '02/24/2019',
+                maxDate: moment(),
+                ranges: {
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'Last 2 Months': [moment().subtract(2, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+            cb(start, end);
         });
 
 
