@@ -1,14 +1,4 @@
 <style>
-.fixedHead {
-    background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-    width: 100%;
-    position: relative;
-}
-
 .sidebar {
     height: 54rem;
     width: 11%;
@@ -40,14 +30,15 @@
 
 <div class="sidebar">
     <div class="col-3">
-        <br>
-        <a href="<?php echo base_url('HomePage');?>"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="<?php echo base_url('HomePage'); ?>"><i class="fa fa-fw fa-home"></i> Home</a>
 
         <div class="dropdown">
-            <a href="#"><i class="fa fa-bar-chart"></i> Data Validation <i class="fa fa-caret-down"></i></a>
+            <a href=""><i class="fa fa-bar-chart"></i> Data Validation <i class="fa fa-caret-down"></i></a>
             <div class="dropdown-content">
+
                 <a href="<?php echo base_url('Rainfall_Validation'); ?>">Rainfall Validation</a>
                 <a href="<?php echo base_url('Rainfall_Validation_INDIA'); ?>">Rainfall Validation INDIA</a>
+
             </div>
         </div>
 

@@ -6,15 +6,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+
+    <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
+
+    <!-- Bootstrap starts here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- jQuery CDN link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Bootstrap JavaScript files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+    <!-- Bootstrap ends here -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .main {
             margin-right: 10px;
-            margin-left: 180px;
+            margin-left: 225px;
             margin-bottom: -300px;
             padding: 0px 10px;
             margin-top: -856px;
         }
 
+        .btn {
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #f1f1f1;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: black;
+            color: white;
+        }
 
 
         @media screen and (max-height: 450px) {
@@ -34,7 +70,7 @@
     </style>
 </head>
 
-<body>
+<body style="zoom:80%;">
 
     <div style="height: 100%;">
 
@@ -44,40 +80,45 @@
         <?php $this->load->view('Menu/Landing_page_side.php'); ?>
 
         <div class="main">
-            <h1 style="margin-top: 20px; margin-left: 400px;">Rainfall Validation</h1>
+            <h1 style="margin-top: -8px; margin-left: 560px; margin-bottom: 20px;">Rainfall Validation</h1>
 
             <div style="display: flex; align-items: center;">
 
-            <div style="margin-right: 10px;">
+                <div style="margin-right: 10px;">
                     <label for="state-name">State Name:</label>
-                    <input type="text" id="state-name" list="state-name-list" style="width: 100px;" placeholder="State Name">
+                    <input type="text" id="state-name" list="state-name-list" style="width: 150px;"
+                        placeholder="State Name">
                     <datalist id="state-name-list">
                         <?php foreach ($stateNames as $state): ?>
                             <option value="<?php echo $state['name']; ?>"></option>
                         <?php endforeach; ?>
                     </datalist>
-                    <button type="button" id="submit-names" style="padding: 5px 10px;">Submit</button>
+                    <button type="button" id="submit-names"
+                        style="padding: 5px 10px; margin-left: 40px; margin-bottom: -30px;" class="btn">Submit</button>
                 </div>
 
                 <div style="margin-right: 10px;">
                     <label for="station-name">Station Name:</label>
-                    <input type="text" id="station-name" list="station-name-list" style="width: 100px;" placeholder="Station Name">
+                    <input type="text" id="station-name" list="station-name-list" style="width: 150px;"
+                        placeholder="Station Name">
                     <datalist id="station-name-list">
                         <?php foreach ($stationNames as $station): ?>
                             <option value="<?php echo $station['name']; ?>"></option>
                         <?php endforeach; ?>
                     </datalist>
-                    <button type="button" id="submit-name" style="padding: 5px 10px;">Submit</button>
+                    <button type="button" id="submit-name" style="padding: 5px 10px; margin-left: 40px; margin-bottom: -30px;" class="btn">Submit</button>
                 </div>
                 <div style="margin-right: 10px;">
                     <label for="station-id">Station ID:</label>
-                    <input type="text" id="station-id" list="station-id-list" style="width: 100px;" placeholder="12345678">
+                    <input type="text" id="station-id" list="station-id-list" style="width: 150px;"
+                        placeholder="12345678">
                     <datalist id="station-id-list">
                         <?php foreach ($stationIds as $station): ?>
                             <option value="<?php echo $station['id']; ?>"></option>
                         <?php endforeach; ?>
                     </datalist>
-                    <button type="button" id="submit-id" style="padding: 5px 10px;">Submit</button>
+                    <button type="button" id="submit-id" style="padding: 5px 10px; margin-left: 40px; margin-bottom: -30px;"
+                        class="btn">Submit</button>
                 </div>
 
             </div>
@@ -92,7 +133,7 @@
                             filters.
                         </div>
                         <div id="reportrange"
-                            style="position: absolute; top: 26%; left:260px;  padding: 5px 10px; background: #fff; cursor: pointer; border: 1px solid #ccc; z-index: 9699;">
+                            style="position: absolute; top: 21%; left:283px;  padding: 5px 10px; background: #fff; cursor: pointer; border: 1px solid #ccc; z-index: 9699;">
                             <i class="fa fa-calendar"></i>&nbsp;
                             <span></span> <i class="fa fa-caret-down"></i>
                         </div>
@@ -105,7 +146,7 @@
                                     <div class="box-body">
                                         <div style="border:#333 1px ridge; overflow: hidden;">
                                             <div id="map_canvas"
-                                                style="width:100%; height: 721px; float: left;z-index: 0;"
+                                                style="width:100%; height: 719px; float: left;z-index: 0;"
                                                 align="center"></div>
                                         </div>
                                     </div>
@@ -211,11 +252,11 @@
                     type: 'spline'
                 },
                 title: {
-                    text: $("#param option:selected").text() + ' Comparison for <b>' + name + '</b> station.'+ '<br>' +
-                  startDateText + ' to ' + endDateText
+                    text: $("#param option:selected").text() + ' Comparison for <b>' + name + '</b> station.' + '<br>' +
+                        startDateText + ' to ' + endDateText
                 },
                 subtitle: {
-                    text: (document.ontouchstart === undefined ? 'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in') 
+                    text: (document.ontouchstart === undefined ? 'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in')
                 },
                 legend: {
                     enabled: false
@@ -488,7 +529,7 @@
         //date picker 
 
 
-        var startDateText; 
+        var startDateText;
         var endDateText;
 
         $(function () {
@@ -499,24 +540,24 @@
 
             function cb(start, end) {
                 $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                startDateText = start.format('MMMM D, YYYY'); 
-                endDateText = end.format('MMMM D, YYYY'); 
-            
-            console.log(start.format('MMMM D, YYYY'));
-            console.log(end.format('MMMM D, YYYY'));
-        }
-            $('#reportrange').daterangepicker({
-            startDate: start,
-            endDate: end,
-            minDate: '02/24/2019',
-            maxDate: moment(),
-            ranges: {
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'Last 2 Months': [moment().subtract(2, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                startDateText = start.format('MMMM D, YYYY');
+                endDateText = end.format('MMMM D, YYYY');
+
+                console.log(start.format('MMMM D, YYYY'));
+                console.log(end.format('MMMM D, YYYY'));
             }
-        }, cb);
-        cb(start, end);
+            $('#reportrange').daterangepicker({
+                startDate: start,
+                endDate: end,
+                minDate: '02/24/2019',
+                maxDate: moment(),
+                ranges: {
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'Last 2 Months': [moment().subtract(2, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+            cb(start, end);
         });
 
 
