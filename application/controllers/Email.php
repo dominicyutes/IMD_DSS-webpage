@@ -22,10 +22,6 @@ class Email extends CI_Controller {
        
         $data['result'] = $this->db->select('email_from, email_to, sent, sent_time')->get('email_log')->result_array();
         $this->load->view('Social_media/email_form', $data);
-        // $this->load->view('Landing_page', $data);
-        //  $this->load->view('Menu/Landing_page_top');
-        // $this->load->view('Menu/Landing_page_mid');
-        // $this->load->view('Menu/Landing_page_bottom');
     }
 
 
@@ -101,20 +97,25 @@ class Email extends CI_Controller {
         $mailer->send();
 
         $sent = true;
+        $this->insert_email_log($from_address, $to_addresses, $sent);
         echo "Your Mail sent successfully";
 
     } catch (Exception $e) {
         $sent = false;
+        $this->insert_email_log($from_address, $to_addresses, $sent);
         
         echo "Mail Error: " . $mailer->ErrorInfo;
     }
+   }
 
-    $this->db->insert('email_log', array(
-        'email_from' => $from_address,
-        'email_to' => implode(", ", $to_addresses),
-        'sent' => $sent
-    ));
-}
+   private function insert_email_log($from_address, $to_addresses, $sent) {
+       $this->load->database();
+       $this->db->insert('email_log', array(
+           'email_from' => $from_address,
+           'email_to' => implode(", ", $to_addresses),
+           'sent' => $sent ? "True" : "False" 
+       ));
+   }
 
     
 }

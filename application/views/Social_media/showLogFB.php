@@ -10,10 +10,8 @@
     <!-- Bootstrap starts here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <!-- jQuery CDN link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <!-- Bootstrap JavaScript files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
@@ -23,6 +21,7 @@
     </script>
     <!-- Bootstrap ends here -->
 
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -75,9 +74,32 @@
 
             <!-- editing content starts here -->
             <div class="col-9" style="width: 88%">
-                <h2>Post to SMS</h2>
-                <button type="submit" class="btn btn-primary" id="smsSendBtn">Send SMS</button>
-                <!-- <p id="smsResponse"></p> -->
+                <h2>Facebook Log Information</h2>
+                <div class="table-responsive" style="max-height: 450px;">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sno</th>
+                                <th>Posted_By</th>
+                                <th>Status</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <?php 
+                                                $i = 1;
+                                                foreach($result as $row) {
+                                                    echo '<tr>
+                                                        <td>'.$i++.'</td>
+                                                        <td>'.$row['email_from'].'</td>
+                                                        <td>'.($row['sent'] ? 'Sent' : 'Not Sent').'</td>
+                                                        <td>'.(isset($row['sent_time']) ? date('Y-m-d H:i:s', strtotime($row['sent_time'])) : '').'</td>
+                                                    </tr>';
+                                                }
+                            ?> -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <!-- editing content ends here -->
 
@@ -85,23 +107,10 @@
     </div>
 
     <script>
-    // 
-    document.getElementById('smsSendBtn').addEventListener('click', function() {
-        let SMS_var = "IMD report: Heavy rainfall in New Delhi with 10mm/hr";
 
-        // Send SMS_var to controller using AJAX
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                // Response from server
-                console.log(this.responseText);
-            }
-        };
-        xhttp.open("POST", "<?php echo base_url('SMS_controller/SMS_post'); ?>", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("SMS_var=" + encodeURIComponent(SMS_var));
-    });
+
     </script>
 </body>
+
 
 </html>

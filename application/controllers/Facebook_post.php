@@ -10,14 +10,14 @@ class Facebook_post extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
+        // 
+        if ($this->session->has_userdata('name')) {
+            $this->name = $this->session->userdata('name');
+        }
     }
 
     public function index() {
-        $name = '';
-       if ($this->session->has_userdata('name')) {
-           $name = $this->session->userdata('name');
-       }
-       $data['name'] = $name;
+        $data['name'] = $this->name;
         $this->load->view('Social_media/facebook_view',$data);
     }
 
@@ -95,6 +95,11 @@ class Facebook_post extends CI_Controller {
 
               // Send the response as JSON
               echo json_encode($responseData);
+    }
+
+    public function log_information() {
+        $data['name'] = $this->name;
+        $this->load->view('Social_media/showLogFB', $data);
     }
 
 }

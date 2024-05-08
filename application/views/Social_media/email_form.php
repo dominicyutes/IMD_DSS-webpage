@@ -110,18 +110,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="row">
                                 <div class="col-10">
-                                    <label style="margin-left:5%" for="toggleButton">To Deliver</label>
+                                    <label style="margin-left:5%" for="toggleButton">ON/OFF</label>
+                                    <!-- To Deliver -->
                                     <input type="checkbox" id="toggleButton">
                                     <button style="margin-left: 10px" type="submit" id="submitButton"
-                                        class="btn btn-success ml-2" disabled>Submit</button>
+                                        class="btn btn-success ml-2" disabled>Auto Email</button>
+                                    <!--Submit -->
                                 </div>
                                 <div class="col-2 text-right">
                                     <button class="btn btn-primary" id="toggleEmailLogTable">Log Information</button>
                                 </div>
                             </div>
-
+                            <br>
                         </form>
                         <br><br><br>
+                        <!--  -->
+                        <!-- <div>
+                            <lable for="groupSelect">Choose Group</lable>
+                            <select id="groupSelect">
+                                <option value="">--Select a MC--</option>
+                                <option value="MC_Ahmedabad">MC_Ahmedabad</option>
+                                <option value="MC_Amaravati">MC_Amaravati</option>
+                                <option value="MC_Bengaluru">MC_Bengaluru</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button onclick="groupSelect()">Accept</button>
+                        </div> -->
+                        <!--  -->
                         <div class="container" id="emailLogTable" style="display: none;">
                             <div class="row">
                                 <br>
@@ -140,17 +156,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </thead>
                                         <tbody>
                                             <?php 
-                        $i = 1;
-                        foreach($result as $row) {
-                            echo '<tr>
-                                <td>'.$i++.'</td>
-                                <td>'.$row['email_from'].'</td>
-                                <td>'.$row['email_to'].'</td>
-                                <td>'.($row['sent'] ? 'Sent' : 'Not Sent').'</td>
-                                <td>'.(isset($row['sent_time']) ? date('Y-m-d H:i:s', strtotime($row['sent_time'])) : '').'</td>
-                            </tr>';
-                        }
-                    ?>
+                                                $i = 1;
+                                                foreach($result as $row) {
+                                                    echo '<tr>
+                                                        <td>'.$i++.'</td>
+                                                        <td>'.$row['email_from'].'</td>
+                                                        <td>'.$row['email_to'].'</td>
+                                                        <td>'.($row['sent'] ? 'Sent' : 'Not Sent').'</td>
+                                                        <td>'.(isset($row['sent_time']) ? date('Y-m-d H:i:s', strtotime($row['sent_time'])) : '').'</td>
+                                                    </tr>';
+                                                }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -183,6 +199,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         });
     });
+
+    function groupSelect() {
+        var selectedValue = document.getElementById("groupSelect").value;
+        var emailAddresses;
+
+        // Object to store email addresses corresponding to each option value
+        var emailData = {
+            "MC_Ahmedabad": ["xx@gmail.com", "xy@gmail.com"],
+            "MC_Amaravati": ["yy@gmail.com", "xy@gmail.com"],
+            "MC_Bengaluru": ["zz@gmail.com", "xy@gmail.com"]
+        };
+
+        // Get the email addresses based on the selected option value
+        emailAddresses = emailData[selectedValue] || [];
+
+        // Log the selected option value and email addresses to the console
+        console.log("Selected option:", selectedValue);
+        console.log("Corresponding email addresses:", emailAddresses);
+    }
     </script>
 </body>
 

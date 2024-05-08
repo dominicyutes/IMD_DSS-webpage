@@ -8,10 +8,12 @@ class Email_log_model extends CI_Model {
     }
 
     public function insert_email_log($from_address, $to_address, $sent) {
-        $this->db->insert('email_log', array(
+       $data = array(
             'email_from' => $from_address,
-            'email_to' => $to_address,
+            'email_to' => implode(", ", $to_addresses),
             'sent' => $sent
-        ));
+        );
+
+        $this->db->insert('email_log', $data);
     }
 }

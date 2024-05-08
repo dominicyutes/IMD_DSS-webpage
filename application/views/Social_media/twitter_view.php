@@ -92,24 +92,45 @@
     }).addTo(map);
 
     // Add the GeoJSON data to the map
-    _dist_geojson = "DATA/INDIA_STATE.json";
-    var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
-        style: function(feature) {
-            return {
-                color: 'black',
-                fillColor: 'transparent',
-                opacity: 0.5,
-                fillOpacity: 0.0,
-                weight: 2
-            };
-        }
-    });
+    _state_geojson = "DATA/INDIA_STATE.json";
+    _dist_geojson = "DATA/INDIA_DISTRICT.json";
 
-    geojson.on('data:loaded', function() {
-        geojson.addTo(map);
-    });
+    function addGeoJSONToMap(geojsonFile, styleOptions) {
+        var geojson = new L.GeoJSON.AJAX(geojsonFile, {
+            style: styleOptions
+        });
+
+        geojson.on('data:loaded', function() {
+            geojson.addTo(map);
+        });
+    }
+
+    // Style options 
+    var stateStyle = {
+        color: 'black',
+        fillColor: 'transparent',
+        opacity: 1,
+        fillOpacity: 0.0,
+        weight: 2
+    };
+
+    var districtStyle = {
+        color: 'green',
+        fillColor: 'transparent',
+        opacity: 0.5,
+        fillOpacity: 0.0,
+        weight: 1
+    };
     // 
 
+    //
+    addGeoJSONToMap(_state_geojson, stateStyle);
+
+    //
+    addGeoJSONToMap(_dist_geojson, districtStyle);
+
+
+    // 
     document.getElementById('postToFacebookBtn').addEventListener('click', function() {
         html2canvas($("#map"), {
             useCORS: true,
