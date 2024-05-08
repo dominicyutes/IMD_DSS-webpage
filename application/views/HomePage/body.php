@@ -200,9 +200,9 @@
                 </div>
                 <div id="contentDiv_odisha"
                     style="width: 290px; height: 480px; border: 3px solid #244c7e; overflow: auto; padding: 10px; display: none;">
-
+                    <button class="submitBtn" style="margin-left:60px;width: 150px;" >Forward to HQ</button>
                     <div id="mc-odisha"
-                        style="width: 268px; height: 450px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
+                        style="width: 268px; height: 410px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
                         <div style="color: #333; font-family: Arial, sans-serif;">
                             <div style="display: flex; justify-content: center;">MC ODISHA</div>
                             <div>
