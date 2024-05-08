@@ -5,11 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  
 
+    <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
+
+    <!-- Bootstrap starts here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- jQuery CDN link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Bootstrap JavaScript files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+    <!-- Bootstrap ends here -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .main {
             margin-right: 10px;
-            margin-left: 180px;
+            margin-left: 225px;
             margin-bottom: -300px;
             padding: 0px 10px;
             margin-top: -856px;
@@ -34,7 +56,7 @@
     </style>
 </head>
 
-<body>
+<body style= "zoom:80%;">
 
     <div style="height: 100%;">
 
@@ -44,7 +66,7 @@
         <?php $this->load->view('Menu/Landing_page_side.php'); ?>
 
         <div class="main">
-            <h1 style="margin-top: 20px; margin-left: 400px;">Rainfall Validation</h1>
+            <h1 style="margin-top: -8px; margin-left: 560px; margin-bottom: 20px;">Rainfall Validation</h1>
 
             <div style="display: flex; align-items: center;">
 
@@ -92,7 +114,7 @@
                             filters.
                         </div>
                         <div id="reportrange"
-                            style="position: absolute; top: 26%; left:260px;  padding: 5px 10px; background: #fff; cursor: pointer; border: 1px solid #ccc; z-index: 9699;">
+                            style="position: absolute; top: 21%; left:283px;  padding: 5px 10px; background: #fff; cursor: pointer; border: 1px solid #ccc; z-index: 9699;">
                             <i class="fa fa-calendar"></i>&nbsp;
                             <span></span> <i class="fa fa-caret-down"></i>
                         </div>
@@ -105,7 +127,7 @@
                                     <div class="box-body">
                                         <div style="border:#333 1px ridge; overflow: hidden;">
                                             <div id="map_canvas"
-                                                style="width:100%; height: 721px; float: left;z-index: 0;"
+                                                style="width:100%; height: 719px; float: left;z-index: 0;"
                                                 align="center"></div>
                                         </div>
                                     </div>

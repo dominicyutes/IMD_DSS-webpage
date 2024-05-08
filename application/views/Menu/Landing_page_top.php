@@ -11,6 +11,17 @@
         align-items: center;
         justify-content: center;
     }
+    .fixedHead {
+            background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            width: 100%;
+            position: relative;
+            margin-top: -6px;
+            margin-left: -8px;
+        }
     </style>
 </head>
 
