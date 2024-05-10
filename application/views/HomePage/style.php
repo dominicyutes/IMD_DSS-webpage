@@ -5,8 +5,8 @@ body {
     font-family: 'Quicksand', sans-serif;
     background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
     position: relative;
-    height: 100vh;
-    width: 100%;
+    /* height: 100vh;
+    width: 100%; */
     zoom: 80%;
 }
 

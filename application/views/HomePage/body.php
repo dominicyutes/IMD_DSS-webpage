@@ -960,14 +960,10 @@
 <script>
 
     var today = new Date().toISOString().slice(0, 10);
-    <?php if (isset($name)): ?>
-        if ('<?php echo $name; ?>' === "Super Admin HQ") {
-            document.getElementById('start_date_odisha').value = today;
-        } else if ('<?php echo $name; ?>' === "MC ODISHA") {
-            document.getElementById('start_date_odisha_o').value = today;
-        }
-    <?php endif; ?>
-    // document.getElementById('start_date_odisha').value = today;
+    document.getElementById('start_date_odisha').value = today;
+
+    var today = new Date().toISOString().slice(0, 10);
+    document.getElementById('start_date_odisha_o').value = today;
 
 
     function toggleVisibility() {
@@ -1013,7 +1009,6 @@
 
         fetchOdishaNames();
         fetchOdishaNames_hq();
-        
     });
 
 
@@ -1121,7 +1116,7 @@
 
     // Function to fetch and display names with checkboxes
     function fetchOdishaNames() {
-       
+
         var selectedDate = document.getElementById("start_date_odisha_o").value;
 
         $.ajax({
@@ -1182,7 +1177,7 @@
     }
 
     function fetchOdishaNames_hq() {
-        
+
         var selectedDate = document.getElementById("start_date_odisha").value;
 
         $.ajax({
@@ -1204,7 +1199,7 @@
                             checkbox.type = "checkbox";
                             checkbox.id = "checkbox_" + index;
                             checkbox.value = item.name;
-                            checkbox.value = JSON.stringify(item); // Store item data as a string value
+                            checkbox.value = JSON.stringify(item);
 
                             var label = document.createElement("label");
                             label.textContent = item.name;
@@ -1255,7 +1250,7 @@
 
         // Prepare the data for AJAX request
         var postData = JSON.stringify(checkedItems);
-// console.log(postData);
+        // console.log(postData);
         $.ajax({
             url: "<?php echo site_url('Drawings/Drawing/save_coordinates_to_hq'); ?>",
             type: "POST",
