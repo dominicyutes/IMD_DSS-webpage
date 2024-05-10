@@ -165,7 +165,7 @@
                                     <label for="start_date_odisha" class="dateDDLabel"
                                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
                                     <input type="date" id="start_date_odisha" class="dateDD"
-                                        onchange="fetchOdishaNames()">
+                                        onchange="fetchOdishaNames_hq()">
                                 </div>
                             </div>
                             <div id="drawings_data_odisha"></div>
@@ -200,7 +200,8 @@
                 </div>
                 <div id="contentDiv_odisha"
                     style="width: 290px; height: 480px; border: 3px solid #244c7e; overflow: auto; padding: 10px; display: none;">
-                    <button class="submitBtn" style="margin-left:60px;width: 150px;" >Forward to HQ</button>
+                    <button class="submitBtn" style="margin-left:60px;width: 150px;" id="PassDrawings">Forward to
+                        HQ</button>
                     <div id="mc-odisha"
                         style="width: 268px; height: 410px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
                         <div style="color: #333; font-family: Arial, sans-serif;">
@@ -1011,6 +1012,8 @@
         // document.getElementById('start_date_odisha').value = today;
 
         fetchOdishaNames();
+        fetchOdishaNames_hq();
+        
     });
 
 
@@ -1118,19 +1121,8 @@
 
     // Function to fetch and display names with checkboxes
     function fetchOdishaNames() {
-        <?php if (isset($name)): ?>
-            var startDateId;
-            var weatherDataDivs;
-            if ('<?php echo $name; ?>' === "Super Admin HQ") {
-                startDateId = "start_date_odisha";
-                weatherDataDivs = document.getElementById("drawings_data_odisha");
-            } else if ('<?php echo $name; ?>' === "MC ODISHA") {
-                startDateId = "start_date_odisha_o";
-                weatherDataDivs = document.getElementById("drawings_data_odisha_o");
-            }
-        <?php endif; ?>
-
-        var selectedDate = document.getElementById(startDateId).value;
+       
+        var selectedDate = document.getElementById("start_date_odisha_o").value;
 
         $.ajax({
             url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha'); ?>",
@@ -1139,18 +1131,19 @@
                 date: selectedDate
             },
             success: function (data) {
-                var weatherDataDiv = weatherDataDivs;
+                weatherDataDiv = document.getElementById("drawings_data_odisha_o");
                 weatherDataDiv.innerHTML = "";
 
                 if (data && data.length > 0) {
                     var checkboxContainer = document.createElement("div");
 
                     data.forEach(function (item, index) {
-                        if (item && item.name && item.latitudes && item.longitudes) {
+                        if (item && item.date && item.name && item.latitudes && item.longitudes) {
                             var checkbox = document.createElement("input");
                             checkbox.type = "checkbox";
                             checkbox.id = "checkbox_" + index;
                             checkbox.value = item.name;
+                            checkbox.value = JSON.stringify(item); // Store item data as a string value
 
                             var label = document.createElement("label");
                             label.textContent = item.name;
@@ -1159,7 +1152,6 @@
                             checkboxContainer.appendChild(checkbox);
                             checkboxContainer.appendChild(label);
                             checkboxContainer.appendChild(document.createElement("br"));
-
                             // Attach event listener to checkbox
                             checkbox.addEventListener("change", function () {
                                 if (checkbox.checked) {
@@ -1183,11 +1175,106 @@
             },
             error: function (xhr, status, error) {
                 console.error("Error fetching names:", error);
-                var weatherDataDiv = weatherDataDivs;
+                weatherDataDiv = document.getElementById("drawings_data_odisha_o");
                 weatherDataDiv.textContent = "Error fetching names. Please try again later.";
             }
         });
     }
+
+    function fetchOdishaNames_hq() {
+        
+        var selectedDate = document.getElementById("start_date_odisha").value;
+
+        $.ajax({
+            url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>",
+            type: "GET",
+            data: {
+                date: selectedDate
+            },
+            success: function (data) {
+                weatherDataDiv = document.getElementById("drawings_data_odisha");
+                weatherDataDiv.innerHTML = "";
+
+                if (data && data.length > 0) {
+                    var checkboxContainer = document.createElement("div");
+
+                    data.forEach(function (item, index) {
+                        if (item && item.date && item.name && item.latitudes && item.longitudes) {
+                            var checkbox = document.createElement("input");
+                            checkbox.type = "checkbox";
+                            checkbox.id = "checkbox_" + index;
+                            checkbox.value = item.name;
+                            checkbox.value = JSON.stringify(item); // Store item data as a string value
+
+                            var label = document.createElement("label");
+                            label.textContent = item.name;
+                            label.setAttribute("for", "checkbox_" + index);
+
+                            checkboxContainer.appendChild(checkbox);
+                            checkboxContainer.appendChild(label);
+                            checkboxContainer.appendChild(document.createElement("br"));
+                            // Attach event listener to checkbox
+                            checkbox.addEventListener("change", function () {
+                                if (checkbox.checked) {
+                                    var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
+                                    var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
+
+                                    // Draw polyline when checkbox is checked
+                                    drawPolyline(latitudes, longitudes, item.name);
+                                } else {
+                                    // Remove polyline when checkbox is unchecked
+                                    clearPolyline(item.name);
+                                }
+                            });
+                        }
+                    });
+
+                    weatherDataDiv.appendChild(checkboxContainer);
+                } else {
+                    weatherDataDiv.textContent = "No drawings found for the selected date.";
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching names:", error);
+                weatherDataDiv = document.getElementById("drawings_data_odisha");
+                weatherDataDiv.textContent = "Error fetching names. Please try again later.";
+            }
+        });
+    }
+
+    document.getElementById("PassDrawings").addEventListener("click", function () {
+        var checkedItems = [];
+
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function (checkbox) {
+            if (checkbox.checked) {
+                var itemData = JSON.parse(checkbox.value);
+                checkedItems.push(itemData);
+            }
+        });
+
+        // Prepare the data for AJAX request
+        var postData = JSON.stringify(checkedItems);
+// console.log(postData);
+        $.ajax({
+            url: "<?php echo site_url('Drawings/Drawing/save_coordinates_to_hq'); ?>",
+            type: "POST",
+            data: postData,
+            contentType: "application/json",
+            success: function (response) {
+                console.log(response);
+                alert("Data forwarded to HQ successfully!");
+            },
+            error: function (xhr, status, error) {
+                console.error("Error forwarding data to HQ:", error);
+                alert("Failed to forward data. Please try again.");
+            }
+        });
+    });
+
+
+
+    // fetchOdishaNames();
 
 
 

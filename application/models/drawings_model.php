@@ -43,10 +43,12 @@ class Drawings_model extends CI_Model
         }
     }
 
-   
+
 
     public function insert_coordinates_odisha($data)
     {
+
+
         $name = $data['name'];
         $latitudes = $data['latitudes'];
         $longitudes = $data['longitudes'];
@@ -70,8 +72,56 @@ class Drawings_model extends CI_Model
             return false;
         }
     }
-
+    public function insert_coordinates_to_hq($data)
+    {
+        if (!empty($data)) {
+            foreach ($data as $item) {
+                if (isset($item['name'], $item['latitudes'], $item['longitudes'], $item['date'])) {
+                    $name = $item['name'];
+                    $latitudesStr = $item['latitudes'];
+                    $longitudesStr = $item['longitudes'];
+                    $date = $item['date'];
     
+                    // Ensure latitudes and longitudes are not empty strings
+                    if (!empty($latitudesStr) && !empty($longitudesStr)) {
+                        // No need to wrap latitudes and longitudes in additional curly braces
+                        // They are already in the correct format as strings
+                        $insert_data = array(
+                            'name' => $name,
+                            'latitudes' => $latitudesStr,
+                            'longitudes' => $longitudesStr,
+                            'date' => $date
+                        );
+    
+                        $query_result = $this->db->insert('weather_inference_drawings_odisha_hq', $insert_data);
+                        
+                        if ($query_result) {
+                            // Successful insertion
+                            continue; // Move to the next item
+                        } else {
+                            // Insertion failed
+                            return false; // Stop processing and return false
+                        }
+                    } else {
+                        echo "Empty latitudes or longitudes string for item:\n";
+                        var_dump($item);
+                    }
+                } else {
+                    echo "Missing or invalid data for item:\n";
+                    var_dump($item);
+                }
+            }
+            return true; // All items processed successfully
+        } else {
+            echo "No data received";
+            return false;
+        }
+    }
+    
+
+
+
+
     public function get_names($date)
     {
         log_message('info', 'Received date parameter in model: ' . $date);
@@ -113,7 +163,7 @@ class Drawings_model extends CI_Model
     {
         $this->db->select('latitudes, longitudes');
         $this->db->where('date', $date);
-        $this->db->where('name', $name); 
+        $this->db->where('name', $name);
         $query = $this->db->get('weather_inference_drawings');
 
         if ($query->num_rows() > 0) {
@@ -127,7 +177,7 @@ class Drawings_model extends CI_Model
     {
         $this->db->select('latitudes, longitudes');
         $this->db->where('date', $date);
-        $this->db->where('name', $name); 
+        $this->db->where('name', $name);
         $query = $this->db->get('weather_inference_drawings_mc_odisha');
 
         if ($query->num_rows() > 0) {
@@ -152,8 +202,22 @@ class Drawings_model extends CI_Model
 
     public function get_names_odisha($date)
     {
-        $query = $this->db->select('name, latitudes, longitudes')
+        $query = $this->db->select('name, latitudes, longitudes, date')
             ->from('weather_inference_drawings_mc_odisha')
+            ->where('date', $date)
+            ->get();
+
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        } else {
+            return array();
+        }
+    }
+
+    public function get_names_odisha_hq($date)
+    {
+        $query = $this->db->select('name, latitudes, longitudes, date')
+            ->from('weather_inference_drawings_odisha_hq')
             ->where('date', $date)
             ->get();
 
@@ -166,11 +230,11 @@ class Drawings_model extends CI_Model
 
 }
 // table query 
-        // CREATE TABLE weather_inference_drawings (
-        //     id SERIAL PRIMARY KEY,
-        //     name VARCHAR(100),
-        //     date DATE,
-        //     latitudes DOUBLE PRECISION[],
-        //     longitudes DOUBLE PRECISION[]
+// CREATE TABLE weather_inference_drawings (
+//     id SERIAL PRIMARY KEY,
+//     name VARCHAR(100),
+//     date DATE,
+//     latitudes DOUBLE PRECISION[],
+//     longitudes DOUBLE PRECISION[]
 
-        // );
+// );

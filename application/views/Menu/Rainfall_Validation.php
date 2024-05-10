@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-
     <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
 
     <!-- Bootstrap starts here -->
@@ -29,7 +28,7 @@
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .main {
+         .main {
             margin-right: 10px;
             margin-left: 225px;
             margin-bottom: -300px;
@@ -72,95 +71,96 @@
 
 <body style="zoom:80%;">
 
-    <div style="height: 100%;">
 
-        <div class="fixedHead">
-            <?php $this->load->view('Menu/Landing_page_top'); ?>
+<div style="height: 100%;">
+
+<div class="fixedHead">
+    <?php $this->load->view('Menu/Landing_page_top'); ?>
+</div>
+<?php $this->load->view('Menu/Landing_page_side.php'); ?>
+
+<div class="main">
+    <h1 style="margin-top: -8px; margin-left: 560px; margin-bottom: 20px;">Rainfall Validation</h1>
+
+    <div style="display: flex; align-items: center;">
+
+        <div style="margin-right: 10px;">
+            <label for="state-name">State Name:</label>
+            <input type="text" id="state-name" list="state-name-list" style="width: 150px;"
+                placeholder="State Name">
+            <datalist id="state-name-list">
+                <?php foreach ($stateNames as $state): ?>
+                    <option value="<?php echo $state['name']; ?>"></option>
+                <?php endforeach; ?>
+            </datalist>
+            <button type="button" id="submit-names"
+                style="padding: 5px 10px; margin-left: 40px; margin-bottom: -30px;" class="btn">Submit</button>
         </div>
-        <?php $this->load->view('Menu/Landing_page_side.php'); ?>
 
-        <div class="main">
-            <h1 style="margin-top: -8px; margin-left: 560px; margin-bottom: 20px;">Rainfall Validation</h1>
+        <div style="margin-right: 10px;">
+            <label for="station-name">Station Name:</label>
+            <input type="text" id="station-name" list="station-name-list" style="width: 150px;"
+                placeholder="Station Name">
+            <datalist id="station-name-list">
+                <?php foreach ($stationNames as $station): ?>
+                    <option value="<?php echo $station['name']; ?>"></option>
+                <?php endforeach; ?>
+            </datalist>
+            <button type="button" id="submit-name" style="padding: 5px 10px; margin-left: 40px; margin-bottom: -30px;" class="btn">Submit</button>
+        </div>
+        <div style="margin-right: 10px;">
+            <label for="station-id">Station ID:</label>
+            <input type="text" id="station-id" list="station-id-list" style="width: 150px;"
+                placeholder="12345678">
+            <datalist id="station-id-list">
+                <?php foreach ($stationIds as $station): ?>
+                    <option value="<?php echo $station['id']; ?>"></option>
+                <?php endforeach; ?>
+            </datalist>
+            <button type="button" id="submit-id" style="padding: 5px 10px; margin-left: 40px; margin-bottom: -30px;"
+                class="btn">Submit</button>
+        </div>
 
-            <div style="display: flex; align-items: center;">
+    </div>
 
-                <div style="margin-right: 10px;">
-                    <label for="state-name">State Name:</label>
-                    <input type="text" id="state-name" list="state-name-list" style="width: 150px;"
-                        placeholder="State Name">
-                    <datalist id="state-name-list">
-                        <?php foreach ($stateNames as $state): ?>
-                            <option value="<?php echo $state['name']; ?>"></option>
-                        <?php endforeach; ?>
-                    </datalist>
-                    <button type="button" id="submit-names"
-                        style="padding: 5px 10px; margin-left: 40px; margin-bottom: -30px;" class="btn">Submit</button>
+
+
+    <div class="content-wrapper">
+        <section class="content">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    Click on the station to view the comparison plot. You can even use the date and parameter
+                    filters.
                 </div>
-
-                <div style="margin-right: 10px;">
-                    <label for="station-name">Station Name:</label>
-                    <input type="text" id="station-name" list="station-name-list" style="width: 150px;"
-                        placeholder="Station Name">
-                    <datalist id="station-name-list">
-                        <?php foreach ($stationNames as $station): ?>
-                            <option value="<?php echo $station['name']; ?>"></option>
-                        <?php endforeach; ?>
-                    </datalist>
-                    <button type="button" id="submit-name" style="padding: 5px 10px; margin-left: 40px; margin-bottom: -30px;" class="btn">Submit</button>
+                <div id="reportrange"
+                    style="position: absolute; top: 21%; left:283px;  padding: 5px 10px; background: #fff; cursor: pointer; border: 1px solid #ccc; z-index: 9699;">
+                    <i class="fa fa-calendar"></i>&nbsp;
+                    <span></span> <i class="fa fa-caret-down"></i>
                 </div>
-                <div style="margin-right: 10px;">
-                    <label for="station-id">Station ID:</label>
-                    <input type="text" id="station-id" list="station-id-list" style="width: 150px;"
-                        placeholder="12345678">
-                    <datalist id="station-id-list">
-                        <?php foreach ($stationIds as $station): ?>
-                            <option value="<?php echo $station['id']; ?>"></option>
-                        <?php endforeach; ?>
-                    </datalist>
-                    <button type="button" id="submit-id" style="padding: 5px 10px; margin-left: 40px; margin-bottom: -30px;"
-                        class="btn">Submit</button>
-                </div>
-
-            </div>
-
-
-
-            <div class="content-wrapper">
-                <section class="content">
-                    <div class="box box-info">
-                        <div class="box-header with-border">
-                            Click on the station to view the comparison plot. You can even use the date and parameter
-                            filters.
-                        </div>
-                        <div id="reportrange"
-                            style="position: absolute; top: 21%; left:283px;  padding: 5px 10px; background: #fff; cursor: pointer; border: 1px solid #ccc; z-index: 9699;">
-                            <i class="fa fa-calendar"></i>&nbsp;
-                            <span></span> <i class="fa fa-caret-down"></i>
-                        </div>
-                        <div class="box-body">
-                            <div class="active tab-pane" id="showmap">
-                                <div class="post">
-                                    <div id="dialog_temp_graph_extension_chart" style="display: none;">
-                                        <div id="temp_graph_extension_chart" class="dialog"></div>
-                                    </div>
-                                    <div class="box-body">
-                                        <div style="border:#333 1px ridge; overflow: hidden;">
-                                            <div id="map_canvas"
-                                                style="width:100%; height: 719px; float: left;z-index: 0;"
-                                                align="center"></div>
-                                        </div>
-                                    </div>
+                <div class="box-body">
+                    <div class="active tab-pane" id="showmap">
+                        <div class="post">
+                            <div id="dialog_temp_graph_extension_chart" style="display: none;">
+                                <div id="temp_graph_extension_chart" class="dialog"></div>
+                            </div>
+                            <div class="box-body">
+                                <div style="border:#333 1px ridge; overflow: hidden;">
+                                    <div id="map_canvas"
+                                        style="width:100%; height: 719px; float: left;z-index: 0;"
+                                        align="center"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
-
-
-        </div>
-
+        </section>
     </div>
+
+
+</div>
+
+</div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="<?php echo base_url(); ?>stylesheet/jQuery/jQuery-2.2.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -252,11 +252,11 @@
                     type: 'spline'
                 },
                 title: {
-                    text: $("#param option:selected").text() + ' Comparison for <b>' + name + '</b> station.' + '<br>' +
-                        startDateText + ' to ' + endDateText
+                    text: $("#param option:selected").text() + ' Comparison for <b>' + name + '</b> station.'+ '<br>' +
+                  startDateText + ' to ' + endDateText
                 },
                 subtitle: {
-                    text: (document.ontouchstart === undefined ? 'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in')
+                    text: (document.ontouchstart === undefined ? 'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in') 
                 },
                 legend: {
                     enabled: false
@@ -507,29 +507,29 @@
             })
         });
 
-        var labels = new ol.layer.Tile({
-            visible: true,
-            opacity: 1,
-            source: new ol.source.TileWMS({
-                url: 'https://geoserver.rimes.int:8443/geoserver/wms',
-                singleTile: true,
-                params: {
-                    'LAYERS': 'rimes:districts_s,rimes:block_s_bkp',
-                    tilesorigin: '85.0985,20.9517',
-                    'styles': 'district_label,block_label'
-                },
-                serverType: 'geoserver',
-                transition: 0
-            })
-        });
-        map.addLayer(labels);
-        var ls = new ol.control.LayerSwitcher({ tipLabel: 'Legend' });
-        map.addControl(ls);
+        // var labels = new ol.layer.Tile({
+        //     visible: true,
+        //     opacity: 1,
+        //     source: new ol.source.TileWMS({
+        //         url: 'https://geoserver.rimes.int:8443/geoserver/wms',
+        //         singleTile: true,
+        //         params: {
+        //             'LAYERS': 'rimes:districts_s,rimes:block_s_bkp',
+        //             tilesorigin: '85.0985,20.9517',
+        //             'styles': 'district_label,block_label'
+        //         },
+        //         serverType: 'geoserver',
+        //         transition: 0
+        //     })
+        // });
+        // map.addLayer(labels);
+        // var ls = new ol.control.LayerSwitcher({ tipLabel: 'Legend' });
+        // map.addControl(ls);
 
         //date picker 
 
 
-        var startDateText;
+        var startDateText; 
         var endDateText;
 
         $(function () {
@@ -540,24 +540,24 @@
 
             function cb(start, end) {
                 $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                startDateText = start.format('MMMM D, YYYY');
-                endDateText = end.format('MMMM D, YYYY');
-
-                console.log(start.format('MMMM D, YYYY'));
-                console.log(end.format('MMMM D, YYYY'));
-            }
+                startDateText = start.format('MMMM D, YYYY'); 
+                endDateText = end.format('MMMM D, YYYY'); 
+            
+            console.log(start.format('MMMM D, YYYY'));
+            console.log(end.format('MMMM D, YYYY'));
+        }
             $('#reportrange').daterangepicker({
-                startDate: start,
-                endDate: end,
-                minDate: '02/24/2019',
-                maxDate: moment(),
-                ranges: {
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'Last 2 Months': [moment().subtract(2, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                }
-            }, cb);
-            cb(start, end);
+            startDate: start,
+            endDate: end,
+            minDate: '02/24/2019',
+            maxDate: moment(),
+            ranges: {
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'Last 2 Months': [moment().subtract(2, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);
+        cb(start, end);
         });
 
 
