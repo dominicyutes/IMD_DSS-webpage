@@ -75,7 +75,6 @@
 
             <!-- editing content starts here -->
             <div class="col-9" style="width: 88%">
-                <div id="map"></div>
                 <h2>Post to SMS</h2>
                 <button type="submit" class="btn btn-primary" id="smsSendBtn">Send SMS</button>
                 <!-- <p id="smsResponse"></p> -->
@@ -86,29 +85,6 @@
     </div>
 
     <script>
-    var map = L.map('map').setView([22.79459, 80.06406], 5);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
-
-    // Add the GeoJSON data to the map
-    _dist_geojson = "DATA/INDIA_STATE.json";
-    var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
-        style: function(feature) {
-            return {
-                color: 'black',
-                fillColor: 'transparent',
-                opacity: 1,
-                fillOpacity: 0.0,
-                weight: 2
-            };
-        }
-    });
-
-    geojson.on('data:loaded', function() {
-        geojson.addTo(map);
-    });
     // 
     document.getElementById('smsSendBtn').addEventListener('click', function() {
         let SMS_var = "IMD report: Heavy rainfall in New Delhi with 10mm/hr";

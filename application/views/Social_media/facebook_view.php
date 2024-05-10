@@ -53,7 +53,7 @@
     #map {
         margin-top: 1%;
         height: 100vh;
-        width: 100%;
+        width: 70%;
         border: 1px solid black;
     }
     </style>
@@ -84,9 +84,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-9">
                         <button class="btn btn-primary" id="getPic">Get Picture</button>
                         <button class="btn btn-primary" id="postToFacebookBtn">POST</button>
+                    </div>
+                    <div class="col-3">
+                        <!-- <a href="<?php echo base_url('Facebook_post/log_information'); ?>" class="btn btn-primary">Log
+                            Information</a> -->
+                        <button
+                            onclick="window.location.href='<?php echo base_url('Facebook_post/log_information'); ?>'"
+                            class="btn btn-primary">Log Information</button>
                     </div>
                 </div>
                 </span>
@@ -118,31 +125,18 @@
         style: function(feature) {
             return {
                 color: 'black',
-                // fillColor: 'transparent',
-                opacity: 0.5,
-                fillOpacity: 0.0,
-                weight: 2,
+                fillColor: 'pink',
+                opacity: 1,
+                fillOpacity: 0.5,
+                weight: 2
             };
         }
     });
-
 
     geojson.on('data:loaded', function() {
         geojson.addTo(map);
     });
     // 
-    function generateColorFromString(str) {
-        var hash = 0;
-        for (var i = 0; i < str.length; i++) {
-            hash = str.charCodeAt(i) + ((hash << 5) - hash);
-        }
-        var color = '#';
-        for (var j = 0; j < 3; j++) {
-            var value = (hash >> (j * 8)) & 0xFF;
-            color += ('00' + value.toString(16)).substr(-2);
-        }
-        return color;
-    }
 
     // getin image name from contoler
     let get_filename;

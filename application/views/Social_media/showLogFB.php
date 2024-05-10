@@ -10,10 +10,8 @@
     <!-- Bootstrap starts here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <!-- jQuery CDN link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <!-- Bootstrap JavaScript files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
@@ -23,6 +21,7 @@
     </script>
     <!-- Bootstrap ends here -->
 
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -75,9 +74,32 @@
 
             <!-- editing content starts here -->
             <div class="col-9" style="width: 88%">
-                <div id="map"></div>
-                <h2>Post to Twitter</h2>
-                <button class="btn btn-primary" id="postToFacebookBtn">Twitter</button>
+                <h2>Facebook Log Information</h2>
+                <div class="table-responsive" style="max-height: 450px;">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sno</th>
+                                <th>Posted_By</th>
+                                <th>Status</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <?php 
+                                                $i = 1;
+                                                foreach($result as $row) {
+                                                    echo '<tr>
+                                                        <td>'.$i++.'</td>
+                                                        <td>'.$row['email_from'].'</td>
+                                                        <td>'.($row['sent'] ? 'Sent' : 'Not Sent').'</td>
+                                                        <td>'.(isset($row['sent_time']) ? date('Y-m-d H:i:s', strtotime($row['sent_time'])) : '').'</td>
+                                                    </tr>';
+                                                }
+                            ?> -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <!-- editing content ends here -->
 
@@ -85,83 +107,10 @@
     </div>
 
     <script>
-    var map = L.map('map').setView([22.79459, 80.06406], 5);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
-
-    // Add the GeoJSON data to the map
-    _state_geojson = "DATA/INDIA_STATE.json";
-    _dist_geojson = "DATA/INDIA_DISTRICT.json";
-
-    function addGeoJSONToMap(geojsonFile, styleOptions) {
-        var geojson = new L.GeoJSON.AJAX(geojsonFile, {
-            style: styleOptions
-        });
-
-        geojson.on('data:loaded', function() {
-            geojson.addTo(map);
-        });
-    }
-
-    // Style options 
-    var stateStyle = {
-        color: 'black',
-        fillColor: 'transparent',
-        opacity: 1,
-        fillOpacity: 0.0,
-        weight: 2
-    };
-
-    var districtStyle = {
-        color: 'green',
-        fillColor: 'transparent',
-        opacity: 0.5,
-        fillOpacity: 0.0,
-        weight: 1
-    };
-    // 
-
-    //
-    addGeoJSONToMap(_state_geojson, stateStyle);
-
-    //
-    addGeoJSONToMap(_dist_geojson, districtStyle);
 
 
-    // 
-    document.getElementById('postToFacebookBtn').addEventListener('click', function() {
-        html2canvas($("#map"), {
-            useCORS: true,
-            allowTaint: false,
-            onrendered: function(canvas) {
-                var image = Canvas2Image.convertToPNG(canvas);
-                var image_data = $(image).attr('src');
-                var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
-
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo site_url(); ?>Twitter_post/post_info",
-                    data: {
-                        base64: image_data,
-                        r_file_name: random_name
-                    },
-                    success: function(response) {
-                        var data = JSON.parse(response);
-                        console.log(data.status, "data.status");
-                        if (data.status === 'success') {
-                            console.log("Post button");
-                        } else {
-                            alert("Something went wrong, please check it later");
-                        }
-                    }
-                });
-            }
-        });
-
-    });
     </script>
 </body>
+
 
 </html>

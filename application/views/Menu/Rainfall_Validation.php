@@ -80,7 +80,7 @@
 <?php $this->load->view('Menu/Landing_page_side.php'); ?>
 
 <div class="main">
-    <h1 style="margin-top: -8px; margin-left: 560px; margin-bottom: 20px;">Rainfall Validation</h1>
+    <h1 style="margin-top: -8px; margin-left: 560px; margin-bottom: 20px;">Rainfall Valiion</h1>
 
     <div style="display: flex; align-items: center;">
 
