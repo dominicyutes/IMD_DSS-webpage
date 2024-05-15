@@ -1,14 +1,14 @@
 <style>
 .sidebar {
-    height: 54rem;
-    width: 11%;
+    height: 43rem;
+    width: 13%;
     background-color: #2c5383;
 }
 
 .sidebar a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 10px;
     color: white;
     display: block;
     width: max-content;

@@ -46,16 +46,8 @@
     body {
         width: 100%;
         height: 100vh;
-        zoom: 80%;
         overflow: hidden;
         font-family: "Lato", sans-serif;
-    }
-
-    #map {
-        margin-top: 1%;
-        height: 100vh;
-        width: 100%;
-        border: 1px solid black;
     }
     </style>
 </head>
@@ -74,7 +66,7 @@
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 88%">
+            <div class="col-9" style="width: 87%">
                 <h2>Post to SMS</h2>
                 <button type="submit" class="btn btn-primary" id="smsSendBtn">Send SMS</button>
                 <!-- <p id="smsResponse"></p> -->

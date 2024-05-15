@@ -45,19 +45,21 @@
     body {
         width: 100%;
         height: 100vh;
-        zoom: 80%;
+        /* zoom: 80%; */
         overflow: hidden;
         font-family: "Lato", sans-serif;
     }
 
     #map {
         margin-top: 1%;
-        height: 100vh;
+        height: 78vh;
         width: 70%;
         border: 1px solid black;
     }
     </style>
 </head>
+
+
 
 <body>
     <div style="height: 100%;">
@@ -73,20 +75,20 @@
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 88%">
+            <div class="col-9" style="width: 87%">
                 <div id="map" class="map-canvas"></div>
                 <div class="row">
                     <div class="col-8">
-                        <h2 style="font-style: italic;">Post to Facebook</h2>
+                        <h4 style="font-style: italic;">Post to Facebook</h4>
                     </div>
                     <div class="col-4">
-                        <h5 style="font-style: italic;">Note: 1. Click Get Picture and 2. Click POST</h5>
+                        <h6 style="font-style: italic;">Note: 1. Click Get Picture and 2. Click POST</h6>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-9">
-                        <button class="btn btn-primary" id="getPic">Get Picture</button>
-                        <button class="btn btn-primary" id="postToFacebookBtn">POST</button>
+                        <button class="btn btn-primary" id="getPic">POST</button>
+                        <button class="btn btn-primary" id="postToFacebookBtn" style="visibility: hidden;">POST</button>
                     </div>
                     <div class="col-3">
                         <!-- <a href="<?php echo base_url('Facebook_post/log_information'); ?>" class="btn btn-primary">Log
@@ -104,31 +106,17 @@
     </div>
 
     <script>
-    // let map = L.map('map').setView([22.79459, 80.06406], 5);
+    var map = L.map('map').setView([22.79459, 80.06406], 4);
 
-    let map = L.map('map', {
-        renderer: L.canvas({
-            padding: 0
-        }),
-        zoom: 5,
-        center: [22.79459, 80.06406],
-    });
-
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
-
-    // Add the GeoJSON data to the map
-    _dist_geojson = "DATA/INDIA_STATE.json";
+    _dist_geojson = "DATA/INDIA_DISTRICT.json";
     var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
         style: function(feature) {
             return {
                 color: 'black',
-                fillColor: 'pink',
+                fillColor: 'transparent',
                 opacity: 1,
                 fillOpacity: 0.5,
-                weight: 2
+                weight: 1
             };
         }
     });
@@ -136,6 +124,112 @@
     geojson.on('data:loaded', function() {
         geojson.addTo(map);
     });
+
+    // var forecast_date = '<?php echo date('Y'); ?>';
+
+    var now_info = JSON.parse('<?php echo json_encode($info)?>');
+    // console.log(now_info);
+
+    var now_info_dist = JSON.parse('<?php echo json_encode($dinfo)?>');
+    // console.log(now_info_dist);
+
+    var dist_id;
+    var data_fc = new Array();
+
+    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //     maxZoom: 19,
+    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    // }).addTo(map);
+
+    // DATA/INDIA_DISTRICT.json Odisha_Dist
+    var india_district_geojson = new L.GeoJSON.AJAX('<?= base_url('DATA/Odisha_Dist.geojson') ?>', {
+        color: 'black',
+        weight: 1,
+        style: fill_color_subbasin,
+        onEachFeature: function(feature, layer) {
+            // console.log(feature.properties, "feature.properties.id");
+            layer.on('mouseover', function(ft) {
+                let popup = new L.Popup();
+                popup.setLatLng(ft.latlng);
+                popup.setContent(getPopUpHTML(feature));
+                map.openPopup(popup);
+            });
+        }
+    });
+    india_district_geojson.addTo(map);
+
+    function set_popup_content(district_name, _info) {
+        _html_popup = "";
+        if (district_name != '') {
+            _html_popup += '<b> ' + district_name + ' </b><br><br>';
+        }
+
+        if (_info['date'] != '') {
+            _html_popup += '<b>  Time of issue  : ' + _info['date'] + '<br> ' + _info['toi'] + ' Hrs</b><br>';
+        }
+        if (_info['vupto'] != '') {
+            _html_popup += '<b>  Valied Upto   : ' + _info['vupto'] + ' Hrs </b>';
+        }
+
+        return _html_popup;
+    }
+
+    function getPopUpHTML(feature) {
+        _popup = '';
+        dist_id = feature.properties.id;
+        district_name = feature.properties.district_name;
+
+        _popup = set_popup_content(district_name, now_info[dist_id]);
+        return _popup;
+    }
+
+    function fill_color_subbasin(feature) {
+        var dist_id = feature.properties.id;
+        data_fc[0] = now_info_dist[dist_id];
+        // console.log(data_fc[0]);
+        if (data_fc[0] === null) {
+            color = '#FFFFFF';
+            opa = 0.6;
+        } else if (Number(data_fc[0]) == 1) {
+            color = '#00FF00';
+            opa = 0.6;
+        } else if (Number(data_fc[0]) == 2) {
+            color = '#FFFF00';
+            opa = 0.6;
+        } else if (Number(data_fc[0]) == 3) {
+            color = '#FFA500';
+            opa = 0.6;
+        } else if (Number(data_fc[0]) == 4) {
+            color = '#FF0000';
+            opa = 0.6;
+        } else {
+            color = '#FFFFFF';
+            opa = 0.6;
+        }
+        return {
+            fillColor: color,
+            fillOpacity: opa,
+            strokeColor: 'black',
+            strokeWeight: 0.7
+        };
+    }
+
+    // adding legends to the map
+    let _legend = L.control({
+        position: 'bottomright'
+    });
+
+    _legend.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'info legend'),
+            labels = [];
+        labels.push(
+            '<img src="<?= base_url('assets/twitter_legends/District_nowcast_legend.PNG')?>" width="100px" height="100px" >' +
+            '<br>');
+
+        div.innerHTML = labels.join('<br>');
+        return div;
+    };
+    _legend.addTo(map);
     // 
 
     // getin image name from contoler
@@ -170,6 +264,14 @@
                         console.log(data.status, "data.status");
                         if (data.status === 'success') {
                             console.log("Post button");
+
+                            // 
+                            setTimeout(function() {
+                                document.getElementById('postToFacebookBtn')
+                                    .click();
+                                console.log("post to facebook is clicked");
+                            }, 2000);
+                            // 
                         } else {
                             alert("Something went wrong, please check it later");
                         }

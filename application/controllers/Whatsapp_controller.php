@@ -14,11 +14,15 @@ class Whatsapp_controller extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->helper('url');
+        $this->_check_session();
+    }
 
-        // Initialize class properties
-        $this->folder_path = "assets/Whatsapp_img"; 
-        $this->filename = ""; 
-        $this->img_path = ""; 
+    function _check_session() {
+        if ($this->session->userdata('name')) {
+            // 
+        } else {
+           redirect('login');
+        }
     }
 
     public function index() {

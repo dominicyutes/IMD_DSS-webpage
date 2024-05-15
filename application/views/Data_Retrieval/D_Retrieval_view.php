@@ -62,70 +62,16 @@
         width: 100%;
         height: 100vh;
         /* zoom: 80%; */
-        overflow-x: hidden;
+        overflow: hidden;
         font-family: "Lato", sans-serif;
     }
 
-    .text {
-        font-family: 'Archivo', sans-serif;
-        font-size: 2em;
-        font-weight: 600;
-        color: white;
-        letter-spacing: 3px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .fixedHead {
-        background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 60px;
-        width: 100%;
-        position: relative;
-    }
-
-    .sidebar {
-        height: 54rem;
-        width: 11%;
-        background-color: #2c5383;
-    }
-
-    .sidebar a {
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 13px;
-        color: white;
-        display: block;
-        width: max-content;
-    }
-
-    .sidebar a:hover {
-        color: white;
-    }
-
-    .dropdown-content {
-        display: none;
-        padding-left: 20px;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
     #map {
-        /* zoom: 100%; */
         margin-top: 1%;
-        height: 100vh;
-        width: 100%;
+        height: 78vh;
+        width: 70%;
         border: 1px solid black;
     }
-
-    /* .leaflet-draw-toolbar {
-        zoom: 80%;
-    } */
     </style>
 </head>
 
@@ -143,7 +89,7 @@
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 88%">
+            <div class="col-9" style="width: 87%">
                 <div id="map"></div>
             </div>
             <!-- editing content ends here -->

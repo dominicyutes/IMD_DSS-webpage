@@ -8,6 +8,15 @@ class SMS_controller extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->helper('url');
+        $this->_check_session();
+    }
+
+    function _check_session() {
+        if ($this->session->userdata('name')) {
+            // 
+        } else {
+           redirect('login');
+        }
     }
 
     public function index() {
