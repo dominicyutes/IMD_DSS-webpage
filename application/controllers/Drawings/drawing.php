@@ -72,32 +72,49 @@ class Drawing extends CI_Controller
 
     public function save_coordinates_odisha()
     {
-        // Get POST data
         $json_data = file_get_contents('php://input');
 
-        // Decode JSON data
         $data = json_decode($json_data, true);
 
-        // Debugging: Echo the received data
-        // echo "<pre>";
-        // echo "Received data from view page:\n";
-        // var_dump($data);f10
-        // echo "</pre>";
-
-        // Load model
-        // $this->load->model('Drawings_model');
-
-        // Call model method to insert data into PostgreSQL table
+        
+ 
         $result = $this->Drawings_model->insert_coordinates_odisha($data);
 
-        // Check if data insertion was successful
         if ($result) {
             echo "Coordinates saved successfully";
         } else {
             echo "Error saving coordinates";
         }
     }
-
+    
+    public function save_coordinates_to_hq()
+    {
+        // Read JSON data from request body
+        $json_data = file_get_contents('php://input');
+        $data = json_decode($json_data, true);
+    
+        // Debug: Output received data
+        // echo "<pre>";
+        // echo "Received data from view page:\n";
+        // var_dump($data);
+        // echo "</pre>";
+    
+        // Process received data
+        if (!empty($data)) {
+            // Pass the data to the model method for insertion
+            $result = $this->Drawings_model->insert_coordinates_to_hq($data);
+    
+            // if ($result) {
+            //     echo "Coordinates saved successfully";
+            // } else {
+            //     echo "Error saving coordinates";
+            // }
+        } else {
+            echo "No data received";
+        }
+    }
+    
+    
 
     public function get_lat_long()
     {
@@ -151,6 +168,23 @@ class Drawing extends CI_Controller
 
 
         $names = $this->Drawings_model->get_names_odisha($selectedDate);
+
+        header('Content-Type: application/json');
+
+        if ($names !== false) {
+            echo json_encode($names);
+        } else {
+            http_response_code(500);
+            echo json_encode(array('error' => 'Error fetching names for the selected date'));
+        }
+    }
+
+    public function fetch_name_odisha_hq()
+    {
+        $selectedDate = $this->input->get('date');
+
+
+        $names = $this->Drawings_model->get_names_odisha_hq($selectedDate);
 
         header('Content-Type: application/json');
 
