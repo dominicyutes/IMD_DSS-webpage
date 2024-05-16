@@ -8,10 +8,19 @@ class HomePage extends CI_Controller {
         $this->load->library('TCPdf_pdf');
         $this->load->model('MacrosModel');
         $this->load->model('Register_model');
+        $this->_check_session();
         
         if ($this->session->is_loggedin == FALSE) {
             $this->session->set_flashdata('message','<div class="alert alert-danger"><strong>Please Login to continue!!</strong><a href="#" class="close" data-dismiss= "alert" aria-label="close" title="close">X</a></div>');
             redirect('login');
+        }
+    }
+
+    function _check_session() {
+        if ($this->session->userdata('name')) {
+            // 
+        } else {
+           redirect('login');
         }
     }
 

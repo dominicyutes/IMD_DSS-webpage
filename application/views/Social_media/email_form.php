@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     body {
         width: 100%;
         height: 100vh;
-        zoom: 80%;
+        /* zoom: 80%; */
         overflow: hidden;
         font-family: "Lato", sans-serif;
     }
@@ -81,31 +81,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 88%">
+            <div class="col-9" style="width: 87%">
                 <div style="background-color: #f5fdfd">
                     <br>
                     <br>
                     <h2 class="text-center">EMAIL DISSEMINATIOIN</h2>
 
+                    <!--  -->
                     <div>
                         <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>">
                             <!-- <lable>Name</lable>
-                <input type="text" id="name" name="name" />
-                <br>
-                <lable>Subject</lable>
-                <input type="text" id="subject" name="subject" />
-                <br>
-                <lable>Message</lable>
-                <input type="text" id="message" name="message" /> -->
+                            <input type="text" id="name" name="name" />
+                            <br>
+                            <lable>Subject</lable>
+                            <input type="text" id="subject" name="subject" />
+                            <br>
+                            <lable>Message</lable>
+                            <input type="text" id="message" name="message" /> -->
                             <!-- <label for="toggleButton">To Deliver</label>
-                <input type="checkbox" id="toggleButton">
+                            <input type="checkbox" id="toggleButton">
 
-                <button style="margin-left: 10px" type="submit" id="submitButton" class="btn btn-success ml-2"
-                    disabled>Submit</button>
+                            <button style="margin-left: 10px" type="submit" id="submitButton" class="btn btn-success ml-2"
+                                   disabled>Submit</button>
 
-                <div class="text-right">
-                    <button class="btn btn-primary">Log Information</button>
-                </div> -->
+                            <div class="text-right">
+                                <button class="btn btn-primary">Log Information</button>
+                            </div> -->
 
 
                             <div class="row">
@@ -114,66 +115,77 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <!-- To Deliver -->
                                     <input type="checkbox" id="toggleButton">
                                     <button style="margin-left: 10px" type="submit" id="submitButton"
-                                        class="btn btn-success ml-2" disabled>Auto Email</button>
+                                        class="btn btn-success ml-2">Submit</button>
                                     <!--Submit -->
                                 </div>
-                                <div class="col-2 text-right">
+                                <!-- <div class="col-2 text-right">
                                     <button class="btn btn-primary" id="toggleEmailLogTable">Log Information</button>
-                                </div>
+
+                                </div> -->
                             </div>
                             <br>
                         </form>
-                        <br><br><br>
-                        <!--  -->
-                        <!-- <div>
-                            <lable for="groupSelect">Choose Group</lable>
-                            <select id="groupSelect">
-                                <option value="">--Select a MC--</option>
-                                <option value="MC_Ahmedabad">MC_Ahmedabad</option>
-                                <option value="MC_Amaravati">MC_Amaravati</option>
-                                <option value="MC_Bengaluru">MC_Bengaluru</option>
-                            </select>
+                        <div class="col-2 text-right">
+                            <button class="btn btn-primary" id="toggleEmailLogTable">Log Information</button>
                         </div>
-                        <div>
-                            <button onclick="groupSelect()">Accept</button>
-                        </div> -->
-                        <!--  -->
-                        <div class="container" id="emailLogTable" style="display: none;">
-                            <div class="row">
-                                <br>
-                                <h3>Email Log Table</h3>
-                                <br />
-                                <div class="table-responsive" style="max-height: 450px;">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Sno</th>
-                                                <th>Mail From</th>
-                                                <th>Mail To</th>
-                                                <th>Sent</th>
-                                                <th>Time</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php 
-                                                $i = 1;
-                                                foreach($result as $row) {
-                                                    echo '<tr>
-                                                        <td>'.$i++.'</td>
-                                                        <td>'.$row['email_from'].'</td>
-                                                        <td>'.$row['email_to'].'</td>
-                                                        <td>'.($row['sent'] ? 'Sent' : 'Not Sent').'</td>
-                                                        <td>'.(isset($row['sent_time']) ? date('Y-m-d H:i:s', strtotime($row['sent_time'])) : '').'</td>
-                                                    </tr>';
-                                                }
-                                            ?>
-                                        </tbody>
-                                    </table>
+                        <br>
+
+                        <!-- div class row starts here  -->
+                        <div class="row">
+                            <!-- Left column -->
+                            <div class="col-4">
+                                <div class="row">
+                                    <div class="col-12" style="display: flex; margin-left: 54px;">
+                                        <label for="groupSelect">Choose Group</label>
+                                        <select id="groupSelect" class="form-select">
+                                            <option value="">--Select a MC--</option>
+                                            <option value="MC_Ahmedabad">MC_Ahmedabad</option>
+                                            <option value="MC_Amaravati">MC_Amaravati</option>
+                                            <option value="MC_Bengaluru">MC_Bengaluru</option>
+                                        </select>
+                                    </div>
                                 </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-12" style="display: flex; margin-left: 57px;">
+                                        <label for="dataTypeGrp">Data Type</label>
+                                        <select id="dataTypeGrp" class="form-select" style="width: 71%;">
+                                            <option value="">--Select a Data Type--</option>
+                                            <option value="Heatwave">Heatwave</option>
+                                            <option value="Coldwave">Coldwave</option>
+                                            <option value="Cyclone">Cyclone</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-12" style="margin-left: 57px;">
+                                        <input type="checkbox" name="addoredit" id="addoredit" disabled>
+                                        <label for="addoredit">Add/Edit</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-12" style="margin-left: 57px;">
+                                        <button id="acceptButton">Accept</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right column -->
+                            <div class="col-4">
+                                <ul style="background-color: antiquewhite; margin-left: 10%;" id="emailList"></ul>
                             </div>
                         </div>
 
+                        <!-- div class row ends here  -->
+
+                        <br>
+
+
+
                     </div>
+                    <!--  -->
                 </div>
             </div>
             <!-- editing content ends here -->
@@ -182,41 +194,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 
     <script>
+    document.getElementById("toggleEmailLogTable").addEventListener("click", function() {
+        window.location = "<?php echo site_url('Email/show_logInfo'); ?>";
+    });
+
+
+    // 
     $(document).ready(function() {
-        $('#toggleButton').change(function() {
-            if ($(this).is(':checked')) {
-                $('#submitButton').prop('disabled', false);
+        $('#groupSelect').change(function() {
+            var selectedGroup = $(this).val();
+            if (selectedGroup !== '') {
+                $.ajax({
+                    url: 'Email/get_emails',
+                    type: 'POST',
+                    data: {
+                        group_name: selectedGroup
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        if (Array.isArray(response)) {
+                            displayEmails(response);
+                        } else {
+                            console.error("Invalid response format:", response);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("AJAX error:", error);
+                    }
+                });
             } else {
-                $('#submitButton').prop('disabled', true);
+                $('#emailList').empty();
             }
         });
     });
 
-    $(document).ready(function() {
-        $("#toggleEmailLogTable").click(function() {
-            event.preventDefault();
-            $("#emailLogTable").toggle();
-
+    function displayEmails(emails) {
+        var emailList = $('#emailList');
+        emailList.empty();
+        emails.forEach(function(email) {
+            var listItem = $('<li>').text(email);
+            emailList.append(listItem);
         });
-    });
-
-    function groupSelect() {
-        var selectedValue = document.getElementById("groupSelect").value;
-        var emailAddresses;
-
-        // Object to store email addresses corresponding to each option value
-        var emailData = {
-            "MC_Ahmedabad": ["xx@gmail.com", "xy@gmail.com"],
-            "MC_Amaravati": ["yy@gmail.com", "xy@gmail.com"],
-            "MC_Bengaluru": ["zz@gmail.com", "xy@gmail.com"]
-        };
-
-        // Get the email addresses based on the selected option value
-        emailAddresses = emailData[selectedValue] || [];
-
-        // Log the selected option value and email addresses to the console
-        console.log("Selected option:", selectedValue);
-        console.log("Corresponding email addresses:", emailAddresses);
     }
     </script>
 </body>
