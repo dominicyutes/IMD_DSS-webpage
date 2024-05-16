@@ -32,7 +32,7 @@
     </style>
 </head>
 
-<body style= "zoom:80%;">
+<body>
     <div style="height: 100%;">
         <div class="fixedHead">
             <!-- Landing_page title logo> -->
@@ -48,7 +48,7 @@
             <!-- editing content starts here -->
             <div class="main" style="width: 88%; margin-left: -16px;">
                 <img src="" alt="">
-                <img src="<?php echo base_url('img/weather_img.png'); ?>"height="" style="width: 1560px;height: 864px;">
+                <img src="<?php echo base_url('img/weather_img.png'); ?>"height="" style="width: 1228px;height: 840px;margin-left: 219px;margin-top: -965px;">
 
             </div>
             <!-- editing content ends here -->

@@ -1,7 +1,7 @@
 <style>
 .sidebar {
     height: 54rem;
-    width: 11%;
+    width: 15%;
     background-color: #2c5383;
 }
 
@@ -45,7 +45,7 @@
         <a href="<?php echo base_url('D_Retrieval_Controller'); ?>"><i class="fa-solid fa-draw-polygon"></i></i>Data
             Retrieval</a>
 
-        <?php if (isset($name) && $name == 'Super_Admin_HQ'): ?>
+        <?php if (isset($name) && $name == 'Super Admin HQ'): ?>
         <div class="dropdown">
             <a href="#"><i class="fa-solid fa-share-from-square"></i> Social Media <i class="fa fa-caret-down"></i></a>
             <div class="dropdown-content">
