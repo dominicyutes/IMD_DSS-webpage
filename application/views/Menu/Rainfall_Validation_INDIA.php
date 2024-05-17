@@ -55,7 +55,7 @@
     </style>
 </head>
 
-<body style= "zoom:80%;">
+<body>
 
     <div style="height: 100%;">
 
@@ -65,7 +65,7 @@
         <?php $this->load->view('Menu/Landing_page_side.php'); ?>
 
         <div class="main">
-            <h1 style="margin-top: -8px; margin-left: 560px; margin-bottom: 20px;">Rainfall Validation INDIA</h1>
+            <h1 style="margin-top: -8px; margin-left: 450px; margin-bottom: 20px;">Rainfall Validation INDIA</h1>
             <div class="content-wrapper">
                 <section class="content">
                     <div class="box box-info">
