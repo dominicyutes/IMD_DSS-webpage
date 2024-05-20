@@ -165,7 +165,7 @@
                                     <label for="start_date_odisha" class="dateDDLabel"
                                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
                                     <input type="date" id="start_date_odisha" class="dateDD"
-                                        onchange="fetchOdishaNames()">
+                                        onchange="fetchOdishaNames_hq()">
                                 </div>
                             </div>
                             <div id="drawings_data_odisha"></div>
@@ -1008,6 +1008,7 @@
         // document.getElementById('start_date_odisha').value = today;
 
         fetchOdishaNames();
+        fetchOdishaNames_hq();
     });
 
 
@@ -1116,37 +1117,77 @@
     // Function to fetch and display names with checkboxes
     function fetchOdishaNames() {
 
-        <?php if (isset($name)): ?>
-            var startDateId;
-            var weatherDataDivs;
-            if ('<?php echo $name; ?>' === "Super Admin HQ") {
-                startDateId = "start_date_odisha";
-                weatherDataDivs = document.getElementById("drawings_data_odisha");
-            } else if ('<?php echo $name; ?>' === "MC ODISHA") {
-                startDateId = "start_date_odisha_o";
-                weatherDataDivs = document.getElementById("drawings_data_odisha_o");
-            }
-        <?php endif; ?>
+        var selectedDate = document.getElementById("start_date_odisha_o").value;
 
-        var selectedDate = document.getElementById(startDateId).value;
-        var ajaxUrl = "";
-
-        <?php if (isset($name)): ?>
-            if ('<?php echo $name; ?>' === "Super Admin HQ") {
-                ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>";
-            } else if ('<?php echo $name; ?>' === "MC ODISHA") {
-                ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>";
-            }
-        <?php endif; ?>
         $.ajax({
-            url: ajaxUrl,
+            url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha'); ?>",
             type: "GET",
             data: {
                 date: selectedDate
             },
             success: function (data) {
-                console.log(data);
-                var weatherDataDiv = weatherDataDivs;
+                weatherDataDiv = document.getElementById("drawings_data_odisha_o");
+                weatherDataDiv.innerHTML = "";
+
+                if (data && data.length > 0) {
+                    var checkboxContainer = document.createElement("div");
+
+                    data.forEach(function (item, index) {
+                        if (item && item.date && item.name && item.latitudes && item.longitudes) {
+                            var checkbox = document.createElement("input");
+                            checkbox.type = "checkbox";
+                            checkbox.id = "checkbox_" + index;
+                            checkbox.value = item.name;
+                            checkbox.value = JSON.stringify(item); // Store item data as a string value
+
+                            var label = document.createElement("label");
+                            label.textContent = item.name;
+                            label.setAttribute("for", "checkbox_" + index);
+
+                            checkboxContainer.appendChild(checkbox);
+                            checkboxContainer.appendChild(label);
+                            checkboxContainer.appendChild(document.createElement("br"));
+                            // Attach event listener to checkbox
+                            checkbox.addEventListener("change", function () {
+                                if (checkbox.checked) {
+                                    var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
+                                    var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
+
+                                    // Draw polyline when checkbox is checked
+                                    drawPolyline(latitudes, longitudes, item.name);
+                                } else {
+                                    // Remove polyline when checkbox is unchecked
+                                    clearPolyline(item.name);
+                                }
+                            });
+                        }
+                    });
+
+                    weatherDataDiv.appendChild(checkboxContainer);
+                } else {
+                    weatherDataDiv.textContent = "No drawings found for the selected date.";
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching names:", error);
+                weatherDataDiv = document.getElementById("drawings_data_odisha_o");
+                weatherDataDiv.textContent = "Error fetching names. Please try again later.";
+            }
+        });
+    }
+
+    function fetchOdishaNames_hq() {
+
+        var selectedDate = document.getElementById("start_date_odisha").value;
+
+        $.ajax({
+            url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>",
+            type: "GET",
+            data: {
+                date: selectedDate
+            },
+            success: function (data) {
+                weatherDataDiv = document.getElementById("drawings_data_odisha");
                 weatherDataDiv.innerHTML = "";
 
                 if (data && data.length > 0) {
@@ -1172,11 +1213,11 @@
                                 if (checkbox.checked) {
                                     var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
                                     var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
-                                    var markersData = JSON.parse(item.markers);
 
                                     // Draw polyline when checkbox is checked
-                                    drawPolyline(latitudes, longitudes, item.name, markersData);
+                                    drawPolyline(latitudes, longitudes, item.name);
                                 } else {
+                                    // Remove polyline when checkbox is unchecked
                                     clearPolyline(item.name);
                                 }
                             });
@@ -1190,74 +1231,11 @@
             },
             error: function (xhr, status, error) {
                 console.error("Error fetching names:", error);
-                var weatherDataDiv = weatherDataDivs;
+                weatherDataDiv = document.getElementById("drawings_data_odisha");
                 weatherDataDiv.textContent = "Error fetching names. Please try again later.";
             }
         });
     }
-
-    // function fetchOdishaNames_hq() {
-
-    //     var selectedDate = document.getElementById("start_date_odisha").value;
-
-    //     $.ajax({
-    //         url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>",
-    //         type: "GET",
-    //         data: {
-    //             date: selectedDate
-    //         },
-    //         success: function (data) {
-    //             // console.log(data);
-    //             weatherDataDiv = document.getElementById("drawings_data_odisha");
-    //             weatherDataDiv.innerHTML = "";
-
-    //             if (data && data.length > 0) {
-    //                 var checkboxContainer = document.createElement("div");
-
-    //                 data.forEach(function (item, index) {
-    //                     if (item && item.date && item.name && item.latitudes && item.longitudes) {
-    //                         var checkbox = document.createElement("input");
-    //                         checkbox.type = "checkbox";
-    //                         checkbox.id = "checkbox_" + index;
-    //                         checkbox.value = item.name;
-    //                         checkbox.value = JSON.stringify(item);
-
-    //                         var label = document.createElement("label");
-    //                         label.textContent = item.name;
-    //                         label.setAttribute("for", "checkbox_" + index);
-
-    //                         checkboxContainer.appendChild(checkbox);
-    //                         checkboxContainer.appendChild(label);
-    //                         checkboxContainer.appendChild(document.createElement("br"));
-    //                         // Attach event listener to checkbox
-    //                         checkbox.addEventListener("change", function () {
-    //                             if (checkbox.checked) {
-    //                                 var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
-    //                                 var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
-    //                                 var markersData = JSON.parse(item.markers);
-
-    //                                 // Draw polyline when checkbox is checked
-    //                                 drawPolyline(latitudes, longitudes, item.name, markersData);
-    //                             } else {
-    //                                 // Remove polyline when checkbox is unchecked
-    //                                 clearPolyline(item.name);
-    //                             }
-    //                         });
-    //                     }
-    //                 });
-
-    //                 weatherDataDiv.appendChild(checkboxContainer);
-    //             } else {
-    //                 weatherDataDiv.textContent = "No drawings found for the selected date.";
-    //             }
-    //         },
-    //         error: function (xhr, status, error) {
-    //             console.error("Error fetching names:", error);
-    //             weatherDataDiv = document.getElementById("drawings_data_odisha");
-    //             weatherDataDiv.textContent = "Error fetching names. Please try again later.";
-    //         }
-    //     });
-    // }
 
     document.getElementById("PassDrawings").addEventListener("click", function () {
         var checkedItems = [];
@@ -1296,47 +1274,33 @@
 
 
     // Function to draw a polyline on the map
-    // function drawPolylines(latitudes, longitudes, name, markersData) {
-    //         var existingPolyline = drawnPolylines.find(function (polyline) {
-    //             return polyline.options.name === name;
-    //         });
+    function drawPolylines(latitudes, longitudes, name) {
+        // Check if a polyline with the same name already exists
+        var existingPolyline = drawnPolylines.find(function (polyline) {
+            return polyline.options.name === name;
+        });
 
-    //         if (existingPolyline) {
-    //             existingPolyline.addTo(map);
-    //         } else {
-    //             var polylineCoords = [];
-    //             for (var i = 0; i < latitudes.length; i++) {
-    //                 polylineCoords.push([parseFloat(latitudes[i]), parseFloat(longitudes[i])]);
-    //             }
+        if (existingPolyline) {
+            // If the polyline already exists, simply show it
+            existingPolyline.addTo(map);
+        } else {
+            // Create a new polyline
+            var polylineCoords = [];
+            for (var i = 0; i < latitudes.length; i++) {
+                polylineCoords.push([parseFloat(latitudes[i]), parseFloat(longitudes[i])]);
+            }
 
-    //             var polyline = L.polyline(polylineCoords, {
-    //                 color: getRandomColor(),
-    //                 weight: 3,
-    //                 opacity: 0.7,
-    //                 name: name
-    //             });
+            var polyline = L.polyline(polylineCoords, {
+                color: getRandomColor(),
+                weight: 3,
+                opacity: 0.7,
+                name: name // Assign a name to the polyline for identification
+            });
 
-    //             drawnPolylines.push(polyline);
-
-    //             polyline.addTo(map);
-
-    //             // Add markers if markersData is provided
-    //             if (markersData && markersData.length > 0) {
-    //                 markersData.forEach(function (marker) {
-    //                     var latLng = L.latLng(marker.latitude, marker.longitude);
-    //                     var markerText = marker.tooltipText;
-
-    //                     // Create a marker with a tooltip
-    //                     var customMarker = L.marker(latLng).addTo(map);
-    //                     customMarker.bindTooltip(markerText, {
-    //                         permanent: true,
-    //                         direction: 'top',
-    //                         opacity: 0.7
-    //                     });
-    //                 });
-    //             }
-    //         }
-    //     }
+            drawnPolylines.push(polyline); // Store the polyline reference
+            polyline.addTo(map); // Add the polyline to the map
+        }
+    }
 
     // Function to clear a specific polyline from the map
     function clearPolyline(name) {

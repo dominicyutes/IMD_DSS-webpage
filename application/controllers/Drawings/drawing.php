@@ -37,7 +37,7 @@ class Drawing extends CI_Controller
 
         $this->load->model('Drawings_model');
 
-        $names = $this->Drawings_model->get_names_odisha($selectedDate);
+        $names = $this->Drawings_model->get_names_odisha_mc($selectedDate);
 
         header('Content-Type: application/json');
         echo json_encode($names);
@@ -53,7 +53,7 @@ class Drawing extends CI_Controller
         // Debugging: Echo the received data
         // echo "<pre>";
         // echo "Received data from view page:\n";
-        // var_dump($data);
+        // var_dump($data);f10
         // echo "</pre>";
 
         // Load model

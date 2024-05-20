@@ -20,15 +20,13 @@ class Drawings_model extends CI_Model
         $latitudes = $data['latitudes'];
         $longitudes = $data['longitudes'];
         $date = $data['date'];
-        $markers = $data['markers'];
 
-        $markersJson = json_encode($markers);
+
         $insert_data = array(
             'name' => $name,
             'latitudes' => '{' . implode(',', $latitudes) . '}',
             'longitudes' => '{' . implode(',', $longitudes) . '}',
-            'date' => $date,
-            'markers' => $markersJson
+            'date' => $date
         );
         //  var_dump($insert_data);
 
@@ -55,15 +53,13 @@ class Drawings_model extends CI_Model
         $latitudes = $data['latitudes'];
         $longitudes = $data['longitudes'];
         $date = $data['date'];
-        $markers = $data['markers'];
 
-        $markersJson = json_encode($markers);
+
         $insert_data = array(
             'name' => $name,
             'latitudes' => '{' . implode(',', $latitudes) . '}',
             'longitudes' => '{' . implode(',', $longitudes) . '}',
-            'date' => $date,
-            'markers' => $markersJson
+            'date' => $date
         );
 
         $query_result = $this->db->insert('weather_inference_drawings_mc_odisha', $insert_data);
@@ -77,51 +73,51 @@ class Drawings_model extends CI_Model
         }
     }
     public function insert_coordinates_to_hq($data)
-{
-    if (empty($data)) {
-        echo "No data received";
-        return false;
-    }
-
-    foreach ($data as $item) {
-        if (isset($item['name'], $item['latitudes'], $item['longitudes'], $item['date'], $item['markers'])) {
-            $name = $item['name'];
-            $latitudesStr = $item['latitudes'];
-            $longitudesStr = $item['longitudes'];
-            $date = $item['date'];
-            $markers = $item['markers'];
-
-            if (!empty($latitudesStr) && !empty($longitudesStr)) {
-                $insert_data = [
-                    'name' => $name,
-                    'latitudes' => $latitudesStr,
-                    'longitudes' => $longitudesStr,
-                    'date' => $date,
-                    'markers' => $markers
-                ];
-
-                $query_result = $this->db->insert('weather_inference_drawings_odisha_hq', $insert_data);
-
-                if (!$query_result) {
-                    echo "Failed to insert data for item:\n";
+    {
+        if (!empty($data)) {
+            foreach ($data as $item) {
+                if (isset($item['name'], $item['latitudes'], $item['longitudes'], $item['date'])) {
+                    $name = $item['name'];
+                    $latitudesStr = $item['latitudes'];
+                    $longitudesStr = $item['longitudes'];
+                    $date = $item['date'];
+    
+                    // Ensure latitudes and longitudes are not empty strings
+                    if (!empty($latitudesStr) && !empty($longitudesStr)) {
+                        // No need to wrap latitudes and longitudes in additional curly braces
+                        // They are already in the correct format as strings
+                        $insert_data = array(
+                            'name' => $name,
+                            'latitudes' => $latitudesStr,
+                            'longitudes' => $longitudesStr,
+                            'date' => $date
+                        );
+    
+                        $query_result = $this->db->insert('weather_inference_drawings_odisha_hq', $insert_data);
+                        
+                        if ($query_result) {
+                            // Successful insertion
+                            continue; // Move to the next item
+                        } else {
+                            // Insertion failed
+                            return false; // Stop processing and return false
+                        }
+                    } else {
+                        echo "Empty latitudes or longitudes string for item:\n";
+                        var_dump($item);
+                    }
+                } else {
+                    echo "Missing or invalid data for item:\n";
                     var_dump($item);
-                    return false; 
                 }
-            } else {
-                echo "Empty latitudes or longitudes string for item:\n";
-                var_dump($item);
-                return false; 
             }
+            return true; // All items processed successfully
         } else {
-            echo "Missing or invalid data for item:\n";
-            var_dump($item);
+            echo "No data received";
             return false;
         }
     }
-
-    return true;
-}
-
+    
 
 
 
@@ -165,11 +161,11 @@ class Drawings_model extends CI_Model
 
     public function get_lat_long_from_database($date, $name)
     {
-        $this->db->select('latitudes, longitudes, markers');
+        $this->db->select('latitudes, longitudes');
         $this->db->where('date', $date);
         $this->db->where('name', $name);
         $query = $this->db->get('weather_inference_drawings');
-        // var_dump($query->result_array());
+
         if ($query->num_rows() > 0) {
             return $query->row_array();
         } else {
@@ -179,7 +175,7 @@ class Drawings_model extends CI_Model
 
     public function get_lat_long_from_database_odisha($date, $name)
     {
-        $this->db->select('latitudes, longitudes, markers');
+        $this->db->select('latitudes, longitudes');
         $this->db->where('date', $date);
         $this->db->where('name', $name);
         $query = $this->db->get('weather_inference_drawings_mc_odisha');
@@ -206,7 +202,7 @@ class Drawings_model extends CI_Model
 
     public function get_names_odisha($date)
     {
-        $query = $this->db->select('name, latitudes, longitudes, date, markers')
+        $query = $this->db->select('name, latitudes, longitudes, date')
             ->from('weather_inference_drawings_mc_odisha')
             ->where('date', $date)
             ->get();
@@ -220,7 +216,7 @@ class Drawings_model extends CI_Model
 
     public function get_names_odisha_hq($date)
     {
-        $query = $this->db->select('name, latitudes, longitudes, date, markers')
+        $query = $this->db->select('name, latitudes, longitudes, date')
             ->from('weather_inference_drawings_odisha_hq')
             ->where('date', $date)
             ->get();

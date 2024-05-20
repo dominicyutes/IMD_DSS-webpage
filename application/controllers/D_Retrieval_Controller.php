@@ -18,7 +18,7 @@ class D_Retrieval_Controller extends CI_Controller {
         $name = $this->session->userdata('name');
         $data['name'] = $name;
     
-         $this->load->view('Data_Retrieval/D_Retrieval_view', $data);
+         $this->load->view('Data_Retrieval/D_Retrieval_view');
     }
 
 }
