@@ -98,7 +98,7 @@
     </div>
 
     <script>
-    var map = L.map('map').setView([22.79459, 80.06406], 5);
+    var map = L.map('map').setView([22.79459, 80.06406], 4);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -114,7 +114,7 @@
                 fillColor: '#399fe3',
                 opacity: 1,
                 fillOpacity: 0.5,
-                weight: 2
+                weight: 1
             };
         }
     });
@@ -126,65 +126,32 @@
 
 
     // drawControl starts here
-    const drawnItems = new L.FeatureGroup();
+    var drawnItems = new L.FeatureGroup();
     map.addLayer(drawnItems);
 
-    const drawControl = new L.Control.Draw({
+    var drawControl = new L.Control.Draw({
         draw: {
             polygon: true,
-            polyline: true,
-            circle: true,
-            marker: true,
-            circlemarker: true
+            polyline: false,
+            circle: false,
+            marker: false,
+            circlemarker: false,
+            rectangle: false
         },
         edit: {
             featureGroup: drawnItems
-        },
-        position: 'topright', // Change position of the toolbar if needed
-        draw: {
-            toolbarOptions: {
-                style: {
-                    zoom: '80%' // Adjust the size of the toolbar
-                }
-            }
         }
     });
     map.addControl(drawControl);
 
     map.on('draw:created', function(e) {
-        console.log(e, "eeeeeeeeee");
-        const layer = e.layer;
-        console.log(layer, "layer");
-        drawnItems.addLayer(layer);
+        var type = e.layerType,
+            layer = e.layer;
+
+        if (type === 'polygon') {
+            drawnItems.addLayer(layer);
+        }
     });
-
-    // DRAW
-    // var drawnItems = new L.FeatureGroup();
-    // map.addLayer(drawnItems);
-
-    // var drawControl = new L.Control.Draw({
-    //     draw: {
-    //         polygon: true,
-    //         polyline: false,
-    //         circle: false,
-    //         marker: false,
-    //         circlemarker: false,
-    //         rectangle: false
-    //     },
-    //     edit: {
-    //         featureGroup: drawnItems
-    //     }
-    // });
-    // map.addControl(drawControl);
-
-    // map.on('draw:created', function(e) {
-    //     var type = e.layerType,
-    //         layer = e.layer;
-
-    //     if (type === 'polygon') {
-    //         drawnItems.addLayer(layer);
-    //     }
-    // });
     // 
     </script>
 </body>

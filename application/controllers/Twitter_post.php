@@ -9,22 +9,22 @@ class Twitter_post extends CI_Controller {
         $this->_check_session();
     }
 
-    function _check_session() {
-        if ($this->session->userdata('name')) {
-            // 
-        } else {
-           redirect('login');
+    private function _check_session() {
+        if (!$this->session->has_userdata('name')) {
+            redirect('login');
         }
     }
 
     public function index() {
         $data = array();
+        $name = $this->session->userdata('name');
+        $data['name'] = $name;
         
-        $name = '';
-          if ($this->session->has_userdata('name')) {
-           $name = $this->session->userdata('name');
-          }
-          $data['name'] = $name;
+        // $name = '';
+        //   if ($this->session->has_userdata('name')) {
+        //    $name = $this->session->userdata('name');
+        //   }
+        //   $data['name'] = $name;
 
        
         $todays_date = '2023-05-04';
