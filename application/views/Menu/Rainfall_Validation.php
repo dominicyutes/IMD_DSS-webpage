@@ -69,7 +69,7 @@
     </style>
 </head>
 
-<body style="zoom:80%;">
+<body>
 
 
 <div style="height: 100%;">
@@ -80,7 +80,7 @@
 <?php $this->load->view('Menu/Landing_page_side.php'); ?>
 
 <div class="main">
-    <h1 style="margin-top: -8px; margin-left: 560px; margin-bottom: 20px;">Rainfall Valiion</h1>
+    <h1 style="margin-top: -8px; margin-left: 450px; margin-bottom: 20px;">Rainfall Validation</h1>
 
     <div style="display: flex; align-items: center;">
 
@@ -133,7 +133,7 @@
                     filters.
                 </div>
                 <div id="reportrange"
-                    style="position: absolute; top: 21%; left:283px;  padding: 5px 10px; background: #fff; cursor: pointer; border: 1px solid #ccc; z-index: 9699;">
+                    style="position: absolute; top: 25%; left:283px;  padding: 5px 10px; background: #fff; cursor: pointer; border: 1px solid #ccc; z-index: 9699;">
                     <i class="fa fa-calendar"></i>&nbsp;
                     <span></span> <i class="fa fa-caret-down"></i>
                 </div>
@@ -507,24 +507,24 @@
             })
         });
 
-        // var labels = new ol.layer.Tile({
-        //     visible: true,
-        //     opacity: 1,
-        //     source: new ol.source.TileWMS({
-        //         url: 'https://geoserver.rimes.int:8443/geoserver/wms',
-        //         singleTile: true,
-        //         params: {
-        //             'LAYERS': 'rimes:districts_s,rimes:block_s_bkp',
-        //             tilesorigin: '85.0985,20.9517',
-        //             'styles': 'district_label,block_label'
-        //         },
-        //         serverType: 'geoserver',
-        //         transition: 0
-        //     })
-        // });
-        // map.addLayer(labels);
-        // var ls = new ol.control.LayerSwitcher({ tipLabel: 'Legend' });
-        // map.addControl(ls);
+        var labels = new ol.layer.Tile({
+            visible: true,
+            opacity: 1,
+            source: new ol.source.TileWMS({
+                url: 'https://geoserver.rimes.int:8443/geoserver/wms',
+                singleTile: true,
+                params: {
+                    'LAYERS': 'rimes:districts_s,rimes:block_s_bkp',
+                    tilesorigin: '85.0985,20.9517',
+                    'styles': 'district_label,block_label'
+                },
+                serverType: 'geoserver',
+                transition: 0
+            })
+        });
+        map.addLayer(labels);
+        var ls = new ol.control.LayerSwitcher({ tipLabel: 'Legend' });
+        map.addControl(ls);
 
         //date picker 
 

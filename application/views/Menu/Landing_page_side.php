@@ -1,7 +1,7 @@
 <style>
 .sidebar {
     height: 54rem;
-    width: 11%;
+    width: 15%;
     background-color: #2c5383;
 }
 
