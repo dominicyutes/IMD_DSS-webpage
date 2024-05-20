@@ -5,20 +5,42 @@ class Twitter_post extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        // $this->load->library('curl');
+        $this->load->model('TwitterDB');
+        $this->_check_session();
+    }
+
+    private function _check_session() {
+        if (!$this->session->has_userdata('name')) {
+            redirect('login');
+        }
     }
 
     public function index() {
-        $name = '';
-       if ($this->session->has_userdata('name')) {
-           $name = $this->session->userdata('name');
-       }
-       $data['name'] = $name;
+        $data = array();
+        $name = $this->session->userdata('name');
+        $data['name'] = $name;
+        
+        // $name = '';
+        //   if ($this->session->has_userdata('name')) {
+        //    $name = $this->session->userdata('name');
+        //   }
+        //   $data['name'] = $name;
+
+       
+        $todays_date = '2023-05-04';
+        
+        $info = $this->TwitterDB->fetch_nowcast_district_wise($todays_date);
+        $dinfo = $this->TwitterDB->fetch_nowcast_district_($todays_date);
+        //
+        $data['info'] = $info;
+        $data['dinfo'] = $dinfo;
+
+
        $this->load->view('Social_media/twitter_view',$data);
     }
 
     public function post_info() {
-    if(!empty($_POST)) {
+     if(!empty($_POST)) {
         $baseFromJavascript = $_POST['base64'];
         $random_name = $_POST['r_file_name']; 
 
@@ -40,7 +62,7 @@ class Twitter_post extends CI_Controller {
             echo json_encode(["status" => "error"]);
         }
         exit;
-    }
+     }
     }
 
     

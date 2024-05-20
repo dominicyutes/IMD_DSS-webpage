@@ -8,9 +8,16 @@ use PHPMailer\PHPMailer\PHPMailer;
 class Email extends CI_Controller {
     function __construct() {
         parent::__construct();
+        $this->_check_session();
         $this->load->helper('url');
         $this->load->database();
         $this->load->model('Email_log_model');
+    }
+
+    function _check_session() {
+        if (!$this->session->userdata('name')) {
+            redirect('login');
+        } 
     }
 
     public function index(){
@@ -20,102 +27,123 @@ class Email extends CI_Controller {
        }
        $data['name'] = $name;
        
-        $data['result'] = $this->db->select('email_from, email_to, sent, sent_time')->get('email_log')->result_array();
+        // $data['result'] = $this->db->select('email_from, email_to, sent, sent_time')->get('email_log')->result_array();
         $this->load->view('Social_media/email_form', $data);
     }
 
 
     public function send_email() {
-    $subject = "Rainfall Urgent Weather Alert - Unprecedented Rainfall in New Delhi";
+      $subject = "Rainfall Urgent Weather Alert - Unprecedented Rainfall in New Delhi";
 
-    $sent = false;
+      $sent = false;
     
-    $from_address = "dominic@rimes.int";
-    $to_addresses = ["dominicyutes@gmail.com"];
-    // $to_addresses = ["dominicyutes@gmail.com", "dominicyutes05@gmail.com", "saurav@rimes.int"];
-    $content = "<span>
-                    <h3>Respected Authority,</h3>
-                    <p>I trust this message finds you well. We bring to your immediate attention a matter of utmost significance concerning the current weather conditions in New Delhi.</p>
+      $from_address = "dominic@rimes.int";
+      $to_addresses = ["dominicyutes@gmail.com"];
+      // $to_addresses = ["dominicyutes@gmail.com", "dominicyutes05@gmail.com", "saurav@rimes.int"];
+      $content = "<span>
+                      <h3>Respected Authority,</h3>
+                      <p>I trust this message finds you well. We bring to your immediate attention a matter of utmost significance concerning the current weather conditions in New Delhi.</p>
+  
+                      <p>The Indian Meteorological Department (IMD) has detected an unprecedented amount of rainfall in New Delhi, totaling 655mm. This is a matter of great concern as such high levels of precipitation can lead to severe consequences, including potential flooding, traffic disruptions, and other associated hazards.</p>
 
-                    <p>The Indian Meteorological Department (IMD) has detected an unprecedented amount of rainfall in New Delhi, totaling 655mm. This is a matter of great concern as such high levels of precipitation can lead to severe consequences, including potential flooding, traffic disruptions, and other associated hazards.</p>
+                      <p>In light of this, we kindly request your prompt action and coordination with relevant authorities to ensure the safety and well-being of the residents in the affected areas. Timely communication and precautionary measures will be crucial in mitigating any potential risks and minimizing the impact of this exceptional weather event.</p>
+  
+                      <p>Your cooperation and swift response are highly appreciated in this critical situation</p>
 
-                    <p>In light of this, we kindly request your prompt action and coordination with relevant authorities to ensure the safety and well-being of the residents in the affected areas. Timely communication and precautionary measures will be crucial in mitigating any potential risks and minimizing the impact of this exceptional weather event.</p>
+                      <div style='height: 10px;'></div>
+  
+                      <div>
+                      <h3>With regards,</h3>
+                      <h3>Indian Meteorological Department (IMD)</h3>
+                      </div>
+                  </span>";
+  
+      $body = "<!DOCTYPE html>
+                <html lang='en'>
+  
+                <head>
+                    <meta charset='utf-8'>
+                    <title>IMD DSS</title>
+                </head>
 
-                    <p>Your cooperation and swift response are highly appreciated in this critical situation</p>
-
-                    <div style='height: 10px;'></div>
-
+                <body>
                     <div>
-                    <h3>With regards,</h3>
-                    <h3>Indian Meteorological Department (IMD)</h3>
+                      
+                        <div>" . $content . "</div>
+                      
                     </div>
-                </span>";
 
-    $body = "<!DOCTYPE html>
-              <html lang='en'>
+                    <script src='" . base_url('assets/js/jquery.min.js') . "'></script>
+                    <script src='" . base_url('assets/js/bootstrap.min.js') . "'></script>
+                </body>
 
-              <head>
-                  <meta charset='utf-8'>
-                  <title>IMD DSS</title>
-              </head>
+                </html>"; 
 
-              <body>
-                  <div>
-                      
-                      <div>" . $content . "</div>
-                      
-                  </div>
+      $mailer = new PHPMailer(true);
+      try {
+          $mailer->isSMTP();
+          $mailer->Host = "smtp.gmail.com";
+          $mailer->SMTPAuth = true;
+          $mailer->Username = "dominic@rimes.int";
+          $mailer->Password = "oowdfikelxnchsqx";
+          $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+          $mailer->Port = 465; 
+          $mailer->setFrom($from_address);
 
-                  <script src='" . base_url('assets/js/jquery.min.js') . "'></script>
-                  <script src='" . base_url('assets/js/bootstrap.min.js') . "'></script>
-              </body>
+          foreach ($to_addresses as $to_address) {
+              $mailer->addAddress($to_address);
+          }
 
-              </html>"; 
+          $mailer->addCC("dominicyutes05@gmail.com");
+  
+          $mailer->Subject = $subject;
+          $mailer->isHTML(true);
+          $mailer->Body = $body;
 
-    $mailer = new PHPMailer(true);
-    try {
-        $mailer->isSMTP();
-        $mailer->Host = "smtp-relay.brevo.com";
-        $mailer->SMTPAuth = true;
-        $mailer->Username = "dominic@rimes.int";
-        $mailer->Password = "hHdF6qfWvyDajB87";
-        $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mailer->Port = 465; 
-        $mailer->setFrom($from_address);
+          // Enable debugging
+          $mailer->SMTPDebug = 2; 
 
-        foreach ($to_addresses as $to_address) {
-            $mailer->addAddress($to_address);
-        }
+          $mailer->send();
 
-        $mailer->Subject = $subject;
-        $mailer->isHTML(true);
-        $mailer->Body = $body;
+          $sent = true;
+          $this->insert_email_log($from_address, $to_addresses, $sent);
+          echo "Your Mail sent successfully";
 
-        // Enable debugging
-        $mailer->SMTPDebug = 2; 
-
-        $mailer->send();
-
-        $sent = true;
-        $this->insert_email_log($from_address, $to_addresses, $sent);
-        echo "Your Mail sent successfully";
-
-    } catch (Exception $e) {
-        $sent = false;
-        $this->insert_email_log($from_address, $to_addresses, $sent);
+      } catch (Exception $e) {
+          $sent = false;
+          $this->insert_email_log($from_address, $to_addresses, $sent);
         
-        echo "Mail Error: " . $mailer->ErrorInfo;
+          echo "Mail Error: " . $mailer->ErrorInfo;
+      }
     }
-   }
 
-   private function insert_email_log($from_address, $to_addresses, $sent) {
-       $this->load->database();
-       $this->db->insert('email_log', array(
-           'email_from' => $from_address,
-           'email_to' => implode(", ", $to_addresses),
-           'sent' => $sent ? "True" : "False" 
-       ));
-   }
+     private function insert_email_log($from_address, $to_addresses, $sent) {
+         $this->load->database();
+         $this->db->insert('email_log', array(
+             'email_from' => $from_address,
+             'email_to' => implode(", ", $to_addresses),
+             'sent' => $sent ? "True" : "False" 
+         ));
+     }
+
+     public function show_logInfo() {
+        $name = '';
+         if ($this->session->has_userdata('name')) {
+           $name = $this->session->userdata('name');
+         }
+         $data['name'] = $name; 
+         
+        $this->load->model('Email_log_model');
+        $data['result'] = $this->Email_log_model->get_email_logs();
+        $this->load->view('Social_media/email_log_view', $data);
+     }
+
+     public function get_emails() {
+        $group_name = $this->input->post('group_name');
+        $this->load->model('Email_log_model');
+        $emails = $this->Email_log_model->get_emails_by_group($group_name);
+        echo json_encode($emails);
+    }
 
     
 }

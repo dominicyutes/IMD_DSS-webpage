@@ -1,3 +1,15 @@
+<!-- Displaying $info -->
+<!-- <h1>Info:</h1>
+<pre>
+    <?php print_r($info); ?>
+</pre> -->
+
+<!-- Displaying $dinfo -->
+<!-- <h1>Dinfo:</h1>
+<pre>
+    <?php print_r($dinfo); ?>
+</pre> -->
+
 <!DOCTYPE html>
 <html>
 
@@ -46,15 +58,15 @@
     body {
         width: 100%;
         height: 100vh;
-        zoom: 80%;
+        /* zoom: 80%; */
         overflow: hidden;
         font-family: "Lato", sans-serif;
     }
 
     #map {
         margin-top: 1%;
-        height: 100vh;
-        width: 100%;
+        height: 78vh;
+        width: 70%;
         border: 1px solid black;
     }
     </style>
@@ -74,10 +86,10 @@
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 88%">
+            <div class="col-9" style="width: 87%">
                 <div id="map"></div>
-                <h2>Post to Twitter</h2>
-                <button class="btn btn-primary" id="postToFacebookBtn">Twitter</button>
+                <h4>Post to Twitter</h4>
+                <button class="btn btn-primary" id="postToTwitterBtn">Twitter</button>
             </div>
             <!-- editing content ends here -->
 
@@ -85,53 +97,134 @@
     </div>
 
     <script>
-    var map = L.map('map').setView([22.79459, 80.06406], 5);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
+    var map = L.map('map').setView([22.79459, 80.06406], 4);
 
-    // Add the GeoJSON data to the map
-    _state_geojson = "DATA/INDIA_STATE.json";
     _dist_geojson = "DATA/INDIA_DISTRICT.json";
+    var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
+        style: function(feature) {
+            return {
+                color: 'black',
+                fillColor: 'transparent',
+                opacity: 1,
+                fillOpacity: 0.5,
+                weight: 1
+            };
+        }
+    });
 
-    function addGeoJSONToMap(geojsonFile, styleOptions) {
-        var geojson = new L.GeoJSON.AJAX(geojsonFile, {
-            style: styleOptions
-        });
+    geojson.on('data:loaded', function() {
+        geojson.addTo(map);
+    });
 
-        geojson.on('data:loaded', function() {
-            geojson.addTo(map);
-        });
+    // var forecast_date = '<?php echo date('Y'); ?>';
+
+    var now_info = JSON.parse('<?php echo json_encode($info)?>');
+    // console.log(now_info);
+
+    var now_info_dist = JSON.parse('<?php echo json_encode($dinfo)?>');
+    // console.log(now_info_dist);
+
+    var dist_id;
+    var data_fc = new Array();
+
+    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //     maxZoom: 19,
+    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    // }).addTo(map);
+
+    // DATA/INDIA_DISTRICT.json Odisha_Dist
+    var india_district_geojson = new L.GeoJSON.AJAX('<?= base_url('DATA/Odisha_Dist.geojson') ?>', {
+        color: 'black',
+        weight: 1,
+        style: fill_color_subbasin,
+        onEachFeature: function(feature, layer) {
+            // console.log(feature.properties, "feature.properties.id");
+            layer.on('mouseover', function(ft) {
+                let popup = new L.Popup();
+                popup.setLatLng(ft.latlng);
+                popup.setContent(getPopUpHTML(feature));
+                map.openPopup(popup);
+            });
+        }
+    });
+    india_district_geojson.addTo(map);
+
+    function set_popup_content(district_name, _info) {
+        _html_popup = "";
+        if (district_name != '') {
+            _html_popup += '<b> ' + district_name + ' </b><br><br>';
+        }
+
+        if (_info['date'] != '') {
+            _html_popup += '<b>  Time of issue  : ' + _info['date'] + '<br> ' + _info['toi'] + ' Hrs</b><br>';
+        }
+        if (_info['vupto'] != '') {
+            _html_popup += '<b>  Valied Upto   : ' + _info['vupto'] + ' Hrs </b>';
+        }
+
+        return _html_popup;
     }
 
-    // Style options 
-    var stateStyle = {
-        color: 'black',
-        fillColor: 'transparent',
-        opacity: 1,
-        fillOpacity: 0.0,
-        weight: 2
+    function getPopUpHTML(feature) {
+        _popup = '';
+        dist_id = feature.properties.id;
+        district_name = feature.properties.district_name;
+
+        _popup = set_popup_content(district_name, now_info[dist_id]);
+        return _popup;
+    }
+
+    function fill_color_subbasin(feature) {
+        var dist_id = feature.properties.id;
+        data_fc[0] = now_info_dist[dist_id];
+        // console.log(data_fc[0]);
+        if (data_fc[0] === null) {
+            color = '#FFFFFF';
+            opa = 0.6;
+        } else if (Number(data_fc[0]) == 1) {
+            color = '#00FF00';
+            opa = 0.6;
+        } else if (Number(data_fc[0]) == 2) {
+            color = '#FFFF00';
+            opa = 0.6;
+        } else if (Number(data_fc[0]) == 3) {
+            color = '#FFA500';
+            opa = 0.6;
+        } else if (Number(data_fc[0]) == 4) {
+            color = '#FF0000';
+            opa = 0.6;
+        } else {
+            color = '#FFFFFF';
+            opa = 0.6;
+        }
+        return {
+            fillColor: color,
+            fillOpacity: opa,
+            strokeColor: 'black',
+            strokeWeight: 0.7
+        };
+    }
+
+    // adding legends to the map
+    let _legend = L.control({
+        position: 'bottomright'
+    });
+
+    _legend.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'info legend'),
+            labels = [];
+        labels.push(
+            '<img src="<?= base_url('assets/twitter_legends/District_nowcast_legend.PNG')?>" width="100px" height="100px" >' +
+            '<br>');
+
+        div.innerHTML = labels.join('<br>');
+        return div;
     };
-
-    var districtStyle = {
-        color: 'green',
-        fillColor: 'transparent',
-        opacity: 0.5,
-        fillOpacity: 0.0,
-        weight: 1
-    };
-    // 
-
-    //
-    addGeoJSONToMap(_state_geojson, stateStyle);
-
-    //
-    addGeoJSONToMap(_dist_geojson, districtStyle);
+    _legend.addTo(map);
 
 
-    // 
-    document.getElementById('postToFacebookBtn').addEventListener('click', function() {
+    // click r submit button
+    document.getElementById('postToTwitterBtn').addEventListener('click', function() {
         html2canvas($("#map"), {
             useCORS: true,
             allowTaint: false,

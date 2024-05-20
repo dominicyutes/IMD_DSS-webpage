@@ -7,6 +7,11 @@ class Email_log_model extends CI_Model {
         $this->load->database();
     }
 
+    public function get_email_logs() {
+      return $this->db->select('email_from, email_to, sent, sent_time')->get('email_log')->result_array();
+    }
+
+
     public function insert_email_log($from_address, $to_address, $sent) {
        $data = array(
             'email_from' => $from_address,
@@ -15,5 +20,15 @@ class Email_log_model extends CI_Model {
         );
 
         $this->db->insert('email_log', $data);
+    }
+
+    public function get_emails_by_group($group_name) {
+        $query = $this->db->get_where('groupemail', array('group_name' => $group_name));
+        $result = $query->result();
+        $emails = array();
+        foreach ($result as $row) {
+            $emails[] = $row->email;
+        }
+        return $emails;
     }
 }

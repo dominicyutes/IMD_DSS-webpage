@@ -46,15 +46,15 @@
     body {
         width: 100%;
         height: 100vh;
-        zoom: 80%;
+        /* zoom: 80%; */
         overflow: hidden;
         font-family: "Lato", sans-serif;
     }
 
     #map {
         margin-top: 1%;
-        height: 100vh;
-        width: 50%;
+        height: 78vh;
+        width: 70%;
         border: 1px solid black;
     }
     </style>
@@ -74,7 +74,7 @@
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 88%">
+            <div class="col-9" style="width: 87%">
                 <div id="map"></div>
                 <h2>Post to Whatsapp</h2>
                 <button type="submit" class="btn btn-primary" id="waCaptureBtn">Get Picture</button>
@@ -86,11 +86,12 @@
     </div>
 
     <script>
-    var map = L.map('map').setView([22.79459, 80.06406], 5);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
+    var map = L.map('map').setView([22.79459, 80.06406], 4);
+
+    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //     maxZoom: 19,
+    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    // }).addTo(map);
 
     // Add the GeoJSON data to the map
     _dist_geojson = "DATA/INDIA_STATE.json";

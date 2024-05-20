@@ -10,14 +10,41 @@ class Facebook_post extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
+        $this->load->model('Facebook_m');
+        // $this->load->library('curl');
+        $this->_check_session();
         // 
         if ($this->session->has_userdata('name')) {
             $this->name = $this->session->userdata('name');
         }
     }
 
+    function _check_session() {
+        if ($this->session->userdata('name')) {
+            // 
+        } else {
+           redirect('login');
+        }
+    }
+
     public function index() {
-        $data['name'] = $this->name;
+        $data = array();
+        
+        $name = '';
+          if ($this->session->has_userdata('name')) {
+           $name = $this->session->userdata('name');
+          }
+          $data['name'] = $name;
+
+       
+        $todays_date = '2023-05-04';
+        
+        $info = $this->Facebook_m->fetch_nowcast_district_wise($todays_date);
+        $dinfo = $this->Facebook_m->fetch_nowcast_district_($todays_date);
+        //
+        $data['info'] = $info;
+        $data['dinfo'] = $dinfo;
+
         $this->load->view('Social_media/facebook_view',$data);
     }
 
@@ -62,6 +89,10 @@ class Facebook_post extends CI_Controller {
         echo $filename;
         $getImage = base_url('assets/Fb_img/' . $filename);
         echo $getImage;
+
+        $groupname = "Delhi";
+        $username =  $this->name = $this->session->userdata('name');
+        $sent = "Success";
         
            $fb = new Facebook([
                   'app_id' => '1830324530768258',
@@ -77,7 +108,9 @@ class Facebook_post extends CI_Controller {
               ];
 
               try {
-                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBO7TTvtRX6YhvhjflPUsaf5fIcTqLZCnZAAG80ZAWnR1DXEVDGzf9vNKZAO4zRBa4GZAB00ZAvPIoZB6Nnlpnrc0ZCIeSlpY8LwXvz22wGSM0bZB8ZAPQnrDMOTLZCjjJK23CNQM7WAmFXdJs3cWM3MOpZBRskWdK67eqXaXZARE8ezHkyBZAe5hTvhbkxqJZCfQXKkp5lUMBJjh5v5zyVbW2m3WKvQZD');
+                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBOwe3YliyNEx3vhQUz4FHb0pYaLdbEPRVuA8ZB24D71hfn0sebPO2hFs8ZC7OfWM5cNAyFYpj9CZCCIWQdYU2oEIHc9VuR1s81ppC5gJmjZA7ZAPxJdpAXTxGoo9TNVgoOGbxGhW9x1LA5WegNZCVq64Jra2WgzEZBI9YK1hqSm86auGpv9NRVVWKZAr7jpZA76ZCYOvllLUA6OTENhPYAJrT8ZD');
+
+                //   $this->Facebook_m->insert_log($groupname, $username, $sent);
               } catch(Facebook\Exceptions\FacebookResponseException $e) {
                   echo 'Graph returned an error: ' . $e->getMessage();
                   exit;

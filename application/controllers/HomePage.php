@@ -2,37 +2,30 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class HomePage extends CI_Controller {
-    function __construct() {
+    public function __construct() {
         parent::__construct();
-
         $this->load->library('TCPdf_pdf');
         $this->load->model('MacrosModel');
         $this->load->model('Register_model');
-        
-        if ($this->session->is_loggedin == FALSE) {
-            $this->session->set_flashdata('message','<div class="alert alert-danger"><strong>Please Login to continue!!</strong><a href="#" class="close" data-dismiss= "alert" aria-label="close" title="close">X</a></div>');
+        $this->_check_session();
+    }
+
+    private function _check_session() {
+        if (!$this->session->has_userdata('name') || !$this->session->is_loggedin) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger"><strong>Please Login to continue!!</strong><a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">X</a></div>');
             redirect('login');
         }
     }
 
-    public function index(){
-    $user_id = $this->input->get('user_id');
-    
-    $name = '';
-    
-    if ($this->session->has_userdata('name')) {
-        $name = $this->session->userdata('name');
-    }
+    public function index() {
+        $user_id = $this->input->get('user_id');
+        $data['name'] = $this->session->userdata('name') ?? '';
+        $data['user_id'] = $user_id;
 
-    $data['name'] = $name;
-    $data['user_id'] = $user_id;
+        $this->load->view('HomePage/homePage', $data);
 
-    // $data['result'] = $this->MacrosModel->getAllMacros(); 
-    // $data['result'] = $this->MacrosModel->getMacrosByUserId($user_id);
-    $this->load->view('HomePage/homePage',$data);
-
-    header("Access-Control-Allow-Origin: http://weather-imd-test.rimes.int");
-    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+        header("Access-Control-Allow-Origin: http://weather-imd-test.rimes.int");
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
     }
 
     // 

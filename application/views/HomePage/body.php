@@ -312,15 +312,15 @@
                                 style="color: #2c5383;font-family: 'Archivo', sans-serif;font-size: 20px;font-weight: bold;margin-left: 6%;margin-top: 1%; font-size: 20px">Create
                                 Macro</span>
                             <?php if ($user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9"): ?>
-                                <a href="<?php echo base_url(); ?>HomePage/fetch_names" id="userFilterLink">
-                                    <i title="User Filter" style="margin: 16px 15px 0 27px;"
-                                        class="fa-regular fa-user fa-lg"></i>
-                                </a>
-                                <!--  -->
-                                <a href="<?php echo base_url(); ?>HomePage/displayDeletedMacros">
-                                    <i title="Deleted MacroGroup" style="margin: 16px 22px 0 15px;"
-                                        class="fa-regular fa-trash-can fa-lg"></i>
-                                </a>
+                            <a href="<?php echo base_url(); ?>HomePage/fetch_names" id="userFilterLink">
+                                <i title="User Filter" style="margin: 16px 15px 0 27px;"
+                                    class="fa-regular fa-user fa-lg"></i>
+                            </a>
+                            <!--  -->
+                            <a href="<?php echo base_url(); ?>HomePage/displayDeletedMacros">
+                                <i title="Deleted MacroGroup" style="margin: 16px 22px 0 15px;"
+                                    class="fa-regular fa-trash-can fa-lg"></i>
+                            </a>
                             <?php endif; ?>
                         </div>
                         <div style="overflow: auto;" id="showCreatedMacro"></div>
@@ -418,11 +418,11 @@
                                         id="subBtn" onclick="submitForm()" />
 
                                     <?php if (isset($id)): ?>
-                                        <input type="button" value="Update" style="display: none; font-size: 18px"
-                                            class="macSubmitBtn" id="updBtn" onclick="updateForm(<?php echo $id; ?>)" />
+                                    <input type="button" value="Update" style="display: none; font-size: 18px"
+                                        class="macSubmitBtn" id="updBtn" onclick="updateForm(<?php echo $id; ?>)" />
                                     <?php else: ?>
-                                        <input type="button" value="Update" style="display: none; font-size: 18px"
-                                            class="macSubmitBtn" id="updBtn" onclick="updateForm()" />
+                                    <input type="button" value="Update" style="display: none; font-size: 18px"
+                                        class="macSubmitBtn" id="updBtn" onclick="updateForm()" />
                                     <?php endif; ?>
 
                                     <input type="button" value="Cancel" style="display: none; font-size: 18px"
@@ -511,8 +511,8 @@
                     <!-- USERNAME -->
                     <span>
                         <?php if (!empty($name)): ?>
-                            <strong class="username" style="color: black;">&nbsp;&nbsp;&nbsp;USER:
-                                <?= ucfirst($name) ?>!!</strong>
+                        <strong class="username" style="color: black;">&nbsp;&nbsp;&nbsp;USER:
+                            <?= ucfirst($name) ?>!!</strong>
                         <?php endif; ?>
                     </span>
 
@@ -958,42 +958,41 @@
 </body>
 
 <script>
+var today = new Date().toISOString().slice(0, 10);
+document.getElementById('start_date_odisha').value = today;
 
-    var today = new Date().toISOString().slice(0, 10);
-    document.getElementById('start_date_odisha').value = today;
-
-    var today = new Date().toISOString().slice(0, 10);
-    document.getElementById('start_date_odisha_o').value = today;
+var today = new Date().toISOString().slice(0, 10);
+document.getElementById('start_date_odisha_o').value = today;
 
 
-    function toggleVisibility() {
-        var contentDiv = document.getElementById("contentDiv");
-        if (contentDiv.style.display === "none") {
-            contentDiv.style.display = "block";
-        } else {
-            contentDiv.style.display = "none";
-        }
+function toggleVisibility() {
+    var contentDiv = document.getElementById("contentDiv");
+    if (contentDiv.style.display === "none") {
+        contentDiv.style.display = "block";
+    } else {
+        contentDiv.style.display = "none";
     }
+}
 
 
-    function showSelectedSection() {
-        var dropdown = document.getElementById("dropdown");
-        var selectedValue = dropdown.value;
+function showSelectedSection() {
+    var dropdown = document.getElementById("dropdown");
+    var selectedValue = dropdown.value;
 
-        var sections = document.querySelectorAll('[id^="mc-"]');
+    var sections = document.querySelectorAll('[id^="mc-"]');
 
-        sections.forEach(function (section) {
-            if (selectedValue === "all") {
+    sections.forEach(function(section) {
+        if (selectedValue === "all") {
+            section.style.display = "block";
+        } else {
+            if (section.id === selectedValue) {
                 section.style.display = "block";
             } else {
-                if (section.id === selectedValue) {
-                    section.style.display = "block";
-                } else {
-                    section.style.display = "none";
-                }
+                section.style.display = "none";
             }
-        });
-    }
+        }
+    });
+}
 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -1012,96 +1011,96 @@
 
 
 
-    var isPlaying = false;
-    var index = 0;
-    var timeouts = [];
+var isPlaying = false;
+var index = 0;
+var timeouts = [];
 
-    function startPlay() {
-        document.getElementById('playButton').style.display = 'none';
-        document.getElementById('pauseButton').style.display = 'inline';
-        if (!isPlaying) {
-            isPlaying = true;
-            triggerNextCheckbox();
-        }
+function startPlay() {
+    document.getElementById('playButton').style.display = 'none';
+    document.getElementById('pauseButton').style.display = 'inline';
+    if (!isPlaying) {
+        isPlaying = true;
+        triggerNextCheckbox();
     }
+}
 
-    function startPause() {
-        document.getElementById('pauseButton').style.display = 'none';
-        document.getElementById('playButton').style.display = 'inline';
-        if (isPlaying) {
-            isPlaying = false;
-            clearTimeouts();
-        }
+function startPause() {
+    document.getElementById('pauseButton').style.display = 'none';
+    document.getElementById('playButton').style.display = 'inline';
+    if (isPlaying) {
+        isPlaying = false;
+        clearTimeouts();
     }
+}
 
-    function startForward() {
-        if (!isPlaying) {
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            // Uncheck the currently active checkbox
-            if (index >= 0 && index < checkboxes.length) {
-                checkboxes[index].checked = false;
-                checkboxes[index].dispatchEvent(new Event('change'));
-
-            }
-            // Move one step forward
-            index++;
-            if (index < checkboxes.length) {
-                checkboxes[index].checked = true;
-                checkboxes[index].dispatchEvent(new Event('change'));
-            } else {
-                // Reset index if out of bounds
-                index = checkboxes.length - 1;
-            }
-        }
-    }
-
-    function startBackward() {
-        if (!isPlaying) {
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            // Uncheck the currently active checkbox
-            if (index >= 0 && index < checkboxes.length) {
-                checkboxes[index].checked = false;
-                checkboxes[index].dispatchEvent(new Event('change'));
-            }
-            // Move one step backward
-            index--;
-            if (index >= 0) {
-                checkboxes[index].checked = true;
-                checkboxes[index].dispatchEvent(new Event('change'));
-            } else {
-                // Reset index if out of bounds
-                index = 0;
-            }
-        }
-    }
-
-    function triggerNextCheckbox() {
+function startForward() {
+    if (!isPlaying) {
         var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        if (index < checkboxes.length && isPlaying) {
-            checkboxes[index].checked = true;
+        // Uncheck the currently active checkbox
+        if (index >= 0 && index < checkboxes.length) {
+            checkboxes[index].checked = false;
             checkboxes[index].dispatchEvent(new Event('change'));
 
-            var timeoutId = setTimeout(function () {
-                checkboxes[index].checked = false;
-                checkboxes[index].dispatchEvent(new Event('change'));
-                index++;
-                triggerNextCheckbox();
-            }, 3000);
-
-            timeouts.push(timeoutId);
+        }
+        // Move one step forward
+        index++;
+        if (index < checkboxes.length) {
+            checkboxes[index].checked = true;
+            checkboxes[index].dispatchEvent(new Event('change'));
         } else {
-            isPlaying = false;
-            index = 0;
-            timeouts = [];
+            // Reset index if out of bounds
+            index = checkboxes.length - 1;
         }
     }
+}
 
-    function clearTimeouts() {
-        timeouts.forEach(function (timeoutId) {
-            clearTimeout(timeoutId);
-        });
+function startBackward() {
+    if (!isPlaying) {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        // Uncheck the currently active checkbox
+        if (index >= 0 && index < checkboxes.length) {
+            checkboxes[index].checked = false;
+            checkboxes[index].dispatchEvent(new Event('change'));
+        }
+        // Move one step backward
+        index--;
+        if (index >= 0) {
+            checkboxes[index].checked = true;
+            checkboxes[index].dispatchEvent(new Event('change'));
+        } else {
+            // Reset index if out of bounds
+            index = 0;
+        }
+    }
+}
+
+function triggerNextCheckbox() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    if (index < checkboxes.length && isPlaying) {
+        checkboxes[index].checked = true;
+        checkboxes[index].dispatchEvent(new Event('change'));
+
+        var timeoutId = setTimeout(function() {
+            checkboxes[index].checked = false;
+            checkboxes[index].dispatchEvent(new Event('change'));
+            index++;
+            triggerNextCheckbox();
+        }, 3000);
+
+        timeouts.push(timeoutId);
+    } else {
+        isPlaying = false;
+        index = 0;
         timeouts = [];
     }
+}
+
+function clearTimeouts() {
+    timeouts.forEach(function(timeoutId) {
+        clearTimeout(timeoutId);
+    });
+    timeouts = [];
+}
 
 
 
@@ -1110,11 +1109,11 @@
 
 
 
-    // Array to store references to drawn polylines
-    var drawnPolylines = [];
+// Array to store references to drawn polylines
+var drawnPolylines = [];
 
-    // Function to fetch and display names with checkboxes
-    function fetchOdishaNames() {
+// Function to fetch and display names with checkboxes
+function fetchOdishaNames() {
 
         <?php if (isset($name)): ?>
             var startDateId;
@@ -1149,8 +1148,8 @@
                 var weatherDataDiv = weatherDataDivs;
                 weatherDataDiv.innerHTML = "";
 
-                if (data && data.length > 0) {
-                    var checkboxContainer = document.createElement("div");
+            if (data && data.length > 0) {
+                var checkboxContainer = document.createElement("div");
 
                     data.forEach(function (item, index) {
                         if (item && item.date && item.name && item.latitudes && item.longitudes) {
@@ -1160,9 +1159,9 @@
                             checkbox.value = item.name;
                             checkbox.value = JSON.stringify(item);
 
-                            var label = document.createElement("label");
-                            label.textContent = item.name;
-                            label.setAttribute("for", "checkbox_" + index);
+                        var label = document.createElement("label");
+                        label.textContent = item.name;
+                        label.setAttribute("for", "checkbox_" + index);
 
                             checkboxContainer.appendChild(checkbox);
                             checkboxContainer.appendChild(label);
@@ -1259,39 +1258,39 @@
     //     });
     // }
 
-    document.getElementById("PassDrawings").addEventListener("click", function () {
-        var checkedItems = [];
+document.getElementById("PassDrawings").addEventListener("click", function() {
+    var checkedItems = [];
 
-        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(function (checkbox) {
-            if (checkbox.checked) {
-                var itemData = JSON.parse(checkbox.value);
-                checkedItems.push(itemData);
-            }
-        });
-
-        // Prepare the data for AJAX request
-        var postData = JSON.stringify(checkedItems);
-        // console.log(postData);
-        $.ajax({
-            url: "<?php echo site_url('Drawings/Drawing/save_coordinates_to_hq'); ?>",
-            type: "POST",
-            data: postData,
-            contentType: "application/json",
-            success: function (response) {
-                console.log(response);
-                alert("Data forwarded to HQ successfully!");
-            },
-            error: function (xhr, status, error) {
-                console.error("Error forwarding data to HQ:", error);
-                alert("Failed to forward data. Please try again.");
-            }
-        });
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            var itemData = JSON.parse(checkbox.value);
+            checkedItems.push(itemData);
+        }
     });
 
+    // Prepare the data for AJAX request
+    var postData = JSON.stringify(checkedItems);
+    // console.log(postData);
+    $.ajax({
+        url: "<?php echo site_url('Drawings/Drawing/save_coordinates_to_hq'); ?>",
+        type: "POST",
+        data: postData,
+        contentType: "application/json",
+        success: function(response) {
+            console.log(response);
+            alert("Data forwarded to HQ successfully!");
+        },
+        error: function(xhr, status, error) {
+            console.error("Error forwarding data to HQ:", error);
+            alert("Failed to forward data. Please try again.");
+        }
+    });
+});
 
 
-    // fetchOdishaNames();
+
+// fetchOdishaNames();
 
 
 
@@ -1338,37 +1337,35 @@
     //         }
     //     }
 
-    // Function to clear a specific polyline from the map
-    function clearPolyline(name) {
-        var polylineToRemoveIndex = drawnPolylines.findIndex(function (polyline) {
-            return polyline.options.name === name;
-        });
+// Function to clear a specific polyline from the map
+function clearPolyline(name) {
+    var polylineToRemoveIndex = drawnPolylines.findIndex(function(polyline) {
+        return polyline.options.name === name;
+    });
 
-        if (polylineToRemoveIndex !== -1) {
-            var polylineToRemove = drawnPolylines[polylineToRemoveIndex];
-            map.removeLayer(polylineToRemove); // Remove the polyline from the map
-            drawnPolylines.splice(polylineToRemoveIndex, 1); // Remove the polyline from the array
-        }
+    if (polylineToRemoveIndex !== -1) {
+        var polylineToRemove = drawnPolylines[polylineToRemoveIndex];
+        map.removeLayer(polylineToRemove); // Remove the polyline from the map
+        drawnPolylines.splice(polylineToRemoveIndex, 1); // Remove the polyline from the array
     }
+}
 
-    // Function to generate a random color
-    function getRandomColor() {
-        var r = Math.floor(Math.random() * 128);
-        var g = Math.floor(Math.random() * 128);
-        var b = Math.floor(Math.random() * 128);
-        return 'rgb(' + r + ',' + g + ',' + b + ')';
+// Function to generate a random color
+function getRandomColor() {
+    var r = Math.floor(Math.random() * 128);
+    var g = Math.floor(Math.random() * 128);
+    var b = Math.floor(Math.random() * 128);
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+}
+
+
+
+function toggleVisibility_odisha() {
+    var contentDiv = document.getElementById("contentDiv_odisha");
+    if (contentDiv.style.display === "none") {
+        contentDiv.style.display = "block";
+    } else {
+        contentDiv.style.display = "none";
     }
-
-
-
-    function toggleVisibility_odisha() {
-        var contentDiv = document.getElementById("contentDiv_odisha");
-        if (contentDiv.style.display === "none") {
-            contentDiv.style.display = "block";
-        } else {
-            contentDiv.style.display = "none";
-        }
-    }
-
-
+}
 </script>
