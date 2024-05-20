@@ -242,7 +242,7 @@
             var ajaxUrl = "";
 
             <?php if (isset($name)): ?>
-                if ('<?php echo $name; ?>' === "Super Admin HQ") {
+                if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
                     ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_names'); ?>";
                 } else if ('<?php echo $name; ?>' === "MC ODISHA") {
                     ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>";
@@ -374,7 +374,7 @@
             var selectedSubparameter = document.getElementById("subparameter").value;
             var ajaxUrl;
             <?php if (isset($name)): ?>
-                if ('<?php echo $name; ?>' === "Super Admin HQ") {
+                if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
                     ajaxUrl = "<?php echo base_url('Drawings/Drawing/get_lat_long'); ?>";
                 } else if ('<?php echo $name; ?>' === "MC ODISHA") {
                     ajaxUrl = "<?php echo base_url('Drawings/Drawing/get_lat_long_odisha'); ?>";

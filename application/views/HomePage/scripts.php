@@ -5163,7 +5163,7 @@
                         // Determine the AJAX URL based on the entered name
                         var ajaxUrl;
                         <?php if (isset($name)): ?>
-                            if ('<?php echo $name; ?>' === "Super Admin HQ") {
+                            if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
                                 ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates'); ?>";
                             } else if ('<?php echo $name; ?>' === "MC ODISHA") {
                                 ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates_odisha'); ?>";

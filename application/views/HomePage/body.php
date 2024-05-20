@@ -120,7 +120,7 @@
                 <div>
                     <?php
                     if (isset($name)) {
-                        if ($name === "Super Admin HQ") {
+                        if ($name === "Super_Admin_HQ") {
                             echo '<button id="login_button" class="submitBtn" onclick="toggleVisibility()" style="margin-top: 30px; width: 270px;">VIEW ALL MC\'S</button>';
                         } else if ($name === "MC ODISHA") {
                             echo '<style>#login_button { display: none; }</style>';
@@ -999,7 +999,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         var today = new Date().toISOString().slice(0, 10);
         <?php if (isset($name)): ?>
-            if ('<?php echo $name; ?>' === "Super Admin HQ") {
+            if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
                 document.getElementById('start_date_odisha').value = today;
             } else if ('<?php echo $name; ?>' === "MC ODISHA") {
                 document.getElementById('start_date_odisha_o').value = today;
@@ -1119,7 +1119,7 @@
         <?php if (isset($name)): ?>
             var startDateId;
             var weatherDataDivs;
-            if ('<?php echo $name; ?>' === "Super Admin HQ") {
+            if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
                 startDateId = "start_date_odisha";
                 weatherDataDivs = document.getElementById("drawings_data_odisha");
             } else if ('<?php echo $name; ?>' === "MC ODISHA") {
@@ -1132,7 +1132,7 @@
         var ajaxUrl = "";
 
         <?php if (isset($name)): ?>
-            if ('<?php echo $name; ?>' === "Super Admin HQ") {
+            if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
                 ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>";
             } else if ('<?php echo $name; ?>' === "MC ODISHA") {
                 ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>";
