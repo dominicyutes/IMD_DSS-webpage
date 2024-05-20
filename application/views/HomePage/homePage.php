@@ -239,22 +239,34 @@ document.addEventListener("DOMContentLoaded", function() {
 function fetchNames() {
     var selectedDate = document.getElementById("start_dates").value;
     // console.log("Selected date:", selectedDate);
+    var ajaxUrl = "";
 
-    $.ajax({
-        url: "<?php echo site_url('Drawings/Drawing/fetch_names'); ?>", // Adjusted URL
-        type: "GET",
-        data: {
-            date: selectedDate
-        },
-        // dataType: "json",
-        success: function(names) {
-            // console.log("Response:", names);
-            populateDropdown(names);
-        },
-        // error: function (xhr, textStatus, errorThrown) {
-        //     console.error("Error:", errorThrown);
-        // }
-    });
+    <?php if (isset($name)): ?>
+    if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
+        ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_names'); ?>";
+    } else if ('<?php echo $name; ?>' === "MC ODISHA") {
+        ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>";
+    }
+    <?php endif; ?>
+    if (ajaxUrl !== "") {
+        $.ajax({
+            url: ajaxUrl,
+            type: "GET",
+            data: {
+                date: selectedDate
+            },
+            // dataType: "json",
+            success: function(names) {
+                // console.log("Response:", names);
+                populateDropdown(names);
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                console.error("Error:", errorThrown);
+            }
+        });
+    } else {
+        console.error('Invalid name or AJAX URL not determined.');
+    }
 }
 
 function populateDropdown(names) {
@@ -357,66 +369,74 @@ function eraseDrawing() {
 function SubmitForm() {
     var selectedDate = document.getElementById("start_dates").value;
     var selectedSubparameter = document.getElementById("subparameter").value;
-
-    // Make AJAX request to server
-    $.ajax({
-        type: 'POST',
-        url: "<?php echo site_url('Drawings/Drawing/get_lat_long'); ?>",
-        data: {
-            date: selectedDate,
-            name: selectedSubparameter
-        },
-        success: function(response) {
-            // console.log(response); 
-            try {
-                var data = JSON.parse(response); // Parse the response as JSON
-
-                // Extract latitudes and longitudes from the response data
-                var latitudes = data.latitudes.replace(/[{}]/g, '').split(',');
-                var longitudes = data.longitudes.replace(/[{}]/g, '').split(',');
-
-                // Draw polyline on the map using the extracted latitudes and longitudes
-                drawPolyline(latitudes, longitudes);
-            } catch (error) {
-                console.error('Error parsing JSON response:', error);
-            }
-        },
-        error: function(xhr, status, error) {
-            console.error('Error:', error);
-        }
-    });
-}
-
-function confirmDelete() {
-    // Display a confirmation dialog
-    var confirmation = confirm("Are you sure you want to delete?");
-
-    // If the user confirms, call the deleteDrawing function
-    if (confirmation) {
-        deleteDrawing();
+    var ajaxUrl;
+    <?php if (isset($name)): ?>
+    if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
+        ajaxUrl = "<?php echo base_url('Drawings/Drawing/get_lat_long'); ?>";
+    } else if ('<?php echo $name; ?>' === "MC ODISHA") {
+        ajaxUrl = "<?php echo base_url('Drawings/Drawing/get_lat_long_odisha'); ?>";
     }
-}
+    <?php endif; ?>
 
-function deleteDrawing() {
-    var selectedDate = document.getElementById("start_dates").value;
-    var selectedSubparameter = document.getElementById("subparameter").value;
+    if (ajaxUrl) {
+        $.ajax({
+            type: 'POST',
+            url: ajaxUrl,
+            data: {
+                date: selectedDate,
+                name: selectedSubparameter
+            },
+            success: function(response) {
+                // console.log(response);
+                try {
+                    var data = JSON.parse(response); // Parse the response as JSON
 
-    // Make AJAX request to server to delete row data
-    $.ajax({
-        type: 'POST',
-        url: "<?php echo site_url('Drawings/Drawing/delete_row'); ?>",
-        data: {
-            date: selectedDate,
-            name: selectedSubparameter
-        },
-        success: function(response) {
-            // console.log(response, 'asjbfadkshbk');
-        },
-        error: function(xhr, status, error) {
-            console.error('Error:', error);
+                    // Extract latitudes and longitudes from the response data
+                    var latitudes = data.latitudes.replace(/[{}]/g, '').split(',');
+                    var longitudes = data.longitudes.replace(/[{}]/g, '').split(',');
+
+                    // Draw polyline on the map using the extracted latitudes and longitudes
+                    drawPolyline(latitudes, longitudes);
+                } catch (error) {
+                    console.error('Error parsing JSON response:', error);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', error);
+            }
+        });
+    }
+
+    function confirmDelete() {
+        // Display a confirmation dialog
+        var confirmation = confirm("Are you sure you want to delete?");
+
+        // If the user confirms, call the deleteDrawing function
+        if (confirmation) {
+            deleteDrawing();
         }
-    });
-}
+    }
+
+    function deleteDrawing() {
+        var selectedDate = document.getElementById("start_dates").value;
+        var selectedSubparameter = document.getElementById("subparameter").value;
+
+        // Make AJAX request to server to delete row data
+        $.ajax({
+            type: 'POST',
+            url: "<?php echo site_url('Drawings/Drawing/delete_row'); ?>",
+            data: {
+                date: selectedDate,
+                name: selectedSubparameter
+            },
+            success: function(response) {
+                // console.log(response, 'asjbfadkshbk');
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', error);
+            }
+        });
+    }
 </script>
 <!-- drawings code end-->
 

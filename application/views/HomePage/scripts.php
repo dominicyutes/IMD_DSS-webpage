@@ -5153,40 +5153,41 @@ new WeatherInferenceControl().addTo(map);
                     };
 
                     var jsonData = JSON.stringify(data);
-                   // Determine the AJAX URL based on the entered name
-                var ajaxUrl;
-                <?php if (isset($name)): ?>
-                    if ('<?php echo $name; ?>' === "Super Admin HQ") {
+
+                    // Determine the AJAX URL based on the entered name
+                    var ajaxUrl;
+                    <?php if (isset($name)): ?>
+                    if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
                         ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates'); ?>";
                     } else if ('<?php echo $name; ?>' === "MC ODISHA") {
                         ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates_odisha'); ?>";
                     }
-                <?php endif; ?>
+                    <?php endif; ?>
 
-                if (ajaxUrl) {
-                    // Make the AJAX POST request
-                    $.ajax({
-                        type: 'POST',
-                        url: ajaxUrl,
-                        data: jsonData,
-                        success: function(response) {
-                            console.log(response);
-                        },
-                        error: function(xhr, status, error) {
-                            console.error('Error:', error);
-                        }
-                    });
+                    if (ajaxUrl) {
+                        // Make the AJAX POST request
+                        $.ajax({
+                            type: 'POST',
+                            url: ajaxUrl,
+                            data: jsonData,
+                            success: function(response) {
+                                console.log(response);
+                            },
+                            error: function(xhr, status, error) {
+                                console.error('Error:', error);
+                            }
+                        });
+                    } else {
+                        console.error('Invalid name or AJAX URL not determined.');
+                    }
                 } else {
-                    console.error('Invalid name or AJAX URL not determined.');
+                    alert('No coordinates available. Draw a polyline first.');
                 }
-            } else {
-                alert('No coordinates available. Draw a polyline first.');
             }
-        }
-    });
+        });
 
-    return div;
-};
+        return div;
+    };
     getCoordinatesButton.addTo(map);
     //drawing co-ordinates end
 
