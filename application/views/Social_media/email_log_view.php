@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         width: 100%;
         height: 100vh;
         /* zoom: 100%; */
-        /* overflow: hidden; */
+        overflow-x: hidden;
         font-family: "Lato", sans-serif;
     }
 
@@ -81,16 +81,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 87%">
+            <div class="col-9" style="width: 85%">
                 <div style="background-color: #f5fdfd">
-                    <br>
                     <br>
                     <h2 class="text-center">EMAIL DISSEMINATIOIN</h2>
 
                     <div>
-
-                        <br><br><br>
-
                         <!--  -->
                         <div class="container" id="emailLogTable">
                             <div class="row">

@@ -1,6 +1,6 @@
 <style>
 .sidebar {
-    height: 54rem;
+    height: 43rem;
     width: 15%;
     background-color: #2c5383;
 }
@@ -42,12 +42,18 @@
             </div>
         </div>
 
-        <a href="<?php echo base_url('D_Retrieval_Controller'); ?>"><i class="fa-solid fa-draw-polygon"></i></i>Data
-            Retrieval</a>
+        <a href="<?php echo base_url('D_Retrieval_Controller'); ?>"> Data Retrieval</a>
 
-        <?php if (isset($name) && $name == 'Super_Admin_HQ'): ?>
+        <?php
+        $name = '';
+        if ($this->session->has_userdata('name')) {
+            $name = $this->session->userdata('name');
+        }
+        $data['name'] = $name;
+
+        if (isset($name) && $name == 'Super_Admin_HQ'): ?>
         <div class="dropdown">
-            <a href="#"><i class="fa-solid fa-share-from-square"></i> Social Media <i class="fa fa-caret-down"></i></a>
+            <a href="#">Social Media <i class="fa fa-caret-down"></i></a>
             <div class="dropdown-content">
                 <a href="<?php echo base_url('SMS_controller'); ?>">SMS</a>
                 <a href="<?php echo base_url('Email'); ?>">Email</a>

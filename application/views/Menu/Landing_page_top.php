@@ -21,7 +21,7 @@
         width: 100%;
         position: relative;
         margin-top: -11px;
-        margin-left: -8px;
+        margin-left: 0px;
     }
     </style>
 </head>
