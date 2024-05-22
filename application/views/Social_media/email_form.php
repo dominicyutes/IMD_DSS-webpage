@@ -156,19 +156,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                         <!-- col-5 ends here -->
-
                     </div> <!-- class="row" -->
 
                     <div class="row">
                         <!-- new group && existing group starts here -->
                         <!-- radio btn starts here -->
                         <div style="margin-top: 1%;">
-                            <label>Create or Edit</label>
-                            <input type="radio" name="create_edit_option" value="none" /> <label>None</label>
-                            <input type="radio" name="create_edit_option" value="new_group" /> <label>Create
-                                Group</label>
-                            <input type="radio" name="create_edit_option" value="existing_group" /> <label>Existing
-                                Group</label>
+                            <div style="display: flex;">
+                                <label>Create or Edit</label>
+                                <div><input type="radio" name="create_edit_option" value="none" /> <label>None</label>
+                                </div>
+                                <div><input type="radio" name="create_edit_option" value="new_group" /> <label>Create
+                                        Group</label></div>
+                                <div><input type="radio" name="create_edit_option" value="existing_group" />
+                                    <label>Existing
+                                        Group</label>
+                                </div>
+                            </div>
                         </div> <!-- radio btn ends here -->
 
                         <!-- New Group radio btn BOX starts here -->

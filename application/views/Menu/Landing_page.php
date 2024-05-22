@@ -38,8 +38,6 @@
             <!-- Landing_page title logo> -->
             <?php $this->load->view('Menu/Landing_page_top'); ?>
         </div>
-
-
         <div class="row">
             <!-- Landing_page sidebar> -->
             <?php $this->load->view('Menu/Landing_page_side'); ?>
