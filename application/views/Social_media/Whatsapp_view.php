@@ -74,7 +74,7 @@
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 87%">
+            <div class="col-9" style="width: 85%">
                 <div id="map"></div>
                 <h2>Post to Whatsapp</h2>
                 <button type="submit" class="btn btn-primary" id="waCaptureBtn">Get Picture</button>

@@ -75,7 +75,7 @@
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 87%">
+            <div class="col-9" style="width: 85%">
                 <div id="map" class="map-canvas"></div>
                 <div class="row">
                     <div class="col-8">

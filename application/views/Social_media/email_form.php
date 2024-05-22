@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 87%">
+            <div class="col-9" style="width: 85%">
                 <div style="background-color: #f5fdfd">
                     <br>
                     <br>

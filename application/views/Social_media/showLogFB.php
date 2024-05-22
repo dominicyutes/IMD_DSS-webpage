@@ -73,7 +73,7 @@
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 88%">
+            <div class="col-9" style="width: 85%">
                 <h2>Facebook Log Information</h2>
                 <div class="table-responsive" style="max-height: 450px;">
                     <table class="table table-hover">
