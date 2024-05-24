@@ -48,6 +48,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         margin-top: 5px;
     }
 
+    .radioCls {
+        margin-left: 10%;
+    }
+
+    .hidden {
+        display: none;
+    }
+
     /*  */
     table {
         width: 100%;
@@ -164,11 +172,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div style="margin-top: 1%;">
                             <div style="display: flex;">
                                 <label>Create or Edit</label>
-                                <div><input type="radio" name="create_edit_option" value="none" /> <label>None</label>
+                                <div class="radioCls"><input type="radio" name="create_edit_option" value="none"
+                                        checked />
+                                    <label>None</label>
                                 </div>
-                                <div><input type="radio" name="create_edit_option" value="new_group" /> <label>Create
-                                        Group</label></div>
-                                <div><input type="radio" name="create_edit_option" value="existing_group" />
+                                <div class="radioCls"><input type="radio" name="create_edit_option" value="new_group" />
+                                    <label>Create
+                                        Group</label>
+                                </div>
+                                <div class="radioCls"><input type="radio" name="create_edit_option"
+                                        value="existing_group" />
                                     <label>Existing
                                         Group</label>
                                 </div>
@@ -176,7 +189,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div> <!-- radio btn ends here -->
 
                         <!-- New Group radio btn BOX starts here -->
-                        <div id="newGroupIdDis" style="display: none;">
+                        <div id="newGroupIdDis" class="hidden" style="display: none;">
                             <div style="margin-top: 1%;height: 4.25rem;width: 23rem;background-color: #cccccc;">
                                 <div style="margin-left: 3%;">
                                     <div>New Group</div>
@@ -189,7 +202,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div> <!-- New Group radio btn BOX ends here -->
 
                         <!-- Existing Group radio btn BOX starts here -->
-                        <div id="existingGroupIdDis">
+                        <div id="existingGroupIdDis" class="hidden">
                             <div style="margin-top: 1%;height: 11.25rem;width: 23rem;background-color: #cccccc;">
                                 <div style="margin-left: 3%;">
                                     <div style="padding-top: 2%;">Existing Group</div>
@@ -246,7 +259,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
 
-                    <form id="" method="POST" action="<?=base_url('')?>">
+                    <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>">
                         <div class="row" style="margin-top: 2%;">
                             <div class="col-8">
                                 <lable>Subject</lable>
@@ -269,8 +282,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     <!--  -->
                     <div>
-                        <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>">
-                            <!-- <lable>Name</lable>
+                        <!-- <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>"> -->
+                        <!-- <lable>Name</lable>
                             <input type="text" id="name" name="name" />
                             <br>
                             <lable>Subject</lable>
@@ -278,7 +291,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <br>
                             <lable>Message</lable>
                             <input type="text" id="message" name="message" /> -->
-                            <!-- <label for="toggleButton">To Deliver</label>
+                        <!-- <label for="toggleButton">To Deliver</label>
                             <input type="checkbox" id="toggleButton">
 
                             <button style="margin-left: 10px" type="submit" id="submitButton" class="btn btn-success ml-2"
@@ -289,17 +302,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div> -->
 
 
-                            <div class="row">
-                                <div class="col-10">
-                                    <!-- <label style="margin-left:5%" for="toggleButton">ON/OFF</label> -->
-                                    <!-- To Deliver -->
-                                    <!-- <input type="checkbox" id="toggleButton"> -->
-                                    <!-- <button style="margin-left: 10px" type="submit" id="submitButton"
+                        <div class="row">
+                            <div class="col-10">
+                                <!-- <label style="margin-left:5%" for="toggleButton">ON/OFF</label> -->
+                                <!-- To Deliver -->
+                                <!-- <input type="checkbox" id="toggleButton"> -->
+                                <!-- <button style="margin-left: 10px" type="submit" id="submitButton"
                                         class="btn btn-success btn-sm">Submit</button> -->
-                                    <!--Submit -->
-                                </div>
+                                <!--Submit -->
                             </div>
-                        </form>
+                        </div>
+                        <!-- </form> -->
 
                         <!-- <div class="col-2 text-right">
                             <button class="btn btn-primary btn-sm" id="toggleEmailLogTable">Log Information</button>
@@ -320,6 +333,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     document.getElementById("toggleEmailLogTable").addEventListener("click", function() {
         window.location = "<?php echo site_url('Email/show_logInfo'); ?>";
     });
+
+    // radio btn for none, new grp, existing grp
+    document.addEventListener('DOMContentLoaded', function() {
+        const radios = document.querySelectorAll('input[name="create_edit_option"]');
+        const newGroupDiv = document.getElementById('newGroupIdDis');
+        const existingGroupDiv = document.getElementById('existingGroupIdDis');
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'new_group') {
+                    newGroupDiv.style.display = 'block';
+                    existingGroupDiv.style.display = 'none';
+                } else if (this.value === 'existing_group') {
+                    newGroupDiv.style.display = 'none';
+                    existingGroupDiv.style.display = 'block';
+                } else {
+                    newGroupDiv.style.display = 'none';
+                    existingGroupDiv.style.display = 'none';
+                }
+            });
+        });
+    });
+    // 
 
 
     // 

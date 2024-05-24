@@ -77,7 +77,8 @@
             <div class="col-9" style="width: 85%">
                 <div id="map"></div>
                 <h2>Post to Whatsapp</h2>
-                <button type="submit" class="btn btn-primary" id="waCaptureBtn">Get Picture</button>
+                <button type="submit" class="btn btn-primary" id="waCaptureBtn" style="display: none;">Get
+                    Picture</button>
                 <button type="submit" class="btn btn-primary" id="waSendBtn">Send Message</button>
             </div>
             <!-- editing content ends here -->
