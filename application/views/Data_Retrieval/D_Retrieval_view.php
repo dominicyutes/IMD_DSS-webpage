@@ -15,9 +15,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Bootstrap JavaScript files -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-    </script>
+    </script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
@@ -69,7 +69,7 @@
     #map {
         margin-top: 1%;
         height: 78vh;
-        width: 70%;
+        width: 50%;
         border: 1px solid black;
     }
     </style>
@@ -89,8 +89,60 @@
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 87%">
+            <div class="col-9" style="width: 85%; display: flex;">
                 <div id="map"></div>
+                <!--  -->
+                <div style="display: flex;">
+                    <!-- Days and met division btn-->
+                    <div style="width: 50%; margin-left: 1%; margin-top: 1%;">
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                DAYS
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">Day 1</a></li>
+                                <li><a class="dropdown-item" href="#">Day 2</a></li>
+                                <li><a class="dropdown-item" href="#">Day 3</a></li>
+                                <li><a class="dropdown-item" href="#">Day 4</a></li>
+                                <li><a class="dropdown-item" href="#">Day 5</a></li>
+                                <li><a class="dropdown-item" href="#">Day 6</a></li>
+                                <li><a class="dropdown-item" href="#">Day 7</a></li>
+                                <li><a class="dropdown-item" href="#">Day 8</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="dropdown" style="margin-top: 1%;">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Met Divisions
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Met Divisions 1</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 2</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 3</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 4</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 5</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 6</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 7</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 8</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 9</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 10</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 11</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 12</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 13</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 14</a></li>
+                            <li><a class="dropdown-item" href="#">Met Divisions 15</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--  -->
+                <!-- <div>
+                    <button type="button" class="btn btn-primary btn-sm">Max Temp</button>
+                    <button type="button" class="btn btn-secondary btn-sm">Min Temp</button>
+                </div> -->
+                <!--  -->
             </div>
             <!-- editing content ends here -->
 

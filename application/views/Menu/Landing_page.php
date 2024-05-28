@@ -17,10 +17,10 @@
     <!-- Bootstrap JavaScript files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
+    </script>
     <!-- Bootstrap ends here -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
@@ -28,18 +28,16 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-    
+
     </style>
 </head>
 
 <body>
-    <div style="height: 100%;">
+    <div style="height: 100%; overflow: hidden;">
         <div class="fixedHead">
             <!-- Landing_page title logo> -->
             <?php $this->load->view('Menu/Landing_page_top'); ?>
         </div>
-
-
         <div class="row">
             <!-- Landing_page sidebar> -->
             <?php $this->load->view('Menu/Landing_page_side'); ?>
@@ -58,23 +56,23 @@
     </div>
 
     <script>
-        $(document).ready(function () {
-            $('#toggleButton').change(function () {
-                if ($(this).is(':checked')) {
-                    $('#submitButton').prop('disabled', false);
-                } else {
-                    $('#submitButton').prop('disabled', true);
-                }
-            });
+    $(document).ready(function() {
+        $('#toggleButton').change(function() {
+            if ($(this).is(':checked')) {
+                $('#submitButton').prop('disabled', false);
+            } else {
+                $('#submitButton').prop('disabled', true);
+            }
         });
+    });
 
-        $(document).ready(function () {
-            $("#toggleEmailLogTable").click(function () {
-                event.preventDefault();
-                $("#emailLogTable").toggle();
+    $(document).ready(function() {
+        $("#toggleEmailLogTable").click(function() {
+            event.preventDefault();
+            $("#emailLogTable").toggle();
 
-            });
         });
+    });
     </script>
 </body>
 

@@ -66,7 +66,7 @@
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 87%">
+            <div class="col-9" style="width: 85%">
                 <h2>Post to SMS</h2>
                 <button type="submit" class="btn btn-primary" id="smsSendBtn">Send SMS</button>
                 <!-- <p id="smsResponse"></p> -->
