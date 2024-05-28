@@ -2495,10 +2495,11 @@ function macShowSubParameterNames(value) {
 }
 
 let user_id = "<?php echo $user_id; ?>";
-// console.log("User ID:", user_id);
+console.log("User ID:", user_id);
 
 let login_in_User = "<?php echo $name; ?>";
-// console.log("$name:", login_in_User);/
+console.log("$name:", login_in_User);
+//
 
 
 
@@ -2824,12 +2825,9 @@ function showSavedMacroList() {
                             </div>
 
                             <?php if ($user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9"): ?>
-                                                        <div>
-                                                            <span style="padding-right: 10px;" onclick="tempCloseGrp(this)">X</span>
-                                                        </div>
-                                                        <div>
-                                                            <span style="padding-right: 10px;" onclick="tempCloseGrp(this)">X</span>
-                                                        </div>
+                                                    <div>
+                                                        <span style="padding-right: 10px;" onclick="tempCloseGrp(this)">X</span>
+                                                    </div>
                             <?php endif; ?>
                             
                         </div>
@@ -3184,54 +3182,106 @@ function macroRunFnX(macroname) {
 
 
 // + MAIN view btn DB
+// function viewMacro(macroname) {
+//     let xhr = new XMLHttpRequest();
+//     xhr.open("GET", "<?php echo base_url('HomePage/getMacroByMacroname?macroname='); ?>" + encodeURIComponent(
+//         macroname), true);
+
+//     xhr.onload = function() {
+//         if (xhr.status == 200) {
+//             let macro = JSON.parse(xhr.responseText);
+//             console.log("Parsed macro object:", macro);
+//             if (Array.isArray(macro) && macro.length > 0) {
+//                 view_Create_Macro.style.display = 'block';
+//                 let viewMacroDetails = document.getElementById("viewMacroDetails");
+//                 let viewMacroTitleVar = document.getElementById("viewMacroTitle");
+//                 viewMacroTitleVar.innerHTML = macro[0].macroname;
+//                 let viewTempMacro = macro.map(macroItem => {
+//                     console.log("Macro Item:", macroItem);
+//                     let modelName = macroItem.modelname.trim();
+//                     let parameterName = macroItem.parametername.trim();
+//                     let subParameterName = macroItem.subparametername.trim();
+//                     if (modelName && parameterName && subParameterName) {
+//                         console.log("Model Name:", modelName);
+//                         console.log("Parameter Name:", parameterName);
+//                         console.log("Subparameter Name:", subParameterName);
+//                         // 
+//                         return `<div style="font-family: 'Times New Roman'; font-size: 15px; color: #1d334e;" class="macroListCSS" id="toggleDiv">
+//                             <span onclick="MacroPlusToggle('${macroItem.ulId}view')">+ ${macroItem.macroname}: ${subParameterName}</span>
+//                             <ul id="${macroItem.ulId}view" class="listContainerMacro" style="font-family: 'Times New Roman'; font-size: 13px;">
+//                                 <li>${modelName}</li>
+//                                 <li>${parameterName}</li>
+//                                 <li>${subParameterName}</li>
+//                             </ul>
+//                         </div>`;
+//                     } else {
+//                         console.error("Missing properties in macroItem:", macroItem);
+//                         return '';
+//                     }
+//                 });
+//                 viewMacroDetails.innerHTML = viewTempMacro.join("");
+//             } else {
+//                 console.error("No macro found with the given macroname or empty response:", macroname);
+//             }
+//         } else {
+//             console.error("Error occurred while fetching macro details. Status:", xhr.status);
+//         }
+//     };
+
+//     xhr.send();
+// }
+
 function viewMacro(macroname) {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "<?php echo base_url('HomePage/getMacroByMacroname?macroname='); ?>" + encodeURIComponent(
         macroname), true);
 
     xhr.onload = function() {
-        if (xhr.status == 200) {
-            let macro = JSON.parse(xhr.responseText);
-            console.log("Parsed macro object:", macro);
-            if (Array.isArray(macro) && macro.length > 0) {
-                view_Create_Macro.style.display = 'block';
-                let viewMacroDetails = document.getElementById("viewMacroDetails");
-                let viewMacroTitleVar = document.getElementById("viewMacroTitle");
-                viewMacroTitleVar.innerHTML = macro[0].macroname;
-                let viewTempMacro = macro.map(macroItem => {
-                    console.log("Macro Item:", macroItem);
-                    let modelName = macroItem.modelname.trim();
-                    let parameterName = macroItem.parametername.trim();
-                    let subParameterName = macroItem.subparametername.trim();
-                    if (modelName && parameterName && subParameterName) {
-                        console.log("Model Name:", modelName);
-                        console.log("Parameter Name:", parameterName);
-                        console.log("Subparameter Name:", subParameterName);
-                        // 
-                        return `<div style="font-family: 'Times New Roman'; font-size: 15px; color: #1d334e;" class="macroListCSS" id="toggleDiv">
-                            <span onclick="MacroPlusToggle('${macroItem.ulId}view')">+ ${macroItem.macroname}: ${subParameterName}</span>
-                            <ul id="${macroItem.ulId}view" class="listContainerMacro" style="font-family: 'Times New Roman'; font-size: 13px;">
-                                <li>${modelName}</li>
-                                <li>${parameterName}</li>
-                                <li>${subParameterName}</li>
-                            </ul>
-                        </div>`;
-                    } else {
-                        console.error("Missing properties in macroItem:", macroItem);
-                        return '';
-                    }
-                });
-                viewMacroDetails.innerHTML = viewTempMacro.join("");
-            } else {
-                console.error("No macro found with the given macroname or empty response:", macroname);
+        if (xhr.status === 200) {
+            try {
+                // Attempt to parse the response as JSON
+                let macro = JSON.parse(xhr.responseText);
+                if (Array.isArray(macro) && macro.length > 0) {
+                    view_Create_Macro.style.display = 'block';
+                    let viewMacroDetails = document.getElementById("viewMacroDetails");
+                    let viewMacroTitleVar = document.getElementById("viewMacroTitle");
+                    viewMacroTitleVar.innerHTML = macro[0].macroname;
+                    let viewTempMacro = macro.map(macroItem => {
+                        let modelName = macroItem.modelname.trim();
+                        let parameterName = macroItem.parametername.trim();
+                        let subParameterName = macroItem.subparametername.trim();
+                        if (modelName && parameterName && subParameterName) {
+                            return `<div style="font-family: 'Times New Roman'; font-size: 15px; color: #1d334e;" class="macroListCSS" id="toggleDiv">
+                                <span onclick="MacroPlusToggle('${macroItem.ulId}view')">+ ${macroItem.macroname}: ${subParameterName}</span>
+                                <ul id="${macroItem.ulId}view" class="listContainerMacro" style="font-family: 'Times New Roman'; font-size: 13px;">
+                                    <li>${modelName}</li>
+                                    <li>${parameterName}</li>
+                                    <li>${subParameterName}</li>
+                                </ul>
+                            </div>`;
+                        } else {
+                            console.error("Missing properties in macroItem:", macroItem);
+                            return '';
+                        }
+                    });
+                    viewMacroDetails.innerHTML = viewTempMacro.join("");
+                } else {
+                    console.error("No macro found with the given macroname or empty response:", macroname);
+                }
+            } catch (e) {
+                console.error("Error parsing JSON response:", e);
+                console.error("Server response:", xhr.responseText); // Log the response text
             }
         } else {
             console.error("Error occurred while fetching macro details. Status:", xhr.status);
+            console.error("Server response:", xhr.responseText); // Log the response text
         }
     };
 
     xhr.send();
 }
+
+
 
 // + MAIN edit btn DB
 function editMacro(macroname) {
@@ -4718,12 +4768,12 @@ map.on('draw:created', function(e) {
     const layer = e.layer;
     const userText = prompt('Enter Name:');
 
-        if (userText !== null) {
-            const geoJSONData = layer.toGeoJSON();
-            const lat = geoJSONData.geometry.coordinates[1];
-            const lon = geoJSONData.geometry.coordinates[0];
-            const fontSize = '20px';
-            const tooltipContent = `
+    if (userText !== null) {
+        const geoJSONData = layer.toGeoJSON();
+        const lat = geoJSONData.geometry.coordinates[1];
+        const lon = geoJSONData.geometry.coordinates[0];
+        const fontSize = '20px';
+        const tooltipContent = `
             <div style="
                 background-color: black; 
                 color: white; 
@@ -4734,11 +4784,11 @@ map.on('draw:created', function(e) {
                 <p style="font-size: ${fontSize}; margin: 0;">${userText}</p>
             </div>
         `;
-            layer.bindTooltip(tooltipContent, {
-                permanent: true,
-                direction: 'top',
-                opacity: 0.7
-            });
+        layer.bindTooltip(tooltipContent, {
+            permanent: true,
+            direction: 'top',
+            opacity: 0.7
+        });
 
         drawnItems.addLayer(layer);
 
@@ -5051,72 +5101,74 @@ new WeatherInferenceControl().addTo(map);
     var drawnItems = new L.FeatureGroup();
     map.addLayer(drawnItems);
 
-        var isFreehandMode = false;
-        var isDrawing = false;
-        var polyline = null;
-        var eraseMode = false;
-        var selectedColor = 'red'; 
-        var drawnItems = L.featureGroup().addTo(map);
+    var isFreehandMode = false;
+    var isDrawing = false;
+    var polyline = null;
+    var eraseMode = false;
+    var selectedColor = 'red';
+    var drawnItems = L.featureGroup().addTo(map);
 
-        function startDrawing() {
-            isDrawing = true;
-            polyline = L.polyline([], {
-                weight: 4,
-                color: eraseMode ? 'transparent' : selectedColor,
-                dashArray: '5, 5'
-            }).addTo(drawnItems);
-        }
+    function startDrawing() {
+        isDrawing = true;
+        polyline = L.polyline([], {
+            weight: 4,
+            color: eraseMode ? 'transparent' : selectedColor,
+            dashArray: '5, 5'
+        }).addTo(drawnItems);
+    }
 
     function stopDrawing() {
         isDrawing = false;
         polyline = null;
     }
 
-        var freehandButton = L.control({ position: 'topleft' });
+    var freehandButton = L.control({
+        position: 'topleft'
+    });
 
-        freehandButton.onAdd = function (map) {
-            var div = L.DomUtil.create('div', 'leaflet-bar');
-            div.style.top = '-132px'; 
-            div.innerHTML = `
+    freehandButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.style.top = '-132px';
+        div.innerHTML = `
         <button id="freehandButton" style="font-family: 'Times New Roman'; background-color: white; border: 1px solid black; position: relative; ">Freehand</button>
         <input type="color" id="colorPicker" style="position: relative; display: none;width: 69px;" value="#ff0000">
     `;
 
-            setTimeout(function () {
-                var freehandBtn = document.getElementById('freehandButton');
-                var colorPicker = document.getElementById('colorPicker');
+        setTimeout(function() {
+            var freehandBtn = document.getElementById('freehandButton');
+            var colorPicker = document.getElementById('colorPicker');
 
-                freehandBtn.addEventListener('click', function () {
-                    if (isFreehandMode) {
-                        isFreehandMode = false;
-                        map.dragging.enable();
-                        freehandBtn.style.backgroundColor = 'white';
-                        colorPicker.style.display = 'none';
-                    } else {
-                        isFreehandMode = true;
-                        map.dragging.disable();
-                        freehandBtn.style.backgroundColor = 'green';
-                        colorPicker.style.display = 'block';
-                    }
-                });
+            freehandBtn.addEventListener('click', function() {
+                if (isFreehandMode) {
+                    isFreehandMode = false;
+                    map.dragging.enable();
+                    freehandBtn.style.backgroundColor = 'white';
+                    colorPicker.style.display = 'none';
+                } else {
+                    isFreehandMode = true;
+                    map.dragging.disable();
+                    freehandBtn.style.backgroundColor = 'green';
+                    colorPicker.style.display = 'block';
+                }
+            });
 
-                colorPicker.addEventListener('input', function () {
-                    selectedColor = this.value;
-                });
-            }, 0);
+            colorPicker.addEventListener('input', function() {
+                selectedColor = this.value;
+            });
+        }, 0);
 
-            return div;
-        };
+        return div;
+    };
 
-        freehandButton.addTo(map);
+    freehandButton.addTo(map);
 
-        var eraseButton = L.control({
-            position: 'topleft'
-        });
-        eraseButton.onAdd = function (map) {
-            var div = L.DomUtil.create('div', 'leaflet-bar');
-            div.innerHTML =
-                '<button id="eraseButton" style="background-color: white; border: 0px solid black; position: absolute; top: -130px;">Erase</button>';
+    var eraseButton = L.control({
+        position: 'topleft'
+    });
+    eraseButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.innerHTML =
+            '<button id="eraseButton" style="background-color: white; border: 0px solid black; position: absolute; top: -130px;">Erase</button>';
 
         div.firstChild.addEventListener('click', function() {
             eraseMode = !eraseMode;
@@ -5130,13 +5182,13 @@ new WeatherInferenceControl().addTo(map);
     };
     eraseButton.addTo(map);
 
-        var clearLayersButton = L.control({
-            position: 'topleft'
-        });
-        clearLayersButton.onAdd = function (map) {
-            var div = L.DomUtil.create('div', 'leaflet-bar');
-            div.innerHTML =
-                '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -103px; white-space: nowrap;">Clear All</button>';
+    var clearLayersButton = L.control({
+        position: 'topleft'
+    });
+    clearLayersButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.innerHTML =
+            '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -103px; white-space: nowrap;">Clear All</button>';
 
         div.firstChild.addEventListener('click', function() {
             // Remove all layers from the map
@@ -5155,18 +5207,19 @@ new WeatherInferenceControl().addTo(map);
         position: 'topleft'
     });
 
-        getCoordinatesButton.onAdd = function (map) {
-            var div = L.DomUtil.create('div', 'leaflet-bar');
-            div.innerHTML = '<button id="getCoordinatesButton" style="background-color: white; border: 0px solid black; position: absolute; top: -180px; right: -96px;"><i class="fa fa-download"></i></button>';
+    getCoordinatesButton.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'leaflet-bar');
+        div.innerHTML =
+            '<button id="getCoordinatesButton" style="background-color: white; border: 0px solid black; position: absolute; top: -180px; right: -96px;"><i class="fa fa-download"></i></button>';
 
-            div.firstChild.addEventListener('click', function () {
-                var name = prompt('Enter a name for the coordinates:');
-                if (name !== null && name.trim() !== '') {
-                    var allCoordinates = {
-                        latitudes: [],
-                        longitudes: [],
-                        markers: markerDataArray,
-                    };
+        div.firstChild.addEventListener('click', function() {
+            var name = prompt('Enter a name for the coordinates:');
+            if (name !== null && name.trim() !== '') {
+                var allCoordinates = {
+                    latitudes: [],
+                    longitudes: [],
+                    markers: markerDataArray,
+                };
 
                 drawnItems.eachLayer(function(layer) {
                     if (layer instanceof L.Polyline) {
@@ -5190,37 +5243,37 @@ new WeatherInferenceControl().addTo(map);
 
                     var jsonData = JSON.stringify(data);
 
-                        var ajaxUrl;
-                        <?php if (isset($name)): ?>
-                            if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
-                                ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates'); ?>";
-                            } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
-                                ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates_odisha'); ?>";
-                            } else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
-                                ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates_delhi'); ?>";
-                            }
-                        <?php endif; ?>
-
-                        if (ajaxUrl) {
-                            $.ajax({
-                                type: 'POST',
-                                url: ajaxUrl,
-                                data: jsonData,
-                                success: function (response) {
-                                    console.log(response);
-                                },
-                                error: function (xhr, status, error) {
-                                    console.error('Error:', error);
-                                }
-                            });
-                        } else {
-                            console.error('Invalid name or AJAX URL not determined.');
-                        }
-                    } else {
-                        alert('No coordinates available. Draw a polyline first.');
+                    var ajaxUrl;
+                    <?php if (isset($name)): ?>
+                    if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
+                        ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates'); ?>";
+                    } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
+                        ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates_odisha'); ?>";
+                    } else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
+                        ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates_delhi'); ?>";
                     }
+                    <?php endif; ?>
+
+                    if (ajaxUrl) {
+                        $.ajax({
+                            type: 'POST',
+                            url: ajaxUrl,
+                            data: jsonData,
+                            success: function(response) {
+                                console.log(response);
+                            },
+                            error: function(xhr, status, error) {
+                                console.error('Error:', error);
+                            }
+                        });
+                    } else {
+                        console.error('Invalid name or AJAX URL not determined.');
+                    }
+                } else {
+                    alert('No coordinates available. Draw a polyline first.');
                 }
-            });
+            }
+        });
 
         return div;
     };
@@ -5407,17 +5460,17 @@ const ToggleControl = L.Control.extend({
         arrowPath.setAttribute('fill', 'currentColor'); // Change the fill color if needed
         handArrowSVG.appendChild(arrowPath);
 
-            // Creating and styling the toggle button
-            const button = L.DomUtil.create('button', 'toggle-button');
-            // button.textContent = 'side-by-side Layers';
-            button.style.backgroundColor = 'white';
-            button.style.border = '3px solid #c2c1ae';
-            button.title = 'Split Screen';
-            button.style.position = 'absolute';
-            button.style.top = '536px';
-            button.style.left = '1px';
-            // Appending the hand symbol and curved arrow SVG to the toggle button
-            button.appendChild(handArrowSVG);
+        // Creating and styling the toggle button
+        const button = L.DomUtil.create('button', 'toggle-button');
+        // button.textContent = 'side-by-side Layers';
+        button.style.backgroundColor = 'white';
+        button.style.border = '3px solid #c2c1ae';
+        button.title = 'Split Screen';
+        button.style.position = 'absolute';
+        button.style.top = '536px';
+        button.style.left = '1px';
+        // Appending the hand symbol and curved arrow SVG to the toggle button
+        button.appendChild(handArrowSVG);
 
         // Function to handle button click
         function handleButtonClick() {

@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-use Twilio\Rest\Client;
+// use Twilio\Rest\Client;
+require_once('vendor/autoload.php');
 
 class Whatsapp_controller extends CI_Controller {
 
@@ -9,12 +10,23 @@ class Whatsapp_controller extends CI_Controller {
     private $folder_path;
     private $filename;
     private $img_path;
+    private $ultramsg_token = "qkh9kb131s9vjho4";
+    private $instance_id = "instance86674";
+    private $client;
     
 
     public function __construct() {
         parent::__construct();
-        $this->load->helper('url');
+        $this->load->model('Whatsapp_m');
         $this->_check_session();
+     
+        // Initialize the UltraMsg client
+        $this->client = new UltraMsg\WhatsAppApi($this->ultramsg_token, $this->instance_id);
+        // 
+        
+        if ($this->session->has_userdata('name')) {
+            $this->name = $this->session->userdata('name');
+        }
     }
 
     function _check_session() {
@@ -26,42 +38,84 @@ class Whatsapp_controller extends CI_Controller {
     }
 
     public function index() {
+        $data = array();
+        
         $name = '';
-       if ($this->session->has_userdata('name')) {
+          if ($this->session->has_userdata('name')) {
            $name = $this->session->userdata('name');
-       }
-       $data['name'] = $name;
+          }
+          $data['name'] = $name;
+
+       
+        $todays_date = '2023-05-04';
+        
+        $info = $this->Whatsapp_m->fetch_nowcast_district_wise($todays_date);
+        $dinfo = $this->Whatsapp_m->fetch_nowcast_district_($todays_date);
+        //
+        $data['info'] = $info;
+        $data['dinfo'] = $dinfo;
+        
        $this->load->view('Social_media/Whatsapp_view',$data);
     }
 
-    public function Whatsapp_map() {
-        if(!empty($_POST)) {
-            $baseFromJavascript = $_POST['base64'];
-            $random_name = $_POST['r_file_name']; 
-
-            $base_to_php = explode(',', $baseFromJavascript);
-            $img_data = base64_decode($base_to_php[1]);
-
-            $this->filename = "map_img_".$random_name.".jpeg"; // Set filename
-
-            if (!file_exists($this->folder_path)) {
-                mkdir($this->folder_path, 0777, true);
-            }
-
-            $this->img_path = $this->folder_path.'/'.$this->filename; // Set img_path
-
-            if(file_put_contents($this->img_path, $img_data) !== false) {
-               $response = [
-                    "status" => "success",
-                    "img_path" => $this->img_path  
-                ];
-            } else {
-                $response = [
-                    "status" => "error"
-                ];
-            }
-            echo json_encode($response);
+    function getDate(){
+        $curr_time = strtotime(date('H:i'));
+        if($curr_time < strtotime(date('07:31')) ){
+            $date = date("Y-m-d", strtotime("-1 days"));
         }
+        else{
+            $date = date("Y-m-d");
+        }
+        return $date;
+    }   
+
+    public function getPic() {
+        if(!empty($_POST)) {
+        $baseFromJavascript = $_POST['base64'];
+        $random_name = $_POST['r_file_name']; 
+
+        $base_to_php = explode(',', $baseFromJavascript);
+        $img_data = base64_decode($base_to_php[1]);
+
+        $folder_path = "assets/Whatsapp_img";
+        $filename = "map_img_".$random_name.".jpeg";
+
+        if (!file_exists($folder_path)) {
+            mkdir($folder_path, 0777, true);
+        }
+
+        $img_path = $folder_path.'/'.$filename;
+
+        if(file_put_contents($img_path, $img_data) !== false) {
+            echo json_encode(["status" => "success"]);
+        } else {
+            echo json_encode(["status" => "error"]);
+        }
+      }
+    }
+
+    public function sendMessage() {
+      $ultramsg_token = "qkh9kb131s9vjho4";
+      $instance_id = "instance86674";
+      $client = new UltraMsg\WhatsAppApi($ultramsg_token, $instance_id);
+
+       $to = "8939535307";  // individual number
+    //$to = "120363288038792978@g.us"; //group ID
+
+      //send TEXT
+      $body = "Display the Nowcast Odisha Data Testing - II;";
+      $api = $client->sendChatMessage($to,$body);
+      print_r($api);
+
+
+      // send image
+      $image_path = base_url('assets/Fb_img/map.png');  
+      $data = file_get_contents($image_path);
+      $image_base64 = base64_encode($data);
+
+      $api = $client->sendImageMessage($to,$image_base64); // $caption,
+      print_r($api);
+      
     }
 
     public function Whatsapp_post() {
@@ -100,12 +154,6 @@ class Whatsapp_controller extends CI_Controller {
             echo "Error: " . $ex->getMessage();
         }
     }
-
-
-    // public function test(){
-    //     $x = base_url('assets/Whatsapp_img/map_img_2024_04_29_08_35_08.jpeg');
-    //     echo $x;
-    // }
 
 }
 ?>

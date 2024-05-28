@@ -15,9 +15,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Bootstrap JavaScript files -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
@@ -42,20 +39,39 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/canvas2image/canvas2image.js">
     </script>
 
+    <!-- easyPrint plugin -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-easyprint/dist/leaflet.easyPrint.css" />
+    <script src="https://unpkg.com/leaflet-easyprint/dist/leaflet.easyPrint.js"></script> -->
+
+
+
+
     <style>
     body {
         width: 100%;
         height: 100vh;
         /* zoom: 80%; */
-        overflow: hidden;
+        /* overflow: hidden; */
+        overflow-x: hidden;
         font-family: "Lato", sans-serif;
     }
 
     #map {
         margin-top: 1%;
         height: 78vh;
-        width: 70%;
+        width: 100%;
         border: 1px solid black;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .font {
+        font-variant-position: revert-layer;
+        font-family: serif;
+        font-size: smaller;
+        font-style: normal;
     }
     </style>
 </head>
@@ -75,11 +91,195 @@
 
             <!-- editing content starts here -->
             <div class="col-9" style="width: 85%">
-                <div id="map"></div>
-                <h2>Post to Whatsapp</h2>
-                <button type="submit" class="btn btn-primary" id="waCaptureBtn" style="display: none;">Get
-                    Picture</button>
-                <button type="submit" class="btn btn-primary" id="waSendBtn">Send Message</button>
+                <div class="row">
+                    <div class="col-9">
+                        <!-- left side starts here -->
+                        <h4>WHATSAPP</h4>
+                        <div id="map" class="map-canvas"></div>
+                    </div><!-- left side ends here  -->
+
+                    <div class="col-3 font">
+                        <div class="row">
+                            <!-- right side starts here -->
+                            <div class="col-8" style="margin-top: 2%;">
+                                <input type="checkbox" id="toggleButton">
+                                <label for="toggleButton">Auto Message ON/OFF</label>
+                            </div>
+                            <!-- Log Button -->
+                            <div class="col-4" style="margin-top: 2%;">
+                                <button
+                                    onclick="window.location.href='<?php echo base_url('Facebook_post/log_information'); ?>'"
+                                    class="btn btn-info btn-sm">LOG</button>
+                            </div>
+                            <!--  -->
+                        </div>
+
+
+
+                        <!-- Choose MC -->
+                        <div class="btn-group dropend">
+                            <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
+                                style="margin-top: 8%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                Choose MC
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">MC 1</a></li>
+                                <li><a class="dropdown-item" href="#">MC 2</a></li>
+                                <li><a class="dropdown-item" href="#">MC 3</a></li>
+                            </ul>
+                        </div>
+                        <!--  -->
+
+                        <!-- selecting department Auto ON/OFF -->
+                        <div class="row">
+                            <!-- col-5 starts here -->
+                            <div class="col-7">
+                                <div class="btn-group dropend">
+                                    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
+                                        style="margin-top: 6%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                        MC Groups
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <input type="checkbox" id="heatwave-department">
+                                                <label for="heatwave-department">Heatwave Department</label>
+                                                <input type="checkbox" id="auto-email-heatwave">
+                                                <label for="auto-email-heatwave">Auto Email On/Off</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <input type="checkbox" id="coldwave-department">
+                                                <label for="coldwave-department">Coldwave Department</label>
+                                                <input type="checkbox" id="auto-email-coldwave">
+                                                <label for="auto-email-coldwave">Auto Email On/Off</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <input type="checkbox" id="nowcast-department">
+                                                <label for="nowcast-department">Nowcast Department</label>
+                                                <input type="checkbox" id="auto-email-nowcast">
+                                                <label for="auto-email-nowcast">Auto Email On/Off</label>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- new group && existing group starts here -->
+                            <!-- radio btn starts here -->
+                            <div style="margin-top: 4%;">
+                                <div>
+                                    <label>Create or Edit</label>
+                                    <div class="radioCls"><input type="radio" name="create_edit_option" value="none"
+                                            checked />
+                                        <label>None</label>
+                                    </div>
+                                    <div class="radioCls"><input type="radio" name="create_edit_option"
+                                            value="new_group" />
+                                        <label>Create
+                                            Group</label>
+                                    </div>
+                                    <div class="radioCls"><input type="radio" name="create_edit_option"
+                                            value="existing_group" />
+                                        <label>Existing
+                                            Group</label>
+                                    </div>
+                                </div>
+                            </div> <!-- radio btn ends here -->
+
+                            <!-- New Group radio btn BOX starts here -->
+                            <div id="newGroupIdDis" class="hidden" style="display: none;">
+                                <div style="margin-top: 3%;height: 3.25rem;width: 17rem;background-color: #cccccc;">
+                                    <div style="margin-left: 3%;">
+                                        <div>New Group</div>
+                                        <div>
+                                            <input type="text" style="width:74%;" placeholder="Add group name" />
+                                            <button class="btn btn-light btn-sm" type="submit">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- New Group radio btn BOX ends here -->
+
+                            <!-- Existing Group radio btn BOX starts here -->
+                            <div id="existingGroupIdDis" class="hidden">
+                                <div style="margin-top: 3%;height: 6.25rem;width: 17rem;background-color: #cccccc;">
+                                    <div style="margin-left: 3%;">
+                                        <div style="padding-top: 2%;">Existing Group</div>
+                                        <div>
+                                            <!-- Choose grp dropdown starts here -->
+                                            <div class=" btn-group">
+                                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Choose Group
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>MC1</li>
+                                                    <li>MC2</li>
+                                                    <li>MC3</li>
+                                                </ul>
+                                            </div>
+                                            <!-- Choose grp dropdown neds here -->
+
+                                            <!-- addemail -->
+                                            <div style="margin-top:2%;">
+                                                <input type="text" style="width:74%;" placeholder="add number here" />
+                                                <button class="btn btn-light btn-sm" type="submit">Add</button>
+                                            </div> <!-- addemail ends here-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- Existing Group radio btn BOX ends here -->
+
+                        </div> <!-- new group && existing group ends here -->
+
+                        <!-- Choose Datatype -->
+                        <div>
+                            <div class="btn-group dropend">
+                                <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
+                                    style="margin-top: 8%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Choose DataType
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Add New</a></li>
+                                    <li><a class="dropdown-item" href="#">Heatwave</a></li>
+                                    <li><a class="dropdown-item" href="#">Coldwave</a></li>
+                                    <li><a class="dropdown-item" href="#">Nowcast</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--  -->
+
+                        <!-- content box -->
+                        <div style="margin-top: 8%;">
+                            <lable>Content</lable>
+                            <textarea style="width: 95%; height: 8rem;"></textarea>
+                        </div>
+                        <!--  -->
+
+                        <!-- attachment -->
+                        <div style="margin-top: 8%;">
+                            <lable>Attachment</lable>
+                            <input type="file" />
+                        </div>
+                        <!--  -->
+
+                        <!-- POST button -->
+                        <div style="margin-top: 8%;">
+                            <button class="btn btn-success btn-sm" id="getPic">GET PIC</button>
+                            <button class="btn btn-primary btn-sm" id="postToWhatsappBtn"
+                                style="visibility:;">POST</button>
+                        </div>
+                        <!--  -->
+
+
+                    </div> <!-- left side ends here -->
+                </div>
             </div>
             <!-- editing content ends here -->
 
@@ -89,81 +289,252 @@
     <script>
     var map = L.map('map').setView([22.79459, 80.06406], 4);
 
-    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //     maxZoom: 19,
-    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    // }).addTo(map);
-
-    // Add the GeoJSON data to the map
-    _dist_geojson = "DATA/INDIA_STATE.json";
+    _dist_geojson = "DATA/INDIA_DISTRICT.json";
     var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
         style: function(feature) {
             return {
                 color: 'black',
                 fillColor: 'transparent',
                 opacity: 1,
-                fillOpacity: 0.0,
-                weight: 2
+                fillOpacity: 0.5,
+                weight: 1
             };
         }
     });
 
     geojson.on('data:loaded', function() {
         geojson.addTo(map);
+        geojsonLoaded = true;
     });
+
+    // var forecast_date = '<?php echo date('Y'); ?>';
+
+    var now_info = JSON.parse('<?php echo json_encode($info)?>');
+    // console.log(now_info);
+
+    var now_info_dist = JSON.parse('<?php echo json_encode($dinfo)?>');
+    // console.log(now_info_dist);
+
+    var dist_id;
+    var data_fc = new Array();
+
+    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //     maxZoom: 19,
+    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    // }).addTo(map);
+
+    // DATA/INDIA_DISTRICT.json Odisha_Dist
+    var india_district_geojson = new L.GeoJSON.AJAX('<?= base_url('DATA/Odisha_Dist.geojson') ?>', {
+        color: 'black',
+        weight: 1,
+        style: fill_color_subbasin,
+        onEachFeature: function(feature, layer) {
+            // console.log(feature.properties, "feature.properties.id");
+            layer.on('mouseover', function(ft) {
+                let popup = new L.Popup();
+                popup.setLatLng(ft.latlng);
+                popup.setContent(getPopUpHTML(feature));
+                map.openPopup(popup);
+            });
+        }
+    });
+    india_district_geojson.addTo(map);
+
+    function set_popup_content(district_name, _info) {
+        _html_popup = "";
+        if (district_name != '') {
+            _html_popup += '<b> ' + district_name + ' </b><br><br>';
+        }
+
+        if (_info['date'] != '') {
+            _html_popup += '<b>  Time of issue  : ' + _info['date'] + '<br> ' + _info['toi'] + ' Hrs</b><br>';
+        }
+        if (_info['vupto'] != '') {
+            _html_popup += '<b>  Valied Upto   : ' + _info['vupto'] + ' Hrs </b>';
+        }
+
+        return _html_popup;
+    }
+
+    function getPopUpHTML(feature) {
+        _popup = '';
+        dist_id = feature.properties.id;
+        district_name = feature.properties.district_name;
+
+        _popup = set_popup_content(district_name, now_info[dist_id]);
+        return _popup;
+    }
+
+    function fill_color_subbasin(feature) {
+        var dist_id = feature.properties.id;
+        data_fc[0] = now_info_dist[dist_id];
+        // console.log(data_fc[0]);
+        if (data_fc[0] === null) {
+            color = '#FFFFFF';
+            opa = 0.6;
+        } else if (Number(data_fc[0]) == 1) {
+            color = '#00FF00';
+            opa = 0.6;
+        } else if (Number(data_fc[0]) == 2) {
+            color = '#FFFF00';
+            opa = 0.6;
+        } else if (Number(data_fc[0]) == 3) {
+            color = '#FFA500';
+            opa = 0.6;
+        } else if (Number(data_fc[0]) == 4) {
+            color = '#FF0000';
+            opa = 0.6;
+        } else {
+            color = '#FFFFFF';
+            opa = 0.6;
+        }
+        return {
+            fillColor: color,
+            fillOpacity: opa,
+            strokeColor: 'black',
+            strokeWeight: 0.7
+        };
+    }
+
+    // adding legends to the map
+    let _legend = L.control({
+        position: 'bottomright'
+    });
+
+    _legend.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'info legend'),
+            labels = [];
+        labels.push(
+            '<img src="<?= base_url('assets/twitter_legends/District_nowcast_legend.PNG')?>" width="100px" height="100px" >' +
+            '<br>');
+
+        div.innerHTML = labels.join('<br>');
+        return div;
+    };
+    _legend.addTo(map);
     // 
-    document.getElementById('waCaptureBtn').addEventListener('click', function() {
-        html2canvas($("#map"), {
-            useCORS: true,
-            allowTaint: false,
-            onrendered: function(canvas) {
-                var image = Canvas2Image.convertToPNG(canvas);
-                var image_data = $(image).attr('src');
-                var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo site_url(); ?>Whatsapp_controller/Whatsapp_map",
-                    data: {
-                        base64: image_data,
-                        r_file_name: random_name
-                    },
-                    success: function(data) {
-                        console.log("Response from server:", data);
-                        data = JSON.parse(data);
-                        if (data.status === 'success') {
-                            console.log("Image stored successfully in folder:", data
-                                .img_path);
-                        } else {
-                            alert(
-                                "Error: Something went wrong. Please check again later."
-                            );
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error("AJAX Error:", status, error);
-                        alert(
-                            "Error: Something went wrong with the request. Please try again later."
-                        );
-                    }
-                });
-            }
+
+    // radio btn for none, new grp, existing grp
+    document.addEventListener('DOMContentLoaded', function() {
+        const radios = document.querySelectorAll('input[name="create_edit_option"]');
+        const newGroupDiv = document.getElementById('newGroupIdDis');
+        const existingGroupDiv = document.getElementById('existingGroupIdDis');
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'new_group') {
+                    newGroupDiv.style.display = 'block';
+                    existingGroupDiv.style.display = 'none';
+                } else if (this.value === 'existing_group') {
+                    newGroupDiv.style.display = 'none';
+                    existingGroupDiv.style.display = 'block';
+                } else {
+                    newGroupDiv.style.display = 'none';
+                    existingGroupDiv.style.display = 'none';
+                }
+            });
         });
     });
+    // 
+
+    // getin image name from contoler
+    let get_filename;
+    if (get_filename) {
+        console.log(get_filename, "get_filename");
+    }
+
+    //
+    document.getElementById('getPic').addEventListener('click', function() {
+        if (!geojsonLoaded) {
+            alert("GeoJSON data is still loading. Please wait.");
+            return;
+        }
+
+        setTimeout(function() {
+            html2canvas($("#map"), {
+                useCORS: true,
+                allowTaint: false,
+                onrendered: function(canvas) {
+                    var image = Canvas2Image.convertToJPEG(canvas);
+                    var image_data = $(image).attr('src');
+                    var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
+                    var filename = "map_img_" + random_name + ".jpeg";
+                    get_filename = filename;
+                    console.log(get_filename, "get_filename");
+
+                    $.ajax({
+                        type: "POST",
+                        url: "<?php echo site_url(); ?>Whatsapp_controller/getPic",
+                        data: {
+                            base64: image_data,
+                            r_file_name: random_name,
+                            filename: filename
+                        },
+                        success: function(response) {
+                            var data = JSON.parse(response);
+                            console.log(data.status, "data.status");
+                            if (data.status === 'success') {
+                                console.log("Post button");
+
+                                // 
+                                // setTimeout(function() {
+                                // document.getElementById('postToWhatsappBtn')
+                                //     .click();
+                                //     console.log("post to facebook is clicked");
+                                // }, 2000);
+                                // 
+                            } else {
+                                alert(
+                                    "Something went wrong, please check it later"
+                                );
+                            }
+                        }
+                    });
+                }
+            });
+        }, 1000);
+    });
+    // 
 
 
-    document.getElementById('waSendBtn').addEventListener('click', function() {
+
+
+
+    document.getElementById('postToWhatsappBtn').addEventListener('click', function() {
+        var filename = get_filename;
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '<?php echo base_url("Whatsapp_controller/Whatsapp_post"); ?>', true);
+        xhr.open('POST', '<?php echo base_url("Whatsapp_controller/sendMessage"); ?>', true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
             if (xhr.status === 200) {
-                console.log(xhr.responseText);
+                console.log("Response from server:", xhr.responseText);
+                var regex = /"id":"(\d+)"/;
+                var match = xhr.responseText.match(regex);
+                var idPart = match ? match[0] : "No ID found";
+                if (idPart !== "No ID found") {
+                    alert("Successfully posted in FB with ID: " + idPart);
+                }
             } else {
                 console.error('Request failed. Error: ' + xhr.status);
             }
         };
-        xhr.send();
+
+        xhr.send('filename=' + filename);
     });
+
+    // document.getElementById('waSendBtn').addEventListener('click', function() {
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.open('POST', '<?php echo base_url("Whatsapp_controller/Whatsapp_post"); ?>', true);
+    //     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    //     xhr.onload = function() {
+    //         if (xhr.status === 200) {
+    //             console.log(xhr.responseText);
+    //         } else {
+    //             console.error('Request failed. Error: ' + xhr.status);
+    //         }
+    //     };
+    //     xhr.send();
+    // });
     </script>
 </body>
 

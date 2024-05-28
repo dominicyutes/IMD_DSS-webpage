@@ -66,7 +66,7 @@
     #map {
         margin-top: 1%;
         height: 78vh;
-        width: 70%;
+        width: 100%;
         border: 1px solid black;
     }
     </style>
@@ -87,9 +87,93 @@
 
             <!-- editing content starts here -->
             <div class="col-9" style="width: 85%">
-                <div id="map"></div>
-                <h4>Post to Twitter</h4>
-                <button class="btn btn-primary" id="postToTwitterBtn">Twitter</button>
+                <div class="row">
+                    <div class="col-9">
+                        <!-- left side starts here -->
+                        <h4>TWITTER</h4>
+                        <div id="map" class="map-canvas"></div>
+
+                        <!-- <div class="row">
+                            <div class="col-9">
+                                <button class="btn btn-primary" id="getPic">POST</button>
+                                <button class="btn btn-primary" id="postToFacebookBtn"
+                                    style="visibility: hidden;">POST</button>
+                            </div>
+                        </div> -->
+
+                    </div><!-- left side ends here  -->
+
+                    <div class="col-3">
+                        <!-- right side starts here -->
+                        <div>
+                            <input type="checkbox" id="toggleButton">
+                            <label for="toggleButton">Auto Email ON/OFF</label>
+                        </div>
+
+                        <!-- Log Button -->
+                        <div>
+                            <button style="margin-top: 8%;"
+                                onclick="window.location.href='<?php echo base_url('Facebook_post/log_information'); ?>'"
+                                class="btn btn-info btn-sm">Log Information</button>
+                        </div>
+                        <!--  -->
+
+                        <!-- Choose MC -->
+                        <div class="btn-group dropend">
+                            <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
+                                style="margin-top: 8%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                Choose MC
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">MC 1</a></li>
+                                <li><a class="dropdown-item" href="#">MC 2</a></li>
+                                <li><a class="dropdown-item" href="#">MC 3</a></li>
+                            </ul>
+                        </div>
+                        <!--  -->
+
+                        <!-- Choose Datatype -->
+                        <div>
+                            <div class="btn-group dropend">
+                                <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
+                                    style="margin-top: 8%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Choose DataType
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Add New</a></li>
+                                    <li><a class="dropdown-item" href="#">Heatwave</a></li>
+                                    <li><a class="dropdown-item" href="#">Coldwave</a></li>
+                                    <li><a class="dropdown-item" href="#">Nowcast</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--  -->
+
+                        <!-- content box -->
+                        <div style="margin-top: 8%;">
+                            <lable>Content</lable>
+                            <textarea style="width: 95%; height: 20rem;"></textarea>
+                        </div>
+                        <!--  -->
+
+                        <!-- attachment -->
+                        <div style="margin-top: 8%;">
+                            <lable>Attachment</lable>
+                            <input type="file" />
+                        </div>
+                        <!--  -->
+
+                        <!-- POST button -->
+                        <div style="margin-top: 6%;">
+                            <button class="btn btn-success btn-sm" id="getPic">TWEET</button>
+                            <button class="btn btn-primary btn-sm" id="postToFacebookBtn"
+                                style="visibility: hidden;">TWEET</button>
+                        </div>
+                        <!--  -->
+
+
+                    </div> <!-- left side ends here -->
+                </div>
             </div>
             <!-- editing content ends here -->
 

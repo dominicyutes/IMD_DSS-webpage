@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
 
     /*  */
-    table {
+    /* table {
         width: 100%;
         border-collapse: collapse;
     }
@@ -75,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     tr:hover {
         background-color: #f5f5f5;
-    }
+    } */
 
     /*  */
     </style>
@@ -116,23 +116,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="col-7">
                             <div class="btn-group dropend">
                                 <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
-                                    style="margin-top: 10%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                    style="margin-top: 22%;" data-bs-toggle="dropdown" aria-expanded="false">
                                     Choose MC
                                 </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">MC</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <ul class="dropdown-menu" style="height: 20rem; overflow-y: scroll;">
+                                    <li><a class="dropdown-item" href="#">MC_Agartala</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Ahmedabad</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Amaravati</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Bengaluru</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Bhopal</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Bhubaneswar</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Chandigarh</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Dehradun</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Gangtok</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Hyderabad</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Jaipur</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Kohima</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Lucknow</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Patna</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Raipur</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Ranchi</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Shillong</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Shimla</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Srinagar</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Thiruvanthapuram</a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- col-7 ends here -->
 
+                    </div> <!-- class="row" -->
+
+                    <!-- selecting department Auto ON/OFF -->
+                    <div class="row">
                         <!-- col-5 starts here -->
-                        <div class="col-5">
+                        <div class="col-7">
                             <div class="btn-group dropend">
                                 <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
-                                    style="margin-top: 10%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                    style="margin-top: 22%;" data-bs-toggle="dropdown" aria-expanded="false">
                                     MC Groups
                                 </button>
                                 <ul class="dropdown-menu">
@@ -164,7 +185,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                         <!-- col-5 ends here -->
-                    </div> <!-- class="row" -->
+                        <div class="col-5">
+                            <div>
+                                <lable>Show CC</lable>
+                                <textarea style="width: 90%;"></textarea>
+                            </div>
+                            <div>
+                                <lable>Show Email-ID</lable><textarea style="width: 90%;"></textarea>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <!-- new group && existing group starts here -->
@@ -247,7 +277,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div>
                         <div class="btn-group dropend">
                             <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
-                                style="margin-top: 10%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                style="margin-top: 22%;" data-bs-toggle="dropdown" aria-expanded="false">
                                 Choose DataType
                             </button>
                             <ul class="dropdown-menu">

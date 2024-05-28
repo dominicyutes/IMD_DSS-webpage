@@ -167,8 +167,7 @@
                                 <div>
                                     <label for="start_date_odisha_hq" class="dateDDLabel"
                                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                    <input type="date" id="start_date_odisha_hq" class="dateDD"
-                                        onchange="fetchName()">
+                                    <input type="date" id="start_date_odisha_hq" class="dateDD" onchange="fetchName()">
                                 </div>
                             </div>
                             <div id="drawings_data_odisha_hq"></div>
@@ -182,8 +181,7 @@
                                 <div>
                                     <label name="start_date_delhi_hq" class="dateDDLabel"
                                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                    <input type="date" id="start_date_delhi_hq" class="dateDD"
-                                    onchange="fetchName()">
+                                    <input type="date" id="start_date_delhi_hq" class="dateDD" onchange="fetchName()">
                                 </div>
                             </div>
                             <div id="drawings_data_delhi_hq"></div>
@@ -196,8 +194,7 @@
                                 <div>
                                     <label name="start_date_hyd_hq" class="dateDDLabel"
                                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                    <input type="date" id="start_date_hyd_hq" class="dateDD"
-                                    onchange="fetchName()">
+                                    <input type="date" id="start_date_hyd_hq" class="dateDD" onchange="fetchName()">
                                 </div>
                             </div>
                         </div>
@@ -215,8 +212,7 @@
                             <div>
                                 <label for="start_date_odisha" class="dateDDLabel"
                                     style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                <input type="date" id="start_date_odisha" class="dateDD"
-                                    onchange="fetchName()">
+                                <input type="date" id="start_date_odisha" class="dateDD" onchange="fetchName()">
                             </div>
                         </div>
                         <div id="drawings_data_odisha"></div>
@@ -234,8 +230,7 @@
                             <div>
                                 <label for="start_date_delhi" class="dateDDLabel"
                                     style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                <input type="date" id="start_date_delhi" class="dateDD"
-                                    onchange="fetchName()">
+                                <input type="date" id="start_date_delhi" class="dateDD" onchange="fetchName()">
                             </div>
                         </div>
                         <div id="drawings_data_delhi"></div>
@@ -252,8 +247,7 @@
                             <div>
                                 <label for="start_date_hyd" class="dateDDLabel"
                                     style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                <input type="date" id="start_date_hyd" class="dateDD"
-                                    onchange="fetchName()">
+                                <input type="date" id="start_date_hyd" class="dateDD" onchange="fetchName()">
                             </div>
                         </div>
                         <div id="drawings_data_hyd"></div>
@@ -1050,24 +1044,24 @@ function showSelectedSection() {
 }
 
 
-    document.addEventListener("DOMContentLoaded", function () {
-        var today = new Date().toISOString().slice(0, 10);
-        <?php if (isset($name)): ?>
-            if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
-                document.getElementById('start_date_odisha_hq').value = today;
-                document.getElementById('start_date_delhi_hq').value = today;
-            } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
-                document.getElementById('start_date_odisha').value = today;
-            }else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
-                document.getElementById('start_date_delhi').value = today;
-            }else if ('<?php echo $name; ?>' === "MC_Hyderabad") {
-                document.getElementById('start_date_hyd').value = today;
-            }
-        <?php endif; ?>
-        // document.getElementById('start_date_odisha').value = today;
+document.addEventListener("DOMContentLoaded", function() {
+    var today = new Date().toISOString().slice(0, 10);
+    <?php if (isset($name)): ?>
+    if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
+        document.getElementById('start_date_odisha_hq').value = today;
+        document.getElementById('start_date_delhi_hq').value = today;
+    } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
+        document.getElementById('start_date_odisha').value = today;
+    } else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
+        document.getElementById('start_date_delhi').value = today;
+    } else if ('<?php echo $name; ?>' === "MC_Hyderabad") {
+        document.getElementById('start_date_hyd').value = today;
+    }
+    <?php endif; ?>
+    // document.getElementById('start_date_odisha').value = today;
 
-        fetchName();
-    });
+    fetchName();
+});
 
 
 
@@ -1179,25 +1173,25 @@ function fetchName() {
     var ajaxUrls = [];
 
     <?php if (isset($name)): ?>
-        if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
-            startDateId = ["start_date_odisha_hq", "start_date_delhi_hq"];
-            weatherDataDivs = [
-                document.getElementById("drawings_data_odisha_hq"),
-                document.getElementById("drawings_data_delhi_hq")
-            ];
-            ajaxUrls = [
-                "<?php echo base_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>",
-                "<?php echo base_url('Drawings/Drawing/fetch_name_delhi_hq'); ?>"
-            ];
-        } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
-            startDateId = ["start_date_odisha"];
-            weatherDataDivs = [document.getElementById("drawings_data_odisha")];
-            ajaxUrls = ["<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>"];
-        } else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
-            startDateId = ["start_date_delhi"];
-            weatherDataDivs = [document.getElementById("drawings_data_delhi")];
-            ajaxUrls = ["<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>"];
-        }
+    if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
+        startDateId = ["start_date_odisha_hq", "start_date_delhi_hq"];
+        weatherDataDivs = [
+            document.getElementById("drawings_data_odisha_hq"),
+            document.getElementById("drawings_data_delhi_hq")
+        ];
+        ajaxUrls = [
+            "<?php echo base_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>",
+            "<?php echo base_url('Drawings/Drawing/fetch_name_delhi_hq'); ?>"
+        ];
+    } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
+        startDateId = ["start_date_odisha"];
+        weatherDataDivs = [document.getElementById("drawings_data_odisha")];
+        ajaxUrls = ["<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>"];
+    } else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
+        startDateId = ["start_date_delhi"];
+        weatherDataDivs = [document.getElementById("drawings_data_delhi")];
+        ajaxUrls = ["<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>"];
+    }
     <?php endif; ?>
 
     startDateId.forEach((id, index) => {
@@ -1213,14 +1207,14 @@ function fetchAndDisplayData(ajaxUrl, selectedDate, weatherDataDiv) {
         data: {
             date: selectedDate
         },
-        success: function (data) {
+        success: function(data) {
             console.log(data);
             weatherDataDiv.innerHTML = "";
 
             if (data && data.length > 0) {
                 var checkboxContainer = document.createElement("div");
 
-                data.forEach(function (item, index) {
+                data.forEach(function(item, index) {
                     if (item && item.date && item.name && item.latitudes && item.longitudes) {
                         var checkbox = document.createElement("input");
                         checkbox.type = "checkbox";
@@ -1235,10 +1229,12 @@ function fetchAndDisplayData(ajaxUrl, selectedDate, weatherDataDiv) {
                         checkboxContainer.appendChild(label);
                         checkboxContainer.appendChild(document.createElement("br"));
 
-                        checkbox.addEventListener("change", function () {
+                        checkbox.addEventListener("change", function() {
                             if (checkbox.checked) {
-                                var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
-                                var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
+                                var latitudes = item.latitudes.replace(/[{}]/g, '').split(
+                                    ',').map(Number);
+                                var longitudes = item.longitudes.replace(/[{}]/g, '').split(
+                                    ',').map(Number);
                                 var markersData = JSON.parse(item.markers);
 
                                 drawPolyline(latitudes, longitudes, item.name, markersData);
@@ -1254,7 +1250,7 @@ function fetchAndDisplayData(ajaxUrl, selectedDate, weatherDataDiv) {
                 weatherDataDiv.textContent = "No drawings found for the selected date.";
             }
         },
-        error: function (xhr, status, error) {
+        error: function(xhr, status, error) {
             console.error("Error fetching names:", error);
             weatherDataDiv.textContent = "Error fetching names. Please try again later.";
         }
@@ -1262,70 +1258,70 @@ function fetchAndDisplayData(ajaxUrl, selectedDate, weatherDataDiv) {
 }
 
 
-    // function fetchName_hq() {
+// function fetchName_hq() {
 
-    //     var selectedDate = document.getElementById("start_date_odisha").value;
+//     var selectedDate = document.getElementById("start_date_odisha").value;
 
-    //     $.ajax({
-    //         url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>",
-    //         type: "GET",
-    //         data: {
-    //             date: selectedDate
-    //         },
-    //         success: function (data) {
-    //             // console.log(data);
-    //             weatherDataDiv = document.getElementById("drawings_data_odisha");
-    //             weatherDataDiv.innerHTML = "";
+//     $.ajax({
+//         url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>",
+//         type: "GET",
+//         data: {
+//             date: selectedDate
+//         },
+//         success: function (data) {
+//             // console.log(data);
+//             weatherDataDiv = document.getElementById("drawings_data_odisha");
+//             weatherDataDiv.innerHTML = "";
 
-    //             if (data && data.length > 0) {
-    //                 var checkboxContainer = document.createElement("div");
+//             if (data && data.length > 0) {
+//                 var checkboxContainer = document.createElement("div");
 
-    //                 data.forEach(function (item, index) {
-    //                     if (item && item.date && item.name && item.latitudes && item.longitudes) {
-    //                         var checkbox = document.createElement("input");
-    //                         checkbox.type = "checkbox";
-    //                         checkbox.id = "checkbox_" + index;
-    //                         checkbox.value = item.name;
-    //                         checkbox.value = JSON.stringify(item);
+//                 data.forEach(function (item, index) {
+//                     if (item && item.date && item.name && item.latitudes && item.longitudes) {
+//                         var checkbox = document.createElement("input");
+//                         checkbox.type = "checkbox";
+//                         checkbox.id = "checkbox_" + index;
+//                         checkbox.value = item.name;
+//                         checkbox.value = JSON.stringify(item);
 
-    //                         var label = document.createElement("label");
-    //                         label.textContent = item.name;
-    //                         label.setAttribute("for", "checkbox_" + index);
+//                         var label = document.createElement("label");
+//                         label.textContent = item.name;
+//                         label.setAttribute("for", "checkbox_" + index);
 
-    //                         checkboxContainer.appendChild(checkbox);
-    //                         checkboxContainer.appendChild(label);
-    //                         checkboxContainer.appendChild(document.createElement("br"));
-    //                         // Attach event listener to checkbox
-    //                         checkbox.addEventListener("change", function () {
-    //                             if (checkbox.checked) {
-    //                                 var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
-    //                                 var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
-    //                                 var markersData = JSON.parse(item.markers);
+//                         checkboxContainer.appendChild(checkbox);
+//                         checkboxContainer.appendChild(label);
+//                         checkboxContainer.appendChild(document.createElement("br"));
+//                         // Attach event listener to checkbox
+//                         checkbox.addEventListener("change", function () {
+//                             if (checkbox.checked) {
+//                                 var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
+//                                 var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
+//                                 var markersData = JSON.parse(item.markers);
 
-    //                                 // Draw polyline when checkbox is checked
-    //                                 drawPolyline(latitudes, longitudes, item.name, markersData);
-    //                             } else {
-    //                                 // Remove polyline when checkbox is unchecked
-    //                                 clearPolyline(item.name);
-    //                             }
-    //                         });
-    //                     }
-    //                 });
+//                                 // Draw polyline when checkbox is checked
+//                                 drawPolyline(latitudes, longitudes, item.name, markersData);
+//                             } else {
+//                                 // Remove polyline when checkbox is unchecked
+//                                 clearPolyline(item.name);
+//                             }
+//                         });
+//                     }
+//                 });
 
-    //                 weatherDataDiv.appendChild(checkboxContainer);
-    //             } else {
-    //                 weatherDataDiv.textContent = "No drawings found for the selected date.";
-    //             }
-    //         },
-    //         error: function (xhr, status, error) {
-    //             console.error("Error fetching names:", error);
-    //             weatherDataDiv = document.getElementById("drawings_data_odisha");
-    //             weatherDataDiv.textContent = "Error fetching names. Please try again later.";
-    //         }
-    //     });
-    // }
+//                 weatherDataDiv.appendChild(checkboxContainer);
+//             } else {
+//                 weatherDataDiv.textContent = "No drawings found for the selected date.";
+//             }
+//         },
+//         error: function (xhr, status, error) {
+//             console.error("Error fetching names:", error);
+//             weatherDataDiv = document.getElementById("drawings_data_odisha");
+//             weatherDataDiv.textContent = "Error fetching names. Please try again later.";
+//         }
+//     });
+// }
 
-    document.getElementById("PassDrawings_bhu").addEventListener("click", function() {
+document.getElementById("PassDrawings_bhu").addEventListener("click", function() {
     handleCheckboxes("<?php echo site_url('Drawings/Drawing/save_coordinates_to_hq_odisha'); ?>");
 });
 
@@ -1370,48 +1366,48 @@ function handleCheckboxes(ajaxUrl) {
 
 
 
-    // Function to draw a polyline on the map
-    // function drawPolylines(latitudes, longitudes, name, markersData) {
-    //         var existingPolyline = drawnPolylines.find(function (polyline) {
-    //             return polyline.options.name === name;
-    //         });
+// Function to draw a polyline on the map
+// function drawPolylines(latitudes, longitudes, name, markersData) {
+//         var existingPolyline = drawnPolylines.find(function (polyline) {
+//             return polyline.options.name === name;
+//         });
 
-    //         if (existingPolyline) {
-    //             existingPolyline.addTo(map);
-    //         } else {
-    //             var polylineCoords = [];
-    //             for (var i = 0; i < latitudes.length; i++) {
-    //                 polylineCoords.push([parseFloat(latitudes[i]), parseFloat(longitudes[i])]);
-    //             }
+//         if (existingPolyline) {
+//             existingPolyline.addTo(map);
+//         } else {
+//             var polylineCoords = [];
+//             for (var i = 0; i < latitudes.length; i++) {
+//                 polylineCoords.push([parseFloat(latitudes[i]), parseFloat(longitudes[i])]);
+//             }
 
-    //             var polyline = L.polyline(polylineCoords, {
-    //                 color: getRandomColor(),
-    //                 weight: 3,
-    //                 opacity: 0.7,
-    //                 name: name
-    //             });
+//             var polyline = L.polyline(polylineCoords, {
+//                 color: getRandomColor(),
+//                 weight: 3,
+//                 opacity: 0.7,
+//                 name: name
+//             });
 
-    //             drawnPolylines.push(polyline);
+//             drawnPolylines.push(polyline);
 
-    //             polyline.addTo(map);
+//             polyline.addTo(map);
 
-    //             // Add markers if markersData is provided
-    //             if (markersData && markersData.length > 0) {
-    //                 markersData.forEach(function (marker) {
-    //                     var latLng = L.latLng(marker.latitude, marker.longitude);
-    //                     var markerText = marker.tooltipText;
+//             // Add markers if markersData is provided
+//             if (markersData && markersData.length > 0) {
+//                 markersData.forEach(function (marker) {
+//                     var latLng = L.latLng(marker.latitude, marker.longitude);
+//                     var markerText = marker.tooltipText;
 
-    //                     // Create a marker with a tooltip
-    //                     var customMarker = L.marker(latLng).addTo(map);
-    //                     customMarker.bindTooltip(markerText, {
-    //                         permanent: true,
-    //                         direction: 'top',
-    //                         opacity: 0.7
-    //                     });
-    //                 });
-    //             }
-    //         }
-    //     }
+//                     // Create a marker with a tooltip
+//                     var customMarker = L.marker(latLng).addTo(map);
+//                     customMarker.bindTooltip(markerText, {
+//                         permanent: true,
+//                         direction: 'top',
+//                         opacity: 0.7
+//                     });
+//                 });
+//             }
+//         }
+//     }
 
 // Function to clear a specific polyline from the map
 function clearPolyline(name) {
