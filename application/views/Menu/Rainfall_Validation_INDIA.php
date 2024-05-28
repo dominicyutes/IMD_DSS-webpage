@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
@@ -66,12 +66,10 @@
         <?php $this->load->view('Menu/Landing_page_bottom'); ?>
 
 
-        <div class="main"
-            style="justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0; width:1210px;">
-            <!-- <h1 style="margin-top: -8px; margin-left: 450px; margin-bottom: 20px;">Rainfall Validation</h1> -->
+        <div class="main">
 
             <div class="parent"
-                style="width: 100%; max-width: 870px; background-color: #ffffff; border: 1px solid #ccc; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); transition: width 0.3s ease; margin: 0 auto;height: 753px;">
+            style="width: 100%; max-width: 870px; background-color: #ffffff; border: 1px solid #ccc; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); transition: width 0.3s ease; margin: 0 auto;height: 753px;margin-top: 70px;">
                 <div class="content-wrapper" style="display: inline-block;">
                     <section class="content">
                         <div class="box box-info">
@@ -172,32 +170,28 @@
                                 <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
                                     <label style="margin-bottom: 5px;">Country:</label>
                                     <div style="display: flex; flex-direction: row; align-items: center;">
-                                        <input type="text"
-                                            style="width: 200px; border-radius: 100px;">
+                                        <input type="text" style="width: 200px; border-radius: 100px;">
                                         <button type="button" class="btn" style="font-size: 10px;">Submit</button>
                                     </div>
                                 </div>
                                 <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
                                     <label style="margin-bottom: 5px;">Regions:</label>
                                     <div style="display: flex; flex-direction: row; align-items: center;">
-                                        <input type="text"
-                                            style="width: 200px; border-radius: 100px;">
+                                        <input type="text" style="width: 200px; border-radius: 100px;">
                                         <button type="button" class="btn" style="font-size: 10px;">Submit</button>
                                     </div>
                                 </div>
                                 <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
                                     <label style="margin-bottom: 5px;">Sub-Division:</label>
                                     <div style="display: flex; flex-direction: row; align-items: center;">
-                                        <input type="text"
-                                            style="width: 200px; border-radius: 100px;">
+                                        <input type="text" style="width: 200px; border-radius: 100px;">
                                         <button type="button" class="btn" style="font-size: 10px;">Submit</button>
                                     </div>
                                 </div>
                                 <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
                                     <label style="margin-bottom: 5px;">State:</label>
                                     <div style="display: flex; flex-direction: row; align-items: center;">
-                                        <input type="text"
-                                            style="width: 200px; border-radius: 100px;">
+                                        <input type="text" style="width: 200px; border-radius: 100px;">
                                         <button type="button" class="btn" style="font-size: 10px;">Submit</button>
                                     </div>
                                 </div>
@@ -617,19 +611,19 @@
         // });
 
         document.getElementById('toggleButton').addEventListener('click', function () {
-                var toggleDiv = document.getElementById('toggleDiv');
-                var parentDiv = document.querySelector('.parent');
-                var arrowIcon = document.getElementById('arrowIcon');
-                if (toggleDiv.style.display === 'none') {
-                    toggleDiv.style.display = 'flex';
-                    parentDiv.style.maxWidth = '100%';
-                    arrowIcon.className = 'fa fa-arrow-circle-left';
-                } else {
-                    toggleDiv.style.display = 'none';
-                    parentDiv.style.maxWidth = '870px';
-                    arrowIcon.className = 'fa fa-arrow-circle-right';
-                }
-            });
+            var toggleDiv = document.getElementById('toggleDiv');
+            var parentDiv = document.querySelector('.parent');
+            var arrowIcon = document.getElementById('arrowIcon');
+            if (toggleDiv.style.display === 'none') {
+                toggleDiv.style.display = 'flex';
+                parentDiv.style.maxWidth = '100%';
+                arrowIcon.className = 'fa fa-arrow-circle-left';
+            } else {
+                toggleDiv.style.display = 'none';
+                parentDiv.style.maxWidth = '870px';
+                arrowIcon.className = 'fa fa-arrow-circle-right';
+            }
+        });
     </script>
 
 

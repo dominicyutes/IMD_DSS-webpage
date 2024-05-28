@@ -79,12 +79,11 @@
         </div>
         <?php $this->load->view('Menu/Landing_page_side.php'); ?>
         <?php $this->load->view('Menu/Landing_page_bottom'); ?>
-        <div class="main"
-            style="justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0; width:1210px;">
+        <div class="main">
             <!-- <h1 style="margin-top: -8px; margin-left: 450px; margin-bottom: 20px;">Rainfall Validation</h1> -->
 
             <div class="parent"
-                style="width: 100%; max-width: 870px; background-color: #ffffff; border: 1px solid #ccc; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); transition: width 0.3s ease; margin: 0 auto;height: 753px;">
+                style="width: 100%; max-width: 870px; background-color: #ffffff; border: 1px solid #ccc; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); transition: width 0.3s ease; margin: 0 auto;height: 753px;margin-top: 70px;">
                 <div class="content-wrapper" style="display: inline-block;">
                     <section class="content">
                         <div class="box box-info">
