@@ -12,28 +12,22 @@
         justify-content: center;
     }
 
-    .fixedHead {
+    .fixed {
         background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
         display: flex;
         align-items: center;
         justify-content: space-between;
         height: 60px;
         width: 100%;
-        position: relative;
-        margin-top: -11px;
-        margin-left: 0px;
+        /* position: relative; */
+        top: -37px;
+        /* margin-left: -8px; */
     }
     </style>
 </head>
 
 <body>
+    <div class="fixed">
 
-    <img src="<?php echo base_url('img/emblem.png'); ?>" alt="Emblem of India" height="30" style="padding-left: 1%;">
-
-    <div style="flex: 1; text-align: center;">
-        <span class="text" style="font-family: 'Times New Roman';">WEATHER DECISION SUPPORT
-            SYSTEM</span>
     </div>
-
-    <img src="<?php echo base_url('img/imd_logo_a.png'); ?>" alt="IMD logo" height="35" style="padding-right: 1%;">
 </body>

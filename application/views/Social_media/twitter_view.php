@@ -86,7 +86,7 @@
 
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 87%">
+            <div class="col-9" style="width: 85%">
                 <div id="map"></div>
                 <h4>Post to Twitter</h4>
                 <button class="btn btn-primary" id="postToTwitterBtn">Twitter</button>

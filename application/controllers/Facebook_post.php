@@ -87,7 +87,8 @@ class Facebook_post extends CI_Controller {
     public function post_info() {
         $filename = $_POST['filename']; 
         echo $filename;
-        $getImage = base_url('assets/Fb_img/' . $filename);
+        // $getImage = base_url('assets/Fb_img/' . $filename);
+        $getImage = base_url('assets/Fb_img/map.png');
         echo $getImage;
 
         $groupname = "Delhi";
@@ -108,7 +109,7 @@ class Facebook_post extends CI_Controller {
               ];
 
               try {
-                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBOwe3YliyNEx3vhQUz4FHb0pYaLdbEPRVuA8ZB24D71hfn0sebPO2hFs8ZC7OfWM5cNAyFYpj9CZCCIWQdYU2oEIHc9VuR1s81ppC5gJmjZA7ZAPxJdpAXTxGoo9TNVgoOGbxGhW9x1LA5WegNZCVq64Jra2WgzEZBI9YK1hqSm86auGpv9NRVVWKZAr7jpZA76ZCYOvllLUA6OTENhPYAJrT8ZD');
+                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBOyAujaMT9dINv8OnLbalkMy4ZCQH3wXjDgQOMoyYdQRsCX3ISsxrusWjJrQ0jAKB6i9Wc4HCsW6FSGZBIxaZCK0ofrZB1idGbtckhISW3zL7ZBfodtONZBBRa7UEj4Cn0NZCou1xEhM9vYAAjUJY1tPkZA9Mr37IqVZAVzh5oAQLxOSQBAkFH3ueL8jajp8SPkLGhTLXkKrTqgOyyqZCDCxwsZD');
 
                 //   $this->Facebook_m->insert_log($groupname, $username, $sent);
               } catch(Facebook\Exceptions\FacebookResponseException $e) {

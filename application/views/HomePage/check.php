@@ -8,7 +8,6 @@
             Menu
         </div>
     </a>
-
     <div
         style="width: 50%; display: flex; justify-content: space-between; align-items: center; border-radius: 7px; background-color: #f4fcff;">
         <!-- left arrow -->
