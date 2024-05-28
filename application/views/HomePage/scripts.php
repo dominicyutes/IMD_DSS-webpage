@@ -2824,9 +2824,9 @@
                             </div>
 
                             <?php if ($user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9"): ?>
-                                                    <div>
-                                                        <span style="padding-right: 10px;" onclick="tempCloseGrp(this)">X</span>
-                                                    </div>
+                                                        <div>
+                                                            <span style="padding-right: 10px;" onclick="tempCloseGrp(this)">X</span>
+                                                        </div>
                             <?php endif; ?>
                             
                         </div>
@@ -4720,8 +4720,17 @@
             const lat = geoJSONData.geometry.coordinates[1];
             const lon = geoJSONData.geometry.coordinates[0];
             const fontSize = '20px';
-            const tooltipContent = `<p style="font-size: ${fontSize};">${userText}</p>`;
-
+            const tooltipContent = `
+            <div style="
+                background-color: black; 
+                color: white; 
+                padding: 5px; 
+                border: 1px solid white; 
+                border-radius: 3px;
+            ">
+                <p style="font-size: ${fontSize}; margin: 0;">${userText}</p>
+            </div>
+        `;
             layer.bindTooltip(tooltipContent, {
                 permanent: true,
                 direction: 'top',
@@ -5043,12 +5052,14 @@
         var isDrawing = false;
         var polyline = null;
         var eraseMode = false;
+        var selectedColor = 'red'; 
+        var drawnItems = L.featureGroup().addTo(map);
 
         function startDrawing() {
             isDrawing = true;
             polyline = L.polyline([], {
                 weight: 4,
-                color: eraseMode ? 'transparent' : 'red',
+                color: eraseMode ? 'transparent' : selectedColor,
                 dashArray: '5, 5'
             }).addTo(drawnItems);
         }
@@ -5058,26 +5069,42 @@
             polyline = null;
         }
 
-        var freehandButton = L.control({
-            position: 'topleft'
-        });
+        var freehandButton = L.control({ position: 'topleft' });
+
         freehandButton.onAdd = function (map) {
             var div = L.DomUtil.create('div', 'leaflet-bar');
-            div.innerHTML =
-                '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;position: absolute; top: -172px;">Freehand</button>';
-            div.firstChild.addEventListener('click', function () {
-                if (isFreehandMode) {
-                    isFreehandMode = false;
-                    map.dragging.enable();
-                    document.getElementById('freehandButton').style.backgroundColor = 'red';
-                } else {
-                    isFreehandMode = true;
-                    map.dragging.disable();
-                    document.getElementById('freehandButton').style.backgroundColor = 'green';
-                }
-            });
+            div.style.top = '-132px'; 
+            div.innerHTML = `
+        <button id="freehandButton" style="font-family: 'Times New Roman'; background-color: white; border: 1px solid black; position: relative; ">Freehand</button>
+        <input type="color" id="colorPicker" style="position: relative; display: none;width: 69px;" value="#ff0000">
+    `;
+
+            setTimeout(function () {
+                var freehandBtn = document.getElementById('freehandButton');
+                var colorPicker = document.getElementById('colorPicker');
+
+                freehandBtn.addEventListener('click', function () {
+                    if (isFreehandMode) {
+                        isFreehandMode = false;
+                        map.dragging.enable();
+                        freehandBtn.style.backgroundColor = 'white';
+                        colorPicker.style.display = 'none';
+                    } else {
+                        isFreehandMode = true;
+                        map.dragging.disable();
+                        freehandBtn.style.backgroundColor = 'green';
+                        colorPicker.style.display = 'block';
+                    }
+                });
+
+                colorPicker.addEventListener('input', function () {
+                    selectedColor = this.value;
+                });
+            }, 0);
+
             return div;
         };
+
         freehandButton.addTo(map);
 
         var eraseButton = L.control({
@@ -5086,7 +5113,7 @@
         eraseButton.onAdd = function (map) {
             var div = L.DomUtil.create('div', 'leaflet-bar');
             div.innerHTML =
-                '<button id="eraseButton" style="background-color: white; border: 0px solid black; position: absolute; top: -152px;">Erase</button>';
+                '<button id="eraseButton" style="background-color: white; border: 0px solid black; position: absolute; top: -130px;">Erase</button>';
 
             div.firstChild.addEventListener('click', function () {
                 eraseMode = !eraseMode;
@@ -5106,7 +5133,7 @@
         clearLayersButton.onAdd = function (map) {
             var div = L.DomUtil.create('div', 'leaflet-bar');
             div.innerHTML =
-                '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -131px; white-space: nowrap;">Clear All</button>';
+                '<button id="clearLayersButton" style="background-color: white; border: 0px solid black; position: absolute; top: -103px; white-space: nowrap;">Clear All</button>';
 
             div.firstChild.addEventListener('click', function () {
                 // Remove all layers from the map
@@ -5127,7 +5154,7 @@
 
         getCoordinatesButton.onAdd = function (map) {
             var div = L.DomUtil.create('div', 'leaflet-bar');
-            div.innerHTML = '<button id="getCoordinatesButton" style="background-color: white; border: 0px solid black; position: absolute; top: -195px; right: -95px;"><i class="fa fa-download"></i></button>';
+            div.innerHTML = '<button id="getCoordinatesButton" style="background-color: white; border: 0px solid black; position: absolute; top: -180px; right: -96px;"><i class="fa fa-download"></i></button>';
 
             div.firstChild.addEventListener('click', function () {
                 var name = prompt('Enter a name for the coordinates:');
@@ -5135,7 +5162,7 @@
                     var allCoordinates = {
                         latitudes: [],
                         longitudes: [],
-                        markers: markerDataArray, // Include collected marker data
+                        markers: markerDataArray,
                     };
 
                     drawnItems.eachLayer(function (layer) {
@@ -5160,29 +5187,27 @@
 
                         var jsonData = JSON.stringify(data);
 
-                        // Determine the AJAX URL based on the entered name
                         var ajaxUrl;
                         <?php if (isset($name)): ?>
                             if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
                                 ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates'); ?>";
-                            } else if ('<?php echo $name; ?>' === "MC ODISHA") {
+                            } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
                                 ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates_odisha'); ?>";
+                            } else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
+                                ajaxUrl = "<?php echo base_url('Drawings/Drawing/save_coordinates_delhi'); ?>";
                             }
                         <?php endif; ?>
 
                         if (ajaxUrl) {
-                            // Make the AJAX POST request
                             $.ajax({
                                 type: 'POST',
                                 url: ajaxUrl,
                                 data: jsonData,
                                 success: function (response) {
                                     console.log(response);
-                                    // Handle success response as needed
                                 },
                                 error: function (xhr, status, error) {
                                     console.error('Error:', error);
-                                    // Handle error response as needed
                                 }
                             });
                         } else {
@@ -5386,7 +5411,7 @@
             button.style.border = '3px solid #c2c1ae';
             button.title = 'Split Screen';
             button.style.position = 'absolute';
-            button.style.top = '624px';
+            button.style.top = '536px';
             button.style.left = '1px';
             // Appending the hand symbol and curved arrow SVG to the toggle button
             button.appendChild(handArrowSVG);
