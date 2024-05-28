@@ -268,19 +268,19 @@ class Drawing extends CI_Controller
         }
     }
 
-    public function get_names_odisha($date)
-    {
-        $query = $this->db->select('name, latitude, longitude')
-            ->from('weather_inference_drawings_mc_odisha')
-            ->where('date', $date)
-            ->get();
+    // public function get_names_odisha($date)
+    // {
+    //     $query = $this->db->select('name, latitude, longitude')
+    //         ->from('weather_inference_drawings_mc_odisha')
+    //         ->where('date', $date)
+    //         ->get();
 
-        if ($query->num_rows() > 0) {
-            return $query->result_array();
-        } else {
-            return false;
-        }
-    }
+    //     if ($query->num_rows() > 0) {
+    //         return $query->result_array();
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
 
 

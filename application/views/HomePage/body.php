@@ -1196,7 +1196,7 @@ function fetchName() {
         } else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
             startDateId = ["start_date_delhi"];
             weatherDataDivs = [document.getElementById("drawings_data_delhi")];
-            ajaxUrls = ["<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>"];
+            ajaxUrls = ["<?php echo base_url('Drawings/Drawing/fetch_names_delhi'); ?>"];
         }
     <?php endif; ?>
 

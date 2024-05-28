@@ -311,7 +311,7 @@ class Drawings_model extends CI_Model
     public function get_names_delhi($date)
     {
         $query = $this->db->select('name, latitudes, longitudes, date, markers')
-            ->from('weather_inference_drawings_mc_odisha')
+            ->from('weather_inference_drawings_mc_delhi')
             ->where('date', $date)
             ->get();
 
