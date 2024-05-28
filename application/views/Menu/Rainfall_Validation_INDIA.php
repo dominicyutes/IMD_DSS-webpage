@@ -34,7 +34,7 @@
             margin-left: 225px;
             margin-bottom: -300px;
             padding: 0px 10px;
-            margin-top: -856px;
+            margin-top: -916px;
         }
 
 
@@ -63,30 +63,164 @@
             <?php $this->load->view('Menu/Landing_page_top'); ?>
         </div>
         <?php $this->load->view('Menu/Landing_page_side.php'); ?>
+        <?php $this->load->view('Menu/Landing_page_bottom'); ?>
 
-        <div class="main">
-            <h1 style="margin-top: -8px; margin-left: 450px; margin-bottom: 20px;">Rainfall Validation INDIA</h1>
-            <div class="content-wrapper">
-                <section class="content">
-                    <div class="box box-info">
-                        <div class="box-body">
-                            <div class="active tab-pane" id="showmap">
-                                <div class="post">
-                                    <div id="dialog_temp_graph_extension_chart" style="display: none;">
-                                        <div id="temp_graph_extension_chart" class="dialog"></div>
-                                    </div>
-                                    <div class="box-body">
-                                        <div style="border:#333 1px ridge; overflow: hidden;">
-                                            <div id="map_canvas"
-                                                style="width:100%; height: 721px; float: left;z-index: 0;"
-                                                align="center"></div>
+
+        <div class="main"
+            style="justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0; width:1210px;">
+            <!-- <h1 style="margin-top: -8px; margin-left: 450px; margin-bottom: 20px;">Rainfall Validation</h1> -->
+
+            <div class="parent"
+                style="width: 100%; max-width: 870px; background-color: #ffffff; border: 1px solid #ccc; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); transition: width 0.3s ease; margin: 0 auto;height: 753px;">
+                <div class="content-wrapper" style="display: inline-block;">
+                    <section class="content">
+                        <div class="box box-info">
+                            <div class="box-header with-border">
+                                Click on the station to view the comparison plot. You can even use the date and
+                                parameter
+                                filters.
+                            </div>
+                            <div style="display: flex; justify-content: end;">
+                                <button id="toggleButton" style="background: none; border: none; cursor: pointer;">
+                                    <i class="fa fa-arrow-circle-right" id="arrowIcon" style="font-size: 20px;"></i>
+                                </button>
+                            </div>
+                            <div id="reportrange"
+                                style="position: absolute;    margin-left: 182px; transform: translateX(-50%); padding: 5px 10px; background: #fff; cursor: pointer; border: 1px solid #ccc; z-index: 9699;">
+                                <i class="fa fa-calendar"></i>&nbsp;
+                                <span></span> <i class="fa fa-caret-down"></i>
+                            </div>
+                            <div class="box-body">
+                                <div class="active tab-pane" id="showmap">
+                                    <div class="post">
+                                        <div id="dialog_temp_graph_extension_chart" style="display: none;">
+                                            <div id="temp_graph_extension_chart" class="dialog"></div>
+                                        </div>
+                                        <div class="box-body">
+                                            <div style="border:#333 1px ridge; overflow: hidden;width:825px">
+                                                <div id="map_canvas"
+                                                    style="width:825px; height: 656px; float: left;z-index: 0;"
+                                                    align="center"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </section>
+                </div>
+
+                <div id="toggleDiv"
+                    style="display: none; flex-direction: column; padding: 20px; border: 2px solid #000; border-radius: 10px; margin-top: -663px; width: 334px; margin-left: 825px; height: 657px;">
+                    <h4 style="text-align: center; font-family: 'Times New Roman';">FILTERS</h4>
+
+
+                    <div style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div
+                            style="width: 100%; padding: 20px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 5px; height: 230px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div style="display: flex; flex-direction: column;">
+                                <label style="margin-bottom: 5px;">MC/RMC Name:</label>
+                                <div style="display: flex; flex-direction: row; align-items: center;">
+                                    <input type="text" id="state-name" list="state-name-list" placeholder="MC/RMC Name"
+                                        style="width: 200px; border-radius: 100px; margin-bottom: 10px;">
+                                    <button type="button" id="submit-names" class="btn"
+                                        style="font-size: 10px;">Submit</button>
+                                </div>
+                                <datalist id="state-name-list">
+                                    <?php foreach ($stateNames as $state): ?>
+                                        <option value="<?php echo $state['name']; ?>"></option>
+                                    <?php endforeach; ?>
+                                </datalist>
+                            </div>
+                            <div style="display: flex; flex-direction: column;">
+                                <label style="margin-bottom: 5px;">Station Name:</label>
+                                <div style="display: flex; flex-direction: row; align-items: center;">
+                                    <input type="text" id="station-name" list="station-name-list"
+                                        placeholder="Station Name"
+                                        style="width: 200px; border-radius: 100px; margin-bottom: 10px;">
+                                    <button type="button" id="submit-name" class="btn"
+                                        style="font-size: 10px;">Submit</button>
+                                </div>
+                                <datalist id="station-name-list">
+                                    <?php foreach ($stationNames as $station): ?>
+                                        <option value="<?php echo $station['name']; ?>"></option>
+                                    <?php endforeach; ?>
+                                </datalist>
+                            </div>
+                            <div style="display: flex; flex-direction: column;">
+                                <label style="margin-bottom: 5px;">Station ID:</label>
+                                <div style="display: flex; flex-direction: row; align-items: center;">
+                                    <input type="text" id="station-id" list="station-id-list" placeholder="12345678"
+                                        style="width: 200px; border-radius: 100px; margin-bottom: 10px;">
+                                    <button type="button" id="submit-id" class="btn"
+                                        style="font-size: 10px;">Submit</button>
+                                </div>
+                                <datalist id="station-id-list">
+                                    <?php foreach ($stationIds as $station): ?>
+                                        <option value="<?php echo $station['id']; ?>"></option>
+                                    <?php endforeach; ?>
+                                </datalist>
+                            </div>
+                        </div>
+
+
+
+                        <div
+                            style="width: 100%; padding: 20px; border: 1px solid #ccc; border-radius: 10px; height: 360px;">
+                            <div
+                                style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                                <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
+                                    <label style="margin-bottom: 5px;">Country:</label>
+                                    <div style="display: flex; flex-direction: row; align-items: center;">
+                                        <input type="text"
+                                            style="width: 200px; border-radius: 100px;">
+                                        <button type="button" class="btn" style="font-size: 10px;">Submit</button>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
+                                    <label style="margin-bottom: 5px;">Regions:</label>
+                                    <div style="display: flex; flex-direction: row; align-items: center;">
+                                        <input type="text"
+                                            style="width: 200px; border-radius: 100px;">
+                                        <button type="button" class="btn" style="font-size: 10px;">Submit</button>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
+                                    <label style="margin-bottom: 5px;">Sub-Division:</label>
+                                    <div style="display: flex; flex-direction: row; align-items: center;">
+                                        <input type="text"
+                                            style="width: 200px; border-radius: 100px;">
+                                        <button type="button" class="btn" style="font-size: 10px;">Submit</button>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
+                                    <label style="margin-bottom: 5px;">State:</label>
+                                    <div style="display: flex; flex-direction: row; align-items: center;">
+                                        <input type="text"
+                                            style="width: 200px; border-radius: 100px;">
+                                        <button type="button" class="btn" style="font-size: 10px;">Submit</button>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <label style="margin-bottom: 5px;">District:</label>
+                                    <div style="display: flex; flex-direction: row; align-items: center;">
+                                        <input type="text" style="width: 200px; border-radius: 100px;">
+                                        <button type="button" class="btn" style="font-size: 10px;">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
-                </section>
+
+
+
+
+
+
+                </div>
+
             </div>
 
 
@@ -347,7 +481,7 @@
             target: 'map_canvas',
             view: new ol.View({
                 center: ol.proj.transform([78.9629, 20.5937], 'EPSG:4326', 'EPSG:3857'),
-                zoom: 5
+                zoom: 4
             })
         });
 
@@ -395,7 +529,8 @@
                     anchor: [0.5, 0.5],
                     anchorXUnits: "fraction",
                     anchorYUnits: "fraction",
-                    src: "<?php echo base_url(); ?>DATA/rainfll.png"
+                    src: "<?php echo base_url(); ?>DATA/rainfll.png",
+                    scale: 0.5
                 })
             })
         });
@@ -481,7 +616,20 @@
         //     cb(start, end);
         // });
 
-
+        document.getElementById('toggleButton').addEventListener('click', function () {
+                var toggleDiv = document.getElementById('toggleDiv');
+                var parentDiv = document.querySelector('.parent');
+                var arrowIcon = document.getElementById('arrowIcon');
+                if (toggleDiv.style.display === 'none') {
+                    toggleDiv.style.display = 'flex';
+                    parentDiv.style.maxWidth = '100%';
+                    arrowIcon.className = 'fa fa-arrow-circle-left';
+                } else {
+                    toggleDiv.style.display = 'none';
+                    parentDiv.style.maxWidth = '870px';
+                    arrowIcon.className = 'fa fa-arrow-circle-right';
+                }
+            });
     </script>
 
 

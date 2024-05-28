@@ -122,9 +122,12 @@
                     if (isset($name)) {
                         if ($name === "Super_Admin_HQ") {
                             echo '<button id="login_button" class="submitBtn" onclick="toggleVisibility()" style="margin-top: 30px; width: 270px;">VIEW ALL MC\'S</button>';
-                        } else if ($name === "MC ODISHA") {
+                        } else if ($name === "MC_Bhubaneswar") {
                             echo '<style>#login_button { display: none; }</style>';
                             echo '<button id="login_button_odisha" class="submitBtn" onclick="toggleVisibility_odisha()" style="margin-top: 30px; width: 270px;">MC HEAD</button>';
+                        } else if ($name === "RMC_NewDelhi") {
+                            echo '<style>#login_button { display: none; }</style>';
+                            echo '<button id="login_button_delhi" class="submitBtn" onclick="toggleVisibility_delhi()" style="margin-top: 30px; width: 270px;">MC HEAD</button>';
                         }
                     }
                     ?>
@@ -137,9 +140,9 @@
                         <label for="dropdown" style="margin-right: 10px;">Select an MC:</label>
                         <select id="dropdown" style="flex: 1; padding: 8px;" onchange="showSelectedSection()">
                             <option value="all">ALL MC's</option>
-                            <option value="mc-odisha">MC Odisha</option>
+                            <option value="mc-odisha">MC_Bhubaneswar</option>
                             <option value="mc-delhi">MC Delhi</option>
-                            <option value="mc-andhra">MC Andhra</option>
+                            <option value="mc-hyd">MC Hyderabad</option>
                         </select>
                     </div>
 
@@ -160,38 +163,41 @@
                         <div id="mc-odisha"
                             style="width: 268px; height: 250px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
                             <div style="color: #333; font-family: Arial, sans-serif;">
-                                <div style="display: flex; justify-content: center;">MC ODISHA</div>
+                                <div style="display: flex; justify-content: center;">MC Bhubaneswar</div>
                                 <div>
-                                    <label for="start_date_odisha" class="dateDDLabel"
+                                    <label for="start_date_odisha_hq" class="dateDDLabel"
                                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                    <input type="date" id="start_date_odisha" class="dateDD"
-                                        onchange="fetchOdishaNames()">
+                                    <input type="date" id="start_date_odisha_hq" class="dateDD"
+                                        onchange="fetchName()">
                                 </div>
                             </div>
-                            <div id="drawings_data_odisha"></div>
+                            <div id="drawings_data_odisha_hq"></div>
                         </div>
 
 
                         <div id="mc-delhi"
                             style="width: 268px; height: 250px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
                             <div style="color: #333; font-family: Arial, sans-serif;">
-                                <div style="display: flex; justify-content: center;">MC DELHI</div>
+                                <div style="display: flex; justify-content: center;">RMC DELHI</div>
                                 <div>
-                                    <label name="start_dates" class="dateDDLabel"
+                                    <label name="start_date_delhi_hq" class="dateDDLabel"
                                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                    <input type="date" id="start_dates" class="dateDD">
+                                    <input type="date" id="start_date_delhi_hq" class="dateDD"
+                                    onchange="fetchName()">
                                 </div>
                             </div>
+                            <div id="drawings_data_delhi_hq"></div>
                         </div>
 
-                        <div id="mc-andhra"
+                        <div id="mc-hyd"
                             style="width: 268px; height: 250px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
                             <div style="color: #333; font-family: Arial, sans-serif;">
-                                <div style="display: flex; justify-content: center;">MC ANDHRA</div>
+                                <div style="display: flex; justify-content: center;">MC HYDERABAD</div>
                                 <div>
-                                    <label name="start_dates" class="dateDDLabel"
+                                    <label name="start_date_hyd_hq" class="dateDDLabel"
                                         style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                    <input type="date" id="start_dates" class="dateDD">
+                                    <input type="date" id="start_date_hyd_hq" class="dateDD"
+                                    onchange="fetchName()">
                                 </div>
                             </div>
                         </div>
@@ -200,20 +206,57 @@
                 </div>
                 <div id="contentDiv_odisha"
                     style="width: 290px; height: 480px; border: 3px solid #244c7e; overflow: auto; padding: 10px; display: none;">
-                    <button class="submitBtn" style="margin-left:60px;width: 150px;" id="PassDrawings">Forward to
+                    <button class="submitBtn" style="margin-left:60px;width: 150px;" id="PassDrawings_bhu">Forward to
                         HQ</button>
                     <div id="mc-odisha"
                         style="width: 268px; height: 410px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
                         <div style="color: #333; font-family: Arial, sans-serif;">
-                            <div style="display: flex; justify-content: center;">MC ODISHA</div>
+                            <div style="display: flex; justify-content: center;">MC Bhubaneswar</div>
                             <div>
-                                <label for="start_date_odisha_o" class="dateDDLabel"
+                                <label for="start_date_odisha" class="dateDDLabel"
                                     style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
-                                <input type="date" id="start_date_odisha_o" class="dateDD"
-                                    onchange="fetchOdishaNames()">
+                                <input type="date" id="start_date_odisha" class="dateDD"
+                                    onchange="fetchName()">
                             </div>
                         </div>
-                        <div id="drawings_data_odisha_o"></div>
+                        <div id="drawings_data_odisha"></div>
+                    </div>
+                </div>
+
+                <div id="contentDiv_delhi"
+                    style="width: 290px; height: 480px; border: 3px solid #244c7e; overflow: auto; padding: 10px; display: none;">
+                    <button class="submitBtn" style="margin-left:60px;width: 150px;" id="PassDrawings_delhi">Forward to
+                        HQ</button>
+                    <div id="rmc-delhi"
+                        style="width: 268px; height: 410px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
+                        <div style="color: #333; font-family: Arial, sans-serif;">
+                            <div style="display: flex; justify-content: center;">RMC delhi</div>
+                            <div>
+                                <label for="start_date_delhi" class="dateDDLabel"
+                                    style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
+                                <input type="date" id="start_date_delhi" class="dateDD"
+                                    onchange="fetchName()">
+                            </div>
+                        </div>
+                        <div id="drawings_data_delhi"></div>
+                    </div>
+                </div>
+                <div id="contentDiv_hyd"
+                    style="width: 290px; height: 480px; border: 3px solid #244c7e; overflow: auto; padding: 10px; display: none;">
+                    <button class="submitBtn" style="margin-left:60px;width: 150px;" id="PassDrawings_hyd">Forward to
+                        HQ</button>
+                    <div id="mc-hyd"
+                        style="width: 268px; height: 410px; border: 1px solid #4c3248; overflow: auto; padding: 10px;">
+                        <div style="color: #333; font-family: Arial, sans-serif;">
+                            <div style="display: flex; justify-content: center;">MC Hyderabad</div>
+                            <div>
+                                <label for="start_date_hyd" class="dateDDLabel"
+                                    style="font-family: 'Times New Roman', Times, serif; font-size: 18px;">Date:</label>
+                                <input type="date" id="start_date_hyd" class="dateDD"
+                                    onchange="fetchName()">
+                            </div>
+                        </div>
+                        <div id="drawings_data_hyd"></div>
                     </div>
                 </div>
             </div>
@@ -959,10 +1002,22 @@
 
 <script>
 var today = new Date().toISOString().slice(0, 10);
+document.getElementById('start_date_odisha_hq').value = today;
+
+var today = new Date().toISOString().slice(0, 10);
+document.getElementById('start_date_delhi_hq').value = today;
+
+// var today = new Date().toISOString().slice(0, 10);
+// document.getElementById('start_date__hq').value = today;
+
+var today = new Date().toISOString().slice(0, 10);
 document.getElementById('start_date_odisha').value = today;
 
 var today = new Date().toISOString().slice(0, 10);
-document.getElementById('start_date_odisha_o').value = today;
+document.getElementById('start_date_delhi').value = today;
+
+// var today = new Date().toISOString().slice(0, 10);
+// document.getElementById('start_date_hyd').value = today;
 
 
 function toggleVisibility() {
@@ -999,14 +1054,19 @@ function showSelectedSection() {
         var today = new Date().toISOString().slice(0, 10);
         <?php if (isset($name)): ?>
             if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
+                document.getElementById('start_date_odisha_hq').value = today;
+                document.getElementById('start_date_delhi_hq').value = today;
+            } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
                 document.getElementById('start_date_odisha').value = today;
-            } else if ('<?php echo $name; ?>' === "MC ODISHA") {
-                document.getElementById('start_date_odisha_o').value = today;
+            }else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
+                document.getElementById('start_date_delhi').value = today;
+            }else if ('<?php echo $name; ?>' === "MC_Hyderabad") {
+                document.getElementById('start_date_hyd').value = today;
             }
         <?php endif; ?>
         // document.getElementById('start_date_odisha').value = today;
 
-        fetchOdishaNames();
+        fetchName();
     });
 
 
@@ -1113,89 +1173,96 @@ function clearTimeouts() {
 var drawnPolylines = [];
 
 // Function to fetch and display names with checkboxes
-function fetchOdishaNames() {
+function fetchName() {
+    var startDateId;
+    var weatherDataDivs;
+    var ajaxUrls = [];
 
-        <?php if (isset($name)): ?>
-            var startDateId;
-            var weatherDataDivs;
-            if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
-                startDateId = "start_date_odisha";
-                weatherDataDivs = document.getElementById("drawings_data_odisha");
-            } else if ('<?php echo $name; ?>' === "MC ODISHA") {
-                startDateId = "start_date_odisha_o";
-                weatherDataDivs = document.getElementById("drawings_data_odisha_o");
-            }
-        <?php endif; ?>
+    <?php if (isset($name)): ?>
+        if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
+            startDateId = ["start_date_odisha_hq", "start_date_delhi_hq"];
+            weatherDataDivs = [
+                document.getElementById("drawings_data_odisha_hq"),
+                document.getElementById("drawings_data_delhi_hq")
+            ];
+            ajaxUrls = [
+                "<?php echo base_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>",
+                "<?php echo base_url('Drawings/Drawing/fetch_name_delhi_hq'); ?>"
+            ];
+        } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
+            startDateId = ["start_date_odisha"];
+            weatherDataDivs = [document.getElementById("drawings_data_odisha")];
+            ajaxUrls = ["<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>"];
+        } else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
+            startDateId = ["start_date_delhi"];
+            weatherDataDivs = [document.getElementById("drawings_data_delhi")];
+            ajaxUrls = ["<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>"];
+        }
+    <?php endif; ?>
 
-        var selectedDate = document.getElementById(startDateId).value;
-        var ajaxUrl = "";
+    startDateId.forEach((id, index) => {
+        var selectedDate = document.getElementById(id).value;
+        fetchAndDisplayData(ajaxUrls[index], selectedDate, weatherDataDivs[index]);
+    });
+}
 
-        <?php if (isset($name)): ?>
-            if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
-                ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>";
-            } else if ('<?php echo $name; ?>' === "MC ODISHA") {
-                ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>";
-            }
-        <?php endif; ?>
-        $.ajax({
-            url: ajaxUrl,
-            type: "GET",
-            data: {
-                date: selectedDate
-            },
-            success: function (data) {
-                console.log(data);
-                var weatherDataDiv = weatherDataDivs;
-                weatherDataDiv.innerHTML = "";
+function fetchAndDisplayData(ajaxUrl, selectedDate, weatherDataDiv) {
+    $.ajax({
+        url: ajaxUrl,
+        type: "GET",
+        data: {
+            date: selectedDate
+        },
+        success: function (data) {
+            console.log(data);
+            weatherDataDiv.innerHTML = "";
 
             if (data && data.length > 0) {
                 var checkboxContainer = document.createElement("div");
 
-                    data.forEach(function (item, index) {
-                        if (item && item.date && item.name && item.latitudes && item.longitudes) {
-                            var checkbox = document.createElement("input");
-                            checkbox.type = "checkbox";
-                            checkbox.id = "checkbox_" + index;
-                            checkbox.value = item.name;
-                            checkbox.value = JSON.stringify(item);
+                data.forEach(function (item, index) {
+                    if (item && item.date && item.name && item.latitudes && item.longitudes) {
+                        var checkbox = document.createElement("input");
+                        checkbox.type = "checkbox";
+                        checkbox.id = "checkbox_" + index;
+                        checkbox.value = JSON.stringify(item);
 
                         var label = document.createElement("label");
                         label.textContent = item.name;
                         label.setAttribute("for", "checkbox_" + index);
 
-                            checkboxContainer.appendChild(checkbox);
-                            checkboxContainer.appendChild(label);
-                            checkboxContainer.appendChild(document.createElement("br"));
-                            // Attach event listener to checkbox
-                            checkbox.addEventListener("change", function () {
-                                if (checkbox.checked) {
-                                    var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
-                                    var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
-                                    var markersData = JSON.parse(item.markers);
+                        checkboxContainer.appendChild(checkbox);
+                        checkboxContainer.appendChild(label);
+                        checkboxContainer.appendChild(document.createElement("br"));
 
-                                    // Draw polyline when checkbox is checked
-                                    drawPolyline(latitudes, longitudes, item.name, markersData);
-                                } else {
-                                    clearPolyline(item.name);
-                                }
-                            });
-                        }
-                    });
+                        checkbox.addEventListener("change", function () {
+                            if (checkbox.checked) {
+                                var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
+                                var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
+                                var markersData = JSON.parse(item.markers);
 
-                    weatherDataDiv.appendChild(checkboxContainer);
-                } else {
-                    weatherDataDiv.textContent = "No drawings found for the selected date.";
-                }
-            },
-            error: function (xhr, status, error) {
-                console.error("Error fetching names:", error);
-                var weatherDataDiv = weatherDataDivs;
-                weatherDataDiv.textContent = "Error fetching names. Please try again later.";
+                                drawPolyline(latitudes, longitudes, item.name, markersData);
+                            } else {
+                                clearPolyline(item.name);
+                            }
+                        });
+                    }
+                });
+
+                weatherDataDiv.appendChild(checkboxContainer);
+            } else {
+                weatherDataDiv.textContent = "No drawings found for the selected date.";
             }
-        });
-    }
+        },
+        error: function (xhr, status, error) {
+            console.error("Error fetching names:", error);
+            weatherDataDiv.textContent = "Error fetching names. Please try again later.";
+        }
+    });
+}
 
-    // function fetchOdishaNames_hq() {
+
+    // function fetchName_hq() {
 
     //     var selectedDate = document.getElementById("start_date_odisha").value;
 
@@ -1258,7 +1325,15 @@ function fetchOdishaNames() {
     //     });
     // }
 
-document.getElementById("PassDrawings").addEventListener("click", function() {
+    document.getElementById("PassDrawings_bhu").addEventListener("click", function() {
+    handleCheckboxes("<?php echo site_url('Drawings/Drawing/save_coordinates_to_hq_odisha'); ?>");
+});
+
+document.getElementById("PassDrawings_delhi").addEventListener("click", function() {
+    handleCheckboxes("<?php echo site_url('Drawings/Drawing/save_coordinates_to_hq_delhi'); ?>");
+});
+
+function handleCheckboxes(ajaxUrl) {
     var checkedItems = [];
 
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -1273,7 +1348,7 @@ document.getElementById("PassDrawings").addEventListener("click", function() {
     var postData = JSON.stringify(checkedItems);
     // console.log(postData);
     $.ajax({
-        url: "<?php echo site_url('Drawings/Drawing/save_coordinates_to_hq'); ?>",
+        url: ajaxUrl,
         type: "POST",
         data: postData,
         contentType: "application/json",
@@ -1286,11 +1361,12 @@ document.getElementById("PassDrawings").addEventListener("click", function() {
             alert("Failed to forward data. Please try again.");
         }
     });
-});
+}
 
 
 
-// fetchOdishaNames();
+
+// fetchName();
 
 
 
@@ -1362,6 +1438,16 @@ function getRandomColor() {
 
 function toggleVisibility_odisha() {
     var contentDiv = document.getElementById("contentDiv_odisha");
+    if (contentDiv.style.display === "none") {
+        contentDiv.style.display = "block";
+    } else {
+        contentDiv.style.display = "none";
+    }
+}
+
+
+function toggleVisibility_delhi() {
+    var contentDiv = document.getElementById("contentDiv_delhi");
     if (contentDiv.style.display === "none") {
         contentDiv.style.display = "block";
     } else {

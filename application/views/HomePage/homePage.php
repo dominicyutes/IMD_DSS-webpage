@@ -242,10 +242,12 @@
             var ajaxUrl = "";
 
             <?php if (isset($name)): ?>
-                if ('<?php echo $name; ?>' === "Super Admin HQ") {
+                if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
                     ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_names'); ?>";
-                } else if ('<?php echo $name; ?>' === "MC ODISHA") {
+                } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
                     ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>";
+                } else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
+                    ajaxUrl = "<?php echo base_url('Drawings/Drawing/fetch_names_delhi'); ?>";
                 }
             <?php endif; ?>
             if (ajaxUrl !== "") {
@@ -271,11 +273,11 @@
 
         function populateDropdown(names) {
             var dropdown = document.getElementById("subparameter");
-            dropdown.innerHTML = ""; // Clear previous options
+            dropdown.innerHTML = "";
 
             names.forEach(function (item) {
                 var option = document.createElement("option");
-                option.text = item.name; // Extract the 'name' property
+                option.text = item.name;
                 dropdown.add(option);
             });
         }
@@ -283,10 +285,8 @@
 
 
 
-        // Variable to track whether to clear layers or not
         var clearLayers = true;
 
-        // Function to toggle drawing
         function toggleDrawing() {
             clearLayers = !clearLayers;
 
@@ -300,7 +300,8 @@
         }
 
 
-        // Function to draw a polyline on the map with markers
+        var maxDistanceThreshold = 1000000;
+
         function drawPolyline(latitudes, longitudes, name, markersData) {
             var existingPolyline = drawnPolylines.find(function (polyline) {
                 return polyline.options.name === name;
@@ -310,30 +311,77 @@
                 existingPolyline.addTo(map);
             } else {
                 var polylineCoords = [];
+                var prevLatLng;
+
                 for (var i = 0; i < latitudes.length; i++) {
-                    polylineCoords.push([parseFloat(latitudes[i]), parseFloat(longitudes[i])]);
+                    var lat = parseFloat(latitudes[i]);
+                    var lng = parseFloat(longitudes[i]);
+                    var currentLatLng = L.latLng(lat, lng);
+
+                    if (prevLatLng) {
+                        // Calculate the distance between current and previous points
+                        var distance = prevLatLng.distanceTo(currentLatLng);
+
+                        // Check if the distance exceeds the maximum threshold
+                        if (distance >= maxDistanceThreshold) {
+                            // If so, start a new polyline with the current point
+                            if (polylineCoords.length > 1) {
+                                var polyline = L.polyline(polylineCoords, {
+                                    color: getRandomColor(),
+                                    weight: 3,
+                                    opacity: 0.7,
+                                    name: name
+                                });
+                                drawnPolylines.push(polyline);
+                                polyline.addTo(map);
+
+                                // Clear the array for the next polyline
+                                polylineCoords = [];
+                            }
+                        }
+                    }
+
+                    // Add the current point to the polyline
+                    polylineCoords.push([lat, lng]);
+
+                    // Update previous latlng
+                    prevLatLng = currentLatLng;
                 }
 
-                var polyline = L.polyline(polylineCoords, {
-                    color: getRandomColor(),
-                    weight: 3,
-                    opacity: 0.7,
-                    name: name
-                });
-
-                drawnPolylines.push(polyline);
-
-                polyline.addTo(map);
+                // Add the last polyline to the map if it has at least two points
+                if (polylineCoords.length > 1) {
+                    var polyline = L.polyline(polylineCoords, {
+                        color: getRandomColor(),
+                        weight: 3,
+                        opacity: 0.7,
+                        name: name
+                    });
+                    drawnPolylines.push(polyline);
+                    polyline.addTo(map);
+                }
 
                 // Add markers if markersData is provided
                 if (markersData && markersData.length > 0) {
                     markersData.forEach(function (marker) {
                         var latLng = L.latLng(marker.latitude, marker.longitude);
                         var markerText = marker.tooltipText;
+                        const fontSize = '20px';
 
-                        // Create a marker with a tooltip
                         var customMarker = L.marker(latLng).addTo(map);
-                        customMarker.bindTooltip(markerText, {
+
+                        var tooltipContent = `
+                        <div style="
+                            background-color: black; 
+                            color: white; 
+                            padding: 5px; 
+                            border: 1px solid white; 
+                            border-radius: 3px;
+                        ">
+                            <p style="margin: 0; font-size: ${fontSize};">${markerText}</p>
+                        </div>
+                    `;
+
+                        customMarker.bindTooltip(tooltipContent, {
                             permanent: true,
                             direction: 'top',
                             opacity: 0.7
@@ -342,6 +390,62 @@
                 }
             }
         }
+
+        // var maxDistanceThreshold = 100; 
+        //         function drawPolyline(latitudes, longitudes, name, markersData) {
+
+        //     var polylineCoords = [];
+        //     var prevLatLng;
+        //     var polyline;
+
+        //     for (var i = 0; i < latitudes.length; i++) {
+        //         var lat = parseFloat(latitudes[i]);
+        //         var lng = parseFloat(longitudes[i]);
+        //         var currentLatLng = L.latLng(lat, lng);
+
+        //         if (prevLatLng) {
+        //             var distance = prevLatLng.distanceTo(currentLatLng);
+
+        //             if (distance < maxDistanceThreshold) {
+        //                 // Add the current point to the existing polyline
+        //                 polylineCoords.push([lat, lng]);
+        //             } else {
+        //                 // Finish the current polyline and start a new one
+        //                 if (polylineCoords.length > 1) {
+        //                     // If the polyline has at least two points, add it to the map
+        //                     polyline = L.polyline(polylineCoords, {
+        //                         color: getRandomColor(),
+        //                         weight: 3,
+        //                         opacity: 0.7,
+        //                         name: name
+        //                     });
+        //                     drawnPolylines.push(polyline);
+        //                     polyline.addTo(map);
+        //                 }
+        //                 // Start a new polyline with the current point
+        //                 polylineCoords = [[lat, lng]];
+        //             }
+        //         } else {
+        //             // Start the first polyline with the current point
+        //             polylineCoords.push([lat, lng]);
+        //         }
+
+        //         // Update previous latlng
+        //         prevLatLng = currentLatLng;
+        //     }
+
+        //     // Add the last polyline to the map if it has at least two points
+        //     if (polylineCoords.length > 1) {
+        //         polyline = L.polyline(polylineCoords, {
+        //             color: getRandomColor(),
+        //             weight: 3,
+        //             opacity: 0.7,
+        //             name: name
+        //         });
+        //         drawnPolylines.push(polyline);
+        //         polyline.addTo(map);
+        //     }
+        // }
 
 
 
@@ -374,10 +478,12 @@
             var selectedSubparameter = document.getElementById("subparameter").value;
             var ajaxUrl;
             <?php if (isset($name)): ?>
-                if ('<?php echo $name; ?>' === "Super Admin HQ") {
+                if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
                     ajaxUrl = "<?php echo base_url('Drawings/Drawing/get_lat_long'); ?>";
-                } else if ('<?php echo $name; ?>' === "MC ODISHA") {
+                } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
                     ajaxUrl = "<?php echo base_url('Drawings/Drawing/get_lat_long_odisha'); ?>";
+                } else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
+                    ajaxUrl = "<?php echo base_url('Drawings/Drawing/get_lat_long_delhi'); ?>";
                 }
             <?php endif; ?>
 
@@ -392,7 +498,7 @@
                     success: function (response) {
                         // console.log(response);
                         try {
-                            var data = JSON.parse(response); // Parse the response as JSON
+                            var data = JSON.parse(response);
 
                             // Extract latitudes, longitudes, and markers from the response data
                             var latitudes = data.latitudes.replace(/[{}]/g, '').split(',');
@@ -415,10 +521,8 @@
         }
 
         function confirmDelete() {
-            // Display a confirmation dialog
             var confirmation = confirm("Are you sure you want to delete?");
 
-            // If the user confirms, call the deleteDrawing function
             if (confirmation) {
                 deleteDrawing();
             }
