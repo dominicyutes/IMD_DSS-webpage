@@ -167,10 +167,17 @@
     </div>
 
     <script>
-    var map = L.map('map').setView([22.79459, 80.06406], 4);
+    // var map = L.map('map').setView([22.79459, 80.06406], 4);
 
-    _dist_geojson = "DATA/INDIA_DISTRICT.json";
-    var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
+    var map = L.map('map', {
+        preferCanvas: true
+    }).setView([22.79459, 80.06406], 4);
+
+    var geojson;
+
+
+    var _dist_geojson = "<?php echo base_url('DATA/INDIA_DISTRICT.json'); ?>";
+    geojson = new L.GeoJSON.AJAX(_dist_geojson, {
         style: function(feature) {
             return {
                 color: 'black',
@@ -181,6 +188,7 @@
             };
         }
     });
+
 
     geojson.on('data:loaded', function() {
         geojson.addTo(map);
@@ -293,10 +301,11 @@
     _legend.addTo(map);
     // 
 
+
     // getin image name from contoler
     let get_filename;
     if (get_filename) {
-        console.log(get_filename, "get_filename");
+        console.log(get_filename, "get_filename from controller");
     }
 
     //
@@ -344,17 +353,22 @@
 
     document.getElementById('postToFacebookBtn').addEventListener('click', function() {
         var filename = get_filename;
+
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '<?php echo base_url("Facebook_post/post_info"); ?>', true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
             if (xhr.status === 200) {
                 console.log("Response from server:", xhr.responseText);
-                var regex = /"id":"(\d+)"/;
-                var match = xhr.responseText.match(regex);
-                var idPart = match ? match[0] : "No ID found";
-                if (idPart !== "No ID found") {
-                    alert("Successfully posted in FB with ID: " + idPart);
+                //
+                var response = xhr.responseText;
+                var urlStartIndex = response.indexOf('http');
+                if (urlStartIndex !== -1) {
+                    var imageUrl = response.substring(urlStartIndex).trim();
+                    console.log("Extracted URL:", imageUrl);
+                    alert("Successfully posted in FB ");
+                } else {
+                    console.log("URL not found in the response");
                 }
             } else {
                 console.error('Request failed. Error: ' + xhr.status);

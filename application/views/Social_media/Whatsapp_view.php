@@ -39,10 +39,6 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/canvas2image/canvas2image.js">
     </script>
 
-    <!-- easyPrint plugin -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-easyprint/dist/leaflet.easyPrint.css" />
-    <script src="https://unpkg.com/leaflet-easyprint/dist/leaflet.easyPrint.js"></script> -->
-
 
 
 
@@ -144,24 +140,24 @@
                                             <a class="dropdown-item" href="#">
                                                 <input type="checkbox" id="heatwave-department">
                                                 <label for="heatwave-department">Heatwave Department</label>
-                                                <input type="checkbox" id="auto-email-heatwave">
-                                                <label for="auto-email-heatwave">Auto Email On/Off</label>
+                                                <input type="checkbox" id="auto-msg-heatwave">
+                                                <label for="auto-msg-heatwave">Auto On/Off</label>
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="#">
                                                 <input type="checkbox" id="coldwave-department">
                                                 <label for="coldwave-department">Coldwave Department</label>
-                                                <input type="checkbox" id="auto-email-coldwave">
-                                                <label for="auto-email-coldwave">Auto Email On/Off</label>
+                                                <input type="checkbox" id="auto-msg-coldwave">
+                                                <label for="auto-msg-coldwave">Auto On/Off</label>
                                             </a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="#">
                                                 <input type="checkbox" id="nowcast-department">
                                                 <label for="nowcast-department">Nowcast Department</label>
-                                                <input type="checkbox" id="auto-email-nowcast">
-                                                <label for="auto-email-nowcast">Auto Email On/Off</label>
+                                                <input type="checkbox" id="auto-msg-nowcast">
+                                                <label for="auto-msg-nowcast">Auto On/Off</label>
                                             </a>
                                         </li>
                                     </ul>
@@ -169,74 +165,6 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <!-- new group && existing group starts here -->
-                            <!-- radio btn starts here -->
-                            <div style="margin-top: 4%;">
-                                <div>
-                                    <label>Create or Edit</label>
-                                    <div class="radioCls"><input type="radio" name="create_edit_option" value="none"
-                                            checked />
-                                        <label>None</label>
-                                    </div>
-                                    <div class="radioCls"><input type="radio" name="create_edit_option"
-                                            value="new_group" />
-                                        <label>Create
-                                            Group</label>
-                                    </div>
-                                    <div class="radioCls"><input type="radio" name="create_edit_option"
-                                            value="existing_group" />
-                                        <label>Existing
-                                            Group</label>
-                                    </div>
-                                </div>
-                            </div> <!-- radio btn ends here -->
-
-                            <!-- New Group radio btn BOX starts here -->
-                            <div id="newGroupIdDis" class="hidden" style="display: none;">
-                                <div style="margin-top: 3%;height: 3.25rem;width: 17rem;background-color: #cccccc;">
-                                    <div style="margin-left: 3%;">
-                                        <div>New Group</div>
-                                        <div>
-                                            <input type="text" style="width:74%;" placeholder="Add group name" />
-                                            <button class="btn btn-light btn-sm" type="submit">Add</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- New Group radio btn BOX ends here -->
-
-                            <!-- Existing Group radio btn BOX starts here -->
-                            <div id="existingGroupIdDis" class="hidden">
-                                <div style="margin-top: 3%;height: 6.25rem;width: 17rem;background-color: #cccccc;">
-                                    <div style="margin-left: 3%;">
-                                        <div style="padding-top: 2%;">Existing Group</div>
-                                        <div>
-                                            <!-- Choose grp dropdown starts here -->
-                                            <div class=" btn-group">
-                                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Choose Group
-                                                </button>
-                                                <ul class="dropdown-menu">
-                                                    <li>MC1</li>
-                                                    <li>MC2</li>
-                                                    <li>MC3</li>
-                                                </ul>
-                                            </div>
-                                            <!-- Choose grp dropdown neds here -->
-
-                                            <!-- addemail -->
-                                            <div style="margin-top:2%;">
-                                                <input type="text" style="width:74%;" placeholder="add number here" />
-                                                <button class="btn btn-light btn-sm" type="submit">Add</button>
-                                            </div> <!-- addemail ends here-->
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- Existing Group radio btn BOX ends here -->
-
-                        </div> <!-- new group && existing group ends here -->
 
                         <!-- Choose Datatype -->
                         <div>
@@ -271,9 +199,10 @@
 
                         <!-- POST button -->
                         <div style="margin-top: 8%;">
-                            <button class="btn btn-success btn-sm" id="getPic">GET PIC</button>
+                            <button class="btn btn-success btn-sm" id="getPic">SEND</button> <!-- GET PIC -->
                             <button class="btn btn-primary btn-sm" id="postToWhatsappBtn"
-                                style="visibility:;">POST</button>
+                                style="visibility: hidden">POST</button>
+                            <!-- style="visibility:none;" -->
                         </div>
                         <!--  -->
 
@@ -287,10 +216,17 @@
     </div>
 
     <script>
-    var map = L.map('map').setView([22.79459, 80.06406], 4);
+    // var map = L.map('map').setView([22.79459, 80.06406], 4);
 
-    _dist_geojson = "DATA/INDIA_DISTRICT.json";
-    var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
+    var map = L.map('map', {
+        preferCanvas: true
+    }).setView([22.79459, 80.06406], 4);
+
+    var geojson;
+
+
+    var _dist_geojson = "<?php echo base_url('DATA/INDIA_DISTRICT.json'); ?>";
+    geojson = new L.GeoJSON.AJAX(_dist_geojson, {
         style: function(feature) {
             return {
                 color: 'black',
@@ -302,9 +238,9 @@
         }
     });
 
+
     geojson.on('data:loaded', function() {
         geojson.addTo(map);
-        geojsonLoaded = true;
     });
 
     // var forecast_date = '<?php echo date('Y'); ?>';
@@ -414,92 +350,61 @@
     _legend.addTo(map);
     // 
 
-    // radio btn for none, new grp, existing grp
-    document.addEventListener('DOMContentLoaded', function() {
-        const radios = document.querySelectorAll('input[name="create_edit_option"]');
-        const newGroupDiv = document.getElementById('newGroupIdDis');
-        const existingGroupDiv = document.getElementById('existingGroupIdDis');
-
-        radios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                if (this.value === 'new_group') {
-                    newGroupDiv.style.display = 'block';
-                    existingGroupDiv.style.display = 'none';
-                } else if (this.value === 'existing_group') {
-                    newGroupDiv.style.display = 'none';
-                    existingGroupDiv.style.display = 'block';
-                } else {
-                    newGroupDiv.style.display = 'none';
-                    existingGroupDiv.style.display = 'none';
-                }
-            });
-        });
-    });
-    // 
 
     // getin image name from contoler
     let get_filename;
     if (get_filename) {
-        console.log(get_filename, "get_filename");
+        console.log(get_filename, "get_filename from controller");
     }
 
     //
     document.getElementById('getPic').addEventListener('click', function() {
-        if (!geojsonLoaded) {
-            alert("GeoJSON data is still loading. Please wait.");
-            return;
-        }
+        html2canvas($("#map"), {
+            useCORS: true,
+            allowTaint: false,
+            onrendered: function(canvas) {
+                var image = Canvas2Image.convertToPNG(canvas);
+                var image_data = $(image).attr('src');
+                var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
 
-        setTimeout(function() {
-            html2canvas($("#map"), {
-                useCORS: true,
-                allowTaint: false,
-                onrendered: function(canvas) {
-                    var image = Canvas2Image.convertToJPEG(canvas);
-                    var image_data = $(image).attr('src');
-                    var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
-                    var filename = "map_img_" + random_name + ".jpeg";
-                    get_filename = filename;
-                    console.log(get_filename, "get_filename");
+                var filename = "map_img_" + random_name + ".png";
+                get_filename = filename;
+                console.log(get_filename, "get_filename");
 
-                    $.ajax({
-                        type: "POST",
-                        url: "<?php echo site_url(); ?>Whatsapp_controller/getPic",
-                        data: {
-                            base64: image_data,
-                            r_file_name: random_name,
-                            filename: filename
-                        },
-                        success: function(response) {
-                            var data = JSON.parse(response);
-                            console.log(data.status, "data.status");
-                            if (data.status === 'success') {
-                                console.log("Post button");
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo site_url(); ?>Whatsapp_controller/getPic",
+                    data: {
+                        base64: image_data,
+                        r_file_name: random_name,
+                        filename: filename
+                    },
+                    success: function(response) {
+                        var data = JSON.parse(response);
+                        console.log(data.status, "data.status");
+                        if (data.status === 'success') {
+                            console.log("Post button");
 
-                                // 
-                                // setTimeout(function() {
-                                // document.getElementById('postToWhatsappBtn')
-                                //     .click();
-                                //     console.log("post to facebook is clicked");
-                                // }, 2000);
-                                // 
-                            } else {
-                                alert(
-                                    "Something went wrong, please check it later"
-                                );
-                            }
+                            // 
+                            setTimeout(function() {
+                                document.getElementById('postToWhatsappBtn')
+                                    .click();
+                                console.log("post to whatsapp is clicked");
+                            }, 2000);
+                            // 
+                        } else {
+                            alert(
+                                "Something went wrong, please check it later"
+                            );
                         }
-                    });
-                }
-            });
-        }, 1000);
+                    }
+                });
+            }
+        });
     });
     // 
 
-
-
-
-
+    // Post
     document.getElementById('postToWhatsappBtn').addEventListener('click', function() {
         var filename = get_filename;
         var xhr = new XMLHttpRequest();
@@ -508,12 +413,7 @@
         xhr.onload = function() {
             if (xhr.status === 200) {
                 console.log("Response from server:", xhr.responseText);
-                var regex = /"id":"(\d+)"/;
-                var match = xhr.responseText.match(regex);
-                var idPart = match ? match[0] : "No ID found";
-                if (idPart !== "No ID found") {
-                    alert("Successfully posted in FB with ID: " + idPart);
-                }
+                alert("Message sent successfully ")
             } else {
                 console.error('Request failed. Error: ' + xhr.status);
             }

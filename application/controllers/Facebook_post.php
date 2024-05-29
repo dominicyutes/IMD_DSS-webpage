@@ -87,13 +87,8 @@ class Facebook_post extends CI_Controller {
     public function post_info() {
         $filename = $_POST['filename']; 
         echo $filename;
-        // $getImage = base_url('assets/Fb_img/' . $filename);
-        $getImage = base_url('assets/Fb_img/map.png');
+        $getImage = base_url('assets/Fb_img/' . $filename);
         echo $getImage;
-
-        $groupname = "Delhi";
-        $username =  $this->name = $this->session->userdata('name');
-        $sent = "Success";
         
            $fb = new Facebook([
                   'app_id' => '1830324530768258',
@@ -109,9 +104,8 @@ class Facebook_post extends CI_Controller {
               ];
 
               try {
-                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBOyAujaMT9dINv8OnLbalkMy4ZCQH3wXjDgQOMoyYdQRsCX3ISsxrusWjJrQ0jAKB6i9Wc4HCsW6FSGZBIxaZCK0ofrZB1idGbtckhISW3zL7ZBfodtONZBBRa7UEj4Cn0NZCou1xEhM9vYAAjUJY1tPkZA9Mr37IqVZAVzh5oAQLxOSQBAkFH3ueL8jajp8SPkLGhTLXkKrTqgOyyqZCDCxwsZD');
+                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBO6AAiGGj8K4G3IYFHCAbXrk2FznaJZCPrQDRy0fuZBsKwJHFpPHcqkEjXhXafnjO6h7TDstfLAGUEiVHyoebBTBJgU1Pw0wCDUAfZC9F6kZCKHsJXVW0k10OvUOxsu82VurokvnayRAZCyeipef2hFsBGingYNF1pfYM1NjdYEQ42QgPYml53V2zxuU2Oe3fYoOYMHXLQnk09kxoWbGgZD');
 
-                //   $this->Facebook_m->insert_log($groupname, $username, $sent);
               } catch(Facebook\Exceptions\FacebookResponseException $e) {
                   echo 'Graph returned an error: ' . $e->getMessage();
                   exit;
