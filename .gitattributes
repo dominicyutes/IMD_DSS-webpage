@@ -1,4 +1,12 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
 * text=auto
-*.jpg binary
-*.png binary
-*.jpeg binary
+
+# Define the line ending for specific file types.
+*.c     text
+*.h     text
+*.bat   text eol=crlf
+*.sh    text eol=lf
+
+# Binary files should be treated as binary and not modified.
+*.png   binary
+*.jpg   binary

@@ -45,14 +45,15 @@
 
             <!-- editing content starts here -->
             <!-- <div class="main" style="width: 88%; margin-left: -16px;"> -->
-                <img src="" alt="">
-                <img src="<?php echo base_url('img/weather_img.png'); ?>"height="" style="width: 1250px;height: 864px;margin-left: 207px;margin-top: -864px;">
+            <img src="" alt="">
+            <img src="<?php echo base_url('img/weather_img.png'); ?>" height=""
+                style="width: 87%;height: 864px;margin-left: 207px;margin-top: -864px;">
 
             <!-- </div> -->
             <!-- editing content ends here -->
             <?php $this->load->view('Menu/Landing_page_bottom'); ?>
         </div>
-       
+
     </div>
 
     <script>

@@ -88,13 +88,13 @@
             <!-- editing content starts here -->
             <div class="col-9" style="width: 85%">
                 <div class="row">
-                    <div class="col-9">
+                    <div class="col-8">
                         <!-- left side starts here -->
                         <h4>WHATSAPP</h4>
                         <div id="map" class="map-canvas"></div>
                     </div><!-- left side ends here  -->
 
-                    <div class="col-3 font">
+                    <div class="col-4 font">
                         <div class="row">
                             <!-- right side starts here -->
                             <div class="col-8" style="margin-top: 2%;">
@@ -118,11 +118,49 @@
                                 style="margin-top: 8%;" data-bs-toggle="dropdown" aria-expanded="false">
                                 Choose MC
                             </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">MC 1</a></li>
-                                <li><a class="dropdown-item" href="#">MC 2</a></li>
-                                <li><a class="dropdown-item" href="#">MC 3</a></li>
+                            <ul class="dropdown-menu" style="height: 20rem; overflow-y: scroll;">
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Agartala')">MC_Agartala</a></li>
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Ahmedabad')">MC_Ahmedabad</a></li>
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Amaravati')">MC_Amaravati</a></li>
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Bengaluru')">MC_Bengaluru</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setInputValue('MC_Bhopal')">MC_Bhopal</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Bhubaneswar')">MC_Bhubaneswar</a></li>
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Chandigarh')">MC_Chandigarh</a></li>
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Dehradun')">MC_Dehradun</a></li>
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Gangtok')">MC_Gangtok</a></li>
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Hyderabad')">MC_Hyderabad</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setInputValue('MC_Jaipur')">MC_Jaipur</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onclick="setInputValue('MC_Kohima')">MC_Kohima</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Lucknow')">MC_Lucknow</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setInputValue('MC_Patna')">MC_Patna</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onclick="setInputValue('MC_Raipur')">MC_Raipur</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onclick="setInputValue('MC_Ranchi')">MC_Ranchi</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Shillong')">MC_Shillong</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setInputValue('MC_Shimla')">MC_Shimla</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Srinagar')">MC_Srinagar</a></li>
+                                <li><a class="dropdown-item" href="#"
+                                        onclick="setInputValue('MC_Thiruvanthapuram')">MC_Thiruvanthapuram</a></li>
                             </ul>
+                            <input type="text" id="mcInput" placeholder="MC" style="margin-top: 8%; margin-left: 6%;">
                         </div>
                         <!--  -->
 
@@ -175,34 +213,59 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Add New</a></li>
-                                    <li><a class="dropdown-item" href="#">Heatwave</a></li>
-                                    <li><a class="dropdown-item" href="#">Coldwave</a></li>
-                                    <li><a class="dropdown-item" href="#">Nowcast</a></li>
+                                    <li><a class="dropdown-item" href="#" onClick="w_heatwave()">Heatwave</a></li>
+                                    <li><a class="dropdown-item" href="#" onClick="w_coldwave()">Coldwave</a></li>
+                                    <li><a class="dropdown-item" href="#" onClick="w_nowcast()">Nowcast</a></li>
                                 </ul>
                             </div>
+                        </div>
+                        <!--  -->
+
+                        <!-- message content -->
+                        <div id="w_heatwave" style="display:none;">
+                            Heatwave Alert: This is to inform you that Delhi is experiencing a severe heatwave today. As
+                            of 2:00 PM, the temperature has been recorded at temperature 45°C, significantly above the
+                            average for this period.
+                        </div>
+                        <!--  -->
+
+                        <!--  -->
+                        <div id="w_coldwave" style="display:none;">
+                            Coldwave Alert: This is to inform you that Delhi is experiencing a severe coldwave today. As
+                            of 2:00 PM, the temperature has been recorded at temperature 1°C, significantly below the
+                            average for this period.
+                        </div>
+                        <!--  -->
+
+                        <!--  -->
+                        <div id="w_nowcast" style="display:none;">
+                            Nowcast Alert: This is to inform you that Delhi is experiencing a severe heatwave today. As
+                            of 2:00 PM, the temperature has been recorded at 45°C, significantly above the average for
+                            this period.
                         </div>
                         <!--  -->
 
                         <!-- content box -->
                         <div style="margin-top: 8%;">
                             <lable>Content</lable>
-                            <textarea style="width: 95%; height: 8rem;"></textarea>
+                            <textarea style="width: 95%; height: 8rem;" id="valueOfContent"></textarea>
                         </div>
                         <!--  -->
 
-                        <!-- attachment -->
-                        <div style="margin-top: 8%;">
-                            <lable>Attachment</lable>
-                            <input type="file" />
+                        <!-- attachment Image -->
+                        <div id="fileUploadContainer" style="margin-top: 8%;">
+                            <lable>Image</lable>
+                            <input type="file" id="fileInput" />
                         </div>
                         <!--  -->
 
                         <!-- POST button -->
                         <div style="margin-top: 8%;">
-                            <button class="btn btn-success btn-sm" id="getPic">SEND</button> <!-- GET PIC -->
-                            <button class="btn btn-primary btn-sm" id="postToWhatsappBtn"
-                                style="visibility: hidden">POST</button>
-                            <!-- style="visibility:none;" -->
+                            <button class="btn btn-success btn-sm" id="getPic">POST</button> <!-- GET PIC -->
+                            <button class="btn btn-primary btn-sm" id="postToWhatsappBtn">Dummy Btn</button>
+                            <!-- POST -->
+                            <button class="btn btn-danger btn-sm" id="ManualWhatsappBtn">Manual</button>
+                            <!-- Manual Post -->
                         </div>
                         <!--  -->
 
@@ -216,11 +279,58 @@
     </div>
 
     <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        //
+        checkToggleButtonState();
+
+        document.getElementById('toggleButton').addEventListener('change', function() {
+            checkToggleButtonState();
+        });
+
+        function checkToggleButtonState() {
+            var toggleButton = document.getElementById('toggleButton');
+            var getPicButton = document.getElementById('getPic');
+            var postToWhatsappButton = document.getElementById('postToWhatsappBtn');
+            var ManualWhatsappButton = document.getElementById('ManualWhatsappBtn');
+
+            if (toggleButton.checked) {
+                getPicButton.style.display = 'inline-block';
+                postToWhatsappButton.style.display = 'none';
+                ManualWhatsappButton.style.display = 'none';
+            } else {
+                getPicButton.style.display = 'none';
+                postToWhatsappButton.style.display = 'none';
+                ManualWhatsappButton.style.display = 'inline-block';
+            }
+        }
+    });
+
+    // Heatwave Content fn
+    function w_heatwave() {
+        let getValHeat = document.getElementById('w_heatwave').innerHTML;
+        let valOfContent = document.getElementById('valueOfContent');
+        valOfContent.innerHTML = getValHeat.replace(/\s+/g, ' ');
+    }
+
+    // Coldwave Content fn
+    function w_coldwave() {
+        let getValHeat = document.getElementById('w_coldwave').innerHTML;
+        let valOfContent = document.getElementById('valueOfContent');
+        valOfContent.innerHTML = getValHeat.replace(/\s+/g, ' ');
+    }
+
+    // nowcast Content fn
+    function w_nowcast() {
+        let getValHeat = document.getElementById('w_nowcast').innerHTML;
+        let valOfContent = document.getElementById('valueOfContent');
+        valOfContent.innerHTML = getValHeat.replace(/\s+/g, ' ');
+    }
     // var map = L.map('map').setView([22.79459, 80.06406], 4);
 
     var map = L.map('map', {
-        preferCanvas: true
-    }).setView([22.79459, 80.06406], 4);
+        preferCanvas: true,
+        zoomSnap: 0.10
+    }).setView([22.79459, 80.06406], 5);
 
     var geojson;
 
@@ -350,6 +460,11 @@
     _legend.addTo(map);
     // 
 
+    // getting the MC name from Dropdown
+    function setInputValue(value) {
+        document.getElementById('mcInput').value = value;
+    }
+
 
     // getin image name from contoler
     let get_filename;
@@ -357,56 +472,60 @@
         console.log(get_filename, "get_filename from controller");
     }
 
-    //
+    //get pic or taking screenshot of the map
     document.getElementById('getPic').addEventListener('click', function() {
-        html2canvas($("#map"), {
-            useCORS: true,
-            allowTaint: false,
-            onrendered: function(canvas) {
-                var image = Canvas2Image.convertToPNG(canvas);
-                var image_data = $(image).attr('src');
-                var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
+        if (document.getElementById('toggleButton').checked) {
+            // Checkbox is checked: Use html2canvas
+            html2canvas($("#map"), {
+                useCORS: true,
+                allowTaint: false,
+                onrendered: function(canvas) {
+                    var image = Canvas2Image.convertToPNG(canvas);
+                    var image_data = $(image).attr('src');
+                    var random_name = "<?php echo date('Y_m_d_H_i_s'); ?>";
 
-                var filename = "map_img_" + random_name + ".png";
-                get_filename = filename;
-                console.log(get_filename, "get_filename");
+                    var filename = "map_img_" + random_name + ".png";
+                    get_filename = filename;
+                    console.log(get_filename, "get_filename");
 
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo site_url(); ?>Whatsapp_controller/getPic",
-                    data: {
-                        base64: image_data,
-                        r_file_name: random_name,
-                        filename: filename
-                    },
-                    success: function(response) {
-                        var data = JSON.parse(response);
-                        console.log(data.status, "data.status");
-                        if (data.status === 'success') {
-                            console.log("Post button");
+                    $.ajax({
+                        type: "POST",
+                        url: "<?php echo site_url(); ?>Whatsapp_controller/getPic",
+                        data: {
+                            base64: image_data,
+                            r_file_name: random_name,
+                            filename: filename
+                        },
+                        success: function(response) {
+                            var data = JSON.parse(response);
+                            console.log(data.status, "data.status");
+                            if (data.status === 'success') {
+                                console.log("Post button");
 
-                            // 
-                            setTimeout(function() {
-                                document.getElementById('postToWhatsappBtn')
-                                    .click();
-                                console.log("post to whatsapp is clicked");
-                            }, 2000);
-                            // 
-                        } else {
-                            alert(
-                                "Something went wrong, please check it later"
-                            );
+                                if (document.getElementById('toggleButton').checked) {
+                                    setTimeout(function() {
+                                        document.getElementById(
+                                            'postToWhatsappBtn').click();
+                                        console.log(
+                                            "post to whatsapp is clicked");
+                                    }, 500);
+                                }
+                            } else {
+                                alert("Something went wrong, please check it later");
+                            }
                         }
-                    }
-                });
-            }
-        });
+                    });
+                }
+            });
+        }
     });
     // 
 
     // Post
     document.getElementById('postToWhatsappBtn').addEventListener('click', function() {
+        var content = document.getElementById('valueOfContent').value;
         var filename = get_filename;
+
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '<?php echo base_url("Whatsapp_controller/sendMessage"); ?>', true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -422,19 +541,87 @@
         xhr.send('filename=' + filename);
     });
 
-    // document.getElementById('waSendBtn').addEventListener('click', function() {
-    //     var xhr = new XMLHttpRequest();
-    //     xhr.open('POST', '<?php echo base_url("Whatsapp_controller/Whatsapp_post"); ?>', true);
-    //     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    //     xhr.onload = function() {
-    //         if (xhr.status === 200) {
-    //             console.log(xhr.responseText);
-    //         } else {
-    //             console.error('Request failed. Error: ' + xhr.status);
-    //         }
-    //     };
-    //     xhr.send();
+    // manualPost
+    // document.getElementById('ManualWhatsappBtn').addEventListener('click', function() {
+    //     const fileInput = document.getElementById('fileInput');
+    //     const file = fileInput.files[0];
+
+    //     if (file) {
+    //         const reader = new FileReader();
+
+    //         reader.onload = function(e) {
+    //             let base64String = e.target.result;
+    //             base64String = base64String.replace(/^data:image\/[a-zA-Z]+;base64,/, '');
+    //             console.log("Res", base64String);
+    //             //
+    //             const xhr = new XMLHttpRequest();
+    //             xhr.open('POST', '<?php echo base_url("Whatsapp_controller/manualPosting"); ?>', true);
+    //             xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    //             xhr.setRequestHeader('Accept', 'application/json');
+    //             xhr.onreadystatechange = function() {
+    //                 if (xhr.readyState === 4 && xhr.status === 200) {
+    //                     console.log('Response:', xhr.responseText);
+    //                 } else if (xhr.readyState === 4) {
+    //                     console.error('Error:', xhr.statusText);
+    //                 }
+    //             };
+
+    //             xhr.send(JSON.stringify({
+    //                 base64String: base64String
+    //             }));
+    //         };
+
+    //         reader.readAsDataURL(file);
+    //     } else {
+    //         console.log("No file selected");
+    //     }
     // });
+
+    document.getElementById('ManualWhatsappBtn').addEventListener('click', function() {
+        const fileInput = document.getElementById('fileInput');
+        const file = fileInput.files[0];
+        const valOfContent = document.getElementById('valueOfContent').value;
+
+        const data = {
+            content: valOfContent
+        };
+        // console.log(data.content, "content");
+
+        const sendRequest = (data) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '<?php echo base_url("Whatsapp_controller/manualPosting"); ?>', true);
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+            xhr.setRequestHeader('Accept', 'application/json');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        console.log('Response:', xhr.responseText);
+                    } else {
+                        console.error('Error:', xhr.status, xhr.statusText);
+                        console.error('Response:', xhr.responseText);
+                    }
+                }
+            };
+            xhr.onerror = function() {
+                console.error('Request failed');
+            };
+            xhr.send(JSON.stringify(data));
+        };
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                let base64String = e.target.result;
+                base64String = base64String.replace(/^data:image\/[a-zA-Z]+;base64,/, '');
+                data.base64String = base64String;
+                sendRequest(data);
+            };
+            reader.readAsDataURL(file);
+        } else {
+            console.log("No file selected");
+            sendRequest(data);
+        }
+    });
     </script>
 </body>
 
