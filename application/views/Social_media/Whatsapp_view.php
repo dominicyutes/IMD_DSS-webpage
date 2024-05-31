@@ -119,7 +119,7 @@
                                 Choose MC
                             </button>
                             <ul class="dropdown-menu" style="height: 20rem; overflow-y: scroll;">
-                                <li><a class="dropdown-item" href="#"
+                                <li><a class="dropdown-item" href="#" id="mc_agartala"
                                         onclick="setInputValue('MC_Agartala')">MC_Agartala</a></li>
                                 <li><a class="dropdown-item" href="#"
                                         onclick="setInputValue('MC_Ahmedabad')">MC_Ahmedabad</a></li>
@@ -223,15 +223,17 @@
 
                         <!-- message content -->
                         <div id="w_heatwave" style="display:none;">
-                            Heatwave Alert: This is to inform you that Delhi is experiencing a severe heatwave today. As
+                            `Heatwave Alert: This is to inform you that ${mc_name} is experiencing a severe heatwave
+                            today. As
                             of 2:00 PM, the temperature has been recorded at temperature 45°C, significantly above the
-                            average for this period.
+                            average for this period.`
                         </div>
                         <!--  -->
 
                         <!--  -->
                         <div id="w_coldwave" style="display:none;">
-                            Coldwave Alert: This is to inform you that Delhi is experiencing a severe coldwave today. As
+                            Coldwave Alert: This is to inform you that ${mc_name} is experiencing a severe coldwave
+                            today. As
                             of 2:00 PM, the temperature has been recorded at temperature 1°C, significantly below the
                             average for this period.
                         </div>
@@ -239,7 +241,8 @@
 
                         <!--  -->
                         <div id="w_nowcast" style="display:none;">
-                            Nowcast Alert: This is to inform you that Delhi is experiencing a severe heatwave today. As
+                            Nowcast Alert: This is to inform you that ${mc_name} is experiencing a severe heatwave
+                            today. As
                             of 2:00 PM, the temperature has been recorded at 45°C, significantly above the average for
                             this period.
                         </div>
@@ -256,6 +259,13 @@
                         <div id="fileUploadContainer" style="margin-top: 8%;">
                             <lable>Image</lable>
                             <input type="file" id="fileInput" />
+                        </div>
+                        <!--  -->
+
+                        <!-- attachment Doc -->
+                        <div id="fileUploadContainer" style="margin-top: 8%;">
+                            <label>Document</label>
+                            <input type="file" id="fileInputDoc" />
                         </div>
                         <!--  -->
 
@@ -279,8 +289,8 @@
     </div>
 
     <script>
+    // checking Auto Message is ON/OFF
     document.addEventListener('DOMContentLoaded', function() {
-        //
         checkToggleButtonState();
 
         document.getElementById('toggleButton').addEventListener('change', function() {
@@ -307,33 +317,31 @@
 
     // Heatwave Content fn
     function w_heatwave() {
-        let getValHeat = document.getElementById('w_heatwave').innerHTML;
+        let getValHeat = document.getElementById('w_heatwave').innerText;
         let valOfContent = document.getElementById('valueOfContent');
-        valOfContent.innerHTML = getValHeat.replace(/\s+/g, ' ');
+        valOfContent.value = getValHeat.replace('${mc_name}', mc_name).replace(/\s+/g, ' ');
     }
 
-    // Coldwave Content fn
     function w_coldwave() {
-        let getValHeat = document.getElementById('w_coldwave').innerHTML;
+        let getValCold = document.getElementById('w_coldwave').innerText;
         let valOfContent = document.getElementById('valueOfContent');
-        valOfContent.innerHTML = getValHeat.replace(/\s+/g, ' ');
+        valOfContent.value = getValCold.replace('${mc_name}', mc_name).replace(/\s+/g, ' ');
     }
 
-    // nowcast Content fn
     function w_nowcast() {
-        let getValHeat = document.getElementById('w_nowcast').innerHTML;
+        let getValNowcast = document.getElementById('w_nowcast').innerText;
         let valOfContent = document.getElementById('valueOfContent');
-        valOfContent.innerHTML = getValHeat.replace(/\s+/g, ' ');
+        valOfContent.value = getValNowcast.replace('${mc_name}', mc_name).replace(/\s+/g, ' ');
     }
     // var map = L.map('map').setView([22.79459, 80.06406], 4);
 
     var map = L.map('map', {
         preferCanvas: true,
-        zoomSnap: 0.10
-    }).setView([22.79459, 80.06406], 5);
+        zoomDelta: 0.25,
+        zoomSnap: 0
+    }).setView([22.79459, 80.06406], 4.5);
 
     var geojson;
-
 
     var _dist_geojson = "<?php echo base_url('DATA/INDIA_DISTRICT.json'); ?>";
     geojson = new L.GeoJSON.AJAX(_dist_geojson, {
@@ -364,12 +372,6 @@
     var dist_id;
     var data_fc = new Array();
 
-    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //     maxZoom: 19,
-    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    // }).addTo(map);
-
-    // DATA/INDIA_DISTRICT.json Odisha_Dist
     var india_district_geojson = new L.GeoJSON.AJAX('<?= base_url('DATA/Odisha_Dist.geojson') ?>', {
         color: 'black',
         weight: 1,
@@ -460,9 +462,11 @@
     _legend.addTo(map);
     // 
 
+    let mc_name;
     // getting the MC name from Dropdown
     function setInputValue(value) {
         document.getElementById('mcInput').value = value;
+        mc_name = value;
     }
 
 
@@ -541,87 +545,88 @@
         xhr.send('filename=' + filename);
     });
 
-    // manualPost
-    // document.getElementById('ManualWhatsappBtn').addEventListener('click', function() {
-    //     const fileInput = document.getElementById('fileInput');
-    //     const file = fileInput.files[0];
 
-    //     if (file) {
-    //         const reader = new FileReader();
+    // manual post
+    const fileInput = document.getElementById('fileInput');
+    const fileInputDoc = document.getElementById('fileInputDoc');
 
-    //         reader.onload = function(e) {
-    //             let base64String = e.target.result;
-    //             base64String = base64String.replace(/^data:image\/[a-zA-Z]+;base64,/, '');
-    //             console.log("Res", base64String);
-    //             //
-    //             const xhr = new XMLHttpRequest();
-    //             xhr.open('POST', '<?php echo base_url("Whatsapp_controller/manualPosting"); ?>', true);
-    //             xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    //             xhr.setRequestHeader('Accept', 'application/json');
-    //             xhr.onreadystatechange = function() {
-    //                 if (xhr.readyState === 4 && xhr.status === 200) {
-    //                     console.log('Response:', xhr.responseText);
-    //                 } else if (xhr.readyState === 4) {
-    //                     console.error('Error:', xhr.statusText);
-    //                 }
-    //             };
-
-    //             xhr.send(JSON.stringify({
-    //                 base64String: base64String
-    //             }));
-    //         };
-
-    //         reader.readAsDataURL(file);
-    //     } else {
-    //         console.log("No file selected");
-    //     }
-    // });
+    const processFile = (file, callback) => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            let base64String = e.target.result;
+            base64String = base64String.replace(
+                /^data:(application\/[a-zA-Z]+|image\/[a-zA-Z]+);base64,/, '');
+            callback(base64String, file.name);
+        };
+        reader.readAsDataURL(file);
+    };
 
     document.getElementById('ManualWhatsappBtn').addEventListener('click', function() {
-        const fileInput = document.getElementById('fileInput');
-        const file = fileInput.files[0];
-        const valOfContent = document.getElementById('valueOfContent').value;
+        // const valOfContent = document.getElementById('valueOfContent');
+        // valOfContent.value = '';
 
+        // Initialize data object
         const data = {
-            content: valOfContent
+            content: document.getElementById('valueOfContent').value
         };
-        // console.log(data.content, "content");
 
-        const sendRequest = (data) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', '<?php echo base_url("Whatsapp_controller/manualPosting"); ?>', true);
-            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-            xhr.setRequestHeader('Accept', 'application/json');
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        console.log('Response:', xhr.responseText);
-                    } else {
-                        console.error('Error:', xhr.status, xhr.statusText);
-                        console.error('Response:', xhr.responseText);
-                    }
+        // Process image file
+        if (fileInput.files.length > 0) {
+            processFile(fileInput.files[0], (base64String, filename) => {
+                data.base64Image = base64String;
+
+                // Check if both image and document have been processed
+                if (fileInputDoc.files.length === 0 || data.base64Document) {
+                    sendRequest(data);
                 }
-            };
-            xhr.onerror = function() {
-                console.error('Request failed');
-            };
-            xhr.send(JSON.stringify(data));
-        };
+            });
+        }
 
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                let base64String = e.target.result;
-                base64String = base64String.replace(/^data:image\/[a-zA-Z]+;base64,/, '');
-                data.base64String = base64String;
-                sendRequest(data);
-            };
-            reader.readAsDataURL(file);
-        } else {
-            console.log("No file selected");
+        // Process document file
+        if (fileInputDoc.files.length > 0) {
+            processFile(fileInputDoc.files[0], (base64String, filename) => {
+                data.base64Document = base64String;
+                data.documentName = filename;
+
+                // Check if both image and document have been processed
+                if (fileInput.files.length === 0 || data.base64Image) {
+                    sendRequest(data);
+                }
+            });
+        }
+
+        // If no files selected, send request with only content
+        if (fileInput.files.length === 0 && fileInputDoc.files.length === 0) {
             sendRequest(data);
         }
     });
+
+    // Function to send AJAX request
+    const sendRequest = (data) => {
+        console.log(data, "data");
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '<?php echo base_url("Whatsapp_controller/manualPosting"); ?>', true);
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        xhr.setRequestHeader('Accept', 'application/json');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    console.log('Response:', xhr.responseText);
+                    document.getElementById('mcInput').value = '';
+                    document.getElementById('valueOfContent').value = '';
+                    fileInput.value = '';
+                    fileInputDoc.value = '';
+                } else {
+                    console.error('Error:', xhr.status, xhr.statusText);
+                    console.error('Response:', xhr.responseText);
+                }
+            }
+        };
+        xhr.onerror = function() {
+            console.error('Request failed');
+        };
+        xhr.send(JSON.stringify(data));
+    };
     </script>
 </body>
 
