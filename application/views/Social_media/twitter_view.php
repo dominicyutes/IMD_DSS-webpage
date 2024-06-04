@@ -65,7 +65,7 @@
 
     #map {
         margin-top: 1%;
-        height: 78vh;
+        height: 87vh;
         width: 100%;
         border: 1px solid black;
     }
@@ -152,7 +152,7 @@
                         <!-- content box -->
                         <div style="margin-top: 8%;">
                             <lable>Content</lable>
-                            <textarea style="width: 95%; height: 20rem;"></textarea>
+                            <textarea style="width: 95%; height: 10rem;"></textarea>
                         </div>
                         <!--  -->
 
@@ -181,7 +181,11 @@
     </div>
 
     <script>
-    var map = L.map('map').setView([22.79459, 80.06406], 4);
+    var map = L.map('map', {
+        preferCanvas: true,
+        zoomDelta: 0.25,
+        zoomSnap: 0
+    }).setView([22.79459, 80.06406], 4.5);
 
     _dist_geojson = "DATA/INDIA_DISTRICT.json";
     var geojson = new L.GeoJSON.AJAX(_dist_geojson, {

@@ -39,7 +39,7 @@ class Email extends CI_Controller {
     
       $from_address = "dominic@rimes.int";
       $to_addresses = ["dominicyutes@gmail.com"];
-      // $to_addresses = ["dominicyutes@gmail.com", "dominicyutes05@gmail.com", "saurav@rimes.int"];
+    //   $to_addresses = ["dominicyutes@gmail.com", "dominicyutes05@gmail.com", "tarakesh@rimes.int"];
       $content = "<span>
                       <h3>Respected Authority,</h3>
                       <p>I trust this message finds you well. We bring to your immediate attention a matter of utmost significance concerning the current weather conditions in New Delhi.</p>

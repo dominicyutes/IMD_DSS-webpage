@@ -286,7 +286,7 @@
                     <div>
                         <label name="subparameter" class="thirdDDLabel"
                             style="font-family: 'Times New Roman', Times, serif; font-size: 18px">Parameter</label>
-                        <select class="thirdDD" id="subparameter" &nbsp;>
+                        <select class="thirdDD" id="subparameterpp" &nbsp;>
                         </select>
                         <div id="checkboxListContainer"></div>
                     </div>
@@ -366,11 +366,9 @@
                         <div class="modelForMacroGroup1" style="display: none; left: 1298px; top: 390px; height:0;">
                             <div class="modelForMacroGroup2" style="position: relative;">
                                 <div
-                                    style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px; align-items: center;">
-
+                                    style="z-index: 999; display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #00415a; padding: 10px; border-radius: 10px; align-items: center;">
                                     <h4 style="color: white; margin: 0 auto; font-size: 20px">MacroGroup Users</h4>
-                                    <span title="Close" class="modelForMacroGroupLegend">
-                                        X</span>
+                                    <span title="Close" class="modelForMacroGroupLegend">X</span>
                                 </div>
                                 <div>
                                     <p id="showMacroGrpUsers"></p>
@@ -494,55 +492,20 @@
                             style="  color: black; font-size: 15px; padding: 16px 30px; border-radius: 5px;text-align: center;">MENU</button></span>
                 </a>
 
-
-
+                <!-- Layer Selected Name -->
                 <div
-                    style="width: 50%; display: flex; justify-content: space-between; align-items: center; border-radius: 7px; background-color: #f4fcff;">
-                    <!-- left arrow -->
-                    <span id="prevLayer" class="Layer_leftArrow" title="previous">
-                        <i class="fa-solid fa-arrow-left fa-beat-fade fa-lg"
-                            style="margin-right: 11px;color: #c7d6dc;"></i>
-                    </span>
+                    style="width: 50%; display: flex; justify-content: center; border-radius: 7px; background-color: #f4fcff;">
                     <span>
                         <div
                             style="height: 38px; width: 100%; background-color: white; font-family: 'Times New Roman'; display: flex;">
                             <div id="layerNone" style="display: flex;">
-                                <h4>Layers Selected None</h4>
-                            </div>
-                            <!-- EXPO -->
-                            <div id="ExposureRow_M" style="flex-grow: 1; display: none; flex-wrap: wrap;">
-                                <h4 id="EXPOSURE_M" style="border-radius: 2px;margin-right: 10px;"></h4>
-                                <h5 id="exposure_layers_Title_M"
-                                    style="color: #000000;margin-right: 10px;margin-right: 10px;">
-                                </h5>
-                                <h5 id="exposure_layers_lists_M" style="display: flex; flex-wrap: wrap;"></h5>
-                            </div>
-                            <!--  -->
-                            <!-- RADARPRODUCTS -->
-                            <div id="RADAR_Row_M" style="flex-grow: 1; display: none;">
-                                <h4 id="RADARPRODUCTS_M"
-                                    style="border-radius: 8px; background-color: #00719c; margin-right: 10px;"></h4>
-                                <h5 id="RADARPRODUCTS_Title_M" style="color: #000000;margin-right: 10px;"></h5>
-                                <h5 id="RADARPRODUCTS_lists_M" style="display: flex;flex-wrap: wrap;"></h5>
-                            </div>
-                            <!--  -->
-                            <!-- SATELLITE -->
-                            <div id="SATELLITE_Row_M" style="flex-grow: 1; display: none;">
-                                <h4 id="SATELLITE_M"
-                                    style="border-radius: 8px; background-color: #00719c;margin-right: 10px;">
-                                </h4>
-                                <h5 id="SATELLITE_Title_M" style="color: #000000;margin-right: 10px;"></h5>
-                                <h5 id="SATELLITE_lists_M" style="display: flex;flex-wrap: wrap;"></h5>
+                                <h4 id="bottomLayer">Layers Selected None</h4>
                             </div>
                             <!--  -->
                         </div>
                     </span>
-                    <!-- right arrow -->
-                    <span class="Layer_rightArrow" title="Next" onClick="nextLayer"><i
-                            class="fa-solid fa-arrow-right fa-beat-fade fa-lg"
-                            style="margin-right: 11px;color: #c7d6dc;"></i>
-                    </span>
                 </div>
+                <!--  -->
 
                 <span>
                     <!-- USERNAME -->
@@ -597,7 +560,7 @@
         <!-- MACRO Delete Warning -->
         <div id="deleteMacroModal" class="modal" style="display: none; width: 27%; left: 33%; top: 9%; height: auto;">
             <div class="modal-content"
-                style="z-index: 999 ;display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #ffffff; padding: 10px; border-radius: 10px; align-items: center;">
+                style="z-index: 999; display: flex; position: sticky; top: 0; font-family: Arial, sans-serif; background-color: #ffffff; padding: 10px; border-radius: 10px; align-items: center;">
                 <h3 class="warningCls" style="font-family: 'Times New Roman'; font-size: 20px">WARNING !</h3>
                 <div style="width: 100%;">
                     <div style="margin-left: 12%; width: 74%;" class="col-6">
@@ -620,12 +583,12 @@
                 <div style="display: flex; align-items: center;">
                     <button type="button" onclick="closeDeleteMacroModal()" class="btn btn-primary"
                         style="font-family: 'Times New Roman'; font-size: 18px">Cancel</button>
-                    <button type="button" id="macCanBtn" onclick="deleteMacro('${macro.macroname}')"
-                        class="btn btn-primary" style="font-family: 'Times New Roman'; font-size: 18px">Submit</button>
-
+                    <button type="button" id="macCanBtn" class="btn btn-primary"
+                        style="font-family: 'Times New Roman'; font-size: 18px" disabled>Submit</button>
                 </div>
             </div>
         </div>
+
 
         <!-- observation Layer name on Map-->
         <div id="obsLayerNamShw" class="modal" style="width: 500px; left: 11%; top: 90%;">
@@ -1173,25 +1136,25 @@ function fetchName() {
     var ajaxUrls = [];
 
     <?php if (isset($name)): ?>
-        if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
-            startDateId = ["start_date_odisha_hq", "start_date_delhi_hq"];
-            weatherDataDivs = [
-                document.getElementById("drawings_data_odisha_hq"),
-                document.getElementById("drawings_data_delhi_hq")
-            ];
-            ajaxUrls = [
-                "<?php echo base_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>",
-                "<?php echo base_url('Drawings/Drawing/fetch_name_delhi_hq'); ?>"
-            ];
-        } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
-            startDateId = ["start_date_odisha"];
-            weatherDataDivs = [document.getElementById("drawings_data_odisha")];
-            ajaxUrls = ["<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>"];
-        } else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
-            startDateId = ["start_date_delhi"];
-            weatherDataDivs = [document.getElementById("drawings_data_delhi")];
-            ajaxUrls = ["<?php echo base_url('Drawings/Drawing/fetch_names_delhi'); ?>"];
-        }
+    if ('<?php echo $name; ?>' === "Super_Admin_HQ") {
+        startDateId = ["start_date_odisha_hq", "start_date_delhi_hq"];
+        weatherDataDivs = [
+            document.getElementById("drawings_data_odisha_hq"),
+            document.getElementById("drawings_data_delhi_hq")
+        ];
+        ajaxUrls = [
+            "<?php echo base_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>",
+            "<?php echo base_url('Drawings/Drawing/fetch_name_delhi_hq'); ?>"
+        ];
+    } else if ('<?php echo $name; ?>' === "MC_Bhubaneswar") {
+        startDateId = ["start_date_odisha"];
+        weatherDataDivs = [document.getElementById("drawings_data_odisha")];
+        ajaxUrls = ["<?php echo base_url('Drawings/Drawing/fetch_names_odisha'); ?>"];
+    } else if ('<?php echo $name; ?>' === "RMC_NewDelhi") {
+        startDateId = ["start_date_delhi"];
+        weatherDataDivs = [document.getElementById("drawings_data_delhi")];
+        ajaxUrls = ["<?php echo base_url('Drawings/Drawing/fetch_names_delhi'); ?>"];
+    }
     <?php endif; ?>
 
     startDateId.forEach((id, index) => {

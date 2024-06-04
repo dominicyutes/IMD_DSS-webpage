@@ -98,13 +98,17 @@ class Facebook_post extends CI_Controller {
               
       
               $linkData = [
-                  'message' => 'IMD-RIMES Testing fb post with rainfall-data;',
-                  'link' => 'http://weather-imd-test.rimes.int/',
+                //   'message' => 'IMD-RIMES Testing fb post with rainfall-data;',
+                'message' => 'Heatwave Alert: This is to inform you that ${mc_name} is experiencing a severe heatwave
+                            today. As
+                            of 2:00 PM, the temperature has been recorded at temperature 45°C, significantly above the
+                            average for this period.',
+                //   'link' => 'http://weather-imd-test.rimes.int/',
                   'source' => $fb->fileToUpload($getImage)
               ];
 
               try {
-                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBO6AAiGGj8K4G3IYFHCAbXrk2FznaJZCPrQDRy0fuZBsKwJHFpPHcqkEjXhXafnjO6h7TDstfLAGUEiVHyoebBTBJgU1Pw0wCDUAfZC9F6kZCKHsJXVW0k10OvUOxsu82VurokvnayRAZCyeipef2hFsBGingYNF1pfYM1NjdYEQ42QgPYml53V2zxuU2Oe3fYoOYMHXLQnk09kxoWbGgZD');
+                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBOzFvxcYqQ8Su7C80l6c6Oh9d8WW8kZB5miUNPNfSHZByS3eFL2NEUrS8JJJPK9HifEU5KvxT2yAzptHGcH5UnxD3Su8j368H6KZC5ikCgsHjgVGYPgxMOrzMWC3FPmaloK3Ml9Jp94fAMfp5v5UqNQxaxPASyRsDKvSzMeEFBVdvuk51B9FGL4bczUeHEOsDukfH2hcnCaycPkWYqAZD');
 
               } catch(Facebook\Exceptions\FacebookResponseException $e) {
                   echo 'Graph returned an error: ' . $e->getMessage();

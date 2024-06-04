@@ -2881,7 +2881,6 @@ $(document).ready(function() {
                 if (Array.isArray(response)) {
                     let names = response.map(function(item) {
                         return item.name.trim(); //.toUpperCase()
-                        console.log(item.name, "item.name");
                     });
                     $('#showMacroGrpUsers').html("");
                     names.forEach(function(name) {
@@ -2901,9 +2900,13 @@ $(document).ready(function() {
         });
     });
 
-
     $('#showMacroGrpUsers').on('click', '.macroGrpUserWise', function() {
         let userName = $(this).text();
+        // Highlight the clicked element
+        $('#showMacroGrpUsers .macroGrpUserWise').css('background-color',
+        ''); // Remove highlight from all
+        $(this).css('background-color', 'yellow'); // Highlight the clicked one
+
         $.ajax({
             url: '<?php echo base_url(); ?>HomePage/fetch_user_details/' + encodeURIComponent(
                 userName),
@@ -2913,13 +2916,9 @@ $(document).ready(function() {
                 if (response.error) {
                     console.error(response.error);
                 } else {
-                    console.log(response.name, "users name");
                     let user_id_users = response.user_id;
                     selectedUserId = user_id_users;
-                    console.log(selectedUserId, "selectedUserId");
-                    // console.log(user_id_users, "user_id_users");
                     showSavedMacroList();
-                    // 
                     $.ajax({
                         url: '<?php echo base_url(); ?>HomePage/fetchMacrosByUserId/' +
                             encodeURIComponent(user_id_users),
@@ -2927,12 +2926,10 @@ $(document).ready(function() {
                         dataType: 'json',
                         success: function(macrosResponse) {
                             console.log(macrosResponse, "macrosResponse");
-
                             macrosResponse.forEach(function(macro_table_data) {
                                 console.log(macro_table_data.macroname,
                                     "macro_table_data");
                             });
-
                         },
                         error: function(xhr, status, error) {
                             console.error(xhr.responseText);
@@ -2946,18 +2943,19 @@ $(document).ready(function() {
         });
     });
 
-});
+    $('#showMacroGrpUsersALL').on('click', function() {
+        $('#showMacroGrpUsersALL').css('background-color', 'yellow'); // Highlight "All MAcros"
+        $('#showMacroGrpUsers .macroGrpUserWise').css('background-color',
+        ''); // Remove highlight from all other users
+        console.log("All macros");
+    });
 
-$('#showMacroGrpUsersALL').on('click', '.macroGrpUserSA', function() {
-    console.log("All macros");
-});
-
-// 
-let allMacrosClickEvent = document.getElementById("showMacroGrpUsersALL");
-allMacrosClickEvent.addEventListener("click", function() {
-    allMacros = true;
-    showSavedMacroList();
-    console.log("allMacrosClickEvent Element clicked!");
+    let allMacrosClickEvent = document.getElementById("showMacroGrpUsersALL");
+    allMacrosClickEvent.addEventListener("click", function() {
+        allMacros = true;
+        showSavedMacroList();
+        console.log("allMacrosClickEvent Element clicked!");
+    });
 });
 
 
@@ -3181,56 +3179,7 @@ function macroRunFnX(macroname) {
 //player ends here
 
 
-// + MAIN view btn DB
-// function viewMacro(macroname) {
-//     let xhr = new XMLHttpRequest();
-//     xhr.open("GET", "<?php echo base_url('HomePage/getMacroByMacroname?macroname='); ?>" + encodeURIComponent(
-//         macroname), true);
-
-//     xhr.onload = function() {
-//         if (xhr.status == 200) {
-//             let macro = JSON.parse(xhr.responseText);
-//             console.log("Parsed macro object:", macro);
-//             if (Array.isArray(macro) && macro.length > 0) {
-//                 view_Create_Macro.style.display = 'block';
-//                 let viewMacroDetails = document.getElementById("viewMacroDetails");
-//                 let viewMacroTitleVar = document.getElementById("viewMacroTitle");
-//                 viewMacroTitleVar.innerHTML = macro[0].macroname;
-//                 let viewTempMacro = macro.map(macroItem => {
-//                     console.log("Macro Item:", macroItem);
-//                     let modelName = macroItem.modelname.trim();
-//                     let parameterName = macroItem.parametername.trim();
-//                     let subParameterName = macroItem.subparametername.trim();
-//                     if (modelName && parameterName && subParameterName) {
-//                         console.log("Model Name:", modelName);
-//                         console.log("Parameter Name:", parameterName);
-//                         console.log("Subparameter Name:", subParameterName);
-//                         // 
-//                         return `<div style="font-family: 'Times New Roman'; font-size: 15px; color: #1d334e;" class="macroListCSS" id="toggleDiv">
-//                             <span onclick="MacroPlusToggle('${macroItem.ulId}view')">+ ${macroItem.macroname}: ${subParameterName}</span>
-//                             <ul id="${macroItem.ulId}view" class="listContainerMacro" style="font-family: 'Times New Roman'; font-size: 13px;">
-//                                 <li>${modelName}</li>
-//                                 <li>${parameterName}</li>
-//                                 <li>${subParameterName}</li>
-//                             </ul>
-//                         </div>`;
-//                     } else {
-//                         console.error("Missing properties in macroItem:", macroItem);
-//                         return '';
-//                     }
-//                 });
-//                 viewMacroDetails.innerHTML = viewTempMacro.join("");
-//             } else {
-//                 console.error("No macro found with the given macroname or empty response:", macroname);
-//             }
-//         } else {
-//             console.error("Error occurred while fetching macro details. Status:", xhr.status);
-//         }
-//     };
-
-//     xhr.send();
-// }
-
+// viewMacro
 function viewMacro(macroname) {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "<?php echo base_url('HomePage/getMacroByMacroname?macroname='); ?>" + encodeURIComponent(
@@ -3280,8 +3229,6 @@ function viewMacro(macroname) {
 
     xhr.send();
 }
-
-
 
 // + MAIN edit btn DB
 function editMacro(macroname) {
@@ -3347,7 +3294,7 @@ function editMacro(macroname) {
 }
 
 
-// whole macro name delete  
+// Function to delete the macro
 function deleteMacro(macroName, userName, deleteReason) {
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "<?php echo base_url('HomePage/delete_macro'); ?>", true);
@@ -3360,7 +3307,7 @@ function deleteMacro(macroName, userName, deleteReason) {
     };
 
     xhr.onload = function() {
-        if (xhr.status == 200) {
+        if (xhr.status === 200) {
             view_Create_Macro.style.display = 'none';
             showSavedMacroList();
             closeDeleteMacroModal();
@@ -3375,24 +3322,37 @@ function deleteMacro(macroName, userName, deleteReason) {
     xhr.send(JSON.stringify(data));
 }
 
-// conformation for delete
-function alertDeleteMacro(macroname) {
+// Function to show the delete confirmation modal
+function alertDeleteMacro(macroName) {
     document.getElementById('deleteMacroModal').style.display = 'block';
 
     document.getElementById('macCanBtn').onclick = function() {
         let userName = document.getElementById('userName').value;
         let deleteReason = document.getElementById('deleteReason').value;
-        deleteMacro(macroname, userName, deleteReason); // Pass all three parameters
+        deleteMacro(macroName, userName, deleteReason); // Pass all three parameters
     };
 
     document.getElementById('userName').value = "";
     document.getElementById('deleteReason').value = "";
+    document.getElementById('macCanBtn').disabled = true; // Disable the submit button initially
+
+    // Add event listeners to enable the submit button only when both inputs are filled
+    document.getElementById('userName').addEventListener('input', toggleSubmitButton);
+    document.getElementById('deleteReason').addEventListener('input', toggleSubmitButton);
 }
 
-//cancel btn for delete conformation
+// Function to close the delete confirmation modal
 function closeDeleteMacroModal() {
     document.getElementById('deleteMacroModal').style.display = 'none';
 }
+
+// 
+function toggleSubmitButton() {
+    let userName = document.getElementById('userName').value;
+    let deleteReason = document.getElementById('deleteReason').value;
+    document.getElementById('macCanBtn').disabled = !(userName && deleteReason);
+}
+
 
 
 
@@ -10574,10 +10534,10 @@ var getLayer_name;
 
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
-    console.log(_this, '_thiscgdghbg');
+    // console.log(_this, '_thiscgdghbg');
     var isChecked = _this.prop('checked');
     var layer_group_name = _this.context._layer ? _this.context._layer.group.name : '';
-    console.log(layer_group_name, "layer_group_name");
+    // console.log(layer_group_name, "layer_group_name");
     var layer_name;
     // 
     if (isChecked) { // True
@@ -10585,12 +10545,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         layer_name = _this.context._layer ? _this.context._layer.name : _this.context.className;
 
-        console.log(layer_name, "layer_name,layer_name");
+        // console.log(layer_name, "layer_name,layer_name");
 
         var forExistLayer = _this.context._layer ? layer_group_name + ' ' + layer_name : _this.context
             .className;
 
-        console.log(forExistLayer, "forExistLayer,forExistLayer");
+        // console.log(forExistLayer, "forExistLayer,forExistLayer");
 
         var _class_name = _this.attr("class");
         console.log(_class_name, "_class_name,_class_name,11");
@@ -23862,465 +23822,41 @@ $("body").on("change", "input[type=checkbox]", function() {
 
 });
 //
-//EXPOSURE
-let panelLayerExposureTitle_M = document.querySelector('#exposure_layers_Title_M');
-let panelLayerExposureLists_M = document.querySelector('#exposure_layers_lists_M');
 
-//RADARPRODUCTS
-let panelLayerRadarTitle_M = document.querySelector('#RADARPRODUCTS_Title_M');
-let panelLayerRadarLists_M = document.querySelector('#RADARPRODUCTS_lists_M');
+// _B - layer BOTTOM name
+$(document).ready(function() {
+    let selectedLayers = [];
 
-//SATELLITE
-let panelLayerSatelliteTitle_M = document.querySelector('#SATELLITE_Title_M');
-let panelLayerSatelliteLists_M = document.querySelector('#SATELLITE_lists_M');
+    $("body").on("change", "input[type=checkbox]", function() {
+        var _this = $(this);
+        let isChecked_B = _this.prop('checked');
 
-//LIGHTINING
-let panelLayerLightningTitle_M = document.querySelector('#LIGHTNING_Title_M');
-let panelLayerLightningLists_M = document.querySelector('#LIGHTNING_lists_M');
+        let layer_group_name_B = _this.context._layer.group.name;
 
-//SHIPANDBUOY
-let panelLayerShipNBuoyTitle_M = document.querySelector('#SHIPANDBUOY_Title_M');
-let panelLayerShipNBuoyLists_M = document.querySelector('#SHIPANDBUOY_lists_M');
+        let layer_name_B = _this.context._layer.name;
 
-// metarTemp
-let panelLayermetarTemp_Title_M = document.querySelector('#metarTemp_Title_M')
-let panelLayermetarTemp_lists_M = document.querySelector('#metarTemp_lists_M')
-
-// metarDewPoint
-let panelLayermetarDewPoint_Title_M = document.querySelector('#metarDewPoint_Title_M')
-let panelLayermetarDewPoint_lists_M = document.querySelector('#metarDewPointLists_M')
-
-// metarVisibility
-let panelLayermetarVisibility_Title_M = document.querySelector('#metarVisibility_Title_M')
-let panelLayermetarVisibility_lists_M = document.querySelector('#metarVisibility_lists_M')
-
-// metarWindSpeedAndDirection
-let panelLayermetarWindSpeedAndDirection_Title_M = document.querySelector('#metarWindSpeedAndDirection_Title_M')
-let panelLayermetarWindSpeedAndDirection_lists_M = document.querySelector('#metarWindSpeedAndDirection_Lists_M')
-// 
-
-// 
-let clickedExposureLists_M = [];
-let clickedRADARPRODUCTSLists_M = [];
-let clickedSatelliteLists_M = [];
-let clickedLightningLists_M = [];
-let clickedShipNBuoyLists_M = [];
-
-let clickedMetarTempLists_M = [];
-let clickedMetarDewPointLists_M = [];
-let clickedMetarVisibilityLists_M = [];
-let clickedMetarWindSpeedAndDirectionLists_M = [];
-
-let metarLayersChecked = false;
-
-$("body").on("change", "input[type=checkbox]", function() {
-    var _this = $(this);
-    console.log(_this, '_this');
-    let isChecked = _this.prop('checked');
-
-    // layer_group_name = ExposureLayer
-    let layer_group_name = _this.context._layer.group.name;
-
-    // layer_name = Airport or Hospital
-    let layer_name = _this.context._layer.name
-    // 
-    if (isChecked) {
-
-        // Exposure
-        if (layer_group_name === "Exposure Layers") {
-            if (panelLayerExposureTitle_M.innerHTML == '') {
-                EXPOSURE_M.innerHTML = "EXPOSURE"
-                panelLayerExposureTitle_M.innerHTML = layer_group_name
-                ExposureRow_M.style.display = 'flex';
-            }
-            let layerExists = clickedExposureLists_M.includes(layer_name);
-            if (!layerExists) {
-                if (
-                    layer_name == 'District Boundaries' ||
-                    layer_name == 'Airport' ||
-                    layer_name == 'Hospital' ||
-                    layer_name == 'sports' ||
-                    layer_name == 'Power Plant' ||
-                    layer_name == 'Power Station' ||
-                    layer_name == 'Oil Refineries' ||
-                    layer_name == 'Industrail' ||
-                    layer_name == 'Socio Economic Zone' ||
-                    layer_name == 'Road Network' ||
-                    layer_name == 'Railway Network' ||
-                    layer_name == 'DEM' ||
-                    layer_name == 'LULC'
-                ) {
-                    clickedExposureLists_M.push(layer_name);
-                }
-            }
-
-            panelLayerExposureLists_M.innerHTML =
-                `<p>${clickedExposureLists_M[clickedExposureLists_M.length - 1]}</p>`;
+        if (isChecked_B) {
+            let forExistLayer_B = layer_group_name_B + ' ' + layer_name_B;
+            selectedLayers.push(forExistLayer_B);
+            console.log(forExistLayer_B, "forExistLayer_B");
+            console.log(selectedLayers, "selectedLayers_B");
+        } else {
+            let uncheckLayer_B = layer_group_name_B + ' ' + layer_name_B;
+            selectedLayers = selectedLayers.filter(layer => layer !== uncheckLayer_B);
+            console.log(uncheckLayer_B, "uncheckLayer_B");
+            console.log(selectedLayers, "selectedLayers_B");
         }
 
-        // // Radar
-        // if (layer_group_name === "Radar Products") {
-        //     if (panelLayerRadarTitle_M.innerHTML == '') {
-        //         RADARPRODUCTS_M.innerHTML = "Radar Products"
-        //         panelLayerRadarTitle_M.innerHTML = layer_group_name
-        //         RADAR_Row_M.style.display = 'flex';
-        //     }
-        //     let layerExists = clickedRADARPRODUCTSLists_M.includes(layer_name);
-        //     if (!layerExists) {
-        //         if (
-        //             layer_name == 'Radar Reflectivity' ||
-        //             layer_name == 'Radar Animation'
-        //         ) {
-        //             clickedRADARPRODUCTSLists_M.push(layer_name);
-        //         }
-        //     }
-
-        //     panelLayerRadarLists_M.innerHTML =
-        //         `<p>${clickedRADARPRODUCTSLists_M[clickedRADARPRODUCTSLists_M.length - 1]}</p>`;
-        // }
-
-        // SATELLITE
-        // if (layer_group_name === "Satellite Observation") {
-        //     if (SATELLITE_Title_M.innerHTML == '') {
-        //         SATELLITE_M.innerHTML = "Satellite"
-        //         SATELLITE_Title_M.innerHTML = layer_group_name
-        //         SATELLITE_Row_M.style.display = 'flex';
-        //     }
-        //     let layerExists = clickedSatelliteLists_M.includes(layer_name);
-        //     if (!layerExists) {
-        //         if (
-        //             layer_name == 'TIR1' ||
-        //             layer_name == 'VIS' ||
-        //             layer_name == 'CTBT' ||
-        //             layer_name == 'Low Level Convergence' ||
-        //             layer_name == 'Upper Level Divergence' ||
-        //             layer_name == 'Mid Level Shear' ||
-        //             layer_name == 'Vorticity at 200hPa' ||
-        //             layer_name == 'Vorticity at 500hPa' ||
-        //             layer_name == 'Vorticity at 700hPa' ||
-        //             layer_name == 'Vorticity at 850hPa'
-        //         ) {
-        //             clickedSatelliteLists_M.push(layer_name);
-        //         }
-        //     }
-
-        //     panelLayerSatelliteLists_M.innerHTML =
-        //         `<p>${clickedSatelliteLists_M[clickedSatelliteLists_M.length - 1]}</p>`;
-        // }
-
-        // // Lightning
-        // if (layer_group_name === "Lightning") {
-        //     if (panelLayerLightningTitle_M.innerHTML == '') {
-        //         LIGHTNING_M.innerHTML = "Lightning"
-        //         panelLayerLightningTitle_M.innerHTML = layer_group_name
-        //         LIGHTNING_Row_M.style.display = 'flex';
-        //     }
-        //     let layerExists = clickedLightningLists_M.includes(layer_name);
-        //     if (!layerExists) {
-        //         if (
-        //             layer_name == 'Last 00-05 min' ||
-        //             layer_name == 'Last 05-10 min' ||
-        //             layer_name == 'Last 10-15 min' ||
-        //             layer_name == 'ILDN Last 05 min' ||
-        //             layer_name == 'Nowcast Alerts'
-        //         ) {
-        //             clickedLightningLists_M.push(layer_name);
-        //         }
-        //     }
-
-        //     panelLayerLightningLists_M.innerHTML = clickedLightningLists_M.join("");
-        // }
-
-        // // SHIPANDBUOY
-        // if (layer_group_name === "Ship and Buoy Observation") {
-        //     if (panelLayerShipNBuoyTitle_M.innerHTML == '') {
-        //         SHIPANDBUOY_M.innerHTML = "Ship and Buoy Observation"
-        //         panelLayerShipNBuoyTitle_M.innerHTML = layer_group_name
-        //         SHIPANDBUOY_Row_M.style.display = 'flex';
-        //     }
-        //     let layerExists = clickedShipNBuoyLists_M.includes(layer_name);
-        //     if (!layerExists) {
-        //         if (
-        //             layer_name == '00UTC' ||
-        //             layer_name == '01UTC' ||
-        //             layer_name == '02UTC' ||
-        //             layer_name == '03UTC' ||
-        //             layer_name == '04UTC' ||
-        //             layer_name == '05UTC' ||
-        //             layer_name == '06UTC' ||
-        //             layer_name == '07UTC' ||
-        //             layer_name == '08UTC' ||
-        //             layer_name == '09UTC' ||
-        //             layer_name == '10UTC' ||
-        //             layer_name == '11UTC' ||
-        //             layer_name == '12UTC' ||
-        //             layer_name == '13UTC' ||
-        //             layer_name == '14UTC' ||
-        //             layer_name == '15UTC' ||
-        //             layer_name == '16UTC' ||
-        //             layer_name == '17UTC' ||
-        //             layer_name == '18UTC' ||
-        //             layer_name == '19UTC' ||
-        //             layer_name == '20UTC' ||
-        //             layer_name == '21UTC' ||
-        //             layer_name == '22UTC' ||
-        //             layer_name == '23UTC'
-        //         ) {
-        //             clickedShipNBuoyLists_M.push(layer_name);
-        //         }
-        //     }
-
-        //     panelLayerShipNBuoyLists_M.innerHTML = clickedShipNBuoyLists_M.join("");
-        // }
-
-        // // METAR
-        // if (layer_group_name === "METAR 00UTC") {
-        //     if (panelLayermetarTemp_Title_M.innerHTML == '') {
-        //         METAR_M.innerHTML = "METAR"
-        //         panelLayermetarTemp_Title_M.innerHTML = layer_group_name
-        //         METAR_Row_M.style.display = 'flex';
-        //         metarLayersChecked = true;
-        //     }
-        //     let layerExists1 = clickedMetarTempLists_M.includes(layer_name);
-        //     let layerExists2 = clickedMetarDewPointLists_M.includes(layer_name);
-        //     let layerExists3 = clickedMetarVisibilityLists_M.includes(layer_name);
-        //     let layerExists4 = clickedMetarWindSpeedAndDirectionLists_M.includes(layer_name);
-
-        //     if (!layerExists1) {
-        //         if (layer_name == 'Temperature_00') {
-        //             clickedMetarTempLists_M.push(layer_name);
-        //             panelLayermetarTemp_lists_M.style.display = 'flex';
-        //         }
-        //     }
-        //     // 
-        //     if (!layerExists2) {
-        //         if (layer_name == 'Dew Point Temperature_00') {
-        //             clickedMetarDewPointLists_M.push(layer_name);
-        //             panelLayermetarDewPoint_lists_M.style.display = 'flex';
-        //         }
-        //     }
-        //     // 
-        //     if (!layerExists3) {
-        //         if (layer_name == 'Visibility_00') {
-        //             clickedMetarVisibilityLists_M.push(layer_name);
-        //             panelLayermetarVisibility_lists_M.style.display = 'flex';
-        //         }
-        //     }
-        //     // 
-        //     if (!layerExists4) {
-        //         if (layer_name == 'Wind Speed and Direction_00') {
-        //             clickedMetarWindSpeedAndDirectionLists_M.push(layer_name);
-        //             panelLayermetarWindSpeedAndDirection_lists_M.style.display = 'flex';
-        //         }
-        //     }
-
-        //     panelLayermetarTemp_lists_M.innerHTML = clickedMetarTempLists_M.join("");
-
-        //     panelLayermetarDewPoint_lists_M.innerHTML = clickedMetarDewPointLists_M.join("");
-
-        //     panelLayermetarVisibility_lists_M.innerHTML = clickedMetarVisibilityLists_M.join("");
-
-        //     panelLayermetarWindSpeedAndDirection_lists_M.innerHTML = clickedMetarWindSpeedAndDirectionLists_M
-        //         .join("");
-        // }
-    } else {
-        let uncheckLayer = layer_group_name + ' ' + layer_name;
-
-        // exposure 
-        let exposureToRem = clickedExposureLists_M.indexOf(layer_name);
-
-        if (exposureToRem !== -1) {
-            clickedExposureLists_M = clickedExposureLists_M.filter(x => {
-                return x != layer_name
-            });
-
-            panelLayerExposureLists_M.innerHTML =
-                `<p>${clickedExposureLists_M[clickedExposureLists_M.length - 1]}</p>`;
+        if (selectedLayers.length > 0) {
+            document.getElementById("bottomLayer").innerHTML = selectedLayers[selectedLayers.length -
+                1];
+        } else {
+            document.getElementById("bottomLayer").innerHTML = "Layers Selected None";
         }
-        // exposure end here
-
-
-        // // radar
-        // let radarToRem = clickedRADARPRODUCTSLists_M.indexOf(layer_name);
-        // //
-        // if (radarToRem !== -1) {
-        //     clickedRADARPRODUCTSLists_M = clickedRADARPRODUCTSLists_M.filter(x => {
-        //         return x != layer_name
-        //     });
-        //     panelLayerRadarLists_M.innerHTML = clickedRADARPRODUCTSLists_M.join("");
-        // }
-        // // radar end here
-
-        // Satellite
-        // let satelliteToRem = clickedSatelliteLists_M.indexOf(layer_name);
-        // //
-        // if (satelliteToRem !== -1) {
-        //     clickedSatelliteLists_M = clickedSatelliteLists_M.filter(x => {
-        //         return x != layer_name
-        //     });;
-        // }
-        // // 
-        // panelLayerSatelliteLists_M.innerHTML = clickedSatelliteLists_M.join("");
-        // Satellite end here
-
-        // // Lightning
-        // let LightningToRem = clickedLightningLists_M.indexOf(layer_name);
-        // //
-        // if (LightningToRem !== -1) {
-        //     clickedLightningLists_M.splice(LightningToRem, 1);
-        // }
-        // // 
-        // panelLayerLightningLists_M.innerHTML = clickedLightningLists_M.join("");
-        // // Lightning end here
-
-        // // SHIPANDBUOY
-        // let ShipNBuoyToRem = clickedShipNBuoyLists_M.indexOf(layer_name);
-        // //
-        // if (ShipNBuoyToRem !== -1) {
-        //     clickedShipNBuoyLists_M.splice(ShipNBuoyToRem, 1);
-        // }
-        // // 
-        // panelLayerShipNBuoyLists_M.innerHTML = clickedShipNBuoyLists_M.join("");
-        // // SHIPANDBUOY end here
-
-        // // METAR Temp
-        // let metarTempToRem = clickedMetarTempLists_M.indexOf(layer_name);
-        // //
-        // if (metarTempToRem !== -1) {
-        //     clickedMetarTempLists_M.splice(metarTempToRem, 1);
-        // }
-        // // 
-        // panelLayermetarTemp_lists_M.innerHTML = clickedMetarTempLists_M.join("");
-        // // METAR end here
-
-        // // METAR DewPoint
-        // let metarDewPointToRem = clickedMetarDewPointLists_M.indexOf(layer_name);
-        // //
-        // if (metarDewPointToRem !== -1) {
-        //     clickedMetarDewPointLists_M.splice(metarDewPointToRem, 1);
-        // }
-        // // 
-        // panelLayermetarDewPoint_lists_M.innerHTML = clickedMetarDewPointLists_M.join("");
-        // // DewPoint
-
-        // // METAR Visibility
-        // let metarVisibilityToRem = clickedMetarVisibilityLists_M.indexOf(layer_name);
-        // //
-        // if (metarVisibilityToRem !== -1) {
-        //     clickedMetarVisibilityLists_M.splice(metarVisibilityToRem, 1);
-        // }
-        // // 
-        // panelLayermetarVisibility_lists_M.innerHTML = clickedMetarVisibilityLists_M.join("");
-        // // Visibility
-
-        // // METAR WSaD
-        // let metarWSaDToRem = clickedMetarWindSpeedAndDirectionLists_M.indexOf(layer_name);
-        // //
-        // if (metarWSaDToRem !== -1) {
-        //     clickedMetarWindSpeedAndDirectionLists_M.splice(metarWSaDToRem, 1);
-        // }
-        // // 
-        // panelLayermetarWindSpeedAndDirection_lists_M.innerHTML = clickedMetarWindSpeedAndDirectionLists_M.join(
-        //     "");
-        // // WSaD
-
-        // metarLayersChecked = false;
-
-    }
-    // else overs here
-
-    // 
-    if (clickedExposureLists_M.length === 0) {
-        EXPOSURE_M.innerHTML = "";
-        panelLayerExposureTitle_M.innerHTML = "";
-        document.getElementById("ExposureRow_M").style.display = "none";
-    }
-    // 
-    if (clickedRADARPRODUCTSLists_M.length === 0) {
-        RADARPRODUCTS_M.innerHTML = "";
-        panelLayerRadarTitle_M.innerHTML = "";
-        document.getElementById("RADAR_Row_M").style.display = "none";
-    } else {
-        document.getElementById("RADAR_Row_M").style.display = "flex";
-    }
-    // 
-    if (clickedSatelliteLists_M.length === 0) {
-        SATELLITE_M.innerHTML = "";
-        panelLayerSatelliteTitle_M.innerHTML = "";
-        document.getElementById("SATELLITE_Row_M").style.display = "none";
-    }
-    // 
-    // if (clickedLightningLists_M.length === 0) {
-    //     LIGHTNING_M.innerHTML = "";
-    //     panelLayerLightningTitle_M.innerHTML = "";
-    //     document.getElementById("LIGHTNING_Row_M").style.display = "none";
-    // }
-    // // 
-    // if (clickedShipNBuoyLists_M.length === 0) {
-    //     SHIPANDBUOY_M.innerHTML = "";
-    //     panelLayerShipNBuoyTitle_M.innerHTML = "";
-    //     document.getElementById("SHIPANDBUOY_Row_M").style.display = "none";
-    // }
-
-    // // Metar Temp
-    // if (clickedMetarTempLists_M.length === 0) {
-    //     panelLayermetarTemp_lists_M.innerHTML = "";
-    //     panelLayermetarTemp_lists_M.style.display = 'none';
-    // }
-
-    // // Metar DewPoint
-    // if (clickedMetarDewPointLists_M.length === 0) {
-    //     panelLayermetarDewPoint_lists_M.innerHTML = "";
-    //     panelLayermetarDewPoint_lists_M.style.display = 'none';
-    // }
-
-    // // Metar Visibility
-    // if (clickedMetarVisibilityLists_M.length === 0) {
-    //     panelLayermetarVisibility_lists_M.innerHTML = "";
-    //     panelLayermetarVisibility_lists_M.style.display = 'none';
-    // }
-
-    // // Metar WSaD
-    // if (clickedMetarWindSpeedAndDirectionLists_M.length === 0) {
-    //     panelLayermetarWindSpeedAndDirection_lists_M.innerHTML = "";
-    //     panelLayermetarWindSpeedAndDirection_lists_M.style.display = 'none';
-    // }
-
-    // // Metar-ALL
-    // if (clickedMetarTempLists_M.length === 0 && clickedMetarDewPointLists_M.length === 0 &&
-    //     clickedMetarVisibilityLists_M.length === 0 && clickedMetarWindSpeedAndDirectionLists_M.length === 0 && !
-    //     metarLayersChecked) {
-    //     METAR_M.innerHTML = "";
-    //     panelLayermetarWindSpeedAndDirection_Title_M.innerHTML = "";
-    //     panelLayermetarTemp_Title_M.innerHTML = "";
-    //     panelLayermetarVisibility_Title_M.innerHTML = "";
-    //     panelLayermetarWindSpeedAndDirection_Title_M.innerHTML = "";
-    // } else {
-    //     document.getElementById("METAR_Row_M").style.display = "flex";
-    // }
-
-    // 
-    let expoLayLength = clickedExposureLists_M.length;
-    // document.getElementById("layerName_count").innerHTML = expoLayLength;
-
-    let radLayLength = clickedRADARPRODUCTSLists_M.length;
-    // document.getElementById("layerName_count").innerHTML = radLayLength;
-
-    let satLayLength = clickedSatelliteLists_M.length;
-    // document.getElementById("layerName_count").innerHTML = satLayLength;
-
-    // let layerName_count_length = expoLayLength + radLayLength + satLayLength;
-    // document.getElementById("layerName_count").innerHTML = layerName_count_length;
-    // 
-
-    // if (layerName_count_length > 0) {
-    //     document.getElementById("layerNone").style.display = "none"
-    //     document.getElementById("ExposureRow_M").style.display = "flex"
-    // } else {
-    //     document.getElementById("layerNone").style.display = "flex"
-    //     document.getElementById("ExposureRow_M").style.display = "none"
-    // }
+    });
 });
+
+
 
 
 // ***********************************************************************

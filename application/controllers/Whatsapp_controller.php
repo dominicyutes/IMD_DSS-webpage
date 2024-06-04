@@ -95,8 +95,8 @@ class Whatsapp_controller extends CI_Controller {
     }
 
     public function sendMessage() {
-        $ultramsg_token = "qkh9kb131s9vjho4";
-        $instance_id = "instance86674";
+        $ultramsg_token = "jlxev2jzcottb2ia";
+        $instance_id = "instance87133";
         $client = new UltraMsg\WhatsAppApi($ultramsg_token, $instance_id);
 
         $to = "8939535307";  // individual number
@@ -108,11 +108,11 @@ class Whatsapp_controller extends CI_Controller {
         print_r($api);
 
         // Send document message
-        $filename = "File name"; 
-        $caption = "Document Caption"; 
-        $document = "https://file-example.s3-accelerate.amazonaws.com/documents/cv.pdf"; 
-        $api = $client->sendDocumentMessage($to, $filename, $document, $caption);
-        print_r($api);  
+        // $filename = "File name"; 
+        // $caption = "Document Caption"; 
+        // $document = "https://file-example.s3-accelerate.amazonaws.com/documents/cv.pdf"; 
+        // $api = $client->sendDocumentMessage($to,$body); // $filename, $document, $caption
+        // print_r($api);  
 
         // Send image
         if (isset($_POST['filename'])) {
@@ -127,85 +127,52 @@ class Whatsapp_controller extends CI_Controller {
         }
     }
 
-    // public function manualPosting() {
-    //    header('Content-Type: application/json');
-    //    $data = json_decode(file_get_contents('php://input'), true);
-
-    //    // Extract content and base64 string
-    //    $content = isset($data['content']) ? $data['content'] : null;
-    //    $base64String = isset($data['base64String']) ? $data['base64String'] : null;
-
-    //    // WhatsApp API configuration
-    //    $ultramsg_token = "qkh9kb131s9vjho4";
-    //    $instance_id = "instance86674";
-    //    $client = new UltraMsg\WhatsAppApi($ultramsg_token, $instance_id);
-
-    //    $to = "8939535307";  // Individual number
-    //    // $to = "120363288038792978@g.us"; // Group ID
-
-    //    // Send text content if present
-    //    if ($content) {
-    //        $api = $client->sendChatMessage($to, $content);
-    //        print_r($api);
-    //    }
-
-    //    // Send an image if base64String is present
-    //    if ($base64String) {
-    //        $api = $client->sendImageMessage($to, $base64String);
-    //        print_r($api);
-    //    }
-
-       
-
-    //    // Return a response
-    //    echo json_encode(['status' => 'success', 'message' => 'File processed successfully', 'base64String' => $base64String, 'content' =>    $content]);
-    // }
 
     public function manualPosting() {
-    header('Content-Type: application/json');
-    $data = json_decode(file_get_contents('php://input'), true);
+         header('Content-Type: application/json');
+         $data = json_decode(file_get_contents('php://input'), true);
 
-    // Extract content and base64 strings
-    $content = isset($data['content']) ? $data['content'] : null;
-    $base64Image = isset($data['base64Image']) ? $data['base64Image'] : null;
+         // Extract content and base64 strings
+         $content = isset($data['content']) ? $data['content'] : null;
+         $base64Image = isset($data['base64Image']) ? $data['base64Image'] : null;
     
 
-    $base64Document = isset($data['base64Document']) ? $data['base64Document'] : null;
-    $documentName = isset($data['documentName']) ? $data['documentName'] : 'document.pdf';
+         $base64Document = isset($data['base64Document']) ? $data['base64Document'] : null;
+         $documentName = isset($data['documentName']) ? $data['documentName'] : 'document.pdf';
 
-    // WhatsApp API configuration
-    $ultramsg_token = "qkh9kb131s9vjho4";
-    $instance_id = "instance86674";
-    $client = new UltraMsg\WhatsAppApi($ultramsg_token, $instance_id);
+         // WhatsApp API configuration
+         $ultramsg_token = "jlxev2jzcottb2ia";
+         $instance_id = "instance87133";
+         $client = new UltraMsg\WhatsAppApi($ultramsg_token, $instance_id);
 
-    // Individual number
-    $to = "8939535307";  
+         // Individual number
+         $to = "8939535307";  
 
-    // Group ID
-    // $to = "120363288038792978@g.us"; 
+         // Group ID
+         // $to = "120363288038792978@g.us"; 
 
-    // Send text content if present
-    if ($content) {
-        $api = $client->sendChatMessage($to, $content);
-        print_r($api);
+         // Send text content if present
+         if ($content) {
+             $api = $client->sendChatMessage($to, $content);
+             print_r($api);
+         }
+
+         // Send an image if base64Image is present
+         if ($base64Image) {
+             $api = $client->sendImageMessage($to, $base64Image);
+             print_r($api);
+         }
+     
+         // Send a document if base64Document is present
+         if ($base64Document) {
+             $api = $client->sendDocumentMessage($to, $documentName, $base64Document);
+             print_r($api);
+         }
+
+         // Return a response
+         echo json_encode(['status' => 'success', 'message' => 'File processed successfully', 'base64Image' => $base64Image, 'base64Document' => $base64Document, 'content'      => $content]);
+         // echo json_encode(['status' => 'success', 'message' => 'File processed successfully', 'base64Image' => 'base64Image', 'base64Document' => 'base64Document',      'content' => 'content']);
     }
-
-    // Send an image if base64Image is present
-    if ($base64Image) {
-        $api = $client->sendImageMessage($to, $base64Image);
-        print_r($api);
-    }
-
-    // Send a document if base64Document is present
-    if ($base64Document) {
-        $api = $client->sendDocumentMessage($to, $documentName, $base64Document);
-        print_r($api);
-    }
-
-    // Return a response
-    echo json_encode(['status' => 'success', 'message' => 'File processed successfully', 'base64Image' => $base64Image, 'base64Document' => $base64Document, 'content' => $content]);
-    // echo json_encode(['status' => 'success', 'message' => 'File processed successfully', 'base64Image' => 'base64Image', 'base64Document' => 'base64Document', 'content' => 'content']);
-}
 
 
 }

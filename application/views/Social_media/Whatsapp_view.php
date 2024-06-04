@@ -54,7 +54,7 @@
 
     #map {
         margin-top: 1%;
-        height: 78vh;
+        height: 87vh;
         width: 100%;
         border: 1px solid black;
     }

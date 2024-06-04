@@ -52,7 +52,7 @@
 
     #map {
         margin-top: 1%;
-        height: 78vh;
+        height: 87vh;
         width: 100%;
         border: 1px solid black;
     }
@@ -96,7 +96,7 @@
                         <!-- right side starts here -->
                         <div>
                             <input type="checkbox" id="toggleButton">
-                            <label for="toggleButton">Auto Email ON/OFF</label>
+                            <label for="toggleButton">Auto POST ON/OFF</label>
                         </div>
                         <div>
                             <button style="margin-top: 8%;"
@@ -138,7 +138,7 @@
                         <!-- content box -->
                         <div style="margin-top: 8%;">
                             <lable>Content</lable>
-                            <textarea style="width: 95%; height: 20rem;"></textarea>
+                            <textarea style="width: 95%; height: 10rem;"></textarea>
                         </div>
                         <!--  -->
 
@@ -170,8 +170,10 @@
     // var map = L.map('map').setView([22.79459, 80.06406], 4);
 
     var map = L.map('map', {
-        preferCanvas: true
-    }).setView([22.79459, 80.06406], 4);
+        preferCanvas: true,
+        zoomDelta: 0.25,
+        zoomSnap: 0
+    }).setView([22.79459, 80.06406], 4.5);
 
     var geojson;
 

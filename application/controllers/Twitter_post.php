@@ -19,6 +19,10 @@ class Twitter_post extends CI_Controller {
         $data = array();
         $name = $this->session->userdata('name');
         $data['name'] = $name;
+
+        // $this->load->library('curl');
+        // $result = $this->curl->simple_get('http://example.com/');
+        // var_dump($result);
         
         // $name = '';
         //   if ($this->session->has_userdata('name')) {
