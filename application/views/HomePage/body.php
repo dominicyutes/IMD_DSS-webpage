@@ -501,7 +501,9 @@
                             <div id="layerNone" style="display: flex;">
                                 <h4 id="bottomLayer">Layers Selected None</h4>
                             </div>
-                            <!--  -->
+                            <div id="layerAva" style="display: none;">
+                            <h4 id="bottomLayer">Weather Inference Active</h4>
+                            </div>
                         </div>
                     </span>
                 </div>
