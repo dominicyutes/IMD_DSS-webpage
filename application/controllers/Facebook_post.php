@@ -87,13 +87,8 @@ class Facebook_post extends CI_Controller {
     public function post_info() {
         $filename = $_POST['filename']; 
         echo $filename;
-        // $getImage = base_url('assets/Fb_img/' . $filename);
-        $getImage = base_url('assets/Fb_img/map.png');
+        $getImage = base_url('assets/Fb_img/' . $filename);
         echo $getImage;
-
-        $groupname = "Delhi";
-        $username =  $this->name = $this->session->userdata('name');
-        $sent = "Success";
         
            $fb = new Facebook([
                   'app_id' => '1830324530768258',
@@ -103,15 +98,18 @@ class Facebook_post extends CI_Controller {
               
       
               $linkData = [
-                  'message' => 'IMD-RIMES Testing fb post with rainfall-data;',
-                  'link' => 'http://weather-imd-test.rimes.int/',
+                //   'message' => 'IMD-RIMES Testing fb post with rainfall-data;',
+                'message' => 'Heatwave Alert: This is to inform you that ${mc_name} is experiencing a severe heatwave
+                            today. As
+                            of 2:00 PM, the temperature has been recorded at temperature 45°C, significantly above the
+                            average for this period.',
+                //   'link' => 'http://weather-imd-test.rimes.int/',
                   'source' => $fb->fileToUpload($getImage)
               ];
 
               try {
-                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBOyAujaMT9dINv8OnLbalkMy4ZCQH3wXjDgQOMoyYdQRsCX3ISsxrusWjJrQ0jAKB6i9Wc4HCsW6FSGZBIxaZCK0ofrZB1idGbtckhISW3zL7ZBfodtONZBBRa7UEj4Cn0NZCou1xEhM9vYAAjUJY1tPkZA9Mr37IqVZAVzh5oAQLxOSQBAkFH3ueL8jajp8SPkLGhTLXkKrTqgOyyqZCDCxwsZD');
+                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBOzFvxcYqQ8Su7C80l6c6Oh9d8WW8kZB5miUNPNfSHZByS3eFL2NEUrS8JJJPK9HifEU5KvxT2yAzptHGcH5UnxD3Su8j368H6KZC5ikCgsHjgVGYPgxMOrzMWC3FPmaloK3Ml9Jp94fAMfp5v5UqNQxaxPASyRsDKvSzMeEFBVdvuk51B9FGL4bczUeHEOsDukfH2hcnCaycPkWYqAZD');
 
-                //   $this->Facebook_m->insert_log($groupname, $username, $sent);
               } catch(Facebook\Exceptions\FacebookResponseException $e) {
                   echo 'Graph returned an error: ' . $e->getMessage();
                   exit;

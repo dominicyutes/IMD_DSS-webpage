@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
 
     /*  */
-    table {
+    /* table {
         width: 100%;
         border-collapse: collapse;
     }
@@ -75,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     tr:hover {
         background-color: #f5f5f5;
-    }
+    } */
 
     /*  */
     </style>
@@ -116,23 +116,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="col-7">
                             <div class="btn-group dropend">
                                 <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
-                                    style="margin-top: 10%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                    style="margin-top: 22%;" data-bs-toggle="dropdown" aria-expanded="false">
                                     Choose MC
                                 </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">MC</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <ul id="dropdown-menu" class="dropdown-menu" style="height: 20rem; overflow-y: scroll;">
+                                    <li><a class="dropdown-item" href="#">MC_Agartala</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Ahmedabad</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Amaravati</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Bengaluru</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Bhopal</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Bhubaneswar</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Chandigarh</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Dehradun</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Gangtok</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Hyderabad</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Jaipur</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Kohima</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Lucknow</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Patna</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Raipur</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Ranchi</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Shillong</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Shimla</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Srinagar</a></li>
+                                    <li><a class="dropdown-item" href="#">MC_Thiruvanthapuram</a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- col-7 ends here -->
 
+                    </div> <!-- class="row" -->
+
+                    <!-- selecting department Auto ON/OFF -->
+                    <div class="row">
                         <!-- col-5 starts here -->
-                        <div class="col-5">
+                        <div class="col-7">
                             <div class="btn-group dropend">
                                 <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
-                                    style="margin-top: 10%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                    style="margin-top: 22%;" data-bs-toggle="dropdown" aria-expanded="false">
                                     MC Groups
                                 </button>
                                 <ul class="dropdown-menu">
@@ -164,7 +185,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                         <!-- col-5 ends here -->
-                    </div> <!-- class="row" -->
+                        <div class="col-5">
+                            <!-- <div>
+                                <lable>Show CC</lable>
+                                <textarea style="width: 90%;"></textarea>
+                            </div> -->
+                            <div>
+                                <lable>Show Email-ID</lable><textarea id="show_email_id" style="width: 90%;"></textarea>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <!-- new group && existing group starts here -->
@@ -194,12 +224,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div style="margin-left: 3%;">
                                     <div>New Group</div>
                                     <div>
-                                        <input type="text" style="width:82%;" />
-                                        <button class="btn btn-light btn-sm" type="submit">Add</button>
+                                        <input type="text" style="width:82%;" id="newGroupInput" />
+                                        <button class="btn btn-light btn-sm" type="submit" id="addButton">Add</button>
                                     </div>
                                 </div>
                             </div>
                         </div> <!-- New Group radio btn BOX ends here -->
+
 
                         <!-- Existing Group radio btn BOX starts here -->
                         <div id="existingGroupIdDis" class="hidden">
@@ -208,34 +239,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div style="padding-top: 2%;">Existing Group</div>
                                     <div>
                                         <!-- Choose grp dropdown starts here -->
-                                        <div class=" btn-group">
+                                        <div class="btn-group">
                                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
                                                 data-bs-toggle="dropdown" aria-expanded="false">
                                                 Choose Group
                                             </button>
-                                            <ul class="dropdown-menu">
-                                                <li>MC1</li>
-                                                <li>MC2</li>
-                                                <li>MC3</li>
+                                            <ul id="dropdown-menu-2" class="dropdown-menu"
+                                                style="height: 20rem; overflow-y: scroll;">
                                             </ul>
+                                            <p style="margin-left: 10px;" id="show_mc"></p>
                                         </div>
-                                        <!-- Choose grp dropdown neds here -->
+                                        <!-- Choose grp dropdown ends here -->
 
                                         <!-- addemail -->
                                         <div style="margin-top:2%;">
-                                            <input type="text" style="width:82%;" placeholder="add email here" />
-                                            <button class="btn btn-light btn-sm" type="submit">Add</button>
+                                            <input id="add_email" type="text" style="width:82%;"
+                                                placeholder="add email here" />
+                                            <button id="submit_email" class="btn btn-light btn-sm"
+                                                type="submit">Add</button>
                                         </div> <!-- addemail ends here-->
-
-                                        <div>
-                                            <span>or</span>
-                                        </div>
-
-                                        <!-- add CC -->
-                                        <div style="margin-top:2%;">
-                                            <input type="text" style="width:82%;" placeholder="add cc here" />
-                                            <button class="btn btn-light btn-sm" type="submit">Add</button>
-                                        </div> <!-- add CC ends here-->
 
                                     </div>
                                 </div>
@@ -247,7 +269,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div>
                         <div class="btn-group dropend">
                             <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
-                                style="margin-top: 10%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                style="margin-top: 22%;" data-bs-toggle="dropdown" aria-expanded="false">
                                 Choose DataType
                             </button>
                             <ul class="dropdown-menu">
@@ -395,6 +417,64 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             emailList.append(listItem);
         });
     }
+
+    window.addEventListener('load', function() {
+        document.getElementById('dropdown-menu-2').innerHTML = document.getElementById('dropdown-menu')
+            .innerHTML;
+    });
+
+    //
+    document.getElementById('addButton').addEventListener('click', function() {
+        const newGroupValue = document.getElementById('newGroupInput').value;
+        if (newGroupValue) {
+            const newItem = `<li><a class="dropdown-item" href="#">${newGroupValue}</a></li>`;
+
+            // Add new item to dropdown-menu
+            document.getElementById('dropdown-menu').innerHTML += newItem;
+
+            // Add new item to dropdown-menu-2
+            document.getElementById('dropdown-menu-2').innerHTML += newItem;
+
+            // Clear the input field
+            document.getElementById('newGroupInput').value = '';
+        }
+    });
+
+    document.getElementById('dropdown-menu-2').addEventListener('click', function(event) {
+        if (event.target.classList.contains('dropdown-item')) {
+            document.getElementById('show_mc').textContent = event.target.textContent;
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('submit_email').addEventListener('click', function() {
+            const emailValue = document.getElementById('add_email').value.trim();
+            if (emailValue) {
+                const showEmailIdElement = document.getElementById('show_email_id');
+                const newEmail = `${emailValue};`; // Replacing 'x' with ';'
+                showEmailIdElement.value += newEmail + '\n';
+                // Clear the input field
+                document.getElementById('add_email').value = '';
+
+                // Add event listener to remove email address when 'x' symbol is clicked
+                const newEmailElement = document.createElement('div');
+                newEmailElement.textContent = newEmail;
+                newEmailElement.addEventListener('click', function() {
+                    // Remove the email element from the display
+                    this.parentNode.removeChild(this);
+
+                    // Remove the email from the textarea
+                    const emailToRemove = this.textContent.replace(';', '');
+                    showEmailIdElement.value = showEmailIdElement.value.replace(emailToRemove +
+                        ';\n', '');
+
+                    // Optionally, you can also update the value of 'show_email_id' to remove the deleted email
+                    // showEmailIdElement.value = showEmailIdElement.value.replace(emailToRemove + ';\n', '');
+                });
+                showEmailIdElement.appendChild(newEmailElement);
+            }
+        });
+    });
     </script>
 </body>
 

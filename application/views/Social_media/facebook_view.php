@@ -52,8 +52,8 @@
 
     #map {
         margin-top: 1%;
-        height: 78vh;
-        width: 70%;
+        height: 87vh;
+        width: 100%;
         border: 1px solid black;
     }
     </style>
@@ -76,29 +76,90 @@
 
             <!-- editing content starts here -->
             <div class="col-9" style="width: 85%">
-                <div id="map" class="map-canvas"></div>
-                <div class="row">
-                    <div class="col-8">
-                        <h4 style="font-style: italic;">Post to Facebook</h4>
-                    </div>
-                    <div class="col-4">
-                        <h6 style="font-style: italic;">Note: 1. Click Get Picture and 2. Click POST</h6>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-9">
-                        <button class="btn btn-primary" id="getPic">POST</button>
-                        <button class="btn btn-primary" id="postToFacebookBtn" style="visibility: hidden;">POST</button>
-                    </div>
+                        <!-- left side starts here -->
+                        <h4>FACEBOOK</h4>
+                        <div id="map" class="map-canvas"></div>
+
+                        <!-- <div class="row">
+                            <div class="col-9">
+                                <button class="btn btn-primary" id="getPic">POST</button>
+                                <button class="btn btn-primary" id="postToFacebookBtn"
+                                    style="visibility: hidden;">POST</button>
+                            </div>
+                        </div> -->
+
+                    </div><!-- left side ends here  -->
+
                     <div class="col-3">
-                        <!-- <a href="<?php echo base_url('Facebook_post/log_information'); ?>" class="btn btn-primary">Log
-                            Information</a> -->
-                        <button
-                            onclick="window.location.href='<?php echo base_url('Facebook_post/log_information'); ?>'"
-                            class="btn btn-primary">Log Information</button>
-                    </div>
+                        <!-- right side starts here -->
+                        <div>
+                            <input type="checkbox" id="toggleButton">
+                            <label for="toggleButton">Auto POST ON/OFF</label>
+                        </div>
+                        <div>
+                            <button style="margin-top: 8%;"
+                                onclick="window.location.href='<?php echo base_url('Facebook_post/log_information'); ?>'"
+                                class="btn btn-info btn-sm">Log Information</button>
+                        </div>
+
+                        <!--  -->
+                        <div class="btn-group dropend">
+                            <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
+                                style="margin-top: 8%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                Choose MC
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">MC 1</a></li>
+                                <li><a class="dropdown-item" href="#">MC 2</a></li>
+                                <li><a class="dropdown-item" href="#">MC 3</a></li>
+                            </ul>
+                        </div>
+                        <!--  -->
+
+                        <!--  -->
+                        <div>
+                            <div class="btn-group dropend">
+                                <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
+                                    style="margin-top: 8%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Choose DataType
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Add New</a></li>
+                                    <li><a class="dropdown-item" href="#">Heatwave</a></li>
+                                    <li><a class="dropdown-item" href="#">Coldwave</a></li>
+                                    <li><a class="dropdown-item" href="#">Nowcast</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--  -->
+
+                        <!-- content box -->
+                        <div style="margin-top: 8%;">
+                            <lable>Content</lable>
+                            <textarea style="width: 95%; height: 10rem;"></textarea>
+                        </div>
+                        <!--  -->
+
+                        <!-- attachment -->
+                        <div style="margin-top: 8%;">
+                            <lable>Attachment</lable>
+                            <input type="file" />
+                        </div>
+                        <!--  -->
+
+                        <!--  -->
+                        <div style="margin-top: 6%;">
+                            <button class="btn btn-success btn-sm" id="getPic">POST</button>
+                            <button class="btn btn-primary btn-sm" id="postToFacebookBtn"
+                                style="visibility: hidden;">POST</button>
+                        </div>
+                        <!--  -->
+
+
+                    </div> <!-- left side ends here -->
                 </div>
-                </span>
             </div>
             <!-- editing content ends here -->
 
@@ -106,10 +167,19 @@
     </div>
 
     <script>
-    var map = L.map('map').setView([22.79459, 80.06406], 4);
+    // var map = L.map('map').setView([22.79459, 80.06406], 4);
 
-    _dist_geojson = "DATA/INDIA_DISTRICT.json";
-    var geojson = new L.GeoJSON.AJAX(_dist_geojson, {
+    var map = L.map('map', {
+        preferCanvas: true,
+        zoomDelta: 0.25,
+        zoomSnap: 0
+    }).setView([22.79459, 80.06406], 4.5);
+
+    var geojson;
+
+
+    var _dist_geojson = "<?php echo base_url('DATA/INDIA_DISTRICT.json'); ?>";
+    geojson = new L.GeoJSON.AJAX(_dist_geojson, {
         style: function(feature) {
             return {
                 color: 'black',
@@ -120,6 +190,7 @@
             };
         }
     });
+
 
     geojson.on('data:loaded', function() {
         geojson.addTo(map);
@@ -232,10 +303,11 @@
     _legend.addTo(map);
     // 
 
+
     // getin image name from contoler
     let get_filename;
     if (get_filename) {
-        console.log(get_filename, "get_filename");
+        console.log(get_filename, "get_filename from controller");
     }
 
     //
@@ -283,17 +355,22 @@
 
     document.getElementById('postToFacebookBtn').addEventListener('click', function() {
         var filename = get_filename;
+
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '<?php echo base_url("Facebook_post/post_info"); ?>', true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
             if (xhr.status === 200) {
                 console.log("Response from server:", xhr.responseText);
-                var regex = /"id":"(\d+)"/;
-                var match = xhr.responseText.match(regex);
-                var idPart = match ? match[0] : "No ID found";
-                if (idPart !== "No ID found") {
-                    alert("Successfully posted in FB with ID: " + idPart);
+                //
+                var response = xhr.responseText;
+                var urlStartIndex = response.indexOf('http');
+                if (urlStartIndex !== -1) {
+                    var imageUrl = response.substring(urlStartIndex).trim();
+                    console.log("Extracted URL:", imageUrl);
+                    alert("Successfully posted in FB ");
+                } else {
+                    console.log("URL not found in the response");
                 }
             } else {
                 console.error('Request failed. Error: ' + xhr.status);

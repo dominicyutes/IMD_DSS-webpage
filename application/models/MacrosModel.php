@@ -60,15 +60,37 @@ class MacrosModel extends CI_Model {
     if ($query->num_rows() > 0) {
         $macros = $query->result_array();
         foreach ($macros as &$macro) {
-            $userName = $macro['userName'];
-            $userDetails = $this->db->get_where('users', array('name' => $userName))->row_array();
-            $macro['userDetails'] = $userDetails;
+            if (isset($macro['userName'])) {  // Check if userName index exists
+                $userName = $macro['userName'];
+                $userDetails = $this->db->get_where('users', array('name' => $userName))->row_array();
+                $macro['userDetails'] = $userDetails;
+            } else {
+                $macro['userDetails'] = null;  // Assign null if userName doesn't exist
+            }
         }
         return $macros;
     } else {
         return null;
     }
-    }
+}
+
+
+    // public function getMacroDetailsByMacroname($macroname) {
+    // $this->db->where('macroname', $macroname);
+    // $query = $this->db->get('macros');
+
+    // if ($query->num_rows() > 0) {
+    //     $macros = $query->result_array();
+    //     foreach ($macros as &$macro) {
+    //         $userName = $macro['userName'];
+    //         $userDetails = $this->db->get_where('users', array('name' => $userName))->row_array();
+    //         $macro['userDetails'] = $userDetails;
+    //     }
+    //     return $macros;
+    // } else {
+    //     return null;
+    // }
+    // }
 
 
 
