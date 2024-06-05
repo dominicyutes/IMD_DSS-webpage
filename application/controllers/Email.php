@@ -31,6 +31,16 @@ class Email extends CI_Controller {
         $this->load->view('Social_media/email_form', $data);
     }
 
+    public function fetch_mc_names() {
+        $mc_names = $this->Email_log_model->get_mc_names();
+        if (empty($mc_names)) {
+            log_message('error', 'No data found in Email_group table.');
+        } else {
+            log_message('info', 'Data fetched successfully.');
+        }
+        echo json_encode($mc_names);
+    }
+
 
     public function send_email() {
       $subject = "Rainfall Urgent Weather Alert - Unprecedented Rainfall in New Delhi";

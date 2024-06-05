@@ -120,26 +120,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     Choose MC
                                 </button>
                                 <ul id="dropdown-menu" class="dropdown-menu" style="height: 20rem; overflow-y: scroll;">
-                                    <li><a class="dropdown-item" href="#">MC_Agartala</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Ahmedabad</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Amaravati</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Bengaluru</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Bhopal</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Bhubaneswar</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Chandigarh</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Dehradun</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Gangtok</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Hyderabad</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Jaipur</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Kohima</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Lucknow</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Patna</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Raipur</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Ranchi</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Shillong</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Shimla</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Srinagar</a></li>
-                                    <li><a class="dropdown-item" href="#">MC_Thiruvanthapuram</a></li>
+                                    <!-- Dropdown items will be populated here -->
                                 </ul>
                             </div>
                         </div>
@@ -378,6 +359,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         });
     });
     // 
+
+    //using AJAX for dropdown for MC
+    $(document).ready(function() {
+        $.ajax({
+            url: "<?php echo base_url('Email/fetch_mc_names'); ?>",
+            method: "GET",
+            dataType: "json",
+            success: function(data) {
+                var dropdownMenu = $('#dropdown-menu');
+                $.each(data, function(index, item) {
+                    dropdownMenu.append('<li><a class="dropdown-item" href="#">' + item
+                        .mc_name + '</a></li>');
+                });
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("Error fetching data: ", textStatus, errorThrown);
+                console.error("Response Text: ", jqXHR.responseText);
+            }
+        });
+    });
 
 
     // 
