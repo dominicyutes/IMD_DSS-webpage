@@ -285,91 +285,88 @@
 
 
 
-        var clearLayers = true;
+        var clearLayers = false;
 
         function toggleDrawing() {
             clearLayers = !clearLayers;
 
-            if (clearLayers) {
+            if (!clearLayers) {
                 active_multiple();
-                alert("Multiple drawings is now inactive.");
+                alert("Multiple drawings are now active.");
             } else {
-                drawnItems.clearLayers();
-                alert("Multiple drawings  is now active.");
+                alert("Only one drawing is now active.");
             }
         }
-
-
         var maxDistanceThreshold = 1000000;
 
+        var drawnPolylines = [];
+        var drawnMarkers = [];
         function drawPolyline(latitudes, longitudes, name, markersData) {
-            var existingPolyline = drawnPolylines.find(function (polyline) {
-                return polyline.options.name === name;
-            });
+            // Clear existing data if clearLayers is false
+            if (!clearLayers) {
+                drawnPolylines.forEach(function (polyline) {
+                    map.removeLayer(polyline);
+                });
+                drawnPolylines = [];
 
-            if (existingPolyline) {
-                existingPolyline.addTo(map);
-            } else {
-                var polylineCoords = [];
-                var prevLatLng;
+                drawnMarkers.forEach(function (marker) {
+                    map.removeLayer(marker);
+                });
+                drawnMarkers = [];
+            }
 
-                for (var i = 0; i < latitudes.length; i++) {
-                    var lat = parseFloat(latitudes[i]);
-                    var lng = parseFloat(longitudes[i]);
-                    var currentLatLng = L.latLng(lat, lng);
+            var polylineCoords = [];
+            var prevLatLng;
 
-                    if (prevLatLng) {
-                        // Calculate the distance between current and previous points
-                        var distance = prevLatLng.distanceTo(currentLatLng);
+            for (var i = 0; i < latitudes.length; i++) {
+                var lat = parseFloat(latitudes[i]);
+                var lng = parseFloat(longitudes[i]);
+                var currentLatLng = L.latLng(lat, lng);
 
-                        // Check if the distance exceeds the maximum threshold
-                        if (distance >= maxDistanceThreshold) {
-                            // If so, start a new polyline with the current point
-                            if (polylineCoords.length > 1) {
-                                var polyline = L.polyline(polylineCoords, {
-                                    color: getRandomColor(),
-                                    weight: 3,
-                                    opacity: 0.7,
-                                    name: name
-                                });
-                                drawnPolylines.push(polyline);
-                                polyline.addTo(map);
+                if (prevLatLng) {
+                    var distance = prevLatLng.distanceTo(currentLatLng);
 
-                                // Clear the array for the next polyline
-                                polylineCoords = [];
-                            }
+                    if (distance >= maxDistanceThreshold) {
+                        if (polylineCoords.length > 1) {
+                            var polyline = L.polyline(polylineCoords, {
+                                color: getRandomColor(),
+                                weight: 3,
+                                opacity: 0.7,
+                                name: name
+                            });
+                            drawnPolylines.push(polyline);
+                            polyline.addTo(map);
+
+                            polylineCoords = [];
                         }
                     }
-
-                    // Add the current point to the polyline
-                    polylineCoords.push([lat, lng]);
-
-                    // Update previous latlng
-                    prevLatLng = currentLatLng;
                 }
 
-                // Add the last polyline to the map if it has at least two points
-                if (polylineCoords.length > 1) {
-                    var polyline = L.polyline(polylineCoords, {
-                        color: getRandomColor(),
-                        weight: 3,
-                        opacity: 0.7,
-                        name: name
-                    });
-                    drawnPolylines.push(polyline);
-                    polyline.addTo(map);
-                }
+                polylineCoords.push([lat, lng]);
 
-                // Add markers if markersData is provided
-                if (markersData && markersData.length > 0) {
-                    markersData.forEach(function (marker) {
-                        var latLng = L.latLng(marker.latitude, marker.longitude);
-                        var markerText = marker.tooltipText;
-                        const fontSize = '20px';
+                prevLatLng = currentLatLng;
+            }
 
-                        var customMarker = L.marker(latLng).addTo(map);
+            if (polylineCoords.length > 1) {
+                var polyline = L.polyline(polylineCoords, {
+                    color: getRandomColor(),
+                    weight: 3,
+                    opacity: 0.7,
+                    name: name
+                });
+                drawnPolylines.push(polyline);
+                polyline.addTo(map);
+            }
 
-                        var tooltipContent = `
+            if (markersData && markersData.length > 0) {
+                markersData.forEach(function (marker) {
+                    var latLng = L.latLng(marker.latitude, marker.longitude);
+                    var markerText = marker.tooltipText;
+                    const fontSize = '20px';
+
+                    var customMarker = L.marker(latLng).addTo(map);
+
+                    var tooltipContent = `
                         <div style="
                             background-color: black; 
                             color: white; 
@@ -381,15 +378,18 @@
                         </div>
                     `;
 
-                        customMarker.bindTooltip(tooltipContent, {
-                            permanent: true,
-                            direction: 'top',
-                            opacity: 0.7
-                        });
+                    customMarker.bindTooltip(tooltipContent, {
+                        permanent: true,
+                        direction: 'top',
+                        opacity: 0.7
                     });
-                }
+
+                    drawnMarkers.push(customMarker);
+                });
             }
         }
+
+
 
         // var maxDistanceThreshold = 100; 
         //         function drawPolyline(latitudes, longitudes, name, markersData) {

@@ -351,12 +351,4 @@ class Drawings_model extends CI_Model
     }
 
 }
-// table query 
-// CREATE TABLE weather_inference_drawings (
-//     id SERIAL PRIMARY KEY,
-//     name VARCHAR(100),
-//     date DATE,
-//     latitudes DOUBLE PRECISION[],
-//     longitudes DOUBLE PRECISION[]
 
-// );

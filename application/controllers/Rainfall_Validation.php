@@ -20,6 +20,7 @@ class Rainfall_Validation extends CI_Controller
         $data['stations'] = $this->ofm->get_stations();
 
         $data['stationNames'] = $this->ofm->get_station_name();
+        $data['regionNames'] = $this->ofm->get_unique_region_names(); 
         // $data['stationIds'] = $this->ofm->get_station_id();
 
         $this->load->view('Menu/Rainfall_Validation', $data);
@@ -112,5 +113,22 @@ class Rainfall_Validation extends CI_Controller
         $coordinates = $this->ofm->get_station_coordinates_id($station_id);
         echo json_encode($coordinates);
     }
+
+    public function get_subdivisions() {
+        $region_name = $this->input->post('region_name');
+        $this->load->model('Rainfall_Validation_Model');
+        $subdivisions = $this->Rainfall_Validation_Model->get_unique_subdivision_names($region_name);
+    
+        echo json_encode($subdivisions); // Return subdivisions as JSON
+    }
+
+    public function get_states() {
+        $subdiv_name = $this->input->post('subdiv_name');
+        $this->load->model('Rainfall_Validation_Model');
+        $states = $this->Rainfall_Validation_Model->get_unique_state_names($subdiv_name);
+    
+        echo json_encode($states); // Return states as JSON
+    }
+    
 
 }

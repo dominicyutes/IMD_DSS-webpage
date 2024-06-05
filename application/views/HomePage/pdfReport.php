@@ -15,7 +15,8 @@
         <strong>Ministry of Earth Sciences</strong><br>
         <strong>India Meteorological Department</strong><br><br>
         <strong style="color:darkblue; font-size: 18px;">WEATHER DECISION SUPPORT SYSTEM (DSS)</strong><br>
-        <strong style="color:red; font-size: 12px;">Lightning/Last 00-05 min <span style="color:green; font-size: 12px;">yy/mm/dd hh/mm</span></strong>
+        <!-- <strong style="color:red; font-size: 12px;">Lightning/Last 00-05 min <span style="color:green; font-size: 12px;">yy/mm/dd hh/mm</span></strong> -->
+        <strong style="color:green; font-size: 12px;">yy/mm/dd hh/mm</strong>
 
     </div>
 
@@ -40,7 +41,7 @@
     <?php
     // echo $this->session->userdata('div_content'); 
     ?>
-<img src="img/lighting.jpg" alt="">
+<!-- <img src="img/lighting.jpg" alt=""> -->
     <div style="text-align: center; color: green; font-size: 5px; font-weight: bold;">
         <p><strong><a href="https://mausam.imd.gov.in/" style="color: blue;">For more details, kindly visit</a></strong>
             <span style="color: red;">https://mausam.imd.gov.in/ </span><span style="color: blue;">or contact:
