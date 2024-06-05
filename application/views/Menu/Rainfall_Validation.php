@@ -583,7 +583,7 @@
             function loadGeoJSON(regionName, subdivisionName, stateName) {
                 var url;
                 if (stateName) {
-                    url = 'DATA/GEO JSON/geojson/state/' + stateName.replace(/\s+/g, '_').replace(/\(\s*UT\s*\)/g, '_UT').replace(/[\(\)]/g, '') + '.json';
+                    url = 'DATA/GEO JSON/geojson/state/' + stateName.replace(/\s+/g, '_').replace(/\(\s*UT\s*\)/g, 'UT').replace(/[\(\)]/g, '') + '.json';
                 } else if (subdivisionName) {
                     url = 'DATA/GEO JSON/geojson/subdivision/' + subdivisionName.replace(/\s+/g, '_') + '.json';
                 } else if (regionName) {
