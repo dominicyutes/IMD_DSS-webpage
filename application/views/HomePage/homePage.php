@@ -230,9 +230,7 @@
 
     <!-- drawings code start-->
     <script>
-        // Wait for the DOM content to load before adding event listener
         document.addEventListener("DOMContentLoaded", function () {
-            // Attach the event listener to the date input
             document.getElementById("start_dates").addEventListener("change", fetchNames);
         });
 

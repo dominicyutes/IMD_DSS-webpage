@@ -140,8 +140,8 @@
                         <label for="dropdown" style="margin-right: 10px;">Select an MC:</label>
                         <select id="dropdown" style="flex: 1; padding: 8px;" onchange="showSelectedSection()">
                             <option value="all">ALL MC's</option>
-                            <option value="mc-odisha">MC_Bhubaneswar</option>
-                            <option value="mc-delhi">MC Delhi</option>
+                            <option value="mc-odisha">MC Bhubaneswar</option>
+                            <option value="mc-delhi">RMC Delhi</option>
                             <option value="mc-hyd">MC Hyderabad</option>
                         </select>
                     </div>

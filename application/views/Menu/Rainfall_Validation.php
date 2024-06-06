@@ -223,7 +223,7 @@
                                 </div>
 
                                 <div style="display: flex; flex-direction: column;">
-                                    <label style="margin-bottom: 5px;">MC:</label>
+                                    <label style="margin-bottom: 5px;">District:</label>
                                     <div style="display: flex; flex-direction: row; align-items: center;">
                                         <input type="text" style="width: 200px; border-radius: 100px;">
                                     </div>
@@ -272,7 +272,7 @@
         <script src="<?php echo base_url(); ?>stylesheet/ol4/ol.js"></script>
 
         <!-- OpenLayers LayerSwitcher CSS -->
-        <link rel="stylesheet" href="https://unpkg.com/ol-layerswitcher@3.0.0/src/ol-layerswitcher.css" />
+        <!-- <link rel="stylesheet" href="https://unpkg.com/ol-layerswitcher@3.0.0/src/ol-layerswitcher.css" /> -->
         <script src="https://unpkg.com/ol-layerswitcher@3.0.0"></script>
 
 

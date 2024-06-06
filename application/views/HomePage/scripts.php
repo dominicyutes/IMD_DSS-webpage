@@ -5034,7 +5034,9 @@
                     if (layerNoneDiv.style.display === 'none' || layerNoneDiv.style.display === '') {
                         layerNoneDiv.style.display = 'flex';
                         if (layerAvaDiv) {
+                            
                             layerAvaDiv.style.display = 'none';
+                           
                         }
                     } else {
                         layerNoneDiv.style.display = 'none';
