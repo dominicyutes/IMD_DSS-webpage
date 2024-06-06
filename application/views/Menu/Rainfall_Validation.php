@@ -83,7 +83,7 @@
             <!-- <h1 style="margin-top: -8px; margin-left: 450px; margin-bottom: 20px;">Rainfall Validation</h1> -->
 
             <div class="parent"
-                style="width: 100%; max-width: 870px; background-color: #ffffff; border: 1px solid #ccc; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); transition: width 0.3s ease; margin: 0 auto;height: 753px;margin-top: 70px;">
+                style="width: 100%; max-width: 1300px; background-color: #ffffff; border: 1px solid #ccc; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); transition: width 0.3s ease; margin: 0 auto;height: 753px;margin-top: 70px;">
                 <div class="content-wrapper" style="display: inline-block;">
                     <section class="content">
                         <div class="box box-info">
@@ -111,9 +111,9 @@
                                             <div id="temp_graph_extension_chart" class="dialog"></div>
                                         </div>
                                         <div class="box-body">
-                                            <div style="border:#333 1px ridge; overflow: hidden;width:825px">
+                                            <div style="border:#333 1px ridge; overflow: hidden; width: 1140px;">
                                                 <div id="map_canvas"
-                                                    style="width:825px; height: 656px; float: left;z-index: 0;"
+                                                    style="width: 1200px; height: 656px; float: left; z-index: 0;"
                                                     align="center"></div>
                                             </div>
                                         </div>
@@ -125,25 +125,13 @@
                 </div>
 
                 <div id="toggleDiv"
-                    style="display: none; flex-direction: column; padding: 20px; border: 2px solid #000; border-radius: 10px; margin-top: -663px; width: 334px; margin-left: 825px; height: 657px;">
+                    style="display: none; flex-direction: column; padding: 20px; border: 2px solid #000; border-radius: 10px; margin-top: -663px; width: 265px; margin-left: 892px; height: 657px;">
                     <h4 style="text-align: center; font-family: 'Times New Roman';">FILTERS</h4>
 
 
                     <div style="display: flex; flex-direction: column; justify-content: space-between;">
                         <div
-                            style="width: 100%; padding: 20px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 5px; height: 262px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div style="display: flex; flex-direction: column;">
-                                <label style="margin-bottom: 5px;">MC/RMC Name:</label>
-                                <div style="display: flex; flex-direction: row; align-items: center;">
-                                    <input type="text" id="state-name" list="state-name-list" placeholder="MC/RMC Name"
-                                        style="width: 200px; border-radius: 100px; margin-bottom: 10px;">
-                                </div>
-                                <datalist id="state-name-list">
-                                    <?php foreach ($stateNames as $state): ?>
-                                        <option value="<?php echo $state['name']; ?>"></option>
-                                    <?php endforeach; ?>
-                                </datalist>
-                            </div>
+                            style="width: 100%; padding: 20px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 5px; height: 217px; display: flex; flex-direction: column; justify-content: space-between;">
                             <div style="display: flex; flex-direction: column;">
                                 <label style="margin-bottom: 5px;">Station Name:</label>
                                 <div style="display: flex; flex-direction: row; align-items: center;">
@@ -176,22 +164,9 @@
 
 
                         <div
-                            style="width: 100%; padding: 20px; border: 1px solid #ccc; border-radius: 10px; height: 329px;">
+                            style="width: 100%; padding: 20px; border: 1px solid #ccc; border-radius: 10px; height: 370px;">
                             <div
                                 style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-                                <!-- <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
-                                    <label style="margin-bottom: 5px;">Country:</label>
-                                    <div style="display: flex; flex-direction: row; align-items: center;">
-                                        <input type="text" id="country-input" list="countries"
-                                            style="width: 200px; border-radius: 100px;">
-                                        <datalist id="countries">
-                                            <option value="India">
-                                        </datalist>
-                                        <button type="button" class="btn" id="submit-button"
-                                            style="font-size: 10px;">Submit</button>
-                                    </div>
-                                </div> -->
-
                                 <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
                                     <label style="margin-bottom: 5px;">Regions:</label>
                                     <div style="display: flex; flex-direction: row; align-items: center;">
@@ -213,6 +188,12 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <label style="margin-bottom: 5px;">MC/RMC:</label>
+                                    <div style="display: flex; flex-direction: row; align-items: center;">
+                                        <input type="text" style="width: 200px; border-radius: 100px;">
+                                    </div>
+                                </div>
                                 <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
                                     <label style="margin-bottom: 5px;">State:</label>
                                     <div style="display: flex; flex-direction: row; align-items: center;">
@@ -222,7 +203,7 @@
                                     </div>
                                 </div>
 
-                                <div style="display: flex; flex-direction: column;">
+                                <div style="display: flex; flex-direction: column;margin-bottom: 10px;">
                                     <label style="margin-bottom: 5px;">District:</label>
                                     <div style="display: flex; flex-direction: row; align-items: center;">
                                         <input type="text" style="width: 200px; border-radius: 100px;">
@@ -843,13 +824,17 @@
                 var toggleDiv = document.getElementById('toggleDiv');
                 var parentDiv = document.querySelector('.parent');
                 var arrowIcon = document.getElementById('arrowIcon');
+                var mapCanvas = document.getElementById('map_canvas').parentNode; // Get the parent div of the map_canvas
+
                 if (toggleDiv.style.display === 'none') {
                     toggleDiv.style.display = 'flex';
                     parentDiv.style.maxWidth = '100%';
+                    mapCanvas.style.width = '890px'; // Adjust the width of the map container
                     arrowIcon.className = 'fa fa-arrow-circle-left';
                 } else {
                     toggleDiv.style.display = 'none';
-                    parentDiv.style.maxWidth = '870px';
+                    parentDiv.style.maxWidth = '1300px';
+                    mapCanvas.style.width = '1140px'; // Adjust the width of the map container
                     arrowIcon.className = 'fa fa-arrow-circle-right';
                 }
             });
