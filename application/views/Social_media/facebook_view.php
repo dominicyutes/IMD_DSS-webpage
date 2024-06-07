@@ -41,6 +41,14 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/canvas2image/canvas2image.js">
     </script>
 
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+        integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <style>
     body {
         width: 100%;
@@ -55,6 +63,15 @@
         height: 87vh;
         width: 100%;
         border: 1px solid black;
+    }
+
+    .textFont {
+        font-family: 'Archivo', sans-serif;
+        font-size: 148%;
+        font-weight: 600;
+        color: #10464b;
+        letter-spacing: 2px;
+        margin-left: 1%;
     }
     </style>
 </head>
@@ -79,7 +96,10 @@
                 <div class="row">
                     <div class="col-9">
                         <!-- left side starts here -->
-                        <h4>FACEBOOK</h4>
+                        <div style="display:flex;">
+                            <i style="margin-top: 1%;" class="fa-brands fa-facebook fa-xl"></i>
+                            <span class="textFont">FACEBOOK</span>
+                        </div>
                         <div id="map" class="map-canvas"></div>
 
                         <!-- <div class="row">

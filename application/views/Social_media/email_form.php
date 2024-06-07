@@ -25,9 +25,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </script>
     <!-- Bootstrap ends here -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+        integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
     <style>
     body {
@@ -37,6 +42,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         /* overflow: hidden; */
         overflow-x: hidden;
         font-family: "Lato", sans-serif;
+    }
+
+    .textFont {
+        font-family: 'Archivo', sans-serif;
+        font-size: 148%;
+        font-weight: 600;
+        color: #10464b;
+        letter-spacing: 2px;
+        margin-top: -4%;
+        margin-left: 8%;
     }
 
 
@@ -98,8 +113,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-9" style="width: 85%">
                 <div style="background-color: #f5fdfd">
                     <div class="container">
-                        <div>
-                            <h4>EMAIL</h4>
+                        <div style="display:flex;">
+                            <i class="fa-solid fa-envelope fa-xl"></i>
+                            <span class="textFont">EMAIL</span>
                         </div>
                         <div>
                             <button class="btn btn-info btn-sm" id="toggleEmailLogTable">Log Information</button>
