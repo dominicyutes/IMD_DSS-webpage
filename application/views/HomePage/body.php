@@ -94,7 +94,7 @@
                     <h6 class="obsh4" style="font-family: 'Times New Roman', Times, serif; font-size: 20px">WEATHER
                         INFERENCE
                     </h6>
-                    <span title="Close" class="playBtnClasX" onClick="inferenceCloseX()">X</span>
+                    <!-- <span title="Close" class="playBtnClasX" onClick="inferenceCloseX()">X</span> -->
                 </div>
 
                 <div>
@@ -140,8 +140,8 @@
                         <label for="dropdown" style="margin-right: 10px;">Select an MC:</label>
                         <select id="dropdown" style="flex: 1; padding: 8px;" onchange="showSelectedSection()">
                             <option value="all">ALL MC's</option>
-                            <option value="mc-odisha">MC_Bhubaneswar</option>
-                            <option value="mc-delhi">MC Delhi</option>
+                            <option value="mc-odisha">MC Bhubaneswar</option>
+                            <option value="mc-delhi">RMC Delhi</option>
                             <option value="mc-hyd">MC Hyderabad</option>
                         </select>
                     </div>
@@ -1223,68 +1223,9 @@ function fetchAndDisplayData(ajaxUrl, selectedDate, weatherDataDiv) {
 }
 
 
-// function fetchName_hq() {
 
-//     var selectedDate = document.getElementById("start_date_odisha").value;
 
-//     $.ajax({
-//         url: "<?php echo site_url('Drawings/Drawing/fetch_name_odisha_hq'); ?>",
-//         type: "GET",
-//         data: {
-//             date: selectedDate
-//         },
-//         success: function (data) {
-//             // console.log(data);
-//             weatherDataDiv = document.getElementById("drawings_data_odisha");
-//             weatherDataDiv.innerHTML = "";
 
-//             if (data && data.length > 0) {
-//                 var checkboxContainer = document.createElement("div");
-
-//                 data.forEach(function (item, index) {
-//                     if (item && item.date && item.name && item.latitudes && item.longitudes) {
-//                         var checkbox = document.createElement("input");
-//                         checkbox.type = "checkbox";
-//                         checkbox.id = "checkbox_" + index;
-//                         checkbox.value = item.name;
-//                         checkbox.value = JSON.stringify(item);
-
-//                         var label = document.createElement("label");
-//                         label.textContent = item.name;
-//                         label.setAttribute("for", "checkbox_" + index);
-
-//                         checkboxContainer.appendChild(checkbox);
-//                         checkboxContainer.appendChild(label);
-//                         checkboxContainer.appendChild(document.createElement("br"));
-//                         // Attach event listener to checkbox
-//                         checkbox.addEventListener("change", function () {
-//                             if (checkbox.checked) {
-//                                 var latitudes = item.latitudes.replace(/[{}]/g, '').split(',').map(Number);
-//                                 var longitudes = item.longitudes.replace(/[{}]/g, '').split(',').map(Number);
-//                                 var markersData = JSON.parse(item.markers);
-
-//                                 // Draw polyline when checkbox is checked
-//                                 drawPolyline(latitudes, longitudes, item.name, markersData);
-//                             } else {
-//                                 // Remove polyline when checkbox is unchecked
-//                                 clearPolyline(item.name);
-//                             }
-//                         });
-//                     }
-//                 });
-
-//                 weatherDataDiv.appendChild(checkboxContainer);
-//             } else {
-//                 weatherDataDiv.textContent = "No drawings found for the selected date.";
-//             }
-//         },
-//         error: function (xhr, status, error) {
-//             console.error("Error fetching names:", error);
-//             weatherDataDiv = document.getElementById("drawings_data_odisha");
-//             weatherDataDiv.textContent = "Error fetching names. Please try again later.";
-//         }
-//     });
-// }
 
 document.getElementById("PassDrawings_bhu").addEventListener("click", function() {
     handleCheckboxes("<?php echo site_url('Drawings/Drawing/save_coordinates_to_hq_odisha'); ?>");
@@ -1327,52 +1268,6 @@ function handleCheckboxes(ajaxUrl) {
 
 
 
-// fetchName();
-
-
-
-// Function to draw a polyline on the map
-// function drawPolylines(latitudes, longitudes, name, markersData) {
-//         var existingPolyline = drawnPolylines.find(function (polyline) {
-//             return polyline.options.name === name;
-//         });
-
-//         if (existingPolyline) {
-//             existingPolyline.addTo(map);
-//         } else {
-//             var polylineCoords = [];
-//             for (var i = 0; i < latitudes.length; i++) {
-//                 polylineCoords.push([parseFloat(latitudes[i]), parseFloat(longitudes[i])]);
-//             }
-
-//             var polyline = L.polyline(polylineCoords, {
-//                 color: getRandomColor(),
-//                 weight: 3,
-//                 opacity: 0.7,
-//                 name: name
-//             });
-
-//             drawnPolylines.push(polyline);
-
-//             polyline.addTo(map);
-
-//             // Add markers if markersData is provided
-//             if (markersData && markersData.length > 0) {
-//                 markersData.forEach(function (marker) {
-//                     var latLng = L.latLng(marker.latitude, marker.longitude);
-//                     var markerText = marker.tooltipText;
-
-//                     // Create a marker with a tooltip
-//                     var customMarker = L.marker(latLng).addTo(map);
-//                     customMarker.bindTooltip(markerText, {
-//                         permanent: true,
-//                         direction: 'top',
-//                         opacity: 0.7
-//                     });
-//                 });
-//             }
-//         }
-//     }
 
 // Function to clear a specific polyline from the map
 function clearPolyline(name) {
