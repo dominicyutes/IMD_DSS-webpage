@@ -43,7 +43,7 @@
         </div>
 
         <a href="<?php echo base_url('D_Retrieval_Controller'); ?>"> Data Retrieval</a>
-
+        <a href="<?php echo base_url('ValueAddition/MaxTemp'); ?>"> Value Addition</a>
         <?php
         $name = '';
         if ($this->session->has_userdata('name')) {
