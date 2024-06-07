@@ -7,11 +7,35 @@ class Email_log_model extends CI_Model {
         $this->load->database();
     }
 
+    // for MC groups
+    public function get_email_groups() {
+        $this->db->select('groups, auto_email');
+        $query = $this->db->get('email_group');
+        return $query->result_array();
+    }
+
+    // for AJAX DD only mc_names
     public function get_mc_names() {
         $this->db->select('mc_name');
         $query = $this->db->get('email_group');
         return $query->result();
     }
+
+    public function get_email_groups_by_mc_name($mc_name) {
+      $this->db->select('groups, auto_email');
+      $this->db->where('mc_name', $mc_name);
+      $query = $this->db->get('email_group');
+      return $query->result_array();
+    }
+
+    //  inserting new MC-Grp-name to the DD ajax
+    public function insert_mc_name($mc_name) {
+        $data = array(
+            'mc_name' => $mc_name
+        );
+        return $this->db->insert('email_group', $data);
+    }
+
 
 
 

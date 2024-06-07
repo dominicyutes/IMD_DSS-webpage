@@ -108,7 +108,7 @@ class Facebook_post extends CI_Controller {
               ];
 
               try {
-                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBOzFvxcYqQ8Su7C80l6c6Oh9d8WW8kZB5miUNPNfSHZByS3eFL2NEUrS8JJJPK9HifEU5KvxT2yAzptHGcH5UnxD3Su8j368H6KZC5ikCgsHjgVGYPgxMOrzMWC3FPmaloK3Ml9Jp94fAMfp5v5UqNQxaxPASyRsDKvSzMeEFBVdvuk51B9FGL4bczUeHEOsDukfH2hcnCaycPkWYqAZD');
+                  $response = $fb->post('/me/photos', $linkData,'EAAaAq6N66YIBO0LHdyvY1KkE3EYX6QlsBKaH3PcIgG9sXZChKeQlZCZAkZBkzDotzI4rN3A6uOWITdrT91ZA6IZAEZBZCyx2NwStbXMc1OaQHL9sPf7cwwRwe1j4WaeLFT9mWN65djOSRvFB7PfIxRBzdmKzwSk7mSoKW3BswZCddzgH4VqZBcaZC9jNo7f6jwN9nyCJY9neuEQcewzUAFBwF7CCwVbpIM6bawZD');
 
               } catch(Facebook\Exceptions\FacebookResponseException $e) {
                   echo 'Graph returned an error: ' . $e->getMessage();
