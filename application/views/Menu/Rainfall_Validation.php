@@ -96,7 +96,7 @@
 
                             <div style="display: flex; justify-content: end;">
                                 <button id="toggleButton" style="background: none; border: none; cursor: pointer;">
-                                    <i class="fa fa-arrow-circle-right" id="arrowIcon" style="font-size: 20px;"></i>
+                                <img src="img/anime/swipe-left.gif" id="arrowIcon" style="width: 30px; height: 30px; margin-top: -50px;">
                                 </button>
                             </div>
                             <div id="reportrange"
@@ -170,7 +170,7 @@
                                 <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
                                     <label style="margin-bottom: 5px;">Regions:</label>
                                     <div style="display: flex; flex-direction: row; align-items: center;">
-                                        <select id="regionSelect" style="width: 200px; border-radius: 100px;">
+                                        <select id="regionSelect" style="width: 180px; border-radius: 100px;">
                                             <option value="">Select a Region</option>
                                             <?php foreach ($regionNames as $region): ?>
                                                 <option value="<?php echo $region['region_name']; ?>">
@@ -455,14 +455,14 @@
                             },
                         },
 
-                        {
-                            name: 'Value Added',
-                            data: data.value_added,
-                            color: '#333300',
-                            tooltip: {
-                                valueSuffix: ' (mm)'
-                            },
-                        },
+                        // {
+                        //     name: 'Value Added',
+                        //     data: data.value_added,
+                        //     color: '#333300',
+                        //     tooltip: {
+                        //         valueSuffix: ' (mm)'
+                        //     },
+                        // },
                     ],
                     // credits: {
                     //     enabled: true,
@@ -718,7 +718,7 @@
                         anchor: [0.5, 0.5],
                         anchorXUnits: "fraction",
                         anchorYUnits: "fraction",
-                        src: "<?php echo base_url(); ?>DATA/rainfll.png",
+                        src: "<?php echo base_url(); ?>img/anime/stations.png",
                         scale: 0.5
                     })
                 }),
@@ -821,23 +821,24 @@
             });
 
             document.getElementById('toggleButton').addEventListener('click', function () {
-                var toggleDiv = document.getElementById('toggleDiv');
-                var parentDiv = document.querySelector('.parent');
-                var arrowIcon = document.getElementById('arrowIcon');
-                var mapCanvas = document.getElementById('map_canvas').parentNode; // Get the parent div of the map_canvas
+    var toggleDiv = document.getElementById('toggleDiv');
+    var parentDiv = document.querySelector('.parent');
+    var arrowIcon = document.getElementById('arrowIcon');
+    var mapCanvas = document.getElementById('map_canvas').parentNode; // Get the parent div of the map_canvas
 
-                if (toggleDiv.style.display === 'none') {
-                    toggleDiv.style.display = 'flex';
-                    parentDiv.style.maxWidth = '100%';
-                    mapCanvas.style.width = '890px'; // Adjust the width of the map container
-                    arrowIcon.className = 'fa fa-arrow-circle-left';
-                } else {
-                    toggleDiv.style.display = 'none';
-                    parentDiv.style.maxWidth = '1300px';
-                    mapCanvas.style.width = '1140px'; // Adjust the width of the map container
-                    arrowIcon.className = 'fa fa-arrow-circle-right';
-                }
-            });
+    if (toggleDiv.style.display === 'none') {
+        toggleDiv.style.display = 'flex';
+        parentDiv.style.maxWidth = '100%';
+        mapCanvas.style.width = '890px'; // Adjust the width of the map container
+        arrowIcon.src = 'img/anime/swipe.gif'; // Change the image source
+    } else {
+        toggleDiv.style.display = 'none';
+        parentDiv.style.maxWidth = '1300px';
+        mapCanvas.style.width = '1140px'; // Adjust the width of the map container
+        arrowIcon.src = 'img/anime/swipe-left.gif'; // Change the image source
+    }
+});
+
 
             //         document.getElementById('fullscreen-button').addEventListener('click', function () {
             //     var mapElement = document.getElementById('map_canvas');

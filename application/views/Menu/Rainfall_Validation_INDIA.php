@@ -523,7 +523,7 @@
                     anchor: [0.5, 0.5],
                     anchorXUnits: "fraction",
                     anchorYUnits: "fraction",
-                    src: "<?php echo base_url(); ?>DATA/rainfll.png",
+                    src: "<?php echo base_url(); ?>img/anime/stations.png",
                     scale: 0.5
                 })
             })
