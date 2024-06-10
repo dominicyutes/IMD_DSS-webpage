@@ -7893,8 +7893,11 @@ let Model_Time_Title = document.getElementById("Model_Tim_Tit");
 let Model_Time_List = document.getElementById("Model_Tim_lis");
 // *******
 
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// PanelLayers and Models Time button click start here
+//------------------------------------------------------------------------------------------------+
 
-//PanelLayers and Models Time button click starts here
 const buttons = [{
         id: "synop",
         panel: panelLayers2,
