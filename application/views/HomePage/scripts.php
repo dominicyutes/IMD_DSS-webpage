@@ -204,6 +204,10 @@ function updateBackgroundColor() {
     }
 }
 
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// Dropdown for Macro And Obserevation starts here
+//------------------------------------------------------------------------------------------------+
 let modelNamesArr = ["", 'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship and Buoy'];
 
 // "Exposure","Mesolscale Forecast", "Medium Range"
@@ -494,7 +498,7 @@ let Parameters = [{
     }
 ];
 
-//metarParametersList
+//subParametersList
 let subParametersList = [{
         name: 'District Boundaries',
         category: 'Exposure Layers'
@@ -1935,9 +1939,18 @@ let subParametersList = [{
         category: '10m WIND Day 5'
     }
 ];
+//------------------------------------------------------------------------------------------------+
+// Dropdown for Macro And Obserevation ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
-//*********************************************************************** */
-//
+
+
+
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// Obserevation starts here
+//------------------------------------------------------------------------------------------------+
 
 //observation ModelNames-Dropdown    MA-ModelsArray
 let getModelNames = document.getElementById("modelNames");
@@ -2126,6 +2139,22 @@ function DatRem() {
         console.log("Element hidden Satellite");
     }
 }
+
+// 
+function obsCloseX() {
+    let map = document.getElementById('map');
+    map.style.width = '100%';
+
+    toggleObservation();
+    obs_Rem_();
+    weatherinference();
+}
+//------------------------------------------------------------------------------------------------+
+// Observation ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
+
+
 // Weather Inference Toggle
 function weatherinference() {
     let observationContainerFn = document.getElementById("ObservationContainer");
@@ -2179,18 +2208,7 @@ function toggleObservation() {
     observationContainerFn.classList.toggle('hidden');
     map.style.width = isHidden ? '83%' : '100%';
 }
-
 //
-
-// 
-function obsCloseX() {
-    let map = document.getElementById('map');
-    map.style.width = '100%';
-
-    toggleObservation();
-    obs_Rem_();
-    weatherinference();
-}
 
 function inferenceCloseX() {
     let map = document.getElementById('map');
@@ -2200,7 +2218,11 @@ function inferenceCloseX() {
 }
 
 
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
 // MACRO
+//------------------------------------------------------------------------------------------------+
+
 // MACRO create popup
 let create_Macro = document.querySelector('.create_Macro');
 let create_Macro_body = document.querySelector('.create_Macro_body_div');
@@ -2216,9 +2238,6 @@ function closCreatMac() {
     document.getElementById('mac_parameterNames').value = '';
     document.getElementById('mac_subparameter').value = '';
 }
-
-
-
 
 //View MACRO
 let view_Create_Macro = document.querySelector('.view_Create_Macro');
@@ -2726,12 +2745,6 @@ $(document).ready(function() {
     });
 });
 
-
-
-
-
-
-
 // + MAIN play btn
 function playMacro(macroname) {
     updateBackgroundColor();
@@ -3135,12 +3148,15 @@ function MacroPlusToggle(ulId) {
     }
 }
 
-
-//********************************************************* */
 //Macro Create Macro Toggle
 function createMacroForm() {
     create_Macro.style.display = "block";
 }
+
+//------------------------------------------------------------------------------------------------+
+// MACRO ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
 const mywmsIITM = L.tileLayer.wms(
     "http://103.215.208.107:8585/geoserver/cite/wms", {
@@ -3197,7 +3213,10 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
 //     cursor: true
 // }).setView([22.79459, 80.06406]);
 
-
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// TimeDimension Starts here
+//------------------------------------------------------------------------------------------------+
 let sampleLayerBtn;
 // Create a custom control button for model popup
 var SampleLayerBtn = L.Control.extend({
@@ -3227,8 +3246,6 @@ var SampleLayerBtn = L.Control.extend({
         return button;
     }
 });
-
-
 
 L.TimeDimension.Layer.ImageOverlay = L.TimeDimension.Layer.extend({
 
@@ -3506,8 +3523,6 @@ function toggleTimeDimensionControl() {
     });
 }
 
-
-
 // Create a custom control
 var timeDimensionControlButton = L.Control.extend({
     onAdd: function() {
@@ -3588,7 +3603,10 @@ function toggleTimeDimensionControlObs_Mac() {
         }
     }
 }
-//  time dimension ends here
+//------------------------------------------------------------------------------------------------+
+// time dimension ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+ 
 
 // Add the GeoJSON data to the map
 _dist_geojson = "DATA/INDIA_STATE.json";
@@ -4257,8 +4275,10 @@ function timeUpdateBoxTog() {
 
 
 
-
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
 // sideByside splitFunctioin
+//------------------------------------------------------------------------------------------------+
 let sideBySideControl = null;
 let sideBySideVisible = false;
 let activeLayers = 0;
@@ -4416,7 +4436,10 @@ const toggleControl = new ToggleControl({
     position: 'topleft'
 });
 toggleControl.addTo(map);
-//side-by-side ends here
+//------------------------------------------------------------------------------------------------+
+// side-by-side ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
 //searchControl
 L.Control.geocoder({
@@ -4450,7 +4473,10 @@ var controlsContainer = L.DomUtil.create('div', 'controls-container');
 // ************
 
 
-//
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// MArker
+//------------------------------------------------------------------------------------------------+
 // Add a marker for Delhi
 var delhiMarker = L.marker([28.6139, 77.2090]);
 delhiMarker.bindPopup("<b>Delhi</b>").openPopup();
@@ -5505,7 +5531,18 @@ X309.bindPopup("<b>X309</b>").openPopup();
 
 var X310 = L.marker([18.6400, 83.5400]);
 X310.bindPopup("<b>X310</b>").openPopup();
+//------------------------------------------------------------------------------------------------+
+// MArker ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 //
+
+
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// PanelLayers and Models Time button click starts here
+//------------------------------------------------------------------------------------------------+
+
 const overLayers = [
     // {
     //     group: "Lightning",
@@ -5545,8 +5582,6 @@ const overLayers = [
     //     ]
     // }
 ];
-
-
 
 //SYNOP
 const overLayers2 = [{
@@ -8065,11 +8100,16 @@ function handleClick(event) {
 buttons.forEach(btn => {
     document.getElementById(btn.id).addEventListener("click", handleClick);
 });
+//------------------------------------------------------------------------------------------------+
 // PanelLayers and Models Time button click ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
 
-// *******
-// Image
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// Legend Image and background color of navbar Starts here
+//------------------------------------------------------------------------------------------------+
 let metarTempLegendImage = document.querySelector('#metarTempImage');
 let metarDewPointLegendImage = document.querySelector('#metarDewPointImage');
 let metarVisibilityLegendImage = document.querySelector('#metarVisibilityImage');
@@ -9434,6 +9474,7 @@ function remLayOrAdclicked_10W_Day5(_context_layer, _layer_to_remove_add, unchec
 
 var getLayer_name;
 
+// Panel Layer check boxs starts here
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
     // console.log(_this, '_thiscgdghbg');
@@ -22723,8 +22764,16 @@ $("body").on("change", "input[type=checkbox]", function() {
     updateBackgroundColor();
 
 });
-//
+//------------------------------------------------------------------------------------------------+
+// Legend Image and background color of navbar ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
+
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// Layer name in footer starts here
+//------------------------------------------------------------------------------------------------+
 // _B - layer BOTTOM name
 $(document).ready(function() {
     let selectedLayers = [];
@@ -22757,11 +22806,17 @@ $(document).ready(function() {
         }
     });
 });
+//------------------------------------------------------------------------------------------------+
+//  Layer name in footer ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
 
 
-
-// ***********************************************************************
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// PanelLayers Legends function starts here
+//------------------------------------------------------------------------------------------------+
 function metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     METAR.innerHTML = "METAR"
     panelLayermetarTemp_lists.style.display = 'flex';
@@ -22777,9 +22832,6 @@ function metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
         </span>`
         );
     }
-
-
-
 
     panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
 
@@ -22886,8 +22938,6 @@ function metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, 
     </svg>`
 }
 
-
-
 function synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     SYNOP.innerHTML = "SYNOP"
     SYNOP_Row.style.display = 'block';
@@ -22916,7 +22966,6 @@ function synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     <span style="align-items: center; width:35px; height:18px; border-radius: 15%; background-color: #ff342e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 0;">45</span>
   </span>`
 }
-
 
 function synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     SYNOP.innerHTML = "SYNOP"
@@ -23522,6 +23571,11 @@ function mWINDDayLegendImage() {
     </g>
     </svg>`
 }
+//------------------------------------------------------------------------------------------------+
+// PanelLayers Legends function ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
+
 
 ///drag popup
 // model popup for legend starts here
