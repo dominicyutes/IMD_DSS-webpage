@@ -181,11 +181,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                         <!-- col-5 ends here -->
-                        <div class="col-5">
+                        <!-- <div class="col-5">
                             <div>
                                 <lable>Show Email-ID</lable><textarea id="show_email_id" style="width: 90%;"></textarea>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="row">
@@ -425,7 +425,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 dataType: 'json',
                 success: function(data) {
                     var menu = $('#dropdown-menu-2');
-                    menu.empty(); // Clear previous data
+                    menu.empty();
                     data.forEach(function(group) {
                         var autoEmailChecked = group.auto_email ? 'checked' : '';
                         var listItem = `
@@ -450,30 +450,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         });
     });
 
-    // 
-
     //Based on MC, MC group will be displayed 
-    $(document).ready(function() {
+    $('#dropdown-menu').on('click', 'a.dropdown-item', function(event) {
+        event.preventDefault();
+        var selectedText = $(this).text();
+        $('#getDD1Val').text(selectedText);
+
+        //
         $.ajax({
-            url: '<?php echo site_url('email/get_email_groups'); ?>',
+            url: '<?php echo base_url('Email/get_email_groups_by_mc_name'); ?>',
             type: 'GET',
+            data: {
+                mc_name: selectedText
+            },
             dataType: 'json',
             success: function(data) {
                 var menu = $('#dropdown-menu-3');
+                menu.empty();
                 data.forEach(function(group) {
                     var autoEmailChecked = group.auto_email ? 'checked' : '';
                     var listItem = `
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <input type="checkbox" id="heatwave-department">
-                                    <span>${group.groups}</span>
-                                    <input type="checkbox" id="auto-email-${group.groups}" ${autoEmailChecked}>
-                                    <label for="auto-email-${group.groups}">Auto Email On/Off</label>
-                                </a>
-                            </li>
-                        `;
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input type="checkbox" id="heatwave-department">
+                                <span>${group.groups}</span>
+                                <input type="checkbox" id="auto-email-${group.groups}" ${autoEmailChecked}>
+                                <label for="auto-email-${group.groups}">Auto Email On/Off</label>
+                            </a>
+                        </li>
+                    `;
                     menu.append(listItem);
                 });
+                console.log(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("Error fetching data: ", textStatus, errorThrown);
+                console.error("Response Text: ", jqXHR.responseText);
             }
         });
     });
