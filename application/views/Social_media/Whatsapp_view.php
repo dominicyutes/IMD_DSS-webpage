@@ -251,7 +251,7 @@
                         </div>
                         <!--  -->
 
-                        <!--  -->
+                        <!-- coldwave content -->
                         <div id="w_coldwave" style="display:none;">
                             Coldwave Alert: This is to inform you that ${mc_name} is experiencing a severe coldwave
                             today. As
