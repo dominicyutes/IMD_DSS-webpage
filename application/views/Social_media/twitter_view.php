@@ -142,9 +142,9 @@
                                 Choose MC
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">MC 1</a></li>
-                                <li><a class="dropdown-item" href="#">MC 2</a></li>
-                                <li><a class="dropdown-item" href="#">MC 3</a></li>
+                                <li><a class="dropdown-item" href="#">MC_Agartala</a></li>
+                                <li><a class="dropdown-item" href="#">MC_Ahmedabad</a></li>
+                                <li><a class="dropdown-item" href="#">MC_Amaravati</a></li>
                             </ul>
                         </div>
                         <!--  -->

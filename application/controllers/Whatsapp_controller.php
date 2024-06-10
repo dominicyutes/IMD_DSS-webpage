@@ -100,7 +100,7 @@ class Whatsapp_controller extends CI_Controller {
         $client = new UltraMsg\WhatsAppApi($ultramsg_token, $instance_id);
 
         $to = "8939535307";  // individual number
-        // $to = "120363288038792978@g.us"; //group ID
+        $to = "120363288038792978@g.us"; //group ID
 
         // Send text message
         $body = "welcome to whatsapp";
