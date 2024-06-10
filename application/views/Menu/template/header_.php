@@ -61,7 +61,7 @@
                 align-items: center;
                 justify-content: space-between;
                 height: 60px;
-                width: 100%;
+                width: 1190px;
                 position: relative;
                 margin-top: -11px;
                 margin-left: 0px;

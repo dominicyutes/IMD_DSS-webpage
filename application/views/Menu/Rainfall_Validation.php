@@ -455,14 +455,14 @@
                             },
                         },
 
-                        // {
-                        //     name: 'Value Added',
-                        //     data: data.value_added,
-                        //     color: '#333300',
-                        //     tooltip: {
-                        //         valueSuffix: ' (mm)'
-                        //     },
-                        // },
+                        {
+                            name: 'Value Added',
+                            data: data.value_added,
+                            color: '#333300',
+                            tooltip: {
+                                valueSuffix: ' (mm)'
+                            },
+                        },
                     ],
                     // credits: {
                     //     enabled: true,

@@ -87,6 +87,16 @@
         font-size: smaller;
         font-style: normal;
     }
+
+    .textFont {
+        font-family: 'Archivo', sans-serif;
+        font-size: 148%;
+        font-weight: 600;
+        color: #10464b;
+        letter-spacing: 2px;
+        margin-top: -1%;
+        margin-left: 1%;
+    }
     </style>
 </head>
 

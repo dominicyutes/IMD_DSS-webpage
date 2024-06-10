@@ -42,7 +42,6 @@
             </div>
         </div>
 
-        <a href="<?php echo base_url('D_Retrieval_Controller'); ?>"> Data Retrieval</a>
         <a href="<?php echo base_url('ValueAddition/MaxTemp'); ?>"> Value Addition</a>
         <?php
         $name = '';
@@ -59,7 +58,7 @@
                 <a href="<?php echo base_url('Email'); ?>">Email</a>
                 <a href="<?php echo base_url('Whatsapp_controller'); ?>">Whatsapp</a>
                 <a href="<?php echo base_url('Facebook_post'); ?>">Facebook FB</a>
-                <a href="<?php echo base_url('Twitter_post'); ?>">Twitter</a>
+                <a href="<?php echo base_url('Twitter_post'); ?>">X</a>
             </div>
         </div>
         <?php endif; ?>

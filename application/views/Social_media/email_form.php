@@ -71,6 +71,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         display: none;
     }
 
+    .textFont {
+        font-family: 'Archivo', sans-serif;
+        font-size: 148%;
+        font-weight: 600;
+        color: #10464b;
+        letter-spacing: 2px;
+        margin-top: -4%;
+        margin-left: 8%;
+    }
+
     /*  */
     /* table {
         width: 100%;
