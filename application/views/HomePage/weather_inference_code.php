@@ -229,20 +229,22 @@
 
             return gridLines;
         }
+        //------------------------------------------------------------------------------------------------+
+        // GRID LINE CODE END
+        //------------------------------------------------------------------------------------------------+
+        //################################################################################################+
     </script>
 
-    //------------------------------------------------------------------------------------------------+
-    // GRID LINE CODE END
-    //------------------------------------------------------------------------------------------------+
-    //################################################################################################+
 
 
-    //################################################################################################+
-    //------------------------------------------------------------------------------------------------+
-    // weather inference code start
-    //------------------------------------------------------------------------------------------------+
+
+
 
     <script>
+        //################################################################################################+
+        //------------------------------------------------------------------------------------------------+
+        // weather inference code start
+        //------------------------------------------------------------------------------------------------+
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("start_dates").addEventListener("change", fetchNames);
         });
@@ -306,16 +308,16 @@
                 const lon = geoJSONData.geometry.coordinates[0];
                 const fontSize = '20px';
                 const tooltipContent = `
-                    <div style="
-                        background-color: black; 
-                        color: white; 
-                        padding: 5px; 
-                        border: 1px solid white; 
-                        border-radius: 3px;
-                    ">
-                        <p style="font-size: ${fontSize}; margin: 0;">${userText}</p>
-                    </div>
-                `;
+                        <div style="
+                            background-color: black; 
+                            color: white; 
+                            padding: 5px; 
+                            border: 1px solid white; 
+                            border-radius: 3px;
+                        ">
+                            <p style="font-size: ${fontSize}; margin: 0;">${userText}</p>
+                        </div>
+                    `;
                 layer.bindTooltip(tooltipContent, {
                     permanent: true,
                     direction: 'top',
@@ -433,16 +435,16 @@
                     var customMarker = L.marker(latLng).addTo(map);
 
                     var tooltipContent = `
-                                            <div style="
-                                                background-color: black; 
-                                                color: white; 
-                                                padding: 5px; 
-                                                border: 1px solid white; 
-                                                border-radius: 3px;
-                                            ">
-                                                <p style="margin: 0; font-size: ${fontSize};">${markerText}</p>
-                                            </div>
-                                        `;
+                                                <div style="
+                                                    background-color: black; 
+                                                    color: white; 
+                                                    padding: 5px; 
+                                                    border: 1px solid white; 
+                                                    border-radius: 3px;
+                                                ">
+                                                    <p style="margin: 0; font-size: ${fontSize};">${markerText}</p>
+                                                </div>
+                                            `;
 
                     customMarker.bindTooltip(tooltipContent, {
                         permanent: true,
@@ -646,9 +648,9 @@
                 var div = L.DomUtil.create('div', 'leaflet-bar');
                 div.style.top = '-162px';
                 div.innerHTML = `
-                            <button id="freehandButton" style="font-family: 'Times New Roman'; background-color: white; border: 1px solid black; position: relative; ">Freehand</button>
-                            <input type="color" id="colorPicker" style="position: relative; display: none;width: 69px;" value="#ff0000">
-                        `;
+                                <button id="freehandButton" style="font-family: 'Times New Roman'; background-color: white; border: 1px solid black; position: relative; ">Freehand</button>
+                                <input type="color" id="colorPicker" style="position: relative; display: none;width: 69px;" value="#ff0000">
+                            `;
 
                 setTimeout(function () {
                     var freehandBtn = document.getElementById('freehandButton');
@@ -846,21 +848,22 @@
         })();
 
 
-
+        //------------------------------------------------------------------------------------------------+
+        // weather inference code end
+        //------------------------------------------------------------------------------------------------+
+        //################################################################################################+
 
     </script>
 
-    //------------------------------------------------------------------------------------------------+
-    // weather inference code end
-    //------------------------------------------------------------------------------------------------+
-    //################################################################################################+
 
-    //################################################################################################+
-    //------------------------------------------------------------------------------------------------+
-    // print code start
-    //------------------------------------------------------------------------------------------------+
+
+
 
     <script>
+        //################################################################################################+
+        //------------------------------------------------------------------------------------------------+
+        // print code start
+        //------------------------------------------------------------------------------------------------+
         //function generate_report_and_save() {
         $(".printbutton").click(function () {
             $(".printbutton").addClass('running');
@@ -927,10 +930,11 @@
 
         // css
         browserControl.getContainer().style.top = '-119px';
+        //------------------------------------------------------------------------------------------------+
+        // print code end
+        //------------------------------------------------------------------------------------------------+
+        //################################################################################################+
     </script>
-    //------------------------------------------------------------------------------------------------+
-    // print code end
-    //------------------------------------------------------------------------------------------------+
-    //################################################################################################+
+
 
 <?php } ?>
