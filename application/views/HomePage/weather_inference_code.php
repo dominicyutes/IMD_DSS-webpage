@@ -293,6 +293,61 @@
             });
         }
 
+        var markerDataArray = [];
+
+        // Leaflet draw event listener for drawing layers
+        map.on('draw:created', function (e) {
+            const layer = e.layer;
+            const userText = prompt('Enter Name:');
+
+            if (userText !== null) {
+                const geoJSONData = layer.toGeoJSON();
+                const lat = geoJSONData.geometry.coordinates[1];
+                const lon = geoJSONData.geometry.coordinates[0];
+                const fontSize = '20px';
+                const tooltipContent = `
+                    <div style="
+                        background-color: black; 
+                        color: white; 
+                        padding: 5px; 
+                        border: 1px solid white; 
+                        border-radius: 3px;
+                    ">
+                        <p style="font-size: ${fontSize}; margin: 0;">${userText}</p>
+                    </div>
+                `;
+                layer.bindTooltip(tooltipContent, {
+                    permanent: true,
+                    direction: 'top',
+                    opacity: 0.7
+                });
+
+                drawnItems.addLayer(layer);
+
+                markerDataArray.push({
+                    latitude: lat,
+                    longitude: lon,
+                    tooltipText: userText
+                });
+
+                // console.log(markerDataArray);
+
+                setTimeout(function () {
+                    layer.openTooltip();
+                    const tooltip = layer.getTooltip();
+                    const tooltipContainer = tooltip._container;
+
+                    L.DomUtil.addClass(tooltipContainer, 'leaflet-tooltip-draggable');
+                    L.DomEvent.on(tooltipContainer, 'mousedown', function () {
+                        L.DomUtil.addClass(tooltipContainer, 'leaflet-grab');
+                    });
+
+                    const tooltipDraggable = new L.Draggable(tooltipContainer, tooltipContainer);
+                    tooltipDraggable.enable();
+                }, 0);
+            }
+        });
+
 
 
 
@@ -378,16 +433,16 @@
                     var customMarker = L.marker(latLng).addTo(map);
 
                     var tooltipContent = `
-                                    <div style="
-                                        background-color: black; 
-                                        color: white; 
-                                        padding: 5px; 
-                                        border: 1px solid white; 
-                                        border-radius: 3px;
-                                    ">
-                                        <p style="margin: 0; font-size: ${fontSize};">${markerText}</p>
-                                    </div>
-                                `;
+                                            <div style="
+                                                background-color: black; 
+                                                color: white; 
+                                                padding: 5px; 
+                                                border: 1px solid white; 
+                                                border-radius: 3px;
+                                            ">
+                                                <p style="margin: 0; font-size: ${fontSize};">${markerText}</p>
+                                            </div>
+                                        `;
 
                     customMarker.bindTooltip(tooltipContent, {
                         permanent: true,
@@ -591,9 +646,9 @@
                 var div = L.DomUtil.create('div', 'leaflet-bar');
                 div.style.top = '-162px';
                 div.innerHTML = `
-                    <button id="freehandButton" style="font-family: 'Times New Roman'; background-color: white; border: 1px solid black; position: relative; ">Freehand</button>
-                    <input type="color" id="colorPicker" style="position: relative; display: none;width: 69px;" value="#ff0000">
-                `;
+                            <button id="freehandButton" style="font-family: 'Times New Roman'; background-color: white; border: 1px solid black; position: relative; ">Freehand</button>
+                            <input type="color" id="colorPicker" style="position: relative; display: none;width: 69px;" value="#ff0000">
+                        `;
 
                 setTimeout(function () {
                     var freehandBtn = document.getElementById('freehandButton');
