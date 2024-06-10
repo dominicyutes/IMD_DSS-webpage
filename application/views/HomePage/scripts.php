@@ -2612,9 +2612,9 @@ function showSavedMacroList() {
                             </div>
 
                             <?php if ($user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9"): ?>
-                                                        <div>
-                                                            <span style="padding-right: 10px;" onclick="tempCloseGrp(this)">X</span>
-                                                        </div>
+                                                            <div>
+                                                                <span style="padding-right: 10px;" onclick="tempCloseGrp(this)">X</span>
+                                                            </div>
                             <?php endif; ?>
                             
                         </div>
@@ -3890,7 +3890,13 @@ var baseMaps = [{
     },
 ];
 
+
+
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
 // styleEditor starts here
+//------------------------------------------------------------------------------------------------+
+
 var styleEditor = L.control.styleEditor({
     position: "topleft",
     useGrouping: false,
@@ -3959,118 +3965,9 @@ if (polylineDrawTool) {
     polylineDrawTool.style.width = '38px';
 }
 
-// map.on('draw:created', function(e) {
-//     console.log(e, "eeeeeeeeee");
-//     const layer = e.layer;
-//     console.log(layer, "layer");
-//     drawnItems.addLayer(layer);
-// });
-
-
-// map.on('draw:created', function (e) {
-//     const layer = e.layer;
-//     const userText = prompt('Enter Name:');
-
-//     if (userText !== null) {
-//         const geoJSONData = layer.toGeoJSON();
-
-//         // Replace "Feature" with the tool name
-//         geoJSONData.geometry.type = getToolName(layer);
-
-//         // Remove unnecessary properties from GeoJSON data
-//         const simplifiedGeoJSON = {
-//             type: geoJSONData.geometry.type,
-//             coordinates: geoJSONData.geometry.coordinates
-//         };
-
-//         // Create popup content with user text and simplified GeoJSON
-//         const popupContent = `<p>${userText}</p><p>${JSON.stringify(simplifiedGeoJSON)}</p>`;
-
-//         layer.bindPopup(popupContent);
-
-//         drawnItems.addLayer(layer);
-//     }
-// });
-
-// Assuming you have included Leaflet and Leaflet.Draggable libraries
-
-var markerDataArray = [];
-
-// Leaflet draw event listener for drawing layers
-map.on('draw:created', function(e) {
-    const layer = e.layer;
-    const userText = prompt('Enter Name:');
-
-    if (userText !== null) {
-        const geoJSONData = layer.toGeoJSON();
-        const lat = geoJSONData.geometry.coordinates[1];
-        const lon = geoJSONData.geometry.coordinates[0];
-        const fontSize = '20px';
-        const tooltipContent = `
-            <div style="
-                background-color: black; 
-                color: white; 
-                padding: 5px; 
-                border: 1px solid white; 
-                border-radius: 3px;
-            ">
-                <p style="font-size: ${fontSize}; margin: 0;">${userText}</p>
-            </div>
-        `;
-        layer.bindTooltip(tooltipContent, {
-            permanent: true,
-            direction: 'top',
-            opacity: 0.7
-        });
-
-        drawnItems.addLayer(layer);
-
-        markerDataArray.push({
-            latitude: lat,
-            longitude: lon,
-            tooltipText: userText
-        });
-
-        // console.log(markerDataArray);
-
-        setTimeout(function() {
-            layer.openTooltip();
-            const tooltip = layer.getTooltip();
-            const tooltipContainer = tooltip._container;
-
-            L.DomUtil.addClass(tooltipContainer, 'leaflet-tooltip-draggable');
-            L.DomEvent.on(tooltipContainer, 'mousedown', function() {
-                L.DomUtil.addClass(tooltipContainer, 'leaflet-grab');
-            });
-
-            const tooltipDraggable = new L.Draggable(tooltipContainer, tooltipContainer);
-            tooltipDraggable.enable();
-        }, 0);
-    }
-});
 
 
 
-
-
-
-// function getToolName(layer) {
-//     if (layer instanceof L.Marker) {
-//         return "Marker";
-//     } else if (layer instanceof L.Circle) {
-//         return "Circle";
-//     } else if (layer instanceof L.Rectangle) {
-//         return "Rectangle";
-//     } else if (layer instanceof L.Polygon) {
-//         return "Polygon";
-//     } else if (layer instanceof L.Polyline) {
-//         return "LineString";
-//     } else if (layer instanceof L.CircleMarker) {
-//         return "CircleMarker";
-//     } else {
-//         return "Unknown";
-//     }
-// }
 
 // Selector for the geocoding control
 var geocoderControl = document.querySelector('.leaflet-control-geocoder');
@@ -4091,6 +3988,12 @@ map.getContainer().appendChild(customButtonsContainer);
 L.control.mousePosition({
     position: 'bottomleft'
 }).addTo(map);
+
+
+//------------------------------------------------------------------------------------------------+
+// styleEditor end here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
 // Create a custom control button for MacroButton
 var PrintButton = L.Control.extend({
