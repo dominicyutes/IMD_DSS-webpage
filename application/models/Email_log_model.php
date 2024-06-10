@@ -18,14 +18,14 @@ class Email_log_model extends CI_Model {
     public function get_mc_names() {
         $this->db->select('mc_name');
         $query = $this->db->get('email_group');
-        return $query->result();
+        return $query->result_array();
     }
 
     public function get_email_groups_by_mc_name($mc_name) {
-      $this->db->select('groups, auto_email');
-      $this->db->where('mc_name', $mc_name);
-      $query = $this->db->get('email_group');
-      return $query->result_array();
+        $this->db->select('groups, auto_email');
+        $this->db->where('mc_name', $mc_name);
+        $query = $this->db->get('email_group');
+        return $query->result_array();
     }
 
     //  inserting new MC-Grp-name to the DD ajax
