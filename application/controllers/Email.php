@@ -31,6 +31,13 @@ class Email extends CI_Controller {
         $this->load->view('Social_media/email_form', $data);
     }
 
+    // email_group table
+    public function get_email_groups() {
+        $data['email_groups'] = $this->Email_log_model->get_email_groups();
+        echo json_encode($data['email_groups']);
+    }
+
+    // for ajax dropdown of mc_names
     public function fetch_mc_names() {
         $mc_names = $this->Email_log_model->get_mc_names();
         if (empty($mc_names)) {
@@ -40,6 +47,30 @@ class Email extends CI_Controller {
         }
         echo json_encode($mc_names);
     }
+
+    // add new MC-Grp-name to the DD ajax
+    public function add_mc_name() {
+        $mc_name = $this->input->post('mc_name');
+        if (!empty($mc_name)) {
+            $result = $this->Email_log_model->insert_mc_name($mc_name);
+            if ($result) {
+                echo json_encode(array('success' => true));
+            } else {
+                echo json_encode(array('success' => false, 'message' => 'Failed to add MC name.'));
+            }
+        } else {
+            echo json_encode(array('success' => false, 'message' => 'MC name is empty.'));
+        }
+    }
+
+
+
+    public function get_email_groups_by_mc_name() {
+    $mc_name = $this->input->get('mc_name');
+    $email_groups = $this->Email_log_model->get_email_groups_by_mc_name($mc_name);
+    echo json_encode($email_groups);
+    }
+
 
 
     public function send_email() {

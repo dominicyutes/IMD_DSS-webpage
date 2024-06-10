@@ -53,12 +53,15 @@
     </script>
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/canvas2image/canvas2image.js">
     </script>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
         integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <style>
     body {
         width: 100%;
@@ -66,6 +69,15 @@
         /* zoom: 80%; */
         overflow: hidden;
         font-family: "Lato", sans-serif;
+    }
+
+    .textFont {
+        font-family: 'Archivo', sans-serif;
+        font-size: 148%;
+        font-weight: 600;
+        color: #10464b;
+        letter-spacing: 2px;
+        margin-left: 1%;
     }
 
     #map {
@@ -130,9 +142,9 @@
                                 Choose MC
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">MC 1</a></li>
-                                <li><a class="dropdown-item" href="#">MC 2</a></li>
-                                <li><a class="dropdown-item" href="#">MC 3</a></li>
+                                <li><a class="dropdown-item" href="#">MC_Agartala</a></li>
+                                <li><a class="dropdown-item" href="#">MC_Ahmedabad</a></li>
+                                <li><a class="dropdown-item" href="#">MC_Amaravati</a></li>
                             </ul>
                         </div>
                         <!--  -->

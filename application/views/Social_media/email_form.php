@@ -25,13 +25,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </script>
     <!-- Bootstrap ends here -->
 
+    <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
         integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
+
 
     <style>
     body {
@@ -41,6 +42,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         /* overflow: hidden; */
         overflow-x: hidden;
         font-family: "Lato", sans-serif;
+    }
+
+    .textFont {
+        font-family: 'Archivo', sans-serif;
+        font-size: 148%;
+        font-weight: 600;
+        color: #10464b;
+        letter-spacing: 2px;
+        margin-top: -4%;
+        margin-left: 8%;
     }
 
 
@@ -59,6 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     .hidden {
         display: none;
     }
+
     .textFont {
         font-family: 'Archivo', sans-serif;
         font-size: 148%;
@@ -111,7 +123,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-9" style="width: 85%">
                 <div style="background-color: #f5fdfd">
                     <div class="container">
-                    <div style="display:flex;">
+                        <div style="display:flex;">
                             <i class="fa-solid fa-envelope fa-xl"></i>
                             <span class="textFont">EMAIL</span>
                         </div>
@@ -128,14 +140,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="row">
                         <!-- col-7 starts here -->
                         <div class="col-7">
-                            <div class="btn-group dropend">
+                            <div class="btn-group dropend" style="margin-top: 4%;">
                                 <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
-                                    style="margin-top: 22%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Choose MC
                                 </button>
                                 <ul id="dropdown-menu" class="dropdown-menu" style="height: 20rem; overflow-y: scroll;">
-                                    <!-- Dropdown items will be populated here -->
+                                    <!-- AJAX MC -->
                                 </ul>
+                                <textbox style="margin-left: 10%; background-color: #adf5f5;" id="getDD1Val"></textbox>
                             </div>
                         </div>
                         <!-- col-7 ends here -->
@@ -151,7 +164,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     style="margin-top: 22%;" data-bs-toggle="dropdown" aria-expanded="false">
                                     MC Groups
                                 </button>
-                                <ul class="dropdown-menu">
+                                <!-- <ul class="dropdown-menu">
                                     <li>
                                         <a class="dropdown-item" href="#">
                                             <input type="checkbox" id="heatwave-department">
@@ -160,31 +173,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label for="auto-email-heatwave">Auto Email On/Off</label>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <input type="checkbox" id="coldwave-department">
-                                            <label for="coldwave-department">Coldwave Department</label>
-                                            <input type="checkbox" id="auto-email-coldwave">
-                                            <label for="auto-email-coldwave">Auto Email On/Off</label>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <input type="checkbox" id="nowcast-department">
-                                            <label for="nowcast-department">Nowcast Department</label>
-                                            <input type="checkbox" id="auto-email-nowcast">
-                                            <label for="auto-email-nowcast">Auto Email On/Off</label>
-                                        </a>
-                                    </li>
+                                </ul> -->
+
+                                <ul id="dropdown-menu-3" class="dropdown-menu"
+                                    style="height: 20rem; overflow-y: scroll;">
                                 </ul>
                             </div>
                         </div>
                         <!-- col-5 ends here -->
                         <div class="col-5">
-                            <!-- <div>
-                                <lable>Show CC</lable>
-                                <textarea style="width: 90%;"></textarea>
-                            </div> -->
                             <div>
                                 <lable>Show Email-ID</lable><textarea id="show_email_id" style="width: 90%;"></textarea>
                             </div>
@@ -201,66 +198,88 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         checked />
                                     <label>None</label>
                                 </div>
-                                <div class="radioCls"><input type="radio" name="create_edit_option" value="new_group" />
-                                    <label>Create
-                                        Group</label>
-                                </div>
+
                                 <div class="radioCls"><input type="radio" name="create_edit_option"
                                         value="existing_group" />
-                                    <label>Existing
-                                        Group</label>
+                                    <label>Create Group/Existing Group</label>
                                 </div>
                             </div>
                         </div> <!-- radio btn ends here -->
 
-                        <!-- New Group radio btn BOX starts here -->
-                        <div id="newGroupIdDis" class="hidden" style="display: none;">
-                            <div style="margin-top: 1%;height: 4.25rem;width: 23rem;background-color: #cccccc;">
-                                <div style="margin-left: 3%;">
-                                    <div>New Group</div>
-                                    <div>
-                                        <input type="text" style="width:82%;" id="newGroupInput" />
-                                        <button class="btn btn-light btn-sm" type="submit" id="addButton">Add</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!-- New Group radio btn BOX ends here -->
-
 
                         <!-- Existing Group radio btn BOX starts here -->
                         <div id="existingGroupIdDis" class="hidden">
-                            <div style="margin-top: 1%;height: 11.25rem;width: 23rem;background-color: #cccccc;">
-                                <div style="margin-left: 3%;">
-                                    <div style="padding-top: 2%;">Existing Group</div>
-                                    <div>
-                                        <!-- Choose grp dropdown starts here -->
-                                        <div class="btn-group">
-                                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                Choose Group
-                                            </button>
-                                            <ul id="dropdown-menu-2" class="dropdown-menu"
-                                                style="height: 20rem; overflow-y: scroll;">
-                                            </ul>
-                                            <p style="margin-left: 10px;" id="show_mc"></p>
+                            <div class="row" style="display: flex;justify-content: space-evenly;">
+                                <div class="col-6" style=" margin-top: 1%;height: 18.25rem;width: 23rem;background-color:
+                                #cccccc;">
+                                    <div style="margin-left: 3%;">
+                                        <div style="padding-top: 2%;">Existing Group</div>
+                                        <div>
+                                            <!-- Choose grp dropdown starts here -->
+                                            <div class="btn-group">
+                                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Choose Group
+                                                </button>
+                                                <ul id="dropdown-menu-2" class="dropdown-menu"
+                                                    style="height: 20rem; overflow-y: scroll;">
+                                                </ul>
+                                                <textbox style="margin-left: 10%; background-color: #adf5f5;"
+                                                    id="getDD2Val"></textbox>
+                                            </div>
+                                            <!-- Choose grp dropdown ends here -->
+
+                                            <!-- addemail -->
+                                            <div style="margin-top:2%;">
+                                                <input id="add_email" type="text" style="width:82%;"
+                                                    placeholder="add email here" />
+                                                <button id="submit_email" class="btn btn-light btn-sm"
+                                                    type="submit">Add</button>
+                                            </div> <!-- addemail ends here-->
+                                            <hr />
+
+                                            <!-- new grp, class="hidden" style="display: none;" -->
+                                            <div id="newGroupIdDis">
+                                                <div style="background-color: #cccccc;">
+                                                    <div>
+                                                        <!-- style="margin-left: 3%;" -->
+                                                        <div>New Group</div>
+                                                        <div>
+                                                            <input type="text" style="width:82%;" id="newGroupInput" />
+                                                            <button class="btn btn-light btn-sm" type="submit"
+                                                                id="addButton">Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- addemail -->
+                                            <div style="margin-top:2%;">
+                                                <input id="add_email" type="text" style="width:82%;"
+                                                    placeholder="add email here" />
+                                                <button id="submit_email" class="btn btn-light btn-sm"
+                                                    type="submit">Add</button>
+                                            </div> <!-- addemail ends here-->
+                                            <hr>
+                                            <div>
+                                                <span>NOTE:</span>
+                                                <span>Add one email at once</span>
+                                            </div>
                                         </div>
-                                        <!-- Choose grp dropdown ends here -->
-
-                                        <!-- addemail -->
-                                        <div style="margin-top:2%;">
-                                            <input id="add_email" type="text" style="width:82%;"
-                                                placeholder="add email here" />
-                                            <button id="submit_email" class="btn btn-light btn-sm"
-                                                type="submit">Add</button>
-                                        </div> <!-- addemail ends here-->
-
                                     </div>
+                                </div>
+                                <!--  -->
+
+                                <!-- list of email displaying -->
+                                <div class="col-6"
+                                    style="margin-top: 1%;height: 16.25rem;width: 23rem;background-color: #cccccc;">
                                 </div>
                             </div>
                         </div><!-- Existing Group radio btn BOX ends here -->
 
                     </div> <!-- new group && existing group ends here -->
 
+                    <!-- Data content type -->
                     <div>
                         <div class="btn-group dropend">
                             <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
@@ -276,6 +295,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
 
+                    <!-- mail send btn -->
                     <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>">
                         <div class="row" style="margin-top: 2%;">
                             <div class="col-8">
@@ -347,6 +367,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 
     <script>
+    //email Log Information button fn
     document.getElementById("toggleEmailLogTable").addEventListener("click", function() {
         window.location = "<?php echo site_url('Email/show_logInfo'); ?>";
     });
@@ -354,19 +375,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     // radio btn for none, new grp, existing grp
     document.addEventListener('DOMContentLoaded', function() {
         const radios = document.querySelectorAll('input[name="create_edit_option"]');
-        const newGroupDiv = document.getElementById('newGroupIdDis');
         const existingGroupDiv = document.getElementById('existingGroupIdDis');
 
         radios.forEach(radio => {
             radio.addEventListener('change', function() {
-                if (this.value === 'new_group') {
-                    newGroupDiv.style.display = 'block';
-                    existingGroupDiv.style.display = 'none';
-                } else if (this.value === 'existing_group') {
-                    newGroupDiv.style.display = 'none';
+                if (this.value === 'existing_group') {
                     existingGroupDiv.style.display = 'block';
                 } else {
-                    newGroupDiv.style.display = 'none';
                     existingGroupDiv.style.display = 'none';
                 }
             });
@@ -374,8 +389,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     });
     // 
 
-    //using AJAX for dropdown for MC
+    //using AJAX for dropdown for Choose MC
     $(document).ready(function() {
+        // Fetch mc_names for Dropdown 1
         $.ajax({
             url: "<?php echo base_url('Email/fetch_mc_names'); ?>",
             method: "GET",
@@ -392,104 +408,76 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 console.error("Response Text: ", jqXHR.responseText);
             }
         });
-    });
 
+        // Handle selection from Dropdown 1
+        $('#dropdown-menu').on('click', 'a.dropdown-item', function(event) {
+            event.preventDefault();
+            var selectedText = $(this).text();
+            $('#getDD1Val').text(selectedText);
+
+            // Fetch and display relevant groups and auto_email based on the selected mc_name
+            $.ajax({
+                url: '<?php echo base_url('Email/get_email_groups_by_mc_name'); ?>',
+                type: 'GET',
+                data: {
+                    mc_name: selectedText
+                },
+                dataType: 'json',
+                success: function(data) {
+                    var menu = $('#dropdown-menu-2');
+                    menu.empty(); // Clear previous data
+                    data.forEach(function(group) {
+                        var autoEmailChecked = group.auto_email ? 'checked' : '';
+                        var listItem = `
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input type="checkbox" id="heatwave-department">
+                                <span>${group.groups}</span>
+                                <input type="checkbox" id="auto-email-${group.groups}" ${autoEmailChecked}>
+                                <label for="auto-email-${group.groups}">Auto Email On/Off</label>
+                            </a>
+                        </li>
+                    `;
+                        menu.append(listItem);
+                    });
+                    console.log(data); // Log the data to the console
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error("Error fetching data: ", textStatus, errorThrown);
+                    console.error("Response Text: ", jqXHR.responseText);
+                }
+            });
+        });
+    });
 
     // 
+
+    //Based on MC, MC group will be displayed 
     $(document).ready(function() {
-        $('#groupSelect').change(function() {
-            var selectedGroup = $(this).val();
-            if (selectedGroup !== '') {
-                $.ajax({
-                    url: 'Email/get_emails',
-                    type: 'POST',
-                    data: {
-                        group_name: selectedGroup
-                    },
-                    dataType: 'json',
-                    success: function(response) {
-                        if (Array.isArray(response)) {
-                            displayEmails(response);
-                        } else {
-                            console.error("Invalid response format:", response);
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error("AJAX error:", error);
-                    }
+        $.ajax({
+            url: '<?php echo site_url('email/get_email_groups'); ?>',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                var menu = $('#dropdown-menu-3');
+                data.forEach(function(group) {
+                    var autoEmailChecked = group.auto_email ? 'checked' : '';
+                    var listItem = `
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <input type="checkbox" id="heatwave-department">
+                                    <span>${group.groups}</span>
+                                    <input type="checkbox" id="auto-email-${group.groups}" ${autoEmailChecked}>
+                                    <label for="auto-email-${group.groups}">Auto Email On/Off</label>
+                                </a>
+                            </li>
+                        `;
+                    menu.append(listItem);
                 });
-            } else {
-                $('#emailList').empty();
             }
         });
     });
-
-    function displayEmails(emails) {
-        var emailList = $('#emailList');
-        emailList.empty();
-        emails.forEach(function(email) {
-            var listItem = $('<li>').text(email);
-            emailList.append(listItem);
-        });
-    }
-
-    window.addEventListener('load', function() {
-        document.getElementById('dropdown-menu-2').innerHTML = document.getElementById('dropdown-menu')
-            .innerHTML;
-    });
-
     //
-    document.getElementById('addButton').addEventListener('click', function() {
-        const newGroupValue = document.getElementById('newGroupInput').value;
-        if (newGroupValue) {
-            const newItem = `<li><a class="dropdown-item" href="#">${newGroupValue}</a></li>`;
-
-            // Add new item to dropdown-menu
-            document.getElementById('dropdown-menu').innerHTML += newItem;
-
-            // Add new item to dropdown-menu-2
-            document.getElementById('dropdown-menu-2').innerHTML += newItem;
-
-            // Clear the input field
-            document.getElementById('newGroupInput').value = '';
-        }
-    });
-
-    document.getElementById('dropdown-menu-2').addEventListener('click', function(event) {
-        if (event.target.classList.contains('dropdown-item')) {
-            document.getElementById('show_mc').textContent = event.target.textContent;
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('submit_email').addEventListener('click', function() {
-            const emailValue = document.getElementById('add_email').value.trim();
-            if (emailValue) {
-                const showEmailIdElement = document.getElementById('show_email_id');
-                const newEmail = `${emailValue};`; // Replacing 'x' with ';'
-                showEmailIdElement.value += newEmail + '\n';
-                // Clear the input field
-                document.getElementById('add_email').value = '';
-
-                // Add event listener to remove email address when 'x' symbol is clicked
-                const newEmailElement = document.createElement('div');
-                newEmailElement.textContent = newEmail;
-                newEmailElement.addEventListener('click', function() {
-                    // Remove the email element from the display
-                    this.parentNode.removeChild(this);
-
-                    // Remove the email from the textarea
-                    const emailToRemove = this.textContent.replace(';', '');
-                    showEmailIdElement.value = showEmailIdElement.value.replace(emailToRemove +
-                        ';\n', '');
-
-                    // Optionally, you can also update the value of 'show_email_id' to remove the deleted email
-                    // showEmailIdElement.value = showEmailIdElement.value.replace(emailToRemove + ';\n', '');
-                });
-                showEmailIdElement.appendChild(newEmailElement);
-            }
-        });
-    });
     </script>
 </body>
 
