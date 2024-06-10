@@ -22,7 +22,7 @@ class HomePage extends CI_Controller {
         $data['name'] = $this->session->userdata('name') ?? '';
         $data['user_id'] = $user_id;
 
-        $this->load->view('HomePage/homePage', $data);
+        $this->load->view('HomePage/weather_inference_code.php', $data);
 
         header("Access-Control-Allow-Origin: http://weather-imd-test.rimes.int");
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS");

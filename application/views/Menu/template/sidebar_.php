@@ -27,11 +27,6 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="<?php echo base_url('D_Retrieval_Controller'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == "D_Retrieval_Controller") ? "active" : ""; ?>"> <i class="nav-icon fas fa-th"></i>
-                    <p> Data Retrieval  </p>
-                </a>
-            </li>
             <li class="nav-item ">
                 <a href="<?php echo base_url('ValueAddition/MaxTemp'); ?>" class="nav-link <?php echo ($this->uri->segment(2) == "MaxTemp") ? "active" : ""; ?>"> <i class="nav-icon fas fa-th"></i>
                     <p> Value Addition <span class="right badge badge-danger">New</span> </p>
