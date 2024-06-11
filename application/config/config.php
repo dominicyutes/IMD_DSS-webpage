@@ -138,11 +138,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-<<<<<<< HEAD
-$config['composer_autoload'] = FALSE;
-=======
 $config['composer_autoload'] = 'vendor/autoload.php';
->>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
 
 /*
 |--------------------------------------------------------------------------
@@ -230,10 +226,6 @@ $config['allow_get_array'] = TRUE;
 |
 */
 $config['log_threshold'] = 0;
-<<<<<<< HEAD
-
-=======
->>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
 /*
 |--------------------------------------------------------------------------
 | Error Logging Directory Path
@@ -536,8 +528,4 @@ $config['rewrite_short_tags'] = FALSE;
 | Comma-separated:	'10.0.1.200,192.168.5.0/24'
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
-<<<<<<< HEAD
 $config['proxy_ips'] = '';
-=======
-$config['proxy_ips'] = '';
->>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
