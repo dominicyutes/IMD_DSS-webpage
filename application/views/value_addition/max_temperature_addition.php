@@ -247,6 +247,7 @@
 
         </section>
     </div>
+    
 <?php $this->load->view('Menu/template/footer_js_'); ?>
 
 <script src="<?php echo base_url(); ?>stylesheet/leaflet_1.7.1/leaflet.js"></script>

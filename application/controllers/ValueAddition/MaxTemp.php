@@ -169,7 +169,7 @@ class MaxTemp extends CI_Controller{
         // Contour File details
         $contour_date = $this->getDate();
         $num_padded = sprintf("%02d", $day_int);
-
+        //print_r($fcst_data_type);
         //$latest_update_info_arr = $this->VaModel->get_alert_latest_info($fcst_data_type, $fcst_date);
         //$latest_update_info_txt = "Latest updated: ".$latest_update_info_arr['max_datetime'].' by '.(($latest_update_info_arr['latest_user']==null)?'system':$latest_update_info_arr['latest_user']);
         $get_map_prop = $this->mapType($map_type_selected, $district_loc_id);
