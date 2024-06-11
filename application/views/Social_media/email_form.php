@@ -175,7 +175,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </li>
                                 </ul> -->
 
-                                <ul id="dropdown-menu-3" class="dropdown-menu"
+                                <ul id="dropdown-menu-2" class="dropdown-menu"
                                     style="height: 20rem; overflow-y: scroll;">
                                 </ul>
                             </div>
@@ -221,11 +221,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     data-bs-toggle="dropdown" aria-expanded="false">
                                                     Choose Group
                                                 </button>
-                                                <ul id="dropdown-menu-2" class="dropdown-menu"
+                                                <ul id="dropdown-menu-3" class="dropdown-menu"
                                                     style="height: 20rem; overflow-y: scroll;">
                                                 </ul>
                                                 <textbox style="margin-left: 10%; background-color: #adf5f5;"
-                                                    id="getDD2Val"></textbox>
+                                                    id="getDD3Val"></textbox>
                                             </div>
                                             <!-- Choose grp dropdown ends here -->
 
@@ -246,8 +246,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                         <div>New Group</div>
                                                         <div>
                                                             <input type="text" style="width:82%;" id="newGroupInput" />
-                                                            <button class="btn btn-light btn-sm" type="submit"
-                                                                id="addButton">Add</button>
+                                                            <!-- <button class="btn btn-light btn-sm" type="submit"
+                                                                id="addButton">Add</button> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -273,6 +273,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <!-- list of email displaying -->
                                 <div class="col-6"
                                     style="margin-top: 1%;height: 16.25rem;width: 23rem;background-color: #cccccc;">
+                                    <span id="disEmail">
+                                        imd@gmail.com
+                                    </span>
                                 </div>
                             </div>
                         </div><!-- Existing Group radio btn BOX ends here -->
@@ -309,11 +312,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
 
                         <div class="row">
-                            <lable>Message</lable>
-                            <textarea style="margin-left: 1%; width: 50%;"></textarea>
+                            <div class="col-8">
+                                <lable>Message</lable>
+                                <textarea style="margin-left: 1%; width: 50%;"></textarea>
+                            </div>
+                            <div class="col-4">
+                                <button style="margin-top: 2%;" type="submit" id="submitButton"
+                                    class="btn btn-success btn-sm">Submit</button>
+                            </div>
                         </div>
-                        <button style="margin-top: 2%;" type="submit" id="submitButton"
-                            class="btn btn-success btn-sm">Submit</button>
+
                     </form>
                     <br>
 
@@ -389,9 +397,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     });
     // 
 
-    //using AJAX for dropdown for Choose MC
+    // Fetch mc_names for Dropdown 1 (UI)
     $(document).ready(function() {
-        // Fetch mc_names for Dropdown 1
         $.ajax({
             url: "<?php echo base_url('Email/fetch_mc_names'); ?>",
             method: "GET",
@@ -408,49 +415,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 console.error("Response Text: ", jqXHR.responseText);
             }
         });
-
-        // Handle selection from Dropdown 1
-        $('#dropdown-menu').on('click', 'a.dropdown-item', function(event) {
-            event.preventDefault();
-            var selectedText = $(this).text();
-            $('#getDD1Val').text(selectedText);
-
-            // Fetch and display relevant groups and auto_email based on the selected mc_name
-            $.ajax({
-                url: '<?php echo base_url('Email/get_email_groups_by_mc_name'); ?>',
-                type: 'GET',
-                data: {
-                    mc_name: selectedText
-                },
-                dataType: 'json',
-                success: function(data) {
-                    var menu = $('#dropdown-menu-2');
-                    menu.empty();
-                    data.forEach(function(group) {
-                        var autoEmailChecked = group.auto_email ? 'checked' : '';
-                        var listItem = `
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <input type="checkbox" id="heatwave-department">
-                                <span>${group.groups}</span>
-                                <input type="checkbox" id="auto-email-${group.groups}" ${autoEmailChecked}>
-                                <label for="auto-email-${group.groups}">Auto Email On/Off</label>
-                            </a>
-                        </li>
-                    `;
-                        menu.append(listItem);
-                    });
-                    console.log(data); // Log the data to the console
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.error("Error fetching data: ", textStatus, errorThrown);
-                    console.error("Response Text: ", jqXHR.responseText);
-                }
-            });
-        });
     });
 
-    //Based on MC, MC group will be displayed 
+    //Based on MC, MC group will be displayed [MC Groups DD buttun, 2nd DD]
     $('#dropdown-menu').on('click', 'a.dropdown-item', function(event) {
         event.preventDefault();
         var selectedText = $(this).text();
@@ -465,7 +432,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             },
             dataType: 'json',
             success: function(data) {
-                var menu = $('#dropdown-menu-3');
+                var menu = $('#dropdown-menu-2');
                 menu.empty();
                 data.forEach(function(group) {
                     var autoEmailChecked = group.auto_email ? 'checked' : '';
@@ -489,7 +456,78 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             }
         });
     });
-    //
+
+    // Existing grp DD //this DD-3
+    $(document).ready(function() {
+        $('#dropdown-menu').on('click', 'a.dropdown-item', function(event) {
+            event.preventDefault();
+            var selectedText = $(this).text();
+            $('#getDD1Val').text(selectedText);
+
+            $.ajax({
+                url: '<?php echo base_url('Email/get_email_groups_by_mc_name'); ?>',
+                type: 'GET',
+                data: {
+                    mc_name: selectedText
+                },
+                dataType: 'json',
+                success: function(data) {
+                    var menu = $('#dropdown-menu-3');
+                    menu.empty();
+                    data.forEach(function(group) {
+                        var listItem = `
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <span>${group.groups}</span>
+                        </a>
+                    </li>
+                    `;
+                        menu.append(listItem);
+                    });
+
+                    // Attach click event handler to newly added items in #dropdown-menu-3
+                    $('#dropdown-menu-3').on('click', 'a.dropdown-item', function(event) {
+                        event.preventDefault();
+                        var groupText = $(this).find('span').text();
+                        $('#getDD3Val').text(groupText);
+
+                        // Fetch email based on selected group
+                        $.ajax({
+                            url: '<?php echo base_url('Email/get_email_by_group'); ?>',
+                            type: 'GET',
+                            data: {
+                                group: groupText
+                            },
+                            dataType: 'json',
+                            success: function(data) {
+                                // if (data.length > 0) {
+                                //     $('#disEmail').text(data[0]
+                                //         .email
+                                //     );
+                                // } else {
+                                //     $('#disEmail').text(
+                                //         'No email found');
+                                // }
+                            },
+                            error: function(jqXHR, textStatus,
+                                errorThrown) {
+                                console.error("Error fetching email: ",
+                                    textStatus, errorThrown);
+                                console.error("Response Text: ", jqXHR
+                                    .responseText);
+                            }
+                        });
+                    });
+
+                    console.log(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error("Error fetching data: ", textStatus, errorThrown);
+                    console.error("Response Text: ", jqXHR.responseText);
+                }
+            });
+        });
+    });
     </script>
 </body>
 

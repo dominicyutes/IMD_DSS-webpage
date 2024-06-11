@@ -31,11 +31,8 @@ class Email extends CI_Controller {
         $this->load->view('Social_media/email_form', $data);
     }
 
-    // email_group table
-    public function get_email_groups() {
-        $data['email_groups'] = $this->Email_log_model->get_email_groups();
-        echo json_encode($data['email_groups']);
-    }
+
+    // ***********************************//
 
     // for ajax dropdown of mc_names
     public function fetch_mc_names() {
@@ -48,31 +45,27 @@ class Email extends CI_Controller {
         echo json_encode($mc_names);
     }
 
-    // add new MC-Grp-name to the DD ajax
-    public function add_mc_name() {
-        $mc_name = $this->input->post('mc_name');
-        if (!empty($mc_name)) {
-            $result = $this->Email_log_model->insert_mc_name($mc_name);
-            if ($result) {
-                echo json_encode(array('success' => true));
-            } else {
-                echo json_encode(array('success' => false, 'message' => 'Failed to add MC name.'));
-            }
-        } else {
-            echo json_encode(array('success' => false, 'message' => 'MC name is empty.'));
-        }
-    }
 
-
-
+    // using for DD2 and DD3
     public function get_email_groups_by_mc_name() {
-    $mc_name = $this->input->get('mc_name');
-    $email_groups = $this->Email_log_model->get_email_groups_by_mc_name($mc_name);
-    echo json_encode($email_groups);
+       $mc_name = $this->input->get('mc_name');
+       $email_groups = $this->Email_log_model->get_email_groups_by_mc_name($mc_name);
+       echo json_encode($email_groups);
     }
 
+    // based Choose grp selection, email will be listed 
+    public function get_email_by_group() {
+        $group = $this->input->get('group');
+        $this->load->model('Email_log_model');
+        $emails = $this->Email_log_model->get_email_by_group($group);
+        echo json_encode($emails);
+    }
+
+    // ***********************************//
 
 
+
+    // **************  EMAIL LOG STARTS HERE *****************//
     public function send_email() {
       $subject = "Rainfall Urgent Weather Alert - Unprecedented Rainfall in New Delhi";
 
@@ -80,7 +73,7 @@ class Email extends CI_Controller {
     
       $from_address = "dominic@rimes.int";
       $to_addresses = ["dominicyutes@gmail.com"];
-    //   $to_addresses = ["dominicyutes@gmail.com", "dominicyutes05@gmail.com", "tarakesh@rimes.int"];
+      //   $to_addresses = ["dominicyutes@gmail.com", "dominicyutes05@gmail.com", "tarakesh@rimes.int"];
       $content = "<span>
                       <h3>Respected Authority,</h3>
                       <p>I trust this message finds you well. We bring to your immediate attention a matter of utmost significance concerning the current weather conditions in New Delhi.</p>
@@ -185,6 +178,6 @@ class Email extends CI_Controller {
         $emails = $this->Email_log_model->get_emails_by_group($group_name);
         echo json_encode($emails);
     }
-
+    // **************  EMAIL LOG ENDS HERE *****************//
     
 }
