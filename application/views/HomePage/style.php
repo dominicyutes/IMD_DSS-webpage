@@ -5,8 +5,8 @@ body {
     font-family: 'Quicksand', sans-serif;
     background: linear-gradient(109.6deg, rgb(44, 83, 131) 18.9%, rgb(95, 175, 201) 91.1%);
     position: relative;
-    height: 100vh;
-    width: 100%;
+    /* height: 100vh;
+    width: 100%; */
     zoom: 80%;
 }
 
@@ -115,7 +115,7 @@ body {
     }
 }
 
-/* observationToggle */
+/* observationToggle - tempMacroToggle */
 .hidden {
     display: none;
 }
@@ -297,13 +297,9 @@ body {
 }
 
 .listContainerMacro {
-    display: none;
     font-size: 11px;
 }
 
-.macroListCSS {
-    color: black;
-}
 
 .button-container {
     display: flex;
@@ -418,6 +414,8 @@ body {
     position: relative;
 }
 
+/*  */
+
 .customClass {
     float: none;
 }
@@ -439,6 +437,11 @@ body {
     cursor: pointer;
 }
 
+.leaflet-panel-layers-list.leaflet-control-layers-scrollbar {
+    overflow: hidden;
+}
+
+
 /* split css */
 .leaflet-sbs-range {
     position: absolute;
@@ -446,6 +449,59 @@ body {
     width: 99%;
     z-index: 999;
 }
+
+/*  */
+.UserName_Filter_Macro {
+    width: 35%;
+    position: fixed;
+    z-index: 1000;
+    display: none;
+    right: -201px;
+    top: 62px;
+    height: 0;
+}
+
+.UserName_Filter_Macro_body {
+    width: 264px;
+    height: 317px;
+    margin: 545px 0 0 0;
+    transform: translate(-50%, -50%);
+    background-color: #f3fbfe;
+    box-shadow: inset -1px 2px 10px 0 rgb(0 183 239 / 40%);
+    border: outset;
+    border-radius: 6px;
+    overflow: auto;
+}
+
+.UserName_Filter_Macro_body_div {
+    z-index: 999;
+    display: flex;
+    position: sticky;
+    top: 0;
+    font-family: Arial, sans-serif;
+    background-color: #00415a;
+    padding: 10px;
+    border-radius: 6px;
+    align-items: center;
+}
+
+.UserNameMacroLegend {
+    cursor: pointer;
+    color: #83ffee;
+    text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;
+    font-size: 17px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Archivo', sans-serif;
+}
+
+/*  */
 
 /* MACRO CSS starts here */
 .create_Macro {
@@ -484,7 +540,8 @@ body {
     align-items: center;
 }
 
-.macroLegend {
+.macroLegend,
+.createMacroX {
     cursor: pointer;
     color: #83ffee;
     text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;
@@ -609,6 +666,133 @@ body {
 
 /* Macro View Btn ends here */
 
+.model_MM {
+    left: 86%;
+    top: 56%;
+    height: 0;
+    width: 35%;
+    position: fixed;
+    z-index: 999;
+}
+
+.model-body_MM {
+    position: absolute;
+    width: 41%;
+    height: 50px;
+    margin: 315px 0 0 100px;
+    transform: translate(-50%, -50%);
+    background-color: #f3fbfe;
+    box-shadow: inset -1px 2px 10px 0 rgba(0, 0, 0, 0.404);
+    border-radius: 6px;
+    user-select: none;
+    overflow: auto;
+    position: relative;
+}
+
+/*  */
+.container {
+    display: flex;
+    height: 38px;
+    width: 100%;
+    background-color: #4b8bae;
+    font-family: 'Times New Roman';
+    justify-content: center;
+    position: relative;
+}
+
+.arrow-container {
+    width: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 7px;
+    background-color: white;
+    margin-right: 9px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.dropdown-container {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 7px;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: calc(-100% - 5px);
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 7px;
+    display: none;
+    z-index: 3;
+}
+
+.dropdown-content.active {
+    display: block;
+}
+
+#LayerCount {
+    background-color: #fff;
+    margin-left: 15px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+
+/*  */
+.modelForMacroGroup1 {
+    width: 35%;
+    height: 55vh;
+    position: fixed;
+    top: 238px;
+    left: 70px;
+    display: none;
+    z-index: 999;
+}
+
+.modelForMacroGroup2 {
+    position: absolute;
+    width: 286px;
+    height: 300px;
+    margin: 315px 0 0 100px;
+    transform: translate(-50%, -50%);
+    background-color: #f3fbfe;
+    box-shadow: inset -1px 2px 10px 0 rgba(0, 0, 0, 0.404);
+    border-radius: 6px;
+    user-select: none;
+    overflow: auto;
+    position: relative;
+    resize: both;
+}
+
+.modelForMacroGroupLegend {
+    cursor: pointer;
+    color: #83ffee;
+    text-shadow: 0 0 10px #7b7be7, 0 0 20px #8a8ad8, 0 0 30px #f5f5f5;
+    font-size: 17px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Archivo', sans-serif
+}
+
+/*  */
+
 /* Draggable Model PopUp for Legend */
 .model {
     width: 35%;
@@ -617,13 +801,12 @@ body {
     top: 238px;
     left: 70px;
     display: none;
-    z-index: 99999;
-    /* background-color: red; */
+    z-index: 999;
 }
 
 .model-body {
     position: absolute;
-    width: 250px;
+    width: 286px;
     height: 300px;
     margin: 315px 0 0 100px;
     transform: translate(-50%, -50%);
@@ -660,7 +843,7 @@ body {
     font-size: 21px;
     font-weight: bold;
     position: absolute;
-    top: 5px;
+    top: 8px;
     right: 0px;
     width: 30px;
     height: 30px;
@@ -693,6 +876,67 @@ body {
     color: #02275fd6;
 }
 
+/* layer bottom Name */
+.body_bottom {
+    display: flex;
+    height: 38px;
+    width: 100%;
+    background-color: #2e578647;
+    font-family: 'Times New Roman';
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.Layer_count {
+    background-color: #f4fcff;
+    margin-left: 15px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Layer_rightArrow {
+    height: 31px;
+    width: 37px;
+    background-color: #156e9d;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 6px
+}
+
+.Layer_leftArrow {
+    height: 31px;
+    width: 37px;
+    background-color: #156e9d;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 6px
+}
+
+.username {
+    color: black;
+    background-color: #f0f0f0;
+    padding: 6px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.logOut_btn {
+    color: black;
+    background-color: #f0f0f0;
+    padding: 6px;
+    /* font-style: italic; */
+    font-weight: bolder;
+}
+
 /* Draggable Model PopUp for Legend Ends here */
 
 .leaflet-panel-layers.expanded {
@@ -701,7 +945,7 @@ body {
 
 .leaflet-top.leaflet-right .leaflet-panel-layers:not(.compact) {
     margin: 7px;
-    height: 700px;
+    height: 350px;
     /* top: -39px; */
 }
 
@@ -752,14 +996,11 @@ body {
     font-size: 15px;
     /* right: 266px; */
 }
+
 .leaflet-tooltip {
     background-color: white;
     border: 1px solid white;
     border-radius: 3px;
     color: black;
 }
-/* .leaflet-bottom .leaflet-left{
-    top: 0;
-    left: 55px;
-} */
 </style>

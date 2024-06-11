@@ -1,4 +1,213 @@
 <script>
+//bg color List
+let bgClickedExposureLists = [];
+
+let bgClickedMetarTempLists = [];
+let bgClickedMetarDewPointLists = [];
+let bgClickedMetarVisibilityLists = [];
+let bgClickedMetarWindSpeedAndDirectionLists = [];
+
+let bgClickedSynopTempLists = [];
+let bgClickedSynopMeanSeaLevelLists = [];
+let bgClickedSynopCloudCoverLists = [];
+let bgClickedSynopGeopotentialHeightLists = [];
+let bgClickedSynopRelativeHumidityLists = [];
+let bgClickedSynopVisibilityLists = [];
+let bgClickedSynopWindSpeedAndDirectionLists = [];
+let bgClickedSynop3hRainfallLists = [];
+
+let bgClickedSOUNDING00UTCWINDLists = [];
+let bgClickedSOUNDING12UTCWINDLists = [];
+let bgClickedSOUNDING00UTCTEMPLists = [];
+let bgClickedSOUNDING12UTCTEMPLists = [];
+let bgClickedSOUNDING00UTCDEWPOINTLists = [];
+let bgClickedSOUNDING12UTCDEWPOINTLists = [];
+
+let bgClickedSHIPANDBUOYLists = [];
+
+let bgClickedRadarLists = [];
+
+let bgClickedLightningLists = [];
+
+let bgClickedSATELLITELists = [];
+
+let bgClickedWRFReflectivityLists = [];
+let bgClickedWRFlightningProductLists = [];
+let bgClickedWRFAccumlatedRainfallLists = [];
+let bgClickedlightningPotentialindexLists = [];
+let bgClickedNCUMRlightningProductLists = [];
+let bgClickedNCUMRWindGustLists = [];
+let bgClickedNCUMRRainfallLists = [];
+let bgClickedHRRR_SPHourlyDBZLists = [];
+let bgClickedHRRR_NEHourlyDBZLists = [];
+let bgClickedHRRR_NWHourlyDBZLists = [];
+let bgClickedEWRFMaxZLists = [];
+
+let bgClickedEWRFLightningLists = [];
+
+let bgClickedRainfallIntensityDay1Lists = [];
+let bgClickedRainfallIntensityDay2Lists = [];
+let bgClickedRainfallIntensityDay3Lists = [];
+let bgClickedRainfallIntensityDay4Lists = [];
+let bgClickedRainfallIntensityDay5Lists = [];
+let bgClickedMSLPDay1Lists = [];
+let bgClickedMSLPDay2Lists = [];
+let bgClickedMSLPDay3Lists = [];
+let bgClickedMSLPDay4Lists = [];
+let bgClickedMSLPDay5Lists = [];
+let bgClicked10mWINDDay1Lists = [];
+let bgClicked10mWINDDay2Lists = [];
+let bgClicked10mWINDDay3Lists = [];
+let bgClicked10mWINDDay4Lists = [];
+let bgClicked10mWINDDay5Lists = [];
+
+let bgArrayForMac = [bgClickedExposureLists, bgClickedMetarTempLists, bgClickedMetarDewPointLists,
+    bgClickedMetarVisibilityLists, bgClickedMetarWindSpeedAndDirectionLists, bgClickedSynopTempLists,
+    bgClickedSynopMeanSeaLevelLists, bgClickedSynopCloudCoverLists, bgClickedSynopGeopotentialHeightLists,
+    bgClickedSynopRelativeHumidityLists, bgClickedSynopVisibilityLists, bgClickedSynopWindSpeedAndDirectionLists,
+    bgClickedSynop3hRainfallLists, bgClickedSOUNDING00UTCWINDLists, bgClickedSOUNDING12UTCWINDLists,
+    bgClickedSOUNDING00UTCTEMPLists, bgClickedSOUNDING12UTCTEMPLists, bgClickedSOUNDING00UTCDEWPOINTLists,
+    bgClickedSOUNDING12UTCDEWPOINTLists, bgClickedSHIPANDBUOYLists, bgClickedRadarLists, bgClickedLightningLists,
+    bgClickedSATELLITELists, bgClickedWRFReflectivityLists, bgClickedWRFlightningProductLists,
+    bgClickedWRFAccumlatedRainfallLists, bgClickedlightningPotentialindexLists, bgClickedNCUMRlightningProductLists,
+    bgClickedNCUMRWindGustLists, bgClickedNCUMRRainfallLists, bgClickedHRRR_SPHourlyDBZLists,
+    bgClickedHRRR_NEHourlyDBZLists, bgClickedHRRR_NWHourlyDBZLists, bgClickedEWRFMaxZLists,
+    bgClickedEWRFLightningLists, bgClickedRainfallIntensityDay1Lists, bgClickedRainfallIntensityDay2Lists,
+    bgClickedRainfallIntensityDay3Lists, bgClickedRainfallIntensityDay4Lists, bgClickedRainfallIntensityDay5Lists,
+    bgClickedMSLPDay1Lists, bgClickedMSLPDay2Lists, bgClickedMSLPDay3Lists, bgClickedMSLPDay4Lists,
+    bgClickedMSLPDay5Lists, bgClicked10mWINDDay1Lists, bgClicked10mWINDDay2Lists, bgClicked10mWINDDay3Lists,
+    bgClicked10mWINDDay4Lists, bgClicked10mWINDDay5Lists
+];
+
+function updateBackgroundColor() {
+    //exposure bgClickedExposureLists
+    if (bgClickedExposureLists.length > 0) {
+        $("#exposure").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#exposure").css("background-color", '#eff4ff');
+    }
+
+    //metar bgClickedMetarLists
+    if (
+        bgClickedMetarTempLists.length === 0 &&
+        bgClickedMetarDewPointLists.length === 0 &&
+        bgClickedMetarVisibilityLists.length === 0 &&
+        bgClickedMetarWindSpeedAndDirectionLists.length === 0
+    ) {
+        $("#metar").css("background-color", '#eff4ff');
+    } else {
+        $("#metar").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //synop bgClickedSynopLists
+    if (
+        bgClickedSynopTempLists.length === 0 &&
+        bgClickedSynopMeanSeaLevelLists.length === 0 &&
+        bgClickedSynopCloudCoverLists.length === 0 &&
+        bgClickedSynopGeopotentialHeightLists.length === 0 &&
+        bgClickedSynopRelativeHumidityLists.length === 0 &&
+        bgClickedSynopVisibilityLists.length === 0 &&
+        bgClickedSynopWindSpeedAndDirectionLists.length === 0 &&
+        bgClickedSynop3hRainfallLists.length === 0
+    ) {
+        $("#synop").css("background-color", '#eff4ff');
+    } else {
+        $("#synop").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //SOUNDING bgClickedSoundingLists
+    if (
+        bgClickedSOUNDING00UTCWINDLists.length === 0 &&
+        bgClickedSOUNDING12UTCWINDLists.length === 0 &&
+        bgClickedSOUNDING00UTCTEMPLists.length === 0 &&
+        bgClickedSOUNDING12UTCTEMPLists.length === 0 &&
+        bgClickedSOUNDING00UTCDEWPOINTLists.length === 0 &&
+        bgClickedSOUNDING12UTCDEWPOINTLists.length === 0
+    ) {
+        $("#sounding").css("background-color", '#eff4ff');
+    } else {
+        $("#sounding").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //SHIPANDBUOY bgClickedSHIPANDBUOYLists
+    if (bgClickedSHIPANDBUOYLists.length > 0) {
+        $("#ship_and_buoy").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#ship_and_buoy").css("background-color", '#eff4ff');
+    }
+
+    //radar bgClickedRadarLists
+    if (bgClickedRadarLists.length > 0) {
+        $("#radar").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#radar").css("background-color", '#eff4ff');
+    }
+
+    //SATELLITE bgClickedSATELLITELists
+    if (bgClickedSATELLITELists.length > 0) {
+        $("#satellite").css("background-color", 'rgb(180, 194, 224)');
+    } else {
+        $("#satellite").css("background-color", '#eff4ff');
+    }
+
+    let bgchecknum = bgClickedLightningLists.length;
+    // lightning bgClickedLightningLists
+    if (bgClickedLightningLists.length > 0) {
+        $("#lightning").css("background-color", 'rgb(180, 194, 224)');
+        // console.log(bgchecknum, "bgchecknum-11");
+    } else {
+        $("#lightning").css("background-color", '#eff4ff');
+        // console.log(bgchecknum, "bgchecknum-22");
+    }
+
+    //mesolscale bgClickedSynopLists
+    if (
+        bgClickedWRFReflectivityLists.length === 0 &&
+        bgClickedWRFlightningProductLists.length === 0 &&
+        bgClickedWRFAccumlatedRainfallLists.length === 0 &&
+        bgClickedlightningPotentialindexLists.length === 0 &&
+        bgClickedNCUMRlightningProductLists.length === 0 &&
+        bgClickedNCUMRWindGustLists.length === 0 &&
+        bgClickedNCUMRRainfallLists.length === 0 &&
+        bgClickedHRRR_SPHourlyDBZLists.length === 0 &&
+        bgClickedHRRR_NEHourlyDBZLists.length === 0 &&
+        bgClickedHRRR_NWHourlyDBZLists.length === 0 &&
+        bgClickedEWRFMaxZLists.length === 0 &&
+        bgClickedEWRFLightningLists.length === 0
+    ) {
+        $("#mesolscale").css("background-color", '#eff4ff');
+    } else {
+        $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
+    }
+
+    //medium_range 
+    if (
+        bgClickedRainfallIntensityDay1Lists.length === 0 &&
+        bgClickedRainfallIntensityDay2Lists.length === 0 &&
+        bgClickedRainfallIntensityDay3Lists.length === 0 &&
+        bgClickedRainfallIntensityDay4Lists.length === 0 &&
+        bgClickedRainfallIntensityDay5Lists.length === 0 &&
+        bgClickedMSLPDay1Lists.length === 0 &&
+        bgClickedMSLPDay2Lists.length === 0 &&
+        bgClickedMSLPDay3Lists.length === 0 &&
+        bgClickedMSLPDay4Lists.length === 0 &&
+        bgClickedMSLPDay5Lists.length === 0 &&
+        bgClicked10mWINDDay1Lists.length === 0 &&
+        bgClicked10mWINDDay2Lists.length === 0 &&
+        bgClicked10mWINDDay3Lists.length === 0 &&
+        bgClicked10mWINDDay4Lists.length === 0 &&
+        bgClicked10mWINDDay5Lists.length === 0
+    ) {
+        $("#medium_range").css("background-color", '#eff4ff');
+    } else {
+        $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
+    }
+}
+
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// Dropdown for Macro And Obserevation starts here
+//------------------------------------------------------------------------------------------------+
 let modelNamesArr = ["", 'Metar', 'Synop', 'Radar', 'Satellite', 'Lightning', 'Sounding', 'Ship and Buoy'];
 
 // "Exposure","Mesolscale Forecast", "Medium Range"
@@ -289,7 +498,7 @@ let Parameters = [{
     }
 ];
 
-//metarParametersList
+//subParametersList
 let subParametersList = [{
         name: 'District Boundaries',
         category: 'Exposure Layers'
@@ -1730,241 +1939,18 @@ let subParametersList = [{
         category: '10m WIND Day 5'
     }
 ];
-
-//metarParametersList
-let Metar_00UTC = ['Temperature_00', 'Dew Point temperature_00', 'Visibility_00',
-    'Wind Speed And Direction_00'
-];
-
-let Metar_01UTC = ['Temperature_01', 'Dew Point temperature_02', 'Visibility_02',
-    'Wind Speed And Direction_02'
-];
-
-let Metar_02UTC = ['Temperature_02', 'Dew Point temperature_02', 'Visibility_02',
-    'Wind Speed And Direction_02'
-];
-
-let Metar_03UTC = ['Temperature_03', 'Dew Point temperature_03', 'Visibility_03',
-    'Wind Speed And Direction_03'
-];
-
-let Metar_04UTC = ['Temperature_04', 'Dew Point temperature_04', 'Visibility_04',
-    'Wind Speed And Direction_04'
-];
-
-let Metar_05UTC = ['Temperature_05', 'Dew Point temperature_05', 'Visibility_05',
-    'Wind Speed And Direction_05'
-];
-
-let Metar_06UTC = ['Temperature_06', 'Dew Point temperature_06', 'Visibility_06',
-    'Wind Speed And Direction_06'
-];
-
-let Metar_07UTC = ['Temperature_07', 'Dew Point temperature_07', 'Visibility_07',
-    'Wind Speed And Direction_07'
-];
-
-let Metar_08UTC = ['Temperature_08', 'Dew Point temperature_08', 'Visibility_08',
-    'Wind Speed And Direction_08'
-];
-
-let Metar_09UTC = ['Temperature_09', 'Dew Point temperature_09', 'Visibility_09',
-    'Wind Speed And Direction_09'
-];
-
-let Metar_10UTC = ['Temperature_10', 'Dew Point temperature_10', 'Visibility_10',
-    'Wind Speed And Direction_10'
-];
-
-let Metar_11UTC = ['Temperature_11', 'Dew Point temperature_11', 'Visibility_11',
-    'Wind Speed And Direction_11'
-];
-
-let Metar_12UTC = ['Temperature_12', 'Dew Point temperature_12', 'Visibility_12',
-    'Wind Speed And Direction_12'
-];
-
-let Metar_13UTC = ['Temperature_13', 'Dew Point temperature_13', 'Visibility_13',
-    'Wind Speed And Direction_13'
-];
-
-let Metar_14UTC = ['Temperature_14', 'Dew Point temperature_14', 'Visibility_14',
-    'Wind Speed And Direction_14'
-];
-
-let Metar_15UTC = ['Temperature_15', 'Dew Point temperature_15', 'Visibility_15',
-    'Wind Speed And Direction_15'
-];
-
-let Metar_16UTC = ['Temperature_16', 'Dew Point temperature_16', 'Visibility_16',
-    'Wind Speed And Direction_16'
-];
-
-let Metar_17UTC = ['Temperature_17', 'Dew Point temperature_17', 'Visibility_17',
-    'Wind Speed And Direction_17'
-];
-
-let Metar_18UTC = ['Temperature_18', 'Dew Point temperature_18', 'Visibility_18',
-    'Wind Speed And Direction_18'
-];
-
-let Metar_19UTC = ['Temperature_19', 'Dew Point temperature_19', 'Visibility_19',
-    'Wind Speed And Direction_19'
-];
-
-let Metar_20UTC = ['Temperature_20', 'Dew Point temperature_20', 'Visibility_20',
-    'Wind Speed And Direction_20'
-];
-
-let Metar_21UTC = ['Temperature_21', 'Dew Point temperature_21', 'Visibility_21',
-    'Wind Speed And Direction_21'
-];
-
-let Metar_22UTC = ['Temperature_22', 'Dew Point temperature_22', 'Visibility_22',
-    'Wind Speed And Direction_22'
-];
-
-let Metar_23UTC = ['Temperature_23', 'Dew Point temperature_23', 'Visibility_23',
-    'Wind Speed And Direction_23'
-];
+//------------------------------------------------------------------------------------------------+
+// Dropdown for Macro And Obserevation ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
 
 
-//SynopParametersList
-let Synop_00UTC = ['Temperature_00', 'Mean Sealevel Pressure_00', 'Cloud Cover_00',
-    'Geopotential Height_00',
-    'Relative Humidity_00',
-    'Visibility_00', 'Wind Speed And Direction_00', '3h Rainfall_00'
-];
 
-let Synop_03UTC = ['Temperature_03', 'Mean Sealevel Pressure_03', 'Cloud Cover_03',
-    'Geopotential Height_03',
-    'Relative Humidity_03',
-    'Visibility_03', 'Wind Speed And Direction_03', '3h Rainfall_03'
-];
-
-let Synop_06UTC = ['Temperature_06', 'Mean Sealevel Pressure_06', 'Cloud Cover_06',
-    'Geopotential Height_06',
-    'Relative Humidity_06',
-    'Visibility_06', 'Wind Speed And Direction_06', '3h Rainfall_06'
-];
-
-let Synop_09UTC = ['Temperature_09', 'Mean Sealevel Pressure_09', 'Cloud Cover_09',
-    'Geopotential Height_09',
-    'Relative Humidity_09',
-    'Visibility_09', 'Wind Speed And Direction_09', '3h Rainfall_09'
-];
-
-let Synop_12UTC = ['Temperature_12', 'Mean Sealevel Pressure_12', 'Cloud Cover_12',
-    'Geopotential Height_12',
-    'Relative Humidity_12',
-    'Visibility_12', 'Wind Speed And Direction_12', '3h Rainfall_12'
-];
-
-let Synop_15UTC = ['Temperature_15', 'Mean Sealevel Pressure_15', 'Cloud Cover_15',
-    'Geopotential Height_15',
-    'Relative Humidity_15',
-    'Visibility_15', 'Wind Speed And Direction_15', '3h Rainfall_15'
-];
-
-let Synop_18UTC = ['Temperature_18', 'Mean Sealevel Pressure_18', 'Cloud Cover_18',
-    'Geopotential Height_18',
-    'Relative Humidity_18',
-    'Visibility_18', 'Wind Speed And Direction_18', '3h Rainfall_18'
-];
-
-let Synop_21UTC = ['Temperature_21', 'Mean Sealevel Pressure_21', 'Cloud Cover_21',
-    'Geopotential Height_21',
-    'Relative Humidity_21',
-    'Visibility_21', 'Wind Speed And Direction_21', '3h Rainfall_21'
-];
-
-let SynopParametersList = [Synop_00UTC, Synop_03UTC, Synop_06UTC, Synop_09UTC, Synop_12UTC, Synop_15UTC,
-    Synop_18UTC,
-    Synop_21UTC
-];
-//
-
-
-//RadarParametersList
-let Radar_Products = ['Radar Reflectivity', 'Radar Animation'];
-//
-
-//SatelliteParameters
-let SatelliteParameters = ['Satellite Observation'];
-
-//SatelliteParametersLists
-let SatelliteObservation = ['TIR1', 'VIS', 'CTBT', 'Low Level Convergence', 'Upper Level Convergence',
-    'MID Level Shear',
-    'Vorticity at 200hPa', 'Vorticity at 500hPa', 'Vorticity at 700hPa', 'Vorticity at 850hPa'
-];
-//
-
-//LightningParameters
-let LightningParameter = ['Lightning'];
-
-//LightningParametersLists
-let LightningList = ['Last 00-05 min', 'Last 05-10 min', 'Last 10-15 min', 'ILDN Last 05 min',
-    'Nowcast Alert'
-];
-//
-
-//SoundingParameters
-let SoundingParameters = ['Sounding_00 UTC Wind', 'Sounding_12 UTC Wind', 'Sounding_00 UTC Temp',
-    'Sounding_12 UTC Temp', 'Sounding_00 UTC Dew Point', 'Sounding_12 UTC Dew Point'
-];
-
-//SoundingParametersLists
-let Sounding_00UTC_Wind = ['1000 hpa Wind_00', '850 hpa Wind_00', '700 hpa Wind_00', '500 hpa Wind_00',
-    '300 hpa Wind_00',
-    '200 hpa Wind_00', '100 hpa Wind_00', '50 hpa Wind_00',
-];
-
-let Sounding_12UTC_Wind = ['1000 hpa Wind_12', '850 hpa Wind_12', '700 hpa Wind_12', '500 hpa Wind_12',
-    '300 hpa Wind_12',
-    '200 hpa Wind_12', '100 hpa Wind_12', '50 hpa Wind_12',
-];
-
-let Sounding_00UTC_Temp = ['1000 hpa Temp_00', '850 hpa Temp_00', '700 hpa Temp_00', '500 hpa Temp_00',
-    '300 hpa Temp_00',
-    '200 hpa Temp_00', '100 hpa Temp_00', '50 hpa Temp_00',
-];
-
-let Sounding_12UTC_Temp = ['1000 hpa Temp_12', '850 hpa Temp_12', '700 hpa Temp_12', '500 hpa Temp_12',
-    '300 hpa Temp_12',
-    '200 hpa Temp_12', '100 hpa Temp_12', '50 hpa Temp_12',
-];
-
-let Sounding_00UTC_DewPoint = ['1000 hpa DewPoint_00', '850 hpa DewPoint_00', '700 hpa DewPoint_00',
-    '500 hpa DewPoint_00',
-    '300 hpa DewPoint_00',
-    '200 hpa DewPoint_00', '100 hpa DewPoint_00', '50 hpa DewPoint_00',
-];
-
-let Sounding_12UTC_DewPoint = ['1000 hpa DewPoint_12', '850 hpa DewPoint_12', '700 hpa DewPoint_12',
-    '500 hpa DewPoint_12',
-    '300 hpa DewPoint_12',
-    '200 hpa DewPoint_12', '100 hpa DewPoint_12', '50 hpa DewPoint_12',
-];
-
-let SoundingParametersLists = [Sounding_00UTC_Wind, Sounding_12UTC_Wind, Sounding_00UTC_Temp,
-    Sounding_12UTC_Temp,
-    Sounding_00UTC_DewPoint, Sounding_12UTC_DewPoint
-];
-//
-
-//Ship&BuoyParameters
-let ShipBuoyParameters = ['Ship And Buoy Observation'];
-
-//Ship&BuoyParametersLists
-let ShipAndBuoyObservation = ['00UTC', '01UTC', '02UTC', '03UTC', '04UTC', '05UTC', '06UTC', '07UTC',
-    '08UTC', '09UTC',
-    '10UTC',
-    '11UTC', '12UTC', '13UTC', '14UTC', '15UTC', '16UTC', '17UTC', '18UTC', '19UTC', '20UTC',
-    '21UTC', '22UTC',
-    '23UTC'
-];
-//
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// Obserevation starts here
+//------------------------------------------------------------------------------------------------+
 
 //observation ModelNames-Dropdown    MA-ModelsArray
 let getModelNames = document.getElementById("modelNames");
@@ -1990,19 +1976,28 @@ function showParameterNames(value) {
     } else {
         showSubParameterNames('');
     }
+    if (value === "Satellite" || value === "Radar") {
+        document.getElementById("TimNon").style.display = "contents";
+    } else {
+        DatRem();
+    }
+
 }
 
 //OBSERVATION thirdDropdown-SD
 function showSubParameterNames(value) {
-    let getsubparameterNames = document.getElementById("subparameter");
+    console.log(value, "value");
+    let getsubparameterNames = document.getElementById("subparameterpp");
     let pushsubparameterNames = '';
     var SecondDropdown = subParametersList.filter(x => x.category == value);
+    console.log(SecondDropdown, "SecondDropdown");
     for (let SD = 0; SD < SecondDropdown.length; SD++) {
         if (SecondDropdown[SD].name) {
             pushsubparameterNames += `<option>${SecondDropdown[SD].name}</option><br/><br/>`;
         }
     }
     getsubparameterNames.innerHTML = pushsubparameterNames;
+    console.log(getsubparameterNames, "jjjjjj")
 }
 
 //time UTC
@@ -2028,44 +2023,65 @@ let obstesting2;
 function obs_SubmitForm() {
     let model_Names = document.getElementById('modelNames').value;
     let parameter_Names = document.getElementById('parameterNames').value;
-    let sub_parameter = document.getElementById('subparameter').value;
+    let sub_parameter = document.getElementById('subparameterpp').value;
     let fromDate = document.getElementById('start_date').value;
     let hour_Select = document.getElementById('hourSelect').value;
     let minute_Select = document.getElementById('minuteSelect').value;
 
+    console.log(parameter_Names, "parameter_Names");
+
     let TimeForObs = hour_Select + ":" + minute_Select;
+    console.log(sub_parameter, "sub_parameter");
 
     if (sub_parameter === "Temperature_00") {
-        if (TimeForObs === "5:30") {
+        if (parameter_Names === "Metar 00UTC") {
             map.eachLayer(layer => {
                 if (layer instanceof L.TileLayer.WMS) {
-                    map.removeLayer(layer); // Remove all layers from the map
+                    map.removeLayer(layer);
                 }
             });
+
+            obstesting1;
+            let obstesting1Ready = false;
+
             obstesting1 = setInterval(function() {
                 map.addLayer(met00utc_tem);
                 document.getElementById('obsLayTxt').innerHTML = 'METAR 00UTC Temperature_00';
+                document.getElementById("METAR_mm").style.display = "block";
             });
+
 
             document.getElementById("obsLayerNamShw").style.display = "block";
         }
     }
 
-    if (sub_parameter === "00UTC") {
-        if (TimeForObs === "5:30") {
-            obstesting2 = setInterval(function() {
-                map.addLayer(ship_00utc);
-            });
+    // if (sub_parameter === "00UTC") {
+    //     if (parameter_Names === "Ship and Buoy") {
+    //         map.eachLayer(layer => {
+    //             if (layer instanceof L.TileLayer.WMS) {
+    //                 map.removeLayer(layer);
+    //             }
+    //         });
+
+    //         obstesting2;
+    //         let obstesting2Ready = false;
+
+    //         obstesting2 = setInterval(function() {
+    //             map.addLayer(ship_00utc);
+    //             document.getElementById('obsLayTxt').innerHTML = 'Ship & Buoy Observation - 00UTC';
+    //             document.getElementById("SHIPANDBUOY_mm").style.display = "block";
+    //         });
 
 
-            // let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
-            //     "Parameter: " + parameter_Names + "\n" +
-            //     "SubParameter: " + sub_parameter + "\n" +
-            //     "Start Date: " + fromDate + "\n" +
-            //     "Time: " + hour_Select + ":" + minute_Select;
-            // alert(message);
-        }
-    }
+
+    //         // let message = "OBSERVATION" + "\n" + "Model: " + model_Names + "\n" +
+    //         //     "Parameter: " + parameter_Names + "\n" +
+    //         //     "SubParameter: " + sub_parameter + "\n" +
+    //         //     "Start Date: " + fromDate + "\n" +
+    //         //     "Time: " + hour_Select + ":" + minute_Select;
+    //         // alert(message);
+    //     }
+    // }
 }
 
 function obs_Rem_() {
@@ -2087,6 +2103,7 @@ function obs_Rem_() {
         document.getElementById('minuteSelect').value = '';
         document.getElementById('obsLayTxt').innerHTML = '';
         document.getElementById("obsLayerNamShw").style.display = "none";
+        document.getElementById("METAR_mm").style.display = "none";
     }, 1000);
 
     setTimeout(function() {
@@ -2098,56 +2115,30 @@ function obs_Rem_() {
         document.getElementById('start_date').value = '';
         document.getElementById('hourSelect').value = '';
         document.getElementById('minuteSelect').value = '';
+        document.getElementById("SHIPANDBUOY_mm").style.display = "none";
     }, 1000);
 }
 
 function obsLayerNameX() {
+    obs_Rem_();
     document.getElementById("obsLayerNamShw").style.display = "none";
+    obs_Rem_();
+    map.eachLayer(layer => {
+        if (layer instanceof L.TileLayer.WMS) {
+            map.removeLayer(layer);
+        }
+    });
 }
 
-//MACRO toggle
-function macToggleObservation() {
-    let observationContainerFn = document.getElementById("ObservationContainer");
-    let isHiddenObser = observationContainerFn.classList.contains('hidden');
-    let test;
-    if (isHiddenObser) {
-        test = true;
+// 
+function DatRem() {
+    var TimNonElement = document.getElementById("TimNon");
 
-    } else {
-        observationContainerFn.classList.toggle('hidden');
-        test = true;
-    }
-    if (test) {
-        let macroContainerFn = document.getElementById("macroContainer");
-        let map = document.getElementById('map');
-        let isHidden = macroContainerFn.classList.contains('hidden');
-        macroContainerFn.classList.toggle('hidden');
-        map.style.width = isHidden ? '83%' : '100%';
+    if (TimNonElement) {
+        TimNonElement.style.display = "none";
+        console.log("Element hidden Satellite");
     }
 }
-
-//Observation-toggleObservation
-function toggleObservation() {
-    let macroContainerFn = document.getElementById("macroContainer");
-    let isHiddenMacro = macroContainerFn.classList.contains('hidden');
-    let test
-
-    if (isHiddenMacro) {
-        test = true;
-
-    } else {
-        macroContainerFn.classList.toggle('hidden');
-        test = true;
-    }
-    if (test) {
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let map = document.getElementById('map');
-        let isHidden = observationContainerFn.classList.contains('hidden');
-        observationContainerFn.classList.toggle('hidden');
-        map.style.width = isHidden ? '83%' : '100%';
-    }
-}
-//
 
 // 
 function obsCloseX() {
@@ -2156,19 +2147,96 @@ function obsCloseX() {
 
     toggleObservation();
     obs_Rem_();
+    weatherinference();
+}
+//------------------------------------------------------------------------------------------------+
+// Observation ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
+
+
+// Weather Inference Toggle
+function weatherinference() {
+    let observationContainerFn = document.getElementById("ObservationContainer");
+    let isHiddenObser = observationContainerFn.classList.contains('hidden');
+    let macroContainerFn = document.getElementById("macroContainer");
+    let isHiddenMacro = macroContainerFn.classList.contains('hidden');
+
+    // Deactivate other sections
+    observationContainerFn.classList.add('hidden');
+    macroContainerFn.classList.add('hidden');
+
+    let weatherinferencecont = document.getElementById("weatherinferencecontainer");
+    let map = document.getElementById('map');
+    let isHidden = weatherinferencecont.classList.contains('hidden');
+    weatherinferencecont.classList.toggle('hidden');
+    map.style.width = isHidden ? '83%' : '100%';
+}
+
+// MACRO Toggle
+function macToggleObservation() {
+    let observationContainerFn = document.getElementById("ObservationContainer");
+    let isHiddenObser = observationContainerFn.classList.contains('hidden');
+    let weatherinferenceFn = document.getElementById("weatherinferencecontainer");
+    let isHiddeninference = weatherinferenceFn.classList.contains('hidden');
+
+    // Deactivate other sections
+    observationContainerFn.classList.add('hidden');
+    weatherinferenceFn.classList.add('hidden');
+
+    let macroContainerFn = document.getElementById("macroContainer");
+    let map = document.getElementById('map');
+    let isHidden = macroContainerFn.classList.contains('hidden');
+    macroContainerFn.classList.toggle('hidden');
+    map.style.width = isHidden ? '83%' : '100%';
+}
+
+// Observation Toggle
+function toggleObservation() {
+    let macroContainerFn = document.getElementById("macroContainer");
+    let isHiddenMacro = macroContainerFn.classList.contains('hidden');
+    let weatherinferenceFn = document.getElementById("weatherinferencecontainer");
+    let isHiddeninference = weatherinferenceFn.classList.contains('hidden');
+
+    // Deactivate other sections
+    macroContainerFn.classList.add('hidden');
+    weatherinferenceFn.classList.add('hidden');
+
+    let observationContainerFn = document.getElementById("ObservationContainer");
+    let map = document.getElementById('map');
+    let isHidden = observationContainerFn.classList.contains('hidden');
+    observationContainerFn.classList.toggle('hidden');
+    map.style.width = isHidden ? '83%' : '100%';
+}
+//
+
+function inferenceCloseX() {
+    let map = document.getElementById('map');
+    map.style.width = '100%';
+
+    weatherinference();
 }
 
 
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
 // MACRO
+//------------------------------------------------------------------------------------------------+
+
 // MACRO create popup
 let create_Macro = document.querySelector('.create_Macro');
-let create_Macro_body = document.querySelector('.create_Macro_body');
-let create_Macro_close = document.querySelector('.create_Macro_body .macroLegend');
-//
+let create_Macro_body = document.querySelector('.create_Macro_body_div');
+// let create_Macro_close = document.querySelector('.macroLegend');
 
-//create-Macro-close
-create_Macro_close.onclick = () => {
-    create_Macro.style.display = 'none';
+function closCreatMac() {
+    console.log("close");
+    addedInfoContainer.innerHTML = '';
+    macroAddArr = [];
+    showSavedMacroList();
+    document.getElementById('macroNames').value = '';
+    document.getElementById('mac_modelNames').value = '';
+    document.getElementById('mac_parameterNames').value = '';
+    document.getElementById('mac_subparameter').value = '';
 }
 
 //View MACRO
@@ -2177,16 +2245,11 @@ let view_Create_Macro_body = document.querySelector('.view_Create_Macro_body');
 let view_Create_Macro_body_close = document.querySelector('.view_Create_Macro_body .viewMacroLegend');
 //
 
-// View - create - Macro - close
-view_Create_Macro_body_close.onclick = () => {
-    view_Create_Macro.style.display = 'none';
-}
-
 //macro ModelNames-Dropdown    MA-ModelsArray
 let getMacModelNames = document.getElementById("mac_modelNames");
 let pushMacModelNames = '';
 for (let MA = 0; MA < modelNamesArrMAC.length; MA++) {
-    pushMacModelNames += `<option class="test">${modelNamesArrMAC[MA]}</option><br/><br/>`;
+    pushMacModelNames += `<option>${modelNamesArrMAC[MA]}</option>`;
 }
 getMacModelNames.innerHTML = pushMacModelNames;
 
@@ -2218,465 +2281,523 @@ function macShowSubParameterNames(value) {
     macGetSubParameterNames.innerHTML = macPushSubParameterNames;
 }
 
-//Mac_ADD_Save_Disable
-function handleInputChange() {
-    const macroInputValue = document.getElementById("macroNames").value.trim();
-    const secondInputValue = document.getElementById("mac_modelNames").value.trim();
+let user_id = "<?php echo $user_id; ?>";
+console.log("User ID:", user_id);
 
-    let macAddBtn = document.getElementById("mac_addButton");
-    let macSubBtn = document.getElementById("mac_submitButton");
-    let macUpdBtn = document.getElementById("mac_updateButton");
-
-    let isEitherInputEmpty = macroInputValue === "" || secondInputValue === "";
-
-    if (isEitherInputEmpty) {
-        macAddBtn.disabled = true;
-    } else {
-        macAddBtn.disabled = false;
-    }
-
-    if (macroInputValue === "") {
-        macSubBtn.disabled = true;
-    } else {
-        macSubBtn.disabled = false;
-    }
-
-    if (macroInputValue === "") {
-        macUpdBtn.disabled = true;
-    } else {
-        macUpdBtn.disabled = false;
-    }
-}
-
-document.getElementById("macroNames").addEventListener("input", handleInputChange);
-document.getElementById("mac_modelNames").addEventListener("input", handleInputChange);
-
-handleInputChange();
-
-//Reason for MacGrp_Del
-function MacGrpDelW() {
-    let empName = document.getElementById("userName").value.trim();
-    let delReaMac = document.getElementById("deleteReason").value.trim();
-
-    let mac_Can_Btn = document.getElementById("macCanBtn");
-
-    let macCanBtn_E_r_N = empName === "" || delReaMac === "";
-
-    if (macCanBtn_E_r_N) {
-        mac_Can_Btn.disabled = true;
-    } else {
-        mac_Can_Btn.disabled = false;
-    }
-}
-
-document.getElementById("userName").addEventListener("input", MacGrpDelW);
-document.getElementById("deleteReason").addEventListener("input", MacGrpDelW);
-MacGrpDelW();
+let login_in_User = "<?php echo $name; ?>";
+console.log("$name:", login_in_User);
+//
 
 
-// AddButtonForm for MACRO
-let savedMacro = [];
-let addedTempMacro = {};
-let listOfMacro = [];
+
+// macroGroup username dialog box
+$(document).ready(function() {
+    //
+    $('.modelForMacroGroup1').hide();
+
+    $('#userFilterLink').click(function(e) {
+        e.preventDefault();
+        $('.modelForMacroGroup1').toggle();
+    });
+
+    $('.modelForMacroGroupLegend').click(function() {
+        $('.modelForMacroGroup1').hide();
+    });
+});
+// macroGroup username dialog box ENDS HERE
+
+
 let counter = 0;
-let editId;
-let editMacroGroupName;
+let macroAddArr = [];
+let editingMacroId = null;
 
-let addedInfoContainerDiv = document.getElementById("addedInfoContainer");
-
+//add btn
 function macAddForm() {
-    event.preventDefault();
-    let mac_macroNames = document.getElementById('macroNames').value;
-    let mac_model_Names = document.getElementById('mac_modelNames').value;
-    let mac_parameter_Names = document.getElementById('mac_parameterNames').value;
-    let mac_sub_parameter = document.getElementById('mac_subparameter').value;
-    let ulId = "listContainerMacro_" + counter++;
+    let macroName = document.getElementById("macroNames").value;
+    let modelName = document.getElementById("mac_modelNames").value;
+    let parameterName = document.getElementById("mac_parameterNames").value;
+    let subParameterName = document.getElementById("mac_subparameter").value;
 
-    const currentISTTime = new Date().toLocaleString("en-US", {
-        timeZone: "Asia/Kolkata"
-    });
-    let Fixed_ist_time = new Date().toLocaleString("en-US", {
-        timeZone: "Asia/Kolkata"
-    });
-
-    if (addedTempMacro && editMacroGroupName) {
-
-        addedTempMacro.listOfMacro.push({
-            ulId: ulId,
-            mac_macroNames: mac_macroNames,
-            mac_model_Names: mac_model_Names,
-            mac_parameter_Names: mac_parameter_Names,
-            mac_sub_parameter: mac_sub_parameter,
-            ist_time: currentISTTime // Add IST
-        })
+    if (editingMacroId !== null) {
+        let editedMacroIndex = macroAddArr.findIndex(macro => macro.ulId === editingMacroId);
+        if (editedMacroIndex !== -1) {
+            macroAddArr[editedMacroIndex].macroName = macroName;
+            macroAddArr[editedMacroIndex].modelName = modelName;
+            macroAddArr[editedMacroIndex].parameterName = parameterName;
+            macroAddArr[editedMacroIndex].subParameterName = subParameterName;
+            renderMacroItems(macroAddArr);
+        }
     } else {
-        listOfMacro.push({
-            ulId: ulId,
-            mac_macroNames: mac_macroNames,
-            mac_model_Names: mac_model_Names,
-            mac_parameter_Names: mac_parameter_Names,
-            mac_sub_parameter: mac_sub_parameter,
-            ist_time: currentISTTime, // Add IST
-            Fixed_ist_time: Fixed_ist_time // Add IST
-        })
-        addedTempMacro = {
-            macroGroupName: mac_macroNames,
-            listOfMacro: listOfMacro
+        let macroObject = {
+            ulId: counter++,
+            macroName: macroName,
+            modelName: modelName,
+            parameterName: parameterName,
+            subParameterName: subParameterName,
+            user_id: user_id
         };
+        macroAddArr.push(macroObject);
     }
-    console.log("listOfMacro:", listOfMacro);
-    console.log("addedTempMacro:", addedTempMacro);
 
-    // document.getElementById('macroNames').value = '';
+    console.log("Updated Macro Array:", macroAddArr);
+
     document.getElementById('mac_modelNames').value = '';
     document.getElementById('mac_parameterNames').value = '';
     document.getElementById('mac_subparameter').value = '';
 
-    viewAddedAndDeletedMacro();
-    handleInputChange();
+    renderMacroItems(macroAddArr);
 }
 
-function viewAddedAndDeletedMacro() {
-    let showAddedTempMacro = [];
-    addedTempMacro.listOfMacro.forEach(macro => {
-        let addedInfoDiv = `<div style="color: #1d334e;" class="macroListCSS" id="toggleDiv">
-        <div style="color: #1d334e;">
-        <span onclick="MacroPlusToggle('${macro.ulId}adddelete')">
-        <div><i class="fa-solid fa-plus fa-xs"></i> ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>&nbsp;&nbsp;</div>
-		<span title="Edit" onclick="editMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i></span>
-        <span title="Delete" onclick="deleteMacroLayer('${macro.ulId}')"><i class="fa-sharp fa-solid fa-trash fa-xs"></i></span>
-        
-        </div>
-        <ul id="${macro.ulId}adddelete" class="listContainerMacro">
-            <li>${macro.mac_model_Names}</li>
-            <li>${macro.mac_parameter_Names}</li>
-            <li>${macro.mac_sub_parameter}</li>
-        </ul>
-		
-    </div>`;
-        showAddedTempMacro.push(addedInfoDiv);
-    })
+//below add-submit btn content
+function renderMacroItems(macros) {
+    console.log("Received Macros:", macros);
 
-    addedInfoContainerDiv.innerHTML = showAddedTempMacro.join("");
+    addedInfoContainer.innerHTML = "";
+
+    macros.forEach(macro => {
+        if (macro &&
+            typeof macro === 'object' &&
+            macro.hasOwnProperty('macroName') &&
+            macro.hasOwnProperty('modelName') &&
+            macro.hasOwnProperty('parameterName') &&
+            macro.hasOwnProperty('subParameterName')) {
+            console.log("Current Macro:", macro);
+            let macroName = macro.macroName ? macro.macroName.trim() : '';
+            let modelName = macro.modelName ? macro.modelName.trim() : '';
+            let parameterName = macro.parameterName ? macro.parameterName.trim() : '';
+            let subParameterName = macro.subParameterName ? macro.subParameterName.trim() : '';
+            // let ulId = macro.ulId || '';
+            let ulId;
+            if (typeof macro.ulId !== 'undefined') {
+                ulId = macro.ulId;
+            }
+            // console.log(macroName, modelName, parameterName, subParameterName, ulId, "XXXXXX");
+            // 
+            if (macro) {
+                let addedInfoDiv = `<div style="color: #1d334e;" id="toggleDiv">
+                    <div style="color: #1d334e;">
+                        <span onclick="editMacroLayer(${ulId})">
+                            <i class="fa-solid fa-plus fa-xs"></i> ${macroName}: ${modelName}
+                        </span>&nbsp;&nbsp;
+                        <span title="Edit" onclick="editMacroLayer(${ulId})">
+                        <i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i></span>
+                        <span title="Delete" onclick="deleteMacroLayer(${ulId})">
+                            <i class="fa-sharp fa-solid fa-trash fa-xs"></i>
+                        </span>
+                    </div>
+
+                    <ul id="${ulId}" class="listContainerMacro">
+                        <li>${modelName}</li>
+                        <li>${parameterName}</li>
+                        <li>${subParameterName}</li>
+                    </ul>
+                    <input type="hidden" class="macroName" value="${macroName}">
+                    <input type="hidden" class="modelName" value="${modelName}">
+                    <input type="hidden" class="parameterName" value="${parameterName}">
+                    <input type="hidden" class="subParameterName" value="${subParameterName}">
+                </div>`;
+                console.log("Rendering Macro Item:", ulId, macroName, modelName);
+                addedInfoContainer.innerHTML += addedInfoDiv;
+            } else {
+                console.error("Missing or invalid properties in macro object:", macro);
+            }
+        }
+    });
 }
 
-//MacroGroupList Toggle 
-function MacroPlusToggle(ulId) {
-    let macListContainer = document.getElementById(ulId);
-    if (macListContainer.style.display === "none" || macListContainer.style.display === "") {
-        macListContainer.style.display = "block";
-    } else {
-        macListContainer.style.display = "none";
+//add-btn below content edit without DB
+function editMacroLayer(param) {
+    if (typeof param === 'number') {
+        let ulId = param;
+        editingMacroId = ulId;
+        let macroIndex = macroAddArr.findIndex(macro => macro.ulId === ulId);
+        if (macroIndex !== -1) {
+            let macro = macroAddArr[macroIndex];
+            console.log("Editing Macro Object:", macro);
+            document.getElementById('macroNames').value = macro.macroName;
+            document.getElementById('mac_modelNames').value = macro.modelName;
+            document.getElementById('mac_parameterNames').value = macro.parameterName;
+            document.getElementById('mac_subparameter').value = macro.subParameterName;
+        }
     }
 }
 
-// submitForm for MACRO
-function createActionButton(action, buttonClass, buttonId) {
-    let button = document.createElement("button");
-    button.innerText = action;
-    button.className = buttonClass;
-    button.id = buttonId;
-    console.log("action:" + action, "buttonClass:" + buttonClass, "buttonId:" + buttonId);
-    return button;
+let UpdateMAcListID; // this variable is for sending the id from fn editMacroLayerDB to fn updateForm
+
+// edit MacroGroup from DB
+function editMacroLayerDB(id, modelname, parametername, subparametername) {
+    handleFormBtn();
+    UpdateMAcListID = id;
+    console.log("ID_for UpdateBtn:", id);
+    console.log("Model Name:", modelname);
+    console.log("Parameter Name:", parametername);
+    console.log("Subparameter Name:", subparametername);
+
+    let modelDropdown = document.getElementById("mac_modelNames");
+    for (let i = 0; i < modelDropdown.options.length; i++) {
+        if (modelDropdown.options[i].value === modelname) {
+            modelDropdown.selectedIndex = i;
+            break;
+        }
+    }
+
+    let parameterDropdown = document.getElementById("mac_parameterNames");
+    for (let i = 0; i < parameterDropdown.options.length; i++) {
+        if (parameterDropdown.options[i].value === parametername) {
+            parameterDropdown.selectedIndex = i;
+            break;
+        }
+    }
+
+    let subparameterDropdown = document.getElementById("mac_subparameter");
+    for (let i = 0; i < subparameterDropdown.options.length; i++) {
+        if (subparameterDropdown.options[i].value === subparametername) {
+            subparameterDropdown.selectedIndex = i;
+            break;
+        }
+    }
+
 }
 
-function macSubmitForm() {
-    event.preventDefault();
-    let creatMacroVar = document.getElementById("creatRedit");
-    creatMacroVar.innerHTML = "Create Macro";
-    if (editMacroGroupName) {
-        let editAddMacro = savedMacro.find(x => x.macroGroupName == editMacroGroupName);
-        editAddMacro = addedTempMacro;
-    } else {
-        savedMacro.push(addedTempMacro);
-        console.log(savedMacro, "savedMacro___________savedMacro");
-    }
-    showSavedMacroList();
-    document.getElementById('macroNames').value = '';
-    document.getElementById('mac_modelNames').value = '';
-    document.getElementById('mac_parameterNames').value = '';
-    document.getElementById('mac_subparameter').value = '';
-    addedTempMacro = {};
-    listOfMacro = [];
-    editMacroGroupName = '';
-    addedInfoContainerDiv.innerHTML = ' '
-    if (view_Create_Macro.style.display == 'block') {
-        viewMacro(editMacroGroupName);
-    }
-    document.getElementById("mac_updateButton").style.display = "none";
-};
+// update btn - DB
+function updateForm() {
+    let macroName = document.getElementById("macroNames").value;
+    let modelName = document.getElementById("mac_modelNames").value;
+    let parameterName = document.getElementById("mac_parameterNames").value;
+    let subParameterName = document.getElementById("mac_subparameter").value;
 
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "<?php echo base_url('HomePage/updateMacro'); ?>", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
 
+    let data = {
+        id: UpdateMAcListID,
+        macroName: macroName,
+        modelName: modelName,
+        parameterName: parameterName,
+        subParameterName: subParameterName,
+        user_id: user_id
+    };
+    console.log(data, "data");
+
+    xhr.send(JSON.stringify(data));
+
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            console.log("Values updated successfully-200 from script.");
+        } else {
+            console.error("Error occurred while updating values. Status code: " + xhr.status);
+        }
+    };
+}
+
+// add save update cancel btn view logic
+function handleFormBtn() {
+    document.getElementById("addBtn").style.display = 'none';
+    document.getElementById("subBtn").style.display = 'none';
+    document.getElementById("updBtn").style.display = 'block';
+    document.getElementById("canBtn").style.display = 'block';
+}
+
+//cancel btn
+function cancelForm() {
+    document.getElementById("addBtn").style.display = 'block';
+    document.getElementById("subBtn").style.display = 'block';
+    document.getElementById("updBtn").style.display = 'none';
+    document.getElementById("canBtn").style.display = 'none';
+    closCreatMac();
+}
+
+function deleteMacroLayer(ulId) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "<?php echo base_url('HomePage/delete_macro_by_id'); ?>", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    let data = {
+        macroId: ulId
+    };
+
+    xhr.send(JSON.stringify(data));
+    console.log(ulId, "ulId");
+
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            console.log(xhr.responseText, "2");
+
+            showSavedMacroList();
+
+            closCreatMac();
+        }
+    };
+}
+
+//save btn- storing in DB
+function submitForm() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "<?php echo base_url('HomePage/submitForm'); ?>", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    let data = {
+        macroAddArr: macroAddArr
+    };
+    console.log(data, "submit-btn DATA");
+
+    xhr.send(JSON.stringify(data));
+
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            let addedInfoContainer = document.getElementById('addedInfoContainer');
+            console.log("Added Info Container:", addedInfoContainer);
+
+            if (addedInfoContainer) {
+                addedInfoContainer.innerHTML = '';
+            }
+
+            document.getElementById('macroNames').value = '';
+
+            showSavedMacroList();
+            console.log("Form submitted successfully.");
+        } else {
+            console.error("Error occurred while submitting the form.");
+        }
+    };
+}
+
+let selectedUserId = null; //Storing the user_id here from userFilteration
+let allMacros = null;
+
+// showing MacroGroup-Name
 function showSavedMacroList() {
     let showAllCreatedMacro = document.getElementById("showCreatedMacro");
-    let showSavedMacro = [];
-    savedMacro.forEach(macro => {
-        if (macro) {
-            showInfoDiv = `<div class="createMacro">
-                <div><i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;""></i>&nbsp;
-                <span style="font-family: 'Times New Roman, sans-serif;font-size: 15px;font-weight: 600;color: #1d334e;"> ${macro.macroGroupName}</span>
-                </div>
+    showAllCreatedMacro.innerHTML = "";
 
-                <div class="saveMacroView">
-                <button title="Play" class="play-button" onclick="playMacro('${macro.macroGroupName}')">
-                <i class="fa-solid fa-play fa-xs"></i></button>
+    let xhr = new XMLHttpRequest();
 
-                <button title="View" class="view-button" onclick="viewMacro('${macro.macroGroupName}')">
-                <i class="fa-solid fa-eye fa-xs"></i></button>
+    if (user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9") {
+        xhr.open("GET", "<?php echo base_url('HomePage/getAllMacros'); ?>", true); // superAdmin MACROGROUP-Name view
+    } else {
+        xhr.open("GET", "<?php echo base_url('HomePage/getUserMacros?user_id=') ?>" + user_id,
+            true); // userPrespective MACROGROUP-Name view
+    }
 
-                <button title="Edit" class="edit-button" onclick="editMacro('${macro.macroGroupName}')">
-                <i class="fa-solid fa-pen-to-square fa-xs"></i></button>
 
-                <button title="Delete" class="delete-button" onclick="deleteMacro('${macro.macroGroupName}')">
-                <i class="fa-solid fa-trash fa-xs"></i></button>
-                </div>
-                <div><h6 style="font-family: 'Times New Roman'; font-size: 15px;">${macro.listOfMacro[0].Fixed_ist_time}</h6>
-                </div></div>
-                `;
-            showSavedMacro.push(showInfoDiv);
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            let macros = JSON.parse(xhr.responseText);
+
+            let uniqueMacroNames = new Set();
+
+            if (allMacros) {
+                macros = macros
+            } else {
+                if (selectedUserId) {
+                    macros = macros.filter(x => x.user_id == selectedUserId);
+                    // console.log("1");
+                } else {
+                    macros = macros.filter(x => x.user_id == user_id);
+                    // console.log("2");
+                }
+            }
+
+            macros.forEach(macro => {
+                // console.log(macro, "macro");
+                if (!uniqueMacroNames.has(macro.macroname)) {
+                    let showInfoDiv = `<div class="createMacro">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fa-solid fa-asterisk fa-beat fa-xs" style="color: #1d334e;"></i>&nbsp;
+                                <span style="font-family: 'Times New Roman, sans-serif;font-size: 15px;font-weight: 600;color: #1d334e;">
+                                    ${macro.macroname}
+                                </span>
+                            </div>
+
+                            <?php if ($user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9"): ?>
+                                                            <div>
+                                                                <span style="padding-right: 10px;" onclick="tempCloseGrp(this)">X</span>
+                                                            </div>
+                            <?php endif; ?>
+                            
+                        </div>
+
+
+                        <div class="saveMacroView">
+                            <button title="Play" class="play-button" onclick="playMacro('${macro.macroname}')">
+                                <i class="fa-solid fa-play fa-xs"></i>
+                            </button>
+
+                            <button title="View" class="view-button" onclick="viewMacro('${macro.macroname}')">
+                                <i class="fa-solid fa-eye fa-xs"></i>
+                            </button>
+
+                            <button title="Edit" class="edit-button" onclick="editMacro('${macro.macroname}')">
+                                <i class="fa-solid fa-pen-to-square fa-xs"></i>
+                            </button>
+
+                            <button title="Delete" class="delete-button" onclick="alertDeleteMacro('${macro.macroname}')">
+                                <i class="fa-solid fa-trash fa-xs"></i>
+                            </button> 
+                        </div>
+                    </div>`;
+                    showAllCreatedMacro.innerHTML += showInfoDiv;
+                    uniqueMacroNames.add(macro.macroname); // Add the macro name to the set
+                }
+            });
         } else {
-            console.log('Details not found for:', newButton.id);
+            console.error("Error occurred while fetching saved macros.");
         }
-    })
-    showAllCreatedMacro.innerHTML = showSavedMacro.join('');
+    };
 
-    if (showSavedMacro.length > 6) {
-        showAllCreatedMacro.classList.add('overflow-y-scroll');
-    } else {
-        showAllCreatedMacro.classList.remove('overflow-y-scroll');
-    }
+    xhr.send();
 }
-// 
+showSavedMacroList();
 
-//
-//bg color List
-let bgClickedExposureLists = [];
-
-let bgClickedMetarTempLists = [];
-let bgClickedMetarDewPointLists = [];
-let bgClickedMetarVisibilityLists = [];
-let bgClickedMetarWindSpeedAndDirectionLists = [];
-
-let bgClickedSynopTempLists = [];
-let bgClickedSynopMeanSeaLevelLists = [];
-let bgClickedSynopCloudCoverLists = [];
-let bgClickedSynopGeopotentialHeightLists = [];
-let bgClickedSynopRelativeHumidityLists = [];
-let bgClickedSynopVisibilityLists = [];
-let bgClickedSynopWindSpeedAndDirectionLists = [];
-let bgClickedSynop3hRainfallLists = [];
-
-let bgClickedSOUNDING00UTCWINDLists = [];
-let bgClickedSOUNDING12UTCWINDLists = [];
-let bgClickedSOUNDING00UTCTEMPLists = [];
-let bgClickedSOUNDING12UTCTEMPLists = [];
-let bgClickedSOUNDING00UTCDEWPOINTLists = [];
-let bgClickedSOUNDING12UTCDEWPOINTLists = [];
-
-let bgClickedSHIPANDBUOYLists = [];
-
-let bgClickedRadarLists = [];
-
-let bgClickedLightningLists = [];
-
-let bgClickedSATELLITELists = [];
-
-let bgClickedWRFReflectivityLists = [];
-let bgClickedWRFlightningProductLists = [];
-let bgClickedWRFAccumlatedRainfallLists = [];
-let bgClickedlightningPotentialindexLists = [];
-let bgClickedNCUMRlightningProductLists = [];
-let bgClickedNCUMRWindGustLists = [];
-let bgClickedNCUMRRainfallLists = [];
-let bgClickedHRRR_SPHourlyDBZLists = [];
-let bgClickedHRRR_NEHourlyDBZLists = [];
-let bgClickedHRRR_NWHourlyDBZLists = [];
-let bgClickedEWRFMaxZLists = [];
-
-let bgClickedEWRFLightningLists = [];
-
-let bgClickedRainfallIntensityDay1Lists = [];
-let bgClickedRainfallIntensityDay2Lists = [];
-let bgClickedRainfallIntensityDay3Lists = [];
-let bgClickedRainfallIntensityDay4Lists = [];
-let bgClickedRainfallIntensityDay5Lists = [];
-let bgClickedMSLPDay1Lists = [];
-let bgClickedMSLPDay2Lists = [];
-let bgClickedMSLPDay3Lists = [];
-let bgClickedMSLPDay4Lists = [];
-let bgClickedMSLPDay5Lists = [];
-let bgClicked10mWINDDay1Lists = [];
-let bgClicked10mWINDDay2Lists = [];
-let bgClicked10mWINDDay3Lists = [];
-let bgClicked10mWINDDay4Lists = [];
-let bgClicked10mWINDDay5Lists = [];
-
-
-
-
-let bgArrayForMac = [bgClickedExposureLists, bgClickedMetarTempLists, bgClickedMetarDewPointLists,
-    bgClickedMetarVisibilityLists, bgClickedMetarWindSpeedAndDirectionLists, bgClickedSynopTempLists,
-    bgClickedSynopMeanSeaLevelLists, bgClickedSynopCloudCoverLists, bgClickedSynopGeopotentialHeightLists,
-    bgClickedSynopRelativeHumidityLists, bgClickedSynopVisibilityLists, bgClickedSynopWindSpeedAndDirectionLists,
-    bgClickedSynop3hRainfallLists, bgClickedSOUNDING00UTCWINDLists, bgClickedSOUNDING12UTCWINDLists,
-    bgClickedSOUNDING00UTCTEMPLists, bgClickedSOUNDING12UTCTEMPLists, bgClickedSOUNDING00UTCDEWPOINTLists,
-    bgClickedSOUNDING12UTCDEWPOINTLists, bgClickedSHIPANDBUOYLists, bgClickedRadarLists, bgClickedLightningLists,
-    bgClickedSATELLITELists, bgClickedWRFReflectivityLists, bgClickedWRFlightningProductLists,
-    bgClickedWRFAccumlatedRainfallLists, bgClickedlightningPotentialindexLists, bgClickedNCUMRlightningProductLists,
-    bgClickedNCUMRWindGustLists, bgClickedNCUMRRainfallLists, bgClickedHRRR_SPHourlyDBZLists,
-    bgClickedHRRR_NEHourlyDBZLists, bgClickedHRRR_NWHourlyDBZLists, bgClickedEWRFMaxZLists,
-    bgClickedEWRFLightningLists, bgClickedRainfallIntensityDay1Lists, bgClickedRainfallIntensityDay2Lists,
-    bgClickedRainfallIntensityDay3Lists, bgClickedRainfallIntensityDay4Lists, bgClickedRainfallIntensityDay5Lists,
-    bgClickedMSLPDay1Lists, bgClickedMSLPDay2Lists, bgClickedMSLPDay3Lists, bgClickedMSLPDay4Lists,
-    bgClickedMSLPDay5Lists, bgClicked10mWINDDay1Lists, bgClicked10mWINDDay2Lists, bgClicked10mWINDDay3Lists,
-    bgClicked10mWINDDay4Lists, bgClicked10mWINDDay5Lists
-];
-
-function updateBackgroundColor() {
-    //exposure bgClickedExposureLists
-    if (bgClickedExposureLists.length > 0) {
-        $("#exposure").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#exposure").css("background-color", '#eff4ff');
-    }
-
-    //metar bgClickedMetarLists
-    if (
-        bgClickedMetarTempLists.length === 0 &&
-        bgClickedMetarDewPointLists.length === 0 &&
-        bgClickedMetarVisibilityLists.length === 0 &&
-        bgClickedMetarWindSpeedAndDirectionLists.length === 0
-    ) {
-        $("#metar").css("background-color", '#eff4ff');
-    } else {
-        $("#metar").css("background-color", 'rgb(180, 194, 224)');
-    }
-
-    //synop bgClickedSynopLists
-    if (
-        bgClickedSynopTempLists.length === 0 &&
-        bgClickedSynopMeanSeaLevelLists.length === 0 &&
-        bgClickedSynopCloudCoverLists.length === 0 &&
-        bgClickedSynopGeopotentialHeightLists.length === 0 &&
-        bgClickedSynopRelativeHumidityLists.length === 0 &&
-        bgClickedSynopVisibilityLists.length === 0 &&
-        bgClickedSynopWindSpeedAndDirectionLists.length === 0 &&
-        bgClickedSynop3hRainfallLists.length === 0
-    ) {
-        $("#synop").css("background-color", '#eff4ff');
-    } else {
-        $("#synop").css("background-color", 'rgb(180, 194, 224)');
-    }
-
-    //SOUNDING bgClickedSoundingLists
-    if (
-        bgClickedSOUNDING00UTCWINDLists.length === 0 &&
-        bgClickedSOUNDING12UTCWINDLists.length === 0 &&
-        bgClickedSOUNDING00UTCTEMPLists.length === 0 &&
-        bgClickedSOUNDING12UTCTEMPLists.length === 0 &&
-        bgClickedSOUNDING00UTCDEWPOINTLists.length === 0 &&
-        bgClickedSOUNDING12UTCDEWPOINTLists.length === 0
-    ) {
-        $("#sounding").css("background-color", '#eff4ff');
-    } else {
-        $("#sounding").css("background-color", 'rgb(180, 194, 224)');
-    }
-
-    //SHIPANDBUOY bgClickedSHIPANDBUOYLists
-    if (bgClickedSHIPANDBUOYLists.length > 0) {
-        $("#ship_and_buoy").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#ship_and_buoy").css("background-color", '#eff4ff');
-    }
-
-    //radar bgClickedRadarLists
-    if (bgClickedRadarLists.length > 0) {
-        $("#radar").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#radar").css("background-color", '#eff4ff');
-    }
-
-    //SATELLITE bgClickedSATELLITELists
-    if (bgClickedSATELLITELists.length > 0) {
-        $("#satellite").css("background-color", 'rgb(180, 194, 224)');
-    } else {
-        $("#satellite").css("background-color", '#eff4ff');
-    }
-
-    let bgchecknum = bgClickedLightningLists.length;
-    // lightning bgClickedLightningLists
-    if (bgClickedLightningLists.length > 0) {
-        $("#lightning").css("background-color", 'rgb(180, 194, 224)');
-        console.log(bgchecknum, "bgchecknum-11");
-    } else {
-        $("#lightning").css("background-color", '#eff4ff');
-        console.log(bgchecknum, "bgchecknum-22");
-    }
-
-    //mesolscale bgClickedSynopLists
-    if (
-        bgClickedWRFReflectivityLists.length === 0 &&
-        bgClickedWRFlightningProductLists.length === 0 &&
-        bgClickedWRFAccumlatedRainfallLists.length === 0 &&
-        bgClickedlightningPotentialindexLists.length === 0 &&
-        bgClickedNCUMRlightningProductLists.length === 0 &&
-        bgClickedNCUMRWindGustLists.length === 0 &&
-        bgClickedNCUMRRainfallLists.length === 0 &&
-        bgClickedHRRR_SPHourlyDBZLists.length === 0 &&
-        bgClickedHRRR_NEHourlyDBZLists.length === 0 &&
-        bgClickedHRRR_NWHourlyDBZLists.length === 0 &&
-        bgClickedEWRFMaxZLists.length === 0 &&
-        bgClickedEWRFLightningLists.length === 0
-    ) {
-        $("#mesolscale").css("background-color", '#eff4ff');
-    } else {
-        $("#mesolscale").css("background-color", 'rgb(180, 194, 224)');
-    }
-
-    //medium_range 
-    if (
-        bgClickedRainfallIntensityDay1Lists.length === 0 &&
-        bgClickedRainfallIntensityDay2Lists.length === 0 &&
-        bgClickedRainfallIntensityDay3Lists.length === 0 &&
-        bgClickedRainfallIntensityDay4Lists.length === 0 &&
-        bgClickedRainfallIntensityDay5Lists.length === 0 &&
-        bgClickedMSLPDay1Lists.length === 0 &&
-        bgClickedMSLPDay2Lists.length === 0 &&
-        bgClickedMSLPDay3Lists.length === 0 &&
-        bgClickedMSLPDay4Lists.length === 0 &&
-        bgClickedMSLPDay5Lists.length === 0 &&
-        bgClicked10mWINDDay1Lists.length === 0 &&
-        bgClicked10mWINDDay2Lists.length === 0 &&
-        bgClicked10mWINDDay3Lists.length === 0 &&
-        bgClicked10mWINDDay4Lists.length === 0 &&
-        bgClicked10mWINDDay5Lists.length === 0
-    ) {
-        $("#medium_range").css("background-color", '#eff4ff');
-    } else {
-        $("#medium_range").css("background-color", 'rgb(180, 194, 224)');
-    }
+function tempCloseGrp(element) {
+    let macroElement = element.closest('.createMacro');
+    macroElement.remove();
 }
-// *************************************
 
 
-let macro_SubParameter;
-let currentMacroIndex = 0;
-let intervalId;
-let countingElement = document.getElementById("counting");
-let intervalInSeconds = 10;
-let playingMacro = false;
+$(document).ready(function() {
+    $('#userFilterLink').click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr('href'),
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (Array.isArray(response)) {
+                    let names = response.map(function(item) {
+                        return item.name.trim(); //.toUpperCase()
+                    });
+                    $('#showMacroGrpUsers').html("");
+                    names.forEach(function(name) {
+                        $('#showMacroGrpUsers').append(
+                            '<span style="margin-left: 20px;" class="macroGrpUserWise">' +
+                            name +
+                            '</span><br>'
+                        );
+                    });
+                } else {
+                    console.error("Response is not in the expected format.");
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
 
-let playerTextElement = document.getElementById("playerText");
+    $('#showMacroGrpUsers').on('click', '.macroGrpUserWise', function() {
+        let userName = $(this).text();
+        // Highlight the clicked element
+        $('#showMacroGrpUsers .macroGrpUserWise').css('background-color',
+            ''); // Remove highlight from all
+        $(this).css('background-color', 'yellow'); // Highlight the clicked one
 
+        $.ajax({
+            url: '<?php echo base_url(); ?>HomePage/fetch_user_details/' + encodeURIComponent(
+                userName),
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (response.error) {
+                    console.error(response.error);
+                } else {
+                    let user_id_users = response.user_id;
+                    selectedUserId = user_id_users;
+                    showSavedMacroList();
+                    $.ajax({
+                        url: '<?php echo base_url(); ?>HomePage/fetchMacrosByUserId/' +
+                            encodeURIComponent(user_id_users),
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(macrosResponse) {
+                            console.log(macrosResponse, "macrosResponse");
+                            macrosResponse.forEach(function(macro_table_data) {
+                                console.log(macro_table_data.macroname,
+                                    "macro_table_data");
+                            });
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                        }
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
 
-function applyLayers(macroGroupName) {
-    const macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
+    $('#showMacroGrpUsersALL').on('click', function() {
+        $('#showMacroGrpUsersALL').css('background-color', 'yellow'); // Highlight "All MAcros"
+        $('#showMacroGrpUsers .macroGrpUserWise').css('background-color',
+            ''); // Remove highlight from all other users
+        console.log("All macros");
+    });
 
-    if (macro && macro.listOfMacro) {
-        const macroDetails = macro.listOfMacro[currentMacroIndex];
-        const macro_SubParameter = macroDetails.mac_sub_parameter;
+    let allMacrosClickEvent = document.getElementById("showMacroGrpUsersALL");
+    allMacrosClickEvent.addEventListener("click", function() {
+        allMacros = true;
+        showSavedMacroList();
+        console.log("allMacrosClickEvent Element clicked!");
+    });
+});
 
+// + MAIN play btn
+function playMacro(macroname) {
+    updateBackgroundColor();
+    bgArrayForMac.forEach(array => array.length = 0);
+    console.log(macroname, "macroname");
+
+    macPlayerPlay(macroname);
+
+    if (macroname) {
         document.getElementById("macroDetails").style.display = "block";
+        // 
+        document.querySelector('.stopBtnClas').onclick = function() {
+            macPlayerStop(macroname);
+            console.log("stop Btn");
+        };
+        document.querySelector('.playBtnClas').onclick = function() {
+            macPlayerPlay(macroname);
+            console.log("play Btn");
+        };
+        document.querySelector('.pauseBtnClas').onclick = function() {
+            macPlayerPause(macroname);
+            console.log("pause Btn");
+        };
+        document.querySelector('.leftMacBtn').onclick = function() {
+            macPlayerLeft(macroname);
+            console.log("left Btn");
+        };
+        document.querySelector('.rightMacBtn').onclick = function() {
+            macPlayerRight(macroname);
+            console.log("right Btn");
+        };
+        document.querySelector('.playBtnClasX').onclick = function() {
+            macroRunFnX(macroname);
+            console.log("right Btn");
+        };
+    } else {
+        console.error("Macro not found for macroname:", macroname);
+    }
+}
+
+let countingElement = document.getElementById("counting");
+let playerTextElement = document.getElementById("playerText");
+let currentIndex = 0;
+let interval;
+let isPaused = false;
+let pausedIndex;
+
+function playNextCase() {
+    if (currentIndex < response.length && !isPaused) {
+        let item = response[currentIndex];
+        console.log(item, "item");
+        let subParameterName = item.subparametername;
+        console.log("Subparameter Name:", subParameterName);
 
         map.eachLayer(layer => {
             if (layer instanceof L.TileLayer.WMS) {
@@ -2684,299 +2805,358 @@ function applyLayers(macroGroupName) {
             }
         });
 
-        if (subParametersList.some(subParam => subParam.name === macro_SubParameter)) {
-            switch (macro_SubParameter) {
-                case "Last 00-05 min":
-                    map.addLayer(mywmsIITM);
-                    playerTextElement.innerHTML = 'Last 00-05 min';
-                    console.log("1-Last 00-05 min");
-                    break;
-                case "00UTC":
-                    map.addLayer(ship_00utc);
-                    playerTextElement.innerHTML = 'Ship and Buoy 00UTC';
-                    console.log("2-00UTC");
-                    break;
-                case "Radar Reflectivity":
-                    map.addLayer(rad_ref);
-                    playerTextElement.innerHTML = 'Radar Reflectivity';
-                    console.log("3-rad_ref");
-                    break;
-                case "Oil Refineries":
-                    map.addLayer(exp_oil);
-                    playerTextElement.innerHTML = 'Exposure Oil Refineries';
-                    console.log("4-exp_oil");
-                    break;
-                case "RI GFS DAY1":
-                    map.addLayer(med_gfs1);
-                    playerTextElement.innerHTML = 'Rainfall Intensity Day1 - RI GFS DAY1';
-                    console.log("5-RI GFS DAY1");
-                    break;
+        switch (subParameterName) {
+            case "Last 00-05 min":
+                map.addLayer(mywmsIITM);
+                break;
+            case "00UTC":
+                map.addLayer(ship_00utc);
+                break;
+            case "Radar Reflectivity":
+                map.addLayer(rad_ref);
+                break;
+            case "Oil Refineries":
+                map.addLayer(exp_oil);
+                break;
+            case "RI GFS DAY1":
+                map.addLayer(med_gfs1);
+                break;
+            default:
+                console.log("Unknown subparameter:", subParameterName);
+                break;
+        }
+
+        playerTextElement.innerHTML = item.subparametername;
+
+        startCountdown(10, function() {
+            map.eachLayer(layer => {
+                if (layer instanceof L.TileLayer.WMS) {
+                    map.removeLayer(layer);
+                }
+            });
+            currentIndex++;
+            playNextCase();
+        });
+    } else {
+        console.log("All cases played or paused.");
+    }
+}
+
+function startCountdown(seconds, callback) {
+    clearInterval(interval);
+    interval = setInterval(function() {
+        if (!isPaused) {
+            seconds--;
+            countingElement.innerHTML = seconds;
+            if (seconds <= 0) {
+                clearInterval(interval);
+                if (callback) {
+                    callback();
+                }
             }
         }
-    }
+    }, 1000);
 }
 
-async function playMacro(macroGroupName) {
-    updateBackgroundColor();
-    bgArrayForMac.forEach(array => array.length = 0);
+// player play btn
+function macPlayerPlay(macroname) {
+    currentIndex = pausedIndex || 0;
+    pausedIndex = null;
+    let xhr = new XMLHttpRequest();
 
-    let macro = savedMacro.find(x => x.macroGroupName === macroGroupName);
+    let url = "<?php echo base_url('HomePage/getMacroByMacroname'); ?>?macroname=" + encodeURIComponent(macroname);
+    console.log("Request URL:", url);
 
-    if (macro) {
-        currentMacroIndex = 0;
-        clearInterval(intervalId);
+    xhr.open("GET", url, true);
 
-        applyLayers(macroGroupName);
-        startMacroPlayback();
-    }
-}
-
-function startMacroPlayback() {
-    playingMacro = true;
-    let currentSecond = intervalInSeconds;
-
-    // Initial update before the first second elapses
-    countingElement.innerHTML = currentSecond;
-    applyLayers(savedMacro[0].listOfMacro[currentMacroIndex].mac_macroNames);
-
-    intervalId = setInterval(() => {
-        // Check if reached the end of the macro
-        if (currentMacroIndex >= savedMacro[0].listOfMacro.length - 1) {
-            clearInterval(intervalId);
-            playingMacro = false;
-            countingElement.innerHTML = "0";
-            return;
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            response = JSON.parse(xhr.responseText);
+            if (response && response.length > 0) {
+                isPaused = false;
+                playNextCase();
+            } else {
+                console.log("No data found for the given macroname.");
+            }
+        } else {
+            console.error("Error occurred while fetching data. Status:", xhr.status);
         }
+    };
 
-        // Update the counting element
-        countingElement.innerHTML = currentSecond;
-
-        // Check if time has reached 0
-        if (currentSecond <= 0) {
-            // Move to the next switch case
-            currentMacroIndex++;
-            applyLayers(savedMacro[0].listOfMacro[currentMacroIndex].mac_macroNames);
-
-            // Reset counting for the next layer
-            currentSecond = intervalInSeconds;
-        }
-
-        currentSecond--;
-    }, 1000); // Update every 1 second
+    xhr.send();
 }
 
-function pauseMacroPlayback() {
-    clearInterval(intervalId);
-    playingMacro = false;
+function macPlayerResume(macroname) {
+    isPaused = false;
+    playNextCase();
 }
 
-function resumeMacroPlayback() {
-    if (!playingMacro) {
-        startMacroPlayback();
-    }
+// player Pause btn
+function macPlayerPause(macroname) {
+    isPaused = true;
+    pausedIndex = currentIndex;
+    console.log("Pausing macro:", macroname);
+    clearInterval(interval);
 }
 
-function goToNextMacro() {
-    if (currentMacroIndex < savedMacro[0].listOfMacro.length - 1) {
-        currentMacroIndex++;
-        applyLayers(savedMacro[0].listOfMacro[currentMacroIndex].mac_macroNames);
-        countingElement.innerHTML = intervalInSeconds; // Reset counting
-        if (playingMacro) {
-            clearInterval(intervalId);
-            startMacroPlayback();
-        }
-    }
-}
-
-function goToPreviousMacro() {
-    if (currentMacroIndex > 0) {
-        currentMacroIndex--;
-        applyLayers(savedMacro[0].listOfMacro[currentMacroIndex].mac_macroNames);
-        countingElement.innerHTML = intervalInSeconds; // Reset counting
-        if (playingMacro) {
-            clearInterval(intervalId);
-            startMacroPlayback();
-        }
-    }
-}
-
-function stopMacroPlayback() {
-    clearInterval(intervalId);
-    currentMacroIndex = 0;
-    playingMacro = false;
-    countingElement.innerHTML = "0";
-    applyLayers(savedMacro[0].listOfMacro[currentMacroIndex].mac_macroNames);
-}
-
-// Event listeners for the buttons
-document.querySelector('.playBtnClas').addEventListener('click', resumeMacroPlayback);
-document.querySelector('.pauseBtnClas').addEventListener('click', pauseMacroPlayback);
-document.querySelector('.rightMacBtn').addEventListener('click', goToNextMacro);
-document.querySelector('.leftMacBtn').addEventListener('click', goToPreviousMacro);
-document.querySelector('.stopBtnClas').addEventListener('click', stopMacroPlayback);
-
-
-
-
-
-
-// *************************************
-
-function macroRunFnX() {
-    stopMacroPlayback(); // Stop the macro playback
+//player Stops btn
+function macPlayerStop(macroname) {
+    console.log("Stopping macro:", macroname);
+    currentIndex = 0;
+    countingElement.innerHTML = 0;
+    clearInterval(interval);
     map.eachLayer(layer => {
         if (layer instanceof L.TileLayer.WMS) {
-            map.removeLayer(layer); // Remove all layers from the map
+            map.removeLayer(layer);
         }
     });
+}
+
+// player left btn
+function macPlayerLeft(macroname) {
+    map.eachLayer(layer => {
+        if (layer instanceof L.TileLayer.WMS) {
+            map.removeLayer(layer);
+        }
+    });
+    if (currentIndex > 0) {
+        currentIndex--;
+        playNextCase();
+        console.log("Going left in macro:", macroname);
+    } else {
+        console.log("Already at the beginning of the macro:", macroname);
+    }
+}
+
+// player right btn
+function macPlayerRight(macroname) {
+    map.eachLayer(layer => {
+        if (layer instanceof L.TileLayer.WMS) {
+            map.removeLayer(layer);
+        }
+    });
+    if (currentIndex < response.length - 1) {
+        currentIndex++;
+        playNextCase();
+        console.log("Going right in macro:", macroname);
+    } else {
+        console.log("Already at the end of the macro:", macroname);
+    }
+}
+
+
+// player close X btn
+function macroRunFnX(macroname) {
+    macPlayerStop(macroname);
+    map.eachLayer(layer => {
+        if (layer instanceof L.TileLayer.WMS) {
+            map.removeLayer(layer);
+        }
+    });
+    playerTextElement.innerHTML = "";
     document.getElementById("macroDetails").style.display = "none";
 }
 
+//player ends here
 
-function viewMacro(macroGroupName) {
-    let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
-    view_Create_Macro.style.display = 'block';
-    let viewMacroDetails = document.getElementById("viewMacroDetails");
-    let viewMacroTitleVar = document.getElementById("viewMacroTitle");
-    let viewTempMacro = [];
-    macro.listOfMacro.forEach(macro => {
-        viewMacroTitleVar.innerHTML = macro.mac_macroNames;
-        let addedInfoDiv = `<div style="font-family: 'Times New Roman'; font-size: 15px; color: #1d334e;"class="macroListCSS" id="toggleDiv">
-        <span onclick="MacroPlusToggle('${macro.ulId}view')">+ ${macro.mac_macroNames}: ${macro.mac_sub_parameter}</span>
-        <ul id="${macro.ulId}view" class="listContainerMacro" style="font-family: 'Times New Roman'; font-size: 13px;">
-            <li>${macro.mac_model_Names}</li>
-            <li>${macro.mac_parameter_Names}</li>
-            <li>${macro.mac_sub_parameter}</li>
-        </ul>
-        <h6 style="font-family: 'Times New Roman'; font-size: 15px;">${macro.ist_time}</h6>
-    </div>`;
-        viewTempMacro.push(addedInfoDiv);
-    })
-    viewMacroDetails.innerHTML = viewTempMacro.join("");
+
+// viewMacro
+function viewMacro(macroname) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "<?php echo base_url('HomePage/getMacroByMacroname?macroname='); ?>" + encodeURIComponent(
+        macroname), true);
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            try {
+                // Attempt to parse the response as JSON
+                let macro = JSON.parse(xhr.responseText);
+                if (Array.isArray(macro) && macro.length > 0) {
+                    view_Create_Macro.style.display = 'block';
+                    let viewMacroDetails = document.getElementById("viewMacroDetails");
+                    let viewMacroTitleVar = document.getElementById("viewMacroTitle");
+                    viewMacroTitleVar.innerHTML = macro[0].macroname;
+                    let viewTempMacro = macro.map(macroItem => {
+                        let modelName = macroItem.modelname.trim();
+                        let parameterName = macroItem.parametername.trim();
+                        let subParameterName = macroItem.subparametername.trim();
+                        if (modelName && parameterName && subParameterName) {
+                            return `<div style="font-family: 'Times New Roman'; font-size: 15px; color: #1d334e;" class="macroListCSS" id="toggleDiv">
+                                <span onclick="MacroPlusToggle('${macroItem.ulId}view')">+ ${macroItem.macroname}: ${subParameterName}</span>
+                                <ul id="${macroItem.ulId}view" class="listContainerMacro" style="font-family: 'Times New Roman'; font-size: 13px;">
+                                    <li>${modelName}</li>
+                                    <li>${parameterName}</li>
+                                    <li>${subParameterName}</li>
+                                </ul>
+                            </div>`;
+                        } else {
+                            console.error("Missing properties in macroItem:", macroItem);
+                            return '';
+                        }
+                    });
+                    viewMacroDetails.innerHTML = viewTempMacro.join("");
+                } else {
+                    console.error("No macro found with the given macroname or empty response:", macroname);
+                }
+            } catch (e) {
+                console.error("Error parsing JSON response:", e);
+                console.error("Server response:", xhr.responseText); // Log the response text
+            }
+        } else {
+            console.error("Error occurred while fetching macro details. Status:", xhr.status);
+            console.error("Server response:", xhr.responseText); // Log the response text
+        }
+    };
+
+    xhr.send();
 }
 
-function editMacro(macroGroupName) {
-    let creatReditVar = document.getElementById("creatRedit");
-    create_Macro.style.display = 'block';
-    let macro = savedMacro.find(x => x.macroGroupName == macroGroupName);
-    editMacroGroupName = macro.macroGroupName;
-    console.log("Found EDIT UPDATE macro:", macro);
-    addedTempMacro = macro;
-    viewAddedAndDeletedMacro();
+// + MAIN edit btn DB
+function editMacro(macroname) {
+    console.log(macroname, "macroname");
+    let xhr = new XMLHttpRequest();
+    // let url = "<?php echo base_url('HomePage/getMacroByMacroname?macroname='); ?>" + encodeURIComponent(macroname);
+    // console.log("Request URL:", url);
 
-    creatReditVar.innerHTML = "Edit Macro";
+    xhr.open("GET", "<?php echo base_url('HomePage/getMacroByMacroname?macroname='); ?>" + encodeURIComponent(
+        macroname), true);
 
-    document.getElementById('macroNames').value = macro.macroGroupName;
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            let macro = JSON.parse(xhr.responseText);
+            console.log(macro, "macro");
+            macro.forEach(item => {
+                console.log("Fetched macroname1:", item.id);
+                console.log("Fetched macroname1:", item.macroname);
+                console.log("Fetched macroname1:", item.modelname);
+                console.log("Fetched macroname1:", item.parametername);
+                console.log("Fetched macroname1:", item.subparametername);
 
-    document.getElementById("mac_addButton").style.display = "block";
-    document.getElementById("mac_submitButton").style.display = "block";
-    document.getElementById("mac_updateButton").style.display = "none";
+                // Update UI with fetched macro details
+                document.getElementById('macroNames').value = item.macroname;
 
+                // In editMacro function, modify the onclick event for editMacroLayerDB to pass all required parameters
+                let addedInfoDiv = `<div style="color: #1d334e;" id="toggleDiv">
+                     <div style="color: #1d334e;">
+                         <span>
+                             <i class="fa-solid fa-plus fa-xs"></i> ${item.macroname}: ${item.modelname}
+                         </span>&nbsp;&nbsp;
+
+                         <span title="Edit" onclick="editMacroLayerDB(${item.id}, '${item.modelname}', '${item.parametername}', '${item.subparametername}')">
+                            <i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i>
+                        </span>
+                         <span title="Delete" onclick="deleteMacroLayer(${item.id})">
+                             <i class="fa-sharp fa-solid fa-trash fa-xs"></i>
+                         </span>
+                     </div>
+
+                     <ul id="${item.id}" class="listContainerMacro">
+                         <li>${item.modelname}</li>
+                         <li>${item.parametername}</li>
+                         <li>${item.subparametername}</li>
+                     </ul>
+                     <input type="hidden" class="macroName" value="${item.macroname}">
+                     <input type="hidden" class="modelName" value="${item.modelname}">
+                     <input type="hidden" class="parameterName" value="${item.parametername}">
+                     <input type="hidden" class="subParameterName" value="${item.subparametername}">
+                 </div>`;
+
+
+                addedInfoContainer.innerHTML += addedInfoDiv;
+            });
+            createMacroForm();
+
+        } else {
+            console.error("Error occurred while fetching macro details. Status code: " + xhr.status);
+        }
+    };
+
+    xhr.send();
 }
 
-var macroGroupNameForDelete;
 
-function deleteMacro(macroGroupName) {
-    macroGroupNameForDelete = macroGroupName;
+// Function to delete the macro
+function deleteMacro(macroName, userName, deleteReason) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "<?php echo base_url('HomePage/delete_macro'); ?>", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
 
+    let data = {
+        macroname: macroName,
+        userName: userName,
+        deleteReason: deleteReason
+    };
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            view_Create_Macro.style.display = 'none';
+            showSavedMacroList();
+            closeDeleteMacroModal();
+            console.log("Macro(s) deleted successfully.");
+            console.log("UserName:", userName);
+            console.log("DeleteReason:", deleteReason);
+        } else {
+            console.error("Error occurred while deleting macro(s).");
+        }
+    };
+
+    xhr.send(JSON.stringify(data));
+}
+
+// Function to show the delete confirmation modal
+function alertDeleteMacro(macroName) {
     document.getElementById('deleteMacroModal').style.display = 'block';
-}
 
-function submitDeleteMacro() {
-    // Get user input
-    const userName = document.getElementById('userName').value;
-    const deleteReason = document.getElementById('deleteReason').value;
-
-    savedMacro = savedMacro.filter(x => x.macroGroupName != macroGroupNameForDelete);
-    showSavedMacroList();
-
-    let getAlertMsg =
-        `Macro with group name ${macroGroupNameForDelete} has been deleted by ${userName}\nReason: ${deleteReason}`
-
-    // alert(getAlertMsg);
-    console.log(getAlertMsg, "getting alert message...");
-
-    document.getElementById('macroNames').value = '';
-    document.getElementById('mac_modelNames').value = '';
-    document.getElementById('mac_parameterNames').value = '';
-    document.getElementById('mac_subparameter').value = '';
+    document.getElementById('macCanBtn').onclick = function() {
+        let userName = document.getElementById('userName').value;
+        let deleteReason = document.getElementById('deleteReason').value;
+        deleteMacro(macroName, userName, deleteReason); // Pass all three parameters
+    };
 
     document.getElementById('userName').value = "";
     document.getElementById('deleteReason').value = "";
+    document.getElementById('macCanBtn').disabled = true; // Disable the submit button initially
 
-    // Close the modal
-    closeDeleteMacroModal();
+    // Add event listeners to enable the submit button only when both inputs are filled
+    document.getElementById('userName').addEventListener('input', toggleSubmitButton);
+    document.getElementById('deleteReason').addEventListener('input', toggleSubmitButton);
 }
 
-// Hide the deleteMacroModal
+// Function to close the delete confirmation modal
 function closeDeleteMacroModal() {
     document.getElementById('deleteMacroModal').style.display = 'none';
 }
 
-function deleteMacroLayer(value) {
-    addedTempMacro.listOfMacro = addedTempMacro.listOfMacro.filter(x => x.ulId != value);
-    viewAddedAndDeletedMacro();
-
-    // document.getElementById('macroNames').value = '';
-    document.getElementById('mac_modelNames').value = '';
-    document.getElementById('mac_parameterNames').value = '';
-    document.getElementById('mac_subparameter').value = '';
-
-    viewMacro();
+// 
+function toggleSubmitButton() {
+    let userName = document.getElementById('userName').value;
+    let deleteReason = document.getElementById('deleteReason').value;
+    document.getElementById('macCanBtn').disabled = !(userName && deleteReason);
 }
 
+function MacroPlusToggle(ulId) {
+    ulId = parseInt(ulId);
+    console.log("Received ulId:", ulId);
+    console.log("Contents of macroAddArr:", macroAddArr);
 
-function editMacroLayer(value) {
-    editId = value;
-    let layer = addedTempMacro.listOfMacro.find(x => x.ulId == value);
-    macShowParameterNames(layer.mac_model_Names);
-    document.getElementById('macroNames').value = addedTempMacro.macroGroupName;
-    document.getElementById('mac_modelNames').value = layer.mac_model_Names;
-    document.getElementById('mac_parameterNames').value = layer.mac_parameter_Names;
-    document.getElementById('mac_subparameter').value = layer.mac_sub_parameter;
+    let macroObject = macroAddArr.find(obj => obj.ulId === ulId);
 
-    document.getElementById("mac_addButton").style.display = "none";
-    document.getElementById("mac_submitButton").style.display = "none";
-    document.getElementById("mac_updateButton").style.display = "block";
-
-    // viewMacro();
+    if (macroObject) {
+        console.log("Corresponding macroObject:", macroObject);
+    } else {
+        console.log("Macro object not found for ulId:", ulId);
+    }
 }
 
-function updateForm() {
-    let creatMacroFromEdit = document.getElementById("creatRedit");
-    creatMacroFromEdit.innerHTML = "Edit Macro";
-
-    let layer = addedTempMacro.listOfMacro.find(x => x.ulId == editId);
-    layer.macroGroupName = document.getElementById('macroNames').value;
-    layer.mac_model_Names = document.getElementById('mac_modelNames').value;
-    layer.mac_parameter_Names = document.getElementById('mac_parameterNames').value;
-    layer.mac_sub_parameter = document.getElementById('mac_subparameter').value;
-    // Update the ist_time property
-    layer.ist_time = new Date().toLocaleString("en-US", {
-        timeZone: "Asia/Kolkata"
-    });
-
-    // viewAddedAndDeletedMacro();
-
-    document.getElementById('mac_modelNames').value = '';
-    document.getElementById('mac_parameterNames').value = '';
-    document.getElementById('mac_subparameter').value = '';
-
-    document.getElementById("mac_addButton").style.display = "block";
-    document.getElementById("mac_submitButton").style.display = "block";
-    document.getElementById("mac_updateButton").style.display = "none";
-
-    viewMacro(layer.macroGroupName);
-}
-
-
-//*********** */
-
-//********************************************************* */
 //Macro Create Macro Toggle
 function createMacroForm() {
     create_Macro.style.display = "block";
 }
+
+//------------------------------------------------------------------------------------------------+
+// MACRO ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
 const mywmsIITM = L.tileLayer.wms(
     "http://103.215.208.107:8585/geoserver/cite/wms", {
@@ -3033,12 +3213,15 @@ const mywmsNowcast = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/aasd
 //     cursor: true
 // }).setView([22.79459, 80.06406]);
 
-
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// TimeDimension Starts here
+//------------------------------------------------------------------------------------------------+
 let sampleLayerBtn;
 // Create a custom control button for model popup
 var SampleLayerBtn = L.Control.extend({
     options: {
-        position: 'bottomleft'
+        position: 'topright'
     },
     onAdd: function() {
         // Create a button element
@@ -3048,8 +3231,8 @@ var SampleLayerBtn = L.Control.extend({
 
         button.style.fontSize = '15px';
         button.style.fontFamily = 'Times New Roman';
-        button.style.top = '-583px';
-        button.style.right = '-1600px';
+        button.style.top = '-40px';
+        button.style.left = '-46px';
 
         // click event listener
         L.DomEvent.on(button, 'click', function() {
@@ -3063,8 +3246,6 @@ var SampleLayerBtn = L.Control.extend({
         return button;
     }
 });
-
-
 
 L.TimeDimension.Layer.ImageOverlay = L.TimeDimension.Layer.extend({
 
@@ -3252,18 +3433,18 @@ function addZ(n) {
 }
 
 var today = new Date('2024-02-01');
-console.log(today);
+// console.log(today);
 var today_month = today.getMonth() + 1;
 var date = today.getFullYear() + '-' + today_month + '-' + today.getDate();
 var time = today.getHours() + ":00:00";
 var dateTime = date + ' ' + time;
-console.log(dateTime);
+// console.log(dateTime);
 var endDate = new Date('2024-02-01');
 endDate.setDate(endDate.getDate() + 2);
 endDate.setUTCMinutes(0, 0, 0);
 
 var startDate = new Date(dateTime);
-console.log(endDate);
+// console.log(endDate);
 
 //MAP Starts Here
 var map = L.map('map', {
@@ -3288,7 +3469,7 @@ var testImageTimeLayer;
 function toggleTimeDimensionControl() {
     if (!map.timeDimensionControl) {
         map.timeDimensionControl = L.control.timeDimension({
-            position: 'topleft',
+            // position: 'topleft',
             autoPlay: false,
             playerOptions: {
                 buffer: 10,
@@ -3298,6 +3479,26 @@ function toggleTimeDimensionControl() {
         }).addTo(map);
         sampleLayerBtn = new SampleLayerBtn().addTo(map);
 
+        // observation and Macro below X
+        let macroContainerFn = document.getElementById("macroContainer");
+        let observationContainerFn = document.getElementById("ObservationContainer");
+        let mapVar = document.getElementById('map');
+        macroContainerFn.classList.add('hidden');
+        observationContainerFn.classList.add('hidden');
+        mapVar.style.width = '100%';
+
+        // 
+        map.removeControl(panelLayers2);
+        map.removeControl(panelLayers3);
+        map.removeControl(panelLayers4);
+        map.removeControl(panelLayers5);
+        map.removeControl(panelLayers6);
+        map.removeControl(panelLayers7);
+        map.removeControl(panelLayers8);
+        map.removeControl(panelLayers9);
+        map.removeControl(panelLayers10);
+        map.removeControl(panelLayers11);
+        Model_Time.style.display = "none";
 
     } else {
         if (testImageTimeLayer) {
@@ -3312,6 +3513,8 @@ function toggleTimeDimensionControl() {
             map.removeControl(sampleLayerBtn);
             sampleLayerBtn = null;
         }
+        // 
+
     }
     map.on('timeload', function(event) {
         if (event.time && testImageTimeLayer) {
@@ -3319,8 +3522,6 @@ function toggleTimeDimensionControl() {
         }
     });
 }
-
-
 
 // Create a custom control
 var timeDimensionControlButton = L.Control.extend({
@@ -3386,7 +3587,26 @@ L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
 
 // 
 
-// 
+function toggleTimeDimensionControlObs_Mac() {
+    if (map.timeDimensionControl) {
+        if (testImageTimeLayer) {
+            map.removeLayer(testImageTimeLayer);
+            testImageTimeLayer = null;
+            console.log("Layer removed");
+        }
+        map.removeControl(map.timeDimensionControl);
+        map.timeDimensionControl = null;
+        // 
+        if (sampleLayerBtn) {
+            map.removeControl(sampleLayerBtn);
+            sampleLayerBtn = null;
+        }
+    }
+}
+//------------------------------------------------------------------------------------------------+
+// time dimension ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+ 
 
 // Add the GeoJSON data to the map
 _dist_geojson = "DATA/INDIA_STATE.json";
@@ -3459,7 +3679,7 @@ const darkGreyCanvas = L.tileLayer(
 
 
 
-// dummy data for testing start
+//WMS layers  dummy data for testing start
 //synop
 const syn00utc_tem = L.tileLayer.wms("http://webgis.imd.gov.in:8080/geoserver/IMD_Data/wms", {
     layers: 'IMD_Data:HW_Annual_Days',
@@ -3632,9 +3852,7 @@ const ship_00utc = L.tileLayer.wms("http://103.215.208.107:8585/geoserver/cite/w
     attribution: "awssample",
     layerName: "ship_00utc"
 });
-
-
-// dummy data for testing end
+// WMS layers dummy data for testing end
 
 //leaflet Fullscreen
 const fullscreenControl = new L.Control.Fullscreen();
@@ -3672,7 +3890,13 @@ var baseMaps = [{
     },
 ];
 
+
+
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
 // styleEditor starts here
+//------------------------------------------------------------------------------------------------+
+
 var styleEditor = L.control.styleEditor({
     position: "topleft",
     useGrouping: false,
@@ -3724,11 +3948,6 @@ if (polylineDrawTool) {
     polylineDrawTool.style.height = '38px';
     polylineDrawTool.style.width = '38px';
 }
-// var markerDrawTool = document.querySelector('.leaflet-draw-draw-marker');
-
-// if (markerDrawTool) {
-//     markerDrawTool.style.display = 'none';
-// }
 
 var polylineDrawTool = document.querySelector('.leaflet-draw-draw-circlemarker');
 if (polylineDrawTool) {
@@ -3746,104 +3965,9 @@ if (polylineDrawTool) {
     polylineDrawTool.style.width = '38px';
 }
 
-// map.on('draw:created', function(e) {
-//     console.log(e, "eeeeeeeeee");
-//     const layer = e.layer;
-//     console.log(layer, "layer");
-//     drawnItems.addLayer(layer);
-// });
-
-
-// map.on('draw:created', function (e) {
-//     const layer = e.layer;
-//     const userText = prompt('Enter Name:');
-
-//     if (userText !== null) {
-//         const geoJSONData = layer.toGeoJSON();
-
-//         // Replace "Feature" with the tool name
-//         geoJSONData.geometry.type = getToolName(layer);
-
-//         // Remove unnecessary properties from GeoJSON data
-//         const simplifiedGeoJSON = {
-//             type: geoJSONData.geometry.type,
-//             coordinates: geoJSONData.geometry.coordinates
-//         };
-
-//         // Create popup content with user text and simplified GeoJSON
-//         const popupContent = `<p>${userText}</p><p>${JSON.stringify(simplifiedGeoJSON)}</p>`;
-
-//         layer.bindPopup(popupContent);
-
-//         drawnItems.addLayer(layer);
-//     }
-// });
-
-// Assuming you have included Leaflet and Leaflet.Draggable libraries
-
-map.on('draw:created', function(e) {
-    const layer = e.layer;
-    const userText = prompt('Enter Name:');
-
-    if (userText !== null) {
-        const geoJSONData = layer.toGeoJSON();
-
-        // Set the desired font size in pixels
-        const fontSize = '20px';
-
-        const tooltipContent = `<p style="font-size: ${fontSize};">${userText}</p>`;
-
-        layer.bindTooltip(tooltipContent, {
-            permanent: true,
-            direction: 'top',
-            opacity: 0.7
-        });
-
-        // Add the layer to the drawn items
-        drawnItems.addLayer(layer);
-
-        setTimeout(function() {
-            // Open the tooltip
-            layer.openTooltip();
-
-            // Make the tooltip draggable
-            const tooltip = layer.getTooltip();
-            const tooltipContainer = tooltip._container;
-
-            L.DomUtil.addClass(tooltipContainer, 'leaflet-tooltip-draggable');
-            L.DomEvent.on(tooltipContainer, 'mousedown', function() {
-                L.DomUtil.addClass(tooltipContainer, 'leaflet-grab');
-            });
-
-            const tooltipDraggable = new L.Draggable(tooltipContainer, tooltipContainer);
-            tooltipDraggable.enable();
-
-        }, 0);
-    }
-});
 
 
 
-
-
-
-// function getToolName(layer) {
-//     if (layer instanceof L.Marker) {
-//         return "Marker";
-//     } else if (layer instanceof L.Circle) {
-//         return "Circle";
-//     } else if (layer instanceof L.Rectangle) {
-//         return "Rectangle";
-//     } else if (layer instanceof L.Polygon) {
-//         return "Polygon";
-//     } else if (layer instanceof L.Polyline) {
-//         return "LineString";
-//     } else if (layer instanceof L.CircleMarker) {
-//         return "CircleMarker";
-//     } else {
-//         return "Unknown";
-//     }
-// }
 
 // Selector for the geocoding control
 var geocoderControl = document.querySelector('.leaflet-control-geocoder');
@@ -3852,13 +3976,10 @@ if (geocoderControl) {
     geocoderControl.style.width = '41px';
 }
 
-//add mousePosition
-// L.control.mousePosition({
-//     position: "bottomleft"
-// }).addTo(map);
 
-//add map scale
-// L.control.scale().addTo(map);
+
+
+
 
 var customButtonsContainer = L.DomUtil.create('div', 'leaflet-bar leaflet-control customClass');
 map.getContainer().appendChild(customButtonsContainer);
@@ -3868,10 +3989,16 @@ L.control.mousePosition({
     position: 'bottomleft'
 }).addTo(map);
 
+
+//------------------------------------------------------------------------------------------------+
+// styleEditor end here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
+
 // Create a custom control button for MacroButton
 var PrintButton = L.Control.extend({
     options: {
-        position: 'bottomleft'
+        position: 'topleft'
     },
     onAdd: function() {
         var printbtn = L.DomUtil.create('span',
@@ -3881,7 +4008,7 @@ var PrintButton = L.Control.extend({
         // Set font size to 15px
         printbtn.style.fontSize = '15px';
         printbtn.style.fontFamily = 'Times New Roman';
-        printbtn.style.top = '-658px';
+        printbtn.style.top = '-431px';
         printbtn.style.left = '54px';
 
         // L.DomEvent.on(printbtn, 'click', function() {
@@ -3902,7 +4029,7 @@ new PrintButton().addTo(map);
 // Create a custom control button for model popup
 var LegendButton = L.Control.extend({
     options: {
-        position: 'bottomleft'
+        position: 'topleft'
     },
     onAdd: function() {
         // Create a button element
@@ -3914,7 +4041,7 @@ var LegendButton = L.Control.extend({
         // Set font size to 15px
         button.style.fontSize = '15px';
         button.style.fontFamily = 'Times New Roman';
-        button.style.top = '-650px';
+        button.style.top = '-498px';
         button.style.left = '54px';
 
         // click event listener
@@ -3929,10 +4056,10 @@ new LegendButton().addTo(map);
 
 
 
-// Create a custom control button for MacroButton
+// custom control button for MacroButton
 var MacroButton = L.Control.extend({
     options: {
-        position: 'bottomleft'
+        position: 'topleft'
     },
     onAdd: function() {
         var macbtn = L.DomUtil.create('span',
@@ -3943,21 +4070,35 @@ var MacroButton = L.Control.extend({
         macbtn.style.fontSize = '15px';
         macbtn.style.fontFamily = 'Times New Roman';
         macbtn.style.display = 'block';
-        macbtn.style.top = '-642px';
+        macbtn.style.top = '-563px';
         macbtn.style.left = '54px';
         // click event
         L.DomEvent.on(macbtn, 'click', function() {
             macToggleObservation();
+            map.removeControl(panelLayers2);
+            map.removeControl(panelLayers3);
+            map.removeControl(panelLayers4);
+            map.removeControl(panelLayers5);
+            map.removeControl(panelLayers6);
+            map.removeControl(panelLayers7);
+            map.removeControl(panelLayers8);
+            map.removeControl(panelLayers9);
+            map.removeControl(panelLayers10);
+            map.removeControl(panelLayers11);
+            Model_Time.style.display = "none";
+            // 
+            toggleTimeDimensionControlObs_Mac();
         });
 
         return macbtn;
     }
 });
 new MacroButton().addTo(map);
-// Create a custom control button for ObservationButton
+
+//custom control button for ObservationButton
 var ObservationButton = L.Control.extend({
     options: {
-        position: 'bottomleft'
+        position: 'topleft'
     },
     onAdd: function() {
         var obsbtn = L.DomUtil.create('span',
@@ -3966,9 +4107,8 @@ var ObservationButton = L.Control.extend({
         // Set font size to 15px
         obsbtn.style.fontSize = '15px';
         obsbtn.style.fontFamily = 'Times New Roman';
-        obsbtn.style.top = '-633px';
-        obsbtn.style.left = '54px';
-
+        obsbtn.style.top = '-629px';
+        obsbtn.style.left = '50px';
         // click event
         L.DomEvent.on(obsbtn, 'click', function() {
             toggleObservation();
@@ -3983,124 +4123,43 @@ var ObservationButton = L.Control.extend({
             map.removeControl(panelLayers9);
             map.removeControl(panelLayers10);
             map.removeControl(panelLayers11);
+            Model_Time.style.display = "none";
+            // 
+            toggleTimeDimensionControlObs_Mac();
         });
 
         return obsbtn;
     }
 });
 new ObservationButton().addTo(map);
-// map.addControl(new ObservationButton());
-// buttonContainer.appendChild(new ObservationButton().onAdd(map));
+// 
 
+// MOdels time update BOX starts here
+function timeUpdateBoxTog() {
+    var modelBody = document.querySelector('.model-body_MM');
+    var arrowIcon = document.querySelector('.fa-bounce');
+    var modelMM = document.querySelector('.model_MM');
 
-(function() {
-    var drawnItems = new L.FeatureGroup();
-    map.addLayer(drawnItems);
+    if (modelBody && arrowIcon && modelMM) {
+        if (modelBody.style.height === '50px' || modelBody.style.height === '') {
+            modelBody.style.height = '300px';
+            modelMM.style.top = '43%';
 
-    var isFreehandMode = false;
-    var isDrawing = false;
-    var polyline = null;
+            arrowIcon.classList.remove('fa-arrow-up');
+            arrowIcon.classList.add('fa-arrow-down');
+            arrowIcon.style.color = '#f5f5f5';
+            arrowIcon.style.cursor = 'pointer';
+        } else {
+            modelBody.style.height = '50px';
+            modelMM.style.top = '56%';
 
-    function startDrawing() {
-        isDrawing = true;
-        polyline = L.polyline([], {
-            weight: 4,
-            color: 'red',
-            dashArray: '5, 5'
-        }).addTo(drawnItems);
+            arrowIcon.classList.remove('fa-arrow-down');
+            arrowIcon.classList.add('fa-arrow-up');
+            arrowIcon.style.color = '#f5f5f5';
+            arrowIcon.style.cursor = 'pointer';
+        }
     }
-
-    function stopDrawing() {
-        isDrawing = false;
-        polyline = null;
-    }
-
-    var freehandButton = L.control({
-        position: 'topleft'
-    });
-    freehandButton.onAdd = function(map) {
-        var div = L.DomUtil.create('div', 'leaflet-bar');
-        div.innerHTML =
-            '<button id="freehandButton" style="font-family: \'Times New Roman\'; background-color: white; border: 0px solid black;">Freehand</button>';
-        div.firstChild.addEventListener('click', function() {
-            if (isFreehandMode) {
-                isFreehandMode = false;
-                map.dragging.enable();
-                document.getElementById('freehandButton').style.backgroundColor = 'green';
-            } else {
-                isFreehandMode = true;
-                map.dragging.disable();
-                document.getElementById('freehandButton').style.backgroundColor = 'red';
-            }
-        });
-        return div;
-    };
-    freehandButton.addTo(map);
-
-    var eraseButton = L.control({
-        position: 'topleft'
-    });
-    eraseButton.onAdd = function(map) {
-        var div = L.DomUtil.create('div', 'leaflet-bar');
-        div.innerHTML =
-            '<button id="eraseButton" style="background-color: white; border: 0px solid black;">Erase</button>';
-
-        div.firstChild.addEventListener('click', function() {
-            // Remove the last layer from the map
-            var layers = drawnItems.getLayers();
-            if (layers.length > 0) {
-                drawnItems.removeLayer(layers[layers.length - 1]);
-            }
-        });
-        return div;
-    };
-    eraseButton.addTo(map);
-
-    var clearLayersButton = L.control({
-        position: 'topleft'
-    });
-    clearLayersButton.onAdd = function(map) {
-        var div = L.DomUtil.create('div', 'leaflet-bar');
-        div.innerHTML =
-            '<button id="clearLayersButton" style="background-color: white; border: 0px solid black;">Clear All</button>';
-
-        div.firstChild.addEventListener('click', function() {
-            // Remove all layers from the map
-            drawnItems.clearLayers();
-
-            // Reset freehand mode
-            isFreehandMode = false;
-            map.dragging.enable();
-
-            // Reset freehand button color
-            document.getElementById('freehandButton').style.backgroundColor = 'green';
-        });
-        return div;
-    };
-    clearLayersButton.addTo(map);
-
-    map.on('mousedown', function(event) {
-        if (isFreehandMode && event.originalEvent.button === 0) {
-            if (!isDrawing) {
-                startDrawing();
-                map.dragging.disable();
-            }
-        }
-    });
-
-    map.on('mousemove', function(event) {
-        if (isDrawing) {
-            polyline.addLatLng(event.latlng);
-        }
-    });
-
-    document.addEventListener('mouseup', function(event) {
-        if (isDrawing && event.button === 0) {
-            stopDrawing();
-            map.dragging.enable();
-        }
-    });
-})();
+}
 
 
 
@@ -4112,9 +4171,21 @@ new ObservationButton().addTo(map);
 
 
 
+
+
+
+
+
+
+
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// sideByside splitFunctioin
+//------------------------------------------------------------------------------------------------+
 let sideBySideControl = null;
 let sideBySideVisible = false;
 let activeLayers = 0;
+// mywmsIITM mywmsNcum mywmsNowcast exp_oil ship_00utc med_gfs1 syn00utc_tem rad_ref
 
 const layersArray = [
     [mywmsIITM, mywmsNcum],
@@ -4138,6 +4209,13 @@ const layersArray = [
     [exp_oil, syn00utc_tem],
     [ship_00utc, syn00utc_tem],
     [med_gfs1, syn00utc_tem],
+    [mywmsIITM, rad_ref],
+    [mywmsNcum, rad_ref],
+    [mywmsNowcast, rad_ref],
+    [exp_oil, rad_ref],
+    [ship_00utc, rad_ref],
+    [med_gfs1, rad_ref],
+    [syn00utc_tem, rad_ref]
 ];
 
 function createSideBySide(layer1, layer2) {
@@ -4231,7 +4309,9 @@ const ToggleControl = L.Control.extend({
         button.style.backgroundColor = 'white';
         button.style.border = '3px solid #c2c1ae';
         button.title = 'Split Screen';
-
+        button.style.position = 'absolute';
+        button.style.top = '536px';
+        button.style.left = '1px';
         // Appending the hand symbol and curved arrow SVG to the toggle button
         button.appendChild(handArrowSVG);
 
@@ -4259,13 +4339,20 @@ const toggleControl = new ToggleControl({
     position: 'topleft'
 });
 toggleControl.addTo(map);
-//side-by-side ends here
+//------------------------------------------------------------------------------------------------+
+// side-by-side ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
 //searchControl
 L.Control.geocoder({
     position: "topleft",
     title: "Location Search"
 }).addTo(map);
+var geocoderControl = document.querySelector('.leaflet-control-geocoder');
+if (geocoderControl) {
+    geocoderControl.style.top = '48px';
+}
 // L.Control.geocoder({
 //     position: "topleft",
 // }).on('markgeocode', function(e) {
@@ -4280,8 +4367,6 @@ var controlsContainer = L.DomUtil.create('div', 'controls-container');
 
 
 
-
-
 // customButtonsContainer.appendChild(new MacroButton().onAdd());
 // customButtonsContainer.appendChild(new MacroButton().onAdd());
 // customButtonsContainer.appendChild(new LegendButton().onAdd());
@@ -4291,7 +4376,10 @@ var controlsContainer = L.DomUtil.create('div', 'controls-container');
 // ************
 
 
-//
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// MArker
+//------------------------------------------------------------------------------------------------+
 // Add a marker for Delhi
 var delhiMarker = L.marker([28.6139, 77.2090]);
 delhiMarker.bindPopup("<b>Delhi</b>").openPopup();
@@ -5346,7 +5434,18 @@ X309.bindPopup("<b>X309</b>").openPopup();
 
 var X310 = L.marker([18.6400, 83.5400]);
 X310.bindPopup("<b>X310</b>").openPopup();
+//------------------------------------------------------------------------------------------------+
+// MArker ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 //
+
+
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// PanelLayers and Models Time button click starts here
+//------------------------------------------------------------------------------------------------+
+
 const overLayers = [
     // {
     //     group: "Lightning",
@@ -5386,8 +5485,6 @@ const overLayers = [
     //     ]
     // }
 ];
-
-
 
 //SYNOP
 const overLayers2 = [{
@@ -7717,17 +7814,6 @@ var overLayers11 = [{
     ]
 }, ];
 
-// let layerForMac = [];
-// console.log(layerForMac, "layerForMac++layerForMac");
-// let playMacOvrlayr = [overLayers10, overLayers11];
-// playMacOvrlayr.forEach(group => {
-//     group.forEach(currentLayer => {
-//         currentLayer.layers.forEach(layerDetails => {
-//             let layerName = layerDetails.name;
-//             layerForMac.push(layerName)
-//         });
-//     });
-// });
 
 const allOverLayers = overLayers.concat(overLayers2, overLayers3, overLayers4, overLayers5, overLayers6,
     overLayers7,
@@ -7741,29 +7827,6 @@ allOverLayers.forEach(group => {
         });
     });
 });
-
-// var groupedOverlays = {
-//     "Layer View": {
-//         "District": streets,
-//         "Block": OpenStreetMap
-//     },
-// };
-// var options = {
-//     exclusiveGroups: ["Layer View"]
-// };
-
-// var layerControl = L.control.groupedLayers(groupedOverlays, options);
-// map.addControl(layerControl);
-
-// var groupedOverlays = {
-//     "Landmarks": {
-//         "streets": streets,
-//         "Cities": OpenStreetMap
-//     },
-//     "Points of Interest": {
-//         "Restaurants": OpenStreetMap
-//     }
-// };
 
 var baseMaps1 = {
     "OpenStreetMap": OpenStreetMap,
@@ -7782,15 +7845,11 @@ var layerControl = L.control.layers(baseMaps1, overlayMaps).addTo(map);
 
 // PanelLayers collapse group
 var panelLayers = new L.Control.PanelLayers(baseMaps, overLayers, {
-    // collapsibleGroups: true,
-    // collapsed: false,
     position: "topright"
 });
-// map.addControl(panelLayers);
 
 var panelLayers2 = new L.Control.PanelLayers("", overLayers2, {
     collapsibleGroups: true,
-    // collapsed: true
 });
 
 var panelLayers3 = new L.Control.PanelLayers("", overLayers3, {
@@ -7817,8 +7876,6 @@ var panelLayers9 = new L.Control.PanelLayers('', overLayers9, {
 });
 var panelLayers10 = new L.Control.PanelLayers("", overLayers10, {
     collapsibleGroups: true,
-    // collapsed: true
-    //exposure
 });
 var panelLayers11 = new L.Control.PanelLayers('', overLayers11, {
     collapsibleGroups: true
@@ -7830,518 +7887,135 @@ var panelLayersArray = [panelLayers, panelLayers2, panelLayers3, panelLayers4, p
     panelLayers8, panelLayers9, panelLayers10, panelLayers11
 ];
 
+// Models Time Updation code 
+let Model_Time = document.getElementById("model_Tim");
+let Model_Time_Title = document.getElementById("Model_Tim_Tit");
+let Model_Time_List = document.getElementById("Model_Tim_lis");
+// *******
 
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// PanelLayers and Models Time button click start here
+//------------------------------------------------------------------------------------------------+
 
-//
-const legendImage1 = document.getElementById('legendModel1');
-const legendImage2 = document.getElementById('legendModel2');
-const legendModelExpo = document.getElementById('legendModelExposure');
-const legendModelMet = document.getElementById('legendModelMetar');
-
-
-
-// synop
-let synopButtonState = false;
-
-function clickHandler_synop(event) {
-    if (synopButtonState) {
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        console.log(synopButtonState, "synopButtonState..1");
-    } else {
-        map.addControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        // 
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
+const buttons = [{
+        id: "synop",
+        panel: panelLayers2,
+        title: "Synop",
+        updateTime: "Synop's Data Update Time"
+    },
+    {
+        id: "metar",
+        panel: panelLayers3,
+        title: "Metar",
+        updateTime: "Metar's Data Update Time"
+    },
+    {
+        id: "mesolscale",
+        panel: panelLayers4,
+        title: "Mesoscale",
+        updateTime: "Mesoscale's Data Update Time"
+    },
+    {
+        id: "medium_range",
+        panel: panelLayers5,
+        title: "Medium Range",
+        updateTime: "Medium Range's Data Update Time"
+    },
+    {
+        id: "satellite",
+        panel: panelLayers6,
+        title: "Satellite",
+        updateTime: "Satellite's Data Update Time"
+    },
+    {
+        id: "radar",
+        panel: panelLayers7,
+        title: "Radar",
+        updateTime: "Radar's Data Update Time"
+    },
+    {
+        id: "lightning",
+        panel: panelLayers8,
+        title: "Lightning",
+        updateTime: "Lightning's Data Update Time"
+    },
+    {
+        id: "sounding",
+        panel: panelLayers9,
+        title: "Sounding",
+        updateTime: "Sounding's Data Update Time"
+    },
+    {
+        id: "exposure",
+        panel: panelLayers10,
+        title: "Exposure",
+        updateTime: "Exposure's Data Update Time"
+    },
+    {
+        id: "ship_and_buoy",
+        panel: panelLayers11,
+        title: "Ship and Buoy",
+        updateTime: "Ship and Buoy's Data Update Time"
     }
-    synopButtonState = !synopButtonState;
-}
-document.getElementById("synop").addEventListener("click", clickHandler_synop);
+];
 
-//metar
-let metarButtonState = false;
+let activeButtonId = null;
 
-function clickHandler_metar(event) {
-    if (metarButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers3);
-        // 
-        synopButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
+function handleClick(event) {
+    const buttonId = event.target.id;
+    console.log(buttonId, "buttonId");
+
+    if (buttonId === activeButtonId) {
+        const button = buttons.find(btn => btn.id === buttonId);
+        if (!button) return;
+
+        map.removeControl(button.panel);
+        Model_Time.style.display = "none";
+        activeButtonId = null;
+
+        return;
     }
-    metarButtonState = !metarButtonState;
-}
-document.getElementById("metar").addEventListener("click", clickHandler_metar);
 
-//mesolscale
-let mesolscaleButtonState = false;
+    const button = buttons.find(btn => btn.id === buttonId);
+    if (!button) return;
 
-function clickHandler_mesolscale(event) {
-    if (mesolscaleButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers4);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-    }
-    mesolscaleButtonState = !mesolscaleButtonState;
-}
-document.getElementById("mesolscale").addEventListener("click", clickHandler_mesolscale);
+    buttons.forEach(btn => {
+        if (btn.id === buttonId) {
+            map.addControl(btn.panel);
+        } else {
+            map.removeControl(btn.panel);
+        }
+    });
 
-//medium_range
-let medium_rangeButtonState = false;
+    activeButtonId = buttonId;
 
-function clickHandler_medium(event) {
-    if (medium_rangeButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers5);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-    }
-    medium_rangeButtonState = !medium_rangeButtonState;
-}
-document.getElementById("medium_range").addEventListener("click", clickHandler_medium);
+    let macroContainerFn = document.getElementById("macroContainer");
+    let observationContainerFn = document.getElementById("ObservationContainer");
+    let mapVar = document.getElementById('map');
+    macroContainerFn.classList.add('hidden');
+    observationContainerFn.classList.add('hidden');
+    mapVar.style.width = '100%';
 
-//satellite
-let satelliteButtonState = false;
-
-function clickHandler_satellite(event) {
-    if (satelliteButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers6);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-    }
-    satelliteButtonState = !satelliteButtonState;
-}
-document.getElementById("satellite").addEventListener("click", clickHandler_satellite);
-
-// radar
-let radarButtonState = false;
-
-function clickHandler_radar(event) {
-    if (radarButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers7);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-    }
-    radarButtonState = !radarButtonState;
-}
-document.getElementById("radar").addEventListener("click", clickHandler_radar);
-
-//lightning
-let lightningButtonState = false;
-
-function clickHandler_lightning(event) {
-    if (lightningButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers8);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-    }
-    lightningButtonState = !lightningButtonState;
-}
-document.getElementById("lightning").addEventListener("click", clickHandler_lightning);
-
-//sounding
-let soundingButtonState = false;
-
-function clickHandler_sounding(event) {
-    if (soundingButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers10);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers9);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        exposureButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-    }
-    soundingButtonState = !soundingButtonState;
-}
-document.getElementById("sounding").addEventListener("click", clickHandler_sounding);
-
-// exposure
-let exposureButtonState = false;
-
-function clickHandler_expo(event) {
-    if (exposureButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.addControl(panelLayers10);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        ship_and_buoyButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-    }
-    exposureButtonState = !exposureButtonState;
-}
-document.getElementById("exposure").addEventListener("click", clickHandler_expo);
-
-//ship_and_buoy
-let ship_and_buoyButtonState = false;
-
-function clickHandler_ship(event) {
-    if (ship_and_buoyButtonState) {
-        // map.addControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers11);
-        map.removeControl(panelLayers10);
-    } else {
-        // map.removeControl(panelLayers);
-        map.removeControl(panelLayers2);
-        map.removeControl(panelLayers3);
-        map.removeControl(panelLayers4);
-        map.removeControl(panelLayers5);
-        map.removeControl(panelLayers6);
-        map.removeControl(panelLayers7);
-        map.removeControl(panelLayers8);
-        map.removeControl(panelLayers9);
-        map.removeControl(panelLayers10);
-        map.addControl(panelLayers11);
-        //
-        synopButtonState = false;
-        metarButtonState = false;
-        mesolscaleButtonState = false;
-        medium_rangeButtonState = false;
-        satelliteButtonState = false;
-        radarButtonState = false;
-        lightningButtonState = false;
-        soundingButtonState = false;
-        exposureButtonState = false;
-        // 
-        let macroContainerFn = document.getElementById("macroContainer");
-        let observationContainerFn = document.getElementById("ObservationContainer");
-        let mapVar = document.getElementById('map');
-        macroContainerFn.classList.add('hidden');
-        observationContainerFn.classList.add('hidden');
-        mapVar.style.width = '100%';
-    }
-    ship_and_buoyButtonState = !ship_and_buoyButtonState;
+    Model_Time.style.display = "block";
+    Model_Time_Title.innerHTML = button.title;
+    Model_Time_List.innerHTML = button.updateTime;
 }
 
-document.getElementById("ship_and_buoy").addEventListener("click", clickHandler_ship);
+
+buttons.forEach(btn => {
+    document.getElementById(btn.id).addEventListener("click", handleClick);
+});
+//------------------------------------------------------------------------------------------------+
+// PanelLayers and Models Time button click ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
 
-// Image
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// Legend Image and background color of navbar Starts here
+//------------------------------------------------------------------------------------------------+
 let metarTempLegendImage = document.querySelector('#metarTempImage');
 let metarDewPointLegendImage = document.querySelector('#metarDewPointImage');
 let metarVisibilityLegendImage = document.querySelector('#metarVisibilityImage');
@@ -8378,10 +8052,6 @@ let RainfallIntensityImage = document.querySelector('#RainfallIntensityImage');
 let MSLPDayImage = document.querySelector('#MSLPDayImage');
 let mWINDDayImage = document.querySelector('#mWINDDayImage');
 
-// model popup
-// let model = document.querySelector('.model');
-// let modelBody = document.querySelector('.model-body');
-// let closeModel = document.querySelector('.model-body legend');
 //
 let panelLayerLightningTitle = document.querySelector('#panelLayer-Lightning-Title')
 let panelLayerLightninglists = document.querySelector('#panelLayer-Lightning-lists')
@@ -8393,9 +8063,6 @@ let panelLayerRadarlists = document.querySelector('#panelLayer-radar-lists')
 //EXPOSURE
 let panelLayerExposureTitle = document.querySelector('#exposure-layers-Title')
 let panelLayerExposureLists = document.querySelector('#exposure-layers-lists')
-// 
-let panelLayerExposureTitle_M = document.querySelector('#exposure-layers-Title_M')
-let panelLayerExposureLists_M = document.querySelector('#exposure-layers-lists_M')
 
 // metarTemp
 let panelLayermetarTemp_Title = document.querySelector('#metarTemp-Title')
@@ -8639,54 +8306,7 @@ let clickedSynopVisibilityLists = [];
 let clickedSynopWindSpeedAndDirectionLists = [];
 let clickedSynop3hRainfallLists = [];
 
-// let clickedExposureLists_M = [];
 
-// $("body").on("change", "input[type=checkbox]", function() {
-//     let _this = $(this);
-//     console.log(_this, '_this for M');
-//     let isChecked = _this.prop('checked');
-//     let layer_group_name = _this.context._layer ? _this.context._layer.group.name : '';
-//     console.log(layer_group_name, "layer_group_name for M");
-//     let layer_name_M = _this.context._layer ? _this.context._layer.name : _this.context.className;
-//     console.log(layer_name_M, "layer_name_M for M");
-
-//     // 
-//     if (isChecked) {
-//         if (_this.context._layer?.group.name == "Exposure Layers") {
-//             if (panelLayerExposureTitle.innerHTML == '') {
-//                 EXPOSURE_M.innerHTML = "EXPOSURE";
-//                 panelLayerExposureTitle_M.innerHTML = _this.context._layer?.group.name;
-//                 ExposureRow_M.style.display = 'flex';
-//                 // 
-//             }
-
-//             let ExposureLayersExit = clickedExposureLists_M.find(x => {
-//                 return x.split('" checked/>')[0].split('class="')[1] == forExistLayer;
-//             })
-//             console.log(ExposureLayersExit, "ExposureLayersExit");
-
-//             if (!ExposureLayersExit) {
-
-//                 if (layer_name == 'District Boundaries') {
-//                     clickedExposureLists_M.push(
-//                         '<span style="margin-left: 8px;flex-direction: row;">' + layer_name + ';</span>'
-//                     );
-//                 }
-
-//             }
-//         }
-
-//         panelLayerExposureLists_M.innerHTML = clickedExposureLists_M.join("");
-
-//     } else {
-//         console.log("else for _M");
-//     }
-
-
-
-//     // $("body") 
-// });
-// ends here ****
 
 //Fn for exposure
 function remove_layer_or_add(_context_layer, _layer_to_remove_add, uncheckLayer) {
@@ -9758,30 +9378,15 @@ function remLayOrAdclicked_10W_Day5(_context_layer, _layer_to_remove_add, unchec
     }
 }
 
-var getRadarTit = [];
-
-// checking for print
-// document.body.addEventListener('change', function(e) {
-//     if (e.target.type === 'checkbox') {
-//         if (panelLayerRADARPRODUCTS_Title.innerHTML !== '') {
-//             getRadarTit.push(panelLayerRADARPRODUCTS_Title.innerHTML);
-//             console.log(getRadarTit, "getRadarTit");
-//             // 
-//             console.log("nothing here");
-//         } else {
-//             console.log("something here");
-//         }
-//     }
-// });
-
 var getLayer_name;
 
+// Panel Layer check boxs starts here
 $("body").on("change", "input[type=checkbox]", function() {
     var _this = $(this);
-    console.log(_this, '_this');
+    // console.log(_this, '_thiscgdghbg');
     var isChecked = _this.prop('checked');
     var layer_group_name = _this.context._layer ? _this.context._layer.group.name : '';
-    console.log(layer_group_name, "layer_group_name");
+    // console.log(layer_group_name, "layer_group_name");
     var layer_name;
     // 
     if (isChecked) { // True
@@ -9789,12 +9394,12 @@ $("body").on("change", "input[type=checkbox]", function() {
 
         layer_name = _this.context._layer ? _this.context._layer.name : _this.context.className;
 
-        console.log(layer_name, "layer_name,layer_name");
+        // console.log(layer_name, "layer_name,layer_name");
 
         var forExistLayer = _this.context._layer ? layer_group_name + ' ' + layer_name : _this.context
             .className;
 
-        console.log(forExistLayer, "forExistLayer,forExistLayer");
+        // console.log(forExistLayer, "forExistLayer,forExistLayer");
 
         var _class_name = _this.attr("class");
         console.log(_class_name, "_class_name,_class_name,11");
@@ -14496,7 +14101,6 @@ $("body").on("change", "input[type=checkbox]", function() {
                         `</span>`
                     );
                 }
-
                 if (layer_name == 'Airport') {
                     clickedExposureLists.push(
                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
@@ -14505,7 +14109,6 @@ $("body").on("change", "input[type=checkbox]", function() {
                         `</span>`
                     );
                 }
-
                 if (layer_name == 'Hospital') {
                     clickedExposureLists.push(
                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
@@ -14531,8 +14134,6 @@ $("body").on("change", "input[type=checkbox]", function() {
                         `</span>`
                     );
                 }
-
-
                 if (layer_name == 'Power Station') {
                     clickedExposureLists.push(
                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
@@ -14565,7 +14166,6 @@ $("body").on("change", "input[type=checkbox]", function() {
                         `</span>`
                     );
                 }
-
                 if (layer_name == 'Road Network') {
                     clickedExposureLists.push(
                         `<span style=" flex-direction: column; margin-right: 20px; margin-bottom: 10px;">` +
@@ -14599,8 +14199,6 @@ $("body").on("change", "input[type=checkbox]", function() {
                     );
                 }
             }
-
-
             panelLayerExposureLists.innerHTML = clickedExposureLists.join("");
         }
 
@@ -20620,7 +20218,7 @@ $("body").on("change", "input[type=checkbox]", function() {
         if (panelLayerExposureLists.innerHTML != '') {
             var yyy = document.querySelectorAll('.collapsible')[0].classList.add('expanded');
             document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
-            console.log(yyy);
+            console.log("yyy----------");
         }
         // **********************************************
 
@@ -21282,6 +20880,13 @@ $("body").on("change", "input[type=checkbox]", function() {
             METAR.innerHTML = '';
         }
 
+        if (panelLayermetarTemp_lists.innerHTML != '') {
+            // alert("hhhhhh");
+            var yyyy = document.querySelectorAll('.collapsible')[0].classList.add('expanded');
+            document.querySelectorAll('.leaflet-panel-layers-icon')[0].innerHTML = '-';
+            console.log(yyyy);
+        }
+
 
         // SYNOP
         //UNCHECK SYNOP 00UTC Temp
@@ -21797,7 +21402,6 @@ $("body").on("change", "input[type=checkbox]", function() {
             panelLayersynop3hRainfall_lists.innerText === ''
         ) {
             SYNOP.innerHTML = '';
-            console.log("Hello world22");
         }
 
 
@@ -23061,22 +22665,64 @@ $("body").on("change", "input[type=checkbox]", function() {
     }
 
     getLayer_name = layer_name;
-    console.log(getLayer_name, "getLayer_name");
+    // console.log(getLayer_name, "getLayer_name");
 
     updateBackgroundColor();
 
 });
-//
+//------------------------------------------------------------------------------------------------+
+// Legend Image and background color of navbar ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
-$("body").on("change", "input[type=checkbox]", function() {
-    let printlegenddata = document.getElementById("printlegend").innerHTML;
-    console.log(printlegenddata, "printlegenddata");
+
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// Layer name in footer starts here
+//------------------------------------------------------------------------------------------------+
+// _B - layer BOTTOM name
+$(document).ready(function() {
+    let selectedLayers = [];
+
+    $("body").on("change", "input[type=checkbox]", function() {
+        var _this = $(this);
+        let isChecked_B = _this.prop('checked');
+
+        let layer_group_name_B = _this.context._layer.group.name;
+
+        let layer_name_B = _this.context._layer.name;
+
+        if (isChecked_B) {
+            let forExistLayer_B = layer_group_name_B + ' ' + layer_name_B;
+            selectedLayers.push(forExistLayer_B);
+            console.log(forExistLayer_B, "forExistLayer_B");
+            console.log(selectedLayers, "selectedLayers_B");
+        } else {
+            let uncheckLayer_B = layer_group_name_B + ' ' + layer_name_B;
+            selectedLayers = selectedLayers.filter(layer => layer !== uncheckLayer_B);
+            console.log(uncheckLayer_B, "uncheckLayer_B");
+            console.log(selectedLayers, "selectedLayers_B");
+        }
+
+        if (selectedLayers.length > 0) {
+            document.getElementById("bottomLayer").innerHTML = selectedLayers[selectedLayers.length -
+                1];
+        } else {
+            document.getElementById("bottomLayer").innerHTML = "Layers Selected None";
+        }
+    });
 });
+//------------------------------------------------------------------------------------------------+
+//  Layer name in footer ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
 
 
 
-console.log(getLayer_name, "222222getLayer_namegetLayer_name");
-
+//################################################################################################+
+//------------------------------------------------------------------------------------------------+
+// PanelLayers Legends function starts here
+//------------------------------------------------------------------------------------------------+
 function metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     METAR.innerHTML = "METAR"
     panelLayermetarTemp_lists.style.display = 'flex';
@@ -23088,23 +22734,20 @@ function metarTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     if (!AlreadyExit) {
         clickedMetarTempLists.push(
             `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-			<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
-		</span>`
+            <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
+        </span>`
         );
     }
-
-
-
 
     panelLayermetarTemp_lists.innerHTML = clickedMetarTempLists.join("");
 
     metarTempLegendImage.innerHTML = `<span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-		<span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-		<span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-		<span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-		<span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-		<span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-	</span>`
+        <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+        <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+        <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+        <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+        <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+    </span>`
 }
 
 function metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer) {
@@ -23118,20 +22761,20 @@ function metarDewPointImageAndLegend(layer_group_name, layer_name, forExistLayer
     if (!AlreadyExit) {
         clickedMetarDewPointLists.push(
             `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-			<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
-		</span>`
+            <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
+        </span>`
         );
     }
 
     panelLayermetarDewPoint_lists.innerHTML = clickedMetarDewPointLists.join("");
 
     metarDewPointLegendImage.innerHTML = `<span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-		<span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
-		<span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
-		<span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
-		<span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
-		<span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
-	</span>`
+        <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #32ff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">0-10</span>
+        <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #fcff36; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">30-35</span>
+        <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ffad2d; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">35-40</span>
+        <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color:rgb(254, 101, 49,1); color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">40-45</span>
+        <span style="align-items: center; width:30px; height:18px; border-radius: 15%; background-color: #ff3737; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px;margin-right: 0">>45</span>
+    </span>`
 }
 
 function metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLayer) {
@@ -23145,34 +22788,34 @@ function metarVisibilityImageAndLegend(layer_group_name, layer_name, forExistLay
     if (!AlreadyExit) {
         clickedMetarVisibilityLists.push(
             `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-			<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
-		</span>`
+            <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
+        </span>`
         );
     }
     panelLayermetarVisibility_lists.innerHTML = clickedMetarVisibilityLists.join("");
 
     metarVisibilityLegendImage.innerHTML = `<span style="display: flex; flex-direction: column; font-family: Arial, sans-serif;">
-		<span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-			<span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
-			<span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
-			</span>
-			<span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-			<span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
-			<span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
-			</span>
-			<span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-			<span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
-			<span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
-			</span>
-			<span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-			<span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
-			<span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
-			</span>
-			<span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
-			<span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
-			<span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
-		</span>
-	</span>`
+        <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+            <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #2f7eb6; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">0-1000</span>
+            <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #63abb3; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">1000-2000</span>
+            </span>
+            <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+            <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #9ed1a1; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">2000-4000</span> 
+            <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #c4ebaa; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">4000-8000</span>
+            </span>
+            <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+            <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #edf5bf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">8000-12000</span>
+            <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fcecaf; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">12000-20000</span>
+            </span>
+            <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+            <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #fdca82; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20000-30000</span>
+            <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #f59a4e; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">30000-40000</span>
+            </span>
+            <span style="display: flex; flex-direction: row; font-family: Arial, sans-serif;">
+            <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #e35d2b; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">40000-45000</span>
+            <span style="align-items: center; width:69px; height:18px; border-radius: 15%; background-color: #df1327; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">>45000-50000</span>
+        </span>
+    </span>`
 }
 
 function metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, forExistLayer) {
@@ -23186,22 +22829,20 @@ function metarWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, 
     if (!AlreadyExit) {
         clickedMetarWindSpeedAndDirectionLists.push(
             `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-			<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
-		</span>`
+            <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
+        </span>`
         );
     }
     panelLayermetarWindSpeedAndDirection_lists.innerHTML = clickedMetarWindSpeedAndDirectionLists.join("");
 
     metarWindSpeedAndDirectionLegendImage.innerHTML = `<svg width="60" height="50" style="transform: rotate(90deg);">
-		<g>
-			<path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
-			<path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
-			<path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
-		</g>
-	</svg>`
+        <g>
+            <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+            <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+            <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+        </g>
+    </svg>`
 }
-
-
 
 function synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     SYNOP.innerHTML = "SYNOP"
@@ -23215,8 +22856,8 @@ function synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     if (!AlreadyExit) {
         clickedSynopTempLists.push(
             `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-			<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
-		</span>`
+            <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
+        </span>`
         );
     }
 
@@ -23232,7 +22873,6 @@ function synopTempImageAndLegend(layer_group_name, layer_name, forExistLayer) {
   </span>`
 }
 
-
 function synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistLayer) {
     SYNOP.innerHTML = "SYNOP"
     SYNOP_Row.style.display = 'block';
@@ -23245,8 +22885,8 @@ function synopMeanSeaLevelImageAndLegend(layer_group_name, layer_name, forExistL
     if (!AlreadyExit) {
         clickedSynopMeanSeaLevelLists.push(
             `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-			<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
-		</span>`
+            <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
+        </span>`
         );
     }
     panelLayersynopMeanSeaLevel_lists.innerHTML = clickedSynopMeanSeaLevelLists.join("");
@@ -23289,8 +22929,8 @@ function synopCloudCoverImageAndLegend(layer_group_name, layer_name, forExistLay
     if (!AlreadyExit) {
         clickedSynopCloudCoverLists.push(
             `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-			<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
-		</span>`
+            <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
+        </span>`
         );
     }
     panelLayersynopCloudCover_lists.innerHTML = clickedSynopCloudCoverLists.join("");
@@ -23322,8 +22962,8 @@ function synopGeopotentialHeightImageAndLegend(layer_group_name, layer_name, for
     if (!AlreadyExit) {
         clickedSynopGeopotentialHeightLists.push(
             `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-			<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
-		</span>`
+            <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
+        </span>`
         );
     }
     panelLayersynopGeopotentialHeight_lists.innerHTML = clickedSynopGeopotentialHeightLists.join("");
@@ -23359,8 +22999,8 @@ function synopRelativeHumidityImageAndLegend(layer_group_name, layer_name, forEx
     if (!AlreadyExit) {
         clickedSynopRelativeHumidityLists.push(
             `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-			<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
-		</span>`
+            <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
+        </span>`
         );
     }
     panelLayersynopRelativeHumidity_lists.innerHTML = clickedSynopRelativeHumidityLists.join("");
@@ -23386,8 +23026,8 @@ function synopVisibilityImageAndLegend(layer_group_name, layer_name, forExistLay
     if (!AlreadyExit) {
         clickedSynopVisibilityLists.push(
             `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-			<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
-		</span>`
+            <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
+        </span>`
         );
     }
     panelLayersynopVisibility_lists.innerHTML = clickedSynopVisibilityLists.join("");
@@ -23428,8 +23068,8 @@ function synopWindSpeedAndDirectionImageAndLegend(layer_group_name, layer_name, 
     if (!AlreadyExit) {
         clickedSynopWindSpeedAndDirectionLists.push(
             `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-			<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
-		</span>`
+            <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
+        </span>`
         );
     }
     panelLayersynopWindSpeedAndDirection_lists.innerHTML = clickedSynopWindSpeedAndDirectionLists.join("");
@@ -23455,8 +23095,8 @@ function synop3hRainfallImageAndLegend(layer_group_name, layer_name, forExistLay
     if (!AlreadyExit) {
         clickedSynop3hRainfallLists.push(
             `<span style="flex-direction: column; align-items: center; margin-right: 20px; margin-bottom: 10px;">
-			<input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
-		</span>`
+            <input type="checkbox" class="${layer_group_name} ${layer_name}" checked/> ${layer_group_name}
+        </span>`
         );
     }
     panelLayersynop3hRainfall_lists.innerHTML = clickedSynop3hRainfallLists.join("");
@@ -23518,12 +23158,12 @@ function RADARLegendImage() {
 
 function SHIPANDBUOYLegendImage() {
     SHIPANDBUOYImage.innerHTML = `<svg width="60" height="50" style="transform: rotate(90deg);">
-	<g>
-		<path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
-		<path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
-		<path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
-	</g>
-	</svg>`
+    <g>
+        <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+        <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+        <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+    </g>
+    </svg>`
 }
 
 function WRFReflectivityLegendImage() {
@@ -23556,7 +23196,7 @@ function WRFReflectivityLegendImage() {
     <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #2002b5; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">22.7-25.3</span>
     <span style="align-items: center; width:58px; height:18px; border-radius: 15%; background-color: #3901a0; color:black; font-weight:bolder; padding:2px; font-size:10px; margin-right: 10px; margin-right: 0;">20.0-22.7</span>
     </span>
-	</span>`
+    </span>`
 }
 
 function WRFlightningProductLegendImage() {
@@ -23830,13 +23470,18 @@ function MSLPDayLegendImage() {
 
 function mWINDDayLegendImage() {
     mWINDDayImage.innerHTML = `<svg width="60" height="50" style="transform: rotate(90deg);">
-	<g>
-		<path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
-		<path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
-		<path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
-	</g>
-	</svg>`
+    <g>
+        <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 39.5,45 H 24.5"></path>
+        <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 L 19.5,37.5"></path>
+        <path stroke="#000000" stroke-width="3" stroke-linecap="butt" d="M 24.5,45 H 19.5"></path>
+    </g>
+    </svg>`
 }
+//------------------------------------------------------------------------------------------------+
+// PanelLayers Legends function ends here
+//------------------------------------------------------------------------------------------------+
+//################################################################################################+
+
 
 ///drag popup
 // model popup for legend starts here
@@ -23847,6 +23492,10 @@ let closeModel = document.querySelector('.model-body legend');
 //closeModel
 closeModel.onclick = () => {
     model.style.display = 'none';
+}
+
+function MacroGroupUsers_close() {
+    modelForMacroGroup.style.display = 'none';
 }
 
 function onDrag({
@@ -23871,6 +23520,8 @@ document.addEventListener('mouseup', () => {
 })
 // model popup for legend endsHere
 
+
+
 // model popup- createMacro startsHere
 let createMacroDrag = document.querySelector('.create_Macro');
 let createMacroBody = document.querySelector('.create_Macro_body');
@@ -23879,6 +23530,7 @@ let closeModelCreateMac = document.querySelector('.create_Macro_body .macroLegen
 //closeModel createMacro
 closeModelCreateMac.onclick = () => {
     createMacroDrag.style.display = 'none';
+    closCreatMac();
 }
 
 function onDragCreateMacro({
@@ -23902,6 +23554,8 @@ document.addEventListener('mouseup', () => {
     createMacroBody.removeEventListener('mousemove', onDragCreateMacro);
 })
 // model popup- createMacro endsHere
+
+
 
 
 // model popup- viewMacro startsHere
@@ -23935,4 +23589,67 @@ document.addEventListener('mouseup', () => {
     viewCreateMacroBody.removeEventListener('mousemove', onDragViewMacro);
 })
 // model popup- viewMacro endsHere
+
+
+// model popup- UserFilterMacro startsHere
+let modelForMacroGroup1 = document.querySelector('.modelForMacroGroup1');
+let modelForMacroGroup2 = document.querySelector('.modelForMacroGroup2');
+let modelForMacroGroupClose = document.querySelector('.modelForMacroGroup2 .modelForMacroGroupLegend');
+
+//closeModel viewMacro
+modelForMacroGroupClose.onclick = () => {
+    modelForMacroGroup1.style.display = 'none';
+    selectedUserId = "";
+    showSavedMacroList();
+}
+
+function onDragUserFilterMacro({
+    movementX,
+    movementY
+}) {
+    let getStyle = window.getComputedStyle(modelForMacroGroup1);
+    let leftValue = parseInt(getStyle.left);
+    let topValue = parseInt(getStyle.top);
+    modelForMacroGroup1.style.left = `${leftValue + movementX}px`;
+    modelForMacroGroup1.style.top = `${topValue + movementY}px`;
+}
+//
+document.addEventListener('mousedown', () => {
+    modelForMacroGroup2.style.cursor = 'all-scroll';
+    modelForMacroGroup2.addEventListener('mousemove', onDragUserFilterMacro);
+})
+//
+document.addEventListener('mouseup', () => {
+    modelForMacroGroup2.style.cursor = 'default';
+    modelForMacroGroup2.removeEventListener('mousemove', onDragUserFilterMacro);
+})
+
+// model popup- UserFilterMacro endsHere
+
+
+// MOdels time update BOX starts here
+let model_MM = document.querySelector('.model_MM');
+let modelBody_MM = document.querySelector('.model-body_MM');
+
+function onDragModelTimeUP({
+    movementX,
+    movementY
+}) {
+    let getStyle_MM = window.getComputedStyle(model_MM);
+    let leftValue_MM = parseInt(getStyle_MM.left);
+    let topValue_MM = parseInt(getStyle_MM.top);
+    model_MM.style.left = `${leftValue_MM + movementX}px`;
+    model_MM.style.top = `${topValue_MM + movementY}px`;
+}
+//
+document.addEventListener('mousedown', () => {
+    modelBody_MM.style.cursor = 'all-scroll';
+    modelBody_MM.addEventListener('mousemove', onDragModelTimeUP);
+})
+//
+document.addEventListener('mouseup', () => {
+    modelBody_MM.style.cursor = 'default';
+    modelBody_MM.removeEventListener('mousemove', onDragModelTimeUP);
+})
+// MOdels time update BOX endsHere
 </script>

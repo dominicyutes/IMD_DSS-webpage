@@ -5,17 +5,19 @@ class Welcome extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->library('TCPdf_pdf');
-        $this->load->library('session');
+        // $this->load->library('session');
+        
     }
 	
 	public function index()
 	{
 		header("Access-Control-Allow-Origin: http://weather-imd-test.rimes.int");
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-		$this->load->view('HomePage/homePage');
+		
+        $this->load->view('register');
 	}
-    
-	public function saveReportImg(){
+
+    	public function saveReportImg(){
         if(!empty($_POST)){
             $baseFromJavascript = $_POST['base64'];
             $random_name = $_POST['r_file_name']; 
@@ -64,6 +66,7 @@ class Welcome extends CI_Controller {
 		 return $_pata;
          exit;
     }
+
 	public function test(){
 		$this->load->view('HomePage/pdfReport');
 	}
@@ -72,12 +75,5 @@ class Welcome extends CI_Controller {
         $content = $this->input->post('content');
         $this->session->set_userdata('div_content', $content);
     }
-
-    // public function fetch(){
-    //     echo "<script>alert('1');script>";
-    //     $data =  $this->session->userdata('div_content');
-    //     echo "<script>alert('2');script>";
-    //     echo "<script>console.log('I am here datarand func', $data );</script>";
-    //     die();
-    // }
+    
 }
