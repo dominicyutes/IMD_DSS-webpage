@@ -79,7 +79,11 @@ $db['default'] = array(
 	'username' => 'postgres',
 	'password' => '1234',
 	'database' => 'IMD_DSS',
+<<<<<<< HEAD
 	'dbdriver' => 'Postgre',
+=======
+	'dbdriver' => 'postgre',
+>>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
@@ -92,5 +96,11 @@ $db['default'] = array(
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
+<<<<<<< HEAD
 	'save_queries' => TRUE
 );
+=======
+	'save_queries' => TRUE,
+	'port' => 5432
+);
+>>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b

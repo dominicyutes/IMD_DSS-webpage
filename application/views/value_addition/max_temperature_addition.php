@@ -247,6 +247,10 @@
 
         </section>
     </div>
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
 <?php $this->load->view('Menu/template/footer_js_'); ?>
 
 <script src="<?php echo base_url(); ?>stylesheet/leaflet_1.7.1/leaflet.js"></script>

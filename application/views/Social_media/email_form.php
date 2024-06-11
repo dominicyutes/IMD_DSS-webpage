@@ -181,11 +181,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                         <!-- col-5 ends here -->
+<<<<<<< HEAD
                         <div class="col-5">
                             <div>
                                 <lable>Show Email-ID</lable><textarea id="show_email_id" style="width: 90%;"></textarea>
                             </div>
                         </div>
+=======
+                        <!-- <div class="col-5">
+                            <div>
+                                <lable>Show Email-ID</lable><textarea id="show_email_id" style="width: 90%;"></textarea>
+                            </div>
+                        </div> -->
+>>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
                     </div>
 
                     <div class="row">
@@ -425,7 +433,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 dataType: 'json',
                 success: function(data) {
                     var menu = $('#dropdown-menu-2');
+<<<<<<< HEAD
                     menu.empty(); // Clear previous data
+=======
+                    menu.empty();
+>>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
                     data.forEach(function(group) {
                         var autoEmailChecked = group.auto_email ? 'checked' : '';
                         var listItem = `
@@ -450,6 +462,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         });
     });
 
+<<<<<<< HEAD
     // 
 
     //Based on MC, MC group will be displayed 
@@ -474,6 +487,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         `;
                     menu.append(listItem);
                 });
+=======
+    //Based on MC, MC group will be displayed 
+    $('#dropdown-menu').on('click', 'a.dropdown-item', function(event) {
+        event.preventDefault();
+        var selectedText = $(this).text();
+        $('#getDD1Val').text(selectedText);
+
+        //
+        $.ajax({
+            url: '<?php echo base_url('Email/get_email_groups_by_mc_name'); ?>',
+            type: 'GET',
+            data: {
+                mc_name: selectedText
+            },
+            dataType: 'json',
+            success: function(data) {
+                var menu = $('#dropdown-menu-3');
+                menu.empty();
+                data.forEach(function(group) {
+                    var autoEmailChecked = group.auto_email ? 'checked' : '';
+                    var listItem = `
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input type="checkbox" id="heatwave-department">
+                                <span>${group.groups}</span>
+                                <input type="checkbox" id="auto-email-${group.groups}" ${autoEmailChecked}>
+                                <label for="auto-email-${group.groups}">Auto Email On/Off</label>
+                            </a>
+                        </li>
+                    `;
+                    menu.append(listItem);
+                });
+                console.log(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("Error fetching data: ", textStatus, errorThrown);
+                console.error("Response Text: ", jqXHR.responseText);
+>>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
             }
         });
     });
