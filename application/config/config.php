@@ -23,11 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
-$config['base_url'] = 'http://weather-imd-test.rimes.int/';
-=======
 $config['base_url'] = 'http://weather-dss.rimes.int/';
->>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
 //sdc
 /*
 |--------------------------------------------------------------------------
