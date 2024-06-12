@@ -1589,6 +1589,9 @@ module.exports = exports.default;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 module.exports = {
@@ -1741,6 +1744,7 @@ module.exports = {
 	"yellow": [255, 255, 0],
 	"yellowgreen": [154, 205, 50]
 };
+<<<<<<< HEAD
 =======
 
 
@@ -1895,6 +1899,8 @@ module.exports = {
 	"yellowgreen": [154, 205, 50]
 };
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 /*!
  * icheck-bootstrap v3.0.1 (https://github.com/bantikyan/icheck-bootstrap)
  * Copyright 2018 Hovhannes Bantikyan.
@@ -389,6 +392,7 @@
 .icheck-asbestos > input:first-child:checked + input[type="hidden"] + label::before {
     background-color: #7f8c8d;
     border-color: #7f8c8d;
+<<<<<<< HEAD
 =======
 /*!
  * icheck-bootstrap v3.0.1 (https://github.com/bantikyan/icheck-bootstrap)
@@ -781,4 +785,6 @@
     background-color: #7f8c8d;
     border-color: #7f8c8d;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 }

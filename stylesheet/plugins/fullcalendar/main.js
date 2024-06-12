@@ -1131,6 +1131,9 @@ Docs & License: https://fullcalendar.io/
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
     Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -1169,6 +1172,7 @@ Docs & License: https://fullcalendar.io/
             return t;
         };
         return __assign.apply(this, arguments);
+<<<<<<< HEAD
 =======
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -1209,6 +1213,8 @@ Docs & License: https://fullcalendar.io/
         };
         return __assign.apply(this, arguments);
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
     };
 
     function parseRecurring(eventInput, allDayDefault, dateEnv, recurringTypes, leftovers) {

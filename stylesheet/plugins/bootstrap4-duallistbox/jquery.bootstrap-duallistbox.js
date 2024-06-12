@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 /*
  *  Bootstrap Duallistbox - v4.0.1
  *  A responsive dual listbox widget optimized for Twitter Bootstrap. It works on all modern browsers and on touch devices.
@@ -889,6 +892,7 @@
   };
 
 }));
+<<<<<<< HEAD
 =======
 /*
  *  Bootstrap Duallistbox - v4.0.1
@@ -1781,3 +1785,5 @@
 
 }));
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8

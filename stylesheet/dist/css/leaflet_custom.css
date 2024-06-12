@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 .leaflet-popup-content{
     font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif !important;
     font-size: 14px;
+=======
+.leaflet-popup-content{
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+    font-size: 14px;
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 }

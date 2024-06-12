@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 Package.describe({
   name: 'dangrossman:bootstrap-daterangepicker',
   version: '3.0.5',
@@ -16,6 +19,7 @@ Package.onUse(function(api) {
   api.addFiles('daterangepicker.js', ["client"]);
   api.addFiles('daterangepicker.css', ["client"]);
 });
+<<<<<<< HEAD
 =======
 Package.describe({
   name: 'dangrossman:bootstrap-daterangepicker',
@@ -35,3 +39,5 @@ Package.onUse(function(api) {
   api.addFiles('daterangepicker.css', ["client"]);
 });
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8

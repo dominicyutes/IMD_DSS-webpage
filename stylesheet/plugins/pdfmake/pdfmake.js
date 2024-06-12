@@ -101,6 +101,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 function isString(variable) {
@@ -214,6 +217,7 @@ module.exports = {
 	offsetVector: offsetVector,
 	getNodeId: getNodeId
 };
+<<<<<<< HEAD
 =======
 
 
@@ -329,6 +333,8 @@ module.exports = {
 	getNodeId: getNodeId
 };
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -7530,6 +7536,9 @@ module.exports = tinf_uncompress;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 /* WEBPACK VAR INJECTION */(function(Buffer, __dirname) {
 
 function VirtualFileSystem() {
@@ -7579,6 +7588,7 @@ function fixFilename(filename) {
 }
 
 module.exports = new VirtualFileSystem();
+<<<<<<< HEAD
 =======
 /* WEBPACK VAR INJECTION */(function(Buffer, __dirname) {
 
@@ -7630,6 +7640,8 @@ function fixFilename(filename) {
 
 module.exports = new VirtualFileSystem();
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4).Buffer, "/"))
 
@@ -10904,6 +10916,9 @@ module.exports = defineProperties;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 var isString = __webpack_require__(0).isString;
@@ -11268,6 +11283,7 @@ function widthOfString(text, font, fontSize, characterSpacing, fontFeatures) {
 }
 
 module.exports = TextTools;
+<<<<<<< HEAD
 =======
 
 
@@ -11634,6 +11650,8 @@ function widthOfString(text, font, fontSize, characterSpacing, fontFeatures) {
 
 module.exports = TextTools;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -11642,6 +11660,9 @@ module.exports = TextTools;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 var isString = __webpack_require__(0).isString;
@@ -11778,6 +11799,7 @@ module.exports = {
 	isAutoColumn: isAutoColumn,
 	isStarColumn: isStarColumn
 };
+<<<<<<< HEAD
 =======
 
 
@@ -11916,6 +11938,8 @@ module.exports = {
 	isStarColumn: isStarColumn
 };
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -18910,6 +18934,9 @@ module.exports = LineBreaker;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 function TraversalTracker() {
@@ -18957,6 +18984,7 @@ TraversalTracker.prototype.auto = function (event, callback, innerFunction) {
 };
 
 module.exports = TraversalTracker;
+<<<<<<< HEAD
 =======
 
 
@@ -19006,6 +19034,8 @@ TraversalTracker.prototype.auto = function (event, callback, innerFunction) {
 
 module.exports = TraversalTracker;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -19014,6 +19044,9 @@ module.exports = TraversalTracker;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 var isString = __webpack_require__(0).isString;
@@ -19191,6 +19224,7 @@ StyleContextStack.prototype.getProperty = function (property) {
 };
 
 module.exports = StyleContextStack;
+<<<<<<< HEAD
 =======
 
 
@@ -19370,6 +19404,8 @@ StyleContextStack.prototype.getProperty = function (property) {
 
 module.exports = StyleContextStack;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -19378,6 +19414,9 @@ module.exports = StyleContextStack;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 var TraversalTracker = __webpack_require__(210);
@@ -19692,6 +19731,7 @@ function bottomMostContext(c1, c2) {
 }
 
 module.exports = DocumentContext;
+<<<<<<< HEAD
 =======
 
 
@@ -20008,6 +20048,8 @@ function bottomMostContext(c1, c2) {
 
 module.exports = DocumentContext;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -20016,6 +20058,9 @@ module.exports = DocumentContext;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /**
@@ -20107,6 +20152,7 @@ Line.prototype.getHeight = function () {
 };
 
 module.exports = Line;
+<<<<<<< HEAD
 =======
 
 
@@ -20200,6 +20246,8 @@ Line.prototype.getHeight = function () {
 
 module.exports = Line;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -20215,6 +20263,9 @@ module.exports = Line;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 /* WEBPACK VAR INJECTION */(function(Buffer, global) {
 
 var isFunction = __webpack_require__(0).isFunction;
@@ -20444,6 +20495,7 @@ module.exports = {
 		);
 	}
 };
+<<<<<<< HEAD
 =======
 /* WEBPACK VAR INJECTION */(function(Buffer, global) {
 
@@ -20675,6 +20727,8 @@ module.exports = {
 	}
 };
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4).Buffer, __webpack_require__(22)))
 
@@ -20945,6 +20999,9 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 /*eslint no-unused-vars: ["error", {"args": "none"}]*/
 
 
@@ -21596,6 +21653,7 @@ function endClip(pdfKitDoc) {
 }
 
 module.exports = PdfPrinter;
+<<<<<<< HEAD
 =======
 /*eslint no-unused-vars: ["error", {"args": "none"}]*/
 
@@ -22249,6 +22307,8 @@ function endClip(pdfKitDoc) {
 
 module.exports = PdfPrinter;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -22257,6 +22317,9 @@ module.exports = PdfPrinter;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 function _interopDefault(ex) {
@@ -22278,6 +22341,7 @@ module.exports = {
 	getEngineInstance: getEngineInstance,
 	createPdfDocument: createPdfDocument
 };
+<<<<<<< HEAD
 =======
 
 
@@ -22301,6 +22365,8 @@ module.exports = {
 	createPdfDocument: createPdfDocument
 };
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -63196,6 +63262,9 @@ module.exports = /*#__PURE__*/function () {
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 var isArray = __webpack_require__(0).isArray;
@@ -63264,6 +63333,7 @@ FontProvider.prototype.provideFont = function (familyName, bold, italics) {
 };
 
 module.exports = FontProvider;
+<<<<<<< HEAD
 =======
 
 
@@ -63334,6 +63404,8 @@ FontProvider.prototype.provideFont = function (familyName, bold, italics) {
 
 module.exports = FontProvider;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -63342,6 +63414,9 @@ module.exports = FontProvider;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 var TraversalTracker = __webpack_require__(210);
@@ -64149,6 +64224,7 @@ LayoutBuilder.prototype.processQr = function (node) {
 };
 
 module.exports = LayoutBuilder;
+<<<<<<< HEAD
 =======
 
 
@@ -64958,6 +65034,8 @@ LayoutBuilder.prototype.processQr = function (node) {
 
 module.exports = LayoutBuilder;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -64966,6 +65044,9 @@ module.exports = LayoutBuilder;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 var isString = __webpack_require__(0).isString;
@@ -65221,6 +65302,7 @@ DocPreprocessor.prototype._getNodeForNodeRef = function (node) {
 }
 
 module.exports = DocPreprocessor;
+<<<<<<< HEAD
 =======
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
@@ -65478,6 +65560,8 @@ DocPreprocessor.prototype._getNodeForNodeRef = function (node) {
 
 module.exports = DocPreprocessor;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4).Buffer))
 
@@ -65487,6 +65571,9 @@ module.exports = DocPreprocessor;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 /*eslint no-unused-vars: ["error", {"args": "none"}]*/
 
 
@@ -66294,6 +66381,7 @@ DocMeasure.prototype.measureQr = function (node) {
 };
 
 module.exports = DocMeasure;
+<<<<<<< HEAD
 =======
 /*eslint no-unused-vars: ["error", {"args": "none"}]*/
 
@@ -67103,6 +67191,8 @@ DocMeasure.prototype.measureQr = function (node) {
 
 module.exports = DocMeasure;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -67111,6 +67201,9 @@ module.exports = DocMeasure;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 /*eslint no-unused-vars: ["error", {"args": "none"}]*/
 /*eslint no-redeclare: "off"*/
 
@@ -67899,6 +67992,7 @@ function measure(node) {
 
 module.exports = {
 	measure: measure
+<<<<<<< HEAD
 =======
 /*eslint no-unused-vars: ["error", {"args": "none"}]*/
 /*eslint no-redeclare: "off"*/
@@ -68689,6 +68783,8 @@ function measure(node) {
 module.exports = {
 	measure: measure
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 };
 
 /***/ }),
@@ -68697,6 +68793,9 @@ module.exports = {
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 var isUndefined = __webpack_require__(0).isUndefined;
@@ -68871,6 +68970,7 @@ PageElementWriter.prototype.context = function () {
 };
 
 module.exports = PageElementWriter;
+<<<<<<< HEAD
 =======
 
 
@@ -69047,6 +69147,8 @@ PageElementWriter.prototype.context = function () {
 
 module.exports = PageElementWriter;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -69055,6 +69157,9 @@ module.exports = PageElementWriter;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 var Line = __webpack_require__(213);
@@ -69377,6 +69482,7 @@ ElementWriter.prototype.getCurrentPositionOnPage = function () {
 
 
 module.exports = ElementWriter;
+<<<<<<< HEAD
 =======
 
 
@@ -69701,6 +69807,8 @@ ElementWriter.prototype.getCurrentPositionOnPage = function () {
 
 module.exports = ElementWriter;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -69709,6 +69817,9 @@ module.exports = ElementWriter;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 var ColumnCalculator = __webpack_require__(131);
@@ -70251,6 +70362,7 @@ TableProcessor.prototype.endRow = function (rowIndex, writer, pageBreaks) {
 };
 
 module.exports = TableProcessor;
+<<<<<<< HEAD
 =======
 
 
@@ -70795,6 +70907,8 @@ TableProcessor.prototype.endRow = function (rowIndex, writer, pageBreaks) {
 
 module.exports = TableProcessor;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -70803,6 +70917,9 @@ module.exports = TableProcessor;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 module.exports = {
@@ -70857,6 +70974,7 @@ module.exports = {
 	LETTER: [612.00, 792.00],
 	TABLOID: [792.00, 1224.00]
 };
+<<<<<<< HEAD
 =======
 
 
@@ -70913,6 +71031,8 @@ module.exports = {
 	TABLOID: [792.00, 1224.00]
 };
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -70921,6 +71041,9 @@ module.exports = {
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 function ImageMeasure(pdfKitDoc, imageDictionary) {
@@ -70966,6 +71089,7 @@ ImageMeasure.prototype.measureImage = function (src) {
 };
 
 module.exports = ImageMeasure;
+<<<<<<< HEAD
 =======
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
@@ -71013,6 +71137,8 @@ ImageMeasure.prototype.measureImage = function (src) {
 
 module.exports = ImageMeasure;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4).Buffer))
 
@@ -71022,6 +71148,9 @@ module.exports = ImageMeasure;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 function SVGMeasure() {
@@ -71128,6 +71257,7 @@ SVGMeasure.prototype.writeDimensions = function (svgString, dimensions) {
 };
 
 module.exports = SVGMeasure;
+<<<<<<< HEAD
 =======
 
 
@@ -71236,6 +71366,8 @@ SVGMeasure.prototype.writeDimensions = function (svgString, dimensions) {
 
 module.exports = SVGMeasure;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),
@@ -71244,6 +71376,9 @@ module.exports = SVGMeasure;
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 var isArray = __webpack_require__(0).isArray;
@@ -71395,6 +71530,7 @@ module.exports = {
 	drawBackground: drawBackground,
 	drawDecorations: drawDecorations
 };
+<<<<<<< HEAD
 =======
 
 
@@ -71548,6 +71684,8 @@ module.exports = {
 	drawDecorations: drawDecorations
 };
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 
 
 /***/ }),

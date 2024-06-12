@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 body {
     font-size: 15px;
     line-height: 1.6em;
@@ -150,6 +153,7 @@ input[type="text"] {
 #jumbo .btn {
     border-radius: 0;
     font-size: 16px;
+<<<<<<< HEAD
 =======
 body {
     font-size: 15px;
@@ -303,4 +307,6 @@ input[type="text"] {
     border-radius: 0;
     font-size: 16px;
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 }

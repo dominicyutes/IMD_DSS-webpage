@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 /**
 * @version: 3.0.5
 * @author: Dan Grossman http://www.dangrossman.info/
@@ -1564,6 +1567,7 @@
     return DateRangePicker;
 
 }));
+<<<<<<< HEAD
 =======
 /**
 * @version: 3.0.5
@@ -3131,3 +3135,5 @@
 
 }));
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8

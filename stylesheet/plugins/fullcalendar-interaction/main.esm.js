@@ -7,6 +7,9 @@ Docs & License: https://fullcalendar.io/
 import { config, elementClosest, EmitterMixin, applyStyle, whenTransitionDone, removeElement, ScrollController, ElementScrollController, computeInnerRect, WindowScrollController, preventSelection, preventContextMenu, allowSelection, allowContextMenu, ElementDragging, computeRect, getClippingParents, pointInsideRect, isDateSpansEqual, constrainPoint, intersectRects, getRectCenter, diffPoints, mapHash, rangeContainsRange, interactionSettingsToStore, Interaction, enableCursor, disableCursor, compareNumbers, getElSeg, getRelevantEvents, EventApi, createEmptyEventStore, applyMutationToEventStore, interactionSettingsStore, startOfDay, diffDates, createDuration, eventTupleToStore, isInteractionValid, parseDragMeta, elementMatches, parseEventDef, createEventInstance, globalDefaults, createPlugin } from '@fullcalendar/core';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -45,6 +48,7 @@ var __assign = function() {
         return t;
     };
     return __assign.apply(this, arguments);
+<<<<<<< HEAD
 =======
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -85,6 +89,8 @@ var __assign = function() {
     };
     return __assign.apply(this, arguments);
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 };
 
 config.touchMouseIgnoreWait = 500;

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 require('../../daterangepicker.js');
 var $ = require('jquery'),
     moment = require('moment');
@@ -134,6 +137,7 @@ $(document).ready(function() {
   }
 
 });
+<<<<<<< HEAD
 =======
 require('../../daterangepicker.js');
 var $ = require('jquery'),
@@ -271,3 +275,5 @@ $(document).ready(function() {
 
 });
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8

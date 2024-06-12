@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 /*@preserve
  * Tempus Dominus Bootstrap4 v5.1.2 (https://tempusdominus.github.io/bootstrap-4/)
  * Copyright 2016-2018 Jonathan Peterson
@@ -28,6 +31,7 @@ if ((version[0] <= 2 && version[1] < 17) || (version[0] >= 3)) {
 
 +function () {
 
+<<<<<<< HEAD
 =======
 /*@preserve
  * Tempus Dominus Bootstrap4 v5.1.2 (https://tempusdominus.github.io/bootstrap-4/)
@@ -59,6 +63,8 @@ if ((version[0] <= 2 && version[1] < 17) || (version[0] >= 3)) {
 +function () {
 
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -388,12 +394,17 @@ var DateTimePicker = function ($, moment) {
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         /**
          * @return {string}
 =======
         /**
          * @return {string}
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+        /**
+         * @return {string}
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
          */
 
 
@@ -1544,12 +1555,17 @@ var DateTimePicker = function ($, moment) {
             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             /**
              * @return {string}
 =======
             /**
              * @return {string}
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+            /**
+             * @return {string}
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
              */
 
         }, {
@@ -1559,12 +1575,17 @@ var DateTimePicker = function ($, moment) {
             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             /**
              * @return {string}
 =======
             /**
              * @return {string}
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+            /**
+             * @return {string}
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
              */
 
         }, {
@@ -1574,12 +1595,17 @@ var DateTimePicker = function ($, moment) {
             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             /**
              * @return {string}
 =======
             /**
              * @return {string}
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+            /**
+             * @return {string}
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
              */
 
         }, {
@@ -2766,16 +2792,22 @@ var TempusDominusBootstrap4 = function ($) {
     }(DateTimePicker);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
     /**
     * ------------------------------------------------------------------------
     * jQuery
     * ------------------------------------------------------------------------
+<<<<<<< HEAD
 =======
     /**
     * ------------------------------------------------------------------------
     * jQuery
     * ------------------------------------------------------------------------
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
     */
 
 
@@ -2834,6 +2866,7 @@ var TempusDominusBootstrap4 = function ($) {
 
     return TempusDominusBootstrap4;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }(jQuery);
 
 }();
@@ -2842,3 +2875,8 @@ var TempusDominusBootstrap4 = function ($) {
 
 }();
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+}(jQuery);
+
+}();
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8

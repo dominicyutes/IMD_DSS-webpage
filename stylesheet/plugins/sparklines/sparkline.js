@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -209,6 +212,7 @@
 
   return Sparkline;
 }));
+<<<<<<< HEAD
 =======
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -421,3 +425,5 @@
   return Sparkline;
 }));
 >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+=======
+>>>>>>> 7b1615156b2e7cfdcfc6a8060bd437be1590e0c8
