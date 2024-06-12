@@ -4,14 +4,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
     <link rel="shortcut icon" href="https://mausam.imd.gov.in/responsive/img/logo/imd_icon.ico">
 
     <style>
         .btn {
-            /* transform: translate(-50%, -50%); */
-            /* -ms-transform: translate(-50%, -50%); */
             background-color: #f1f1f1;
             color: black;
             cursor: pointer;
@@ -45,9 +41,6 @@
 <body>
     <?php $this->load->view('Menu/template/header_'); ?>
     <?php $this->load->view('Menu/template//sidebar_'); ?>
-
-
-    <!-- <h1 style="margin-top: -8px; margin-left: 450px; margin-bottom: 20px;">Rainfall Validation</h1> -->
 
     <div class="parent" style="max-width: 1300px;">
         <div class="content-wrapper" style="display: inline-block;">
