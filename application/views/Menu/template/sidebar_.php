@@ -16,7 +16,7 @@
                     <li class="nav-item">
                         <a href="<?php echo base_url('Rainfall_Validation'); ?>" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Rainfall Validation v1</p>
+                            <p>Rainfall Validation</p>
                         </a>
                     </li>
                     <li class="nav-item">
