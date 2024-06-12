@@ -77,8 +77,8 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'postgres',
-	'password' => '1234',
-	'database' => 'IMD_DSS',
+	'password' => 'iru@ADMIN123',
+	'database' => 'weather-dss',
 	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -92,11 +92,6 @@ $db['default'] = array(
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
-<<<<<<< HEAD
-	'save_queries' => TRUE
-);
-=======
 	'save_queries' => TRUE,
 	'port' => 5432
 );
->>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
