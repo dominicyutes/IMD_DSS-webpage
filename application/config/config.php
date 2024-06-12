@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/WEATHER-DSS/';
-//sdc
+$config['base_url'] = 'http://localhost/weather-dss/';
+
 /*
 |--------------------------------------------------------------------------
 | Index File
