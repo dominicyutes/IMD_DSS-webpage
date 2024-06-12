@@ -175,160 +175,166 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </li>
                                 </ul> -->
 
-                                <ul id="dropdown-menu-3" class="dropdown-menu"
+                                <ul id="dropdown-menu-2" class="dropdown-menu"
                                     style="height: 20rem; overflow-y: scroll;">
                                 </ul>
                             </div>
                         </div>
                         <!-- col-5 ends here -->
-<<<<<<< HEAD
-                        <div class="col-5">
+                        <<<<<<< HEAD <div class="col-5">
                             <div>
                                 <lable>Show Email-ID</lable><textarea id="show_email_id" style="width: 90%;"></textarea>
                             </div>
-                        </div>
-=======
-                        <!-- <div class="col-5">
+                    </div>
+                    =======
+                    <!-- <div class="col-5">
                             <div>
                                 <lable>Show Email-ID</lable><textarea id="show_email_id" style="width: 90%;"></textarea>
                             </div>
                         </div> -->
->>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
-                    </div>
+                    >>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
+                </div>
 
-                    <div class="row">
-                        <!-- new group && existing group starts here -->
-                        <!-- radio btn starts here -->
-                        <div style="margin-top: 1%;">
-                            <div style="display: flex;">
-                                <label>Create or Edit</label>
-                                <div class="radioCls"><input type="radio" name="create_edit_option" value="none"
-                                        checked />
-                                    <label>None</label>
-                                </div>
-
-                                <div class="radioCls"><input type="radio" name="create_edit_option"
-                                        value="existing_group" />
-                                    <label>Create Group/Existing Group</label>
-                                </div>
+                <div class="row">
+                    <!-- new group && existing group starts here -->
+                    <!-- radio btn starts here -->
+                    <div style="margin-top: 1%;">
+                        <div style="display: flex;">
+                            <label>Create or Edit</label>
+                            <div class="radioCls"><input type="radio" name="create_edit_option" value="none" checked />
+                                <label>None</label>
                             </div>
-                        </div> <!-- radio btn ends here -->
+
+                            <div class="radioCls"><input type="radio" name="create_edit_option"
+                                    value="existing_group" />
+                                <label>Create Group/Existing Group</label>
+                            </div>
+                        </div>
+                    </div> <!-- radio btn ends here -->
 
 
-                        <!-- Existing Group radio btn BOX starts here -->
-                        <div id="existingGroupIdDis" class="hidden">
-                            <div class="row" style="display: flex;justify-content: space-evenly;">
-                                <div class="col-6" style=" margin-top: 1%;height: 18.25rem;width: 23rem;background-color:
+                    <!-- Existing Group radio btn BOX starts here -->
+                    <div id="existingGroupIdDis" class="hidden">
+                        <div class="row" style="display: flex;justify-content: space-evenly;">
+                            <div class="col-6" style=" margin-top: 1%;height: 18.25rem;width: 23rem;background-color:
                                 #cccccc;">
-                                    <div style="margin-left: 3%;">
-                                        <div style="padding-top: 2%;">Existing Group</div>
-                                        <div>
-                                            <!-- Choose grp dropdown starts here -->
-                                            <div class="btn-group">
-                                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Choose Group
-                                                </button>
-                                                <ul id="dropdown-menu-2" class="dropdown-menu"
-                                                    style="height: 20rem; overflow-y: scroll;">
-                                                </ul>
-                                                <textbox style="margin-left: 10%; background-color: #adf5f5;"
-                                                    id="getDD2Val"></textbox>
-                                            </div>
-                                            <!-- Choose grp dropdown ends here -->
+                                <div style="margin-left: 3%;">
+                                    <div style="padding-top: 2%;">Existing Group</div>
+                                    <div>
+                                        <!-- Choose grp dropdown starts here -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Choose Group
+                                            </button>
+                                            <ul id="dropdown-menu-3" class="dropdown-menu"
+                                                style="height: 20rem; overflow-y: scroll;">
+                                            </ul>
+                                            <textbox style="margin-left: 10%; background-color: #adf5f5;"
+                                                id="getDD3Val"></textbox>
+                                        </div>
+                                        <!-- Choose grp dropdown ends here -->
 
-                                            <!-- addemail -->
-                                            <div style="margin-top:2%;">
-                                                <input id="add_email" type="text" style="width:82%;"
-                                                    placeholder="add email here" />
-                                                <button id="submit_email" class="btn btn-light btn-sm"
-                                                    type="submit">Add</button>
-                                            </div> <!-- addemail ends here-->
-                                            <hr />
+                                        <!-- addemail -->
+                                        <div style="margin-top:2%;">
+                                            <input id="add_email" type="text" style="width:82%;"
+                                                placeholder="add email here" />
+                                            <button id="submit_email" class="btn btn-light btn-sm"
+                                                type="submit">Add</button>
+                                        </div> <!-- addemail ends here-->
+                                        <hr />
 
-                                            <!-- new grp, class="hidden" style="display: none;" -->
-                                            <div id="newGroupIdDis">
-                                                <div style="background-color: #cccccc;">
+                                        <!-- new grp, class="hidden" style="display: none;" -->
+                                        <div id="newGroupIdDis">
+                                            <div style="background-color: #cccccc;">
+                                                <div>
+                                                    <!-- style="margin-left: 3%;" -->
+                                                    <div>New Group</div>
                                                     <div>
-                                                        <!-- style="margin-left: 3%;" -->
-                                                        <div>New Group</div>
-                                                        <div>
-                                                            <input type="text" style="width:82%;" id="newGroupInput" />
-                                                            <button class="btn btn-light btn-sm" type="submit"
-                                                                id="addButton">Add</button>
-                                                        </div>
+                                                        <input type="text" style="width:82%;" id="newGroupInput" />
+                                                        <!-- <button class="btn btn-light btn-sm" type="submit"
+                                                                id="addButton">Add</button> -->
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <!-- addemail -->
-                                            <div style="margin-top:2%;">
-                                                <input id="add_email" type="text" style="width:82%;"
-                                                    placeholder="add email here" />
-                                                <button id="submit_email" class="btn btn-light btn-sm"
-                                                    type="submit">Add</button>
-                                            </div> <!-- addemail ends here-->
-                                            <hr>
-                                            <div>
-                                                <span>NOTE:</span>
-                                                <span>Add one email at once</span>
-                                            </div>
+                                        <!-- addemail -->
+                                        <div style="margin-top:2%;">
+                                            <input id="add_email" type="text" style="width:82%;"
+                                                placeholder="add email here" />
+                                            <button id="submit_email" class="btn btn-light btn-sm"
+                                                type="submit">Add</button>
+                                        </div> <!-- addemail ends here-->
+                                        <hr>
+                                        <div>
+                                            <span>NOTE:</span>
+                                            <span>Add one email at once</span>
                                         </div>
                                     </div>
                                 </div>
-                                <!--  -->
-
-                                <!-- list of email displaying -->
-                                <div class="col-6"
-                                    style="margin-top: 1%;height: 16.25rem;width: 23rem;background-color: #cccccc;">
-                                </div>
                             </div>
-                        </div><!-- Existing Group radio btn BOX ends here -->
+                            <!--  -->
 
-                    </div> <!-- new group && existing group ends here -->
+                            <!-- list of email displaying -->
+                            <div class="col-6"
+                                style="margin-top: 1%;height: 16.25rem;width: 23rem;background-color: #cccccc;">
+                                <span id="disEmail">
+                                    imd@gmail.com
+                                </span>
+                            </div>
+                        </div>
+                    </div><!-- Existing Group radio btn BOX ends here -->
 
-                    <!-- Data content type -->
-                    <div>
-                        <div class="btn-group dropend">
-                            <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
-                                style="margin-top: 22%;" data-bs-toggle="dropdown" aria-expanded="false">
-                                Choose DataType
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Add New</a></li>
-                                <li><a class="dropdown-item" href="#">Heatwave</a></li>
-                                <li><a class="dropdown-item" href="#">Coldwave</a></li>
-                                <li><a class="dropdown-item" href="#">Nowcast</a></li>
-                            </ul>
+                </div> <!-- new group && existing group ends here -->
+
+                <!-- Data content type -->
+                <div>
+                    <div class="btn-group dropend">
+                        <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" style="margin-top: 22%;"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Choose DataType
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Add New</a></li>
+                            <li><a class="dropdown-item" href="#">Heatwave</a></li>
+                            <li><a class="dropdown-item" href="#">Coldwave</a></li>
+                            <li><a class="dropdown-item" href="#">Nowcast</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- mail send btn -->
+                <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>">
+                    <div class="row" style="margin-top: 2%;">
+                        <div class="col-8">
+                            <lable>Subject</lable>
+                            <input type="text" />
+                        </div>
+                        <div class="col-4">
+                            <lable>Upload</lable>
+                            <input type="file" name="myfile" />
                         </div>
                     </div>
 
-                    <!-- mail send btn -->
-                    <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>">
-                        <div class="row" style="margin-top: 2%;">
-                            <div class="col-8">
-                                <lable>Subject</lable>
-                                <input type="text" />
-                            </div>
-                            <div class="col-4">
-                                <lable>Upload</lable>
-                                <input type="file" name="myfile" />
-                            </div>
-                        </div>
-
-                        <div class="row">
+                    <div class="row">
+                        <div class="col-8">
                             <lable>Message</lable>
                             <textarea style="margin-left: 1%; width: 50%;"></textarea>
                         </div>
-                        <button style="margin-top: 2%;" type="submit" id="submitButton"
-                            class="btn btn-success btn-sm">Submit</button>
-                    </form>
-                    <br>
+                        <div class="col-4">
+                            <button style="margin-top: 2%;" type="submit" id="submitButton"
+                                class="btn btn-success btn-sm">Submit</button>
+                        </div>
+                    </div>
 
-                    <!--  -->
-                    <div>
-                        <!-- <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>"> -->
-                        <!-- <lable>Name</lable>
+                </form>
+                <br>
+
+                <!--  -->
+                <div>
+                    <!-- <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>"> -->
+                    <!-- <lable>Name</lable>
                             <input type="text" id="name" name="name" />
                             <br>
                             <lable>Subject</lable>
@@ -336,7 +342,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <br>
                             <lable>Message</lable>
                             <input type="text" id="message" name="message" /> -->
-                        <!-- <label for="toggleButton">To Deliver</label>
+                    <!-- <label for="toggleButton">To Deliver</label>
                             <input type="checkbox" id="toggleButton">
 
                             <button style="margin-left: 10px" type="submit" id="submitButton" class="btn btn-success ml-2"
@@ -347,31 +353,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div> -->
 
 
-                        <div class="row">
-                            <div class="col-10">
-                                <!-- <label style="margin-left:5%" for="toggleButton">ON/OFF</label> -->
-                                <!-- To Deliver -->
-                                <!-- <input type="checkbox" id="toggleButton"> -->
-                                <!-- <button style="margin-left: 10px" type="submit" id="submitButton"
+                    <div class="row">
+                        <div class="col-10">
+                            <!-- <label style="margin-left:5%" for="toggleButton">ON/OFF</label> -->
+                            <!-- To Deliver -->
+                            <!-- <input type="checkbox" id="toggleButton"> -->
+                            <!-- <button style="margin-left: 10px" type="submit" id="submitButton"
                                         class="btn btn-success btn-sm">Submit</button> -->
-                                <!--Submit -->
-                            </div>
+                            <!--Submit -->
                         </div>
-                        <!-- </form> -->
+                    </div>
+                    <!-- </form> -->
 
-                        <!-- <div class="col-2 text-right">
+                    <!-- <div class="col-2 text-right">
                             <button class="btn btn-primary btn-sm" id="toggleEmailLogTable">Log Information</button>
                         </div> -->
 
 
 
-                    </div>
-                    <!--  -->
                 </div>
+                <!--  -->
             </div>
-            <!-- editing content ends here -->
-
         </div>
+        <!-- editing content ends here -->
+
+    </div>
     </div>
 
     <script>
@@ -397,9 +403,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     });
     // 
 
-    //using AJAX for dropdown for Choose MC
+    // Fetch mc_names for Dropdown 1 (UI)
     $(document).ready(function() {
-        // Fetch mc_names for Dropdown 1
         $.ajax({
             url: "<?php echo base_url('Email/fetch_mc_names'); ?>",
             method: "GET",
@@ -416,79 +421,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 console.error("Response Text: ", jqXHR.responseText);
             }
         });
-
-        // Handle selection from Dropdown 1
-        $('#dropdown-menu').on('click', 'a.dropdown-item', function(event) {
-            event.preventDefault();
-            var selectedText = $(this).text();
-            $('#getDD1Val').text(selectedText);
-
-            // Fetch and display relevant groups and auto_email based on the selected mc_name
-            $.ajax({
-                url: '<?php echo base_url('Email/get_email_groups_by_mc_name'); ?>',
-                type: 'GET',
-                data: {
-                    mc_name: selectedText
-                },
-                dataType: 'json',
-                success: function(data) {
-                    var menu = $('#dropdown-menu-2');
-<<<<<<< HEAD
-                    menu.empty(); // Clear previous data
-=======
-                    menu.empty();
->>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
-                    data.forEach(function(group) {
-                        var autoEmailChecked = group.auto_email ? 'checked' : '';
-                        var listItem = `
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <input type="checkbox" id="heatwave-department">
-                                <span>${group.groups}</span>
-                                <input type="checkbox" id="auto-email-${group.groups}" ${autoEmailChecked}>
-                                <label for="auto-email-${group.groups}">Auto Email On/Off</label>
-                            </a>
-                        </li>
-                    `;
-                        menu.append(listItem);
-                    });
-                    console.log(data); // Log the data to the console
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.error("Error fetching data: ", textStatus, errorThrown);
-                    console.error("Response Text: ", jqXHR.responseText);
-                }
-            });
-        });
     });
 
-<<<<<<< HEAD
-    // 
-
-    //Based on MC, MC group will be displayed 
-    $(document).ready(function() {
-        $.ajax({
-            url: '<?php echo site_url('email/get_email_groups'); ?>',
-            type: 'GET',
-            dataType: 'json',
-            success: function(data) {
-                var menu = $('#dropdown-menu-3');
-                data.forEach(function(group) {
-                    var autoEmailChecked = group.auto_email ? 'checked' : '';
-                    var listItem = `
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <input type="checkbox" id="heatwave-department">
-                                    <span>${group.groups}</span>
-                                    <input type="checkbox" id="auto-email-${group.groups}" ${autoEmailChecked}>
-                                    <label for="auto-email-${group.groups}">Auto Email On/Off</label>
-                                </a>
-                            </li>
-                        `;
-                    menu.append(listItem);
-                });
-=======
-    //Based on MC, MC group will be displayed 
+    //Based on MC, MC group will be displayed [MC Groups DD buttun, 2nd DD]
     $('#dropdown-menu').on('click', 'a.dropdown-item', function(event) {
         event.preventDefault();
         var selectedText = $(this).text();
@@ -503,7 +438,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             },
             dataType: 'json',
             success: function(data) {
-                var menu = $('#dropdown-menu-3');
+                var menu = $('#dropdown-menu-2');
                 menu.empty();
                 data.forEach(function(group) {
                     var autoEmailChecked = group.auto_email ? 'checked' : '';
@@ -524,11 +459,81 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             error: function(jqXHR, textStatus, errorThrown) {
                 console.error("Error fetching data: ", textStatus, errorThrown);
                 console.error("Response Text: ", jqXHR.responseText);
->>>>>>> 8f13e6f674ae26600127cc5ea51637defec6291b
             }
         });
     });
-    //
+
+    // Existing grp DD //this DD-3
+    $(document).ready(function() {
+        $('#dropdown-menu').on('click', 'a.dropdown-item', function(event) {
+            event.preventDefault();
+            var selectedText = $(this).text();
+            $('#getDD1Val').text(selectedText);
+
+            $.ajax({
+                url: '<?php echo base_url('Email/get_email_groups_by_mc_name'); ?>',
+                type: 'GET',
+                data: {
+                    mc_name: selectedText
+                },
+                dataType: 'json',
+                success: function(data) {
+                    var menu = $('#dropdown-menu-3');
+                    menu.empty();
+                    data.forEach(function(group) {
+                        var listItem = `
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <span>${group.groups}</span>
+                        </a>
+                    </li>
+                    `;
+                        menu.append(listItem);
+                    });
+
+                    // Attach click event handler to newly added items in #dropdown-menu-3
+                    $('#dropdown-menu-3').on('click', 'a.dropdown-item', function(event) {
+                        event.preventDefault();
+                        var groupText = $(this).find('span').text();
+                        $('#getDD3Val').text(groupText);
+
+                        // Fetch email based on selected group
+                        $.ajax({
+                            url: '<?php echo base_url('Email/get_email_by_group'); ?>',
+                            type: 'GET',
+                            data: {
+                                group: groupText
+                            },
+                            dataType: 'json',
+                            success: function(data) {
+                                // if (data.length > 0) {
+                                //     $('#disEmail').text(data[0]
+                                //         .email
+                                //     );
+                                // } else {
+                                //     $('#disEmail').text(
+                                //         'No email found');
+                                // }
+                            },
+                            error: function(jqXHR, textStatus,
+                                errorThrown) {
+                                console.error("Error fetching email: ",
+                                    textStatus, errorThrown);
+                                console.error("Response Text: ", jqXHR
+                                    .responseText);
+                            }
+                        });
+                    });
+
+                    console.log(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error("Error fetching data: ", textStatus, errorThrown);
+                    console.error("Response Text: ", jqXHR.responseText);
+                }
+            });
+        });
+    });
     </script>
 </body>
 
