@@ -52,28 +52,28 @@
                         </li>
                         <li class="nav-item">
                             <a href="<?php echo base_url('Email'); ?>"
-                                class="nav-link <?php echo ($this->uri->segment(1) == "SMS_controller") ? "" : ""; ?>">
+                                class="nav-link <?php echo ($this->uri->segment(1) == "Email") ? "active" : ""; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>EMAIL</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="<?php echo base_url('Whatsapp_controller'); ?>"
-                                class="nav-link <?php echo ($this->uri->segment(1) == "SMS_controller") ? "" : ""; ?>">
+                                class="nav-link <?php echo ($this->uri->segment(1) == "Whatsapp_controller") ? "active" : ""; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Whatsapp</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="<?php echo base_url('Facebook_post'); ?>"
-                                class="nav-link <?php echo ($this->uri->segment(1) == "SMS_controller") ? "" : ""; ?>">
+                                class="nav-link <?php echo ($this->uri->segment(1) == "Facebook_post") ? "active" : ""; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Facebook</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="<?php echo base_url('Twitter_post'); ?>"
-                                class="nav-link <?php echo ($this->uri->segment(1) == "SMS_controller") ? "" : ""; ?>">
+                                class="nav-link <?php echo ($this->uri->segment(1) == "Twitter_post") ? "active" : ""; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Twitter (X)</p>
                             </a>
