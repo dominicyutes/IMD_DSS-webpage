@@ -41,7 +41,7 @@
                                         align="center"></div>
                                 </div>
                             </div>
-                            <div id="toggleDiv" style="display: none; flex-direction: column; padding: 20px; border: 2px solid #000; border-radius: 10px; margin-top: -698px; width: 265px; margin-left: 870px; height: 684px;">
+                            <div id="toggleDiv" style="display: none; flex-direction: column; padding: 20px; border: 2px solid #000; border-radius: 10px; margin-top: -698px; width: 23%; margin-left: 77%; height: 684px;">
                                 <h4 style="text-align: center; font-family: 'Times New Roman';">FILTERS</h4>
 
 
@@ -53,7 +53,7 @@
                                             <div style="display: flex; flex-direction: row; align-items: center;">
                                                 <input type="text" id="station-name" list="station-name-list"
                                                     placeholder="Station Name"
-                                                    style="width: 200px; border-radius: 100px; margin-bottom: 10px;">
+                                                    style="width: 100%; border-radius: 100px; margin-bottom: 10px;">
                                                 <datalist id="station-name-list">
                                                     <?php foreach ($stationNames as $station): ?>
                                                         <option value="<?php echo $station['name']; ?>"></option>
@@ -66,7 +66,7 @@
                                             <div style="display: flex; flex-direction: row; align-items: center;">
                                                 <input type="text" id="station-id" list="station-id-list"
                                                     placeholder="12345678"
-                                                    style="width: 200px; border-radius: 100px; margin-bottom: 10px;">
+                                                    style="width: 100%; border-radius: 100px; margin-bottom: 10px;">
                                                 <datalist id="station-id-list">
                                                     <?php foreach ($stationIds as $station): ?>
                                                         <option value="<?php echo $station['id']; ?>"></option>
@@ -103,7 +103,7 @@
                                                 <label style="margin-bottom: 5px;">Sub-Division:</label>
                                                 <div style="display: flex; flex-direction: row; align-items: center;">
                                                     <select id="subdivisionSelect"
-                                                        style="width: 200px; border-radius: 100px;">
+                                                        style="width: 100%; border-radius: 100px;">
                                                         <option value="">Select a Sub-Division</option>
                                                     </select>
                                                 </div>
@@ -111,14 +111,14 @@
                                             <div style="display: flex; flex-direction: column;">
                                                 <label style="margin-bottom: 5px;">MC/RMC:</label>
                                                 <div style="display: flex; flex-direction: row; align-items: center;">
-                                                    <input type="text" style="width: 200px; border-radius: 100px;">
+                                                    <input type="text" style="width: 100%; border-radius: 100px;">
                                                 </div>
                                             </div>
                                             <div style="display: flex; flex-direction: column; margin-bottom: 10px;">
                                                 <label style="margin-bottom: 5px;">State:</label>
                                                 <div style="display: flex; flex-direction: row; align-items: center;">
                                                     <select id="stateSelect"
-                                                        style="width: 200px; border-radius: 100px;">
+                                                        style="width: 100%; border-radius: 100px;">
                                                         <option value="">Select a State</option>
                                                     </select>
                                                 </div>
@@ -127,7 +127,7 @@
                                             <div style="display: flex; flex-direction: column;margin-bottom: 10px;">
                                                 <label style="margin-bottom: 5px;">District:</label>
                                                 <div style="display: flex; flex-direction: row; align-items: center;">
-                                                    <input type="text" style="width: 200px; border-radius: 100px;">
+                                                    <input type="text" style="width: 100%; border-radius: 100px;">
                                                 </div>
                                             </div>
 
@@ -620,7 +620,7 @@
             var toggleDiv = document.getElementById('toggleDiv');
 
             if (container.style.width === '100%') {
-                container.style.width = '75%';
+                container.style.width = '77%';
                 arrowIcon.src = 'img/anime/swipe.gif';
                 toggleDiv.style.display = 'flex';
             } else {
