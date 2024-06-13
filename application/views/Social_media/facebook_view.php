@@ -62,14 +62,15 @@
 </style>
 
 
-<div style="height: 100%;">
 
 
-    <div class="row">
-        <!-- editing content starts here -->
-        <div class="col-12" style="width: 85%; margin-left: 20%; ">
+<div class="row">
+    <div class="content-wrapper" style="width: 100%;">
+        <section class="content">
+
+            <!-- editing content starts here -->
             <div class="row">
-                <div class="col-8">
+                <div class="col-7">
                     <!-- left side starts here -->
                     <div style="display:flex;">
                         <i style="margin-top: 1%;" class="fa-brands fa-facebook fa-xl"></i>
@@ -146,11 +147,13 @@
 
                 </div> <!-- left side ends here -->
             </div>
-        </div>
-        <!-- editing content ends here -->
+            <!-- editing content ends here -->
 
+        </section>
     </div>
 </div>
+
+
 <?php $this->load->view('Menu/template/footer_js_'); ?>
 
 <script>

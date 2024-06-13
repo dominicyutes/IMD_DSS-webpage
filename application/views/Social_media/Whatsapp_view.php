@@ -102,12 +102,12 @@
                 <div class="col-3 font">
                     <div class="row">
                         <!-- right side starts here -->
-                        <div class="col-8" style="margin-top: 2%;">
+                        <div class="col-10" style="margin-top: 2%;">
                             <input type="checkbox" id="toggleButton">
                             <label for="toggleButton">Auto Message ON/OFF</label>
                         </div>
                         <!-- Log Button -->
-                        <div class="col-4" style="margin-top: 2%;">
+                        <div class="col-2" style="margin-top: 2%;">
                             <button
                                 onclick="window.location.href='<?php echo base_url('Facebook_post/log_information'); ?>'"
                                 class="btn btn-info btn-sm">LOG</button>

@@ -64,27 +64,18 @@
 }
 </style>
 
+<div class="row">
+    <div class="content-wrapper" style="width: 100%;">
+        <section class="content">
 
-
-<div style="height: 100%;">
-    <div class="row">
-
-        <!-- editing content starts here -->
-        <div class="col-9" style="width: 85%;margin-left: 17%;">
+            <!-- editing content starts here -->
             <div class="row">
-                <div class="col-8">
+                <div class="col-7">
                     <!-- left side starts here -->
-                    <i class="fa-brands fa-x-twitter fa-xl"></i>
-                    <div id="map" class="map-canvas"></div>
-
-                    <!-- <div class="row">
-                            <div class="col-9">
-                                <button class="btn btn-primary" id="getPic">POST</button>
-                                <button class="btn btn-primary" id="postToFacebookBtn"
-                                    style="visibility: hidden;">POST</button>
-                            </div>
-                        </div> -->
-
+                    <div>
+                        <i class="fa-brands fa-x-twitter fa-xl"></i>
+                        <div id="map" class="map-canvas"></div>
+                    </div>
                 </div><!-- left side ends here  -->
 
                 <div class="col-3">
@@ -158,11 +149,12 @@
 
                 </div> <!-- left side ends here -->
             </div>
-        </div>
-        <!-- editing content ends here -->
+            <!-- editing content ends here -->
 
+        </section>
     </div>
 </div>
+
 
 <?php $this->load->view('Menu/template/footer_js_'); ?>
 <script>
