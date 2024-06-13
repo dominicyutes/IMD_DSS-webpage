@@ -45,15 +45,6 @@
 
 
 <style>
-body {
-    width: 100%;
-    height: 100vh;
-    /* zoom: 80%; */
-    /* overflow: hidden; */
-    overflow-x: hidden;
-    font-family: "Lato", sans-serif;
-}
-
 .textFont {
     font-family: 'Archivo', sans-serif;
     font-size: 148%;
@@ -93,16 +84,13 @@ body {
 }
 </style>
 
-<div style="height: 100%;">
-
-
-    <div class="row">
-
-
-        <!-- editing content starts here -->
-        <div class="col-9" style="width: 85%; margin-left: 17%;">
+<div class="row">
+    <div class="content-wrapper" style="width: 100%;">
+        <section class="content">
+            <!-- editing content starts here -->
+            <!-- <div class="col-9"> -->
             <div class="row">
-                <div class="col-8">
+                <div class="col-7">
                     <!-- left side starts here -->
                     <div style="display:flex; margin-top: 1%;margin-right: 1%;">
                         <i class="fa-brands fa-whatsapp fa-xl"></i>
@@ -139,23 +127,28 @@ body {
                             <li><a class="dropdown-item" href="#" id="mc_agartala"
                                     onclick="setInputValue('MC_Agartala')">MC_Agartala</a></li>
                             <li><a class="dropdown-item" href="#"
-                                    onclick="setInputValue('MC_Ahmedabad')">MC_Ahmedabad</a></li>
+                                    onclick="setInputValue('MC_Ahmedabad')">MC_Ahmedabad</a>
+                            </li>
                             <li><a class="dropdown-item" href="#"
-                                    onclick="setInputValue('MC_Amaravati')">MC_Amaravati</a></li>
+                                    onclick="setInputValue('MC_Amaravati')">MC_Amaravati</a>
+                            </li>
                             <li><a class="dropdown-item" href="#"
-                                    onclick="setInputValue('MC_Bengaluru')">MC_Bengaluru</a></li>
+                                    onclick="setInputValue('MC_Bengaluru')">MC_Bengaluru</a>
+                            </li>
                             <li><a class="dropdown-item" href="#" onclick="setInputValue('MC_Bhopal')">MC_Bhopal</a>
                             </li>
                             <li><a class="dropdown-item" href="#"
                                     onclick="setInputValue('MC_Bhubaneswar')">MC_Bhubaneswar</a></li>
                             <li><a class="dropdown-item" href="#"
-                                    onclick="setInputValue('MC_Chandigarh')">MC_Chandigarh</a></li>
+                                    onclick="setInputValue('MC_Chandigarh')">MC_Chandigarh</a>
+                            </li>
                             <li><a class="dropdown-item" href="#" onclick="setInputValue('MC_Dehradun')">MC_Dehradun</a>
                             </li>
                             <li><a class="dropdown-item" href="#" onclick="setInputValue('MC_Gangtok')">MC_Gangtok</a>
                             </li>
                             <li><a class="dropdown-item" href="#"
-                                    onclick="setInputValue('MC_Hyderabad')">MC_Hyderabad</a></li>
+                                    onclick="setInputValue('MC_Hyderabad')">MC_Hyderabad</a>
+                            </li>
                             <li><a class="dropdown-item" href="#" onclick="setInputValue('MC_Jaipur')">MC_Jaipur</a>
                             </li>
                             <li><a class="dropdown-item" href="#" onclick="setInputValue('MC_Kohima')">MC_Kohima</a>
@@ -297,13 +290,14 @@ body {
                     <!--  -->
 
 
-                </div> <!-- left side ends here -->
+                </div> <!-- right side ends here -->
             </div>
-        </div>
-        <!-- editing content ends here -->
-
+            <!-- </div> -->
+            <!-- editing content ends here -->
+        </section>
     </div>
 </div>
+
 <?php $this->load->view('Menu/template/footer_js_'); ?>
 <script>
 // checking Auto Message is ON/OFF

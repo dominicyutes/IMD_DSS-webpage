@@ -13,13 +13,6 @@
 
 
 <style>
-.body {
-    width: 100%;
-    height: 100vh;
-    overflow-x: hidden;
-    font-family: "Lato", sans-serif;
-}
-
 .textFont {
     font-family: 'Archivo', sans-serif;
     font-size: 148%;
@@ -51,52 +44,54 @@
 <div class="row">
 
     <!-- editing content starts here -->
-    <div class="col-9" style="width: 85%; margin-left: 20%;">
-        <div style="background-color: #f5fdfd">
-            <div class="container">
-                <div style="display:flex;">
-                    <i class="fa-solid fa-envelope fa-xl"></i>
-                    <span class="textFont">EMAIL</span>
-                </div>
-                <div>
-                    <button class="btn btn-info btn-sm" id="toggleEmailLogTable">Log Information</button>
-                </div>
-            </div>
-            <!--  -->
-            <div>
-                <input type="checkbox" id="toggleButton">
-                <label for="toggleButton">Auto Email ON/OFF</label>
-            </div>
-            <!--  -->
-            <div class="row">
-                <!-- col-7 starts here -->
-                <div class="col-7">
-                    <div class="btn-group dropend" style="margin-top: 4%;">
-                        <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Choose MC
-                        </button>
-                        <ul id="dropdown-menu" class="dropdown-menu" style="height: 20rem; overflow-y: scroll;">
-                            <!-- AJAX MC -->
-                        </ul>
-                        <textbox style="margin-left: 10%; background-color: #adf5f5;" id="getDD1Val">
-                        </textbox>
+    <div class="content-wrapper" style="width: 100%;">
+        <section class="content">
+            <div style="margin-left: 1%;">
+                <div class="container" style="margin-left: 0%;">
+                    <div style="display:flex;">
+                        <i class="fa-solid fa-envelope fa-xl"></i>
+                        <!-- <img src="img/anime/calendar.gif" alt="calendar" style="width: 20px;"> -->
+                        <span class="textFont">EMAIL</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-info btn-sm" id="toggleEmailLogTable">Log Information</button>
                     </div>
                 </div>
-                <!-- col-7 ends here -->
+                <!--  -->
+                <div>
+                    <input type="checkbox" id="toggleButton">
+                    <label for="toggleButton">Auto Email ON/OFF</label>
+                </div>
+                <!--  -->
+                <div class="row">
+                    <!-- col-7 starts here -->
+                    <div class="col-7">
+                        <div class="btn-group dropend" style="margin-top: 4%;">
+                            <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Choose MC
+                            </button>
+                            <ul id="dropdown-menu" class="dropdown-menu" style="height: 20rem; overflow-y: scroll;">
+                                <!-- AJAX MC -->
+                            </ul>
+                            <textbox style="margin-left: 10%; background-color: #adf5f5;" id="getDD1Val">
+                            </textbox>
+                        </div>
+                    </div>
+                    <!-- col-7 ends here -->
 
-            </div> <!-- class="row" -->
+                </div> <!-- class="row" -->
 
-            <!-- selecting department Auto ON/OFF -->
-            <div class="row">
-                <!-- col-5 starts here -->
-                <div class="col-7">
-                    <div class="btn-group dropend">
-                        <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" style="margin-top: 22%;"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            MC Groups
-                        </button>
-                        <!-- <ul class="dropdown-menu">
+                <!-- selecting department Auto ON/OFF -->
+                <div class="row">
+                    <!-- col-5 starts here -->
+                    <div class="col-7">
+                        <div class="btn-group dropend">
+                            <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
+                                style="margin-top: 22%;" data-bs-toggle="dropdown" aria-expanded="false">
+                                MC Groups
+                            </button>
+                            <!-- <ul class="dropdown-menu">
                                     <li>
                                         <a class="dropdown-item" href="#">
                                             <input type="checkbox" id="heatwave-department">
@@ -107,162 +102,164 @@
                                     </li>
                                 </ul> -->
 
-                        <ul id="dropdown-menu-2" class="dropdown-menu" style="height: 20rem; overflow-y: scroll;">
-                        </ul>
+                            <ul id="dropdown-menu-2" class="dropdown-menu" style="height: 20rem; overflow-y: scroll;">
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <!-- col-5 ends here -->
-                <div class="col-5">
-                    <div>
-                        <lable>Show Email-ID</lable><textarea id="show_email_id" style="width: 90%;"></textarea>
+                    <!-- col-5 ends here -->
+                    <div class="col-5">
+                        <div>
+                            <lable>Show Email-ID</lable><textarea id="show_email_id" style="width: 90%;"></textarea>
+                        </div>
                     </div>
-                </div>
-                <!-- <div class="col-5">
+                    <!-- <div class="col-5">
                             <div>
                                 <lable>Show Email-ID</lable><textarea id="show_email_id" style="width: 90%;"></textarea>
                             </div>
                         </div> -->
-            </div>
-
-            <div class="row">
-                <!-- new group && existing group starts here -->
-                <!-- radio btn starts here -->
-                <div style="margin-top: 1%; width: -webkit-fill-available;">
-                    <div style="display: flex;">
-                        <label>Create or Edit</label>
-                        <div class="radioCls"><input type="radio" name="create_edit_option" value="none" checked />
-                            <label>None</label>
-                        </div>
-
-                        <div class="radioCls"><input type="radio" name="create_edit_option" value="existing_group" />
-                            <label>Create Group/Existing Group</label>
-                        </div>
-                    </div>
-                </div> <!-- radio btn ends here -->
-
-
-                <!-- Existing Group radio btn BOX starts here -->
-                <div id="existingGroupIdDis" class="hidden">
-                    <div class="row" style="display: flex;justify-content: space-evenly;">
-                        <div class="col-6" style=" margin-top: 1%;height: 18.25rem;width: 23rem;background-color:
-                                #cccccc;">
-                            <div style="margin-left: 3%;">
-                                <div style="padding-top: 2%;">Existing Group</div>
-                                <div>
-                                    <!-- Choose grp dropdown starts here -->
-                                    <div class="btn-group">
-                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            Choose Group
-                                        </button>
-                                        <ul id="dropdown-menu-3" class="dropdown-menu"
-                                            style="height: 20rem; overflow-y: scroll;">
-                                        </ul>
-                                        <textbox style="margin-left: 10%; background-color: #adf5f5;" id="getDD3Val">
-                                        </textbox>
-                                    </div>
-                                    <!-- Choose grp dropdown ends here -->
-
-                                    <!-- addemail -->
-                                    <div style="margin-top:2%;">
-                                        <input id="add_email" type="text" style="width:82%;"
-                                            placeholder="add email here" />
-                                        <button id="submit_email" class="btn btn-light btn-sm"
-                                            type="submit">Add</button>
-                                    </div> <!-- addemail ends here-->
-                                    <hr />
-
-                                    <!-- new grp, class="hidden" style="display: none;" -->
-                                    <div id="newGroupIdDis">
-                                        <div style="background-color: #cccccc;">
-                                            <div>
-                                                <!-- style="margin-left: 3%;" -->
-                                                <div>New Group</div>
-                                                <div>
-                                                    <input type="text" style="width:82%;" id="newGroupInput" />
-                                                    <!-- <button class="btn btn-light btn-sm" type="submit"
-                                                                id="addButton">Add</button> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- addemail -->
-                                    <div style="margin-top:2%;">
-                                        <input id="add_email" type="text" style="width:82%;"
-                                            placeholder="add email here" />
-                                        <button id="submit_email" class="btn btn-light btn-sm"
-                                            type="submit">Add</button>
-                                    </div> <!-- addemail ends here-->
-                                    <hr>
-                                    <div>
-                                        <span>NOTE:</span>
-                                        <span>Add one email at once</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--  -->
-
-                        <!-- list of email displaying -->
-                        <div class="col-6"
-                            style="margin-top: 1%;height: 16.25rem;width: 23rem;background-color: #cccccc;">
-                            <span id="disEmail">
-                                imd@gmail.com
-                            </span>
-                        </div>
-                    </div>
-                </div><!-- Existing Group radio btn BOX ends here -->
-
-            </div> <!-- new group && existing group ends here -->
-
-            <!-- Data content type -->
-            <div>
-                <div class="btn-group dropend">
-                    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" style="margin-top: 22%;"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Choose DataType
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Add New</a></li>
-                        <li><a class="dropdown-item" href="#">Heatwave</a></li>
-                        <li><a class="dropdown-item" href="#">Coldwave</a></li>
-                        <li><a class="dropdown-item" href="#">Nowcast</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- mail send btn -->
-            <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>">
-                <div class="row" style="margin-top: 2%;">
-                    <div class="col-8">
-                        <lable>Subject</lable>
-                        <input type="text" />
-                    </div>
-                    <div class="col-4">
-                        <lable>Upload</lable>
-                        <input type="file" name="myfile" />
-                    </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-8">
-                        <lable>Message</lable>
-                        <textarea style="margin-left: 1%; width: 50%;"></textarea>
-                    </div>
-                    <div class="col-4">
-                        <button style="margin-top: 2%;" type="submit" id="submitButton"
-                            class="btn btn-success btn-sm">Submit</button>
+                    <!-- new group && existing group starts here -->
+                    <!-- radio btn starts here -->
+                    <div style="margin-top: 1%; width: -webkit-fill-available;">
+                        <div style="display: flex;">
+                            <label>Create or Edit</label>
+                            <div class="radioCls"><input type="radio" name="create_edit_option" value="none" checked />
+                                <label>None</label>
+                            </div>
+
+                            <div class="radioCls"><input type="radio" name="create_edit_option"
+                                    value="existing_group" />
+                                <label>Create Group/Existing Group</label>
+                            </div>
+                        </div>
+                    </div> <!-- radio btn ends here -->
+
+
+                    <!-- Existing Group radio btn BOX starts here -->
+                    <div id="existingGroupIdDis" class="hidden">
+                        <div class="row" style="display: flex;justify-content: space-evenly;">
+                            <div class="col-6" style=" margin-top: 1%;height: 18.25rem;width: 23rem;background-color:
+                                #cccccc;">
+                                <div style="margin-left: 3%;">
+                                    <div style="padding-top: 2%;">Existing Group</div>
+                                    <div>
+                                        <!-- Choose grp dropdown starts here -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Choose Group
+                                            </button>
+                                            <ul id="dropdown-menu-3" class="dropdown-menu"
+                                                style="height: 20rem; overflow-y: scroll;">
+                                            </ul>
+                                            <textbox style="margin-left: 10%; background-color: #adf5f5;"
+                                                id="getDD3Val">
+                                            </textbox>
+                                        </div>
+                                        <!-- Choose grp dropdown ends here -->
+
+                                        <!-- addemail -->
+                                        <div style="margin-top:2%;">
+                                            <input id="add_email" type="text" style="width:82%;"
+                                                placeholder="add email here" />
+                                            <button id="submit_email" class="btn btn-light btn-sm"
+                                                type="submit">Add</button>
+                                        </div> <!-- addemail ends here-->
+                                        <hr />
+
+                                        <!-- new grp, class="hidden" style="display: none;" -->
+                                        <div id="newGroupIdDis">
+                                            <div style="background-color: #cccccc;">
+                                                <div>
+                                                    <!-- style="margin-left: 3%;" -->
+                                                    <div>New Group</div>
+                                                    <div>
+                                                        <input type="text" style="width:82%;" id="newGroupInput" />
+                                                        <!-- <button class="btn btn-light btn-sm" type="submit"
+                                                                id="addButton">Add</button> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- addemail -->
+                                        <div style="margin-top:2%;">
+                                            <input id="add_email" type="text" style="width:82%;"
+                                                placeholder="add email here" />
+                                            <button id="submit_email" class="btn btn-light btn-sm"
+                                                type="submit">Add</button>
+                                        </div> <!-- addemail ends here-->
+                                        <hr>
+                                        <div>
+                                            <span>NOTE:</span>
+                                            <span>Add one email at once</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  -->
+
+                            <!-- list of email displaying -->
+                            <div class="col-6"
+                                style="margin-top: 1%;height: 16.25rem;width: 23rem;background-color: #cccccc;">
+                                <span id="disEmail">
+                                    imd@gmail.com
+                                </span>
+                            </div>
+                        </div>
+                    </div><!-- Existing Group radio btn BOX ends here -->
+
+                </div> <!-- new group && existing group ends here -->
+
+                <!-- Data content type -->
+                <div>
+                    <div class="btn-group dropend">
+                        <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" style="margin-top: 22%;"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Choose DataType
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Add New</a></li>
+                            <li><a class="dropdown-item" href="#">Heatwave</a></li>
+                            <li><a class="dropdown-item" href="#">Coldwave</a></li>
+                            <li><a class="dropdown-item" href="#">Nowcast</a></li>
+                        </ul>
                     </div>
                 </div>
 
-            </form>
-            <br>
+                <!-- mail send btn -->
+                <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>">
+                    <div class="row" style="margin-top: 2%;">
+                        <div class="col-8">
+                            <lable>Subject</lable>
+                            <input type="text" />
+                        </div>
+                        <div class="col-4">
+                            <lable>Upload</lable>
+                            <input type="file" name="myfile" />
+                        </div>
+                    </div>
 
-            <!--  -->
-            <div>
-                <!-- <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>"> -->
-                <!-- <lable>Name</lable>
+                    <div class="row">
+                        <div class="col-8">
+                            <lable>Message</lable>
+                            <textarea style="margin-left: 1%; width: 50%;"></textarea>
+                        </div>
+                        <div class="col-4">
+                            <button style="margin-top: 2%;" type="submit" id="submitButton"
+                                class="btn btn-success btn-sm">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+                <br>
+
+                <!--  -->
+                <div>
+                    <!-- <form id="emailForm" method="POST" action="<?=base_url('email/send_email')?>"> -->
+                    <!-- <lable>Name</lable>
                             <input type="text" id="name" name="name" />
                             <br>
                             <lable>Subject</lable>
@@ -270,7 +267,7 @@
                             <br>
                             <lable>Message</lable>
                             <input type="text" id="message" name="message" /> -->
-                <!-- <label for="toggleButton">To Deliver</label>
+                    <!-- <label for="toggleButton">To Deliver</label>
                             <input type="checkbox" id="toggleButton">
 
                             <button style="margin-left: 10px" type="submit" id="submitButton" class="btn btn-success ml-2"
@@ -281,27 +278,28 @@
                             </div> -->
 
 
-                <div class="row">
-                    <div class="col-10">
-                        <!-- <label style="margin-left:5%" for="toggleButton">ON/OFF</label> -->
-                        <!-- To Deliver -->
-                        <!-- <input type="checkbox" id="toggleButton"> -->
-                        <!-- <button style="margin-left: 10px" type="submit" id="submitButton"
+                    <div class="row">
+                        <div class="col-10">
+                            <!-- <label style="margin-left:5%" for="toggleButton">ON/OFF</label> -->
+                            <!-- To Deliver -->
+                            <!-- <input type="checkbox" id="toggleButton"> -->
+                            <!-- <button style="margin-left: 10px" type="submit" id="submitButton"
                                         class="btn btn-success btn-sm">Submit</button> -->
-                        <!--Submit -->
+                            <!--Submit -->
+                        </div>
                     </div>
-                </div>
-                <!-- </form> -->
+                    <!-- </form> -->
 
-                <!-- <div class="col-2 text-right">
+                    <!-- <div class="col-2 text-right">
                             <button class="btn btn-primary btn-sm" id="toggleEmailLogTable">Log Information</button>
                         </div> -->
 
 
 
+                </div>
+                <!--  -->
             </div>
-            <!--  -->
-        </div>
+        </section>
     </div>
     <!-- editing content ends here -->
 
