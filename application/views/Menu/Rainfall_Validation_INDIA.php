@@ -13,12 +13,17 @@
 
 
     <style>
-        .main {
-            margin-right: 10px;
-            margin-left: 225px;
-            margin-bottom: -300px;
-            padding: 0px 10px;
-            margin-top: -916px;
+       .btn {
+            background-color: #f1f1f1;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: black;
+            color: white;
         }
 
 
@@ -47,9 +52,11 @@
     <div class="parent" style="max-width: 1300px;">
         <div class="content-wrapper" style="display: inline-block;">
             <section class="content">
+            <img src="img/anime/drizzle.gif" alt="Drizzle Animation" style="width: 28px;">
+            <h4 style="font-family: 'Times New Roman', Times, serif; display: inline;">RAINFALL VALIDATION INDIA</h4>
                 <div class="box box-info">
-                    <div style="padding-top: 5px; padding-bottom: 5px;">
-                        Click on the station to view the comparison plot. You can even use the date and
+                <div style="padding-top: 5px; padding-bottom: 5px;">
+                        Click on the <img src="img/anime/stations.gif" alt="Station Icon" style="width: 25px;">station to view the comparison plot. You can even use the  <img src="img/anime/calendar.gif" alt="calendar" style="width: 20px;">date and
                         parameter
                         filters.
                     </div>
@@ -438,7 +445,7 @@
             target: 'map_canvas',
             view: new ol.View({
                 center: ol.proj.transform([78.9629, 20.5937], 'EPSG:4326', 'EPSG:3857'),
-                zoom: 4
+                zoom: 4.5
             })
         });
 
@@ -530,22 +537,7 @@
             })
         });
 
-        var labels = new ol.layer.Tile({
-            visible: true,
-            opacity: 1,
-            source: new ol.source.TileWMS({
-                url: 'https://geoserver.rimes.int:8443/geoserver/wms',
-                singleTile: true,
-                params: {
-                    'LAYERS': 'rimes:districts_s,rimes:block_s_bkp',
-                    tilesorigin: '85.0985,20.9517',
-                    'styles': 'district_label,block_label'
-                },
-                serverType: 'geoserver',
-                transition: 0
-            })
-        });
-        map.addLayer(labels);
+    
         var ls = new ol.control.LayerSwitcher({ tipLabel: 'Legend' });
         map.addControl(ls);
 
