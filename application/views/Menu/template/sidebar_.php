@@ -42,6 +42,14 @@
                 </li>
 
                 <li class="nav-item ">
+                    <a href="<?php echo base_url('ValueAddition/WeatherForecast'); ?>"
+                        class="nav-link <?php echo ($this->uri->segment(2) == "WeatherForecast") ? "active" : ""; ?>"> <i
+                            class="nav-icon fas fa-th"></i>
+                        <p> Weather Forecast </p>
+                    </a>
+                </li>
+
+                <li class="nav-item ">
                     <a href="<?php echo base_url('ValueAddition/MaxTemp'); ?>"
                         class="nav-link <?php echo ($this->uri->segment(2) == "MaxTemp") ? "active" : ""; ?>"> <i
                             class="nav-icon fas fa-th"></i>

@@ -1266,4 +1266,23 @@ class VaModel extends CI_Model{
         $result_arr = $res->result_array();
         return $result_arr;
     }
+
+    public function getModelDtls(){
+        $this->db->select("*");
+        $this->db->from('model_list');
+        $this->db->where("id>",0);
+        $res = $this->db->get();
+        $result_arr = $res->result_array();
+        return $result_arr;
+
+    }
+    public function getParamDtls($model){
+        $this->db->select("*");
+        $this->db->from('parameter_list');
+        $this->db->where("model_id",$model);
+        $res = $this->db->get();
+        $result_arr = $res->result_array();
+        return $result_arr;
+
+    }
 }
