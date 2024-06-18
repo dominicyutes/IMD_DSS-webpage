@@ -220,10 +220,6 @@
                             <label for="subject">Subject</label>
                             <input type="text" id="subject" name="subject" class="form-control" style="width: 70%;" />
                         </div>
-                        <div class="col-4">
-                            <label for="file">Upload</label>
-                            <input type="file" name="file" id="file" class="form-control" />
-                        </div>
                     </div>
 
                     <div class="row" style="margin-top: 2%;">
@@ -234,11 +230,18 @@
                         </div>
                     </div>
 
+                    <div class="row" style="margin-top: 2%;">
+                        <div class="col-4">
+                            <label for="file">Upload</label>
+                            <input type="file" name="files[]" id="file" class="form-control" multiple />
+                        </div>
+                    </div>
+
                     <input type="hidden" id="getEmailFromGrpInput" name="getEmailFromGrp" />
 
                     <div class="row">
                         <div class="col-4">
-                            <input style="margin-top: 4%;" type="submit" id="submitButton"
+                            <input style="margin-top: 5%;" type="submit" id="submitButton"
                                 class="btn btn-success btn-sm" value="Submit" />
                         </div>
                     </div>
@@ -660,6 +663,17 @@
             messageField.value = '';
         }
     });
+    // 
+
+    //getting the upload file names
+    document.getElementById('file').addEventListener('change', function(e) {
+        const files = e.target.files;
+
+        for (let i = 0; i < files.length; i++) {
+            console.log("Chosen File Name: ", files[i].name);
+        }
+    });
+    // 
     </script>
 
 

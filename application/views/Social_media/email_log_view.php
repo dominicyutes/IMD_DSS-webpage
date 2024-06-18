@@ -96,6 +96,7 @@
                                                 <th>Mail To</th>
                                                 <th>Sent</th>
                                                 <th>Time</th>
+                                                <th>File Name</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -108,6 +109,7 @@
                                                              <td>' . $row['email_to'] . '</td>
                                                              <td>' . ($row['sent'] ? 'Sent' : 'Not Sent') . '</td>
                                                              <td>' . (isset($row['sent_time']) ? date('Y-m-d H:i:s', strtotime($row['sent_time'])) : '') . '</td>
+                                                             <td>' . $row['file_name'] . '</td>
                                                             </tr>';
                                                  }
                                             ?>

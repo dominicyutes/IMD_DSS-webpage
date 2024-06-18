@@ -118,127 +118,104 @@ class Email extends CI_Controller {
 
     // **************  EMAIL LOG STARTS HERE *****************//
     public function send_email() {
-        
-        $subject = $this->input->post('subject');
-        $message = $this->input->post('message');
-        // $file = $this->input->post('file');
+         $subject = $this->input->post('subject');
+         $message = $this->input->post('message');
+         $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx|txt';
+         $config['upload_path'] = './uploads';
+         $this->load->library('upload', $config);
+         $config['max_size'] = 35840; // 35MB in kilobytes
 
-        $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx|txt';
-        $config['upload_path'] = './uploads'; 
-        $this->load->library('upload',$config);
-        $config['max_size'] = 20480; // 20MB max size
+         $sent = false;
+         $from_address = "dominic@rimes.int";
+         $to_addresses_str = json_decode($this->input->post('getEmailFromGrp'), true);
 
-     //   $subject = "Rainfall Urgent Weather Alert - Unprecedented Rainfall in New Delhi";
+         if (is_array($to_addresses_str)) {
+             $to_addresses = implode(', ', $to_addresses_str);
+         } else {
+             echo "Invalid email addresses";
+             return;
+         }
 
-        $sent = false;
-    
-        $from_address = "dominic@rimes.int";
+         $body = "<!DOCTYPE html>
+                 <html lang='en'>
+                 <head><meta charset='utf-8'></head>
+                 <body>
+                     <div>$message</div>
+                     <div style='height: 10px;'></div>
+                     <div>
+                       <h3>With regards,</h3>
+                       <h3>Indian Meteorological Department (IMD)</h3>
+                     </div>
+                 </body>
+                 </html>";
 
-        $to_addresses_str = json_decode($this->input->post('getEmailFromGrp'), true);
+         $mailer = new PHPMailer(true);
+         $file_names = []; // To store the names of uploaded files
 
-    //   $to_addresses_str = $this->input->post('getEmailFromGrp');
+         try {
+             $mailer->isSMTP();
+             $mailer->Host = "smtp.gmail.com";
+             $mailer->SMTPAuth = true;
+             $mailer->Username = "dominic@rimes.int";
+             $mailer->Password = "oowdfikelxnchsqx";
+             $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+             $mailer->Port = 465;
+             $mailer->setFrom($from_address);
 
+             foreach ($to_addresses_str as $to_address) {
+                 $mailer->addAddress($to_address);
+             }
+     
+             if (isset($_FILES['files'])) {
+                 foreach ($_FILES['files']['name'] as $key => $filename) {
+                     if ($_FILES['files']['error'][$key] === UPLOAD_ERR_OK) {
+                         $_FILES['userfile']['name'] = $_FILES['files']['name'][$key];
+                         $_FILES['userfile']['type'] = $_FILES['files']['type'][$key];
+                         $_FILES['userfile']['tmp_name'] = $_FILES['files']['tmp_name'][$key];
+                         $_FILES['userfile']['error'] = $_FILES['files']['error'][$key];
+                         $_FILES['userfile']['size'] = $_FILES['files']['size'][$key];
 
-         $to_addresses = implode(', ', $to_addresses_str);
-         echo $to_addresses;
+                         // Upload file
+                         if ($this->upload->do_upload('userfile')) {
+                             $file_data = $this->upload->data();
+                             $file_path = $file_data['full_path'];
+                             $file_names[] = $file_data['file_name']; // Store the file name
+     
+                             // Attach file to email
+                             $mailer->addAttachment($file_path, $file_data['file_name'], 'base64', $file_data['file_type']);
+                         } else {
+                             echo $this->upload->display_errors();
+                         }
+                     }
+                 }
+             }
 
-    //    exit;
-    
-      //   $to_addresses = ["dominicyutes@gmail.com"];
-      //   $to_addresses = ["dominicyutes@gmail.com", "dominicyutes05@gmail.com", "tarakesh@rimes.int"];
-  
-        $body = "<!DOCTYPE html>
-                <html lang='en'>
-  
-                <head>
-                    <meta charset='utf-8'>
-                </head>
+             $mailer->Subject = $subject;
+             $mailer->isHTML(true);
+             $mailer->Body = $body;
+             $mailer->SMTPDebug = 2;
+     
+             $mailer->send();
+             $sent = true;
 
-                <body>
-                    <div>
-                      
-                        <div>" . $message . "</div>
+         } catch (Exception $e) {
+             echo "Mail Error: " . $mailer->ErrorInfo;
+         }
 
-                        <div style='height: 10px;'></div>
+         //
+         $this->insert_email_log($from_address, $to_addresses_str, $sent, $file_names);
+     }
 
-                        <div>
-                          <h3>With regards,</h3>
-                          <h3>Indian Meteorological Department (IMD)</h3>
-                        </div>
-                      
-                    </div>
-
-                    <script src='" . base_url('assets/js/jquery.min.js') . "'></script>
-                    <script src='" . base_url('assets/js/bootstrap.min.js') . "'></script>
-                </body>
-
-                </html>"; 
-                
-
-        $mailer = new PHPMailer(true);
-        try {
-            $mailer->isSMTP();
-            $mailer->Host = "smtp.gmail.com";
-            $mailer->SMTPAuth = true;
-            $mailer->Username = "dominic@rimes.int";
-            $mailer->Password = "oowdfikelxnchsqx";
-            $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mailer->Port = 465; 
-            $mailer->setFrom($from_address);
-  
-            foreach ($to_addresses_str as $to_address) {
-             $mailer->addAddress($to_address);
-            }
-
-            if($this->upload->do_upload('file')){
-                $file_data = $this->upload->data();
-                $file_path = $file_data['full_path'];
-
-                $mailer->addAttachment($file_path, $file_data['file_name'], 'base64', $file_data['file_type']);
-
-            
-                print_r($this->upload->data());
-            }else{
-                print_r($this->upload->display_errors());
-            }
-
-          //   $mailer->addCC("dominicyutes05@gmail.com");
-    
-            $mailer->Subject = $subject;
-            $mailer->isHTML(true);
-            $mailer->Body = $body;
-
-            // File upload configuration
-            // $mailer->addAttachment($file_path, 'attachment', $filename);
-  
-            // Enable debugging
-            $mailer->SMTPDebug = 2; 
-
-            $mailer->send();
-
-            $sent = true;
-            $this->insert_email_log($from_address, $to_addresses_str, $sent);
-
-            echo "Your Mail sent successfully";
-
-        } catch (Exception $e) {
-            $sent = false;
-            $this->insert_email_log($from_address, $to_addresses_str, $sent);
-          //   $this->insert_email_log($from_address, $to_addresses, $sent);
-        
-            echo "Mail Error: " . $mailer->ErrorInfo;
-        }
-    }
-
-    private function insert_email_log($from_address, $to_addresses, $sent) {
-       $this->load->database();
-       $data = array(
-           'email_from' => $from_address,
-           'email_to' => implode(", ", $to_addresses),
-           'sent' => $sent ? "True" : "False"
-       );
-       $this->db->insert('email_log', $data);
-    }
+     private function insert_email_log($from_address, $to_addresses, $sent, $file_names = []) {
+         $this->load->database();
+         $data = array(
+             'email_from' => $from_address,
+             'email_to' => implode(", ", $to_addresses),
+             'sent' => $sent ? "True" : "False",
+             'file_name' => implode(", ", $file_names) // Store the file names
+         );
+         $this->db->insert('email_log', $data);
+     }
 
      public function show_logInfo() {
         $name = '';
