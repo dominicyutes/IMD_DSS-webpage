@@ -99,43 +99,82 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="nav-tabs-custom">
-                        <ul class="nav nav-tabs">
-                            
-                            <!-- <li class="active" ><a href="<?php echo base_url(); ?>ValueAddition/HeatwaveSetAlert" >Max. Temperature</a></li>
-                            <li><a href="<?php echo base_url(); ?>ValueAddition/Min_temp" >Min. Temperature</a></li>
-                            <li><a href="<?php echo base_url(); ?>ValueAddition/Rainfall">Rainfall</a></li>
-                            <li><a href="<?php echo base_url(); ?>ValueAddition/Humidity">Relative Humidity</a></li> -->
-                            
-                            <div class="data_type_bt pull-right" style="margin-top: 7px;margin-right: 5px;">
-                                <a href="<?php echo base_url(); ?>ValueAddition/MaxTemp/index/<?php echo $active_map_type; ?>/imd" type="button" class="btn btn-xs <?php echo preg_match("/imd/", $fcst_data_type)?'active btn-info':'btn btn-warning'; ?>">IMD - GFS</a>
-                                <a href="<?php echo base_url(); ?>ValueAddition/MaxTemp/index/<?php echo $active_map_type; ?>/ecmwf" type="button" class="btn btn-xs <?php echo preg_match("/ecmwf/", $fcst_data_type)?'btn btn-info':'btn btn-warning'; ?>">ECMWF</a>
-                                <a href="<?php echo base_url(); ?>ValueAddition/MaxTemp/index/<?php echo $active_map_type; ?>/ensemble" type="button" class="btn btn-xs <?php echo preg_match("/ensemble/", $fcst_data_type)?'btn btn-info':'btn btn-warning'; ?>">ENSEMBLE</a> 
-                                <a href="<?php echo base_url(); ?>ValueAddition/MaxTemp/index/<?php echo $active_map_type; ?>/weight" type="button" class="btn btn-xs <?php echo preg_match("/weight/", $fcst_data_type)?'btn btn-info':'btn btn-warning'; ?>">WEIGHTED</a>
-                            </div>
-                            <select name="regionals" id="regionals"  style="margin-top: 15px;margin-right: 5px;">
-                                <option value="0">Select Region</option>
-                                <option value="1">NIO</option>
-                                <option value="2">NCO</option>
-                                <option value="3">SIO</option>
-                                <option value="4">SCO</option>
-                            </select>
-                            <div class="box-tools pull-right" style="margin-top: 7px;margin-right: 5px;">
-                                <div class="btn-group">
-                                    <?php
-                                        $day_attr = array("name" => "day_form", "method" => "get");
-                                        echo form_open("ValueAddition/MaxTemp/index/".$active_map_type."/".$fcst_data_type."/".$active_param_type, $day_attr);
-                                    ?>
-                                        <input type="submit" name="submit_day" class="btn btn-xs btn-default <?php echo preg_match("/1$/", $active_day)?'active':''; ?>" value="Day 1"/>
-                                        <input type="submit" name="submit_day" class="btn btn-xs btn-default <?php echo preg_match("/2$/", $active_day)?'active':''; ?>" value="Day 2"/>
-                                        <input type="submit" name="submit_day" class="btn btn-xs btn-default <?php echo preg_match("/3$/", $active_day)?'active':''; ?>" value="Day 3"/>
-                                        <?php if($fcst_data_type != 'wrf') {?>
-                                        <input type="submit" name="submit_day" class="btn btn-xs btn-default <?php echo preg_match("/4$/", $active_day)?'active':''; ?>" value="Day 4"/>
-                                        <input type="submit" name="submit_day" class="btn btn-xs btn-default <?php echo preg_match("/5$/", $active_day)?'active':''; ?>" value="Day 5"/>  
-                                        <?php } ?>                  
-                                    <?php echo form_close(); ?>
+                        <?php
+                            $day_attr = array("name" => "day_form", "method" => "get");
+                            echo form_open("ValueAddition/WeatherForecast/index/");
+                        ?>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Model</label>
+                                    <select name="models" class="custom-select" id="models">
+                                        <option value="0">Select Model</option>
+                                        <?php if(!empty($model_list)) { 
+                                            foreach($model_list as $key => $val){ 
+                                        ?>
+                                            <option <?= ($val['id'] == $model_choosed) ? "selected" : "" ?> value="<?= $val['id']; ?>">
+                                                <?= $val['model_name']; ?>
+                                            </option>
+                                        <?php } }?>
+                                    </select>
                                 </div>
                             </div>
-                        </ul>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Parameter</label>
+                                    <select name="parameter" class="custom-select" id="parameter">
+                                        <option value="0">Select Parameter</option>
+                                            <?php if(!empty($param_list)) { 
+                                                foreach($param_list as $key => $val){ 
+                                            ?>
+                                            <option <?= ($val['id'] == $param_choosed) ? "selected" : "" ?> value="<?= $val['id']; ?>">
+                                                <?= $val['parameter_name']; ?>
+                                            </option>
+                                        <?php } }?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Region</label>
+                                    <select name="region" class="custom-select" id="region">
+                                        <option value="0">Select Region</option>
+                                        <option value="1">Country</option>
+                                        <option value="2">MC</option>
+                                        <option value="3">RMC</option>
+                                        <option value="4">Sub Division</option>
+                                        <option value="5">State</option>
+                                        <option value="6" selected >District</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Day</label>
+                                    <select name="day" class="custom-select" id="day">
+                                        <option value="0">Select Day</option>
+                                        <option value="1">Day 1</option>
+                                        <option value="2">Day 2</option>
+                                        <option value="3">Day 3</option>
+                                        <option value="4">Day 4</option>
+                                        <option value="5">Day 5</option>
+                                        <option value="6">Day 6</option>
+                                        <option value="7">Day 7</option>
+                                        <option value="8">Day 8</option>
+                                        <option value="9">Day 9</option>
+                                        <option value="10">Day 10</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                        <?php echo form_close(); ?>
+                        </form>
                         <div class="tab-content">
                             <div class="row">
                                 <div class="col-md-12" id="initial_max">
@@ -618,7 +657,7 @@
         if(draw == 'leaflet_draw' || draw == 'delete'){
             layer = e;
             feature = e.feature;
-            loc_id = feature.properties.id;
+            loc_id = feature.properties.OBJECTID_1;
             if(draw == 'delete'){
                 console.log("resetFcst"+loc_id);
                 resetFcst(loc_id);
@@ -626,7 +665,7 @@
         } else {
             layer = e.target;
             feature = e.target.feature;
-            loc_id = layer.feature.properties.id;
+            loc_id = layer.feature.properties.OBJECTID_1;
         }
         //console.log(loc_id);
         if (checkExistsLayers(feature)) {
@@ -634,7 +673,7 @@
             map_set_color = map_color(loc_id);
             map_layer_set_style = layer.setStyle(map_set_color);
             for(var i=0; i<g_layer_list_temp.length;i++){
-                if(loc_id == g_layer_list_temp[i].feature.properties.id){
+                if(loc_id == g_layer_list_temp[i].feature.properties.OBJECTID_1){
                     var index_to_delete = i;
                     g_layer_list_temp.splice(index_to_delete,1);
                 }
@@ -663,7 +702,7 @@
         // e = event
         var lat;
         var lng;
-        district_loc_id = e.target.feature.properties.id;
+        district_loc_id = e.target.feature.properties.OBJECTID_1;
         
         $.ajax({
             type: "POST",
@@ -685,7 +724,7 @@
     }
     
     function polystyle(feature) {
-        loc_id = feature.properties.id;
+        loc_id = feature.properties.OBJECTID_1;
         if(active_map_type === 'block_from_district' && (selected_district_id === '' || selected_district_id === null)){
             return {
                 weight: 2,
@@ -714,7 +753,7 @@
     function map_area_selected_color(){
         leafletMap.eachLayer(function(layer) {
             if (layer instanceof L.Path) {
-                loc_id = layer.feature.properties.id;
+                loc_id = layer.feature.properties.OBJECTID_1;
                 console.log(loc_id);
                 map_set_color = map_color(loc_id);
                 layer.setStyle(map_set_color);
@@ -727,7 +766,7 @@
         console.log(featuresSelected);
         var result = false;
         for (var i = 0; i < featuresSelected.length; i++) {
-            if (featuresSelected[i].loc_id === feature.properties.id) {
+            if (featuresSelected[i].loc_id === feature.properties.OBJECTID_1) {
                 result = true;
                 break;
             }
@@ -749,22 +788,22 @@
         $("#toggle_right_panel").attr("title","close");
         $("#toggle_right_panel").attr("src","<?php echo base_url('stylesheet/images/collapse_close.png'); ?>");
         window.mymap.invalidateSize();
-        var historyResult = tx_fcst_history_arr.find( ({ block_id }) => parseInt(block_id) === feature.properties.id );
-        var tmpResult = tmpLocSetAlert.find( ({ selected_loc_id }) => selected_loc_id === feature.properties.id );
+        var historyResult = tx_fcst_history_arr.find( ({ district_id }) => parseInt(district_id) === feature.properties.OBJECTID_1 );
+        var tmpResult = tmpLocSetAlert.find( ({ selected_loc_id }) => selected_loc_id === feature.properties.OBJECTID_1 );
         featuresSelected.push({
-            loc_id: feature.properties.id,
+            loc_id: feature.properties.OBJECTID_1,
             feature: feature,
-            tx_fcst: (!(tmpResult)) ? ( (!(historyResult)) ? tx_fcst_list[feature.properties.id] : historyResult.tx_dynamic ) : tmpResult.selected_tx_fcst_dynamic,
-            tx_fcst_dynamic: (!(tmpResult))? ( (!(historyResult)) ? tx_fcst_list[feature.properties.id] : historyResult.tx_dynamic ) : $("#fcst_id_"+feature.properties.id).val(),
-            tx_normal: tx_normal_list[feature.properties.id],
+            tx_fcst: (!(tmpResult)) ? ( (!(historyResult)) ? tx_fcst_list[feature.properties.OBJECTID_1] : historyResult.tx_dynamic ) : tmpResult.selected_tx_fcst_dynamic,
+            tx_fcst_dynamic: (!(tmpResult))? ( (!(historyResult)) ? tx_fcst_list[feature.properties.OBJECTID_1] : historyResult.tx_dynamic ) : $("#fcst_id_"+feature.properties.OBJECTID_1).val(),
+            //tx_normal: tx_normal_list[feature.properties.OBJECTID_1],
             alert: (!(tmpResult)) ? ((!(historyResult)) ? 0 : historyResult.warning_level_id) : tmpResult.selected_alert
         });
         locSelected.push({
-            loc_id: feature.properties.id,
+            loc_id: feature.properties.OBJECTID_1,
             loc_name: block_list[loc_id],
-            tx_fcst: (!(tmpResult)) ? ( (!(historyResult)) ? tx_fcst_list[feature.properties.id] : historyResult.tx_dynamic ) : tmpResult.selected_tx_fcst_dynamic,
-            tx_fcst_dynamic: (!(tmpResult))? ( (!(historyResult)) ? tx_fcst_list[feature.properties.id] : historyResult.tx_dynamic ) : $("#fcst_id_"+feature.properties.id).val(),
-            tx_normal: tx_normal_list[feature.properties.id],
+            tx_fcst: (!(tmpResult)) ? ( (!(historyResult)) ? tx_fcst_list[feature.properties.OBJECTID_1] : historyResult.tx_dynamic ) : tmpResult.selected_tx_fcst_dynamic,
+            tx_fcst_dynamic: (!(tmpResult))? ( (!(historyResult)) ? tx_fcst_list[feature.properties.OBJECTID_1] : historyResult.tx_dynamic ) : $("#fcst_id_"+feature.properties.OBJECTID_1).val(),
+            //tx_normal: tx_normal_list[feature.properties.OBJECTID_1],
             alert: (!(tmpResult)) ? ((!(historyResult)) ? 0 : historyResult.warning_level_id) : tmpResult.selected_alert
         });
         setSelectedTable(featuresSelected);
@@ -774,8 +813,8 @@
     function removerlayers(feature, callback) {
         console.log("IN removerlayers");
         console.log(callback);
-        featuresSelected = featuresSelected.filter(obj => obj.loc_id !== feature.properties.id);
-        locSelected = locSelected.filter(obj => obj.loc_id !== feature.properties.id);
+        featuresSelected = featuresSelected.filter(obj => obj.loc_id !== feature.properties.OBJECTID_1);
+        locSelected = locSelected.filter(obj => obj.loc_id !== feature.properties.OBJECTID_1);
         setSelectedTable(featuresSelected);
         console.log(arguments);
         callback(arguments[2], arguments[3]);
@@ -794,23 +833,23 @@
         }
         for(var i = 0; i < layers.length; i++){
             g_layer_list_temp.push(layers[i]);
-            var historyResult = tx_fcst_history_arr.find( ({ block_id }) => parseInt(block_id) === layers[i].feature.properties.id );
-            var tmpResult = tmpLocSetAlert.find( ({ selected_loc_id }) => selected_loc_id === layers[i].feature.properties.id );
-            if( locSelected.includes(layers[i].feature.properties.id) === false && (layers[i].feature.properties.id) ){
+            var historyResult = tx_fcst_history_arr.find( ({ district_id }) => parseInt(district_id) === layers[i].feature.properties.OBJECTID_1 );
+            var tmpResult = tmpLocSetAlert.find( ({ selected_loc_id }) => selected_loc_id === layers[i].feature.properties.OBJECTID_1 );
+            if( locSelected.includes(layers[i].feature.properties.OBJECTID_1) === false && (layers[i].feature.properties.OBJECTID_1) ){
                 featuresSelected.push({
-                    loc_id: layers[i].feature.properties.id,
+                    loc_id: layers[i].feature.properties.OBJECTID_1,
                     feature: layers[i].feature,
-                    tx_fcst: (!(tmpResult)) ? ( (!(historyResult)) ? tx_fcst_list[layers[i].feature.properties.id] : historyResult.tx_dynamic ) : tmpResult.selected_tx_fcst_dynamic,
-                    tx_fcst_dynamic: (!(tmpResult))? ( (!(historyResult)) ? tx_fcst_list[layers[i].feature.properties.id] : historyResult.tx_dynamic ) : $("#fcst_id_"+layers[i].feature.properties.id).val(),
-                    tx_normal: tx_normal_list[layers[i].feature.properties.id],
+                    tx_fcst: (!(tmpResult)) ? ( (!(historyResult)) ? tx_fcst_list[layers[i].feature.properties.OBJECTID_1] : historyResult.tx_dynamic ) : tmpResult.selected_tx_fcst_dynamic,
+                    tx_fcst_dynamic: (!(tmpResult))? ( (!(historyResult)) ? tx_fcst_list[layers[i].feature.properties.OBJECTID_1] : historyResult.tx_dynamic ) : $("#fcst_id_"+layers[i].feature.properties.OBJECTID_1).val(),
+                    //tx_normal: tx_normal_list[layers[i].feature.properties.OBJECTID_1],
                     alert: (!(tmpResult)) ? ((!(historyResult)) ? 0 : historyResult.warning_level_id) : tmpResult.selected_alert
                 });
                 locSelected.push({
-                    loc_id: layers[i].feature.properties.id,
+                    loc_id: layers[i].feature.properties.OBJECTID_1,
                     loc_name: layers[i].feature.properties.block_name,
-                    tx_fcst: (!(tmpResult)) ? ( (!(historyResult)) ? tx_fcst_list[layers[i].feature.properties.id] : historyResult.tx_dynamic ) : tmpResult.selected_tx_fcst_dynamic,
-                    tx_fcst_dynamic: (!(tmpResult))? ( (!(historyResult)) ? tx_fcst_list[layers[i].feature.properties.id] : historyResult.tx_dynamic ) : $("#fcst_id_"+layers[i].feature.properties.id).val(),
-                    tx_normal: tx_normal_list[layers[i].feature.properties.id],
+                    tx_fcst: (!(tmpResult)) ? ( (!(historyResult)) ? tx_fcst_list[layers[i].feature.properties.OBJECTID_1] : historyResult.tx_dynamic ) : tmpResult.selected_tx_fcst_dynamic,
+                    tx_fcst_dynamic: (!(tmpResult))? ( (!(historyResult)) ? tx_fcst_list[layers[i].feature.properties.OBJECTID_1] : historyResult.tx_dynamic ) : $("#fcst_id_"+layers[i].feature.properties.OBJECTID_1).val(),
+                    //tx_normal: tx_normal_list[layers[i].feature.properties.OBJECTID_1],
                     alert: (!(tmpResult)) ? ((!(historyResult)) ? 0 : historyResult.warning_level_id) : tmpResult.selected_alert
                 });
 
@@ -855,7 +894,6 @@
             area_txt += '<tr>\n\
                             <td style="display:none;">'+loc_id+'</td>\n\
                             <td>&nbsp;'+loc_name+'&nbsp;</td>\n\
-                            <td>'+tx_normal_list[loc_id]+'</td>\n\
                             <td><input id="fcst_id_'+loc_id+'" type="number" style="width: 5em" value="'+tx_fcst+'">&nbsp;&nbsp;&nbsp;<a id="reset_fcst_'+loc_id+'" onclick="resetFcst('+loc_id+')"><b><i class="ion-refresh"></i></b></a></td>\n\
                             <td>'+alert_status+'</td>\n\
                             <input type="hidden" id="hidden_normal_'+loc_id+'" value="'+tx_normal_list[loc_id]+'"/>\n\
@@ -898,8 +936,8 @@
             if(_layer_g_dtls.length>0){
                 for(var l = 0; l < _layer_g_dtls.length; l++){
                     //console.log(_layer_g_dtls[l]);
-                    var blk_to_reset = _layer_g_dtls[l].feature.properties.id;
-                    //console.log(_layer_g_dtls[l].feature.properties.id);
+                    var blk_to_reset = _layer_g_dtls[l].feature.properties.OBJECTID_1;
+                    //console.log(_layer_g_dtls[l].feature.properties.OBJECTID_1);
                     resetFcst(blk_to_reset);
                     var _layer_to_remove = _layer_g_dtls[l];
                     _layer_to_remove.setStyle({
@@ -942,7 +980,7 @@
                     if(_layer_dtls_to_remove.blk_id){
                         id_to_delete = _layer_dtls_to_remove.blk_id;
                     } else {
-                        id_to_delete = _layer_dtls_to_remove.id;
+                        id_to_delete = _layer_dtls_to_remove.OBJECTID_1;
                     }
                     if(id_to_delete == tmpLocSetAlert[q].selected_loc_id){
                         //console.log('Remove');
@@ -1016,7 +1054,6 @@
                 area_txt += '<tr>\n\
                                 <td style="display:none;">'+loc_id+'</td>\n\
                                 <td>&nbsp;'+loc_name+'&nbsp;</td>\n\
-                                <td>'+tx_normal_list[loc_id]+'</td>\n\
                                 <td><input id="fcst_id_'+loc_id+'" type="number" style="width: 5em" value="'+tx_fcst+'">&nbsp;&nbsp;&nbsp;<a id="reset_fcst_'+loc_id+'" onclick="resetFcst('+loc_id+')"><b><i class="ion-refresh"></i></b></a></td>\n\
                                 <td>'+alert_status+'</td>\n\
                                 <input type="hidden" id="hidden_normal_'+loc_id+'" value="'+tx_normal_list[loc_id]+'"/>\n\
@@ -1107,7 +1144,7 @@
             sel_loc_name_selected = block_list[sel_loc_id_selected]; 
             sel_loc_fcst_selected = _update_temp_data[i].selected_fcst;
             sel_loc_fcst_dynamic = $("#fcst_id_"+sel_loc_id_selected).val();
-            sel_loc_fcst_normal = tx_normal_list[sel_loc_id_selected];
+            //sel_loc_fcst_normal = tx_normal_list[sel_loc_id_selected];
             sel_loc_alert_selected = $("#mySelect_"+sel_loc_id_selected).val(); //locSelected[i].alert;
             for(q=0; q<tmpLocSetAlert.length; q++){
                 if(tmpLocSetAlert[q].selected_loc_id == sel_loc_id_selected){
@@ -1176,8 +1213,9 @@
                 loc_alert_selected = $("#mySelect_"+loc_id_selected).val(); //locSelected[i].alert;
             }
             //loc_fcst_dynamic = $("#fcst_id_"+loc_id_selected).val();
-            loc_fcst_normal = tx_normal_list[loc_id_selected];
-            locSelected[i].alert = HeatwaveAlertCriteria(loc_id_selected, loc_fcst_dynamic, loc_fcst_normal);
+            //loc_fcst_normal = tx_normal_list[loc_id_selected];
+            //locSelected[i].alert = HeatwaveAlertCriteria(loc_id_selected, loc_fcst_dynamic, loc_fcst_normal);
+            locSelected[i].alert = 1;
             //loc_alert_selected = $("#mySelect_"+loc_id_selected).val(); //locSelected[i].alert;
             
             if( tmpLocSetAlert.find( ({ selected_loc_id }) => selected_loc_id === loc_id_selected) ){
@@ -1285,24 +1323,6 @@
         var deviation = fcst - normal;
         let heat_alert = ''; // 1 - No Heatwave , 2 - Heatwave, 3 - Severe Hetwave
 
-        // if(fcst !== null && normal !== null){
-        //     if(fcst >= 47 && (fcst - normal > 6.4) ){
-        //         alert_id = 3;
-        //     }
-        //     else if((fcst - normal > 6.4)){
-        //         alert_id = 3;
-        //     }
-        //     else if(fcst >= 45 && ( (fcst - normal >= 4.5) && (fcst - normal <= 6.4 ) ) ){
-        //         alert_id = 2;
-        //     }
-        //     else if( (fcst - normal >= 4.5) && (fcst - normal <= 6.4 ) ){
-        //         alert_id = 2;
-        //     } 
-        //     else if(fcst - normal < 4.5){
-        //         alert_id = 1;
-        //     }
-        //     return alert_id;
-        // } 
         console.log("Region - "+region_type);
         console.log("Forecast = "+fcst);
         console.log("Deviation = "+deviation);
@@ -1329,13 +1349,6 @@
                 heat_alert =1;
             }
         } else if(region_type == 3) { // Coastal
-            // if(deviation > 6.4) {
-            //     heat_alert = 3;
-            // } else if (fcst >= 37 || deviation >= 4.5 && deviation <= 6.4){
-            //     heat_alert = 2;
-            // } else {
-            //     heat_alert = 1;
-            // }
             if (fcst >= 37 || deviation >= 4.5){
                 heat_alert = 2;
             } else {
@@ -1345,36 +1358,6 @@
         <?php } else {?>
             heat_alert = 1;
         <?php }?>
-        console.log(heat_alert);
-        // if (region_type == 1 && deviation > 6.4){
-        //     console.log("Region type 1 1");
-        //     heat_alert = 3;
-        // } else if (region_type == 1 && fcst >= 30 || deviation >= 4.5 && deviation <= 6.4){
-        //     console.log("Region type 1 2");
-        //     heat_alert = 2;
-        // } else if (region_type == 2 && fcst >= 47){ 
-        //     console.log("Region type 2 1");
-        //     heat_alert = 3;
-        // } else if (region_type == 2 && (fcst >= 40 && deviation > 6.4)){
-        //     console.log("Region type 2 2");
-        //     heat_alert = 3;
-        // } else if (region_type == 2 && (fcst >= 45 && fcst < 47)){
-        //     console.log("Region type 2 3");
-        //     heat_alert = 2;
-        // } else if (region_type == 2 && fcst >= 40 || deviation >= 4.5 && deviation <= 6.4){
-        //     console.log("Region type 2 4");
-        //     heat_alert = 2;
-        // } else if (region_type == 3 && deviation > 6.4){
-        //     console.log("Region type 3 1");
-        //     heat_alert = 3;
-        // } else if (region_type == 3 && fcst >= 37 || deviation >= 4.5 && deviation <= 6.4){
-        //     console.log("Region type 3 2");
-        //     heat_alert = 2;
-        // } else{
-        //     console.log("Region Type 0");
-        //     heat_alert = 1;
-        // }
-        console.log("heat_alert--"+heat_alert);
         return heat_alert;
     }
     
@@ -1388,7 +1371,7 @@
                 {"className": "dt-center", "targets": "_all"},
                 { 
                     "type": "numeric-comma",
-                    targets : 4,
+                    targets : 3,
                     "render": function(data, type, row, meta) {
                         if(tb_id == '#selectedAreaTBResult' || tb_id == '#selectedAreaTBResultEdit'){
                            return "<select class='mySelect' id='mySelect_"+row[0]+"' data-col='" + meta.col + "'>" +
@@ -1451,8 +1434,7 @@
                         <thead>\n\
                             <tr>\n\
                                 <th style="display:none;" scope="col">Block ID</th>\n\
-                                <th scope="col">District Name</th>\n\
-                                <th scope="col">Normal Max. Temp.</th>';
+                                <th scope="col">District Name</th>';
         if(map_html_id == "currentAlertTBResult"){
                 txt +=                '<th scope="col">Forecast Max. Temp.</th>';
         } else {
@@ -1475,15 +1457,15 @@
     }
     
     function getCurrentAlertTB(data_list){
+        console.log(data_list);
         var txt = '';
         for(var k = 0; k < data_list.length; k++){
             if( k === 0 ){
                 txt += getTBHeader('currentAlertTBResult');
             }
             txt += '<tr>\n\
-                        <td style="display:none;">'+data_list[k].block_id+'</td>\n\
-                        <td>&nbsp;'+block_list[data_list[k].block_id]+'&nbsp;</td>\n\
-                        <td>'+tx_normal_list[data_list[k].block_id]+'</td>\n\
+                        <td style="display:none;">'+data_list[k].district_id+'</td>\n\
+                        <td>&nbsp;'+block_list[data_list[k].district_id]+'&nbsp;</td>\n\
                         <td>'+data_list[k].tx_dynamic+'</td>\n\
                         <td>'+data_list[k].warning_level_id+'</td>\n\
                     </tr>';
@@ -1541,7 +1523,7 @@
             let _auto_ids = el.id;
             let _block_id = _auto_ids.slice(8);
             let _hidden_values = parseFloat($("#hidden_"+_auto_ids).val());
-            let _hidden_normal_value = parseFloat($("#hidden_normal_"+_block_id).val());
+            //let _hidden_normal_value = parseFloat($("#hidden_normal_"+_block_id).val());
             let _auto_id_vals = parseFloat(el.value);
             if(_flag == "1"){
                 if(isNaN(_input_val)){
@@ -1557,7 +1539,8 @@
                 }
             }
             //console.log(_final_val);
-            let alert_id_latest = HeatwaveAlertCriteria(_block_id,_final_val,_hidden_normal_value);
+            //let alert_id_latest = HeatwaveAlertCriteria(_block_id,_final_val,_hidden_normal_value);
+            let alert_id_latest = 1;
             $("#mySelect_"+_block_id).val(alert_id_latest).change();
             $("#"+_auto_ids).val(_final_val);
             
@@ -1572,7 +1555,8 @@
         let _block_id = _this_id.slice(8);
         let _fcst_value = parseFloat($("#fcst_id_"+_block_id).val());
         let _normal_value = parseFloat($("#hidden_normal_"+_block_id).val());
-        let alert_id_latest = HeatwaveAlertCriteria(_block_id,_fcst_value,_normal_value);
+        //let alert_id_latest = HeatwaveAlertCriteria(_block_id,_fcst_value,_normal_value);
+        let alert_id_latest = 1;
         $("#mySelect_"+_block_id).val(alert_id_latest).change();
         change_map_forecast_max_temp(_block_id,_fcst_value);
     });
@@ -1790,7 +1774,7 @@
                 var layers_group_arr_region = [];
                 var delete_layers_region = [];
                 $.each(layers,function(ind,val){
-                    var _bk_id = val.feature.properties.id;
+                    var _bk_id = val.feature.properties.OBJECTID_1;
                     for(i=0;i<_region_ids.length;i++){
                         if(_region_ids[i].id == _bk_id ){
                             layers_group_arr_region.push(val);
@@ -1854,7 +1838,7 @@
     // Overlay layers are grouped
     var groupedOverlays = {
       "Temperature": {
-        "Normal": normal_centroid_geojson_layer,
+        //"Normal": normal_centroid_geojson_layer,
         "Forecast": forecast_centroid_geojson_layer
       },
       "": {
@@ -1875,5 +1859,24 @@
     mymap.addControl(layerControl);
 
     mymap.addControl(new L.Control.Fullscreen());
+</script>
+<script>
+    $(document).ready(function(){
+        $("#models").on("change",function(_e){
+            _e.preventDefault();
+            var _this = $(this);
+            var choosen_model = _this.val();
+            $.ajax({
+                type: "POST",
+                url: "<?php echo site_url('ValueAddition/MaxTemp/ajax_param_list'); ?>",
+                data: {model_id: choosen_model},
+                success:function(data){
+                    $("#parameter").html(data);
+                }
+            });
+        });
+    });
+
+
 </script>
 <?php $this->load->view('Menu/template/footer_'); ?>

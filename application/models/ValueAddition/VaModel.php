@@ -15,12 +15,20 @@ class VaModel extends CI_Model{
             $this->db->from('weighted_matrix_max_temp');    
         }
         $this->db->where($where_datetime);
+        $this->db->group_by("user_id");
         $res = $this->db->get();
         
         $u_id = $res->row()->user_id;
         $user_name = $this->get_user_info_by_uid($u_id);
         $max_datetime = $res->row()->max_datetime;
         return array('max_datetime' => $max_datetime, 'latest_user' => $user_name);
+    }
+    function get_user_info_by_uid($u_id){
+        $this->db->select('name');
+        $this->db->from('users');
+        $this->db->where('id', $u_id);
+        $res = $this->db->get();
+        return ( $res->num_rows() > 0 )? $res->row()->full_name : null;
     }
 
     function getBlockName(){
@@ -41,7 +49,7 @@ class VaModel extends CI_Model{
     function getUpdatedBlocks($data_type,$date){
         $updated_ids = array();
         $where_date = "date = '".$date."'";
-        $this->db->select('block_id');
+        $this->db->select('district_id');
         if($data_type != "weight"){
             $this->db->from('heatwave_alert_dissemination_'.$data_type);
         } else {
@@ -74,27 +82,27 @@ class VaModel extends CI_Model{
 
     function getTxFcstData($data_type, $date){
         if( $data_type == 'imd'){
-            $this->db->select('alert_tb.block_id,alert_tb.tx_dynamic,alert_tb.updated_at');
+            $this->db->select('alert_tb.district_id,alert_tb.tx_dynamic,alert_tb.updated_at');
             $this->db->from('block_imd_gfs_forecast');
             $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','block_imd_gfs_forecast.fcst_date = alert_tb.date');
             $this->db->where('block_imd_gfs_forecast.fcst_date', $date);
         } else if( $data_type == 'ensemble'){
-            $this->db->select('alert_tb.block_id,alert_tb.tx_dynamic,alert_tb.updated_at');
+            $this->db->select('alert_tb.district_id,alert_tb.tx_dynamic,alert_tb.updated_at');
             $this->db->from('block_ensemble_forecast');
             $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','block_ensemble_forecast.fcst_date = alert_tb.date');
             $this->db->where('block_ensemble_forecast.fcst_date', $date);
         } else if( $data_type == 'ecmwf'){
-            $this->db->select('alert_tb.block_id,alert_tb.tx_dynamic,alert_tb.updated_at');
+            $this->db->select('alert_tb.district_id,alert_tb.tx_dynamic,alert_tb.updated_at');
             $this->db->from('block_ecmwf_forecast');
             $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','block_ecmwf_forecast.fcst_date = alert_tb.date');
             $this->db->where('block_ecmwf_forecast.fcst_date', $date);
         } else if( $data_type == 'wrf'){
-            $this->db->select('alert_tb.block_id,alert_tb.tx_dynamic,alert_tb.updated_at');
+            $this->db->select('alert_tb.district_id,alert_tb.tx_dynamic,alert_tb.updated_at');
             $this->db->from('block_wrf_forecast');
             $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','block_wrf_forecast.fcst_date = alert_tb.date');
             $this->db->where('block_wrf_forecast.fcst_date', $date);
         } else if( $data_type == 'weight'){
-            $this->db->select('block_id,tx_dynamic,updated_at');
+            $this->db->select('district_id,tx_dynamic,updated_at');
             $this->db->from('weighted_matrix_max_temp');
             $this->db->where('weighted_matrix_max_temp.date', $date);
             $this->db->where('weight_added_at IS NOT NULL', NULL, FALSE);
@@ -106,10 +114,10 @@ class VaModel extends CI_Model{
         
         $tx_fcst_array = array();
         foreach ($tx_fcst_res as $tx_fcst) {
-            $block_id = $tx_fcst->block_id;
+            $district_id = $tx_fcst->district_id;
             $tx = $tx_fcst->tx_dynamic;
             
-            $tx_fcst_array[$block_id] = round($tx);
+            $tx_fcst_array[$district_id] = round($tx);
         }
         return $tx_fcst_array;
     }

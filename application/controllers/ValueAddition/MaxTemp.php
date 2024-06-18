@@ -108,16 +108,34 @@ class MaxTemp extends CI_Controller{
         $data['role'] = $this->session->userdata('role');
         $map_type_selected = $this->uri->segment(4);
         $segs = $this->uri->segment_array();
-        /*pr($segs);
-        pr($map_type_selected);
-        pr($_REQUEST,1);*/
+        
         $today_m_d = date('m-d');
         $data['today_m_d'] = $today_m_d;
-        if($this->uri->segment(5) != null && $this->uri->segment(5) != ''){
-            $fcst_data_type = $this->uri->segment(5);
+        
+        if(empty($_POST)){
+            $model_choosed = 1;
+            $param_choosed = 1;
+        } else {
+            $model_choosed = $this->input->post('models');
+            $param_choosed = $this->input->post('parameter');
         }
-        else{
+        $data['model_choosed'] = $model_choosed;
+        $data['param_choosed'] = $param_choosed;
+
+        $model_list = $this->VaModel->getModelDtls();
+        $param_list = $this->VaModel->getParamDtls($model_choosed);
+        $data['param_list'] = $param_list;
+        $data['model_list'] = $model_list;
+
+        $curr_date = $this->getDate();
+        $fcst_date = $curr_date;
+        $data['curr_date'] = $fcst_date;
+        if($model_choosed == 1){
             $fcst_data_type = "imd";
+        } else if($model_choosed == 2){
+            $fcst_data_type = "ecmwf";
+        } else if($model_choosed == 3){
+            $fcst_data_type = "ensemble";
         }
 
         if($this->uri->segment(6) != null && $this->uri->segment(6) != ''){
@@ -190,7 +208,7 @@ class MaxTemp extends CI_Controller{
         
         $legend_data  = $this->VaModel->get_max_temp_forecast_legend();
         $data['legend_data'] = $legend_data;
-        
+        #pr($data['history_list']);
         $this->load->view('value_addition/max_temperature_addition', $data);        
     }
     
@@ -289,4 +307,16 @@ class MaxTemp extends CI_Controller{
         }
         return $date;
     } 
+
+    public function ajax_param_list(){
+        if(!empty($_POST)){
+            $model_id = $this->input->post('model_id',true);
+            $info = getOptionParameter("model_id ='".$model_id."'");
+            $html = "<option value='' selected='selected'>Select An Option</option>";
+            $html .= $info;
+            echo $html; exit;
+        } else {
+            redirect('Home');
+        }
+    }
 }

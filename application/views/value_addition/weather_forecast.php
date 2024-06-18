@@ -56,7 +56,7 @@
                     echo form_open("ValueAddition/WeatherForecast/index/");
                 ?>
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-2">
                         <div class="form-group">
                             <label>Model</label>
                             <select name="models" class="custom-select" id="models">
@@ -71,7 +71,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-2">
                         <div class="form-group">
                             <label>Parameter</label>
                             <select name="parameter" class="custom-select" id="parameter">
@@ -86,7 +86,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-2">
                         <div class="form-group">
                             <label>&nbsp;</label>
                             <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Submit</button>
@@ -136,8 +136,6 @@
             });
         });
     });
-
-
 </script>
 <script>
     var parameter_ = '<?php echo $paramName; ?>';
