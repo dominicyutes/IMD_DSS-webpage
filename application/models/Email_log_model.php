@@ -32,6 +32,42 @@ class Email_log_model extends CI_Model {
         return $query->result_array();  
     }
 
+    public function get_email_by_mc_name_and_group($mc_name, $group) {
+       $this->db->select('email');
+       $this->db->from('email_group');
+       $this->db->where('mc_name', $mc_name);
+       $this->db->where('groups', $group);
+       $query = $this->db->get();
+       return $query->result_array();
+    }
+
+    // X deleting email 
+    public function delete_email($mc_name, $groups, $email) {
+       $this->db->where('mc_name', $mc_name);
+       $this->db->where('groups', $groups);
+       $this->db->where('email', $email);
+       return $this->db->delete('email_group');
+    }
+    //
+    
+    // new group
+    public function add_new_group_email($mc_name, $groups, $email, $auto_email) {
+        $data = [
+            'mc_name' => $mc_name,
+            'groups' => $groups,
+            'email' => $email,
+            'auto_email' => $auto_email
+        ];
+
+        return $this->db->insert('email_group', $data);
+    }
+
+
+    // Existing group add email
+    public function insert_email($data) {
+        $this->db->insert('email_group', $data);
+    }
+
 
 
 
@@ -40,17 +76,19 @@ class Email_log_model extends CI_Model {
     // **************  EMAIL LOG STARTS HERE *****************//
 
     public function get_email_logs() {
-      return $this->db->select('email_from, email_to, sent, sent_time')->get('email_log')->result_array();
+      return $this->db->select('email_from, email_to, sent, sent_time')
+                    ->order_by('email_id', 'DESC')
+                    ->get('email_log')
+                    ->result_array();
     }
 
     public function insert_email_log($from_address, $to_address, $sent) {
        $data = array(
-            'email_from' => $from_address,
-            'email_to' => implode(", ", $to_addresses),
-            'sent' => $sent
-        );
-
-        $this->db->insert('email_log', $data);
+           'email_from' => $from_address,
+           'email_to' => implode(", ", $to_address),
+           'sent' => $sent
+       );
+       $this->db->insert('email_log', $data);
     }
 
     public function get_emails_by_group($group_name) {

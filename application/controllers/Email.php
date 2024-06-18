@@ -10,6 +10,7 @@ class Email extends CI_Controller {
         parent::__construct();
         $this->_check_session();
         $this->load->helper('url');
+        $this->load->helper('path');
         $this->load->database();
         $this->load->model('Email_log_model');
     }
@@ -55,10 +56,60 @@ class Email extends CI_Controller {
 
     // based Choose grp selection, email will be listed 
     public function get_email_by_group() {
-        $group = $this->input->get('group');
+       $mc_name = $this->input->get('mc_name');
+       $group = $this->input->get('group');
+       $this->load->model('Email_log_model');
+       $emails = $this->Email_log_model->get_email_by_mc_name_and_group($mc_name, $group);
+       echo json_encode($emails);
+    }
+
+    //deleting email in existing grp
+    public function delete_email() {
+       $email = $this->input->post('email');
+       $mc_name = $this->input->post('mc_name');
+       $groups = $this->input->post('groups');
+
+       $this->load->model('Email_log_model');
+       $success = $this->Email_log_model->delete_email($mc_name, $groups, $email);
+
+       echo json_encode(['success' => $success]);
+    }
+
+    // Existing group add email
+    public function add_email() {
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        if (isset($data['mc_name']) && isset($data['groups']) && isset($data['email'])) {
+            $insert_data = array(
+                'mc_name' => $data['mc_name'],
+                'groups' => $data['groups'],
+                'email' => $data['email']
+            );
+
+            $this->Email_log_model->insert_email($insert_data);
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode(['status' => 'success']));
+        } else {
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode(['status' => 'error', 'message' => 'Invalid data']));
+        }
+    }
+
+    // 
+    public function add_new_group_email() {
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        $mc_name = $data['mc_name'];
+        $groups = $data['groups'];
+        $email = $data['email'];
+        $auto_email = $data['auto_email'];
+
         $this->load->model('Email_log_model');
-        $emails = $this->Email_log_model->get_email_by_group($group);
-        echo json_encode($emails);
+        $response = $this->Email_log_model->add_new_group_email($mc_name, $groups, $email, $auto_email);
+
+        echo json_encode(['success' => $response]);
     }
 
     // ***********************************//
@@ -67,43 +118,53 @@ class Email extends CI_Controller {
 
     // **************  EMAIL LOG STARTS HERE *****************//
     public function send_email() {
-      $subject = "Rainfall Urgent Weather Alert - Unprecedented Rainfall in New Delhi";
+        
+        $subject = $this->input->post('subject');
+        $message = $this->input->post('message');
+        // $file = $this->input->post('file');
 
-      $sent = false;
+        $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx|txt';
+        $config['upload_path'] = './uploads'; 
+        $this->load->library('upload',$config);
+        $config['max_size'] = 20480; // 20MB max size
+
+     //   $subject = "Rainfall Urgent Weather Alert - Unprecedented Rainfall in New Delhi";
+
+        $sent = false;
     
-      $from_address = "dominic@rimes.int";
-      $to_addresses = ["dominicyutes@gmail.com"];
+        $from_address = "dominic@rimes.int";
+
+        $to_addresses_str = json_decode($this->input->post('getEmailFromGrp'), true);
+
+    //   $to_addresses_str = $this->input->post('getEmailFromGrp');
+
+
+         $to_addresses = implode(', ', $to_addresses_str);
+         echo $to_addresses;
+
+    //    exit;
+    
+      //   $to_addresses = ["dominicyutes@gmail.com"];
       //   $to_addresses = ["dominicyutes@gmail.com", "dominicyutes05@gmail.com", "tarakesh@rimes.int"];
-      $content = "<span>
-                      <h3>Respected Authority,</h3>
-                      <p>I trust this message finds you well. We bring to your immediate attention a matter of utmost significance concerning the current weather conditions in New Delhi.</p>
   
-                      <p>The Indian Meteorological Department (IMD) has detected an unprecedented amount of rainfall in New Delhi, totaling 655mm. This is a matter of great concern as such high levels of precipitation can lead to severe consequences, including potential flooding, traffic disruptions, and other associated hazards.</p>
-
-                      <p>In light of this, we kindly request your prompt action and coordination with relevant authorities to ensure the safety and well-being of the residents in the affected areas. Timely communication and precautionary measures will be crucial in mitigating any potential risks and minimizing the impact of this exceptional weather event.</p>
-  
-                      <p>Your cooperation and swift response are highly appreciated in this critical situation</p>
-
-                      <div style='height: 10px;'></div>
-  
-                      <div>
-                      <h3>With regards,</h3>
-                      <h3>Indian Meteorological Department (IMD)</h3>
-                      </div>
-                  </span>";
-  
-      $body = "<!DOCTYPE html>
+        $body = "<!DOCTYPE html>
                 <html lang='en'>
   
                 <head>
                     <meta charset='utf-8'>
-                    <title>IMD DSS</title>
                 </head>
 
                 <body>
                     <div>
                       
-                        <div>" . $content . "</div>
+                        <div>" . $message . "</div>
+
+                        <div style='height: 10px;'></div>
+
+                        <div>
+                          <h3>With regards,</h3>
+                          <h3>Indian Meteorological Department (IMD)</h3>
+                        </div>
                       
                     </div>
 
@@ -112,53 +173,72 @@ class Email extends CI_Controller {
                 </body>
 
                 </html>"; 
+                
 
-      $mailer = new PHPMailer(true);
-      try {
-          $mailer->isSMTP();
-          $mailer->Host = "smtp.gmail.com";
-          $mailer->SMTPAuth = true;
-          $mailer->Username = "dominic@rimes.int";
-          $mailer->Password = "oowdfikelxnchsqx";
-          $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-          $mailer->Port = 465; 
-          $mailer->setFrom($from_address);
-
-          foreach ($to_addresses as $to_address) {
-              $mailer->addAddress($to_address);
-          }
-
-          $mailer->addCC("dominicyutes05@gmail.com");
+        $mailer = new PHPMailer(true);
+        try {
+            $mailer->isSMTP();
+            $mailer->Host = "smtp.gmail.com";
+            $mailer->SMTPAuth = true;
+            $mailer->Username = "dominic@rimes.int";
+            $mailer->Password = "oowdfikelxnchsqx";
+            $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mailer->Port = 465; 
+            $mailer->setFrom($from_address);
   
-          $mailer->Subject = $subject;
-          $mailer->isHTML(true);
-          $mailer->Body = $body;
+            foreach ($to_addresses_str as $to_address) {
+             $mailer->addAddress($to_address);
+            }
 
-          // Enable debugging
-          $mailer->SMTPDebug = 2; 
+            if($this->upload->do_upload('file')){
+                $file_data = $this->upload->data();
+                $file_path = $file_data['full_path'];
 
-          $mailer->send();
+                $mailer->addAttachment($file_path, $file_data['file_name'], 'base64', $file_data['file_type']);
 
-          $sent = true;
-          $this->insert_email_log($from_address, $to_addresses, $sent);
-          echo "Your Mail sent successfully";
+            
+                print_r($this->upload->data());
+            }else{
+                print_r($this->upload->display_errors());
+            }
 
-      } catch (Exception $e) {
-          $sent = false;
-          $this->insert_email_log($from_address, $to_addresses, $sent);
+          //   $mailer->addCC("dominicyutes05@gmail.com");
+    
+            $mailer->Subject = $subject;
+            $mailer->isHTML(true);
+            $mailer->Body = $body;
+
+            // File upload configuration
+            // $mailer->addAttachment($file_path, 'attachment', $filename);
+  
+            // Enable debugging
+            $mailer->SMTPDebug = 2; 
+
+            $mailer->send();
+
+            $sent = true;
+            $this->insert_email_log($from_address, $to_addresses_str, $sent);
+
+            echo "Your Mail sent successfully";
+
+        } catch (Exception $e) {
+            $sent = false;
+            $this->insert_email_log($from_address, $to_addresses_str, $sent);
+          //   $this->insert_email_log($from_address, $to_addresses, $sent);
         
-          echo "Mail Error: " . $mailer->ErrorInfo;
-      }
+            echo "Mail Error: " . $mailer->ErrorInfo;
+        }
     }
 
-     private function insert_email_log($from_address, $to_addresses, $sent) {
-         $this->load->database();
-         $this->db->insert('email_log', array(
-             'email_from' => $from_address,
-             'email_to' => implode(", ", $to_addresses),
-             'sent' => $sent ? "True" : "False" 
-         ));
-     }
+    private function insert_email_log($from_address, $to_addresses, $sent) {
+       $this->load->database();
+       $data = array(
+           'email_from' => $from_address,
+           'email_to' => implode(", ", $to_addresses),
+           'sent' => $sent ? "True" : "False"
+       );
+       $this->db->insert('email_log', $data);
+    }
 
      public function show_logInfo() {
         $name = '';
@@ -172,7 +252,7 @@ class Email extends CI_Controller {
         $this->load->view('Social_media/email_log_view', $data);
      }
 
-     public function get_emails() {
+    public function get_emails() {
         $group_name = $this->input->post('group_name');
         $this->load->model('Email_log_model');
         $emails = $this->Email_log_model->get_emails_by_group($group_name);
