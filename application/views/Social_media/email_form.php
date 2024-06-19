@@ -59,8 +59,8 @@
                 </div>
                 <!--  -->
                 <div>
-                    <input type="checkbox" id="toggleButton">
-                    <label for="toggleButton">Auto Email ON/OFF</label>
+                    <input type="checkbox" id="mainInputCheck_m">
+                    <label for="mainInputCheck_m">Auto Email ON/OFF</label>
                 </div>
                 <!--  -->
                 <div class="row">
@@ -270,7 +270,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
 
 
-
     <script>
     //email Log Information button fn
     document.getElementById("toggleEmailLogTable").addEventListener("click", function() {
@@ -294,6 +293,7 @@
     });
     // 
 
+    // Fetch mc_names for Dropdown 1 (UI)
     function initializePage() {
         $.ajax({
             url: "<?php echo base_url('Email/fetch_mc_names'); ?>",
@@ -309,17 +309,41 @@
 
                 Array.from(uniqueMcNames).forEach(function(mcName) {
                     var listItem = `
-            <li>
-                <a class="dropdown-item" href="#">
-                    <input type="checkbox" class="dropdown-checkbox" data-name="${mcName}">
-                    <span>${mcName}</span>
-                </a>
-            </li>`;
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <input type="checkbox" class="dropdown-checkbox" data-name="${mcName}">
+                            <span>${mcName}</span>
+                        </a>
+                    </li>`;
                     dropdownMenu.append(listItem);
                 });
 
                 // Ensure checkboxes are selectable
                 $('.dropdown-checkbox').on('change', function() {
+                    var mcName = $(this).data('name');
+                    if ($(this).is(':checked')) {
+                        $.ajax({
+                            url: "<?php echo base_url('Email/get_email_groups_by_mc_name'); ?>",
+                            method: "GET",
+                            data: {
+                                mc_name: mcName
+                            },
+                            dataType: "json",
+                            success: function(data) {
+                                console.log(`MC Name: ${mcName}`);
+                                data.forEach(function(group) {
+                                    console.log(
+                                        `Group: ${group.groups}, Groups Checkbox: ${group.groups_checkbox}, Auto Email: ${group.auto_email}`
+                                    );
+                                });
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                console.error("Error fetching group data: ", textStatus,
+                                    errorThrown);
+                                console.error("Response Text: ", jqXHR.responseText);
+                            }
+                        });
+                    }
                     updateSelectedNames();
                 });
 
@@ -355,43 +379,21 @@
         updateDropdown2(selectedNames);
     }
 
-    // Function to update groups_checkbox and auto_email columns
-    function updateCheckboxStatus(mcName, groupName, columnName, isChecked) {
-        $.ajax({
-            url: '<?php echo base_url('Email/update_checkbox_status'); ?>',
-            type: 'POST',
-            data: {
-                mc_name: mcName,
-                group_name: groupName,
-                column_name: columnName,
-                is_checked: isChecked
-            },
-            dataType: 'json',
-            success: function(response) {
-                if (response.success) {
-                    console.log(columnName + ' updated successfully');
-                } else {
-                    console.error('Failed to update ' + columnName);
-                }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.error("Error updating " + columnName + ": ", textStatus, errorThrown);
-                console.error("Response Text: ", jqXHR.responseText);
-            }
-        });
-    }
-
+    // Function to update Dropdown 2 based on selected names
     function updateDropdown2(selectedNames) {
+        // Fetch existing MC names in Dropdown 2
         var existingMCNames = $('#dropdown-menu-2 .dropdown-item').map(function() {
             return $(this).find('.grp-NamChkBox').data('group');
         }).get();
 
+        // Remove items not in selectedNames
         existingMCNames.forEach(function(groupName) {
             if (!selectedNames.includes(groupName)) {
                 $('#dropdown-menu-2 .grp-NamChkBox[data-group="' + groupName + '"]').closest('li').remove();
             }
         });
 
+        // Add items for selectedNames not already in Dropdown 2
         selectedNames.forEach(function(mcName) {
             if (!$('#dropdown-menu-2 .grp-NamChkBox[data-group="' + mcName + '"]').length) {
                 refreshDropdowns(mcName);
@@ -399,6 +401,7 @@
         });
     }
 
+    // Function to refresh dropdown 2 and dropdown 3 based on selected MC
     function refreshDropdowns(mcName) {
         $.ajax({
             url: '<?php echo base_url('Email/get_email_groups_by_mc_name'); ?>',
@@ -409,47 +412,55 @@
             dataType: 'json',
             success: function(data) {
                 var menu2 = $('#dropdown-menu-2');
+
+                // Get existing MC names in Dropdown 2
                 var existingMCNames = menu2.find('.grp-NamChkBox').map(function() {
                     return $(this).data('group');
                 }).get();
 
+                // Add items for selectedNames not already in Dropdown 2
                 data.forEach(function(group) {
                     var groupName = group.groups;
-                    var groupsCheckboxChecked = group.groups_checkbox ? 'checked' : '';
-                    var autoEmailChecked = group.auto_email ? 'checked' : '';
+                    var autoEmailChecked = group.auto_email === 't' ? 'checked' :
+                        '';
+                    var groupsCheckboxChecked = group.groups_checkbox === 't' ? 'checked' :
+                        '';
 
                     if (existingMCNames.indexOf(groupName) === -1) {
                         var listItem = `
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <input type="checkbox" class="grp-NamChkBox" data-group="${groupName}" ${groupsCheckboxChecked}>
-                            <span>${groupName}</span>
-                            <input type="checkbox" class="auto-email-checkbox" id="auto-email-${groupName}" ${autoEmailChecked}>
-                            <label for="auto-email-${groupName}">Auto Email On/Off</label>
-                        </a>
-                    </li>`;
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <input type="checkbox" class="grp-NamChkBox" data-group="${groupName}" ${groupsCheckboxChecked}>
+                                                <span>${groupName}</span>
+                                                <input type="checkbox" id="auto-email-${groupName}" ${autoEmailChecked}>
+                                                <label for="auto-email-${groupName}">Auto Email On/Off</label>
+                                            </a>
+                                        </li>
+                                    `;
                         menu2.append(listItem);
 
-                        // Attach event listeners to checkboxes
-                        menu2.find('.grp-NamChkBox[data-group="' + groupName + '"]').on('change',
-                            function() {
-                                var isChecked = $(this).is(':checked');
-                                updateCheckboxStatus(mcName, groupName, 'groups_checkbox',
-                                    isChecked);
-                                if (isChecked) {
-                                    fetchEmails(mcName, groupName);
-                                } else {
-                                    $(this).closest('li').remove();
-                                }
-                            });
-
-                        menu2.find('.auto-email-checkbox#auto-email-' + groupName).on('change',
-                            function() {
-                                var isChecked = $(this).is(':checked');
-                                updateCheckboxStatus(mcName, groupName, 'auto_email',
-                                isChecked);
-                            });
+                        //
+                        existingMCNames.push(groupName);
                     }
+                });
+
+
+                // Attach change event to checkboxes in Dropdown 2
+                menu2.find('.grp-NamChkBox').off('change').on('change', function() {
+                    var groupName = $(this).data('group');
+                    var mcName = $('#dropdown-menu .dropdown-checkbox:checked').data('name');
+
+                    var isChecked = $(this).is(':checked');
+                    updateCheckboxStatus(mcName, groupName, 'groups_checkbox', isChecked);
+                });
+
+                // Attach change event to auto email checkboxes in Dropdown 2
+                menu2.find('[id^=auto-email-]').off('change').on('change', function() {
+                    var groupName = $(this).closest('a').find('.grp-NamChkBox').data('group');
+                    var mcName = $('#dropdown-menu .dropdown-checkbox:checked').data('name');
+
+                    var isChecked = $(this).is(':checked');
+                    updateCheckboxStatus(mcName, groupName, 'auto_email', isChecked);
                 });
             },
             error: function(jqXHR, textStatus, errorThrown) {
@@ -458,6 +469,7 @@
             }
         });
 
+        // Fetch existing groups for Dropdown 3
         $.ajax({
             url: '<?php echo base_url('Email/get_email_groups_by_mc_name'); ?>',
             type: 'GET',
@@ -476,19 +488,22 @@
 
                 uniqueGroups.forEach(function(groupName) {
                     var listItem = `
-                <li>
-                    <a class="dropdown-item" href="#">
-                        <span>${groupName}</span>
-                    </a>
-                </li>`;
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <span>${groupName}</span>
+                        </a>
+                    </li>
+                `;
                     menu3.append(listItem);
                 });
 
+                // Attach click event handler to items in Dropdown 3
                 $('#dropdown-menu-3').on('click', 'a.dropdown-item', function(event) {
                     event.preventDefault();
                     var groupText = $(this).find('span').text();
                     $('#getDD3Val').text(groupText);
 
+                    // Fetch emails based on selected group and mc_name
                     $.ajax({
                         url: '<?php echo base_url('Email/get_email_by_group'); ?>',
                         type: 'GET',
@@ -523,6 +538,29 @@
     }
 
 
+    // Function to update checkbox status on the server
+    function updateCheckboxStatus(mcName, groupName, columnName, isChecked) {
+        $.ajax({
+            url: '<?php echo base_url('Email/update_checkbox_status'); ?>',
+            type: 'POST',
+            data: {
+                mc_name: mcName,
+                group_name: groupName,
+                column_name: columnName,
+                is_checked: isChecked ? 1 : 0 // Convert boolean to 1 or 0
+            },
+            dataType: 'json',
+            success: function(response) {
+                if (!response.success) {
+                    console.error('Failed to update checkbox status');
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("Error updating checkbox status: ", textStatus, errorThrown);
+                console.error("Response Text: ", jqXHR.responseText);
+            }
+        });
+    }
 
     let getEmailFromGrp = [];
 
@@ -745,6 +783,40 @@
         }
     });
     // 
+
+    // main_autoemail input checkbox in first line
+    $(document).ready(function() {
+        $('#mainInputCheck_m').on('change', function() {
+            var state = $(this).is(':checked'); // true or false
+
+            $.ajax({
+                url: '<?php echo base_url('Email/update_main_auto_email'); ?>',
+                type: 'POST',
+                data: {
+                    state: state
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success) {
+                        console.log('Main Auto Email updated successfully.');
+
+                        if (state && response.emails) {
+                            console.log('Emails with auto_email set to true:');
+                            response.emails.forEach(function(email) {
+                                console.log(email.email);
+                            });
+                        }
+                    } else {
+                        console.error('Failed to update Main Auto Email.');
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error('Error updating Main Auto Email:', textStatus,
+                        errorThrown);
+                }
+            });
+        });
+    });
     </script>
 
 

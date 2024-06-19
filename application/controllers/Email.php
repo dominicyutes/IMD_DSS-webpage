@@ -112,19 +112,49 @@ class Email extends CI_Controller {
         echo json_encode(['success' => $response]);
     }
 
+    //for 2nd DD checkbox, T or F
     public function update_checkbox_status() {
-       $mc_name = $this->input->post('mc_name');
-       $group_name = $this->input->post('group_name');
-       $column_name = $this->input->post('column_name');
-       $is_checked = $this->input->post('is_checked') ? true : false;
+         $mc_name = $this->input->post('mc_name');
+         $group_name = $this->input->post('group_name');
+         $column_name = $this->input->post('column_name');
+         $is_checked = $this->input->post('is_checked');
 
-       $this->load->model('Email_log_model');
-       $success = $this->Email_log_model->update_checkbox_status($mc_name, $group_name, $column_name, $is_checked);
+         // Convert to boolean
+         $is_checked = $is_checked == 1 ? true : false;
 
-       echo json_encode(['success' => $success]);
+         $this->load->model('Email_log_model');
+         $success = $this->Email_log_model->update_checkbox_status($mc_name, $group_name, $column_name, $is_checked);
+
+         if ($success) {
+             echo json_encode(['success' => true]);
+         } else {
+             echo json_encode(['success' => false]);
+         }
+     }
+
+     // Controller method to update main_AutoEmail in email_group table
+     public function update_main_auto_email() {
+    $state = $this->input->post('state'); 
+    $mainAutoEmailValue = ($state === 'true') ? true : false;
+
+    $this->load->model('Email_log_model');
+    
+    $success = $this->Email_log_model->updateMainAutoEmailAll($mainAutoEmailValue);
+
+    if ($success) {
+        if ($mainAutoEmailValue) {
+            // Fetch emails where auto_email is true
+            $emails = $this->Email_log_model->getEmailsWithAutoEmail();
+            echo json_encode(['success' => true, 'emails' => $emails]);
+        } else {
+            echo json_encode(['success' => true]);
+        }
+    } else {
+        echo json_encode(['success' => false]);
     }
+}
 
-
+     
     // ***********************************//
 
 
@@ -217,9 +247,9 @@ class Email extends CI_Controller {
 
          //
          $this->insert_email_log($from_address, $to_addresses_str, $sent, $file_names);
-     }
+    }
 
-     private function insert_email_log($from_address, $to_addresses, $sent, $file_names = []) {
+    private function insert_email_log($from_address, $to_addresses, $sent, $file_names = []) {
          $this->load->database();
          $data = array(
              'email_from' => $from_address,
@@ -228,9 +258,9 @@ class Email extends CI_Controller {
              'file_name' => implode(", ", $file_names) // Store the file names
          );
          $this->db->insert('email_log', $data);
-     }
+    }
 
-     public function show_logInfo() {
+    public function show_logInfo() {
         $name = '';
          if ($this->session->has_userdata('name')) {
            $name = $this->session->userdata('name');
@@ -240,7 +270,7 @@ class Email extends CI_Controller {
         $this->load->model('Email_log_model');
         $data['result'] = $this->Email_log_model->get_email_logs();
         $this->load->view('Social_media/email_log_view', $data);
-     }
+    }
 
     public function get_emails() {
         $group_name = $this->input->post('group_name');

@@ -17,7 +17,7 @@ class Email_log_model extends CI_Model {
 
     // geting groups and autoemail based on MC_NAME avlue
     public function get_email_groups_by_mc_name($mc_name) {
-        $this->db->select('groups, auto_email');
+        $this->db->select('groups, auto_email, groups_checkbox');
         $this->db->where('mc_name', $mc_name);
         $query = $this->db->get('email_group');
         return $query->result_array();
@@ -68,6 +68,7 @@ class Email_log_model extends CI_Model {
         $this->db->insert('email_group', $data);
     }
 
+    //mc_name and group_name true or false // DD2
     public function update_checkbox_status($mc_name, $group_name, $column_name, $is_checked) {
        $data = [$column_name => $is_checked];
 
@@ -76,6 +77,23 @@ class Email_log_model extends CI_Model {
        return $this->db->update('email_group', $data);
     }
 
+    // update main_AutoEmail (input checkbox)
+    public function updateMainAutoEmailAll($mainAutoEmailValue) {
+        $data = ['main_autoemail' => $mainAutoEmailValue];
+        $this->db->update('email_group', $data);
+        
+        return ($this->db->affected_rows() > 0);
+    }
+
+    // click main_AutoEmail, pulling email [auto] 
+    public function getEmailsWithAutoEmail() {
+       $this->db->select('email');
+       $this->db->from('email_group');
+       $this->db->where('auto_email', true);
+       $query = $this->db->get();
+    
+       return $query->result_array();
+    }
 
 
 
