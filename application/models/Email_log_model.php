@@ -68,6 +68,14 @@ class Email_log_model extends CI_Model {
         $this->db->insert('email_group', $data);
     }
 
+    public function update_checkbox_status($mc_name, $group_name, $column_name, $is_checked) {
+       $data = [$column_name => $is_checked];
+
+       $this->db->where('mc_name', $mc_name);
+       $this->db->where('groups', $group_name);
+       return $this->db->update('email_group', $data);
+    }
+
 
 
 

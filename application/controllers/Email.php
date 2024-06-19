@@ -112,6 +112,19 @@ class Email extends CI_Controller {
         echo json_encode(['success' => $response]);
     }
 
+    public function update_checkbox_status() {
+       $mc_name = $this->input->post('mc_name');
+       $group_name = $this->input->post('group_name');
+       $column_name = $this->input->post('column_name');
+       $is_checked = $this->input->post('is_checked') ? true : false;
+
+       $this->load->model('Email_log_model');
+       $success = $this->Email_log_model->update_checkbox_status($mc_name, $group_name, $column_name, $is_checked);
+
+       echo json_encode(['success' => $success]);
+    }
+
+
     // ***********************************//
 
 
