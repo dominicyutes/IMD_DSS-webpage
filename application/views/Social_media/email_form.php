@@ -1,7 +1,7 @@
 <!-- <?php if($this->session->userdata('is_loggedin') == TRUE){  ?> -->
 
 <?php $this->load->view('Menu/template/header_'); ?>
-<?php $this->load->view('Menu/template//sidebar_'); ?>
+<?php $this->load->view('Menu/template/sidebar_'); ?>
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -43,6 +43,8 @@
 
 <div class="row">
 
+    <div id="user-data" data-user-id="<?php echo $user_id; ?>" data-name="<?php echo $name; ?>"></div>
+
     <!-- editing content starts here -->
     <div class="content-wrapper" style="width: 100%;">
         <section class="content">
@@ -67,6 +69,9 @@
                     <!-- col-7 starts here -->
                     <div class="col-7">
                         <div class="btn-group dropend" style="margin-top: 4%;">
+
+                            <!-- HQ_User -->
+                            <?php if ($user_id == "0967b574-37db-4ed9-a31f-e2a4f354514f") : ?>
                             <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Choose MC
@@ -75,6 +80,15 @@
                                 <!-- AJAX MC -->
                             </ul>
                             <textbox style="margin-left: 10%; background-color: #adf5f5;" id="getDD1Val"></textbox>
+                            <!-- HQ_User -->
+                            <?php else : ?>
+                            <!-- Normal_User -->
+                            <input type="checkbox" class="dropdown-checkbox" data-name="<?php echo $name; ?>" />
+                            <textbox style="margin-left: 10%; background-color: #adf5f5;" id="getDD1Val">
+                                <?php echo $name; ?></textbox>
+                            <?php endif; ?>
+                            <!-- Normal_User -->
+
                         </div>
                     </div>
 
@@ -271,6 +285,12 @@
 
 
     <script>
+    let userId = <?php echo json_encode($user_id); ?>;
+    console.log("User ID:", userId);
+    //
+    let LoggedMC_name = <?php echo json_encode($name); ?>;
+    console.log("LoggedMC_name:", LoggedMC_name);
+
     //email Log Information button fn
     document.getElementById("toggleEmailLogTable").addEventListener("click", function() {
         window.location = "<?php echo site_url('Email/show_logInfo'); ?>";

@@ -2573,7 +2573,7 @@ function showSavedMacroList() {
 
     let xhr = new XMLHttpRequest();
 
-    if (user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9") {
+    if (user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9" || user_id == "0967b574-37db-4ed9-a31f-e2a4f354514f") {
         xhr.open("GET", "<?php echo base_url('HomePage/getAllMacros'); ?>", true); // superAdmin MACROGROUP-Name view
     } else {
         xhr.open("GET", "<?php echo base_url('HomePage/getUserMacros?user_id=') ?>" + user_id,
@@ -2611,10 +2611,10 @@ function showSavedMacroList() {
                                 </span>
                             </div>
 
-                            <?php if ($user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9"): ?>
-                                                            <div>
-                                                                <span style="padding-right: 10px;" onclick="tempCloseGrp(this)">X</span>
-                                                            </div>
+                            <?php if ($user_id == "450632a9-5717-4261-ada6-dc97cbea0ee9" || $user_id == "0967b574-37db-4ed9-a31f-e2a4f354514f"): ?>
+                                <div>
+                                    <span style="padding-right: 10px;" onclick="tempCloseGr">X</span>
+                                </div>
                             <?php endif; ?>
                             
                         </div>
