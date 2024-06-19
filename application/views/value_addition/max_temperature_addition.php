@@ -101,7 +101,7 @@
                     <div class="nav-tabs-custom">
                         <?php
                             $day_attr = array("name" => "day_form", "method" => "get");
-                            echo form_open("ValueAddition/WeatherForecast/index/");
+                            echo form_open("ValueAddition/MaxTemp/index/");
                         ?>
                         <div class="row">
                             <div class="col-sm-2">
@@ -311,7 +311,8 @@
     const latestUpdateText = document.querySelector('#update_info');
     var fcst_date = '<?php echo date('Y-m-d', strtotime("$curr_date")); ?>';
     var fcst_data_type = '<?php echo $fcst_data_type; ?>';
-    var block_list = <?php echo json_encode($block_list); ?>;
+    //var block_list = <?php echo json_encode($block_list); ?>;
+    var district_list = <?php echo json_encode($district_list); ?>;
     /* Max Temp. forecast data */
     var tx_fcst_list = <?php echo json_encode($fcst_list); ?>;
     /* Max Temp. normal data */
@@ -800,7 +801,7 @@
         });
         locSelected.push({
             loc_id: feature.properties.OBJECTID_1,
-            loc_name: block_list[loc_id],
+            loc_name: district_list[loc_id],
             tx_fcst: (!(tmpResult)) ? ( (!(historyResult)) ? tx_fcst_list[feature.properties.OBJECTID_1] : historyResult.tx_dynamic ) : tmpResult.selected_tx_fcst_dynamic,
             tx_fcst_dynamic: (!(tmpResult))? ( (!(historyResult)) ? tx_fcst_list[feature.properties.OBJECTID_1] : historyResult.tx_dynamic ) : $("#fcst_id_"+feature.properties.OBJECTID_1).val(),
             //tx_normal: tx_normal_list[feature.properties.OBJECTID_1],
@@ -890,7 +891,7 @@
             if( i === 0 ){
                 area_txt += getTBHeader('selectedAreaTBResult');
             }
-            loc_name = block_list[loc_id];
+            loc_name = district_list[loc_id];
             area_txt += '<tr>\n\
                             <td style="display:none;">'+loc_id+'</td>\n\
                             <td>&nbsp;'+loc_name+'&nbsp;</td>\n\
@@ -1048,7 +1049,7 @@
             for(var t=0;t<temp_arr.length;t++){
                 loc_id = temp_arr[t].selected_loc_id;
                 //loc_name = temp_arr[t].selected_loc_name;
-                loc_name = block_list[loc_id];
+                loc_name = district_list[loc_id];
                 tx_fcst = parseFloat(temp_arr[t].selected_tx_fcst_dynamic);
                 alert_status = temp_arr[t].selected_alert;
                 area_txt += '<tr>\n\
@@ -1141,7 +1142,7 @@
         for(var i = 0; i < _update_temp_data.length; i++){
             sel_loc_id_selected = parseInt(_update_temp_data[i].selected_loc_id);
             //console.log(sel_loc_id_selected);
-            sel_loc_name_selected = block_list[sel_loc_id_selected]; 
+            sel_loc_name_selected = district_list[sel_loc_id_selected]; 
             sel_loc_fcst_selected = _update_temp_data[i].selected_fcst;
             sel_loc_fcst_dynamic = $("#fcst_id_"+sel_loc_id_selected).val();
             //sel_loc_fcst_normal = tx_normal_list[sel_loc_id_selected];
@@ -1201,7 +1202,7 @@
         for(var i = 0; i < locSelected.length; i++){
             loc_id_selected = parseInt(locSelected[i].loc_id);
             //loc_name_selected = locSelected[i].loc_name;
-            loc_name_selected = block_list[loc_id_selected]; 
+            loc_name_selected = district_list[loc_id_selected]; 
             loc_fcst_selected = locSelected[i].tx_fcst;
             var chk_dynamic_val = $("#fcst_id_"+loc_id_selected).val();
             console.log(chk_dynamic_val);
@@ -1229,7 +1230,7 @@
                     selected_loc_name: loc_name_selected,
                     selected_fcst: loc_fcst_selected,
                     selected_tx_fcst_dynamic: loc_fcst_dynamic,
-                    selected_tx_normal_val: loc_fcst_normal,
+                    //selected_tx_normal_val: loc_fcst_normal,
                     selected_alert: loc_alert_selected
                 });
             }
@@ -1465,7 +1466,7 @@
             }
             txt += '<tr>\n\
                         <td style="display:none;">'+data_list[k].district_id+'</td>\n\
-                        <td>&nbsp;'+block_list[data_list[k].district_id]+'&nbsp;</td>\n\
+                        <td>&nbsp;'+district_list[data_list[k].district_id]+'&nbsp;</td>\n\
                         <td>'+data_list[k].tx_dynamic+'</td>\n\
                         <td>'+data_list[k].warning_level_id+'</td>\n\
                     </tr>';
