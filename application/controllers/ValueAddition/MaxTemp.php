@@ -50,6 +50,7 @@ class MaxTemp extends CI_Controller{
     }
     
     function saveAlertData(){
+        //pr($_POST,1);
         $set_data_list = $this->input->post('set_alert_list'); 
         $fcst_date = $this->input->post('fcst_date');
         $fcst_data_type = $this->input->post('fcst_data_type');
@@ -64,33 +65,36 @@ class MaxTemp extends CI_Controller{
             if($check_exist != false){
                 $upd_set_data = array(
                     'id' => $check_exist,
-                    'block_id' => $set_data_list[$i]['selected_loc_id'],
+                    'district_id' => $set_data_list[$i]['selected_loc_id'],
                     'tx_fcst' => $set_data_list[$i]['selected_fcst'],      
                     'tx_dynamic' => $set_data_list[$i]['selected_tx_fcst_dynamic'], 
                     'warning_level_id' => $set_data_list[$i]['selected_alert'],
-                    'user_id' => $this->session->userdata('user_id'),
+                    //'user_id' => $this->session->userdata('user_id'),
                     'timestamp' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s')
                 );
-                $upd_va_data = array(
-                    'date' => date('Y-m-d',strtotime($fcst_date)),
-                    'block_id' => $set_data_list[$i]['selected_loc_id'],
-                    'max_temp_fcst' => $set_data_list[$i]['selected_tx_fcst_dynamic'],
-                    'max_temp_warning_level' => $set_data_list[$i]['selected_alert'],
-                    'max_temp_user_id' => $this->session->userdata('user_id'),
-                    'max_temp_update' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                    'max_temp_model_name' => $fcst_data_type
-                );
+                //pr($upd_set_data,1);
                 array_push($upd_arr, $upd_set_data);
-                array_push($up_va_arr, $upd_va_data);
+                // $upd_va_data = array(
+                //     'date' => date('Y-m-d',strtotime($fcst_date)),
+                //     'block_id' => $set_data_list[$i]['selected_loc_id'],
+                //     'max_temp_fcst' => $set_data_list[$i]['selected_tx_fcst_dynamic'],
+                //     'max_temp_warning_level' => $set_data_list[$i]['selected_alert'],
+                //     'max_temp_user_id' => $this->session->userdata('user_id'),
+                //     'max_temp_update' => date('Y-m-d H:i:s'),
+                //     'updated_at' => date('Y-m-d H:i:s'),
+                //     'max_temp_model_name' => $fcst_data_type
+                // );
+                
+                //array_push($up_va_arr, $upd_va_data);
             }
         }
         if( !empty($upd_arr) ){
+            //pr($upd_arr,1);
             $this->VaModel->updateHeatwaveAlert($fcst_data_type, $upd_arr);
-            if(!empty($up_va_arr)){
-                $this->VaModel->updateHeatwaveAlert_VA_UP($up_va_arr,$fcst_data_type,$fcst_date);
-            }
+            // if(!empty($up_va_arr)){
+            //     $this->VaModel->updateHeatwaveAlert_VA_UP($up_va_arr,$fcst_data_type,$fcst_date);
+            // }
         }
         $history_list = $this->VaModel->getTxHistoryData($fcst_data_type, $fcst_date, $curr_timestamp);
         echo json_encode($history_list);
@@ -182,7 +186,7 @@ class MaxTemp extends CI_Controller{
             $day_int = 1;
             $fcst_date = $curr_date;
         }
-        
+        //echo $fcst_date; 
         $data['active_param_type'] = $param_type;
         // Contour File details
         $contour_date = $this->getDate();
@@ -198,6 +202,7 @@ class MaxTemp extends CI_Controller{
         $data['map_zoom'] = $get_map_prop['map_zoom'];
         $data['geojson_file'] = $get_map_prop['geojson_file'];
         $data['block_list'] = $this->VaModel->getBlockName();
+        $data['district_list'] = $this->VaModel->getDistrictList();
         $data['updated_data'] = $this->VaModel->getUpdatedBlocks($fcst_data_type,$fcst_date);
         $data['curr_date'] = $fcst_date;
         $data['history_list'] = $this->VaModel->getTxHistoryData($fcst_data_type, $fcst_date, $curr_timestamp);
@@ -279,7 +284,7 @@ class MaxTemp extends CI_Controller{
         else{
             $date = date("Y-m-d");
         }
-        $date = '2024-05-27';
+        $date = '2024-04-27';
         return $date;
     }
     

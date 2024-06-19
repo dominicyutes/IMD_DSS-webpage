@@ -46,6 +46,21 @@ class VaModel extends CI_Model{
         return $block_name_array;
     }
 
+    function getDistrictList(){
+        $this->db->select('id, district');
+        $res = $this->db->get('districts_india');
+        $districts = $res->result();
+        
+        $districts_array = array();
+        foreach ($districts as $district) {
+            $district_id = $district->id;
+            $district_name = $district->district;
+            
+            $districts_array[$district_id] = $district_name;
+        }
+        return $districts_array;
+    }
+
     function getUpdatedBlocks($data_type,$date){
         $updated_ids = array();
         $where_date = "date = '".$date."'";
@@ -62,7 +77,7 @@ class VaModel extends CI_Model{
         //echo $this->db->last_query();
         if(!empty($ret_)){
             foreach ($ret_ as $key => $value) {
-                array_push($updated_ids,$value['block_id']);
+                array_push($updated_ids,$value['district_id']);
             }
         }
         return $updated_ids;
@@ -77,35 +92,26 @@ class VaModel extends CI_Model{
         }
         $this->db->where($where_datetime);
         $res = $this->db->get();
+        //echo $this->db->last_query();
         return $res->result();
     }
 
     function getTxFcstData($data_type, $date){
         if( $data_type == 'imd'){
             $this->db->select('alert_tb.district_id,alert_tb.tx_dynamic,alert_tb.updated_at');
-            $this->db->from('block_imd_gfs_forecast');
-            $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','block_imd_gfs_forecast.fcst_date = alert_tb.date');
-            $this->db->where('block_imd_gfs_forecast.fcst_date', $date);
+            $this->db->from('district_imd_gfs');
+            $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','district_imd_gfs.fcst_date = alert_tb.date');
+            $this->db->where('district_imd_gfs.fcst_date', $date);
         } else if( $data_type == 'ensemble'){
             $this->db->select('alert_tb.district_id,alert_tb.tx_dynamic,alert_tb.updated_at');
-            $this->db->from('block_ensemble_forecast');
-            $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','block_ensemble_forecast.fcst_date = alert_tb.date');
-            $this->db->where('block_ensemble_forecast.fcst_date', $date);
+            $this->db->from('district_ensemble');
+            $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','district_ensemble.fcst_date = alert_tb.date');
+            $this->db->where('district_ensemble.fcst_date', $date);
         } else if( $data_type == 'ecmwf'){
             $this->db->select('alert_tb.district_id,alert_tb.tx_dynamic,alert_tb.updated_at');
-            $this->db->from('block_ecmwf_forecast');
-            $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','block_ecmwf_forecast.fcst_date = alert_tb.date');
-            $this->db->where('block_ecmwf_forecast.fcst_date', $date);
-        } else if( $data_type == 'wrf'){
-            $this->db->select('alert_tb.district_id,alert_tb.tx_dynamic,alert_tb.updated_at');
-            $this->db->from('block_wrf_forecast');
-            $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','block_wrf_forecast.fcst_date = alert_tb.date');
-            $this->db->where('block_wrf_forecast.fcst_date', $date);
-        } else if( $data_type == 'weight'){
-            $this->db->select('district_id,tx_dynamic,updated_at');
-            $this->db->from('weighted_matrix_max_temp');
-            $this->db->where('weighted_matrix_max_temp.date', $date);
-            $this->db->where('weight_added_at IS NOT NULL', NULL, FALSE);
+            $this->db->from('district_ecmef');
+            $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','district_ecmef.fcst_date = alert_tb.date');
+            $this->db->where('district_ecmef.fcst_date', $date);
         } else {
             return NULL;
         }
@@ -121,6 +127,7 @@ class VaModel extends CI_Model{
         }
         return $tx_fcst_array;
     }
+
     function getUpdatedData($date,$filter_level = NULL){    
         $model_name = '';
         $imd_up_time        = $this->latest_imd_update($date);
@@ -202,6 +209,30 @@ class VaModel extends CI_Model{
         $ret_arr = array('result_arr'=>$result_arr,'map_data'=>$tx_fcst_array,'district_found'=>$district_found,'block_found'=>$block_found, 'model_name'=>$model_name);
         return $ret_arr;
     }
+
+    function checkExistAlertData($data_type, $d_id, $date, $timestamp){
+        $where_datetime = "date = '".$date."'";
+        $this->db->select('id');
+        $this->db->from('heatwave_alert_dissemination_'.$data_type);
+        $this->db->where('district_id', $d_id);
+        $this->db->where($where_datetime);
+        $res = $this->db->get();
+        if ($res->num_rows() > 0){
+            return $res->row()->id;
+        }
+        else{
+            return false;
+        }
+    }
+
+    function updateHeatwaveAlert($data_type, $data){
+        if($data_type != 'weight'){
+            $this->db->update_batch('heatwave_alert_dissemination_'.$data_type, $data, 'id');
+        } else {   
+            $this->db->update_batch('weighted_matrix_max_temp', $data, 'id');
+        }
+    }
+
     public function latest_imd_update($date){
         $this->db->select('block_id, date, max(updated_at) as updated_at');
         $this->db->from('heatwave_alert_dissemination_imd');
