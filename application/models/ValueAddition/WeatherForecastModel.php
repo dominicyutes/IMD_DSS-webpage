@@ -1,11 +1,54 @@
 <?php
 /**
- * Description of VaModel
- *
+ * Description of WeatherForecastModel
  * @author Saroj
  */
-class VaModel extends CI_Model{    
+class WeatherForecastModel extends CI_Model{    
     
+    function get_parameter_name($parameter){
+        $this->db->select("id,parameter_name,nick_name");
+        $this->db->from("parameter_list");
+        $this->db->where("id",$parameter);
+        $res = $this->db->get();
+        $ret_ = $res->row_array();
+        //$parameter_nick = $ret_['nick_name'];
+        return $ret_;
+
+    }
+    function getForecastInfo ($data_type, $date, $parameter){
+        $parameter = trim($parameter['nick_name']);
+        $response = array();
+        $this->db->select("id,fcst_date,district_id");
+        $this->db->select($parameter);
+        if($data_type == 'imd'){
+            $this->db->from("district_imd_gfs");
+        } else if ($data_type == 'ecmwf'){
+            $this->db->from("district_ecmwf");
+        } else if ($data_type == 'ensemble'){
+            $this->db->from("district_ensemble");
+        }
+        $this->db->where('fcst_date',$date);
+        $res = $this->db->get();
+        $ret_ = $res->result_array();
+        if(!empty($ret_)){
+            foreach($ret_ as $key => $val){
+                if($parameter == 'temp_max') {
+                    $response[$val['district_id']] = $val['temp_max'];
+                } else if($parameter == 'temp_min') {
+                    $response[$val['district_id']] = $val['temp_min'];
+                } else if($parameter == 'rainfall') {
+                    $response[$val['district_id']] = $val['rainfall'];
+                } else if($parameter == 'humidity') {
+                    $response[$val['district_id']] = $val['humidity'];
+                } else if($parameter == 'wind_speed') {
+                    $response[$val['district_id']] = $val['wind_speed'];
+                } else if($parameter == 'cloud_cover') {
+                    $response[$val['district_id']] = $val['cloud_cover'];
+                }
+            }
+        }
+        return $response;
+    }
     function get_alert_latest_info($data_type, $date){
         $where_datetime = "date = '".$date."'";
         $this->db->select('user_id, MAX(timestamp) as max_datetime');
@@ -15,7 +58,7 @@ class VaModel extends CI_Model{
             $this->db->from('weighted_matrix_max_temp');    
         }
         $this->db->where($where_datetime);
-        $this->db->group_by("user_id");
+        $this->db->group_by('user_id');
         $res = $this->db->get();
         
         $u_id = $res->row()->user_id;
@@ -30,7 +73,6 @@ class VaModel extends CI_Model{
         $res = $this->db->get();
         return ( $res->num_rows() > 0 )? $res->row()->full_name : null;
     }
-
     function getBlockName(){
         $this->db->select('id, block_name');
         $res = $this->db->get('blocks');
@@ -49,7 +91,7 @@ class VaModel extends CI_Model{
     function getUpdatedBlocks($data_type,$date){
         $updated_ids = array();
         $where_date = "date = '".$date."'";
-        $this->db->select('district_id');
+        $this->db->select('block_id');
         if($data_type != "weight"){
             $this->db->from('heatwave_alert_dissemination_'.$data_type);
         } else {
@@ -82,27 +124,27 @@ class VaModel extends CI_Model{
 
     function getTxFcstData($data_type, $date){
         if( $data_type == 'imd'){
-            $this->db->select('alert_tb.district_id,alert_tb.tx_dynamic,alert_tb.updated_at');
+            $this->db->select('alert_tb.block_id,alert_tb.tx_dynamic,alert_tb.updated_at');
             $this->db->from('block_imd_gfs_forecast');
             $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','block_imd_gfs_forecast.fcst_date = alert_tb.date');
             $this->db->where('block_imd_gfs_forecast.fcst_date', $date);
         } else if( $data_type == 'ensemble'){
-            $this->db->select('alert_tb.district_id,alert_tb.tx_dynamic,alert_tb.updated_at');
+            $this->db->select('alert_tb.block_id,alert_tb.tx_dynamic,alert_tb.updated_at');
             $this->db->from('block_ensemble_forecast');
             $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','block_ensemble_forecast.fcst_date = alert_tb.date');
             $this->db->where('block_ensemble_forecast.fcst_date', $date);
         } else if( $data_type == 'ecmwf'){
-            $this->db->select('alert_tb.district_id,alert_tb.tx_dynamic,alert_tb.updated_at');
+            $this->db->select('alert_tb.block_id,alert_tb.tx_dynamic,alert_tb.updated_at');
             $this->db->from('block_ecmwf_forecast');
             $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','block_ecmwf_forecast.fcst_date = alert_tb.date');
             $this->db->where('block_ecmwf_forecast.fcst_date', $date);
         } else if( $data_type == 'wrf'){
-            $this->db->select('alert_tb.district_id,alert_tb.tx_dynamic,alert_tb.updated_at');
+            $this->db->select('alert_tb.block_id,alert_tb.tx_dynamic,alert_tb.updated_at');
             $this->db->from('block_wrf_forecast');
             $this->db->join('heatwave_alert_dissemination_'.$data_type.' as alert_tb','block_wrf_forecast.fcst_date = alert_tb.date');
             $this->db->where('block_wrf_forecast.fcst_date', $date);
         } else if( $data_type == 'weight'){
-            $this->db->select('district_id,tx_dynamic,updated_at');
+            $this->db->select('block_id,tx_dynamic,updated_at');
             $this->db->from('weighted_matrix_max_temp');
             $this->db->where('weighted_matrix_max_temp.date', $date);
             $this->db->where('weight_added_at IS NOT NULL', NULL, FALSE);
@@ -114,10 +156,10 @@ class VaModel extends CI_Model{
         
         $tx_fcst_array = array();
         foreach ($tx_fcst_res as $tx_fcst) {
-            $district_id = $tx_fcst->district_id;
+            $block_id = $tx_fcst->block_id;
             $tx = $tx_fcst->tx_dynamic;
             
-            $tx_fcst_array[$district_id] = round($tx);
+            $tx_fcst_array[$block_id] = round($tx);
         }
         return $tx_fcst_array;
     }
@@ -1275,22 +1317,24 @@ class VaModel extends CI_Model{
         return $result_arr;
     }
 
-    public function getModelDtls(){
+    public function getModelDtls($id= NULL){
         $this->db->select("*");
         $this->db->from('model_list');
-        $this->db->where("id>",0);
+        if($id != '') {
+            $this->db->where("id",$id);
+        }
+        $this->db->where("id >",0);
         $res = $this->db->get();
         $result_arr = $res->result_array();
         return $result_arr;
-
     }
-    public function getParamDtls($model){
+
+    public function getParamDtls($model_id){
         $this->db->select("*");
         $this->db->from('parameter_list');
-        $this->db->where("model_id",$model);
+        $this->db->where("model_id",$model_id);
         $res = $this->db->get();
         $result_arr = $res->result_array();
         return $result_arr;
-
     }
 }
