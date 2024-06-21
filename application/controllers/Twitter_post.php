@@ -1,6 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+require "vendor/autoload.php";
+
+use Abraham\TwitterOAuth\TwitterOAuth;
+
 class Twitter_post extends CI_Controller {
 
     public function __construct() {
@@ -19,17 +23,6 @@ class Twitter_post extends CI_Controller {
         $data = array();
         $name = $this->session->userdata('name');
         $data['name'] = $name;
-
-        // $this->load->library('curl');
-        // $result = $this->curl->simple_get('http://example.com/');
-        // var_dump($result);
-        
-        // $name = '';
-        //   if ($this->session->has_userdata('name')) {
-        //    $name = $this->session->userdata('name');
-        //   }
-        //   $data['name'] = $name;
-
        
         $todays_date = '2023-05-04';
         
@@ -68,6 +61,59 @@ class Twitter_post extends CI_Controller {
         exit;
      }
     }
+
+    public function sendTweet(){
+    // OAuth settings
+    $consumerKey = 'Sbkc3SYPBJRc3uD434mWGpA5H';
+    $consumerSecret = 'vpfuCU370E8oslxbwwqWhlgIoUgr3CgK1Veer68c1onXjsW442';
+    $accessToken = '1779579699749949440-w7RTWQt1uBj9a44aKBfO1xKbFpbL5m';
+    $accessTokenSecret = 'fdyuCdwwWbZ8DqJ08cWJ14zhW81L93MdpzByafnMqqFLK';
+    
+    // Create TwitterOAuth object for media upload (v1.1)
+    $twitterV1 = new Abraham\TwitterOAuth\TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
+    
+    // Path to the image you want to upload
+    $imagePath = "assets/Fb_img/map_img_2024_05_29_11_11_02.jpeg";
+    
+    // Check if the file exists
+    if (!file_exists($imagePath)) {
+        die("Error: File does not exist.\n");
+    }
+    
+    $media = $twitterV1->upload('media/upload', ['media' => $imagePath]);
+    
+    if (isset($media->media_id_string)) {
+        // Create TwitterOAuth object for tweeting (v2)
+        $twitterV2 = new Abraham\TwitterOAuth\TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
+        
+        // Media uploaded successfully, create a tweet with the image using v2 endpoint
+        $tweetParams = [
+            'text' => 'This is a test tweet with an image.',
+            'media' => [
+                'media_ids' => [$media->media_id_string],
+            ],
+        ];
+        
+        // Note: The v2 endpoint for posting tweets might be different based on the API you're using.
+        $status = $twitterV2->post('statuses/update', $tweetParams);
+        
+        if ($twitterV2->getLastHttpCode() == 201) {
+            echo "Successfully posted a test tweet with an image.\n";
+            echo "Tweet ID: " . $status->id . "\n";
+            echo "Tweet Text: " . $status->text . "\n";
+        } else {
+            echo "Error posting a test tweet with an image.\n";
+            echo "HTTP Code: " . $twitterV2->getLastHttpCode() . "\n";
+            echo "API Response:\n";
+            var_dump($status);
+        }
+    } else {
+        echo "Error uploading media.\n";
+        echo "HTTP Code: " . $twitterV1->getLastHttpCode() . "\n";
+        echo "API Response:\n";
+        var_dump($media);
+    }
+}
 
     
 

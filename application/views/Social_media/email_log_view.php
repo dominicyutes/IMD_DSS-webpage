@@ -1,8 +1,8 @@
-<!-- <?php if($this->session->userdata('is_loggedin') == TRUE){  ?> -->
+<!-- <?php if ($this->session->userdata('is_loggedin') == TRUE) { ?> -->
 
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
+    defined('BASEPATH') or exit('No direct script access allowed');
+    ?>
 <!DOCTYPE html>
 <html>
 
@@ -68,27 +68,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body>
-    <div style="height: 100%;">
-        <div class="fixedHead">
-            <!-- Landing_page title logo> -->
-            <?php $this->load->view('Menu/Landing_page_top'); ?>
-        </div>
+    <?php $this->load->view('Menu/template/header_'); ?>
+    <?php $this->load->view('Menu/template//sidebar_'); ?>
 
 
-        <div class="row">
-            <!-- Landing_page sidebar> -->
-            <?php $this->load->view('Menu/Landing_page_side'); ?>
-
-
+    <div class="content-wrapper">
+        <section class="content">
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 85%">
+            <div>
                 <div style="background-color: #f5fdfd">
                     <br>
                     <h2 class="text-center">EMAIL DISSEMINATIOIN</h2>
 
                     <div>
                         <!--  -->
-                        <div class="container" id="emailLogTable">
+                        <div class="container" id="emailLogTable" style="width: max-content;">
                             <div class="row">
                                 <br>
                                 <h3>Email Log Table</h3>
@@ -102,24 +96,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <th>Mail To</th>
                                                 <th>Sent</th>
                                                 <th>Time</th>
+                                                <th>File Name</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php 
-                                                $i = 1;
-                                                foreach($result as $row) {
-                                                    echo '<tr>
-                                                        <td>'.$i++.'</td>
-                                                        <td>'.$row['email_from'].'</td>
-                                                        <td>'.$row['email_to'].'</td>
-                                                        <td>'.($row['sent'] ? 'Sent' : 'Not Sent').'</td>
-                                                        <td>'.(isset($row['sent_time']) ? date('Y-m-d H:i:s', strtotime($row['sent_time'])) : '').'</td>
-                                                    </tr>';
-                                                }
+                                            <?php
+                                                 $i = 1;
+                                                 foreach ($result as $row) {
+                                                     echo '<tr>
+                                                             <td>' . $i++ . '</td>
+                                                             <td>' . $row['email_from'] . '</td>
+                                                             <td>' . $row['email_to'] . '</td>
+                                                             <td>' . ($row['sent'] ? 'Sent' : 'Not Sent') . '</td>
+                                                             <td>' . (isset($row['sent_time']) ? date('Y-m-d H:i:s', strtotime($row['sent_time'])) : '') . '</td>
+                                                             <td>' . $row['file_name'] . '</td>
+                                                            </tr>';
+                                                 }
                                             ?>
                                         </tbody>
                                     </table>
                                 </div>
+
                             </div>
                             <br>
                             <button class="btn btn-primary" id="getBackToEmail">Back</button>
@@ -130,11 +127,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             <!-- editing content ends here -->
+        </section>
 
-        </div>
     </div>
 
-
+    <?php $this->load->view('Menu/template/footer_js_'); ?>
 </body>
 <script>
 document.getElementById("getBackToEmail").addEventListener("click", function() {

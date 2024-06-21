@@ -17,16 +17,38 @@ class HomePage extends CI_Controller {
         }
     }
 
+    // public function index() {
+    //     $user_id = $this->input->get('user_id');
+    //     $data['name'] = $this->session->userdata('name') ?? '';
+    //     $data['user_id'] = $user_id;
+
+    //     $this->load->view('HomePage/weather_inference_code.php', $data);
+
+    //     header("Access-Control-Allow-Origin: http://weather-imd-test.rimes.int");
+    //     header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    // }
+
     public function index() {
-        $user_id = $this->input->get('user_id');
-        $data['name'] = $this->session->userdata('name') ?? '';
-        $data['user_id'] = $user_id;
+       $this->load->library('session');
 
-        $this->load->view('HomePage/weather_inference_code.php', $data);
+       $user_id = $this->input->get('user_id');
+    
+       // 
+       if ($user_id) {
+           $this->session->set_userdata('user_id', $user_id);
+       } else {
+           $user_id = $this->session->userdata('user_id');
+       }
 
-        header("Access-Control-Allow-Origin: http://weather-imd-test.rimes.int");
-        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+       $data['name'] = $this->session->userdata('name') ?? '';
+       $data['user_id'] = $user_id;
+   
+       $this->load->view('HomePage/weather_inference_code.php', $data);
+
+       header("Access-Control-Allow-Origin: http://weather-imd-test.rimes.int");
+       header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
     }
+
 
     // 
     public function Menu(){

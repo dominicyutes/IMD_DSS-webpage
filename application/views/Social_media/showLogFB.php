@@ -15,10 +15,10 @@
     <!-- Bootstrap JavaScript files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+        </script>
     <!-- Bootstrap ends here -->
 
     <!-- Font Awesome -->
@@ -41,39 +41,19 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>stylesheet/plugins/canvas2image/canvas2image.js">
     </script>
 
-    <style>
-    body {
-        width: 100%;
-        height: 100vh;
-        zoom: 80%;
-        overflow: hidden;
-        font-family: "Lato", sans-serif;
-    }
-
-    #map {
-        margin-top: 1%;
-        height: 100vh;
-        width: 100%;
-        border: 1px solid black;
-    }
-    </style>
+   
 </head>
 
 <body>
-    <div style="height: 100%;">
-        <div class="fixedHead">
-            <!-- Landing_page title logo> -->
-            <?php $this->load->view('Menu/Landing_page_top'); ?>
-        </div>
+
+    <?php $this->load->view('Menu/template/header_'); ?>
+    <?php $this->load->view('Menu/template//sidebar_'); ?>
 
 
-        <div class="row">
-            <!-- Landing_page sidebar> -->
-            <?php $this->load->view('Menu/Landing_page_side'); ?>
-
+    <div class="content-wrapper">
+        <section class="content">
 
             <!-- editing content starts here -->
-            <div class="col-9" style="width: 85%">
                 <h2>Facebook Log Information</h2>
                 <div class="table-responsive" style="max-height: 450px;">
                     <table class="table table-hover">
@@ -86,30 +66,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- <?php 
-                                                $i = 1;
-                                                foreach($result as $row) {
-                                                    echo '<tr>
-                                                        <td>'.$i++.'</td>
-                                                        <td>'.$row['email_from'].'</td>
-                                                        <td>'.($row['sent'] ? 'Sent' : 'Not Sent').'</td>
-                                                        <td>'.(isset($row['sent_time']) ? date('Y-m-d H:i:s', strtotime($row['sent_time'])) : '').'</td>
+                            <!-- <?php
+                            $i = 1;
+                            foreach ($result as $row) {
+                                echo '<tr>
+                                                        <td>' . $i++ . '</td>
+                                                        <td>' . $row['email_from'] . '</td>
+                                                        <td>' . ($row['sent'] ? 'Sent' : 'Not Sent') . '</td>
+                                                        <td>' . (isset($row['sent_time']) ? date('Y-m-d H:i:s', strtotime($row['sent_time'])) : '') . '</td>
                                                     </tr>';
-                                                }
+                            }
                             ?> -->
                         </tbody>
                     </table>
                 </div>
-            </div>
             <!-- editing content ends here -->
 
-        </div>
+        </section>
+
     </div>
 
-    <script>
+    <?php $this->load->view('Menu/template/footer_js_'); ?>
 
 
-    </script>
 </body>
 
 
