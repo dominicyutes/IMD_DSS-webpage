@@ -10,17 +10,18 @@ class Email_log_model extends CI_Model {
 
     // for AJAX DD only mc_names
     public function get_mc_names() {
-        $this->db->select('mc_name');
+        // $this->db->select('mc_name');
+        $this->db->select('mc_name, email, groups, auto_email');
         $query = $this->db->get('email_group');
         return $query->result_array();
     }
 
     // geting groups and autoemail based on MC_NAME avlue
     public function get_email_groups_by_mc_name($mc_name) {
-        $this->db->select('groups, auto_email, groups_checkbox');
-        $this->db->where('mc_name', $mc_name);
-        $query = $this->db->get('email_group');
-        return $query->result_array();
+         $this->db->select('groups, auto_email, groups_checkbox, email');
+    $this->db->where('mc_name', $mc_name);
+    $query = $this->db->get('email_group');
+    return $query->result_array();
     }
 
     // fetching emails, based on Groups column 
@@ -30,6 +31,13 @@ class Email_log_model extends CI_Model {
         $this->db->where('groups', $group);
         $query = $this->db->get();
         return $query->result_array();  
+    }
+
+    public function get_emails_by_mc_name($mcName) {
+       $this->db->select('email, groups, groups_checkbox');
+       $this->db->where('mc_name', $mcName);
+       $query = $this->db->get('email_group');
+       return $query->result_array();
     }
 
     public function get_email_by_mc_name_and_group($mc_name, $group) {
@@ -95,6 +103,17 @@ class Email_log_model extends CI_Model {
        return $query->result_array();
     }
 
+    public function getEmailsWithAutoEmail_MC($mc_name) {
+       $this->db->select('email');
+       $this->db->from('email_group');
+       $this->db->where('mc_name', $mc_name);
+       $this->db->where('auto_email', true);
+       $query = $this->db->get();
+
+    return $query->result_array();
+    }
+
+
 
 
 
@@ -109,19 +128,35 @@ class Email_log_model extends CI_Model {
     }
 
     public function insert_email_log($from_address, $to_addresses, $sent, $file_names = []) {
-        if (!empty($to_addresses)) {
-            $to_address_string = implode(", ", $to_addresses);
-            $data = array(
-                'email_from' => $from_address,
-                'email_to' => $to_address_string,
-                'sent' => $sent,
-                'file_name' => implode(", ", $file_names) // Store the file names
-            );
-            $this->db->insert('email_log', $data);
-        } else {
-            echo "No valid email addresses to log";
+    try {
+        if (!is_array($to_addresses) || empty($to_addresses)) {
+            echo "Invalid or empty email addresses to log";
+            return;
         }
+
+        $to_address_string = implode(", ", $to_addresses);
+        $data = array(
+            'email_from' => $from_address,
+            'email_to' => $to_address_string,
+            'sent' => $sent ? 'True' : 'False',
+            'file_name' => implode(", ", $file_names) // Store the file names
+        );
+
+        $this->load->database();
+        $this->db->insert('email_log', $data);
+
+        if ($this->db->affected_rows() > 0) {
+            echo "Email log inserted successfully";
+        } else {
+            echo "Failed to insert email log";
+        }
+    } catch (Exception $e) {
+        echo "Database Error: " . $e->getMessage();
     }
+}
+
+
+
 
     public function get_emails_by_group($group_name) {
         $query = $this->db->get_where('groupemail', array('group_name' => $group_name));
